@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page not found on KeyboardTester.click. Test your keyboard's functionality with our online keyboard tester instead!">
+  <meta name="keywords" content="404 error, page not found, keyboard tester, test my keyboard">
+  <meta name="author" content="Online Keyboard Tester">
+  <title>404 - Page Not Found | KeyboardTester.click</title>
+  <link rel="icon" type="image/x-icon" href="navigation.png">
+  <style>
+    /* Reuse theme variables from homepage */
+    :root {
+      --bg-color: #f0f0f0;
+      --text-color: #333333;
+      --primary-color: #1abc9c;
+      --secondary-color: #34495e;
+      --keyboard-bg: #ffffff;
+      --key-active-1: #1abc9c;
+      --key-active-2: #f1c40f;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #2c3e50;
+      --text-color: #ecf0f1;
+      --primary-color: #1abc9c;
+      --secondary-color: #34495e;
+      --keyboard-bg: #34495e;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header (same as homepage) */
+    header {
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .theme-toggle {
+      width: 60px;
+      height: 30px;
+      background-color: var(--primary-color);
+      border-radius: 15px;
+      position: relative;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle::before {
+      content: '';
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background-color: var(--bg-color);
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.3s;
+    }
+
+    [data-theme="dark"] .theme-toggle::before {
+      transform: translateX(30px);
+    }
+
+    /* 404 Section */
+    .error-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      margin: 0 150px;
+    }
+
+    .error-section h2 {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .error-section p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    /* Navigation Buttons (same as homepage) */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      color: Black;
+      transition: background-color 0.3s;
+    }
+
+    .nav-buttons a.home,
+    .nav-buttons a.mouse-test,
+    .nav-buttons a.privacy-policy,
+    .nav-buttons a.disclaimer,
+    .nav-buttons a.about-us {
+      background-color: #f39c12;
+    }
+
+    .nav-buttons a.buy-keyboard,
+    .nav-buttons a.buy-mouse {
+      background-color: #f1c40f;
+    }
+
+    .nav-buttons a:hover {
+      opacity: 0.9;
+    }
+
+    /* Footer (same as homepage) */
+    footer {
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+
+    footer a {
+      color: var(--key-active-1);
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: var(--key-active-2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header (same as homepage) -->
+  <header>
+    <h1>Online Keyboard Tester</h1>
+    <nav>
+      <div class="theme-toggle" id="theme-toggle"></div>
+    </nav>
+  </header>
+
+  <!-- 404 Error Section -->
+  <div class="error-section">
+    <h2>404 - Page Not Found</h2>
+    <p>Oops! The page you're looking for doesn't exist. Let's get you back on track—try testing your keyboard or explore other tools!</p>
+    <div class="nav-buttons">
+      <a href="https://www.keyboardtester.click/" class="home">Home</a>
+      <a href="https://www.keyboardtester.click/mouse-test.html" class="mouse-test">Mouse Test</a>
+      <a href="https://www.keyboardtester.click/privacy-policy.html" class="privacy-policy">Privacy Policy</a>
+      <a href="https://www.keyboardtester.click/disclaimer.html" class="disclaimer">Disclaimer</a>
+      <a href="https://www.keyboardtester.click/about-us.html" class="about-us">About Us</a>
+      <a href="https://www.amazon.com/s?k=keyboard" class="buy-keyboard" target="_blank">Buy New Keyboard</a>
+      <a href="https://www.amazon.com/s?k=mouse" class="buy-mouse" target="_blank">Buy New Mouse</a>
+    </div>
+  </div>
+
+  <!-- Footer (same as homepage) -->
+  <footer>
+    <p>&copy; 2025 <a href="https://www.keyboardtester.click/">Online Keyboard Tester</a>. All rights reserved. Discover more resources on our <a href="https://keyboardtester.click/blog/">Blog</a>.</p>
+    <p>Need help? Visit our <a href="https://www.keyboardtester.click/about-us.html">About Us</a> page.</p>
+  </footer>
+
+  <script>
+    // Theme Toggle Functionality (same as homepage)
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>

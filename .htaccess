@@ -1,0 +1,72 @@
+# Serve .xml and .shtml files correctly
+AddType application/xml .xml
+AddType text/html .shtml
+AddHandler server-parsed .shtml
+Options +Includes
+
+RewriteEngine On
+RewriteBase /
+
+# Redirect old keyboard tester URLs to new organized structure
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^keyboard_tester_english\.php$ /tools/keyboard-tester/ [R=301,L]
+RewriteRule ^keyboard_tester_arabic\.php$ /languages/arabic/ [R=301,L]
+RewriteRule ^keyboard_tester_russian\.php$ /languages/russian/ [R=301,L]
+RewriteRule ^keyboard_tester_spanish\.php$ /languages/spanish/ [R=301,L]
+RewriteRule ^keyboard_tester_french\.php$ /languages/french/ [R=301,L]
+RewriteRule ^keyboard_tester_portuguese\.php$ /languages/portuguese/ [R=301,L]
+RewriteRule ^keyboard_tester_japanese\.php$ /languages/japanese/ [R=301,L]
+RewriteRule ^keyboard_tester_german\.php$ /languages/german/ [R=301,L]
+RewriteRule ^keyboard_tester_korean_index\.php$ /languages/korean/ [R=301,L]
+RewriteRule ^tools\.php$ /pages/tools.php [R=301,L]
+
+# Favicon fallback: serve navigation.png for /favicon.ico
+RewriteCond %{REQUEST_URI} ^/favicon\.ico$
+RewriteRule ^favicon\.ico$ /navigation.png [L]
+
+# Fallback: If .html file doesn't exist, serve .php version with same name
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} \.html$
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^(.*)\.html$ /$1.php [QSA,L]
+
+# Enable Gzip compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always append X-Frame-Options "SAMEORIGIN"
+    Header always append X-Content-Type-Options "nosniff"
+    Header always append X-XSS-Protection "1; mode=block"
+    Header always append Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# WordPress rules for /blog directory (leave as-is)
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /blog/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /blog/index.php [L]
+</IfModule>

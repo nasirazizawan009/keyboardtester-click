@@ -1,0 +1,92 @@
+#!/bin/bash
+# Quick Site Structure Verification Checklist
+# Run these URLs to verify everything is working
+
+echo "=================================="
+echo "KeyboardTester.click - Verification Checklist"
+echo "=================================="
+echo ""
+
+# Main Pages
+echo "✅ MAIN PAGES:"
+echo "  [ ] http://localhost/kbt/                    (Home page)"
+echo "  [ ] http://localhost/kbt/pages/tools.php     (All tools directory)"
+echo "  [ ] http://localhost/kbt/pages/about.php     (About page)"
+echo ""
+
+# Tools
+echo "✅ KEYBOARD TESTER TOOLS:"
+echo "  [ ] http://localhost/kbt/tools/keyboard-tester/           (English)"
+echo "  [ ] http://localhost/kbt/languages/arabic/                (Arabic)"
+echo "  [ ] http://localhost/kbt/languages/russian/               (Russian)"
+echo "  [ ] http://localhost/kbt/languages/spanish/               (Spanish)"
+echo "  [ ] http://localhost/kbt/languages/french/                (French)"
+echo "  [ ] http://localhost/kbt/languages/portuguese/            (Portuguese)"
+echo "  [ ] http://localhost/kbt/languages/japanese/              (Japanese)"
+echo "  [ ] http://localhost/kbt/languages/german/                (German)"
+echo "  [ ] http://localhost/kbt/languages/korean/                (Korean)"
+echo ""
+
+# SEO Files
+echo "✅ SEO & SEARCH ENGINE FILES:"
+echo "  [ ] http://localhost/kbt/sitemap.php         (XML Sitemap)"
+echo "  [ ] http://localhost/kbt/robots.txt          (Robots.txt)"
+echo "  [ ] http://localhost/kbt/.htaccess           (.htaccess redirects)"
+echo ""
+
+# Old URLs (Should redirect)
+echo "✅ OLD URLS (Should automatically redirect):"
+echo "  [ ] http://localhost/kbt/keyboard_tester_english.php     → /tools/keyboard-tester/"
+echo "  [ ] http://localhost/kbt/keyboard_tester_arabic.php      → /languages/arabic/"
+echo "  [ ] http://localhost/kbt/keyboard_tester_russian.php     → /languages/russian/"
+echo "  [ ] http://localhost/kbt/tools.php                       → /pages/tools.php"
+echo ""
+
+# Test Keyboard Tester Functionality
+echo "✅ KEYBOARD TESTER FUNCTIONALITY:"
+echo "  [ ] Press any key on keyboard - it should light up"
+echo "  [ ] Try different themes (Dark, Light, Midnight, etc.)"
+echo "  [ ] Try different layouts (QWERTY, Dvorak, Colemak, AZERTY, QWERTZ)"
+echo "  [ ] Check real-time feedback colors (Green → Yellow → Orange → Red → Purple)"
+echo "  [ ] Click 'Advanced Options' to access more features"
+echo "  [ ] Ghost-click detection should work"
+echo "  [ ] Latency measurement should display"
+echo ""
+
+# Check Components
+echo "✅ COMPONENTS & STRUCTURE:"
+echo "  [ ] Header appears on all pages"
+echo "  [ ] Footer appears on all pages"
+echo "  [ ] Breadcrumbs show navigation path"
+echo "  [ ] Related tools list appears on tool pages"
+echo "  [ ] Dark/Light theme toggle works in header"
+echo "  [ ] Internal links work properly"
+echo ""
+
+# Mobile Responsiveness
+echo "✅ MOBILE RESPONSIVENESS:"
+echo "  [ ] Pages look good on desktop (1920px)"
+echo "  [ ] Pages look good on tablet (768px)"
+echo "  [ ] Pages look good on mobile (375px)"
+echo "  [ ] Touch controls work on mobile"
+echo "  [ ] No horizontal scrolling"
+echo ""
+
+# Documentation
+echo "✅ DOCUMENTATION FILES:"
+echo "  [ ] REORGANIZATION_SUMMARY.md   (Detailed summary)"
+echo "  [ ] SITE_STRUCTURE.md           (Structure documentation)"
+echo "  [ ] README_REORGANIZATION.md    (Quick reference)"
+echo ""
+
+echo "=================================="
+echo "Total URLs to verify: 20"
+echo "Total functionality checks: 15"
+echo "Total responsive checks: 5"
+echo "=================================="
+echo ""
+echo "After verification, submit to Google Search Console:"
+echo "1. Add property: https://www.keyboardtester.click"
+echo "2. Submit sitemap: https://www.keyboardtester.click/sitemap.php"
+echo "3. Submit robots.txt: https://www.keyboardtester.click/robots.txt"
+echo ""

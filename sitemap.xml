@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage / Main Keyboard Tester -->
+  <url>
+    <loc>https://www.keyboardtester.click/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ==================== KEYBOARD TOOLS ==================== -->
+  
+  <!-- Typing Speed Test -->
+  <url>
+    <loc>https://www.keyboardtester.click/keyboard_typing_test.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Latency Checker -->
+  <url>
+    <loc>https://www.keyboardtester.click/latency-checker.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ==================== MOUSE TOOLS ==================== -->
+  
+  <!-- Mouse Tester -->
+  <url>
+    <loc>https://www.keyboardtester.click/mouse-test.php</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Mouse Click Speed Tester -->
+  <url>
+    <loc>https://www.keyboardtester.click/mouse_speed_tester.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Ghost Click Detector -->
+  <url>
+    <loc>https://www.keyboardtester.click/ghost-click-detector.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Mouse Sensitivity/DPI Tester -->
+  <url>
+    <loc>https://www.keyboardtester.click/mouse_sensitivity_DPI_tester.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ==================== SCREEN TOOLS ==================== -->
+  
+  <!-- Screen Test -->
+  <url>
+    <loc>https://www.keyboardtester.click/screentestindex.php</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ==================== MIC & WEBCAM TOOLS ==================== -->
+  
+  <!-- Mic Tester -->
+  <url>
+    <loc>https://www.keyboardtester.click/mic-tester.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Webcam Tester -->
+  <url>
+    <loc>https://www.keyboardtester.click/webcamtesterindex.php</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ==================== WHATSAPP TOOLS ==================== -->
+  
+  <!-- WhatsApp Link Generator -->
+  <url>
+    <loc>https://www.keyboardtester.click/whatsapp-link-generator.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- WhatsApp QR/Brand Link Generator -->
+  <url>
+    <loc>https://www.keyboardtester.click/whatsapp-Brand-link-generator.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ==================== MISC TOOLS ==================== -->
+  
+  <!-- QR Code Generator & Scanner -->
+  <url>
+    <loc>https://www.keyboardtester.click/QR_code_generator_scanner.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- OCR Tool -->
+  <url>
+    <loc>https://www.keyboardtester.click/ocr-tool.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- QR Code Reader -->
+  <url>
+    <loc>https://www.keyboardtester.click/qr-code-reader.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Password Generator -->
+  <url>
+    <loc>https://www.keyboardtester.click/auto-password-generator.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Lucky Wheel Tool -->
+  <url>
+    <loc>https://www.keyboardtester.click/luckywheeltoolindex.php</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ==================== INFORMATION PAGES ==================== -->
+  
+  <!-- Blog -->
+  <url>
+    <loc>https://keyboardtester.click/blog/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://www.keyboardtester.click/about-us.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://www.keyboardtester.click/privacy-policy.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Disclaimer -->
+  <url>
+    <loc>https://www.keyboardtester.click/disclaimer.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
