@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://www.keyboardtester.click/page-sitemap.xml</loc>
+    <lastmod>2026-02-13</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.keyboardtester.click/keyboard-sitemap.xml</loc>
+    <lastmod>2026-02-13</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.keyboardtester.click/mouse-sitemap.xml</loc>
+    <lastmod>2026-02-13</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.keyboardtester.click/utilities-sitemap.xml</loc>
+    <lastmod>2026-02-13</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.keyboardtester.click/languages-sitemap.xml</loc>
+    <lastmod>2026-02-13</lastmod>
+  </sitemap>
+</sitemapindex>

@@ -7,7 +7,7 @@ return [
         'title' => 'Free Online Keyboard Tester - Test All Keys Instantly',
         'description' => 'Free online keyboard tester to test all keys, detect issues, and check keyboard functionality. No download required.',
         'keywords' => 'keyboard tester, test keyboard, online keyboard test, key tester, keyboard functionality test',
-        'og_image' => 'images/keyboard/hero-keyboard-test.png'
+        'og_image' => 'images/keyboard/hero-keyboard-test-1400.png'
     ],
     'about-us.php' => [
         'title' => 'About KeyboardTester.Click',
@@ -61,11 +61,6 @@ return [
         'keywords' => 'arabic keyboard tester, test arabic keyboard, online keyboard test'
     ],
     'keyboard_tester_french.php' => [
-        'title' => 'French Keyboard Tester',
-        'description' => 'Test your French keyboard layout and keys with our free online tool.',
-        'keywords' => 'french keyboard tester, test french keyboard, online keyboard test'
-    ],
-    'keyboard_tester_french_v2.php' => [
         'title' => 'French Keyboard Tester',
         'description' => 'Test your French keyboard layout and keys with our free online tool.',
         'keywords' => 'french keyboard tester, test french keyboard, online keyboard test'
@@ -126,7 +121,7 @@ return [
         'title' => 'Mouse Tester - Test Your Mouse Buttons & Scroll | KeyboardTester.click',
         'description' => 'Test your mouse buttons, scroll wheel, and functionality with our free online mouse tester. Check left, right, and middle clicks instantly.',
         'keywords' => 'mouse tester, test mouse, mouse button test, scroll test, online mouse test',
-        'og_image' => 'images/mouse/mouse-test-guide.png'
+        'og_image' => 'images/mouse/mouse-test-guide-1200.png'
     ],
     'mouse_click_test.php' => [
         'title' => 'Mouse Click Tester',

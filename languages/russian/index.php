@@ -1,69 +1,107 @@
 <?php
 /**
  * Russian Keyboard Tester - Main Page
+ * Structure: Header -> Brief Intro -> Tool -> Tools List -> Guidelines -> Footer
  */
 
 include __DIR__ . '/../../config.php';
 
-$pageTitle = 'Онлайн-тестер клавиатуры - Проверьте свою клавиатуру';
-$pageDescription = 'Бесплатный онлайн-тестер клавиатуры. Обнаруживайте эффект привидения, измеряйте время отклика, проверяйте застревающие клавиши.';
+// Breadcrumbs
+$breadcrumbs = [
+    ['label' => 'Инструменты', 'url' => url('pages/tools.php')],
+    ['label' => 'Тестер Русской Клавиатуры', 'url' => '']
+];
+
+// Meta tags
+$pageTitle = 'Тестер Русской Клавиатуры - Проверьте Клавиатуру Бесплатно';
+$pageDescription = 'Бесплатный онлайн тестер русской клавиатуры. Обнаружение ghosting, измерение задержки, проверка залипающих клавиш.';
+$pageKeywords = 'тестер клавиатуры, тест русской клавиатуры, детектор ghosting, измеритель задержки';
 ?>
 
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include __DIR__ . '/../../includes/seo-meta.php'; ?>
-    
-    <!-- Language Alternatives -->
-    <link rel="alternate" hreflang="en" href="<?php echo $baseUrl; ?>/tools/keyboard-tester/">
-    <link rel="alternate" hreflang="ar" href="<?php echo $baseUrl; ?>/languages/arabic/">
-    <link rel="alternate" hreflang="es" href="<?php echo $baseUrl; ?>/languages/spanish/">
-    <link rel="alternate" hreflang="x-default" href="<?php echo $baseUrl; ?>/tools/keyboard-tester/">
-<?php include __DIR__ . '/../../includes/head-common.php'; ?>
-    <link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/css/keyboard-tool.css">
-</head>
-<body>
-    <?php include __DIR__ . '/../../includes/header.php'; ?>
-    
-    <?php 
-    $breadcrumbs = [
-        ['label' => 'Инструменты', 'url' => $baseUrl . '/pages/tools.php'],
-        ['label' => 'Языки', 'url' => ''],
-        ['label' => 'Русский', 'url' => '']
-    ];
-    include __DIR__ . '/../../includes/components/breadcrumbs.php'; 
-    ?>
-    
-    <section class="seo-hero keyboard-tester-hero">
-        <div class="container">
-            <h1 class="hero-title">Бесплатный онлайн-тестер клавиатуры</h1>
-            <p class="hero-description">Проверьте клавиатуру, обнаружьте проблемы и убедитесь в идеальной производительности</p>
-            <div class="hero-cta">
-                <button class="btn btn-primary" onclick="document.getElementById('keyboard-tester').scrollIntoView({behavior: 'smooth'})">
-                    ⌨️ Начать тест
-                </button>
-            </div>
-        </div>
-    </section>
-    
-    <main class="tool-main-container">
-        <?php include __DIR__ . '/../../tools/keyboard_tester_english.php'; ?>
-        <?php $currentTool = 'keyboard-tester'; include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    </main>
-    
-    <?php include __DIR__ . '/../../includes/footer.php'; ?>
-    
+
+    <!-- Language alternatives -->
+    <link rel="alternate" hreflang="en" href="<?php echo url('tools/keyboard-tester/'); ?>">
+    <link rel="alternate" hreflang="ru" href="<?php echo url('languages/russian/'); ?>">
+    <link rel="alternate" hreflang="es" href="<?php echo url('languages/spanish/'); ?>">
+    <link rel="alternate" hreflang="x-default" href="<?php echo url('tools/keyboard-tester/'); ?>">
+
+    <!-- Common Head -->
+    <?php include __DIR__ . '/../../includes/head-common.php'; ?>
+
+    <!-- Landing Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Index Modern CSS -->
+    <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+
+    <!-- Page Styles -->
     <style>
-        .tool-main-container {
+        :root {
+            --surface: #1e293b;
+            --border: rgba(148, 163, 184, 0.2);
+            --text-muted: #94a3b8;
+            --text-secondary: #cbd5e1;
+            --accent-primary: #00d4ff;
+            --accent-secondary: #0ea5e9;
+        }
+
+        html:not(.dark-theme),
+        [data-theme="light"] {
+            --surface: #ffffff;
+            --border: rgba(0, 0, 0, 0.1);
+            --text-muted: #64748b;
+            --text-secondary: #475569;
+            --accent-primary: #0099cc;
+            --accent-secondary: #0077aa;
+        }
+
+        .main-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 20px;
         }
     </style>
+</head>
+<body class="landing-page">
+    <!-- Header Navigation -->
+    <?php include __DIR__ . '/header-ru.php'; ?>
+
+    <!-- Main Content -->
+    <main id="main-content" class="landing-main">
+        <!-- Hero Section -->
+        <?php include __DIR__ . '/sections/hero.php'; ?>
+
+        <!-- Tool Stage -->
+        <section class="tool-stage" aria-labelledby="tool-stage-title-ru">
+            <div class="container tool-stage-header">
+                <div>
+                    <p class="section-kicker">Основной Инструмент</p>
+                    <h2 id="tool-stage-title-ru">Тестер Клавиатуры</h2>
+                    <p class="section-lede">Используйте инструмент ниже для проверки каждой клавиши, верификации раскладок и измерения задержки.</p>
+                </div>
+                <div class="tool-stage-actions">
+                    <a class="landing-btn landing-btn-ghost" href="#guidelines">Быстрые советы</a>
+                </div>
+            </div>
+            <div class="tool-shell">
+                <?php include __DIR__ . '/sections/tool.php'; ?>
+            </div>
+        </section>
+
+        <!-- Tools List -->
+        <?php $currentTool = 'russian-keyboard'; include __DIR__ . '/sections/tools-list-ru.php'; ?>
+
+        <!-- Guidelines & Help -->
+        <?php include __DIR__ . '/sections/guidelines.php'; ?>
+    </main>
+
+    <!-- Footer -->
+    <?php include __DIR__ . '/footer-ru.php'; ?>
 </body>
 </html>
-
-

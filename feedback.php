@@ -1,11 +1,8 @@
 <?php
 require_once 'config.php';
-require_once 'meta-config.php';
-$page = 'send_feedback.php';
-$meta = $metaData[$page] ?? $metaDefaults;
 ?>
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 
     <meta charset="UTF-8">
@@ -149,7 +146,7 @@ $meta = $metaData[$page] ?? $metaDefaults;
                 <strong>Oops!</strong> Something went wrong. Please try again or contact us directly at nasirazizawan@gmail.com.
             </div>
 
-            <form class="feedback-form" id="feedbackForm">
+            <form class="feedback-form" id="feedbackForm" action="<?php echo url('api/send-feedback.php'); ?>" method="post" novalidate>
                 <div class="form-group">
                     <label for="name">Your Name <span style="color: #ef4444;">*</span></label>
                     <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -163,6 +160,11 @@ $meta = $metaData[$page] ?? $metaDefaults;
                 <div class="form-group">
                     <label for="message">Your Message <span style="color: #ef4444;">*</span></label>
                     <textarea id="message" name="message" required placeholder="Tell us what you think or report an issue..."></textarea>
+                </div>
+
+                <div class="form-group" style="display: none;">
+                    <label for="website">Website</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                 </div>
 
                 <button type="submit" class="submit-btn">

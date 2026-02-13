@@ -339,18 +339,22 @@ if (!isset($baseUrl)) {
 
     .newsletter-form {
         display: flex;
-        gap: 8px;
+        gap: 10px;
+        align-items: stretch;
     }
 
     .newsletter-form input {
         flex: 1;
-        padding: 12px 16px;
+        min-width: 0;
+        height: 44px;
+        padding: 0 16px;
         border: 1px solid rgba(148, 163, 184, 0.2);
         background: rgba(255, 255, 255, 0.04);
         color: var(--footer-text);
         border-radius: 10px;
         font-size: 0.875rem;
         transition: all 0.25s ease;
+        box-sizing: border-box;
     }
 
     .newsletter-form input:focus {
@@ -364,7 +368,10 @@ if (!isset($baseUrl)) {
     }
 
     .newsletter-form button {
-        padding: 12px 24px;
+        flex-shrink: 0;
+        height: 44px;
+        min-width: 110px;
+        padding: 0 24px;
         background: linear-gradient(135deg, #38bdf8, #0ea5e9);
         color: #0f172a;
         border: none;
@@ -374,6 +381,10 @@ if (!isset($baseUrl)) {
         cursor: pointer;
         transition: all 0.25s ease;
         white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
     }
 
     .newsletter-form button:hover {
@@ -473,10 +484,17 @@ if (!isset($baseUrl)) {
 
         .newsletter-form {
             flex-direction: column;
+            align-items: stretch;
+        }
+
+        .newsletter-form input {
+            width: 100%;
         }
 
         .newsletter-form button {
             width: 100%;
+            min-width: unset;
+            height: 46px;
         }
     }
 

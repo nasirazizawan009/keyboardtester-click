@@ -1,6 +1,153 @@
-<?php
-ob_start();
-?>
+<?php ob_start(); ?>
+<section class="keyboard-tester" id="keyboard-tester">
+    <div class="keyboard-container">
+        <!-- Controls -->
+        <div class="controls-wrapper">
+            <div class="control-group">
+                <button id="reset-btn" class="btn btn-control">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-label">초기화</span>
+                </button>
+                <button id="toggle-history-btn" class="btn btn-control">
+                    <span class="btn-icon">📋</span>
+                    <span class="btn-label">키 기록</span>
+                </button>
+            </div>
+            <div class="control-group">
+                <label for="theme-selector" class="control-label">테마:</label>
+                <select id="theme-selector" class="theme-selector">
+                    <option value="light">밝음</option>
+                    <option value="dark">어두움</option>
+                    <option value="contrast">대비</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="layout-selector" class="control-label">배열:</label>
+                <select id="layout-selector" class="layout-selector">
+                    <option value="korean">한글 (한글/영문)</option>
+                    <option value="qwerty">QWERTY</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="statistics-wrapper">
+            <div class="stat-item">
+                <span class="stat-label">총 키 누름:</span>
+                <span class="stat-value" id="total-presses">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">평균 응답시간:</span>
+                <span class="stat-value" id="avg-response">0ms</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">문제:</span>
+                <span class="stat-value" id="issues-count">0</span>
+            </div>
+        </div>
+
+        <!-- Keyboard - Korean Hangul Layout -->
+        <div class="keyboard" id="keyboard">
+            <!-- Row 1 -->
+            <div class="key-row">
+                <div class="key" data-key="`" data-shift="~" title="백틱">`</div>
+                <div class="key" data-key="1" data-shift="!">1</div>
+                <div class="key" data-key="2" data-shift="@">2</div>
+                <div class="key" data-key="3" data-shift="#">3</div>
+                <div class="key" data-key="4" data-shift="$">4</div>
+                <div class="key" data-key="5" data-shift="%">5</div>
+                <div class="key" data-key="6" data-shift="^">6</div>
+                <div class="key" data-key="7" data-shift="&">7</div>
+                <div class="key" data-key="8" data-shift="*">8</div>
+                <div class="key" data-key="9" data-shift="(">9</div>
+                <div class="key" data-key="0" data-shift=")">0</div>
+                <div class="key" data-key="-" data-shift="_">-</div>
+                <div class="key" data-key="=" data-shift="+">+</div>
+                <div class="key backspace-key" data-key="Backspace">Backspace</div>
+            </div>
+
+            <!-- Row 2 - Korean Hangul with English equivalents -->
+            <div class="key-row">
+                <div class="key tab-key" data-key="Tab">Tab</div>
+                <div class="key" data-key="q" data-shift="Q" title="ㅂ/ㅃ">q</div>
+                <div class="key" data-key="w" data-shift="W" title="ㅈ/ㅉ">w</div>
+                <div class="key" data-key="e" data-shift="E" title="ㄷ/ㄸ">e</div>
+                <div class="key" data-key="r" data-shift="R" title="ㄱ/ㄲ">r</div>
+                <div class="key" data-key="t" data-shift="T" title="ㅅ/ㅆ">t</div>
+                <div class="key" data-key="y" data-shift="Y" title="ㅛ">y</div>
+                <div class="key" data-key="u" data-shift="U" title="ㅕ">u</div>
+                <div class="key" data-key="i" data-shift="I" title="ㅑ">i</div>
+                <div class="key" data-key="o" data-shift="O" title="ㅐ">o</div>
+                <div class="key" data-key="p" data-shift="P" title="ㅔ">p</div>
+                <div class="key" data-key="[" data-shift="{" title="ㅗ">[</div>
+                <div class="key" data-key="]" data-shift="}" title="ㅓ">]</div>
+            </div>
+
+            <!-- Row 3 - Korean Hangul -->
+            <div class="key-row">
+                <div class="key caps-key" data-key="CapsLock">CapsLock</div>
+                <div class="key" data-key="a" data-shift="A" title="ㅁ">a</div>
+                <div class="key" data-key="s" data-shift="S" title="ㄴ">s</div>
+                <div class="key" data-key="d" data-shift="D" title="ㅇ">d</div>
+                <div class="key" data-key="f" data-shift="F" title="ㄹ">f</div>
+                <div class="key" data-key="g" data-shift="G" title="ㅎ">g</div>
+                <div class="key" data-key="h" data-shift="H" title="ㅌ">h</div>
+                <div class="key" data-key="j" data-shift="J" title="ㅡ">j</div>
+                <div class="key" data-key="k" data-shift="K" title="ㅣ">k</div>
+                <div class="key" data-key="l" data-shift="L" title="ㅢ">l</div>
+                <div class="key" data-key=";" data-shift=":" title="ㅤ">:</div>
+                <div class="key" data-key="'" data-shift="\"">\'</div>
+                <div class="key enter-key" data-key="Enter">Enter</div>
+            </div>
+
+            <!-- Row 4 - Korean Hangul -->
+            <div class="key-row">
+                <div class="key shift-key" data-key="Shift">Shift</div>
+                <div class="key" data-key="z" data-shift="Z" title="ㅃ">z</div>
+                <div class="key" data-key="x" data-shift="X" title="ㅉ">x</div>
+                <div class="key" data-key="c" data-shift="C" title="ㄸ">c</div>
+                <div class="key" data-key="v" data-shift="V" title="ㄲ">v</div>
+                <div class="key" data-key="b" data-shift="B" title="ㅆ">b</div>
+                <div class="key" data-key="n" data-shift="N" title="ㅀ">n</div>
+                <div class="key" data-key="m" data-shift="M" title="ㅒ">m</div>
+                <div class="key" data-key="," data-shift="<" title="ㅖ">,</div>
+                <div class="key" data-key="." data-shift=">" title="ㅘ">.</div>
+                <div class="key" data-key="/" data-shift="?" title="ㅙ">/</div>
+                <div class="key shift-key" data-key="Shift">Shift</div>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="key-row">
+                <div class="key ctrl-key" data-key="Control">Ctrl</div>
+                <div class="key alt-key" data-key="Alt">Alt</div>
+                <div class="key space-key" data-key=" "> </div>
+                <div class="key alt-key" data-key="Alt">Alt</div>
+                <div class="key ctrl-key" data-key="Control">Ctrl</div>
+            </div>
+        </div>
+
+        <!-- History -->
+        <div class="history-panel" id="history-panel" style="display: none;">
+            <div class="history-header">
+                <h3>키 기록</h3>
+                <button class="close-btn" onclick="document.getElementById('history-panel').style.display = 'none'">✕</button>
+            </div>
+            <div class="history-content" id="history-content"></div>
+        </div>
+
+        <!-- Ghost Click Detection -->
+        <div class="ghost-detection" id="ghost-detection" style="display: none;">
+            <div class="detection-header">⚠️ 키보드 문제 감지</div>
+            <div class="detection-content" id="detection-content"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+<?php include __DIR__ . '/../keyboard-tester/sections/keyboard-tester.js'; ?>
+</script>
+
+<?php $content = ob_get_clean(); echo $content; ?>
 
 <style>
   /* Light Theme */

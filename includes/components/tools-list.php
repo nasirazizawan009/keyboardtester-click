@@ -4,6 +4,14 @@
  * Displays related tools and links to other testing tools
  */
 
+// Ensure config is loaded and variables are in global scope
+if (!function_exists('url')) {
+    require_once __DIR__ . '/../../config.php';
+}
+
+// Make sure we have access to global variables
+global $baseUrl, $siteUrl;
+
 // Determine current tool to filter from list
 $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
 ?>
@@ -12,9 +20,10 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
     <div class="container">
         <h2 id="tools-hub-title">More testing tools</h2>
         <p class="section-subtitle">Explore the full suite for keyboard, mouse, audio, and utilities.</p>
+        <p class="language-note">Language support: The Keyboard Tester is the only tool with translated interfaces (Arabic, Russian, Spanish, French, Portuguese, Japanese, German, Korean). All other tools are currently English-only.</p>
         
         <div class="tools-grid">
-            <a href="<?php echo $baseUrl; ?>/tools/keyboard-tester/" class="tool-card">
+            <a href="<?php echo url('tools/keyboard-tester/'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <rect x="2" y="6" width="20" height="12" rx="2"/>
@@ -23,11 +32,24 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <path d="M6 16h8"/>
                     </svg>
                 </div>
-                <h3>Keyboard Tester</h3>
+                <span class="tool-name">Keyboard Tester</span>
                 <p>Test keyboard functionality, detect ghosting, measure latency, check for stuck keys</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Test your keyboard</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/mouse-test.php" class="tool-card">
+            <a href="<?php echo url('languages/arabic/'); ?>" class="tool-card">
+                <div class="tool-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="6" width="20" height="12" rx="2"/>
+                        <path d="M6 10h1M9 10h1M12 10h1M15 10h1M18 10h1"/>
+                        <path d="M6 13h1M9 13h1M12 13h6"/>
+                        <path d="M6 16h8"/>
+                    </svg>
+                </div>
+                <span class="tool-name">Arabic Keyboard Tester</span>
+                <p>Test Arabic keyboard layout and key response in an Arabic-first interface</p>
+                <span class="tool-card-link">Test Arabic layout</span>
+            </a>
+            <a href="<?php echo url('mouse-test.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <rect x="9" y="2" width="6" height="10" rx="3"/>
@@ -35,21 +57,21 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <path d="M6 12v4a6 6 0 0 0 12 0v-4"/>
                     </svg>
                 </div>
-                <h3>Mouse Tester</h3>
+                <span class="tool-name">Mouse Tester</span>
                 <p>Check mouse buttons, scroll wheel, cursor movement, and responsiveness</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Test your mouse</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/mouse_speed_tester.php" class="tool-card">
+            <a href="<?php echo url('mouse_speed_tester.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/>
                     </svg>
                 </div>
-                <h3>Mouse Speed Tester</h3>
+                <span class="tool-name">Mouse Speed Tester</span>
                 <p>Measure your click speed (CPM or CPS) with timed tests</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Check click speed</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/mouse_sensitivity_DPI_tester.php" class="tool-card">
+            <a href="<?php echo url('mouse_sensitivity_DPI_tester.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="8"/>
@@ -57,11 +79,11 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <path d="M12 4v2M12 18v2M4 12h2M18 12h2"/>
                     </svg>
                 </div>
-                <h3>Mouse Sensitivity / DPI</h3>
+                <span class="tool-name">Mouse Sensitivity / DPI</span>
                 <p>Test DPI, sensitivity, and tracking accuracy</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Test DPI settings</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/mouse-trail.php" class="tool-card">
+            <a href="<?php echo url('mouse-trail.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <path d="M4 18c4-6 8-8 16-10"/>
@@ -70,11 +92,11 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <circle cx="14" cy="11" r="1"/>
                     </svg>
                 </div>
-                <h3>Mouse Trail</h3>
+                <span class="tool-name">Mouse Trail</span>
                 <p>Visualize mouse movement trails and precision</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">View mouse trails</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/ghost-click-detector.php" class="tool-card">
+            <a href="<?php echo url('ghost-click-detector.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <path d="M6 10a6 6 0 0 1 12 0v8l-2-2-2 2-2-2-2 2-2-2-2 2z"/>
@@ -82,11 +104,11 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <circle cx="14" cy="10" r="1"/>
                     </svg>
                 </div>
-                <h3>Ghost Click Detector</h3>
+                <span class="tool-name">Ghost Click Detector</span>
                 <p>Detect unintended or phantom clicks</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Detect ghost clicks</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/keyboard_typing_test.php" class="tool-card">
+            <a href="<?php echo url('keyboard_typing_test.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <path d="M4 6h16"/>
@@ -95,22 +117,22 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <path d="M11 18h2"/>
                     </svg>
                 </div>
-                <h3>Typing Speed Test</h3>
+                <span class="tool-name">Typing Speed Test</span>
                 <p>Measure WPM, accuracy, and typing consistency</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Check typing speed</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/latency-checker.php" class="tool-card">
+            <a href="<?php echo url('latency-checker.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="8"/>
                         <path d="M12 8v5l3 2"/>
                     </svg>
                 </div>
-                <h3>Latency Checker</h3>
+                <span class="tool-name">Latency Checker</span>
                 <p>Test device and input latency in your browser</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Measure latency</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/screentestindex.php" class="tool-card">
+            <a href="<?php echo url('screentestindex.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <rect x="3" y="5" width="18" height="12" rx="2"/>
@@ -118,22 +140,22 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <path d="M12 17v4"/>
                     </svg>
                 </div>
-                <h3>Screen Tester</h3>
+                <span class="tool-name">Screen Tester</span>
                 <p>Detect dead, stuck, or hot pixels on screens</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Test your screen</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/webcamtesterindex.php" class="tool-card">
+            <a href="<?php echo url('webcamtesterindex.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <rect x="3" y="7" width="14" height="10" rx="2"/>
                         <path d="M17 10l4-3v10l-4-3"/>
                     </svg>
                 </div>
-                <h3>Webcam Tester</h3>
+                <span class="tool-name">Webcam Tester</span>
                 <p>Check webcam quality, resolution, and snapshots</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Test your webcam</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/mic-tester.php" class="tool-card">
+            <a href="<?php echo url('mic-tester.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <rect x="9" y="2" width="6" height="10" rx="3"/>
@@ -142,11 +164,11 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <path d="M8 22h8"/>
                     </svg>
                 </div>
-                <h3>Mic Tester</h3>
+                <span class="tool-name">Mic Tester</span>
                 <p>Verify microphone input and audio levels</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Test your microphone</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/headphone_speaker_tester_index.php" class="tool-card">
+            <a href="<?php echo url('headphone_speaker_tester_index.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <path d="M4 12a8 8 0 0 1 16 0"/>
@@ -154,11 +176,11 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <rect x="17" y="12" width="4" height="7" rx="2"/>
                     </svg>
                 </div>
-                <h3>Headphone / Speaker Tester</h3>
+                <span class="tool-name">Headphone / Speaker Tester</span>
                 <p>Test stereo channels and sound output</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Test audio output</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/ocr-tool.php" class="tool-card">
+            <a href="<?php echo url('ocr-tool.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <path d="M4 7V4h3"/>
@@ -170,11 +192,11 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <path d="M10 15h4"/>
                     </svg>
                 </div>
-                <h3>OCR Tool</h3>
+                <span class="tool-name">OCR Tool</span>
                 <p>Extract text from images quickly</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Extract text now</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/qr-code-reader.php" class="tool-card">
+            <a href="<?php echo url('qr-code-reader.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <rect x="3" y="3" width="6" height="6"/>
@@ -186,11 +208,11 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <path d="M8 12h2"/>
                     </svg>
                 </div>
-                <h3>QR Code Reader</h3>
+                <span class="tool-name">QR Code Reader</span>
                 <p>Scan QR codes with camera or image upload</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Scan QR codes</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/QR_code_generator_scanner.php" class="tool-card">
+            <a href="<?php echo url('QR_code_generator_scanner.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <rect x="3" y="3" width="6" height="6"/>
@@ -200,33 +222,33 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <path d="M9 9h6"/>
                     </svg>
                 </div>
-                <h3>QR Code Generator</h3>
+                <span class="tool-name">QR Code Generator</span>
                 <p>Create custom QR codes instantly</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Create QR code</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/whatsapp-link-generator.php" class="tool-card">
+            <a href="<?php echo url('whatsapp-link-generator.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <path d="M4 6a8 8 0 0 1 16 6 8 8 0 0 1-8 6 8 8 0 0 1-4-.9L4 19l1.9-3.1A8 8 0 0 1 4 6z"/>
                         <path d="M9 10l2 2 4-4"/>
                     </svg>
                 </div>
-                <h3>WhatsApp Link Generator</h3>
+                <span class="tool-name">WhatsApp Link Generator</span>
                 <p>Create clickable WhatsApp chat links</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Generate chat link</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/whatsapp-Brand-link-generator.php" class="tool-card">
+            <a href="<?php echo url('whatsapp-Brand-link-generator.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <path d="M4 7a3 3 0 0 1 3-3h6l7 7-7 7H7a3 3 0 0 1-3-3z"/>
                         <circle cx="10" cy="9" r="1.5"/>
                     </svg>
                 </div>
-                <h3>WhatsApp Brand Links</h3>
+                <span class="tool-name">WhatsApp Brand Links</span>
                 <p>Create branded WhatsApp links and QR codes</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Create brand link</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/whatsapp-sentiment-analyzer.php" class="tool-card">
+            <a href="<?php echo url('whatsapp-sentiment-analyzer.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="8"/>
@@ -235,11 +257,11 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <path d="M9 15c1.5 1.2 4.5 1.2 6 0"/>
                     </svg>
                 </div>
-                <h3>WhatsApp Sentiment Analyzer</h3>
+                <span class="tool-name">WhatsApp Sentiment Analyzer</span>
                 <p>Analyze chat sentiment and tone</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Analyze sentiment</span>
             </a>
-            <a href="<?php echo $baseUrl; ?>/auto-password-generator.php" class="tool-card">
+            <a href="<?php echo url('auto-password-generator.php'); ?>" class="tool-card">
                 <div class="tool-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                         <rect x="5" y="10" width="14" height="10" rx="2"/>
@@ -247,153 +269,12 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                         <circle cx="12" cy="15" r="1.5"/>
                     </svg>
                 </div>
-                <h3>Password Generator</h3>
+                <span class="tool-name">Password Generator</span>
                 <p>Create strong, secure passwords instantly</p>
-                <span class="tool-card-link">Open tool</span>
+                <span class="tool-card-link">Generate password</span>
             </a>
         </div>
     </div>
 </section>
 
-<style>
-.tools-list-section {
-    padding: 72px 0;
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(249, 115, 22, 0.08));
-    border-top: 1px solid var(--card-border);
-    border-bottom: 1px solid var(--card-border);
-}
-
-.tools-list-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.tools-list-section h2 {
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    color: var(--text-color);
-    margin-bottom: 8px;
-    text-align: center;
-}
-
-.tools-list-section .section-subtitle {
-    text-align: center;
-    color: var(--text-muted);
-    margin-bottom: 36px;
-    font-size: 1.05rem;
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 22px;
-}
-
-.tool-card {
-    display: flex;
-    flex-direction: column;
-    padding: 22px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 18px;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    height: 100%;
-}
-
-.tool-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 18px;
-    border: 1px solid transparent;
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(249, 115, 22, 0.12));
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-}
-
-.tool-card > * {
-    position: relative;
-    z-index: 1;
-}
-
-.tool-card:hover {
-    border-color: rgba(14, 165, 233, 0.6);
-    transform: translateY(-4px);
-    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.15);
-}
-
-.tool-card:hover::after {
-    opacity: 1;
-}
-
-.tool-card-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(14, 165, 233, 0.14);
-    color: #0f172a;
-    margin-bottom: 14px;
-}
-
-.tool-card-icon svg {
-    width: 24px;
-    height: 24px;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-html.dark-theme .tool-card-icon,
-[data-theme="dark"] .tool-card-icon {
-    color: #e2e8f0;
-    background: rgba(14, 165, 233, 0.22);
-}
-
-.tool-card h3 {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    margin-bottom: 8px;
-}
-
-.tool-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    flex-grow: 1;
-    margin-bottom: 16px;
-}
-
-.tool-card-link {
-    color: #0ea5e9;
-    font-weight: 600;
-    margin-top: auto;
-}
-
-html.dark-theme .tool-card-link,
-[data-theme="dark"] .tool-card-link {
-    color: #7dd3fc;
-}
-
-@media (max-width: 768px) {
-    .tools-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tools-list-section h2 {
-        font-size: 1.8rem;
-    }
-}
-</style>
+<?php include __DIR__ . '/tools-list-styles.php'; ?>

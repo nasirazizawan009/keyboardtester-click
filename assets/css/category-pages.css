@@ -1,0 +1,105 @@
+/*
+ * Category pages styles
+ */
+
+.category-page {
+    background: var(--bg-color);
+}
+
+.category-hero {
+    padding: 70px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(75, 94, 170, 0.12), rgba(245, 158, 11, 0.12));
+    border-bottom: 1px solid var(--card-border);
+}
+
+.category-hero .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+}
+
+.category-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.category-hero p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.category-section {
+    padding: 60px 20px;
+}
+
+.category-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(75, 94, 170, 0.6);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+    text-decoration: none;
+}
+
+.category-card h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.category-card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.category-card .card-link {
+    font-weight: 600;
+    color: var(--link-color);
+}
+
+.category-actions {
+    margin-top: 28px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .category-hero {
+        padding: 50px 20px;
+    }
+}

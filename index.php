@@ -2,35 +2,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect FIRST (before any other resources) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+
     <?php include __DIR__ . '/includes/seo-meta.php'; ?>
-<script type="text/javascript">
+
+    <!-- Preload Hero Image (LCP element) -->
+    <link rel="preload" as="image" href="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?>" type="image/webp" fetchpriority="high">
+
+    <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl(''); ?>">
+    <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl(''); ?>">
+
+    <!-- Critical CSS to prevent layout shift -->
+    <style>
+    .landing-hero{min-height:500px}
+    .landing-main{min-height:100vh}
+    .hero-shot img{aspect-ratio:900/600;width:100%;height:auto}
+    .trust-strip{min-height:80px}
+    .trust-grid{min-height:60px}
+    .landing-hero-grid{min-height:400px}
+    .hero-copy{min-height:300px}
+    @media(max-width:980px){.landing-hero{min-height:auto}.landing-hero-grid{min-height:auto}.hero-copy{min-height:auto}}
+    @media(max-width:768px){.trust-strip{min-height:200px}.trust-grid{min-height:180px}}
+    </style>
+
+    <!-- Preload critical font to prevent layout shift -->
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2" crossorigin>
+
+    <!-- Common Head Includes -->
+    <?php include 'includes/head-common.php'; ?>
+
+    <!-- Page-specific CSS (async loading) -->
+    <script>
+    loadCSS('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=optional');
+    loadCSS('<?php echo url('assets/css/keyboard-tool.css'); ?>');
+    loadCSS('<?php echo url('assets/css/index-modern.css'); ?>');
+    </script>
+    <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=optional">
+    <link rel="stylesheet" href="<?php echo url('assets/css/keyboard-tool.css'); ?>">
+    <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+    </noscript>
+
+    <!-- Clarity Analytics (deferred) -->
+    <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uglsz9kphe");
-</script>
-    
-<link rel="alternate" hreflang="en" href="<?php echo absoluteUrl(''); ?>">
-    <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl(''); ?>">
-    
-    <!-- Preload Hero Image -->
-    <link rel="preload" as="image" href="<?php echo url('images/keyboard/hero-keyboard-test.png'); ?>">
-    
-    <!-- Common Head Includes -->
-    <?php include 'includes/head-common.php'; ?>
-
-    <!-- Landing Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tool Styles -->
-    <link rel="stylesheet" href="<?php echo url('assets/css/keyboard-tool.css'); ?>">
-    <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+    </script>
     
     <!-- Structured Data - WebApplication Schema -->
     <script type="application/ld+json">
@@ -57,7 +84,7 @@
         "Click speed test",
         "Multi-language keyboard support"
       ],
-      "screenshot": "<?php echo absoluteUrl('images/keyboard/hero-keyboard-test.png'); ?>",
+      "screenshot": "<?php echo absoluteUrl('images/keyboard/hero-keyboard-test-1400.png'); ?>",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
@@ -175,7 +202,7 @@
       <div class="section-head">
         <p class="section-kicker">Built for fast diagnostics</p>
         <h2 id="feature-title">Everything you need to validate your keyboard</h2>
-        <p class="section-lede">A focused suite for daily checks, support tickets, and hardware troubleshooting.</p>
+        <p class="section-lede">A focused suite for testing every key with real-time feedback, daily checks, support tickets, and hardware troubleshooting.</p>
       </div>
       <div class="landing-feature-grid">
         <article class="landing-feature-card">
@@ -210,7 +237,11 @@
       <div class="process-grid">
         <article class="process-card">
           <div class="process-media">
-            <img src="<?php echo url('images/keyboard/Press-any-key.png'); ?>" alt="Press any key to start the KeyboardTester.click keyboard test" loading="lazy">
+            <picture>
+              <source type="image/webp" srcset="<?php echo url('images/keyboard/Press-any-key-512.webp'); ?> 512w, <?php echo url('images/keyboard/Press-any-key-768.webp'); ?> 768w" sizes="(max-width: 900px) 90vw, 320px">
+              <source type="image/png" srcset="<?php echo url('images/keyboard/Press-any-key-512.png'); ?> 512w, <?php echo url('images/keyboard/Press-any-key-768.png'); ?> 768w" sizes="(max-width: 900px) 90vw, 320px">
+              <img src="<?php echo url('images/keyboard/Press-any-key-512.png'); ?>" width="512" height="768" alt="Press any key to start the KeyboardTester.click keyboard test" loading="lazy" decoding="async">
+            </picture>
           </div>
           <div class="process-body">
             <div class="step-number">01</div>
@@ -220,7 +251,11 @@
         </article>
         <article class="process-card">
           <div class="process-media">
-            <img src="<?php echo url('images/keyboard/special-keys-layout.png'); ?>" alt="Keyboard tester special keys and layout highlights on KeyboardTester.click" loading="lazy">
+            <picture>
+              <source type="image/webp" srcset="<?php echo url('images/keyboard/special-keys-layout-640.webp'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
+              <source type="image/png" srcset="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
+              <img src="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?>" width="640" height="426" alt="Keyboard tester special keys and layout highlights on KeyboardTester.click" loading="lazy" decoding="async">
+            </picture>
           </div>
           <div class="process-body">
             <div class="step-number">02</div>
@@ -230,7 +265,11 @@
         </article>
         <article class="process-card">
           <div class="process-media">
-            <img src="<?php echo url('images/keyboard/color-system-guide.png'); ?>" alt="Keyboard tester color system and exportable test results on KeyboardTester.click" loading="lazy">
+            <picture>
+              <source type="image/webp" srcset="<?php echo url('images/keyboard/color-system-guide-640.webp'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
+              <source type="image/png" srcset="<?php echo url('images/keyboard/color-system-guide-640.png'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
+              <img src="<?php echo url('images/keyboard/color-system-guide-640.png'); ?>" width="640" height="426" alt="Keyboard tester color system and exportable test results on KeyboardTester.click" loading="lazy" decoding="async">
+            </picture>
           </div>
           <div class="process-body">
             <div class="step-number">03</div>
@@ -250,7 +289,7 @@
         <p class="section-lede">Use the live tool below to test every key, check layouts, and measure latency.</p>
       </div>
       <div class="tool-stage-actions">
-        <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
+        <a class="landing-btn landing-btn-ghost" href="#guidelines">Read keyboard testing guide</a>
       </div>
     </div>
     <div class="tool-shell">

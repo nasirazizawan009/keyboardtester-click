@@ -8,7 +8,7 @@ include __DIR__ . '/../../config.php';
 
 // Set breadcrumbs for this page
 $breadcrumbs = [
-    ['label' => 'Tools', 'url' => $baseUrl . '/pages/tools.php'],
+    ['label' => 'Tools', 'url' => url('pages/tools.php')],
     ['label' => 'Keyboard Tester', 'url' => '']
 ];
 
@@ -28,9 +28,10 @@ $pageKeywords = 'keyboard tester, online keyboard test, keyboard ghosting detect
     
     <!-- Common Head -->
     <?php include __DIR__ . '/../../includes/head-common.php'; ?>
-    
-    <!-- Tool-specific Styles -->
-    <link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/css/keyboard-tool.css">
+
+    <!-- Tool-specific Styles (async) -->
+    <script>loadCSS('<?php echo url('assets/css/keyboard-tool.css'); ?>');</script>
+    <noscript><link rel="stylesheet" href="<?php echo url('assets/css/keyboard-tool.css'); ?>"></noscript>
 </head>
 <body>
     <!-- Header Navigation -->

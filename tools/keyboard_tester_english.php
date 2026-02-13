@@ -113,12 +113,12 @@ ob_start();
     <!-- Statistics Panel -->
     <div class="stats-panel" id="stats-panel" style="display: none;">
         <div class="stats-header">
-            <h3>
+            <span class="panel-title">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 20V10M12 20V4M6 20v-6"/>
                 </svg>
                 Session Statistics
-            </h3>
+            </span>
             <button class="close-btn" id="close-stats">&times;</button>
         </div>
         <div class="stats-content">
@@ -148,12 +148,12 @@ ob_start();
     <!-- Ghost Click Detection Panel -->
     <div class="stats-panel" id="ghost-panel" style="display: none;">
         <div class="stats-header">
-            <h3>
+            <span class="panel-title">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M9 10h.01M15 10h.01M12 2a8 8 0 0 0-8 8v12l3-3 2 3 3-3 3 3 2-3 3 3V10a8 8 0 0 0-8-8z"/>
                 </svg>
                 Ghost Click Detection
-            </h3>
+            </span>
             <button class="close-btn" id="close-ghost">&times;</button>
         </div>
         <div class="stats-content">
@@ -196,12 +196,12 @@ ob_start();
     <!-- Latency Test Panel -->
     <div class="stats-panel" id="latency-panel" style="display: none;">
         <div class="stats-header">
-            <h3>
+            <span class="panel-title">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                 </svg>
                 Keyboard Latency Test
-            </h3>
+            </span>
             <button class="close-btn" id="close-latency">&times;</button>
         </div>
         <div class="stats-content">
@@ -448,7 +448,7 @@ ob_start();
                     <rect x="2" y="4" width="20" height="16" rx="2"/>
                     <path d="M6 8h.01M10 8h.01M14 8h.01"/>
                 </svg>
-                <h3>Testing Progress</h3>
+                <span class="panel-title">Testing Progress</span>
             </div>
             <div class="progress-stats">
                 <span id="progress-count">0</span> / <span>104</span> Keys
@@ -924,7 +924,7 @@ ob_start();
     border-bottom: 1px solid var(--border-subtle);
 }
 
-.stats-header h3 {
+.stats-header .panel-title {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -934,7 +934,7 @@ ob_start();
     margin: 0;
 }
 
-.stats-header h3 svg {
+.stats-header .panel-title svg {
     color: var(--accent-primary);
 }
 
@@ -1458,7 +1458,7 @@ ob_start();
 
 .progress-title svg { color: var(--accent-primary); }
 
-.progress-title h3 {
+.progress-title .panel-title {
     color: var(--key-text);
     font-size: 18px;
     font-weight: 700;

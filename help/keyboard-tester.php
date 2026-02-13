@@ -1,7 +1,7 @@
 <section class="guidelines landing-guide" id="guidelines">
 	<div class="help-header">
 		<h2>Online Keyboard Tester Guide</h2>
-		<p>Use our free online keyboard tester to check every key, verify your layout, and spot issues like ghosting or stuck keys in seconds.</p>
+		<p>Use our free online keyboard tester to test every key with real-time feedback. Verify your layout and spot issues like ghosting or stuck keys in just seconds.</p>
 	</div>
 
 	<div class="help-grid">

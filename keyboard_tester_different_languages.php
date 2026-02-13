@@ -1,99 +1,187 @@
 <?php
-ob_start();
+include __DIR__ . '/config.php';
 
-// Include config if not already included
-if (!isset($baseUrl)) {
-    include_once __DIR__ . '/config.php';
-}
+$pageTitle = 'Language Keyboard Tester - Test Keyboard Layouts';
+$pageDescription = 'Quickly open keyboard testers for Arabic, Russian, Spanish, French, Portuguese, Japanese, German, and Korean layouts.';
+$pageKeywords = 'language keyboard tester, arabic keyboard, russian keyboard, spanish keyboard, french keyboard, portuguese keyboard, japanese keyboard, german keyboard, korean keyboard';
 ?>
 
-<div class="language-selection" id="language-selection" style="margin: 20px auto; max-width: 700px; padding: 15px; background: linear-gradient(135deg, #1e3a8a, #3b82f6); border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); color: #ffffff;">
-    <!-- Language Selection -->
-    <h2 style="color: #ffffff; font-size: 1.4rem; text-align: center; margin: 15px 0; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); font-weight: 600;">🌍 Test Your Keyboard in Your Language</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-        <a href="<?php echo $keyboardLanguages['ar']['url']; ?>" style="text-decoration: none;">
-            <span style="padding: 6px 12px; background: #10b981; color: #fff; border-radius: 6px; font-size: 0.85rem; font-weight: 500; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); transition: transform 0.2s, background 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; min-width: 90px; justify-content: center;">
-                <img src="<?php echo url('flags/arabic_flag.svg'); ?>" alt="Arabic Flag" style="vertical-align: middle; width: 18px; height: 13px; margin-right: 6px;"> العربية
-            </span>
-        </a>
-        <a href="<?php echo $keyboardLanguages['de']['url']; ?>" style="text-decoration: none;">
-            <span style="padding: 6px 12px; background: #8b5cf6; color: #fff; border-radius: 6px; font-size: 0.85rem; font-weight: 500; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); transition: transform 0.2s, background 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; min-width: 90px; justify-content: center;">
-                <img src="<?php echo url('flags/german_flag.svg'); ?>" alt="German Flag" style="vertical-align: middle; width: 18px; height: 13px; margin-right: 6px;"> Deutsch
-            </span>
-        </a>
-        <a href="<?php echo $keyboardLanguages['ru']['url']; ?>" style="text-decoration: none;">
-            <span style="padding: 6px 12px; background: #22c55e; color: #fff; border-radius: 6px; font-size: 0.85rem; font-weight: 500; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); transition: transform 0.2s, background 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; min-width: 90px; justify-content: center;">
-                <img src="<?php echo url('flags/russian_flag.svg'); ?>" alt="Russian Flag" style="vertical-align: middle; width: 18px; height: 13px; margin-right: 6px;"> Русский
-            </span>
-        </a>
-        <a href="<?php echo $keyboardLanguages['es']['url']; ?>" style="text-decoration: none;">
-            <span style="padding: 6px 12px; background: #3b82f6; color: #fff; border-radius: 6px; font-size: 0.85rem; font-weight: 500; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); transition: transform 0.2s, background 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; min-width: 90px; justify-content: center;">
-                <img src="<?php echo url('flags/spanish_flag.svg'); ?>" alt="Spanish Flag" style="vertical-align: middle; width: 18px; height: 13px; margin-right: 6px;"> Español
-            </span>
-        </a>
-        <a href="<?php echo $keyboardLanguages['pt']['url']; ?>" style="text-decoration: none;">
-            <span style="padding: 6px 12px; background: #f59e0b; color: #fff; border-radius: 6px; font-size: 0.85rem; font-weight: 500; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); transition: transform 0.2s, background 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; min-width: 90px; justify-content: center;">
-                <img src="<?php echo url('flags/Portugal_flag.svg'); ?>" alt="Portuguese Flag" style="vertical-align: middle; width: 18px; height: 13px; margin-right: 6px;"> Português
-            </span>
-        </a>
-        <a href="<?php echo $keyboardLanguages['fr']['url']; ?>" style="text-decoration: none;">
-            <span style="padding: 6px 12px; background: #ef4444; color: #fff; border-radius: 6px; font-size: 0.85rem; font-weight: 500; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); transition: transform 0.2s, background 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; min-width: 90px; justify-content: center;">
-                <img src="<?php echo url('flags/french_flag.svg'); ?>" alt="French Flag" style="vertical-align: middle; width: 18px; height: 13px; margin-right: 6px;"> Français
-            </span>
-        </a>
-        <a href="<?php echo $keyboardLanguages['ja']['url']; ?>" style="text-decoration: none;">
-            <span style="padding: 6px 12px; background: #ec4899; color: #fff; border-radius: 6px; font-size: 0.85rem; font-weight: 500; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); transition: transform 0.2s, background 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; min-width: 90px; justify-content: center;">
-                <img src="<?php echo url('flags/japan_flag.svg'); ?>" alt="Japanese Flag" style="vertical-align: middle; width: 18px; height: 13px; margin-right: 6px;"> 日本語
-            </span>
-        </a>
-        <a href="<?php echo $keyboardLanguages['ko']['url']; ?>" style="text-decoration: none;">
-            <span style="padding: 6px 12px; background: #eab308; color: #fff; border-radius: 6px; font-size: 0.85rem; font-weight: 500; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); transition: transform 0.2s, background 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; min-width: 90px; justify-content: center;">
-                <img src="<?php echo url('flags/korean_flag.svg'); ?>" alt="Korean Flag" style="vertical-align: middle; width: 18px; height: 13px; margin-right: 6px;"> 한국어
-            </span>
-        </a>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include __DIR__ . '/includes/seo-meta.php'; ?>
+    <?php include __DIR__ . '/includes/head-common.php'; ?>
+</head>
+<body>
+    <?php include __DIR__ . '/header.php'; ?>
 
-<style>
-    /* Language Selection Section Styles */
-    .language-selection {
-        margin: 20px auto;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        display: block;
-    }
+    <main class="language-keyboards-page">
+        <section class="language-keyboards-hero">
+            <div class="container">
+                <h1>Language Keyboard Testers</h1>
+                <p>Choose a language layout to open the keyboard tester in that language.</p>
+            </div>
+        </section>
 
-    /* Hover Effects for Language Buttons */
-    .language-selection a:hover span {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        filter: brightness(1.2);
-    }
+        <section class="language-keyboards-section">
+            <div class="container">
+                <div class="language-selection" id="language-selection">
+                    <h2>?? Test Your Keyboard in Your Language</h2>
+                    <div class="language-buttons">
+                        <a href="<?php echo $keyboardLanguages['ar']['url']; ?>">
+                            <span>
+                                <img src="<?php echo url('flags/arabic_flag.svg'); ?>" alt="Arabic Flag"> ???????
+                            </span>
+                        </a>
+                        <a href="<?php echo $keyboardLanguages['de']['url']; ?>">
+                            <span>
+                                <img src="<?php echo url('flags/german_flag.svg'); ?>" alt="German Flag"> Deutsch
+                            </span>
+                        </a>
+                        <a href="<?php echo $keyboardLanguages['ru']['url']; ?>">
+                            <span>
+                                <img src="<?php echo url('flags/russian_flag.svg'); ?>" alt="Russian Flag"> ???????
+                            </span>
+                        </a>
+                        <a href="<?php echo $keyboardLanguages['es']['url']; ?>">
+                            <span>
+                                <img src="<?php echo url('flags/spanish_flag.svg'); ?>" alt="Spanish Flag"> Espa?ol
+                            </span>
+                        </a>
+                        <a href="<?php echo $keyboardLanguages['pt']['url']; ?>">
+                            <span>
+                                <img src="<?php echo url('flags/Portugal_flag.svg'); ?>" alt="Portuguese Flag"> Portugu?s
+                            </span>
+                        </a>
+                        <a href="<?php echo $keyboardLanguages['fr']['url']; ?>">
+                            <span>
+                                <img src="<?php echo url('flags/french_flag.svg'); ?>" alt="French Flag"> Fran?ais
+                            </span>
+                        </a>
+                        <a href="<?php echo $keyboardLanguages['ja']['url']; ?>">
+                            <span>
+                                <img src="<?php echo url('flags/japan_flag.svg'); ?>" alt="Japanese Flag"> ???
+                            </span>
+                        </a>
+                        <a href="<?php echo $keyboardLanguages['ko']['url']; ?>">
+                            <span>
+                                <img src="<?php echo url('flags/korean_flag.svg'); ?>" alt="Korean Flag"> ???
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <p class="language-note">Language support applies to the Keyboard Tester only. All other tools are currently English-only.</p>
+            </div>
+        </section>
+    </main>
 
-    /* Responsive Design */
-    @media (max-width: 600px) {
+    <?php include __DIR__ . '/footer.php'; ?>
+
+    <style>
+        .language-keyboards-hero {
+            padding: 70px 20px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(30, 58, 138, 0.12));
+            border-bottom: 1px solid var(--border);
+        }
+
+        .language-keyboards-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .language-keyboards-hero p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .language-keyboards-section {
+            padding: 40px 20px 70px;
+        }
+
         .language-selection {
-            margin: 10px;
-            padding: 12px;
+            margin: 20px auto;
+            max-width: 760px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18);
+            color: #ffffff;
         }
-        .language-selection h2 {
-            font-size: 1.1rem;
-            margin: 10px 0;
-        }
-        .language-selection a span {
-            padding: 5px 10px;
-            font-size: 0.75rem;
-            min-width: 80px;
-        }
-        .language-selection a img {
-            width: 16px;
-            height: 12px;
-            margin-right: 5px;
-        }
-    }
-</style>
 
-<?php
-echo ob_get_clean();
-?>
+        .language-selection h2 {
+            color: #ffffff;
+            font-size: 1.45rem;
+            text-align: center;
+            margin: 12px 0 18px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+        }
+
+        .language-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .language-buttons a {
+            text-decoration: none;
+        }
+
+        .language-buttons span {
+            padding: 7px 14px;
+            background: rgba(255, 255, 255, 0.16);
+            color: #fff;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, filter 0.3s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            min-width: 110px;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .language-buttons a:hover span {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+            filter: brightness(1.1);
+        }
+
+        .language-buttons img {
+            width: 18px;
+            height: 13px;
+        }
+
+        .language-note {
+            margin-top: 18px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 600px) {
+            .language-selection {
+                padding: 16px;
+            }
+            .language-selection h2 {
+                font-size: 1.15rem;
+            }
+            .language-buttons span {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+                min-width: 95px;
+            }
+            .language-buttons img {
+                width: 16px;
+                height: 12px;
+            }
+        }
+    </style>
+</body>
+</html>

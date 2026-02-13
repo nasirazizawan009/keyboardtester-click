@@ -107,6 +107,76 @@ if (!isset($baseUrl)) {
         box-shadow: 0 8px 16px rgba(15, 23, 42, 0.2);
     }
 
+    /* Language Selector */
+    .lang-selector {
+        position: relative;
+    }
+
+    .lang-toggle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 8px;
+        color: var(--header-text);
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .lang-toggle:hover {
+        background: rgba(255,255,255,0.1);
+    }
+
+    .lang-dropdown {
+        position: absolute;
+        top: 110%;
+        right: 0;
+        background: var(--dropdown-bg);
+        border-radius: 12px;
+        padding: 8px;
+        min-width: 200px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.2s ease;
+        z-index: 100;
+    }
+
+    .lang-selector.open .lang-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .lang-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 14px;
+        transition: background 0.2s ease;
+    }
+
+    .lang-option:hover {
+        background: rgba(56, 189, 248, 0.1);
+    }
+
+    .lang-option.active {
+        background: rgba(56, 189, 248, 0.2);
+        font-weight: 600;
+    }
+
+    .lang-flag {
+        font-size: 20px;
+    }
+
     .mega-panel {
         display: none;
         position: absolute;
@@ -164,30 +234,192 @@ if (!isset($baseUrl)) {
         color: var(--link-color);
     }
 
+    /* Mobile styles */
     @media (max-width: 900px) {
-        .menu-toggle { display: inline-flex; }
+        .header-container {
+            padding: 12px 16px;
+        }
+
+        .brand {
+            font-size: 1rem;
+        }
+
+        .brand img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .menu-toggle span {
+            width: 22px;
+            height: 2px;
+            margin: 3px 0;
+            transition: all 0.2s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
 
         .site-nav {
             position: fixed;
-            inset: 70px 0 auto 0;
+            inset: 60px 0 0 0;
             flex-direction: column;
             background: var(--dropdown-bg);
             padding: 20px;
-            transform: translateY(-120%);
-            transition: transform 0.2s ease;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            gap: 8px;
+            z-index: 999;
         }
 
-        .site-nav.open { transform: translateY(0); }
+        .site-nav.open {
+            transform: translateX(0);
+        }
 
-        .nav-actions { width: 100%; justify-content: center; margin-left: 0; }
-        .mega-panel { position: static; box-shadow: none; }
+        .site-nav .nav-link {
+            display: block;
+            padding: 14px 16px;
+            border-radius: 10px;
+            background: rgba(15,23,42,0.04);
+            text-align: left;
+            font-size: 1rem;
+            color: var(--text-color);
+            width: 100%;
+        }
+
+        html.dark-theme .site-nav .nav-link,
+        [data-theme="dark"] .site-nav .nav-link {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .site-nav .nav-link:hover,
+        .site-nav .nav-link:active {
+            background: rgba(56,189,248,0.12);
+        }
+
+        .nav-actions {
+            width: 100%;
+            flex-direction: column;
+            margin-left: 0;
+            margin-top: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--card-border);
+            gap: 10px;
+        }
+
+        .nav-actions > * {
+            width: 100%;
+        }
+
+        .lang-selector {
+            width: 100%;
+        }
+
+        .lang-toggle {
+            width: 100%;
+            justify-content: center;
+            padding: 12px;
+            font-size: 15px;
+        }
+
+        .lang-dropdown {
+            position: static;
+            margin-top: 8px;
+            width: 100%;
+            box-shadow: none;
+            border: 1px solid var(--card-border);
+        }
+
+        .lang-option {
+            padding: 12px 14px;
+        }
+
+        .theme-toggle {
+            padding: 12px;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn {
+            display: block;
+            text-align: center;
+            padding: 14px 20px;
+            font-size: 1rem;
+        }
+
+        .mega-panel {
+            position: static;
+            box-shadow: none;
+            padding: 16px 0;
+            border-top: none;
+            margin-top: 8px;
+        }
+
+        .panel-inner {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .panel-inner > div {
+            padding: 14px 16px;
+        }
+
+        .panel-links a {
+            padding: 8px 0;
+            font-size: 0.95rem;
+        }
+    }
+
+    /* Small mobile */
+    @media (max-width: 480px) {
+        .header-container {
+            padding: 10px 12px;
+        }
+
+        .brand {
+            font-size: 0.9rem;
+            gap: 8px;
+        }
+
+        .brand img {
+            width: 26px;
+            height: 26px;
+        }
+
+        .site-nav {
+            inset: 55px 0 0 0;
+            padding: 16px 12px;
+        }
+
+        .site-nav .nav-link {
+            padding: 12px 14px;
+            font-size: 0.95rem;
+        }
     }
 </style>
 
 <header class="site-header" id="siteHeader">
     <div class="header-container">
         <a href="<?php echo $pages['home']; ?>" class="brand">
-            <img src="<?php echo url('images/shared/keyboard-and-mouse.png'); ?>" alt="KeyboardTester logo">
+            <img src="<?php echo url('images/shared/logo.svg'); ?>" alt="KeyboardTester logo" width="32" height="32" loading="eager" decoding="async" fetchpriority="high">
             KeyboardTester<span>.click</span>
         </a>
 
@@ -204,6 +436,49 @@ if (!isset($baseUrl)) {
             <a class="nav-link" href="<?php echo $pages['about']; ?>">About</a>
 
             <div class="nav-actions">
+                <div class="lang-selector" id="langSelector">
+                    <button class="lang-toggle" id="langToggle" aria-label="Language selector">
+                        🌐 <span id="currentLang">EN</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <a href="<?php echo url('tools/keyboard-tester/'); ?>" class="lang-option">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span>English</span>
+                        </a>
+                        <a href="<?php echo url('languages/arabic/'); ?>" class="lang-option">
+                            <span class="lang-flag">🇸🇦</span>
+                            <span>العربية</span>
+                        </a>
+                        <a href="<?php echo url('languages/spanish/'); ?>" class="lang-option">
+                            <span class="lang-flag">🇪🇸</span>
+                            <span>Español</span>
+                        </a>
+                        <a href="<?php echo url('languages/russian/'); ?>" class="lang-option">
+                            <span class="lang-flag">🇷🇺</span>
+                            <span>Русский</span>
+                        </a>
+                        <a href="<?php echo url('languages/french/'); ?>" class="lang-option">
+                            <span class="lang-flag">🇫🇷</span>
+                            <span>Français</span>
+                        </a>
+                        <a href="<?php echo url('languages/german/'); ?>" class="lang-option">
+                            <span class="lang-flag">🇩🇪</span>
+                            <span>Deutsch</span>
+                        </a>
+                        <a href="<?php echo url('languages/portuguese/'); ?>" class="lang-option">
+                            <span class="lang-flag">🇵🇹</span>
+                            <span>Português</span>
+                        </a>
+                        <a href="<?php echo url('languages/japanese/'); ?>" class="lang-option">
+                            <span class="lang-flag">🇯🇵</span>
+                            <span>日本語</span>
+                        </a>
+                        <a href="<?php echo url('keyboard_tester_korean_index.php'); ?>" class="lang-option">
+                            <span class="lang-flag">🇰🇷</span>
+                            <span>한국어</span>
+                        </a>
+                    </div>
+                </div>
                 <button class="theme-toggle" id="themeToggle" data-theme-toggle aria-label="Toggle theme">🌙</button>
                 <a href="<?php echo $pages['home']; ?>#tools" class="cta-btn">Try Tools</a>
             </div>
@@ -282,7 +557,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menuToggle.addEventListener('click', () => {
         const isOpen = siteNav.classList.toggle('open');
+        menuToggle.classList.toggle('active', isOpen);
         menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     toolsToggle.addEventListener('click', (e) => {
@@ -307,5 +585,42 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.setAttribute('aria-expanded', 'false');
         });
     });
+
+    // Language selector
+    const langToggle = document.getElementById('langToggle');
+    const langSelector = document.getElementById('langSelector');
+    
+    if (langToggle && langSelector) {
+        langToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langSelector.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!langSelector.contains(e.target)) {
+                langSelector.classList.remove('open');
+            }
+        });
+
+        // Detect current language and update display
+        const currentPath = window.location.pathname;
+        const langMap = {
+            '/languages/arabic/': 'AR',
+            '/languages/spanish/': 'ES',
+            '/languages/russian/': 'RU',
+            '/languages/french/': 'FR',
+            '/languages/german/': 'DE',
+            '/languages/portuguese/': 'PT',
+            '/languages/japanese/': 'JP',
+            'korean': 'KR'
+        };
+
+        for (const [path, code] of Object.entries(langMap)) {
+            if (currentPath.includes(path) || currentPath.includes(code.toLowerCase())) {
+                document.getElementById('currentLang').textContent = code;
+                break;
+            }
+        }
+    }
 });
 </script>

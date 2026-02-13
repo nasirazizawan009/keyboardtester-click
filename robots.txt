@@ -1,27 +1,28 @@
 # Robots.txt - Search Engine Crawling Instructions
+# Last Updated: 2026-02-13
 
-# Allow all robots by default
-User-agent: *
+# Specific rules for Googlebot
+User-agent: Googlebot
 Allow: /
 Disallow: /admin/
 Disallow: /test-
 Disallow: /temp/
 Disallow: /cache/
-
-# Specific rules for Googlebot (can crawl everything)
-User-agent: Googlebot
-Allow: /
+Disallow: /*.py$
+Disallow: /debug-
+Disallow: /fix-
+Disallow: /clear-
+Disallow: /ftp-
+Disallow: /tmp_
 
 # Specific rules for Bingbot
 User-agent: Bingbot
 Allow: /
-
-# Sitemap locations
-Sitemap: https://www.keyboardtester.click/sitemap.php
-Sitemap: https://www.keyboardtester.click/sitemap.xml
-
-# Crawl delay
-Crawl-delay: 1
+Disallow: /admin/
+Disallow: /test-
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /*.py$
 
 # Disallow bad bots
 User-agent: MJ12bot
@@ -29,3 +30,31 @@ Disallow: /
 
 User-agent: AhrefsBot
 Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Default rules for all other robots
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /test-
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /*.py$
+Disallow: /debug-
+Disallow: /fix-
+Disallow: /clear-
+Disallow: /ftp-
+Disallow: /tmp_
+Disallow: /_old
+Disallow: /_backup
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.keyboardtester.click/sitemap-index.xml

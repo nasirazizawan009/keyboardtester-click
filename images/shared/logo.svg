@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Keyboard base with gradient -->
+  <defs>
+    <linearGradient id="keyboardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#38bdf8"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="keyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#e0f2fe"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Keyboard body -->
+  <rect x="4" y="16" width="56" height="36" rx="6" fill="url(#keyboardGrad)"/>
+
+  <!-- Shadow/depth -->
+  <rect x="4" y="48" width="56" height="4" rx="2" fill="#0284c7" opacity="0.5"/>
+
+  <!-- Key row 1 -->
+  <rect x="9" y="21" width="6" height="6" rx="1.5" fill="url(#keyGrad)"/>
+  <rect x="17" y="21" width="6" height="6" rx="1.5" fill="url(#keyGrad)"/>
+  <rect x="25" y="21" width="6" height="6" rx="1.5" fill="url(#keyGrad)"/>
+  <rect x="33" y="21" width="6" height="6" rx="1.5" fill="url(#keyGrad)"/>
+  <rect x="41" y="21" width="6" height="6" rx="1.5" fill="url(#keyGrad)"/>
+  <rect x="49" y="21" width="6" height="6" rx="1.5" fill="url(#keyGrad)"/>
+
+  <!-- Key row 2 -->
+  <rect x="11" y="29" width="6" height="6" rx="1.5" fill="url(#keyGrad)"/>
+  <rect x="19" y="29" width="6" height="6" rx="1.5" fill="url(#keyGrad)"/>
+  <rect x="27" y="29" width="6" height="6" rx="1.5" fill="url(#keyGrad)"/>
+  <rect x="35" y="29" width="6" height="6" rx="1.5" fill="url(#keyGrad)"/>
+  <rect x="43" y="29" width="6" height="6" rx="1.5" fill="url(#keyGrad)"/>
+
+  <!-- Spacebar -->
+  <rect x="15" y="37" width="34" height="6" rx="1.5" fill="url(#keyGrad)"/>
+
+  <!-- Active key highlight (checkmark effect) -->
+  <circle cx="52" cy="12" r="8" fill="#22c55e"/>
+  <path d="M48 12l2.5 2.5L55 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

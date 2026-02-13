@@ -154,86 +154,7 @@ body {
     transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-/* ============================================
-   BRIEF GUIDE / HERO
-   ============================================ */
-.brief-guide {
-    padding: var(--spacing-2xl) 0 var(--spacing-xl);
-    background: linear-gradient(120deg, rgba(75, 94, 170, 0.08), rgba(245, 158, 11, 0.08));
-    border-bottom: 1px solid var(--card-border);
-}
-
-.brief-guide .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
-}
-
-.brief-hero {
-    display: grid;
-    grid-template-columns: 1.5fr 0.8fr;
-    gap: var(--spacing-xl);
-    align-items: center;
-}
-
-.brief-text h1 {
-    font-size: clamp(2rem, 3vw, 2.75rem);
-    margin-bottom: var(--spacing-sm);
-}
-
-.brief-text p {
-    color: var(--text-muted);
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--spacing-lg);
-}
-
-.brief-actions {
-    display: flex;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
-    margin-bottom: var(--spacing-md);
-}
-
-.brief-badges {
-    display: flex;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
-    color: var(--text-muted);
-    font-size: var(--font-size-sm);
-}
-
-.brief-badges span {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 6px 10px;
-    border-radius: 999px;
-}
-
-.brief-stats {
-    display: grid;
-    gap: var(--spacing-md);
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: var(--card-radius);
-    padding: var(--spacing-lg);
-    box-shadow: var(--card-shadow);
-}
-
-.brief-stats strong {
-    font-size: 1.6rem;
-    display: block;
-}
-
-.brief-stats span {
-    color: var(--text-muted);
-    font-size: var(--font-size-sm);
-}
-
-@media (max-width: 900px) {
-    .brief-hero {
-        grid-template-columns: 1fr;
-    }
-}
+/* Brief guide/hero styles moved to index-modern.css to reduce global.css size */
 
 /* ============================================
    HELP / GUIDELINES
@@ -293,6 +214,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.3;
     color: var(--text-color);
+}
+
+/* Fix deprecated H1UserAgentFontSizeInSection - explicitly set h1 size in sectioning elements */
+section h1, article h1, aside h1, nav h1 {
+    font-size: var(--font-size-3xl);
 }
 
 h1 { font-size: var(--font-size-3xl); }
@@ -828,37 +754,259 @@ html.dark-theme .theme-toggle,
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
+
+/* Tablet breakpoint */
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .feature-grid,
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile landscape / small tablet */
 @media (max-width: 768px) {
     :root {
         --font-size-3xl: 1.75rem;
         --font-size-2xl: 1.25rem;
-        --spacing-xl: 1.5rem;
-        --spacing-2xl: 2rem;
+        --font-size-xl: 1.125rem;
+        --spacing-xl: 1.25rem;
+        --spacing-2xl: 1.75rem;
+        --card-radius: 12px;
     }
-    
+
+    html {
+        font-size: 15px;
+    }
+
     .container {
         padding: 0 var(--spacing-md);
     }
-    
+
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    /* Hero mobile improvements */
+    .hero {
+        padding: 3rem 0 2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+
+    .hero-badges {
+        justify-content: center;
+    }
+
+    .hero-visual img {
+        border-radius: 12px;
+    }
+
+    /* Cards mobile */
+    .card {
+        padding: var(--spacing-md);
+    }
+
+    .feature-grid,
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-card {
+        padding: 1.25rem;
+    }
+
+    /* Guidelines mobile */
+    .guidelines {
+        margin: var(--spacing-lg) var(--spacing-sm);
+        padding: var(--spacing-md);
+        border-radius: 12px;
+    }
+
+    .help-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .help-card {
+        padding: var(--spacing-md);
+    }
+
+    /* Navigation buttons */
     .nav-buttons {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 0.5rem;
     }
-    
+
     .nav-btn {
-        padding: 8px 12px;
-        font-size: var(--font-size-xs);
+        padding: 10px 14px;
+        font-size: var(--font-size-sm);
+        flex: 1 1 auto;
+        min-width: 100px;
+        justify-content: center;
+    }
+
+    /* Tool page */
+    .tool-main {
+        padding: var(--spacing-md);
+    }
+
+    .tool-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .tool-header p {
+        font-size: 0.95rem;
+    }
+
+    /* Typography mobile */
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.35rem; }
+    h3 { font-size: 1.15rem; }
+    h4 { font-size: 1rem; }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    /* Buttons mobile - larger touch targets */
+    .btn {
+        padding: 12px 20px;
+        font-size: var(--font-size-base);
+        min-height: 44px;
+    }
+
+    /* Forms mobile */
+    input, select, textarea {
+        padding: 12px 14px;
+        font-size: 16px; /* Prevents iOS zoom */
+        min-height: 44px;
+    }
+
+    /* Keyboard container */
+    .keyboard-container {
+        padding: var(--spacing-md);
+        margin: var(--spacing-md) 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
+/* Mobile portrait */
 @media (max-width: 480px) {
     :root {
         --font-size-3xl: 1.5rem;
         --font-size-2xl: 1.125rem;
+        --font-size-xl: 1rem;
+        --spacing-lg: 1rem;
+        --spacing-xl: 1.25rem;
     }
-    
-    .tool-header h1 {
+
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero {
+        padding: 2rem 0 1.5rem;
+    }
+
+    .hero h1 {
         font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.35rem;
+    }
+
+    .tool-header h1 {
+        font-size: 1.35rem;
+    }
+
+    /* Full width buttons on smallest screens */
+    .nav-btn {
+        width: 100%;
+        padding: 12px 16px;
+    }
+
+    /* Better touch spacing */
+    .help-accordion details {
+        padding: var(--spacing-sm);
+    }
+
+    .help-accordion summary {
+        padding: 10px 0;
+    }
+
+    /* Cards tighter on mobile */
+    .card,
+    .feature-card,
+    .help-card {
+        padding: var(--spacing-md);
+        border-radius: 10px;
+    }
+
+    .guidelines {
+        margin: var(--spacing-md) var(--spacing-xs);
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    /* Remove hover effects that don't work on touch */
+    .card:hover,
+    .feature-card:hover {
+        transform: none;
+    }
+
+    /* Larger touch targets */
+    .btn,
+    .nav-btn,
+    .nav-link,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Better tap feedback */
+    .btn:active,
+    .nav-btn:active {
+        transform: scale(0.98);
+        opacity: 0.9;
     }
 }
 

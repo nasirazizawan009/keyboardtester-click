@@ -5,11 +5,12 @@
  * Include this file at the top of every page: <?php include 'config.php'; ?>
  */
 
-// Detect environment
+// Detect environment - more robust for cPanel
 $isLocalhost = (
     strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ||
     strpos($_SERVER['HTTP_HOST'], '127.0.0.1') !== false ||
-    strpos($_SERVER['HTTP_HOST'], '::1') !== false
+    strpos($_SERVER['HTTP_HOST'], '::1') !== false ||
+    $_SERVER['SERVER_ADDR'] === '127.0.0.1'
 );
 
 // Set base URLs based on environment
@@ -116,6 +117,7 @@ function amazonLink($category, $lang = 'en') {
 $pages = [
     'home' => url(''),
     'mouse_test' => url('mouse-test.php'),
+    'mouse_trail' => url('mouse-trail.php'),
     'keyboard_typing' => url('keyboard_typing_test.php'),
     'click_speed' => url('mouse_speed_tester.php'),
     'ghost_click' => url('ghost-click-detector.php'),

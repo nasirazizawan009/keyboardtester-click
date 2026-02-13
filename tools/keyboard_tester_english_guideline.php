@@ -16,7 +16,11 @@ if (!isset($baseUrl)) {
     
     <!-- Hero Image -->
     <div class="guide-image">
-        <img src="<?php echo url('images/keyboard/hero-keyboard-test.png'); ?>" alt="Keyboard latency test showing real-time response time measurement and ghost click detection" loading="lazy">
+        <picture>
+            <source type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.webp'); ?> 1400w" sizes="(max-width: 980px) 92vw, 720px">
+            <source type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w" sizes="(max-width: 980px) 92vw, 720px">
+            <img src="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?>" width="900" height="600" alt="Keyboard latency test showing real-time response time measurement and ghost click detection" loading="lazy" decoding="async">
+        </picture>
         <div class="image-label">Keyboard tester overview</div>
     </div>
     
@@ -50,7 +54,11 @@ if (!isset($baseUrl)) {
         
         <!-- Latency Test Image -->
         <div class="guide-image">
-            <img src="<?php echo url('images/keyboard/hero-keyboard-test.png'); ?>" alt="Keyboard latency test interface showing millisecond response time measurements" loading="lazy">
+            <picture>
+                <source type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.webp'); ?> 1400w" sizes="(max-width: 980px) 92vw, 720px">
+                <source type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w" sizes="(max-width: 980px) 92vw, 720px">
+                <img src="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?>" width="900" height="600" alt="Keyboard latency test interface showing millisecond response time measurements" loading="lazy" decoding="async">
+            </picture>
             <div class="image-label">Latency measurement view</div>
         </div>
         
@@ -173,7 +181,11 @@ if (!isset($baseUrl)) {
         
         <!-- Color System Image -->
         <div class="guide-image">
-            <img src="<?php echo url('images/keyboard/color-system-guide.png'); ?>" alt="Visual guide showing color progression from first key press to multiple presses for easy tracking" loading="lazy">
+            <picture>
+                <source type="image/webp" srcset="<?php echo url('images/keyboard/color-system-guide-640.webp'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.webp'); ?> 960w" sizes="(max-width: 980px) 92vw, 720px">
+                <source type="image/png" srcset="<?php echo url('images/keyboard/color-system-guide-640.png'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.png'); ?> 960w" sizes="(max-width: 980px) 92vw, 720px">
+                <img src="<?php echo url('images/keyboard/color-system-guide-640.png'); ?>" width="640" height="426" alt="Visual guide showing color progression from first key press to multiple presses for easy tracking" loading="lazy" decoding="async">
+            </picture>
             <div class="image-label">Key press color guide</div>
         </div>
         
@@ -253,7 +265,11 @@ if (!isset($baseUrl)) {
         
         <!-- Special Keys Image -->
         <div class="guide-image">
-            <img src="<?php echo url('images/keyboard/special-keys-layout.png'); ?>" alt="Complete keyboard layout showing function keys, arrow keys, numpad, and modifier keys with testing indicators" loading="lazy">
+            <picture>
+                <source type="image/webp" srcset="<?php echo url('images/keyboard/special-keys-layout-640.webp'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.webp'); ?> 960w" sizes="(max-width: 980px) 92vw, 720px">
+                <source type="image/png" srcset="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.png'); ?> 960w" sizes="(max-width: 980px) 92vw, 720px">
+                <img src="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?>" width="640" height="426" alt="Complete keyboard layout showing function keys, arrow keys, numpad, and modifier keys with testing indicators" loading="lazy" decoding="async">
+            </picture>
             <div class="image-label">Special keys layout</div>
         </div>
         
@@ -277,7 +293,11 @@ if (!isset($baseUrl)) {
         
         <!-- Mouse Testing Image -->
         <div class="guide-image">
-            <img src="<?php echo url('images/mouse/mouse-test-guide.png'); ?>" alt="Mouse click testing interface showing button detection, scroll testing, and clicks per second measurement" loading="lazy">
+            <picture>
+                <source type="image/webp" srcset="<?php echo url('images/mouse/mouse-test-guide-800.webp'); ?> 800w, <?php echo url('images/mouse/mouse-test-guide-1200.webp'); ?> 1200w" sizes="(max-width: 980px) 92vw, 720px">
+                <source type="image/png" srcset="<?php echo url('images/mouse/mouse-test-guide-800.png'); ?> 800w, <?php echo url('images/mouse/mouse-test-guide-1200.png'); ?> 1200w" sizes="(max-width: 980px) 92vw, 720px">
+                <img src="<?php echo url('images/mouse/mouse-test-guide-800.png'); ?>" width="800" height="533" alt="Mouse click testing interface showing button detection, scroll testing, and clicks per second measurement" loading="lazy" decoding="async">
+            </picture>
             <div class="image-label">Mouse testing panel</div>
         </div>
         

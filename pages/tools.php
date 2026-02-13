@@ -33,11 +33,40 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
         </section>
         
         <!-- Tools Grid -->
+        <section class="category-links">
+            <div class="container">
+                <h2>Browse by category</h2>
+                <p class="category-subtitle">Explore tools by focus area.</p>
+                <div class="category-links-grid">
+                    <a href="<?php echo absoluteUrl('pages/category-keyboard.php'); ?>" class="category-link-card">
+                        <h3>Keyboard Tools</h3>
+                        <p>Keyboard tester, typing speed, and latency checks.</p>
+                    </a>
+                    <a href="<?php echo absoluteUrl('pages/category-mouse.php'); ?>" class="category-link-card">
+                        <h3>Mouse Tools</h3>
+                        <p>Click tests, speed, sensitivity, and trails.</p>
+                    </a>
+                    <a href="<?php echo absoluteUrl('pages/category-audio-video.php'); ?>" class="category-link-card">
+                        <h3>Audio & Video</h3>
+                        <p>Screen, webcam, mic, and speaker testing.</p>
+                    </a>
+                    <a href="<?php echo absoluteUrl('pages/category-utilities.php'); ?>" class="category-link-card">
+                        <h3>Utility Tools</h3>
+                        <p>QR, OCR, passwords, WhatsApp, and more.</p>
+                    </a>
+                    <a href="<?php echo absoluteUrl('pages/category-language-keyboards.php'); ?>" class="category-link-card">
+                        <h3>Language Keyboards</h3>
+                        <p>Arabic, Russian, Spanish, French, and others.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <section class="tools-section">
             <div class="container">
                 <div class="tools-grid-all">
                     <!-- Keyboard Tester -->
-                    <a href="<?php echo $baseUrl; ?>/tools/keyboard-tester/" class="tool-card-large">
+                    <a href="<?php echo absoluteUrl('tools/keyboard-tester/'); ?>" class="tool-card-large">
                         <div class="tool-card-header">
                             <span class="tool-emoji">⌨️</span>
                             <h2>Keyboard Tester</h2>
@@ -51,9 +80,25 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
                         </div>
                         <span class="explore-link">Explore Tool →</span>
                     </a>
+
+                    <!-- Arabic Keyboard Tester -->
+                    <a href="<?php echo absoluteUrl('languages/arabic/'); ?>" class="tool-card-large">
+                        <div class="tool-card-header">
+                            <span class="tool-emoji">⌨️</span>
+                            <h2>Arabic Keyboard Tester</h2>
+                        </div>
+                        <p>Test Arabic keyboard layout and key response with a fully Arabic interface and RTL-friendly layout.</p>
+                        <div class="tool-features">
+                            <span class="badge">Arabic layout</span>
+                            <span class="badge">RTL interface</span>
+                            <span class="badge">Ghosting detection</span>
+                            <span class="badge">Latency measurement</span>
+                        </div>
+                        <span class="explore-link">Explore Tool ?</span>
+                    </a>
                     
                     <!-- Mouse Tester -->
-                    <a href="<?php echo $baseUrl; ?>/tools/mouse-tester/" class="tool-card-large">
+                    <a href="<?php echo absoluteUrl('tools/mouse-tester/'); ?>" class="tool-card-large">
                         <div class="tool-card-header">
                             <span class="tool-emoji">🖱️</span>
                             <h2>Mouse Tester</h2>
@@ -69,7 +114,7 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
                     </a>
                     
                     <!-- Webcam Tester -->
-                    <a href="<?php echo $baseUrl; ?>/tools/webcam-tester/" class="tool-card-large">
+                    <a href="<?php echo absoluteUrl('tools/webcam-tester/'); ?>" class="tool-card-large">
                         <div class="tool-card-header">
                             <span class="tool-emoji">📹</span>
                             <h2>Webcam Tester</h2>
@@ -85,7 +130,7 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
                     </a>
                     
                     <!-- Screen Tester -->
-                    <a href="<?php echo $baseUrl; ?>/tools/screen-tester/" class="tool-card-large">
+                    <a href="<?php echo absoluteUrl('tools/screen-tester/'); ?>" class="tool-card-large">
                         <div class="tool-card-header">
                             <span class="tool-emoji">🖥️</span>
                             <h2>Screen Tester</h2>
@@ -126,7 +171,7 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
                     <div class="benefit-card">
                         <span class="benefit-icon">🌍</span>
                         <h3>Multi-Language Support</h3>
-                        <p>Available in Arabic, Russian, Spanish, French, Portuguese, Japanese, German, and Korean</p>
+                        <p>The Keyboard Tester is available in Arabic, Russian, Spanish, French, Portuguese, Japanese, German, and Korean.</p>
                     </div>
                     <div class="benefit-card">
                         <span class="benefit-icon">📱</span>
@@ -164,9 +209,73 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
             font-size: 1.2rem;
             color: var(--text-secondary);
         }
+
+        .tools-hero .language-note {
+            font-size: 0.98rem;
+            color: var(--text-secondary);
+            margin-top: 14px;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: rgba(15, 23, 42, 0.05);
+            border: 1px solid var(--border);
+        }
         
         .tools-section {
             padding: 60px 20px;
+        }
+
+        .category-links {
+            padding: 50px 20px 10px;
+        }
+
+        .category-links h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .category-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+
+        .category-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .category-link-card {
+            display: block;
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            text-decoration: none;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-link-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .category-link-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .category-link-card p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.5;
         }
         
         .tools-grid-all {
@@ -296,5 +405,4 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
     </style>
 </body>
 </html>
-
 
