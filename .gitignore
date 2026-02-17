@@ -1,0 +1,62 @@
+# Sensitive files - DO NOT COMMIT
+deploy*.py
+upload*.py
+*-upload.py
+ftp*.php
+test-ftp*.php
+
+# Environment and credentials
+.env
+.env.*
+credentials.json
+secrets.json
+*password*
+*credential*
+
+# Local development
+.venv/
+venv/
+__pycache__/
+*.pyc
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Temporary files
+*.tmp
+*.temp
+tmp_*.txt
+*.log
+cache-test.php
+clear-cache.php
+debug-*.php
+fix-*.php
+
+# WordPress (manage separately)
+blog/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Claude/AI
+.claude/
+
+# Documentation that may contain sensitive info
+VERIFICATION_CHECKLIST.txt
+QUICK_START.txt
+
+# Other
+nul
+*.txt
+!robots.txt
+!LICENSE.txt

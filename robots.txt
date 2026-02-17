@@ -1,0 +1,98 @@
+# Robots.txt - Search Engine Crawling Instructions
+# Site: keyboardtester.click
+# Last Updated: 2026-02-15
+
+# Default rules for all robots
+User-agent: *
+Allow: /
+
+# Allow important tool directories (these contain public pages!)
+Allow: /tools/
+Allow: /help/
+Allow: /languages/
+Allow: /pages/
+
+# Disallow internal/admin directories only
+Disallow: /includes/
+Disallow: /admin/
+Disallow: /assets/
+Disallow: /docs/
+Disallow: /api/
+
+# Disallow utility and config files
+Disallow: /generate-sitemap.php
+Disallow: /config.php
+Disallow: /meta-config.php
+Disallow: /seo-config.php
+Disallow: /modular-utils.php
+Disallow: /sitemap.php
+Disallow: /submit-indexnow.php
+
+# Disallow debug/test/temp files
+Disallow: /test-
+Disallow: /debug-
+Disallow: /fix-
+Disallow: /clear-
+Disallow: /ftp-
+Disallow: /tmp_
+Disallow: /temp/
+Disallow: /cache/
+
+# Disallow deployment scripts
+Disallow: /*.py$
+Disallow: /deploy-
+
+# Disallow backup files
+Disallow: /_old
+Disallow: /_backup
+
+# Specific rules for Googlebot
+User-agent: Googlebot
+Allow: /
+Allow: /tools/
+Allow: /help/
+Allow: /languages/
+Allow: /pages/
+Disallow: /includes/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /generate-sitemap.php
+Disallow: /*.py$
+
+# Specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Allow: /tools/
+Allow: /help/
+Allow: /languages/
+Allow: /pages/
+Disallow: /includes/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /generate-sitemap.php
+Disallow: /*.py$
+
+# Block aggressive/unwanted bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://keyboardtester.click/sitemap.xml

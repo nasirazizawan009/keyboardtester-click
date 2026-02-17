@@ -1,0 +1,812 @@
+/**
+ * KeyboardTester.Click - Keyboard Tool Styles
+ * Shared styles for all keyboard tester pages (AZERTY, QWERTY, etc.)
+ * Version: 2.0
+ */
+
+/* ============================================
+   KEYBOARD TOOL PAGE LAYOUT
+   ============================================ */
+.keyboard-tool-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+}
+
+.keyboard-tool-main {
+    flex: 1;
+    padding: var(--spacing-lg);
+}
+
+/* ============================================
+   TOOL HEADER WITH CONTROLS
+   ============================================ */
+.tool-controls-header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tool-controls-header h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+    color: var(--accent-color);
+    flex-grow: 1;
+    text-align: center;
+}
+
+.tool-nav {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+/* ============================================
+   NAVIGATION BUTTONS BAR
+   ============================================ */
+.nav-buttons-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--card-border);
+}
+
+.nav-buttons-bar a {
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: #000;
+    background-color: var(--accent-color);
+    transition: all var(--transition-fast);
+}
+
+.nav-buttons-bar a:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.nav-buttons-bar a.amazon-link {
+    background-color: #f1c40f;
+}
+
+/* ============================================
+   KEYBOARD TESTER SECTION
+   ============================================ */
+.keyboard-tester-section {
+    padding: var(--spacing-lg);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.keyboard-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.key-history-box {
+    width: 100%;
+    max-width: 600px;
+    padding: var(--spacing-md);
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    color: var(--input-text);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    resize: none;
+}
+
+/* ============================================
+   KEYBOARD CONTAINER
+   ============================================ */
+.keyboard-container {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-keyboard-section {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* ============================================
+   KEYBOARD PANEL
+   ============================================ */
+.keyboard-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--spacing-lg);
+    background-color: var(--keyboard-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+}
+
+.keyboard-row.function-row {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.key-group {
+    display: flex;
+    gap: 5px;
+}
+
+/* ============================================
+   KEYS
+   ============================================ */
+.key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    min-width: 36px;
+    height: 36px;
+    background-color: var(--key-bg);
+    border: 1px solid var(--key-border);
+    border-radius: 6px;
+    color: var(--key-text);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: all var(--transition-fast);
+    box-shadow: var(--key-shadow);
+    position: relative;
+}
+
+.key:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.key.special {
+    background-color: var(--keyboard-bg);
+    border-color: var(--key-border);
+}
+
+/* Key Sizes */
+.key.space { width: 280px; }
+.key.enter, .key.shift { width: 90px; }
+.key.tab, .key.caps { width: 65px; }
+.key.backspace { width: 80px; }
+.key.backslash { width: 55px; }
+.key.tall { height: 77px; }
+.key.zero-wide { width: 75px; }
+
+/* Key Press Colors */
+.key.active-1 { background-color: var(--key-active-1); color: #fff; }
+.key.active-2 { background-color: var(--key-active-2); color: #000; }
+.key.active-3 { background-color: var(--key-active-3); color: #fff; }
+.key.active-4 { background-color: var(--key-active-4); color: #fff; }
+.key.active-5 { background-color: var(--key-active-5); color: #fff; }
+
+/* Key spacing for function row */
+.key[data-key="Escape"] { margin-right: 15px; }
+.key[data-key="F4"] { margin-right: 15px; }
+.key[data-key="F8"] { margin-right: 15px; }
+
+/* Key press counter */
+.key-count {
+    position: absolute;
+    bottom: 2px;
+    right: 3px;
+    font-size: 9px;
+    color: inherit;
+    opacity: 0.8;
+}
+
+/* ============================================
+   NAVIGATION CLUSTER
+   ============================================ */
+.nav-cluster {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--spacing-lg);
+    background-color: var(--keyboard-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.nav-keys-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.arrow-keys {
+    display: grid;
+    grid-template-areas:
+        ". up ."
+        "left down right";
+    gap: 5px;
+    margin-top: 35px;
+}
+
+[data-key="ArrowUp"] { grid-area: up; }
+[data-key="ArrowLeft"] { grid-area: left; }
+[data-key="ArrowDown"] { grid-area: down; }
+[data-key="ArrowRight"] { grid-area: right; }
+
+/* ============================================
+   NUMPAD
+   ============================================ */
+.numpad {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--spacing-lg);
+    padding-top: 50px;
+    background-color: var(--keyboard-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    position: relative;
+}
+
+.numpad .keyboard-row {
+    gap: 5px;
+}
+
+.numpad-digits-container {
+    display: flex;
+    gap: 5px;
+}
+
+.numpad-digits {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.numpad-vertical-keys {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ============================================
+   INDICATOR LIGHTS
+   ============================================ */
+.indicator-lights {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.indicator-light {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--key-bg);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+    transition: background-color var(--transition-fast);
+}
+
+.indicator-light.active {
+    background-color: var(--key-active-1);
+    box-shadow: 0 0 8px var(--key-active-1);
+}
+
+/* ============================================
+   TOOLS PROMOTION SECTION
+   ============================================ */
+.tools-promo-section {
+    margin: var(--spacing-xl) auto;
+    max-width: 900px;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, #4b5eAA, #7d8bc1);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    color: #fff;
+    transition: transform var(--transition-fast);
+}
+
+.tools-promo-section:hover {
+    transform: translateY(-3px);
+}
+
+.tools-promo-section h2 {
+    color: #fff;
+    font-size: var(--font-size-2xl);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.tools-promo-section > p {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-lg);
+}
+
+.tool-link-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: var(--spacing-sm);
+    transition: all var(--transition-fast);
+}
+
+.tool-link-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.01);
+}
+
+.tool-link-item a {
+    text-decoration: none;
+}
+
+.tool-link-btn {
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.tool-link-btn:hover {
+    transform: scale(1.03);
+}
+
+.tool-link-item span:last-child {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: var(--font-size-sm);
+}
+
+/* Tool button colors */
+.tool-link-btn.mouse { background: #00ddeb; }
+.tool-link-btn.speed { background: #ff6f61; }
+.tool-link-btn.typing { background: #10b981; }
+.tool-link-btn.ghost { background: #ef4444; }
+.tool-link-btn.dpi { background: #8b5cf6; }
+.tool-link-btn.whatsapp { background: #25D366; }
+.tool-link-btn.latency { background: #f59e0b; }
+.tool-link-btn.mic { background: #f97316; }
+
+/* Language selector styles removed - unused in current version */
+
+/* ============================================
+   GUIDELINES SECTION
+   ============================================ */
+.guidelines-section {
+    margin: var(--spacing-xl) auto;
+    max-width: 900px;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, #1e293b, #334155);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    color: #fff;
+}
+
+.guidelines-section h1,
+.guidelines-section h2 {
+    color: var(--accent-color);
+}
+
+.guidelines-section h1 {
+    text-align: center;
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.guidelines-section h2 {
+    font-size: var(--font-size-xl);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.guidelines-section p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+}
+
+.guidelines-section ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0;
+}
+
+.guidelines-section li {
+    margin-bottom: var(--spacing-sm);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.guidelines-section a {
+    color: #60a5fa;
+    transition: color var(--transition-fast);
+}
+
+.guidelines-section a:hover {
+    color: var(--accent-color);
+}
+
+/* Color indicators and SEO tags removed - unused in current version */
+
+/* ============================================
+   SIMPLE FOOTER (For legacy pages)
+   ============================================ */
+.simple-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: var(--spacing-md) var(--spacing-lg);
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.simple-footer p {
+    margin: 0;
+    color: var(--footer-text);
+}
+
+.simple-footer a {
+    color: var(--accent-color);
+}
+
+/* ============================================
+   RESPONSIVE - KEYBOARD TOOL
+   ============================================ */
+
+/* Large screens - keyboard fits nicely */
+@media (max-width: 1400px) {
+    .keyboard-tester-section {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-keyboard-section {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .key.space {
+        width: 200px;
+    }
+
+    /* Hide numpad on smaller screens to save space */
+    .numpad {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .keyboard-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: var(--spacing-md);
+    }
+
+    .main-keyboard-section {
+        min-width: max-content;
+    }
+
+    /* Show scroll hint */
+    .keyboard-container::after {
+        content: "← Scroll to see full keyboard →";
+        display: block;
+        text-align: center;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        padding-top: var(--spacing-sm);
+        opacity: 0.7;
+    }
+}
+
+/* Mobile landscape / small tablet */
+@media (max-width: 768px) {
+    .keyboard-tool-main {
+        padding: var(--spacing-md);
+    }
+
+    .tool-controls-header {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+        gap: var(--spacing-sm);
+    }
+
+    .tool-controls-header h1 {
+        font-size: var(--font-size-lg);
+    }
+
+    .tool-nav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .keyboard-controls {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .key-history-box {
+        width: 100%;
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    /* Keyboard keys sizing */
+    .key {
+        min-width: 30px;
+        height: 32px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+
+    .key.space { width: 160px; }
+    .key.enter, .key.shift { width: 65px; }
+    .key.tab, .key.caps { width: 52px; }
+    .key.backspace { width: 62px; }
+    .key.tall { height: 69px; }
+    .key.zero-wide { width: 65px; }
+
+    /* Keyboard panel */
+    .keyboard-panel {
+        padding: var(--spacing-md);
+        gap: 4px;
+    }
+
+    .keyboard-row {
+        gap: 4px;
+    }
+
+    /* Key spacing for function row */
+    .key[data-key="Escape"] { margin-right: 10px; }
+    .key[data-key="F4"] { margin-right: 10px; }
+    .key[data-key="F8"] { margin-right: 10px; }
+
+    /* Navigation buttons */
+    .nav-buttons-bar {
+        padding: var(--spacing-sm);
+        gap: 0.5rem;
+    }
+
+    .nav-buttons-bar a {
+        padding: 10px 14px;
+        font-size: var(--font-size-sm);
+        flex: 1 1 auto;
+        text-align: center;
+        min-width: 80px;
+    }
+
+    /* Nav cluster */
+    .nav-cluster {
+        padding: var(--spacing-md);
+    }
+
+    .arrow-keys {
+        margin-top: 25px;
+    }
+
+    /* Promo sections */
+    .tools-promo-section,
+    .guidelines-section {
+        margin: var(--spacing-md) var(--spacing-sm);
+        padding: var(--spacing-lg);
+        border-radius: 14px;
+    }
+
+    .tools-promo-section h2,
+    .guidelines-section h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .tool-link-item {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+        gap: var(--spacing-sm);
+    }
+
+    .tool-link-btn {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    .tool-link-item span:last-child {
+        font-size: var(--font-size-sm);
+    }
+
+    /* Indicator lights */
+    .indicator-lights {
+        gap: 8px;
+        top: 8px;
+    }
+
+    .indicator-light {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+    .keyboard-tool-main {
+        padding: var(--spacing-sm);
+    }
+
+    .tool-controls-header {
+        padding: var(--spacing-sm);
+    }
+
+    .tool-controls-header h1 {
+        font-size: var(--font-size-base);
+    }
+
+    .keyboard-tester-section {
+        padding: var(--spacing-sm);
+    }
+
+    .keyboard-panel,
+    .nav-cluster {
+        padding: var(--spacing-sm);
+        gap: 3px;
+        border-radius: 10px;
+    }
+
+    .keyboard-row {
+        gap: 3px;
+    }
+
+    .key {
+        min-width: 26px;
+        height: 28px;
+        font-size: 10px;
+        padding: 3px;
+        border-radius: 4px;
+    }
+
+    .key-count {
+        font-size: 7px;
+        bottom: 1px;
+        right: 2px;
+    }
+
+    .key.space { width: 130px; }
+    .key.enter, .key.shift { width: 55px; }
+    .key.tab, .key.caps { width: 45px; }
+    .key.backspace { width: 52px; }
+    .key.tall { height: 60px; }
+    .key.zero-wide { width: 55px; }
+
+    /* Key spacing */
+    .key[data-key="Escape"] { margin-right: 6px; }
+    .key[data-key="F4"] { margin-right: 6px; }
+    .key[data-key="F8"] { margin-right: 6px; }
+
+    /* Navigation buttons full width */
+    .nav-buttons-bar {
+        flex-direction: column;
+        padding: var(--spacing-sm);
+    }
+
+    .nav-buttons-bar a {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Promo and guidelines */
+    .tools-promo-section,
+    .guidelines-section {
+        margin: var(--spacing-sm);
+        padding: var(--spacing-md);
+        border-radius: 12px;
+    }
+
+    .guidelines-section h2 {
+        font-size: var(--font-size-lg);
+        margin-top: var(--spacing-lg);
+    }
+
+    .guidelines-section p,
+    .guidelines-section li {
+        font-size: var(--font-size-sm);
+    }
+
+    /* Arrow keys */
+    .arrow-keys {
+        margin-top: 20px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .key {
+        min-width: 22px;
+        height: 24px;
+        font-size: 9px;
+    }
+
+    .key.space { width: 100px; }
+    .key.enter, .key.shift { width: 45px; }
+    .key.tab, .key.caps { width: 38px; }
+    .key.backspace { width: 42px; }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .key:hover {
+        transform: none;
+        box-shadow: var(--key-shadow);
+    }
+
+    .key:active {
+        transform: scale(0.95);
+    }
+
+    .tool-link-item:hover {
+        transform: none;
+    }
+
+    .tools-promo-section:hover {
+        transform: none;
+    }
+
+    /* Larger touch targets for nav */
+    .nav-buttons-bar a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .keyboard-tool-main {
+        padding: var(--spacing-sm);
+    }
+
+    .keyboard-tester-section {
+        padding: var(--spacing-sm);
+    }
+
+    .keyboard-controls {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .key-history-box {
+        padding: var(--spacing-sm);
+        max-height: 60px;
+    }
+}
