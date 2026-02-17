@@ -3,8 +3,8 @@ ob_start();
 ?>
 
 <section class="keyboard-tester" id="keyboard-tester">
-    <!-- Controls -->
-    <div class="controls-wrapper">
+    <!-- Controls (hidden on mobile - mobile users use Mobile Keyboard Tester below) -->
+    <div class="controls-wrapper desktop-only">
         <div class="textarea-wrapper">
             <div class="textarea-label">Key History</div>
             <textarea class="text-box" id="key-history" rows="4" placeholder="Press any key to start testing..."></textarea>
@@ -60,8 +60,8 @@ ob_start();
         </div>
     </div>
 
-    <!-- Feature Buttons -->
-    <div class="feature-controls" id="feature-controls" style="display: none;">
+    <!-- Feature Buttons (hidden on mobile) -->
+    <div class="feature-controls desktop-only" id="feature-controls" style="display: none;">
         <button class="feature-button" id="stats-button">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 20V10M12 20V4M6 20v-6"/>
@@ -1882,6 +1882,9 @@ ob_start();
 /* Keyboard scaling handles responsive sizing - full keyboard stays visible and scales */
 
 @media (max-width: 768px) {
+    /* Hide desktop-only elements on mobile */
+    .desktop-only { display: none !important; }
+
     .keyboard-tester { padding: 24px 16px; }
     .tool-heading h1 { font-size: 28px; }
     .keyboard-container { padding: 20px 16px; }
