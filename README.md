@@ -1,6 +1,7 @@
 # KeyboardTester.Click - Free Online Hardware Testing Tools
 
 [![Website](https://img.shields.io/badge/Website-keyboardtester.click-blue?style=for-the-badge)](https://keyboardtester.click)
+[![Version](https://img.shields.io/badge/Version-17.2.26-purple?style=for-the-badge)](https://github.com/nasirazizawan009/keyboardtester-click/releases)
 [![Tools](https://img.shields.io/badge/Tools-20+-green?style=for-the-badge)](https://keyboardtester.click/pages/tools.php)
 [![Languages](https://img.shields.io/badge/Languages-8-orange?style=for-the-badge)](https://keyboardtester.click)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
@@ -11,13 +12,35 @@ A comprehensive suite of **free, open-source testing tools** for keyboards, mice
 
 ---
 
+## What's New in v17.2.26
+
+### Cat Progress Animation
+- Gamification feature encouraging users to test all 103 keys
+- Cat chases mouse across progress bar with animated treats
+- Rewards at milestones: 10, 20, 30, 40, 50, 60, 70, 80, 90, 103 keys
+- Color-changing animation when cat eats treats
+- Trophy reward at 100% completion
+
+### Mobile Keyboard Support
+- Test mobile device keyboards directly in the browser
+- Dedicated touch-friendly input area
+- Visual QWERTY layout shows pressed keys
+- Separate progress tracking for mobile (42 keys)
+
+### PrintScreen Key Handling
+- PrintScreen marked as "N/A" (cannot be captured by browsers)
+- Total testable keys: 103
+
+---
+
 ## Features
 
 - **100% Free & Open Source** - Use, modify, and distribute
 - **No Registration** - No accounts, no downloads
 - **Privacy First** - All tests run locally in your browser
-- **Mobile Friendly** - Works on desktop, tablet, and mobile
+- **Mobile Friendly** - Works on desktop, tablet, and mobile with dedicated mobile keyboard tester
 - **Multi-Language** - Available in 8 languages
+- **Gamified Testing** - Cat progress animation encourages testing all keys
 
 ---
 

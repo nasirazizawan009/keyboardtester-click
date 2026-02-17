@@ -254,7 +254,91 @@ ob_start();
         </div>
     </div>
 
-    <div class="keyboard-container">
+    <!-- Mobile Keyboard Tester -->
+    <div class="mobile-keyboard-section" id="mobile-keyboard-section">
+        <div class="mobile-notice">
+            <span class="mobile-icon">📱</span>
+            <span>Mobile Keyboard Tester</span>
+        </div>
+        <div class="mobile-input-wrapper">
+            <label for="mobile-input">Tap here and start typing to test your keyboard:</label>
+            <input type="text" id="mobile-input" class="mobile-input" placeholder="Tap to open keyboard and type..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+            <button class="mobile-clear-btn" id="mobile-clear-btn">Clear</button>
+        </div>
+
+        <div class="mobile-keyboard-display">
+            <div class="mobile-keyboard-row">
+                <div class="mobile-key" data-char="q">Q</div>
+                <div class="mobile-key" data-char="w">W</div>
+                <div class="mobile-key" data-char="e">E</div>
+                <div class="mobile-key" data-char="r">R</div>
+                <div class="mobile-key" data-char="t">T</div>
+                <div class="mobile-key" data-char="y">Y</div>
+                <div class="mobile-key" data-char="u">U</div>
+                <div class="mobile-key" data-char="i">I</div>
+                <div class="mobile-key" data-char="o">O</div>
+                <div class="mobile-key" data-char="p">P</div>
+            </div>
+            <div class="mobile-keyboard-row">
+                <div class="mobile-key" data-char="a">A</div>
+                <div class="mobile-key" data-char="s">S</div>
+                <div class="mobile-key" data-char="d">D</div>
+                <div class="mobile-key" data-char="f">F</div>
+                <div class="mobile-key" data-char="g">G</div>
+                <div class="mobile-key" data-char="h">H</div>
+                <div class="mobile-key" data-char="j">J</div>
+                <div class="mobile-key" data-char="k">K</div>
+                <div class="mobile-key" data-char="l">L</div>
+            </div>
+            <div class="mobile-keyboard-row">
+                <div class="mobile-key" data-char="z">Z</div>
+                <div class="mobile-key" data-char="x">X</div>
+                <div class="mobile-key" data-char="c">C</div>
+                <div class="mobile-key" data-char="v">V</div>
+                <div class="mobile-key" data-char="b">B</div>
+                <div class="mobile-key" data-char="n">N</div>
+                <div class="mobile-key" data-char="m">M</div>
+            </div>
+            <div class="mobile-keyboard-row mobile-row-numbers">
+                <div class="mobile-key" data-char="1">1</div>
+                <div class="mobile-key" data-char="2">2</div>
+                <div class="mobile-key" data-char="3">3</div>
+                <div class="mobile-key" data-char="4">4</div>
+                <div class="mobile-key" data-char="5">5</div>
+                <div class="mobile-key" data-char="6">6</div>
+                <div class="mobile-key" data-char="7">7</div>
+                <div class="mobile-key" data-char="8">8</div>
+                <div class="mobile-key" data-char="9">9</div>
+                <div class="mobile-key" data-char="0">0</div>
+            </div>
+            <div class="mobile-keyboard-row mobile-row-special">
+                <div class="mobile-key mobile-key-wide" data-char=" ">Space</div>
+                <div class="mobile-key" data-char=".">.</div>
+                <div class="mobile-key" data-char=",">,</div>
+                <div class="mobile-key" data-char="@">@</div>
+                <div class="mobile-key" data-char="!">!</div>
+                <div class="mobile-key" data-char="?">?</div>
+            </div>
+        </div>
+
+        <div class="mobile-stats">
+            <div class="mobile-stat">
+                <span class="mobile-stat-label">Characters Typed</span>
+                <span class="mobile-stat-value" id="mobile-char-count">0</span>
+            </div>
+            <div class="mobile-stat">
+                <span class="mobile-stat-label">Unique Keys</span>
+                <span class="mobile-stat-value" id="mobile-unique-keys">0/42</span>
+            </div>
+        </div>
+
+        <div class="mobile-tip">
+            <strong>Tip:</strong> Use your device's keyboard (appears when you tap the input field above). Each key you press will light up on the visual keyboard!
+        </div>
+    </div>
+
+    <!-- Desktop Keyboard (hidden on mobile) -->
+    <div class="keyboard-container desktop-only">
         <div class="keyboard-scale-wrapper" id="keyboard-scale-wrapper">
         <div class="keyboard-layout">
             <!-- Main Keyboard -->
@@ -365,7 +449,7 @@ ob_start();
             <div class="keyboard-section nav-section">
                 <div class="nav-top">
                     <div class="key-row">
-                        <button class="key" data-key="PrintScreen"><span>PrtSc</span></button>
+                        <button class="key key-disabled" data-key="PrintScreen" title="PrintScreen cannot be tested (system key)"><span>PrtSc</span><span class="key-disabled-badge">N/A</span></button>
                         <button class="key" data-key="ScrollLock"><span>ScrLk</span></button>
                         <button class="key" data-key="Pause"><span>Pause</span></button>
                     </div>
@@ -442,44 +526,52 @@ ob_start();
         </div><!-- /keyboard-scale-wrapper -->
     </div>
 
-    <!-- Progress Bar Section -->
-    <div class="progress-section" id="progress-section" style="display: none;">
+    <!-- Cat Progress Section - Always Visible -->
+    <div class="cat-progress-section" id="cat-progress-section">
         <div class="progress-header">
             <div class="progress-title">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="4" width="20" height="16" rx="2"/>
-                    <path d="M6 8h.01M10 8h.01M14 8h.01"/>
-                </svg>
-                <span class="panel-title">Testing Progress</span>
+                <span class="cat-title-icon">🐱</span>
+                <span class="panel-title">Feed the Cat! Press Keys to Progress</span>
             </div>
             <div class="progress-stats">
-                <span id="progress-count">0</span> / <span>104</span> Keys
+                <span id="progress-count">0</span> / <span id="total-keys-display">103</span> Keys
                 <span class="progress-percentage" id="progress-percentage">0%</span>
             </div>
         </div>
-        <div class="progress-bar-container">
-            <div class="progress-bar-fill" id="progress-bar-fill"></div>
-            <div class="progress-bar-text" id="progress-bar-text">Start testing your keyboard...</div>
-        </div>
-        <div class="progress-milestones">
-            <div class="milestone" data-milestone="25">
-                <div class="milestone-marker"></div>
-                <span>25%</span>
+
+        <!-- Cat Chase Progress Animation -->
+        <div class="cat-progress-container" id="cat-progress-container">
+            <div class="cat-progress-track">
+                <!-- Treats at every ~10 keys (10, 20, 30, 40, 50, 60, 70, 80, 90, 103) -->
+                <div class="treat" data-treat="10" data-keys="10" title="10 keys - Fish">🐟</div>
+                <div class="treat" data-treat="20" data-keys="20" title="20 keys - Milk">🥛</div>
+                <div class="treat" data-treat="30" data-keys="30" title="30 keys - Water">💧</div>
+                <div class="treat" data-treat="40" data-keys="40" title="40 keys - Mouse Toy">🐭</div>
+                <div class="treat" data-treat="50" data-keys="50" title="50 keys - Yarn">🧶</div>
+                <div class="treat" data-treat="60" data-keys="60" title="60 keys - Tuna">🥫</div>
+                <div class="treat" data-treat="70" data-keys="70" title="70 keys - Chicken">🍗</div>
+                <div class="treat" data-treat="80" data-keys="80" title="80 keys - Candy">🍬</div>
+                <div class="treat" data-treat="90" data-keys="90" title="90 keys - Star">⭐</div>
+                <div class="treat" data-treat="100" data-keys="103" title="103 keys - Trophy!">🏆</div>
+
+                <!-- The Cat -->
+                <div class="progress-cat" id="progress-cat">
+                    <div class="cat-body">🐱</div>
+                    <div class="cat-message" id="cat-message">Press keys to feed me!</div>
+                </div>
+
+                <!-- The Mouse (Goal) -->
+                <div class="progress-mouse" id="progress-mouse">🐭</div>
             </div>
-            <div class="milestone" data-milestone="50">
-                <div class="milestone-marker"></div>
-                <span>50%</span>
-            </div>
-            <div class="milestone" data-milestone="75">
-                <div class="milestone-marker"></div>
-                <span>75%</span>
-            </div>
-            <div class="milestone" data-milestone="100">
-                <div class="milestone-marker"></div>
-                <span>100%</span>
+            <div class="cat-status" id="cat-status">
+                <span class="cat-mood" id="cat-mood">😺 Hungry</span>
+                <span class="treats-eaten" id="treats-eaten">Treats: 0/10</span>
             </div>
         </div>
     </div>
+
+    <!-- Hidden progress section for advanced options -->
+    <div class="progress-section" id="progress-section" style="display: none;"></div>
 </section>
 
 <style>
@@ -1395,6 +1487,33 @@ ob_start();
     backdrop-filter: blur(4px);
 }
 
+/* Disabled key styling (for system keys like PrintScreen) */
+.key.key-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 100%) !important;
+    border-color: #444 !important;
+    position: relative;
+}
+
+.key.key-disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.key-disabled-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #ff6b6b;
+    color: #fff;
+    font-size: 7px;
+    padding: 1px 4px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
 .indicator-panel {
     display: flex;
     gap: 20px;
@@ -1491,91 +1610,274 @@ ob_start();
     font-size: 14px;
 }
 
-.progress-bar-container {
-    position: relative;
-    height: 48px;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border-subtle);
-    border-radius: 24px;
-    overflow: hidden;
-    margin-bottom: 16px;
+/* Cat Progress Section - Always Visible */
+.cat-progress-section {
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border: 2px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.progress-bar-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #00d4ff 0%, #00ff88 50%, #ffd700 100%);
-    border-radius: 24px;
-    transition: width 0.4s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
-}
-
-.progress-bar-fill::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
-    animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-
-.progress-bar-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--key-text);
-    font-weight: 600;
-    font-size: 14px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    white-space: nowrap;
-}
-
-.progress-milestones {
+.cat-progress-section .progress-header {
     display: flex;
     justify-content: space-between;
-    padding: 0 12px;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.milestone {
+.cat-progress-section .progress-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cat-title-icon {
+    font-size: 28px;
+    animation: catBounce 1s ease-in-out infinite;
+}
+
+@keyframes catBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.cat-progress-section .panel-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--key-text);
+}
+
+.cat-progress-section .progress-stats {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cat-progress-section .progress-percentage {
+    background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
+    color: #000;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Cat Progress Animation Styles */
+.cat-progress-container {
+    background: linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    border: 2px solid var(--border-subtle);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-progress-track {
+    position: relative;
+    height: 80px;
+    background: linear-gradient(90deg,
+        #2d5a27 0%, #3d7a37 20%, #4d9a47 40%,
+        #5dba57 60%, #6dda67 80%, #7dfa77 100%);
+    border-radius: 40px;
+    border: 3px solid #1a3a14;
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);
+    overflow: visible;
+}
+
+/* Treats */
+.treat {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    z-index: 5;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    cursor: pointer;
+}
+
+.treat[data-treat="10"] { left: 8%; }
+.treat[data-treat="20"] { left: 18%; }
+.treat[data-treat="30"] { left: 28%; }
+.treat[data-treat="40"] { left: 38%; }
+.treat[data-treat="50"] { left: 48%; }
+.treat[data-treat="60"] { left: 58%; }
+.treat[data-treat="70"] { left: 68%; }
+.treat[data-treat="80"] { left: 78%; }
+.treat[data-treat="90"] { left: 88%; }
+.treat[data-treat="100"] { left: 95%; font-size: 32px; }
+
+.treat.eaten {
+    transform: translateY(-50%) scale(0) rotate(360deg);
+    opacity: 0;
+}
+
+.treat.eating {
+    animation: treatBounce 0.5s ease;
+}
+
+@keyframes treatBounce {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-80%) scale(1.3); }
+}
+
+/* The Cat */
+.progress-cat {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
 }
 
-.milestone-marker {
-    width: 3px;
-    height: 10px;
-    background: var(--key-border);
-    border-radius: 2px;
-    transition: all 0.3s ease;
+.cat-body {
+    font-size: 48px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+    transition: filter 0.3s ease, transform 0.3s ease;
+    animation: catIdle 2s ease-in-out infinite;
 }
 
-.milestone.reached .milestone-marker {
-    background: var(--accent-primary);
-    box-shadow: 0 0 8px var(--accent-primary);
-    height: 14px;
+.progress-cat.walking .cat-body {
+    animation: catWalk 0.3s ease-in-out infinite;
 }
 
-.milestone span {
-    color: var(--text-muted);
-    font-size: 11px;
+.progress-cat.eating .cat-body {
+    animation: catEat 0.5s ease-in-out;
+}
+
+@keyframes catIdle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes catWalk {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
+}
+
+@keyframes catEat {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.2) rotate(-10deg); }
+    60% { transform: scale(0.9) rotate(10deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+
+/* Cat color levels */
+.progress-cat[data-level="1"] .cat-body { filter: hue-rotate(0deg) drop-shadow(0 4px 8px rgba(0,0,0,0.4)); }
+.progress-cat[data-level="2"] .cat-body { filter: hue-rotate(30deg) drop-shadow(0 4px 8px rgba(255,150,0,0.4)); }
+.progress-cat[data-level="3"] .cat-body { filter: hue-rotate(60deg) drop-shadow(0 4px 8px rgba(255,200,0,0.4)); }
+.progress-cat[data-level="4"] .cat-body { filter: hue-rotate(90deg) drop-shadow(0 4px 8px rgba(150,255,0,0.4)); }
+.progress-cat[data-level="5"] .cat-body { filter: hue-rotate(120deg) drop-shadow(0 4px 8px rgba(0,255,100,0.4)); }
+.progress-cat[data-level="6"] .cat-body { filter: hue-rotate(150deg) drop-shadow(0 4px 8px rgba(0,255,200,0.4)); }
+.progress-cat[data-level="7"] .cat-body { filter: hue-rotate(180deg) drop-shadow(0 4px 8px rgba(0,200,255,0.4)); }
+.progress-cat[data-level="8"] .cat-body { filter: hue-rotate(210deg) drop-shadow(0 4px 8px rgba(100,100,255,0.4)); }
+.progress-cat[data-level="9"] .cat-body { filter: hue-rotate(270deg) drop-shadow(0 4px 8px rgba(200,0,255,0.4)); }
+.progress-cat[data-level="10"] .cat-body {
+    filter: hue-rotate(300deg) drop-shadow(0 0 20px rgba(255,215,0,0.8));
+    animation: catVictory 0.5s ease-in-out infinite;
+}
+
+@keyframes catVictory {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.1); }
+}
+
+.cat-message {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 12px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
-.milestone.reached span { color: var(--accent-primary); }
+.progress-cat.show-message .cat-message {
+    opacity: 1;
+}
+
+/* The Mouse (Goal) */
+.progress-mouse {
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 36px;
+    z-index: 8;
+    animation: mouseWiggle 1s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+@keyframes mouseWiggle {
+    0%, 100% { transform: translateY(-50%) rotate(-10deg); }
+    50% { transform: translateY(-50%) rotate(10deg); }
+}
+
+.progress-mouse.caught {
+    animation: mouseCaught 0.5s ease forwards;
+}
+
+@keyframes mouseCaught {
+    0% { transform: translateY(-50%) scale(1); opacity: 1; }
+    50% { transform: translateY(-100%) scale(1.5) rotate(180deg); opacity: 0.5; }
+    100% { transform: translateY(-150%) scale(0); opacity: 0; }
+}
+
+/* Cat Status Bar */
+.cat-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+}
+
+.cat-mood {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.treats-eaten {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Sparkle effect when eating */
+@keyframes sparkle {
+    0% { transform: scale(0) rotate(0deg); opacity: 1; }
+    100% { transform: scale(2) rotate(180deg); opacity: 0; }
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 20px;
+    pointer-events: none;
+    animation: sparkle 0.6s ease-out forwards;
+}
 
 /* Keyboard scaling handles responsive sizing - full keyboard stays visible and scales */
 
@@ -1595,7 +1897,6 @@ ob_start();
     .latency-grid { grid-template-columns: repeat(2, 1fr); }
     .button-row { grid-template-columns: 1fr; }
     .progress-header { flex-direction: column; align-items: flex-start; }
-    .progress-bar-container { height: 40px; }
 }
 
 @media (max-width: 576px) {
@@ -1603,6 +1904,231 @@ ob_start();
     .button-group { grid-template-columns: 1fr; gap: 10px; }
     .reset-button, .theme-selector, .layout-selector, .os-selector { width: 100%; }
     .big-latency { font-size: 40px; }
+}
+
+/* Mobile Keyboard Tester Styles */
+.mobile-keyboard-section {
+    display: none;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 2px solid var(--border-subtle);
+}
+
+.mobile-notice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.mobile-icon {
+    font-size: 28px;
+}
+
+.mobile-input-wrapper {
+    margin-bottom: 24px;
+}
+
+.mobile-input-wrapper label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.mobile-input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 18px;
+    border: 2px solid var(--border-subtle);
+    border-radius: 12px;
+    background: var(--bg-tertiary);
+    color: var(--key-text);
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 12px;
+}
+
+.mobile-input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.mobile-clear-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--accent-danger) 0%, #cc4444 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-clear-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.mobile-keyboard-display {
+    background: var(--bg-tertiary);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.mobile-keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.mobile-keyboard-row:last-child {
+    margin-bottom: 0;
+}
+
+.mobile-key {
+    position: relative;
+    width: 32px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--key-bg);
+    border: 1px solid var(--key-border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--key-text);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 0 var(--key-shadow);
+}
+
+.mobile-key.mobile-key-wide {
+    width: 80px;
+    font-size: 12px;
+}
+
+.mobile-key.pressed {
+    background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
+    color: #000;
+    border-color: #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.mobile-key.pressed-multi {
+    background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+    color: #000;
+    border-color: #00ff88;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+.mobile-key .key-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--accent-primary);
+    color: #000;
+    font-size: 9px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.mobile-stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.mobile-stat {
+    flex: 1;
+    background: var(--bg-tertiary);
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.mobile-stat-label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.mobile-stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+.mobile-tip {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.mobile-tip strong {
+    color: var(--accent-primary);
+}
+
+/* Show mobile keyboard on mobile devices */
+@media (max-width: 768px) {
+    .mobile-keyboard-section {
+        display: block;
+    }
+    .desktop-only {
+        display: none !important;
+    }
+    .cat-progress-section .panel-title {
+        font-size: 14px;
+    }
+}
+
+/* Hide mobile on desktop */
+@media (min-width: 769px) {
+    .mobile-keyboard-section {
+        display: none !important;
+    }
+}
+
+/* Cat Animation Mobile Styles */
+@media (max-width: 768px) {
+    .cat-progress-container { padding: 12px; }
+    .cat-progress-track { height: 60px; }
+    .cat-body { font-size: 36px; }
+    .treat { font-size: 20px; }
+    .treat[data-treat="100"] { font-size: 24px; }
+    .progress-mouse { font-size: 28px; }
+    .cat-message { font-size: 10px; padding: 4px 8px; }
+    .cat-status { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+    .cat-progress-track { height: 50px; }
+    .cat-body { font-size: 28px; }
+    .treat { font-size: 16px; }
+    .treat[data-treat="100"] { font-size: 20px; }
+    .progress-mouse { font-size: 24px; }
 }
 </style>
 
@@ -1662,9 +2188,8 @@ ob_start();
     const advancedToggle = document.getElementById('advanced-toggle');
     const featureControls = document.getElementById('feature-controls');
     const progressSection = document.getElementById('progress-section');
-    
-    const progressBarFill = document.getElementById('progress-bar-fill');
-    const progressBarText = document.getElementById('progress-bar-text');
+
+    // Cat progress elements
     const progressCount = document.getElementById('progress-count');
     const progressPercentage = document.getElementById('progress-percentage');
     
@@ -1682,7 +2207,7 @@ ob_start();
     let totalGhostEvents = 0;
     let latencyTestActive = false;
     let latencyTests = [];
-    const TOTAL_KEYS = 104;
+    const TOTAL_KEYS = 103; // Excludes PrintScreen (system key, cannot be captured)
 
     const keyboardLayouts = {
         qwerty: { KeyQ: 'Q', KeyW: 'W', KeyE: 'E', KeyR: 'R', KeyT: 'T', KeyY: 'Y', KeyU: 'U', KeyI: 'I', KeyO: 'O', KeyP: 'P', KeyA: 'A', KeyS: 'S', KeyD: 'D', KeyF: 'F', KeyG: 'G', KeyH: 'H', KeyJ: 'J', KeyK: 'K', KeyL: 'L', KeyZ: 'Z', KeyX: 'X', KeyC: 'C', KeyV: 'V', KeyB: 'B', KeyN: 'N', KeyM: 'M', Semicolon: ':<br>;', Quote: '"<br>\'', Comma: '&lt;<br>,', Period: '&gt;<br>.', Slash: '?<br>/', BracketLeft: '{<br>[', BracketRight: '}<br>]' },
@@ -1712,22 +2237,172 @@ ob_start();
         oscillator.stop(audioContext.currentTime + 0.05);
     }
 
+    // Cat Progress Animation State
+    let lastCatLevel = 0;
+    let treatsEatenCount = 0;
+    const catMessages = [
+        "Press keys to feed me!",
+        "Yummy fish! 🐟",
+        "Milk is purrfect! 🥛",
+        "So refreshing! 💧",
+        "Caught the mouse toy! 🐭",
+        "Love this yarn! 🧶",
+        "Tuna time! 🥫",
+        "Chicken! My favorite! 🍗",
+        "Mmm treats! 🍬",
+        "I'm a star! ⭐",
+        "VICTORY! I caught the mouse! 🏆"
+    ];
+    const catMoods = [
+        "😺 Hungry",
+        "😸 Happy",
+        "😻 Loving it!",
+        "😽 Content",
+        "🙀 Excited!",
+        "😹 Playful",
+        "😺 Energized",
+        "😸 Thriving",
+        "😻 Amazing!",
+        "🐱 SUPER CAT!",
+        "👑 CHAMPION!"
+    ];
+
     function updateProgressBar() {
         const keysPressed = Object.keys(keyPressCount).length;
         const percentage = Math.round((keysPressed / TOTAL_KEYS) * 100);
         progressCount.textContent = keysPressed;
         progressPercentage.textContent = `${percentage}%`;
-        progressBarFill.style.width = `${percentage}%`;
-        if (percentage === 0) progressBarText.textContent = 'Start testing your keyboard...';
-        else if (percentage < 25) progressBarText.textContent = 'Getting started! Keep going...';
-        else if (percentage < 50) progressBarText.textContent = 'Good progress! 25% complete';
-        else if (percentage < 75) progressBarText.textContent = 'Halfway there! Keep testing';
-        else if (percentage < 100) progressBarText.textContent = 'Almost done! 75% complete';
-        else progressBarText.textContent = '🎉 All keys tested! Perfect!';
-        document.querySelectorAll('.milestone').forEach(milestone => {
-            const milestoneValue = parseInt(milestone.getAttribute('data-milestone'));
-            milestone.classList.toggle('reached', percentage >= milestoneValue);
+
+        // Update Cat Animation with key count
+        updateCatProgress(keysPressed, percentage);
+    }
+
+    // Treat milestones based on key counts
+    const treatMilestones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 103];
+
+    function updateCatProgress(keysPressed, percentage) {
+        const cat = document.getElementById('progress-cat');
+        const catMessage = document.getElementById('cat-message');
+        const catMood = document.getElementById('cat-mood');
+        const treatsEaten = document.getElementById('treats-eaten');
+        const mouse = document.getElementById('progress-mouse');
+
+        if (!cat) return;
+
+        // Calculate cat position based on percentage (0% to 92% of track width)
+        const catPosition = Math.min(percentage * 0.92, 92);
+        cat.style.left = catPosition + '%';
+
+        // Add walking animation when moving
+        cat.classList.add('walking');
+        setTimeout(() => cat.classList.remove('walking'), 600);
+
+        // Calculate current level based on key count milestones
+        let currentLevel = 0;
+        for (let i = 0; i < treatMilestones.length; i++) {
+            if (keysPressed >= treatMilestones[i]) {
+                currentLevel = i + 1;
+            }
+        }
+
+        // Check if cat reached a new treat
+        if (currentLevel > lastCatLevel && currentLevel <= 10) {
+            const milestone = treatMilestones[currentLevel - 1];
+            const treatPercent = currentLevel === 10 ? 100 : currentLevel * 10;
+            const treatElement = document.querySelector(`.treat[data-treat="${treatPercent}"]`);
+
+            if (treatElement && !treatElement.classList.contains('eaten')) {
+                // Trigger eating animation
+                treatElement.classList.add('eating');
+                cat.classList.add('eating');
+                cat.classList.add('show-message');
+
+                // Create sparkle effect
+                createSparkles(treatElement);
+
+                // Update cat color/level
+                cat.setAttribute('data-level', currentLevel);
+
+                // Update message
+                catMessage.textContent = catMessages[currentLevel] || catMessages[0];
+
+                // Update mood
+                catMood.textContent = catMoods[currentLevel] || catMoods[0];
+
+                // Mark treat as eaten after animation
+                setTimeout(() => {
+                    treatElement.classList.remove('eating');
+                    treatElement.classList.add('eaten');
+                    cat.classList.remove('eating');
+                    treatsEatenCount = currentLevel;
+                    treatsEaten.textContent = `Treats: ${treatsEatenCount}/10`;
+                }, 500);
+
+                // Hide message after delay
+                setTimeout(() => cat.classList.remove('show-message'), 2000);
+
+                lastCatLevel = currentLevel;
+            }
+        }
+
+        // Check if cat caught the mouse (all 103 keys pressed)
+        if (keysPressed >= TOTAL_KEYS && !mouse.classList.contains('caught')) {
+            mouse.classList.add('caught');
+            cat.setAttribute('data-level', '10');
+            catMood.textContent = "👑 CHAMPION!";
+            catMessage.textContent = "I caught the mouse! 🎉";
+            cat.classList.add('show-message');
+            createSparkles(mouse);
+
+            // Create celebration sparkles
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => createSparkles(cat), i * 200);
+            }
+        }
+    }
+
+    function createSparkles(element) {
+        const sparkles = ['✨', '⭐', '💫', '🌟', '✧'];
+        const rect = element.getBoundingClientRect();
+        const container = document.querySelector('.cat-progress-track');
+        const containerRect = container.getBoundingClientRect();
+
+        for (let i = 0; i < 5; i++) {
+            const sparkle = document.createElement('span');
+            sparkle.className = 'sparkle';
+            sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
+            sparkle.style.left = (rect.left - containerRect.left + Math.random() * 40 - 20) + 'px';
+            sparkle.style.top = (rect.top - containerRect.top + Math.random() * 40 - 20) + 'px';
+            container.appendChild(sparkle);
+
+            setTimeout(() => sparkle.remove(), 600);
+        }
+    }
+
+    function resetCatProgress() {
+        const cat = document.getElementById('progress-cat');
+        const catMessage = document.getElementById('cat-message');
+        const catMood = document.getElementById('cat-mood');
+        const treatsEaten = document.getElementById('treats-eaten');
+        const mouse = document.getElementById('progress-mouse');
+
+        if (cat) {
+            cat.style.left = '0%';
+            cat.setAttribute('data-level', '0');
+            cat.classList.remove('walking', 'eating', 'show-message');
+        }
+        if (catMessage) catMessage.textContent = 'Press keys to feed me!';
+        if (catMood) catMood.textContent = '😺 Hungry';
+        if (treatsEaten) treatsEaten.textContent = 'Treats: 0/10';
+        if (mouse) mouse.classList.remove('caught');
+
+        // Reset all treats
+        document.querySelectorAll('.treat').forEach(treat => {
+            treat.classList.remove('eaten', 'eating');
         });
+
+        lastCatLevel = 0;
+        treatsEatenCount = 0;
     }
 
     function updateStatistics() {
@@ -1772,6 +2447,8 @@ ob_start();
     function updateTestMode() {
         if (!testMode) { document.querySelectorAll('.key').forEach(key => key.classList.remove('untested')); return; }
         document.querySelectorAll('.key').forEach(key => {
+            // Skip disabled keys (like PrintScreen)
+            if (key.classList.contains('key-disabled')) return;
             const keyCode = key.getAttribute('data-key');
             key.classList.toggle('untested', !keyPressCount[keyCode]);
         });
@@ -1869,6 +2546,10 @@ ob_start();
         const keyElement = document.querySelector(`[data-key="${event.code}"]`);
         if (ghostTestActive) logGhostClick(event.code);
         if (latencyTestActive) measureLatency(event);
+        // Skip disabled keys (like PrintScreen which cannot be captured)
+        if (keyElement && keyElement.classList.contains('key-disabled')) {
+            return;
+        }
         if (keyElement) {
             event.preventDefault();
             playClickSound();
@@ -1902,6 +2583,7 @@ ob_start();
         totalKeyPresses = 0;
         sessionStartTime = Date.now();
         updateProgressBar();
+        resetCatProgress();
         updateStatistics();
         if (testMode) updateTestMode();
         if (heatmapMode) applyHeatmap();
@@ -2086,6 +2768,200 @@ ob_start();
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(scaleKeyboard, 100);
     });
+
+    // ============================================
+    // Mobile Keyboard Tester
+    // ============================================
+    const mobileInput = document.getElementById('mobile-input');
+    const mobileClearBtn = document.getElementById('mobile-clear-btn');
+    const mobileCharCount = document.getElementById('mobile-char-count');
+    const mobileUniqueKeys = document.getElementById('mobile-unique-keys');
+    const MOBILE_TOTAL_KEYS = 42; // Total keys on mobile keyboard display
+
+    const mobileKeyPresses = {};
+    let mobileTotalChars = 0;
+
+    if (mobileInput) {
+        // Handle input on mobile
+        mobileInput.addEventListener('input', function(e) {
+            const inputValue = this.value;
+            const lastChar = inputValue.slice(-1).toLowerCase();
+
+            if (lastChar) {
+                mobileTotalChars++;
+                mobileCharCount.textContent = mobileTotalChars;
+
+                // Track key press
+                mobileKeyPresses[lastChar] = (mobileKeyPresses[lastChar] || 0) + 1;
+
+                // Update unique keys count
+                const uniqueCount = Object.keys(mobileKeyPresses).length;
+                mobileUniqueKeys.textContent = `${uniqueCount}/${MOBILE_TOTAL_KEYS}`;
+
+                // Highlight the key on visual keyboard
+                const keyElement = document.querySelector(`.mobile-key[data-char="${lastChar}"]`);
+                if (keyElement) {
+                    keyElement.classList.add('pressed');
+                    if (mobileKeyPresses[lastChar] > 1) {
+                        keyElement.classList.add('pressed-multi');
+                    }
+
+                    // Add press animation
+                    keyElement.style.transform = 'scale(1.1) translateY(-3px)';
+                    setTimeout(() => {
+                        keyElement.style.transform = '';
+                    }, 150);
+                }
+
+                // Update progress for cat animation (use percentage based on mobile keys)
+                const mobilePercentage = Math.round((uniqueCount / MOBILE_TOTAL_KEYS) * 100);
+                updateMobileCatProgress(uniqueCount, mobilePercentage);
+            }
+        });
+
+        // Handle special keys via keydown (space, etc.)
+        mobileInput.addEventListener('keydown', function(e) {
+            if (e.key === ' ') {
+                const spaceKey = document.querySelector('.mobile-key[data-char=" "]');
+                if (spaceKey) {
+                    mobileKeyPresses[' '] = (mobileKeyPresses[' '] || 0) + 1;
+                    spaceKey.classList.add('pressed');
+                    if (mobileKeyPresses[' '] > 1) {
+                        spaceKey.classList.add('pressed-multi');
+                    }
+
+                    // Update counts
+                    const uniqueCount = Object.keys(mobileKeyPresses).length;
+                    mobileUniqueKeys.textContent = `${uniqueCount}/${MOBILE_TOTAL_KEYS}`;
+
+                    const mobilePercentage = Math.round((uniqueCount / MOBILE_TOTAL_KEYS) * 100);
+                    updateMobileCatProgress(uniqueCount, mobilePercentage);
+                }
+            }
+        });
+
+        // Clear button
+        mobileClearBtn.addEventListener('click', function() {
+            mobileInput.value = '';
+            mobileTotalChars = 0;
+            mobileCharCount.textContent = '0';
+            mobileUniqueKeys.textContent = '0/42';
+
+            // Reset all keys
+            Object.keys(mobileKeyPresses).forEach(key => delete mobileKeyPresses[key]);
+            document.querySelectorAll('.mobile-key').forEach(key => {
+                key.classList.remove('pressed', 'pressed-multi');
+            });
+
+            // Reset cat progress
+            resetCatProgress();
+            lastMobileCatLevel = 0;
+        });
+    }
+
+    // Mobile cat progress tracking
+    let lastMobileCatLevel = 0;
+    const mobileTreatMilestones = [4, 8, 13, 17, 21, 25, 29, 34, 38, 42]; // Every ~4 keys for 42 total
+
+    function updateMobileCatProgress(uniqueKeys, percentage) {
+        const cat = document.getElementById('progress-cat');
+        const catMessage = document.getElementById('cat-message');
+        const catMood = document.getElementById('cat-mood');
+        const treatsEaten = document.getElementById('treats-eaten');
+        const mouse = document.getElementById('progress-mouse');
+        const progressCount = document.getElementById('progress-count');
+        const progressPercentage = document.getElementById('progress-percentage');
+
+        if (!cat) return;
+
+        // Update display counts for mobile
+        if (progressCount) progressCount.textContent = uniqueKeys;
+        if (progressPercentage) progressPercentage.textContent = `${percentage}%`;
+
+        // Calculate cat position
+        const catPosition = Math.min(percentage * 0.92, 92);
+        cat.style.left = catPosition + '%';
+
+        // Walking animation
+        cat.classList.add('walking');
+        setTimeout(() => cat.classList.remove('walking'), 600);
+
+        // Calculate level based on mobile milestones
+        let currentLevel = 0;
+        for (let i = 0; i < mobileTreatMilestones.length; i++) {
+            if (uniqueKeys >= mobileTreatMilestones[i]) {
+                currentLevel = i + 1;
+            }
+        }
+
+        // Trigger treat eating
+        if (currentLevel > lastMobileCatLevel && currentLevel <= 10) {
+            const treatPercent = currentLevel === 10 ? 100 : currentLevel * 10;
+            const treatElement = document.querySelector(`.treat[data-treat="${treatPercent}"]`);
+
+            if (treatElement && !treatElement.classList.contains('eaten')) {
+                treatElement.classList.add('eating');
+                cat.classList.add('eating');
+                cat.classList.add('show-message');
+
+                createSparkles(treatElement);
+
+                cat.setAttribute('data-level', currentLevel);
+                catMessage.textContent = catMessages[currentLevel] || catMessages[0];
+                catMood.textContent = catMoods[currentLevel] || catMoods[0];
+
+                setTimeout(() => {
+                    treatElement.classList.remove('eating');
+                    treatElement.classList.add('eaten');
+                    cat.classList.remove('eating');
+                    treatsEaten.textContent = `Treats: ${currentLevel}/10`;
+                }, 500);
+
+                setTimeout(() => cat.classList.remove('show-message'), 2000);
+
+                lastMobileCatLevel = currentLevel;
+            }
+        }
+
+        // Victory at 100%
+        if (uniqueKeys >= MOBILE_TOTAL_KEYS && !mouse.classList.contains('caught')) {
+            mouse.classList.add('caught');
+            cat.setAttribute('data-level', '10');
+            catMood.textContent = "👑 CHAMPION!";
+            catMessage.textContent = "I caught the mouse! 🎉";
+            cat.classList.add('show-message');
+            createSparkles(mouse);
+
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => createSparkles(cat), i * 200);
+            }
+        }
+    }
+
+    // Update cat progress section header for mobile
+    function updateMobileDisplay() {
+        const isMobile = window.innerWidth <= 768;
+        const totalKeysSpan = document.getElementById('total-keys-display');
+        const panelTitle = document.querySelector('.cat-progress-section .panel-title');
+
+        if (totalKeysSpan) {
+            totalKeysSpan.textContent = isMobile ? '42' : '103';
+        }
+        if (panelTitle) {
+            panelTitle.textContent = isMobile
+                ? 'Tap & Type to Feed the Cat!'
+                : 'Feed the Cat! Press Keys to Progress';
+        }
+
+        // Also reset cat progress when switching modes
+        if (isMobile) {
+            lastMobileCatLevel = 0;
+        }
+    }
+
+    // Run on load and resize
+    updateMobileDisplay();
+    window.addEventListener('resize', updateMobileDisplay);
 })();
 </script>
 
