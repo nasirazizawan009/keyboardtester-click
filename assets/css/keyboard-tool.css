@@ -181,9 +181,11 @@
     font-weight: 600;
     cursor: pointer;
     user-select: none;
-    transition: all var(--transition-fast);
+    /* Only animate composited properties (transform/opacity) to avoid forced reflow */
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     box-shadow: var(--key-shadow);
     position: relative;
+    will-change: transform;
 }
 
 .key:hover {

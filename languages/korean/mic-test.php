@@ -89,6 +89,23 @@ $pageKeywords = '마이크 테스트, 마이크 테스터, 오디오 테스트, 
       </div>
     </section>
 
+    <!-- Tool Section -->
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">주요 테스터</p>
+          <h2 id="tool-stage-title">마이크 테스터</h2>
+          <p class="section-lede">아래 도구를 사용하여 마이크를 테스트하세요.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">빠른 팁 보기</a>
+        </div>
+      </div>
+      <section id="mic-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/mic-test-tool.php'; ?>
+      </section>
+    </section>
+
     <!-- Trust Strip -->
     <section class="trust-strip" aria-label="주요 기능">
       <div class="container trust-grid">
@@ -168,23 +185,6 @@ $pageKeywords = '마이크 테스트, 마이크 테스터, 오디오 테스트, 
           </article>
         </div>
       </div>
-    </section>
-
-    <!-- Tool Section -->
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">주요 테스터</p>
-          <h2 id="tool-stage-title">마이크 테스터</h2>
-          <p class="section-lede">아래 도구를 사용하여 마이크를 테스트하세요.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">빠른 팁 보기</a>
-        </div>
-      </div>
-      <section id="mic-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/mic-test-tool.php'; ?>
-      </section>
     </section>
 
     <!-- Tools List -->

@@ -256,6 +256,7 @@ ob_start();
     </div>
 
     <div class="keyboard-container">
+        <div class="keyboard-scale-wrapper" id="keyboard-scale-wrapper">
         <div class="keyboard-layout">
             <!-- Main Keyboard -->
             <div class="keyboard-section main-keyboard">
@@ -434,6 +435,7 @@ ob_start();
                 </div>
             </div>
         </div>
+        </div><!-- /keyboard-scale-wrapper -->
     </div>
 
     <!-- Progress Bar Section -->
@@ -1199,6 +1201,14 @@ ob_start();
     box-shadow: 0 4px 24px var(--key-shadow), inset 0 1px 0 var(--border-subtle);
     border: 1px solid var(--border-subtle);
     position: relative;
+    overflow: hidden;
+}
+
+/* Responsive scaling wrapper */
+.keyboard-scale-wrapper {
+    transform-origin: center top;
+    display: flex;
+    justify-content: center;
 }
 
 .keyboard-layout {
@@ -1206,7 +1216,6 @@ ob_start();
     gap: 24px;
     justify-content: center;
     align-items: flex-end;
-    flex-wrap: wrap;
 }
 
 .keyboard-section {
@@ -1566,7 +1575,7 @@ ob_start();
 .milestone.reached span { color: var(--accent-primary); }
 
 @media (max-width: 1200px) {
-    .keyboard-layout { flex-direction: column; align-items: center; }
+    /* Scaling handled by JavaScript - do NOT change flex-direction */
     .nav-section { height: auto; }
     .numpad-section { align-self: auto; }
     .key { height: 44px; width: 44px; }
@@ -2146,6 +2155,45 @@ ob_start();
         latencyRating.className = 'rating-box';
         latencyRating.innerHTML = 'سيتم تقييم زمن استجابة لوحة المفاتيح بعد 10 اختبارات';
     }
+
+    // Responsive keyboard scaling
+    function scaleKeyboard() {
+        const wrapper = document.getElementById('keyboard-scale-wrapper');
+        const container = document.querySelector('.keyboard-container');
+        const layout = document.querySelector('.keyboard-layout');
+
+        if (!wrapper || !container || !layout) return;
+
+        wrapper.style.transform = 'none';
+        container.style.height = 'auto';
+
+        void layout.offsetWidth;
+
+        const layoutWidth = layout.scrollWidth;
+        const layoutHeight = layout.scrollHeight;
+
+        const containerPadding = 64; // 32px * 2
+        const availableWidth = container.clientWidth - containerPadding;
+
+        let scale = 1;
+        if (layoutWidth > availableWidth && layoutWidth > 0) {
+            scale = availableWidth / layoutWidth;
+            scale = Math.max(scale, 0.3);
+        }
+
+        wrapper.style.transform = scale < 1 ? `scale(${scale})` : 'none';
+
+        const scaledHeight = layoutHeight * scale;
+        container.style.height = Math.ceil(scaledHeight + containerPadding) + 'px';
+    }
+
+    setTimeout(scaleKeyboard, 100);
+
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(scaleKeyboard, 100);
+    });
 })();
 </script>
 

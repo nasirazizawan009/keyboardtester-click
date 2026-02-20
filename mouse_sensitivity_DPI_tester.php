@@ -18,12 +18,37 @@ $pageOgImage = 'images/mouse-dpi/hero.svg';
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+
+  <!-- Structured Data (JSON-LD) -->
+  <?php
+  include_once __DIR__ . '/includes/schema.php';
+  echo generateToolPageSchema('dpi_tester', [
+      ['name' => 'Home', 'url' => '/'],
+      ['name' => 'Mouse DPI Tester', 'url' => '']
+  ]);
+  ?>
 </head>
 <body class="landing-page">
   <?php include 'header.php'; ?>
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-mouse-sensitivity-dpi-tester.php'; ?>
+
+    <section class="tool-stage" id="dpi-tool" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Primary tool</p>
+          <h2 id="tool-stage-title">Mouse DPI Tester</h2>
+          <p class="section-lede">Use the live tool below to complete your test.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
+        </div>
+      </div>
+      <section id="mouse-sensitivity-dpi-tester" class="tool-shell">
+        <?php include 'tools/mouse_sensitivity_dpi_tester_tool.php'; ?>
+      </section>
+    </section>
 
     <section class="trust-strip" aria-label="Key benefits">
       <div class="container trust-grid">
@@ -86,7 +111,7 @@ $pageOgImage = 'images/mouse-dpi/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-dpi/step-1.svg'); ?>" alt="Start the test" loading="lazy">
+              <img src="<?php echo url('images/mouse-dpi/step-1.svg'); ?>" alt="Mouse DPI sensitivity test step 1 - start calibration" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -94,7 +119,7 @@ $pageOgImage = 'images/mouse-dpi/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-dpi/step-2.svg'); ?>" alt="Move the mouse" loading="lazy">
+              <img src="<?php echo url('images/mouse-dpi/step-2.svg'); ?>" alt="Mouse DPI test step 2 - move cursor to calibrate sensitivity" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Move the mouse</h3>
@@ -102,7 +127,7 @@ $pageOgImage = 'images/mouse-dpi/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-dpi/step-3.svg'); ?>" alt="Review results" loading="lazy">
+              <img src="<?php echo url('images/mouse-dpi/step-3.svg'); ?>" alt="Mouse DPI test results - sensitivity measurement display" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -112,23 +137,9 @@ $pageOgImage = 'images/mouse-dpi/hero.svg';
       </div>
     </section>
 
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Primary tool</p>
-          <h2 id="tool-stage-title">Mouse DPI Tester</h2>
-          <p class="section-lede">Use the live tool below to complete your test.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
-        </div>
-      </div>
-      <section id="mouse-sensitivity-dpi-tester" class="tool-shell">
-        <?php include 'tools/mouse_sensitivity_dpi_tester_tool.php'; ?>
-      </section>
-    </section>
-
     <?php include 'includes/components/tools-list.php'; ?>
+    <?php include 'help/seo-content/mouse-dpi.php'; ?>
+    <?php $currentTool = 'dpi'; include 'includes/related-tools.php'; ?>
     <?php include 'help/mouse-sensitivity-dpi-tester.php'; ?>
   </main>
 

@@ -52,6 +52,22 @@ $pageKeywords = 'اختبار الميكروفون, فحص الصوت, جودة 
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">الأداة الرئيسية</p>
+          <h2 id="tool-stage-title">اختبار الميكروفون</h2>
+          <p class="section-lede">اسمح بالوصول للميكروفون وتحدث لاختباره.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
+        </div>
+      </div>
+      <section id="mic-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/mic-test-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="الميزات الرئيسية">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -99,22 +115,6 @@ $pageKeywords = 'اختبار الميكروفون, فحص الصوت, جودة 
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">الأداة الرئيسية</p>
-          <h2 id="tool-stage-title">اختبار الميكروفون</h2>
-          <p class="section-lede">اسمح بالوصول للميكروفون وتحدث لاختباره.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
-        </div>
-      </div>
-      <section id="mic-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/mic-test-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'mic-test'; include __DIR__ . '/sections/tools-list-ar.php'; ?>

@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Ghost Clicks</p>
-      <h1 class="hero-title">Run a ghost clicks check in seconds</h1>
+      <h1 class="hero-title">Free Ghost Click Detector - Test Mouse Double Click Issues</h1>
       <p class="hero-lede">Use this free online ghost click detector to click normally and review results instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#ghost-click-detector">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/ghost-click/hero.svg'); ?>" alt="Ghost Click Detector preview" loading="eager">
+        <img src="<?php echo url('images/ghost-click/hero.svg'); ?>" alt="Ghost click detector tool - detect mouse double click and phantom click issues" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

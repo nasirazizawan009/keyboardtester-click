@@ -44,6 +44,19 @@ $pageKeywords = 'clics fantasma, detector clics, problemas ratón, clics involun
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Detector de Clics Fantasma</h2>
+          <p class="section-lede">Mueve el ratón sin hacer clic para detectar clics fantasma.</p>
+        </div>
+      </div>
+      <section id="ghost-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/ghost-click-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'clics fantasma, detector clics, problemas ratón, clics involun
           <div class="trust-desc">Estado del ratón</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Detector de Clics Fantasma</h2>
-          <p class="section-lede">Mueve el ratón sin hacer clic para detectar clics fantasma.</p>
-        </div>
-      </div>
-      <section id="ghost-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/ghost-click-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'ghost-click'; include __DIR__ . '/sections/tools-list-es.php'; ?>

@@ -52,6 +52,22 @@ $pageKeywords = 'اختبار السماعات, فحص الصوت, ستيريو,
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">الأداة الرئيسية</p>
+          <h2 id="tool-stage-title">اختبار السماعات</h2>
+          <p class="section-lede">اختر اختباراً واستمع للتحقق من السماعات.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
+        </div>
+      </div>
+      <section id="headphone-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/headphone-test-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="الميزات الرئيسية">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -99,22 +115,6 @@ $pageKeywords = 'اختبار السماعات, فحص الصوت, ستيريو,
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">الأداة الرئيسية</p>
-          <h2 id="tool-stage-title">اختبار السماعات</h2>
-          <p class="section-lede">اختر اختباراً واستمع للتحقق من السماعات.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
-        </div>
-      </div>
-      <section id="headphone-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/headphone-test-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'headphone-test'; include __DIR__ . '/sections/tools-list-ar.php'; ?>

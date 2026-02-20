@@ -290,13 +290,26 @@
     display: flex;
     gap: 20px;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--keyboard-bg);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Responsive scaling wrapper */
+  .keyboard-scale-wrapper {
+    transform-origin: center top;
+    display: flex;
+    justify-content: center;
   }
 
   .main-keyboard {
     display: flex;
     gap: 5px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-end;
   }
 
   .keyboard {
@@ -374,6 +387,14 @@
     background-color: var(--keyboard-bg);
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    justify-content: space-between;
+    height: 318px;
+  }
+
+  .arrow-keys {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
   }
 
   .nav-keys {
@@ -509,6 +530,7 @@
   </div>
 
   <div class="container">
+    <div class="keyboard-scale-wrapper" id="keyboard-scale-wrapper">
     <div class="main-keyboard">
       <!-- Main Keyboard (Korean 2-Set Layout) -->
       <div class="keyboard">
@@ -679,6 +701,7 @@
         </div>
       </div>
     </div>
+    </div><!-- /keyboard-scale-wrapper -->
   </div>
 </div>
 
@@ -868,6 +891,53 @@
     } else {
       document.documentElement.setAttribute('data-theme', 'dark');
     }
+  });
+
+  // Responsive keyboard scaling
+  function scaleKeyboard() {
+    const wrapper = document.getElementById('keyboard-scale-wrapper');
+    const container = document.querySelector('.container');
+    const layout = document.querySelector('.main-keyboard');
+
+    if (!wrapper || !container || !layout) return;
+
+    // Reset scale to measure natural dimensions
+    wrapper.style.transform = 'none';
+    container.style.height = 'auto';
+
+    // Force reflow to get accurate measurements
+    void layout.offsetWidth;
+
+    // Get natural dimensions of keyboard
+    const layoutWidth = layout.scrollWidth;
+    const layoutHeight = layout.scrollHeight;
+
+    // Get available width (container width minus padding)
+    const containerPadding = 40; // 20px * 2
+    const availableWidth = container.clientWidth - containerPadding;
+
+    // Calculate scale factor
+    let scale = 1;
+    if (layoutWidth > availableWidth && layoutWidth > 0) {
+      scale = availableWidth / layoutWidth;
+      scale = Math.max(scale, 0.3); // Minimum scale of 30%
+    }
+
+    // Apply scale transform
+    wrapper.style.transform = scale < 1 ? `scale(${scale})` : 'none';
+
+    // Set container height to exactly fit scaled keyboard
+    const scaledHeight = layoutHeight * scale;
+    container.style.height = Math.ceil(scaledHeight + containerPadding) + 'px';
+  }
+
+  // Run on load (with slight delay for fonts/layout) and on resize
+  setTimeout(scaleKeyboard, 100);
+
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(scaleKeyboard, 100);
   });
 </script>
 

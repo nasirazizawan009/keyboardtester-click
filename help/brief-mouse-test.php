@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Mouse diagnostics suite</p>
-      <h1 class="hero-title">Test every mouse click and scroll with live feedback</h1>
+      <h1 class="hero-title">Free Online Mouse Tester - Test Clicks and Scroll</h1>
       <p class="hero-lede">Verify left, middle, and right clicks, check scroll direction, and reset instantly. No downloads. No signups.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#mouse-test">Start mouse test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mouse/hero.svg'); ?>" alt="Mouse testing guide preview on KeyboardTester.click" loading="eager">
+        <img src="<?php echo url('images/mouse/hero.svg'); ?>" alt="Online mouse tester - test left right middle click and scroll wheel" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

@@ -44,6 +44,19 @@ $pageKeywords = 'lector QR, escanear código QR, decodificar QR, QR scanner, lee
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Lector de QR</h2>
+          <p class="section-lede">Usa la cámara o sube una imagen con un código QR.</p>
+        </div>
+      </div>
+      <section id="qr-reader" class="tool-shell">
+        <?php include __DIR__ . '/tools/qr-reader-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'lector QR, escanear código QR, decodificar QR, QR scanner, lee
           <div class="trust-desc">Procesamiento local</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Lector de QR</h2>
-          <p class="section-lede">Usa la cámara o sube una imagen con un código QR.</p>
-        </div>
-      </div>
-      <section id="qr-reader" class="tool-shell">
-        <?php include __DIR__ . '/tools/qr-reader-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'qr-reader'; include __DIR__ . '/sections/tools-list-es.php'; ?>

@@ -44,6 +44,19 @@ $pageKeywords = 'OCR, extraer texto imagen, convertir imagen texto, reconocimien
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Extractor de Texto OCR</h2>
+          <p class="section-lede">Sube una imagen para extraer el texto que contiene.</p>
+        </div>
+      </div>
+      <section id="ocr-tool" class="tool-shell">
+        <?php include __DIR__ . '/tools/ocr-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'OCR, extraer texto imagen, convertir imagen texto, reconocimien
           <div class="trust-desc">Texto editable</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Extractor de Texto OCR</h2>
-          <p class="section-lede">Sube una imagen para extraer el texto que contiene.</p>
-        </div>
-      </div>
-      <section id="ocr-tool" class="tool-shell">
-        <?php include __DIR__ . '/tools/ocr-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'ocr-tool'; include __DIR__ . '/sections/tools-list-es.php'; ?>

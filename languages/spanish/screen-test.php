@@ -44,6 +44,19 @@ $pageKeywords = 'prueba pantalla, píxeles muertos, test monitor, detectar píxe
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Prueba de Pantalla</h2>
+          <p class="section-lede">Haz clic en los colores para probar tu pantalla completa.</p>
+        </div>
+      </div>
+      <section id="screen-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/screen-test-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'prueba pantalla, píxeles muertos, test monitor, detectar píxe
           <div class="trust-desc">Un clic para probar</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Prueba de Pantalla</h2>
-          <p class="section-lede">Haz clic en los colores para probar tu pantalla completa.</p>
-        </div>
-      </div>
-      <section id="screen-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/screen-test-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'screen-test'; include __DIR__ . '/sections/tools-list-es.php'; ?>

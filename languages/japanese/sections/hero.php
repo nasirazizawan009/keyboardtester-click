@@ -56,6 +56,23 @@
     </div>
 </section>
 
+<!-- Tool Stage -->
+<section class="tool-stage" aria-labelledby="tool-stage-title-ja">
+    <div class="container tool-stage-header">
+        <div>
+            <p class="section-kicker">メインツール</p>
+            <h2 id="tool-stage-title-ja">キーボードテスター</h2>
+            <p class="section-lede">以下のツールを使用して、各キーのテスト、レイアウトの確認、レイテンシーの測定ができます。</p>
+        </div>
+        <div class="tool-stage-actions">
+            <a class="landing-btn landing-btn-ghost" href="#guidelines">クイックヒントを見る</a>
+        </div>
+    </div>
+    <div class="tool-shell">
+        <?php include __DIR__ . '/tool.php'; ?>
+    </div>
+</section>
+
 <!-- Trust Strip -->
 <section class="trust-strip" aria-label="主な機能">
     <div class="container trust-grid">

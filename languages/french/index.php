@@ -73,25 +73,8 @@ $pageKeywords = 'testeur clavier, test clavier francais, detecteur ghosting, mes
 
     <!-- Main Content -->
     <main id="main-content" class="landing-main">
-        <!-- Hero Section -->
+        <!-- Hero Section (includes tool-stage above the fold) -->
         <?php include __DIR__ . '/sections/hero.php'; ?>
-
-        <!-- Tool Stage -->
-        <section class="tool-stage" aria-labelledby="tool-stage-title-fr">
-            <div class="container tool-stage-header">
-                <div>
-                    <p class="section-kicker">Outil Principal</p>
-                    <h2 id="tool-stage-title-fr">Testeur de Clavier</h2>
-                    <p class="section-lede">Utilisez l'outil ci-dessous pour tester chaque touche, verifier les dispositions et mesurer la latence.</p>
-                </div>
-                <div class="tool-stage-actions">
-                    <a class="landing-btn landing-btn-ghost" href="#guidelines">Voir les Conseils Rapides</a>
-                </div>
-            </div>
-            <div class="tool-shell">
-                <?php include __DIR__ . '/sections/tool.php'; ?>
-            </div>
-        </section>
 
         <!-- Tools List -->
         <?php $currentTool = 'french-keyboard'; include __DIR__ . '/sections/tools-list-fr.php'; ?>

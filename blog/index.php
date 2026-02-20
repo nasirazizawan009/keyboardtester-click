@@ -37,13 +37,15 @@ $pageKeywords = 'keyboard tester, mouse tester, typing test, webcam test, microp
             font-size: 2.5rem;
             margin-bottom: 15px;
             font-weight: 700;
+            color: #ffffff !important;
         }
 
         .hub-hero p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            opacity: 1;
             max-width: 600px;
             margin: 0 auto;
+            color: #e0e0e0 !important;
         }
 
         .tools-hub {
@@ -164,7 +166,11 @@ $pageKeywords = 'keyboard tester, mouse tester, typing test, webcam test, microp
         }
 
         .lang-flag {
-            font-size: 1.5rem;
+            width: 24px;
+            height: 18px;
+            object-fit: cover;
+            border-radius: 3px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
         .lang-name {
@@ -413,40 +419,40 @@ $pageKeywords = 'keyboard tester, mouse tester, typing test, webcam test, microp
 
                 <div class="languages-grid">
                     <a href="<?php echo url(''); ?>" class="lang-link">
-                        <span class="lang-flag">&#127482;&#127480;</span>
+                        <img src="<?php echo url('flags/us_flag.svg'); ?>" alt="US Flag" class="lang-flag">
                         <span class="lang-name">English</span>
                     </a>
                     <a href="<?php echo url('languages/spanish/'); ?>" class="lang-link">
-                        <span class="lang-flag">&#127466;&#127480;</span>
-                        <span class="lang-name">Espanol</span>
+                        <img src="<?php echo url('flags/spanish_flag.svg'); ?>" alt="Spanish Flag" class="lang-flag">
+                        <span class="lang-name">Español</span>
                     </a>
                     <a href="<?php echo url('languages/french/'); ?>" class="lang-link">
-                        <span class="lang-flag">&#127467;&#127479;</span>
-                        <span class="lang-name">Francais</span>
+                        <img src="<?php echo url('flags/french_flag.svg'); ?>" alt="French Flag" class="lang-flag">
+                        <span class="lang-name">Français</span>
                     </a>
                     <a href="<?php echo url('languages/german/'); ?>" class="lang-link">
-                        <span class="lang-flag">&#127465;&#127466;</span>
+                        <img src="<?php echo url('flags/german_flag.svg'); ?>" alt="German Flag" class="lang-flag">
                         <span class="lang-name">Deutsch</span>
                     </a>
                     <a href="<?php echo url('languages/portuguese/'); ?>" class="lang-link">
-                        <span class="lang-flag">&#127463;&#127479;</span>
-                        <span class="lang-name">Portugues</span>
+                        <img src="<?php echo url('flags/Portugal_flag.svg'); ?>" alt="Portuguese Flag" class="lang-flag">
+                        <span class="lang-name">Português</span>
                     </a>
                     <a href="<?php echo url('languages/russian/'); ?>" class="lang-link">
-                        <span class="lang-flag">&#127479;&#127482;</span>
-                        <span class="lang-name">Russkij</span>
+                        <img src="<?php echo url('flags/russian_flag.svg'); ?>" alt="Russian Flag" class="lang-flag">
+                        <span class="lang-name">Русский</span>
                     </a>
                     <a href="<?php echo url('languages/arabic/'); ?>" class="lang-link">
-                        <span class="lang-flag">&#127480;&#127462;</span>
-                        <span class="lang-name">Al-Arabiya</span>
+                        <img src="<?php echo url('flags/arabic_flag.svg'); ?>" alt="Arabic Flag" class="lang-flag">
+                        <span class="lang-name">العربية</span>
                     </a>
                     <a href="<?php echo url('languages/japanese/'); ?>" class="lang-link">
-                        <span class="lang-flag">&#127471;&#127477;</span>
-                        <span class="lang-name">Nihongo</span>
+                        <img src="<?php echo url('flags/japanese_flag.svg'); ?>" alt="Japanese Flag" class="lang-flag">
+                        <span class="lang-name">日本語</span>
                     </a>
                     <a href="<?php echo url('languages/korean/'); ?>" class="lang-link">
-                        <span class="lang-flag">&#127472;&#127479;</span>
-                        <span class="lang-name">Hangugeo</span>
+                        <img src="<?php echo url('flags/korean_flag.svg'); ?>" alt="Korean Flag" class="lang-flag">
+                        <span class="lang-name">한국어</span>
                     </a>
                 </div>
             </div>

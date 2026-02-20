@@ -90,6 +90,23 @@ $pageKeywords = '마우스 트레일, 이모지 게임, 마우스 게임, 트레
       </div>
     </section>
 
+    <!-- Tool Section -->
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">게임</p>
+          <h2 id="tool-stage-title">이모지 트레일 어드벤처</h2>
+          <p class="section-lede">아래 게임 영역에서 마우스를 움직여보세요.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">게임 팁 보기</a>
+        </div>
+      </div>
+      <section id="trail-game" class="tool-shell">
+        <?php include __DIR__ . '/tools/mouse-trail-tool.php'; ?>
+      </section>
+    </section>
+
     <!-- Trust Strip -->
     <section class="trust-strip" aria-label="주요 기능">
       <div class="container trust-grid">
@@ -169,23 +186,6 @@ $pageKeywords = '마우스 트레일, 이모지 게임, 마우스 게임, 트레
           </article>
         </div>
       </div>
-    </section>
-
-    <!-- Tool Section -->
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">게임</p>
-          <h2 id="tool-stage-title">이모지 트레일 어드벤처</h2>
-          <p class="section-lede">아래 게임 영역에서 마우스를 움직여보세요.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">게임 팁 보기</a>
-        </div>
-      </div>
-      <section id="trail-game" class="tool-shell">
-        <?php include __DIR__ . '/tools/mouse-trail-tool.php'; ?>
-      </section>
     </section>
 
     <!-- Tools List -->

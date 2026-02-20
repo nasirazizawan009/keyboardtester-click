@@ -69,6 +69,19 @@ $pageKeywords = 'prueba escritura, WPM, velocidad mecanografía, test teclado, p
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Prueba de Escritura</h2>
+          <p class="section-lede">Escribe el texto mostrado lo más rápido y preciso posible.</p>
+        </div>
+      </div>
+      <section id="typing-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/typing-test-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -88,19 +101,6 @@ $pageKeywords = 'prueba escritura, WPM, velocidad mecanografía, test teclado, p
           <div class="trust-desc">Seguimiento de mejora</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Prueba de Escritura</h2>
-          <p class="section-lede">Escribe el texto mostrado lo más rápido y preciso posible.</p>
-        </div>
-      </div>
-      <section id="typing-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/typing-test-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'typing-test'; include __DIR__ . '/sections/tools-list-es.php'; ?>

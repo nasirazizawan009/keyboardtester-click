@@ -56,6 +56,23 @@
     </div>
 </section>
 
+<!-- Tool Stage -->
+<section class="tool-stage" aria-labelledby="tool-stage-title-pt">
+    <div class="container tool-stage-header">
+        <div>
+            <p class="section-kicker">Ferramenta Principal</p>
+            <h2 id="tool-stage-title-pt">Testador de Teclado</h2>
+            <p class="section-lede">Use a ferramenta abaixo para testar cada tecla, verificar layouts e medir latencia.</p>
+        </div>
+        <div class="tool-stage-actions">
+            <a class="landing-btn landing-btn-ghost" href="#guidelines">Ver Dicas Rapidas</a>
+        </div>
+    </div>
+    <div class="tool-shell">
+        <?php include __DIR__ . '/tool.php'; ?>
+    </div>
+</section>
+
 <!-- Trust Strip -->
 <section class="trust-strip" aria-label="Recursos principais">
     <div class="container trust-grid">

@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Keyboard diagnostics suite</p>
-      <h1 class="hero-title">Test every key with real-time feedback in seconds</h1>
+      <h1 class="hero-title">Free Online Keyboard Tester - Test All Keys Instantly</h1>
       <p class="hero-lede">Test every key on your keyboard and get real-time feedback in just seconds. Instant highlights, layout switching, ghosting checks, and exportable reports. No installs. No signups.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#keyboard-tester">Start keyboard test</a>

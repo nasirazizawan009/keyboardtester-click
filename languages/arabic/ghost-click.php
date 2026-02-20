@@ -52,6 +52,22 @@ $pageKeywords = 'كاشف النقرات الوهمية, النقر المزدو
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">الأداة الرئيسية</p>
+          <h2 id="tool-stage-title">كاشف النقرات الوهمية</h2>
+          <p class="section-lede">انقر في منطقة الاختبار لبدء الكشف.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
+        </div>
+      </div>
+      <section id="ghost-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/ghost-click-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="الميزات الرئيسية">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -99,22 +115,6 @@ $pageKeywords = 'كاشف النقرات الوهمية, النقر المزدو
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">الأداة الرئيسية</p>
-          <h2 id="tool-stage-title">كاشف النقرات الوهمية</h2>
-          <p class="section-lede">انقر في منطقة الاختبار لبدء الكشف.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
-        </div>
-      </div>
-      <section id="ghost-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/ghost-click-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'ghost-click'; include __DIR__ . '/sections/tools-list-ar.php'; ?>

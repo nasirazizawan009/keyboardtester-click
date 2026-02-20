@@ -4,12 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Preconnect FIRST (before any other resources) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+    <meta name="google-site-verification" content="onILKj31lZD-N2oSgtXNpKZnKJZi1oK0N_yMWIP71_4">
 
     <?php include __DIR__ . '/includes/seo-meta.php'; ?>
 
@@ -19,162 +14,79 @@
     <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl(''); ?>">
     <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl(''); ?>">
 
-    <!-- Critical CSS to prevent layout shift -->
+    <!-- Critical CSS to prevent layout shift (CLS optimization) -->
     <style>
-    .landing-hero{min-height:500px}
-    .landing-main{min-height:100vh}
-    .hero-shot img{aspect-ratio:900/600;width:100%;height:auto}
-    .trust-strip{min-height:80px}
-    .trust-grid{min-height:60px}
-    .landing-hero-grid{min-height:400px}
-    .hero-copy{min-height:300px}
-    @media(max-width:980px){.landing-hero{min-height:auto}.landing-hero-grid{min-height:auto}.hero-copy{min-height:auto}}
-    @media(max-width:768px){.trust-strip{min-height:200px}.trust-grid{min-height:180px}}
+    .landing-main{min-height:100vh;contain:layout style}
+    .landing-hero{max-height:75vh;padding:2rem 0 1.5rem;contain:layout}
+    .landing-hero-grid{min-height:320px;contain:layout style}
+    .hero-copy{min-height:200px}
+    .hero-shot{aspect-ratio:16/10;contain:layout}
+    .hero-shot img{width:100%;height:auto;display:block;border-radius:16px}
+    /* Reserve stable space — keyboard-tester's own CSS sets min-height:0, so we use
+       tool-stage/tool-shell as the outer guards */
+    .tool-stage{padding:1.5rem 0 2rem;min-height:680px;contain:layout style}
+    .tool-shell{min-height:580px;contain:layout style}
+    /* keyboard-container height is set in keyboard_tester_english.php critical CSS */
+    .trust-strip{min-height:60px;contain:layout}
+    .trust-grid{min-height:50px;display:grid}
+    @media(max-width:980px){.landing-hero{max-height:none;padding:1.5rem 0 1rem}.landing-hero-grid{min-height:auto}}
+    @media(max-width:768px){.trust-strip{min-height:180px}.trust-grid{min-height:160px}.tool-stage{min-height:500px}.tool-shell{min-height:420px}.keyboard-tester{min-height:380px}}
     </style>
-
-    <!-- Preload critical font to prevent layout shift -->
-    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2" crossorigin>
 
     <!-- Common Head Includes -->
     <?php include 'includes/head-common.php'; ?>
 
-    <!-- Page-specific CSS (async loading) -->
+    <!-- Preload keyboard-tool.css (critical path bottleneck at 1831ms) -->
+    <link rel="preload" as="style" href="<?php echo url('assets/css/keyboard-tool.css'); ?>" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="<?php echo url('assets/css/keyboard-tool.css'); ?>"></noscript>
+
+    <!-- JetBrains Mono: async with display=optional (keyboard keys have fixed dimensions) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=optional"></noscript>
+
+    <!-- Preload index-modern.css (was 1176ms via loadCSS — now fetched as early as preload) -->
+    <link rel="preload" as="style" href="<?php echo url('assets/css/index-modern.css'); ?>" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>"></noscript>
+
+    <!-- Clarity Analytics (delayed 4s to avoid forced reflow on initial render) -->
     <script>
-    loadCSS('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=optional');
-    loadCSS('<?php echo url('assets/css/keyboard-tool.css'); ?>');
-    loadCSS('<?php echo url('assets/css/index-modern.css'); ?>');
-    </script>
-    <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=optional">
-    <link rel="stylesheet" href="<?php echo url('assets/css/keyboard-tool.css'); ?>">
-    <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
-    </noscript>
-
-    <!-- Clarity Analytics (deferred) -->
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "uglsz9kphe");
-    </script>
-    
-    <!-- Structured Data - WebApplication Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "KeyboardTester.Click",
-      "alternateName": "Keyboard Tester",
-      "description": "Free online keyboard and mouse testing tool to check functionality, detect broken keys, and troubleshoot issues",
-      "url": "https://keyboardtester.click/",
-      "applicationCategory": "UtilityApplication",
-      "operatingSystem": "Any",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "featureList": [
-        "Keyboard key testing",
-        "Mouse click testing",
-        "Mouse scroll testing",
-        "Typing speed test",
-        "Click speed test",
-        "Multi-language keyboard support"
-      ],
-      "screenshot": "<?php echo absoluteUrl('images/keyboard/hero-keyboard-test-1400.png'); ?>",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "1250"
-      }
-    }
-    </script>
-    
-    <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://keyboardtester.click/"
-      }]
-    }
-    </script>
-    
-    <!-- Organization Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "KeyboardTester.Click",
-      "url": "https://keyboardtester.click/",
-      "logo": "<?php echo absoluteUrl('images/shared/keyboard-and-mouse.png'); ?>",
-      "sameAs": [
-        "https://gitlab.com/nasirazizawan/keyboardtester.click"
-      ]
-    }
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "uglsz9kphe");
+        }, 4000);
+    });
     </script>
 
-    <!-- FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How do I test my keyboard online?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Click inside the tester and press any key. The key highlights on the visual keyboard and appears in key history."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does a key not register in the keyboard tester?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Make sure the page is focused, press the key firmly, and confirm your OS language matches the selected layout."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I test keyboard ghosting or multiple key presses?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Press several keys together to see which keys register and identify ghosting issues."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does the keyboard tester work with different layouts?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. You can switch between QWERTY, AZERTY, Dvorak, and Colemak, plus Windows or Mac labels."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is the keyboard test private?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Testing runs in your browser and does not upload data to a server."
-          }
-        }
-      ]
-    }
-    </script>
+    <!-- Structured Data (JSON-LD) -->
+    <?php
+    include_once __DIR__ . '/includes/schema.php';
+    echo generateHomepageSchema();
+    ?>
 </head>
 <body class="landing-page">
 <?php include 'header.php'; ?>
 <main id="main-content" class="landing-main">
   <?php include 'help/brief-keyboard-tester.php'; ?>
+
+  <section class="tool-stage" id="keyboard-tester" aria-labelledby="tool-stage-title">
+    <div class="container tool-stage-header">
+      <div>
+        <p class="section-kicker">Primary tester</p>
+        <h2 id="tool-stage-title">Keyboard tester</h2>
+        <p class="section-lede">Use the live tool below to test every key, check layouts, and measure latency.</p>
+      </div>
+      <div class="tool-stage-actions">
+        <a class="landing-btn landing-btn-ghost" href="#guidelines">Read keyboard testing guide</a>
+      </div>
+    </div>
+    <div class="tool-shell">
+      <?php include 'tools/keyboard_tester_english.php'; ?>
+    </div>
+  </section>
 
   <section class="trust-strip" aria-label="Key benefits">
     <div class="container trust-grid">
@@ -238,8 +150,8 @@
         <article class="process-card">
           <div class="process-media">
             <picture>
-              <source type="image/webp" srcset="<?php echo url('images/keyboard/Press-any-key-512.webp'); ?> 512w, <?php echo url('images/keyboard/Press-any-key-768.webp'); ?> 768w" sizes="(max-width: 900px) 90vw, 320px">
-              <source type="image/png" srcset="<?php echo url('images/keyboard/Press-any-key-512.png'); ?> 512w, <?php echo url('images/keyboard/Press-any-key-768.png'); ?> 768w" sizes="(max-width: 900px) 90vw, 320px">
+              <source type="image/webp" srcset="<?php echo url('images/keyboard/Press-any-key-512.webp'); ?> 512w, <?php echo url('images/keyboard/Press-any-key-768.webp'); ?> 768w" sizes="(max-width: 900px) 90vw, 411px">
+              <source type="image/png" srcset="<?php echo url('images/keyboard/Press-any-key-512.png'); ?> 512w, <?php echo url('images/keyboard/Press-any-key-768.png'); ?> 768w" sizes="(max-width: 900px) 90vw, 411px">
               <img src="<?php echo url('images/keyboard/Press-any-key-512.png'); ?>" width="512" height="768" alt="Press any key to start the KeyboardTester.click keyboard test" loading="lazy" decoding="async">
             </picture>
           </div>
@@ -252,8 +164,8 @@
         <article class="process-card">
           <div class="process-media">
             <picture>
-              <source type="image/webp" srcset="<?php echo url('images/keyboard/special-keys-layout-640.webp'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
-              <source type="image/png" srcset="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
+              <source type="image/webp" srcset="<?php echo url('images/keyboard/special-keys-layout-640.webp'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 411px">
+              <source type="image/png" srcset="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 411px">
               <img src="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?>" width="640" height="426" alt="Keyboard tester special keys and layout highlights on KeyboardTester.click" loading="lazy" decoding="async">
             </picture>
           </div>
@@ -266,8 +178,8 @@
         <article class="process-card">
           <div class="process-media">
             <picture>
-              <source type="image/webp" srcset="<?php echo url('images/keyboard/color-system-guide-640.webp'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
-              <source type="image/png" srcset="<?php echo url('images/keyboard/color-system-guide-640.png'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
+              <source type="image/webp" srcset="<?php echo url('images/keyboard/color-system-guide-640.webp'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 411px">
+              <source type="image/png" srcset="<?php echo url('images/keyboard/color-system-guide-640.png'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 411px">
               <img src="<?php echo url('images/keyboard/color-system-guide-640.png'); ?>" width="640" height="426" alt="Keyboard tester color system and exportable test results on KeyboardTester.click" loading="lazy" decoding="async">
             </picture>
           </div>
@@ -281,23 +193,9 @@
     </div>
   </section>
 
-  <section class="tool-stage" aria-labelledby="tool-stage-title">
-    <div class="container tool-stage-header">
-      <div>
-        <p class="section-kicker">Primary tester</p>
-        <h2 id="tool-stage-title">Keyboard tester</h2>
-        <p class="section-lede">Use the live tool below to test every key, check layouts, and measure latency.</p>
-      </div>
-      <div class="tool-stage-actions">
-        <a class="landing-btn landing-btn-ghost" href="#guidelines">Read keyboard testing guide</a>
-      </div>
-    </div>
-    <div class="tool-shell">
-      <?php include 'tools/keyboard_tester_english.php'; ?>
-    </div>
-  </section>
-
   <?php include 'includes/components/tools-list.php'; ?>
+  <?php include 'help/seo-content/keyboard-tester.php'; ?>
+  <?php $currentTool = 'keyboard'; include 'includes/related-tools.php'; ?>
   <?php include 'help/keyboard-tester.php'; ?>
 </main>
 

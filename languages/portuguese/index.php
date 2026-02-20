@@ -76,23 +76,6 @@ $pageKeywords = 'testador teclado, teste teclado portugues, detector ghosting, m
         <!-- Hero Section -->
         <?php include __DIR__ . '/sections/hero.php'; ?>
 
-        <!-- Tool Stage -->
-        <section class="tool-stage" aria-labelledby="tool-stage-title-pt">
-            <div class="container tool-stage-header">
-                <div>
-                    <p class="section-kicker">Ferramenta Principal</p>
-                    <h2 id="tool-stage-title-pt">Testador de Teclado</h2>
-                    <p class="section-lede">Use a ferramenta abaixo para testar cada tecla, verificar layouts e medir latencia.</p>
-                </div>
-                <div class="tool-stage-actions">
-                    <a class="landing-btn landing-btn-ghost" href="#guidelines">Ver Dicas Rapidas</a>
-                </div>
-            </div>
-            <div class="tool-shell">
-                <?php include __DIR__ . '/sections/tool.php'; ?>
-            </div>
-        </section>
-
         <!-- Tools List -->
         <?php $currentTool = 'portuguese-keyboard'; include __DIR__ . '/sections/tools-list-pt.php'; ?>
 

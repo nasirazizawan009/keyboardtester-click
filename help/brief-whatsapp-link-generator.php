@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/whatsapp-link/hero.svg'); ?>" alt="WhatsApp Link Generator preview" loading="eager">
+        <img src="<?php echo url('images/whatsapp-link/hero.svg'); ?>" alt="WhatsApp link generator - create wa.me click to chat links free" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

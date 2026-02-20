@@ -73,25 +73,8 @@ $pageKeywords = 'tastatur tester, tastatur test deutsch, ghosting erkennung, lat
 
     <!-- Main Content -->
     <main id="main-content" class="landing-main">
-        <!-- Hero Section -->
+        <!-- Hero Section (includes Tool Stage) -->
         <?php include __DIR__ . '/sections/hero.php'; ?>
-
-        <!-- Tool Stage -->
-        <section class="tool-stage" aria-labelledby="tool-stage-title-de">
-            <div class="container tool-stage-header">
-                <div>
-                    <p class="section-kicker">Hauptwerkzeug</p>
-                    <h2 id="tool-stage-title-de">Tastatur-Tester</h2>
-                    <p class="section-lede">Verwenden Sie das Tool unten, um jede Taste zu testen, Layouts zu pruefen und Latenz zu messen.</p>
-                </div>
-                <div class="tool-stage-actions">
-                    <a class="landing-btn landing-btn-ghost" href="#guidelines">Schnelltipps anzeigen</a>
-                </div>
-            </div>
-            <div class="tool-shell">
-                <?php include __DIR__ . '/sections/tool.php'; ?>
-            </div>
-        </section>
 
         <!-- Tools List -->
         <?php $currentTool = 'german-keyboard'; include __DIR__ . '/sections/tools-list-de.php'; ?>

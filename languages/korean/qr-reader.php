@@ -82,6 +82,23 @@ $pageKeywords = 'QR 코드 리더, QR 코드 스캔, QR 스캐너, QR 디코더'
       </div>
     </section>
 
+    <!-- Tool Section -->
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">주요 도구</p>
+          <h2 id="tool-stage-title">QR 코드 리더</h2>
+          <p class="section-lede">아래 도구를 사용하여 QR 코드를 스캔하세요.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">빠른 팁 보기</a>
+        </div>
+      </div>
+      <section id="qr-reader" class="tool-shell">
+        <?php include __DIR__ . '/tools/qr-reader-tool.php'; ?>
+      </section>
+    </section>
+
     <!-- Trust Strip -->
     <section class="trust-strip" aria-label="주요 기능">
       <div class="container trust-grid">
@@ -161,23 +178,6 @@ $pageKeywords = 'QR 코드 리더, QR 코드 스캔, QR 스캐너, QR 디코더'
           </article>
         </div>
       </div>
-    </section>
-
-    <!-- Tool Section -->
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">주요 도구</p>
-          <h2 id="tool-stage-title">QR 코드 리더</h2>
-          <p class="section-lede">아래 도구를 사용하여 QR 코드를 스캔하세요.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">빠른 팁 보기</a>
-        </div>
-      </div>
-      <section id="qr-reader" class="tool-shell">
-        <?php include __DIR__ . '/tools/qr-reader-tool.php'; ?>
-      </section>
     </section>
 
     <!-- Tools List -->

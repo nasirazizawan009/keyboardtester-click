@@ -44,6 +44,19 @@ $pageKeywords = 'DPI ratón, sensibilidad mouse, test DPI, prueba sensibilidad, 
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Probador de DPI</h2>
+          <p class="section-lede">Mueve el ratón una distancia específica para medir DPI.</p>
+        </div>
+      </div>
+      <section id="dpi-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/dpi-tester-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'DPI ratón, sensibilidad mouse, test DPI, prueba sensibilidad, 
           <div class="trust-desc">Resultados detallados</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Probador de DPI</h2>
-          <p class="section-lede">Mueve el ratón una distancia específica para medir DPI.</p>
-        </div>
-      </div>
-      <section id="dpi-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/dpi-tester-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'dpi-tester'; include __DIR__ . '/sections/tools-list-es.php'; ?>

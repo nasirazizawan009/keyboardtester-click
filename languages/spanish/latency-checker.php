@@ -44,6 +44,19 @@ $pageKeywords = 'latencia, tiempo respuesta, input lag, prueba latencia, medir r
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Verificador de Latencia</h2>
+          <p class="section-lede">Espera la señal y haz clic lo más rápido posible.</p>
+        </div>
+      </div>
+      <section id="latency-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/latency-checker-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'latencia, tiempo respuesta, input lag, prueba latencia, medir r
           <div class="trust-desc">Resultados inmediatos</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Verificador de Latencia</h2>
-          <p class="section-lede">Espera la señal y haz clic lo más rápido posible.</p>
-        </div>
-      </div>
-      <section id="latency-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/latency-checker-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'latency-checker'; include __DIR__ . '/sections/tools-list-es.php'; ?>

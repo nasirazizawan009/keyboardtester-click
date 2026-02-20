@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/latency-checker/hero.svg'); ?>" alt="Latency Checker preview" loading="eager">
+        <img src="<?php echo url('images/latency-checker/hero.svg'); ?>" alt="Input latency checker tool interface - measure keyboard and mouse response time" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

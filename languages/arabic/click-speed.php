@@ -77,6 +77,22 @@ $pageKeywords = 'اختبار سرعة النقر, CPS, CPM, اختبار الن
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">الأداة الرئيسية</p>
+          <h2 id="tool-stage-title">اختبار سرعة النقر</h2>
+          <p class="section-lede">انقر بأسرع ما يمكن في منطقة الاختبار.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
+        </div>
+      </div>
+      <section id="click-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/click-speed-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="الميزات الرئيسية">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -124,22 +140,6 @@ $pageKeywords = 'اختبار سرعة النقر, CPS, CPM, اختبار الن
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">الأداة الرئيسية</p>
-          <h2 id="tool-stage-title">اختبار سرعة النقر</h2>
-          <p class="section-lede">انقر بأسرع ما يمكن في منطقة الاختبار.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
-        </div>
-      </div>
-      <section id="click-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/click-speed-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'click-speed'; include __DIR__ . '/sections/tools-list-ar.php'; ?>

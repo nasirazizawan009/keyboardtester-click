@@ -44,6 +44,19 @@ $pageKeywords = 'prueba auriculares, test altavoces, verificar estéreo, probar 
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Prueba de Auriculares</h2>
+          <p class="section-lede">Reproduce audio en cada canal para verificar tus auriculares.</p>
+        </div>
+      </div>
+      <section id="headphone-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/headphone-test-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'prueba auriculares, test altavoces, verificar estéreo, probar 
           <div class="trust-desc">Verificar equilibrio</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Prueba de Auriculares</h2>
-          <p class="section-lede">Reproduce audio en cada canal para verificar tus auriculares.</p>
-        </div>
-      </div>
-      <section id="headphone-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/headphone-test-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'headphone-test'; include __DIR__ . '/sections/tools-list-es.php'; ?>

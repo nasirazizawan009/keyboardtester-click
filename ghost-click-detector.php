@@ -18,12 +18,37 @@ $pageOgImage = 'images/ghost-click/hero.svg';
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+
+  <!-- Structured Data (JSON-LD) -->
+  <?php
+  include_once __DIR__ . '/includes/schema.php';
+  echo generateToolPageSchema('ghost_click', [
+      ['name' => 'Home', 'url' => '/'],
+      ['name' => 'Ghost Click Detector', 'url' => '']
+  ]);
+  ?>
 </head>
 <body class="landing-page">
   <?php include 'header.php'; ?>
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-ghost-click-detector.php'; ?>
+
+    <section class="tool-stage" id="ghost-click-tool" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Primary tool</p>
+          <h2 id="tool-stage-title">Ghost Click Detector</h2>
+          <p class="section-lede">Use the live tool below to complete your test.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
+        </div>
+      </div>
+      <section id="ghost-click-detector" class="tool-shell">
+        <?php include 'tools/ghost_click_detector_tool.php'; ?>
+      </section>
+    </section>
 
     <section class="trust-strip" aria-label="Key benefits">
       <div class="container trust-grid">
@@ -86,7 +111,7 @@ $pageOgImage = 'images/ghost-click/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-1.svg'); ?>" alt="Start the test" loading="lazy">
+              <img src="<?php echo url('images/ghost-click/step-1.svg'); ?>" alt="Ghost click detector step 1 - start the mouse double click test" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -94,7 +119,7 @@ $pageOgImage = 'images/ghost-click/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-2.svg'); ?>" alt="Click normally" loading="lazy">
+              <img src="<?php echo url('images/ghost-click/step-2.svg'); ?>" alt="Ghost click test step 2 - click normally to detect phantom double clicks" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Click normally</h3>
@@ -102,7 +127,7 @@ $pageOgImage = 'images/ghost-click/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-3.svg'); ?>" alt="Review results" loading="lazy">
+              <img src="<?php echo url('images/ghost-click/step-3.svg'); ?>" alt="Ghost click test results - view detected double click issues" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -112,23 +137,9 @@ $pageOgImage = 'images/ghost-click/hero.svg';
       </div>
     </section>
 
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Primary tool</p>
-          <h2 id="tool-stage-title">Ghost Click Detector</h2>
-          <p class="section-lede">Use the live tool below to complete your test.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
-        </div>
-      </div>
-      <section id="ghost-click-detector" class="tool-shell">
-        <?php include 'tools/ghost_click_detector_tool.php'; ?>
-      </section>
-    </section>
-
     <?php include 'includes/components/tools-list.php'; ?>
+    <?php include 'help/seo-content/ghost-click.php'; ?>
+    <?php $currentTool = 'ghost-click'; include 'includes/related-tools.php'; ?>
     <?php include 'help/ghost-click-detector.php'; ?>
   </main>
 

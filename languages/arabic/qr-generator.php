@@ -52,6 +52,22 @@ $pageKeywords = 'مولد QR, إنشاء رمز QR, رمز الاستجابة ا
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">الأداة الرئيسية</p>
+          <h2 id="tool-stage-title">مولد رمز QR</h2>
+          <p class="section-lede">أدخل البيانات واحصل على رمز QR فوراً.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
+        </div>
+      </div>
+      <section id="qr-generator" class="tool-shell">
+        <?php include __DIR__ . '/tools/qr-generator-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="الميزات الرئيسية">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -99,22 +115,6 @@ $pageKeywords = 'مولد QR, إنشاء رمز QR, رمز الاستجابة ا
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">الأداة الرئيسية</p>
-          <h2 id="tool-stage-title">مولد رمز QR</h2>
-          <p class="section-lede">أدخل البيانات واحصل على رمز QR فوراً.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
-        </div>
-      </div>
-      <section id="qr-generator" class="tool-shell">
-        <?php include __DIR__ . '/tools/qr-generator-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'qr-generator'; include __DIR__ . '/sections/tools-list-ar.php'; ?>

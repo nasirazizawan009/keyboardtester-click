@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mouse-trail/hero.svg'); ?>" alt="Mouse Trail preview" loading="eager">
+        <img src="<?php echo url('images/mouse-trail/hero.svg'); ?>" alt="Mouse trail visualizer - track cursor movement path and precision" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

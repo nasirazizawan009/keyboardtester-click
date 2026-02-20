@@ -56,6 +56,23 @@
     </div>
 </section>
 
+<!-- Tool Stage - Above the Fold -->
+<section class="tool-stage" id="keyboard-tester" aria-labelledby="tool-stage-title-es">
+    <div class="container tool-stage-header">
+        <div>
+            <p class="section-kicker">Herramienta Principal</p>
+            <h2 id="tool-stage-title-es">Probador de Teclado</h2>
+            <p class="section-lede">Usa la herramienta a continuación para probar cada tecla, verificar diseños y medir latencia.</p>
+        </div>
+        <div class="tool-stage-actions">
+            <a class="landing-btn landing-btn-ghost" href="#guidelines">Ver Consejos Rápidos</a>
+        </div>
+    </div>
+    <div class="tool-shell">
+        <?php include __DIR__ . '/tool.php'; ?>
+    </div>
+</section>
+
 <!-- Trust Strip -->
 <section class="trust-strip" aria-label="Características principales">
     <div class="container trust-grid">

@@ -90,6 +90,23 @@ $pageKeywords = '고스트 클릭, 고스트 클릭 테스트, 더블 클릭 문
       </div>
     </section>
 
+    <!-- Tool Section -->
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">주요 테스터</p>
+          <h2 id="tool-stage-title">고스트 클릭 감지기</h2>
+          <p class="section-lede">아래 도구를 사용하여 마우스의 고스트 클릭을 감지하세요.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">빠른 팁 보기</a>
+        </div>
+      </div>
+      <section id="ghost-click-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/ghost-click-tool.php'; ?>
+      </section>
+    </section>
+
     <!-- Trust Strip -->
     <section class="trust-strip" aria-label="주요 기능">
       <div class="container trust-grid">
@@ -169,23 +186,6 @@ $pageKeywords = '고스트 클릭, 고스트 클릭 테스트, 더블 클릭 문
           </article>
         </div>
       </div>
-    </section>
-
-    <!-- Tool Section -->
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">주요 테스터</p>
-          <h2 id="tool-stage-title">고스트 클릭 감지기</h2>
-          <p class="section-lede">아래 도구를 사용하여 마우스의 고스트 클릭을 감지하세요.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">빠른 팁 보기</a>
-        </div>
-      </div>
-      <section id="ghost-click-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/ghost-click-tool.php'; ?>
-      </section>
     </section>
 
     <!-- Tools List -->

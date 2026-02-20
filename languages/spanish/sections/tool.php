@@ -97,6 +97,7 @@
     </div>
 
     <div class="keyboard-container">
+        <div class="keyboard-scale-wrapper" id="keyboard-scale-wrapper">
         <div class="keyboard-layout">
             <div class="keyboard-section main-keyboard">
                 <div class="key-row">
@@ -255,6 +256,7 @@
                 </div>
             </div>
         </div>
+        </div><!-- /keyboard-scale-wrapper -->
     </div>
 </section>
 
@@ -359,8 +361,9 @@
 .stat-item.compact { padding: 12px; }
 .stat-item.compact .stat-value { font-size: 18px; }
 
-.keyboard-container { max-width: 1400px; margin: 0 auto; background: var(--bg-secondary); border-radius: 20px; padding: 32px; box-shadow: 0 4px 24px var(--key-shadow), inset 0 1px 0 var(--border-subtle); border: 1px solid var(--border-subtle); overflow-x: auto; }
-.keyboard-layout { display: flex; gap: 24px; justify-content: center; align-items: flex-end; flex-wrap: wrap; }
+.keyboard-container { max-width: 1400px; margin: 0 auto; background: var(--bg-secondary); border-radius: 20px; padding: 32px; box-shadow: 0 4px 24px var(--key-shadow), inset 0 1px 0 var(--border-subtle); border: 1px solid var(--border-subtle); overflow: hidden; position: relative; }
+.keyboard-scale-wrapper { transform-origin: center top; display: flex; justify-content: center; }
+.keyboard-layout { display: flex; gap: 24px; justify-content: center; align-items: flex-end; }
 .keyboard-section { display: flex; flex-direction: column; gap: 6px; }
 .nav-section { display: flex; flex-direction: column; justify-content: space-between; height: 318px; }
 .nav-top { display: flex; flex-direction: column; gap: 6px; }
@@ -473,5 +476,36 @@
     const resetButton = $('reset-button');
     if (resetButton) resetButton.addEventListener('click', reset);
     $$('.key').forEach(key => { key.addEventListener('click', () => { const code = key.dataset.key; const ev = new KeyboardEvent('keydown', { code: code, key: key.textContent.trim() || code, bubbles: true }); document.dispatchEvent(ev); setTimeout(() => document.dispatchEvent(new KeyboardEvent('keyup', { code, bubbles: true })), 100); }); });
+})();
+
+// Responsive keyboard scaling
+(function() {
+    function scaleKeyboard() {
+        const wrapper = document.getElementById('keyboard-scale-wrapper');
+        const container = document.querySelector('.keyboard-container');
+        const layout = document.querySelector('.keyboard-layout');
+        if (!wrapper || !container || !layout) return;
+        wrapper.style.transform = 'none';
+        container.style.height = 'auto';
+        void layout.offsetWidth;
+        const layoutWidth = layout.scrollWidth;
+        const layoutHeight = layout.scrollHeight;
+        const containerPadding = 64;
+        const availableWidth = container.clientWidth - containerPadding;
+        let scale = 1;
+        if (layoutWidth > availableWidth && layoutWidth > 0) {
+            scale = availableWidth / layoutWidth;
+            scale = Math.max(scale, 0.3);
+        }
+        wrapper.style.transform = scale < 1 ? `scale(${scale})` : 'none';
+        const scaledHeight = layoutHeight * scale;
+        container.style.height = Math.ceil(scaledHeight + containerPadding) + 'px';
+    }
+    setTimeout(scaleKeyboard, 100);
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(scaleKeyboard, 100);
+    });
 })();
 </script>

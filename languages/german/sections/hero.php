@@ -56,6 +56,23 @@
     </div>
 </section>
 
+<!-- Tool Stage (Above the Fold) -->
+<section class="tool-stage" aria-labelledby="tool-stage-title-de">
+    <div class="container tool-stage-header">
+        <div>
+            <p class="section-kicker">Hauptwerkzeug</p>
+            <h2 id="tool-stage-title-de">Tastatur-Tester</h2>
+            <p class="section-lede">Verwenden Sie das Tool unten, um jede Taste zu testen, Layouts zu pruefen und Latenz zu messen.</p>
+        </div>
+        <div class="tool-stage-actions">
+            <a class="landing-btn landing-btn-ghost" href="#guidelines">Schnelltipps anzeigen</a>
+        </div>
+    </div>
+    <div class="tool-shell">
+        <?php include __DIR__ . '/tool.php'; ?>
+    </div>
+</section>
+
 <!-- Trust Strip -->
 <section class="trust-strip" aria-label="Hauptfunktionen">
     <div class="container trust-grid">

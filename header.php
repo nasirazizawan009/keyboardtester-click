@@ -107,6 +107,28 @@ if (!isset($baseUrl)) {
         box-shadow: 0 8px 16px rgba(15, 23, 42, 0.2);
     }
 
+    /* Theme Toggle Button */
+    .theme-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 10px;
+        color: var(--header-text);
+        font-size: 1.25rem;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+        background: rgba(255,255,255,0.2);
+        transform: scale(1.05);
+    }
+
     /* Language Selector */
     .lang-selector {
         position: relative;
@@ -234,10 +256,50 @@ if (!isset($baseUrl)) {
         color: var(--link-color);
     }
 
+    /* Mobile Tools Menu - hidden on desktop */
+    .mobile-tools-menu {
+        display: none;
+    }
+
     /* Mobile styles */
     @media (max-width: 900px) {
         .header-container {
             padding: 12px 16px;
+        }
+
+        /* Mobile tools menu styling */
+        .mobile-tools-menu {
+            display: none;
+            width: 100%;
+            padding: 8px 0;
+            margin: 4px 0;
+            border-radius: 12px;
+            background: rgba(15,23,42,0.06);
+        }
+
+        html.dark-theme .mobile-tools-menu,
+        [data-theme="dark"] .mobile-tools-menu {
+            background: rgba(255,255,255,0.06);
+        }
+
+        .mobile-tools-menu.open {
+            display: block;
+        }
+
+        .mobile-tools-menu a {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            margin: 2px 8px;
+            transition: background 0.2s ease;
+        }
+
+        .mobile-tools-menu a:hover,
+        .mobile-tools-menu a:active {
+            background: rgba(56,189,248,0.15);
         }
 
         .brand {
@@ -432,6 +494,25 @@ if (!isset($baseUrl)) {
         <nav class="site-nav" id="siteNav">
             <a class="nav-link" href="<?php echo $pages['home']; ?>">Home</a>
             <button class="nav-link" id="toolsToggle" aria-expanded="false" aria-controls="toolsPanel">Tools</button>
+
+            <!-- Mobile Tools Menu (shown inside nav on mobile) -->
+            <div class="mobile-tools-menu" id="mobileToolsMenu">
+                <a href="<?php echo $pages['home']; ?>">Keyboard Tester</a>
+                <a href="<?php echo $pages['keyboard_typing']; ?>">Typing Speed Test</a>
+                <a href="<?php echo $pages['mouse_test']; ?>">Mouse Tester</a>
+                <a href="<?php echo $pages['click_speed']; ?>">Click Speed Test</a>
+                <a href="<?php echo $pages['ghost_click']; ?>">Ghost Click Detector</a>
+                <a href="<?php echo $pages['dpi_tester']; ?>">DPI Tester</a>
+                <a href="<?php echo $pages['screen_test']; ?>">Screen Tester</a>
+                <a href="<?php echo $pages['webcam_test']; ?>">Webcam Tester</a>
+                <a href="<?php echo $pages['mic_test']; ?>">Microphone Tester</a>
+                <a href="<?php echo $pages['headphone_test']; ?>">Headphone Tester</a>
+                <a href="<?php echo $pages['qr_generator']; ?>">QR Generator</a>
+                <a href="<?php echo $pages['ocr_tool']; ?>">OCR Tool</a>
+                <a href="<?php echo $pages['password_gen']; ?>">Password Generator</a>
+                <a href="<?php echo $pages['whatsapp_link']; ?>">WhatsApp Link</a>
+            </div>
+
             <a class="nav-link" href="<?php echo $pages['privacy']; ?>">Privacy</a>
             <a class="nav-link" href="<?php echo $pages['about']; ?>">About</a>
 
@@ -551,40 +632,82 @@ document.addEventListener('DOMContentLoaded', function() {
     syncThemeIcon();
     window.addEventListener('themechange', syncThemeIcon);
 
-    window.addEventListener('scroll', () => {
-        header.classList.toggle('scrolled', window.scrollY > 40);
-    });
+    // Theme toggle is handled by theme.js (assets/js/theme.js)
+    // This script only syncs the icon via the themechange event listener above
 
-    menuToggle.addEventListener('click', () => {
-        const isOpen = siteNav.classList.toggle('open');
-        menuToggle.classList.toggle('active', isOpen);
-        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        // Prevent body scroll when menu is open
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    toolsToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        const isActive = toolsPanel.classList.toggle('active');
-        toolsToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-    });
-
-    document.addEventListener('click', (e) => {
-        const withinHeader = header.contains(e.target);
-        if (!withinHeader) {
-            toolsPanel.classList.remove('active');
-            toolsToggle.setAttribute('aria-expanded', 'false');
-        }
-    });
-
-    toolsPanel.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            toolsPanel.classList.remove('active');
-            toolsToggle.setAttribute('aria-expanded', 'false');
-            siteNav.classList.remove('open');
-            menuToggle.setAttribute('aria-expanded', 'false');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 40);
         });
-    });
+    }
+
+    if (menuToggle && siteNav) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = siteNav.classList.toggle('open');
+            menuToggle.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+    }
+
+    const mobileToolsMenu = document.getElementById('mobileToolsMenu');
+
+    if (toolsToggle) {
+        toolsToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isMobile = window.innerWidth <= 900;
+
+            if (isMobile && mobileToolsMenu) {
+                // On mobile, toggle the inline mobile tools menu
+                const isOpen = mobileToolsMenu.classList.toggle('open');
+                toolsToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            } else if (toolsPanel) {
+                // On desktop, toggle the mega panel
+                const isActive = toolsPanel.classList.toggle('active');
+                toolsToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+            }
+        });
+    }
+
+    if (header && toolsToggle) {
+        document.addEventListener('click', (e) => {
+            const withinHeader = header.contains(e.target);
+            if (!withinHeader) {
+                if (toolsPanel) toolsPanel.classList.remove('active');
+                if (mobileToolsMenu) mobileToolsMenu.classList.remove('open');
+                toolsToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close menus when links are clicked
+        if (toolsPanel) {
+            toolsPanel.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    toolsPanel.classList.remove('active');
+                    toolsToggle.setAttribute('aria-expanded', 'false');
+                    if (siteNav) siteNav.classList.remove('open');
+                    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Close mobile menu when mobile tool links are clicked
+        if (mobileToolsMenu) {
+            mobileToolsMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToolsMenu.classList.remove('open');
+                    toolsToggle.setAttribute('aria-expanded', 'false');
+                    if (siteNav) siteNav.classList.remove('open');
+                    if (menuToggle) {
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    }
 
     // Language selector
     const langToggle = document.getElementById('langToggle');

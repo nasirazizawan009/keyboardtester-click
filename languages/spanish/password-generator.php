@@ -44,6 +44,19 @@ $pageKeywords = 'generador contraseñas, contraseña segura, crear contraseña, 
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Generador de Contraseñas</h2>
+          <p class="section-lede">Configura tus preferencias y genera una contraseña segura.</p>
+        </div>
+      </div>
+      <section id="password-gen" class="tool-shell">
+        <?php include __DIR__ . '/tools/password-generator-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'generador contraseñas, contraseña segura, crear contraseña, 
           <div class="trust-desc">No se guardan</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Generador de Contraseñas</h2>
-          <p class="section-lede">Configura tus preferencias y genera una contraseña segura.</p>
-        </div>
-      </div>
-      <section id="password-gen" class="tool-shell">
-        <?php include __DIR__ . '/tools/password-generator-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'password-generator'; include __DIR__ . '/sections/tools-list-es.php'; ?>

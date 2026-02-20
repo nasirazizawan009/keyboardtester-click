@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/password-generator/hero.svg'); ?>" alt="Password Generator preview" loading="eager">
+        <img src="<?php echo url('images/password-generator/hero.svg'); ?>" alt="Secure password generator tool - create strong random passwords online" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

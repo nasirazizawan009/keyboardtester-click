@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/headphone-test/hero.svg'); ?>" alt="Headphone & Speaker Tester preview" loading="eager">
+        <img src="<?php echo url('images/headphone-test/hero.svg'); ?>" alt="Online headphone and speaker tester - test stereo audio channels left and right" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

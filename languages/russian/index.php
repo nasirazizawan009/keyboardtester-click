@@ -77,23 +77,6 @@ $pageKeywords = 'тестер клавиатуры, тест русской кл
         <!-- Hero Section -->
         <?php include __DIR__ . '/sections/hero.php'; ?>
 
-        <!-- Tool Stage -->
-        <section class="tool-stage" aria-labelledby="tool-stage-title-ru">
-            <div class="container tool-stage-header">
-                <div>
-                    <p class="section-kicker">Основной Инструмент</p>
-                    <h2 id="tool-stage-title-ru">Тестер Клавиатуры</h2>
-                    <p class="section-lede">Используйте инструмент ниже для проверки каждой клавиши, верификации раскладок и измерения задержки.</p>
-                </div>
-                <div class="tool-stage-actions">
-                    <a class="landing-btn landing-btn-ghost" href="#guidelines">Быстрые советы</a>
-                </div>
-            </div>
-            <div class="tool-shell">
-                <?php include __DIR__ . '/sections/tool.php'; ?>
-            </div>
-        </section>
-
         <!-- Tools List -->
         <?php $currentTool = 'russian-keyboard'; include __DIR__ . '/sections/tools-list-ru.php'; ?>
 

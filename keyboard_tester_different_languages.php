@@ -28,11 +28,11 @@ $pageKeywords = 'language keyboard tester, arabic keyboard, russian keyboard, sp
         <section class="language-keyboards-section">
             <div class="container">
                 <div class="language-selection" id="language-selection">
-                    <h2>?? Test Your Keyboard in Your Language</h2>
+                    <h2>Test Your Keyboard in Your Language</h2>
                     <div class="language-buttons">
                         <a href="<?php echo $keyboardLanguages['ar']['url']; ?>">
                             <span>
-                                <img src="<?php echo url('flags/arabic_flag.svg'); ?>" alt="Arabic Flag"> ???????
+                                <img src="<?php echo url('flags/arabic_flag.svg'); ?>" alt="Arabic Flag"> Arabic
                             </span>
                         </a>
                         <a href="<?php echo $keyboardLanguages['de']['url']; ?>">
@@ -42,32 +42,32 @@ $pageKeywords = 'language keyboard tester, arabic keyboard, russian keyboard, sp
                         </a>
                         <a href="<?php echo $keyboardLanguages['ru']['url']; ?>">
                             <span>
-                                <img src="<?php echo url('flags/russian_flag.svg'); ?>" alt="Russian Flag"> ???????
+                                <img src="<?php echo url('flags/russian_flag.svg'); ?>" alt="Russian Flag"> Russian
                             </span>
                         </a>
                         <a href="<?php echo $keyboardLanguages['es']['url']; ?>">
                             <span>
-                                <img src="<?php echo url('flags/spanish_flag.svg'); ?>" alt="Spanish Flag"> Espa?ol
+                                <img src="<?php echo url('flags/spanish_flag.svg'); ?>" alt="Spanish Flag"> Spanish
                             </span>
                         </a>
                         <a href="<?php echo $keyboardLanguages['pt']['url']; ?>">
                             <span>
-                                <img src="<?php echo url('flags/Portugal_flag.svg'); ?>" alt="Portuguese Flag"> Portugu?s
+                                <img src="<?php echo url('flags/Portugal_flag.svg'); ?>" alt="Portuguese Flag"> Portuguese
                             </span>
                         </a>
                         <a href="<?php echo $keyboardLanguages['fr']['url']; ?>">
                             <span>
-                                <img src="<?php echo url('flags/french_flag.svg'); ?>" alt="French Flag"> Fran?ais
+                                <img src="<?php echo url('flags/french_flag.svg'); ?>" alt="French Flag"> French
                             </span>
                         </a>
                         <a href="<?php echo $keyboardLanguages['ja']['url']; ?>">
                             <span>
-                                <img src="<?php echo url('flags/japan_flag.svg'); ?>" alt="Japanese Flag"> ???
+                                <img src="<?php echo url('flags/japan_flag.svg'); ?>" alt="Japanese Flag"> Japanese
                             </span>
                         </a>
                         <a href="<?php echo $keyboardLanguages['ko']['url']; ?>">
                             <span>
-                                <img src="<?php echo url('flags/korean_flag.svg'); ?>" alt="Korean Flag"> ???
+                                <img src="<?php echo url('flags/korean_flag.svg'); ?>" alt="Korean Flag"> Korean
                             </span>
                         </a>
                     </div>

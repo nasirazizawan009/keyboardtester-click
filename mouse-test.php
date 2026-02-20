@@ -16,61 +16,36 @@
 
   <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
 
-  <!-- FAQPage Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do I test my mouse buttons online?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Click inside the tester, then press left, middle, and right buttons. Each press updates the counter and highlight."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I test my mouse scroll wheel?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Scroll up and down and watch the direction indicator and count to confirm consistent wheel input."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I test double click issues?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Rapidly click the button and watch the counter for unexpected extra clicks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does the mouse tester work on laptops and touchpads?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It works with trackpads too, but external mice give the most accurate results."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is the mouse test private?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "All testing runs in your browser and does not upload data."
-        }
-      }
-    ]
-  }
-  </script>
+  <!-- Structured Data (JSON-LD) -->
+  <?php
+  include_once __DIR__ . '/includes/schema.php';
+  echo generateToolPageSchema('mouse_tester', [
+      ['name' => 'Home', 'url' => '/'],
+      ['name' => 'Mouse Tester', 'url' => '']
+  ]);
+  ?>
 </head>
 <body class="landing-page">
   <?php include 'header.php'; ?>
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-mouse-test.php'; ?>
+
+    <section class="tool-stage" id="mouse-test-tool" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Primary tester</p>
+          <h2 id="tool-stage-title">Mouse tester</h2>
+          <p class="section-lede">Use the live tool below to validate clicks, scroll, and status.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
+        </div>
+      </div>
+      <section id="mouse-test" class="tool-shell">
+        <?php include 'tools/mouse_click_test.php'; ?>
+      </section>
+    </section>
 
     <section class="trust-strip" aria-label="Key benefits">
       <div class="container trust-grid">
@@ -159,23 +134,9 @@
       </div>
     </section>
 
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Primary tester</p>
-          <h2 id="tool-stage-title">Mouse tester</h2>
-          <p class="section-lede">Use the live tool below to validate clicks, scroll, and status.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
-        </div>
-      </div>
-      <section id="mouse-test" class="tool-shell">
-        <?php include 'tools/mouse_click_test.php'; ?>
-      </section>
-    </section>
-
     <?php include 'includes/components/tools-list.php'; ?>
+    <?php include 'help/seo-content/mouse-test.php'; ?>
+    <?php $currentTool = 'mouse'; include 'includes/related-tools.php'; ?>
     <?php include 'help/mouse-click-test.php'; ?>
   </main>
 

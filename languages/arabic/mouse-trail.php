@@ -52,6 +52,22 @@ $pageKeywords = 'مسار الماوس, تتبع الماوس, حركة الما
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">الأداة الرئيسية</p>
+          <h2 id="tool-stage-title">مسار الماوس</h2>
+          <p class="section-lede">حرك الماوس وشاهد المسار يتشكل.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
+        </div>
+      </div>
+      <section id="mouse-trail" class="tool-shell">
+        <?php include __DIR__ . '/tools/mouse-trail-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="الميزات الرئيسية">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -99,22 +115,6 @@ $pageKeywords = 'مسار الماوس, تتبع الماوس, حركة الما
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">الأداة الرئيسية</p>
-          <h2 id="tool-stage-title">مسار الماوس</h2>
-          <p class="section-lede">حرك الماوس وشاهد المسار يتشكل.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
-        </div>
-      </div>
-      <section id="mouse-trail" class="tool-shell">
-        <?php include __DIR__ . '/tools/mouse-trail-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'mouse-trail'; include __DIR__ . '/sections/tools-list-ar.php'; ?>

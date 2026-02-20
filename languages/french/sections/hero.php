@@ -56,6 +56,23 @@
     </div>
 </section>
 
+<!-- Tool Stage - Above the Fold -->
+<section class="tool-stage" aria-labelledby="tool-stage-title-fr">
+    <div class="container tool-stage-header">
+        <div>
+            <p class="section-kicker">Outil Principal</p>
+            <h2 id="tool-stage-title-fr">Testeur de Clavier</h2>
+            <p class="section-lede">Utilisez l'outil ci-dessous pour tester chaque touche, verifier les dispositions et mesurer la latence.</p>
+        </div>
+        <div class="tool-stage-actions">
+            <a class="landing-btn landing-btn-ghost" href="#guidelines">Voir les Conseils Rapides</a>
+        </div>
+    </div>
+    <div class="tool-shell">
+        <?php include __DIR__ . '/tool.php'; ?>
+    </div>
+</section>
+
 <!-- Trust Strip -->
 <section class="trust-strip" aria-label="Caracteristiques principales">
     <div class="container trust-grid">

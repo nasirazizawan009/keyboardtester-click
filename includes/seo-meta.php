@@ -44,6 +44,7 @@ $keywords = $pageKeywords ?? $meta['keywords'] ?? ($toolMeta['keywords'] ?? '');
 $author = $pageAuthor ?? $meta['author'] ?? $siteName;
 $robots = $pageRobots ?? $meta['robots'] ?? 'index, follow';
 
+// Build canonical URL - always absolute, HTTPS, non-www
 $requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
 $requestPath = ltrim($requestPath, '/');
 $basePath = ltrim($baseUrl, '/');
@@ -51,14 +52,28 @@ if ($basePath !== '' && strpos($requestPath, $basePath) === 0) {
     $requestPath = substr($requestPath, strlen($basePath));
 }
 $requestPath = ltrim($requestPath, '/');
-if ($requestPath === 'index.php') {
+
+// Normalize: index.php -> root, remove query strings
+if ($requestPath === 'index.php' || $requestPath === 'index.html') {
     $requestPath = '';
 }
+// Remove trailing index.php from paths like /languages/korean/index.php
+$requestPath = preg_replace('~/index\.(php|html)$~', '/', $requestPath);
 
-$canonical = $pageCanonical ?? $meta['canonical'] ?? ($requestPath === '' ? absoluteUrl('') : absoluteUrl($requestPath));
+// Build canonical from page override, meta config, or request path
+$canonical = $pageCanonical ?? $meta['canonical'] ?? null;
+if (!$canonical) {
+    $canonical = $requestPath === '' ? absoluteUrl('') : absoluteUrl($requestPath);
+}
+
+// Ensure canonical is always absolute URL with correct format
 if ($canonical && !preg_match('~^https?://~i', $canonical)) {
     $canonical = absoluteUrl(ltrim($canonical, '/'));
 }
+
+// Force HTTPS and non-www in canonical (safety check)
+$canonical = preg_replace('~^http://~i', 'https://', $canonical);
+$canonical = preg_replace('~^(https?://)www\.~i', '$1', $canonical);
 
 $ogImage = $pageOgImage ?? $meta['og_image'] ?? ($toolMeta['og_image'] ?? 'images/shared/keyboard-and-mouse.png');
 if ($ogImage && !preg_match('~^https?://~i', $ogImage)) {
@@ -77,6 +92,9 @@ $ogImageAlt = $pageOgImageAlt ?? ($title . ' preview');
 $twitterCard = $pageTwitterCard ?? 'summary_large_image';
 
 ?>
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="onILKj31lZD-N2oSgtXNpKZnKJZi1oK0N_yMWIP71_4">
+
     <title><?php echo htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($description, ENT_QUOTES, 'UTF-8'); ?>">
 <?php if (!empty($keywords)): ?>

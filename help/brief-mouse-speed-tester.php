@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Click Speed</p>
-      <h1 class="hero-title">Run a click speed check in seconds</h1>
+      <h1 class="hero-title">Free Click Speed Test - Measure Your CPS Online</h1>
       <p class="hero-lede">Use this free online mouse speed test to click and review results instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#mouse-speed-tester">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mouse-speed/hero.svg'); ?>" alt="Mouse Speed Test preview" loading="eager">
+        <img src="<?php echo url('images/mouse-speed/hero.svg'); ?>" alt="Mouse click speed test - measure CPS clicks per second online" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

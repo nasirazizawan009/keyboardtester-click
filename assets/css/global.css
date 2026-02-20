@@ -11,15 +11,20 @@
     /* Core Colors */
     --bg-color: #f5f7fa;
     --text-color: #1e293b;
+    --text-secondary: #334155;
     --text-muted: #475569;
     --primary-color: #4b5eAA;
     --secondary-color: #7d8bc1;
     --accent-color: #f59e0b;
+    --surface: #ffffff;
+    --border: #e2e8f0;
+    --accent-primary: #1d4ed8;
+    --accent-secondary: #0369a1;
     
     /* Header */
-    --header-bg: linear-gradient(90deg, #4b5eAA, #7d8bc1);
+    --header-bg: #0b1220;
     --header-text: #ffffff;
-    --header-border: #e2e8f0;
+    --header-border: rgba(148, 163, 184, 0.28);
     
     /* Interactive Elements */
     --hover-bg: rgba(230, 230, 230, 0.8);
@@ -89,15 +94,20 @@ html.dark-theme,
 [data-theme="dark"] {
     --bg-color: #0f172a;
     --text-color: #e2e8f0;
+    --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
     --primary-color: #60a5fa;
     --secondary-color: #4b5563;
     --accent-color: #f59e0b;
+    --surface: #1e293b;
+    --border: #334155;
+    --accent-primary: #93c5fd;
+    --accent-secondary: #7dd3fc;
     
     /* Header */
-    --header-bg: linear-gradient(90deg, #1e293b, #334155);
+    --header-bg: #0b1220;
     --header-text: #e2e8f0;
-    --header-border: #334155;
+    --header-border: rgba(148, 163, 184, 0.24);
     
     /* Interactive Elements */
     --hover-bg: rgba(75, 85, 99, 0.8);
@@ -151,7 +161,8 @@ body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
-    transition: background-color var(--transition-normal), color var(--transition-normal);
+    /* Background/color transitions only needed when user toggles theme, not on page load */
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Brief guide/hero styles moved to index-modern.css to reduce global.css size */
@@ -699,8 +710,9 @@ html.dark-theme .theme-toggle,
     font-family: var(--font-primary);
     font-weight: 500;
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     user-select: none;
+    will-change: transform;
 }
 
 .key:hover {

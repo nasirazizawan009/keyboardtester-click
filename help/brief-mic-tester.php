@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Microphone Input</p>
-      <h1 class="hero-title">Run a microphone input check in seconds</h1>
+      <h1 class="hero-title">Free Microphone Test Online - Check If Your Mic Works</h1>
       <p class="hero-lede">Use this free online mic tester to speak into the mic and review results instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#mic-tester">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mic-test/hero.svg'); ?>" alt="Mic Tester preview" loading="eager">
+        <img src="<?php echo url('images/mic-test/hero.svg'); ?>" alt="Online microphone tester interface - test mic input levels and quality" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

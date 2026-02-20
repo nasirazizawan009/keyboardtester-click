@@ -44,6 +44,19 @@ $pageKeywords = 'rastro ratón, mouse trail, movimiento cursor, visualizar rató
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Visualizador de Rastro</h2>
+          <p class="section-lede">Mueve el ratón para ver el rastro de movimiento.</p>
+        </div>
+      </div>
+      <section id="trail-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/mouse-trail-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'rastro ratón, mouse trail, movimiento cursor, visualizar rató
           <div class="trust-desc">Ajustar opciones</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Visualizador de Rastro</h2>
-          <p class="section-lede">Mueve el ratón para ver el rastro de movimiento.</p>
-        </div>
-      </div>
-      <section id="trail-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/mouse-trail-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'mouse-trail'; include __DIR__ . '/sections/tools-list-es.php'; ?>

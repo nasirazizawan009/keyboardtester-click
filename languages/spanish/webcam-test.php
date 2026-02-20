@@ -44,6 +44,19 @@ $pageKeywords = 'prueba webcam, test cámara, verificar cámara web, probar vide
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Prueba de Cámara Web</h2>
+          <p class="section-lede">Permite el acceso a la cámara para ver la transmisión en vivo.</p>
+        </div>
+      </div>
+      <section id="webcam-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/webcam-test-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'prueba webcam, test cámara, verificar cámara web, probar vide
           <div class="trust-desc">Sin grabación</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Prueba de Cámara Web</h2>
-          <p class="section-lede">Permite el acceso a la cámara para ver la transmisión en vivo.</p>
-        </div>
-      </div>
-      <section id="webcam-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/webcam-test-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'webcam-test'; include __DIR__ . '/sections/tools-list-es.php'; ?>

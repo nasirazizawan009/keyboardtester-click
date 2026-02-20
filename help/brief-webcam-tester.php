@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/webcam-test/hero.svg'); ?>" alt="Webcam Tester preview" loading="eager">
+        <img src="<?php echo url('images/webcam-test/hero.svg'); ?>" alt="Online webcam tester - check camera quality resolution and video preview" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

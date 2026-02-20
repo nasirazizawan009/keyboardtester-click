@@ -78,25 +78,8 @@ $pageKeywords = '키보드 테스터, 키보드 테스트, 한글 키보드, 두
 
     <!-- Main Content -->
     <main id="main-content" class="landing-main">
-        <!-- Hero Section -->
+        <!-- Hero Section (includes tool-stage) -->
         <?php include __DIR__ . '/sections/hero.php'; ?>
-
-        <!-- Tool Stage -->
-        <section class="tool-stage" aria-labelledby="tool-stage-title-ko">
-            <div class="container tool-stage-header">
-                <div>
-                    <p class="section-kicker">주요 도구</p>
-                    <h2 id="tool-stage-title-ko">키보드 테스터</h2>
-                    <p class="section-lede">아래 도구를 사용하여 각 키를 테스트하고, 레이아웃을 확인하고, 지연 시간을 측정하세요.</p>
-                </div>
-                <div class="tool-stage-actions">
-                    <a class="landing-btn landing-btn-ghost" href="#guidelines">빠른 팁 보기</a>
-                </div>
-            </div>
-            <div class="tool-shell">
-                <?php include __DIR__ . '/sections/tool.php'; ?>
-            </div>
-        </section>
 
         <!-- Tools List -->
         <?php $currentTool = 'korean-keyboard'; include __DIR__ . '/sections/tools-list-ko.php'; ?>

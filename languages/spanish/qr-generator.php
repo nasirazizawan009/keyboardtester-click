@@ -44,6 +44,19 @@ $pageKeywords = 'generador QR, crear código QR, QR gratis, generar QR, código 
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Generador de QR</h2>
+          <p class="section-lede">Ingresa tu contenido y genera un código QR al instante.</p>
+        </div>
+      </div>
+      <section id="qr-generator" class="tool-shell">
+        <?php include __DIR__ . '/tools/qr-generator-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'generador QR, crear código QR, QR gratis, generar QR, código 
           <div class="trust-desc">Sin límites</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Generador de QR</h2>
-          <p class="section-lede">Ingresa tu contenido y genera un código QR al instante.</p>
-        </div>
-      </div>
-      <section id="qr-generator" class="tool-shell">
-        <?php include __DIR__ . '/tools/qr-generator-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'qr-generator'; include __DIR__ . '/sections/tools-list-es.php'; ?>

@@ -55,6 +55,8 @@ ob_start();
     </div>
 
     <!-- Spanish Keyboard Layout (QWERTY) -->
+    <div class="keyboard-container">
+    <div class="keyboard-scale-wrapper" id="keyboard-scale-wrapper">
     <div class="keyboard" id="keyboard">
         <div class="key-row">
             <div class="key" data-key="Escape"><span>Esc</span></div>
@@ -164,10 +166,47 @@ ob_start();
             <div class="key" data-key="ArrowRight"><span>→</span></div>
         </div>
     </div>
+    </div><!-- /keyboard-scale-wrapper -->
+    </div><!-- /keyboard-container -->
 </section>
+
+<style>
+.keyboard-container { position: relative; overflow: hidden; max-width: 1400px; margin: 0 auto; padding: 20px; }
+.keyboard-scale-wrapper { transform-origin: center top; display: flex; justify-content: center; }
+</style>
 
 <script>
 <?php include __DIR__ . '/../keyboard-tester/sections/keyboard-tester.js'; ?>
+
+(function() {
+    function scaleKeyboard() {
+        const wrapper = document.getElementById('keyboard-scale-wrapper');
+        const container = document.querySelector('.keyboard-container');
+        const layout = document.querySelector('.keyboard');
+        if (!wrapper || !container || !layout) return;
+        wrapper.style.transform = 'none';
+        container.style.height = 'auto';
+        void layout.offsetWidth;
+        const layoutWidth = layout.scrollWidth;
+        const layoutHeight = layout.scrollHeight;
+        const containerPadding = 40;
+        const availableWidth = container.clientWidth - containerPadding;
+        let scale = 1;
+        if (layoutWidth > availableWidth && layoutWidth > 0) {
+            scale = availableWidth / layoutWidth;
+            scale = Math.max(scale, 0.3);
+        }
+        wrapper.style.transform = scale < 1 ? `scale(${scale})` : 'none';
+        const scaledHeight = layoutHeight * scale;
+        container.style.height = Math.ceil(scaledHeight + containerPadding) + 'px';
+    }
+    setTimeout(scaleKeyboard, 100);
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(scaleKeyboard, 100);
+    });
+})();
 </script>
 
 <?php

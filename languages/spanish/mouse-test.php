@@ -69,6 +69,22 @@ $pageKeywords = 'probador ratón, test mouse, prueba clics, test desplazamiento,
       </div>
     </section>
 
+    <section class="tool-stage" id="mouse-test-tool" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Probador de Ratón</h2>
+          <p class="section-lede">Haz clic y desplaza en el área de prueba.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">Ver Consejos</a>
+        </div>
+      </div>
+      <section id="mouse-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/mouse-test-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -116,22 +132,6 @@ $pageKeywords = 'probador ratón, test mouse, prueba clics, test desplazamiento,
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Probador de Ratón</h2>
-          <p class="section-lede">Haz clic y desplaza en el área de prueba.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">Ver Consejos</a>
-        </div>
-      </div>
-      <section id="mouse-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/mouse-test-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'mouse-test'; include __DIR__ . '/sections/tools-list-es.php'; ?>

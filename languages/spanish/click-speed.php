@@ -69,6 +69,19 @@ $pageKeywords = 'velocidad clic, CPS test, clics por segundo, prueba velocidad m
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Prueba de Velocidad de Clic</h2>
+          <p class="section-lede">Haz clic lo más rápido posible en el área de prueba.</p>
+        </div>
+      </div>
+      <section id="click-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/click-speed-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -88,19 +101,6 @@ $pageKeywords = 'velocidad clic, CPS test, clics por segundo, prueba velocidad m
           <div class="trust-desc">Resultados en vivo</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Prueba de Velocidad de Clic</h2>
-          <p class="section-lede">Haz clic lo más rápido posible en el área de prueba.</p>
-        </div>
-      </div>
-      <section id="click-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/click-speed-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'click-speed'; include __DIR__ . '/sections/tools-list-es.php'; ?>

@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/screen-test/hero.svg'); ?>" alt="Screen Tester preview" loading="eager">
+        <img src="<?php echo url('images/screen-test/hero.svg'); ?>" alt="Dead pixel tester - detect stuck and hot pixels on monitor screen" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

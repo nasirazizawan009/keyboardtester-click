@@ -20,6 +20,12 @@ if (!isset($baseUrl)) {
                 Modern testing tools for keyboards, mice, audio, screens, and more—built for clarity, accuracy, and speed.
             </p>
             <div class="social-links">
+                <a href="<?php echo $socialLinks['github']; ?>" target="_blank" rel="noopener noreferrer" aria-label="Download source code on GitHub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    GitHub
+                </a>
                 <a href="<?php echo $socialLinks['gitlab']; ?>" target="_blank" rel="noopener noreferrer" aria-label="View source code on GitLab">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"></path>
@@ -110,30 +116,15 @@ if (!isset($baseUrl)) {
         <p class="tagline">
             Built with <span class="heart">❤️</span> for tech enthusiasts worldwide
         </p>
+        <p class="partner-link">
+            <a href="https://www.freewebsubmission.com" target="_blank" rel="noopener">Submit your site</a>
+        </p>
     </div>
 </footer>
 
 <button id="back-to-top" class="back-to-top" aria-label="Scroll to top">↑</button>
 
-<!-- Organization Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "KeyboardTester.Click",
-  "url": "https://keyboardtester.click/",
-  "logo": "https://keyboardtester.click/images/shared/keyboard-and-mouse.png",
-  "description": "Free online testing tools for keyboards, mice, screens, and other peripherals",
-  "sameAs": [
-    "https://gitlab.com/nasirazizawan/keyboardtester.click"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "support@keyboardtester.click",
-    "contactType": "Customer Support"
-  }
-}
-</script>
+<!-- Organization Schema moved to /includes/schema.php for centralized management -->
 
 <style>
     /* Footer Styles */
@@ -423,6 +414,22 @@ if (!isset($baseUrl)) {
         font-size: 0.875rem;
         color: var(--footer-muted);
         margin: 0;
+    }
+
+    .partner-link {
+        font-size: 0.75rem;
+        color: var(--footer-muted);
+        margin-top: 16px;
+        opacity: 0.6;
+    }
+
+    .partner-link a {
+        color: var(--footer-muted);
+        text-decoration: none;
+    }
+
+    .partner-link a:hover {
+        color: var(--footer-accent);
     }
 
     .heart {

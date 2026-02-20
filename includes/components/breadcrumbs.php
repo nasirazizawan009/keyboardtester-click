@@ -11,23 +11,25 @@ if (!empty($breadcrumbs)):
 
 <nav class="breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
     <div class="container">
-        <a href="<?php echo $baseUrl; ?>" itemprop="item" itemscope itemtype="https://schema.org/Thing">
-            <span itemprop="name">Home</span>
-            <meta itemprop="url" content="<?php echo $baseUrl; ?>">
-        </a>
-        
+        <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="<?php echo $baseUrl; ?>" itemprop="item">
+                <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1">
+        </span>
+
         <?php foreach ($breadcrumbs as $index => $crumb): ?>
             <span class="separator">›</span>
-            <?php if (!empty($crumb['url'])): ?>
-                <a href="<?php echo $crumb['url']; ?>" itemprop="item" itemscope itemtype="https://schema.org/Thing">
+            <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <?php if (!empty($crumb['url'])): ?>
+                    <a href="<?php echo $crumb['url']; ?>" itemprop="item">
+                        <span itemprop="name"><?php echo $crumb['label']; ?></span>
+                    </a>
+                <?php else: ?>
                     <span itemprop="name"><?php echo $crumb['label']; ?></span>
-                    <meta itemprop="url" content="<?php echo $crumb['url']; ?>">
-                </a>
-            <?php else: ?>
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
-                    <span itemprop="name"><?php echo $crumb['label']; ?></span>
-                </span>
-            <?php endif; ?>
+                <?php endif; ?>
+                <meta itemprop="position" content="<?php echo $index + 2; ?>">
+            </span>
         <?php endforeach; ?>
     </div>
 </nav>

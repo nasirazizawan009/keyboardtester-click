@@ -47,6 +47,7 @@
         </div>
 
         <!-- Keyboard - AZERTY Layout -->
+        <div class="keyboard-scale-wrapper" id="keyboard-scale-wrapper">
         <div class="keyboard" id="keyboard">
             <!-- Row 1 -->
             <div class="key-row">
@@ -124,6 +125,7 @@
                 <div class="key ctrl-key" data-key="Control">Ctrl</div>
             </div>
         </div>
+        </div><!-- /keyboard-scale-wrapper -->
 
         <!-- History -->
         <div class="history-panel" id="history-panel" style="display: none;">
@@ -142,8 +144,70 @@
     </div>
 </section>
 
+<style>
+/* Responsive scaling styles */
+.keyboard-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.keyboard-scale-wrapper {
+    transform-origin: center top;
+    display: flex;
+    justify-content: center;
+}
+</style>
+
 <script>
 <?php include __DIR__ . '/../keyboard-tester/sections/keyboard-tester.js'; ?>
+
+// Responsive keyboard scaling
+(function() {
+    function scaleKeyboard() {
+        const wrapper = document.getElementById('keyboard-scale-wrapper');
+        const container = document.querySelector('.keyboard-container');
+        const layout = document.querySelector('.keyboard');
+
+        if (!wrapper || !container || !layout) return;
+
+        // Reset scale to measure natural dimensions
+        wrapper.style.transform = 'none';
+        container.style.height = 'auto';
+
+        // Force reflow to get accurate measurements
+        void layout.offsetWidth;
+
+        // Get natural dimensions of keyboard
+        const layoutWidth = layout.scrollWidth;
+        const layoutHeight = layout.scrollHeight;
+
+        // Get available width (container width minus padding)
+        const containerPadding = 40;
+        const availableWidth = container.clientWidth - containerPadding;
+
+        // Calculate scale factor
+        let scale = 1;
+        if (layoutWidth > availableWidth && layoutWidth > 0) {
+            scale = availableWidth / layoutWidth;
+            scale = Math.max(scale, 0.3);
+        }
+
+        // Apply scale transform
+        wrapper.style.transform = scale < 1 ? `scale(${scale})` : 'none';
+
+        // Set container height to exactly fit scaled keyboard
+        const scaledHeight = layoutHeight * scale;
+        container.style.height = Math.ceil(scaledHeight + containerPadding) + 'px';
+    }
+
+    setTimeout(scaleKeyboard, 100);
+
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(scaleKeyboard, 100);
+    });
+})();
 </script>
 
 <?php $content = ob_get_clean(); echo $content; ?>

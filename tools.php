@@ -16,6 +16,13 @@ $tools = [
         "icon" => "⌨️"
     ],
     [
+        "name" => "Arabic Keyboard Tester",
+        "description" => "Test Arabic keyboard layout and key response with an Arabic-first interface. Ideal for verifying Arabic key mapping and input.",
+        "category" => "keyboard",
+        "link" => url('languages/arabic/'),
+        "icon" => "??????"
+    ],
+    [
         "name" => "Mouse Tester",
         "description" => "Check all mouse buttons and scroll wheel functionality. Detect issues with left, right, and middle clicks plus side buttons.",
         "category" => "mouse",
@@ -160,7 +167,7 @@ $categories = [
 <section class="tools-section" id="tools">
     <h2 class="tools-heading">Free Testing Tools & Utilities</h2>
     <p class="tools-subheading">
-        Choose from 19 professional-grade tools to test your devices, boost productivity, and solve everyday tech challenges—all completely free!
+        Choose from 20 professional-grade tools to test your devices, boost productivity, and solve everyday tech challenges—all completely free!
     </p>
 
     <!-- Category Tabs -->

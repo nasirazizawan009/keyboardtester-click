@@ -18,12 +18,37 @@ $pageOgImage = 'images/lucky-wheel/hero.svg';
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+
+  <!-- Structured Data (JSON-LD) -->
+  <?php
+  include_once __DIR__ . '/includes/schema.php';
+  echo generateToolPageSchema('lucky_wheel', [
+      ['name' => 'Home', 'url' => '/'],
+      ['name' => 'Lucky Wheel', 'url' => '']
+  ]);
+  ?>
 </head>
 <body class="landing-page">
   <?php include 'header.php'; ?>
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-lucky-wheel.php'; ?>
+
+    <section class="tool-stage" id="lucky-wheel-tool" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Primary tool</p>
+          <h2 id="tool-stage-title">Lucky Wheel</h2>
+          <p class="section-lede">Use the live wheel below to pick a winner.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
+        </div>
+      </div>
+      <section id="lucky-wheel" class="tool-shell">
+        <?php include 'luckywheeltool.php'; ?>
+      </section>
+    </section>
 
     <section class="trust-strip" aria-label="Key benefits">
       <div class="container trust-grid">
@@ -110,22 +135,6 @@ $pageOgImage = 'images/lucky-wheel/hero.svg';
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Primary tool</p>
-          <h2 id="tool-stage-title">Lucky Wheel</h2>
-          <p class="section-lede">Use the live wheel below to pick a winner.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
-        </div>
-      </div>
-      <section id="lucky-wheel" class="tool-shell">
-        <?php include 'luckywheeltool.php'; ?>
-      </section>
     </section>
 
     <?php include 'includes/components/tools-list.php'; ?>

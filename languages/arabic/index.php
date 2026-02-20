@@ -126,25 +126,8 @@ $pageKeywords = 'اختبار لوحة المفاتيح, اختبار الكيب
 
     <!-- Arabic Content -->
     <main id="main-content" class="landing-main arabic-page">
-        <!-- Hero Section -->
+        <!-- Hero Section (includes Tool Stage) -->
         <?php include __DIR__ . '/sections/hero.php'; ?>
-
-        <!-- Tool Stage -->
-        <section class="tool-stage" aria-labelledby="tool-stage-title-ar">
-            <div class="container tool-stage-header">
-                <div>
-                    <p class="section-kicker">الأداة الرئيسية</p>
-                    <h2 id="tool-stage-title-ar">اختبار لوحة المفاتيح</h2>
-                    <p class="section-lede">استخدم الأداة أدناه لاختبار كل مفتاح، والتحقق من التخطيطات، وقياس زمن الاستجابة.</p>
-                </div>
-                <div class="tool-stage-actions">
-                    <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح السريعة</a>
-                </div>
-            </div>
-            <div class="tool-shell">
-                <?php include __DIR__ . '/sections/tool.php'; ?>
-            </div>
-        </section>
 
         <!-- Tools List (Arabic) -->
         <?php $currentTool = 'arabic-keyboard'; include __DIR__ . '/sections/tools-list-ar.php'; ?>

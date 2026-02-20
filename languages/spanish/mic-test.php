@@ -44,6 +44,19 @@ $pageKeywords = 'prueba micrófono, test mic, verificar audio, probar micrófono
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta Principal</p>
+          <h2 id="tool-stage-title">Prueba de Micrófono</h2>
+          <p class="section-lede">Permite el acceso al micrófono y habla para probar.</p>
+        </div>
+      </div>
+      <section id="mic-test" class="tool-shell">
+        <?php include __DIR__ . '/tools/mic-test-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="Características principales">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -63,19 +76,6 @@ $pageKeywords = 'prueba micrófono, test mic, verificar audio, probar micrófono
           <div class="trust-desc">No se guarda nada</div>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Herramienta Principal</p>
-          <h2 id="tool-stage-title">Prueba de Micrófono</h2>
-          <p class="section-lede">Permite el acceso al micrófono y habla para probar.</p>
-        </div>
-      </div>
-      <section id="mic-test" class="tool-shell">
-        <?php include __DIR__ . '/tools/mic-test-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'mic-test'; include __DIR__ . '/sections/tools-list-es.php'; ?>

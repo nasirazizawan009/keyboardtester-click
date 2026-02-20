@@ -18,12 +18,37 @@ $pageOgImage = 'images/whatsapp-link/hero.svg';
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+
+  <!-- Structured Data (JSON-LD) -->
+  <?php
+  include_once __DIR__ . '/includes/schema.php';
+  echo generateToolPageSchema('whatsapp_link', [
+      ['name' => 'Home', 'url' => '/'],
+      ['name' => 'WhatsApp Link Generator', 'url' => '']
+  ]);
+  ?>
 </head>
 <body class="landing-page">
   <?php include 'header.php'; ?>
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-whatsapp-link-generator.php'; ?>
+
+    <section class="tool-stage" id="wa-link-tool" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Primary tool</p>
+          <h2 id="tool-stage-title">WhatsApp Link Generator</h2>
+          <p class="section-lede">Use the live tool below to complete your test.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
+        </div>
+      </div>
+      <section id="whatsapp-link-generator" class="tool-shell">
+        <?php include 'tools/whatsapp_link_generator_tool.php'; ?>
+      </section>
+    </section>
 
     <section class="trust-strip" aria-label="Key benefits">
       <div class="container trust-grid">
@@ -86,7 +111,7 @@ $pageOgImage = 'images/whatsapp-link/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-link/step-1.svg'); ?>" alt="Start the test" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-link/step-1.svg'); ?>" alt="WhatsApp link generator step 1 - open wa.me link creator" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -94,7 +119,7 @@ $pageOgImage = 'images/whatsapp-link/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-link/step-2.svg'); ?>" alt="Enter phone and message" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-link/step-2.svg'); ?>" alt="WhatsApp link step 2 - enter phone number and message" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Enter phone and message</h3>
@@ -102,7 +127,7 @@ $pageOgImage = 'images/whatsapp-link/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-link/step-3.svg'); ?>" alt="Review results" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-link/step-3.svg'); ?>" alt="Generated WhatsApp link ready to copy and share" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -110,22 +135,6 @@ $pageOgImage = 'images/whatsapp-link/hero.svg';
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">Primary tool</p>
-          <h2 id="tool-stage-title">WhatsApp Link Generator</h2>
-          <p class="section-lede">Use the live tool below to complete your test.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
-        </div>
-      </div>
-      <section id="whatsapp-link-generator" class="tool-shell">
-        <?php include 'tools/whatsapp_link_generator_tool.php'; ?>
-      </section>
     </section>
 
     <?php include 'includes/components/tools-list.php'; ?>

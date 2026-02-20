@@ -52,6 +52,22 @@ $pageKeywords = 'OCR, استخراج النص, تعرف ضوئي, صور إلى 
       </div>
     </section>
 
+    <section class="tool-stage" aria-labelledby="tool-stage-title">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">الأداة الرئيسية</p>
+          <h2 id="tool-stage-title">أداة OCR</h2>
+          <p class="section-lede">ارفع صورة واستخرج النص منها.</p>
+        </div>
+        <div class="tool-stage-actions">
+          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
+        </div>
+      </div>
+      <section id="ocr-tool" class="tool-shell">
+        <?php include __DIR__ . '/tools/ocr-tool.php'; ?>
+      </section>
+    </section>
+
     <section class="trust-strip" aria-label="الميزات الرئيسية">
       <div class="container trust-grid">
         <div class="trust-item">
@@ -99,22 +115,6 @@ $pageKeywords = 'OCR, استخراج النص, تعرف ضوئي, صور إلى 
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="tool-stage" aria-labelledby="tool-stage-title">
-      <div class="container tool-stage-header">
-        <div>
-          <p class="section-kicker">الأداة الرئيسية</p>
-          <h2 id="tool-stage-title">أداة OCR</h2>
-          <p class="section-lede">ارفع صورة واستخرج النص منها.</p>
-        </div>
-        <div class="tool-stage-actions">
-          <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح</a>
-        </div>
-      </div>
-      <section id="ocr-tool" class="tool-shell">
-        <?php include __DIR__ . '/tools/ocr-tool.php'; ?>
-      </section>
     </section>
 
     <?php $currentTool = 'ocr-tool'; include __DIR__ . '/sections/tools-list-ar.php'; ?>

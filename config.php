@@ -20,9 +20,9 @@ if ($isLocalhost) {
     $siteUrl = 'http://localhost/kbt/';
     $blogUrl = '/kbt/blog/';
 } else {
-    // Live site
+    // Live site - Canonical: https://keyboardtester.click (non-www)
     $baseUrl = '/';
-    $siteUrl = 'https://www.keyboardtester.click/';
+    $siteUrl = 'https://keyboardtester.click/';
     $blogUrl = 'https://keyboardtester.click/blog/';
 }
 
@@ -35,6 +35,7 @@ $siteYear = date('Y');
 // Social links
 $socialLinks = [
     'twitter' => 'https://x.com/keyboardtester',
+    'github' => 'https://github.com/nasirazizawan009/keyboardtester-click',
     'gitlab' => 'https://gitlab.com/nasirazizawan/keyboardtester.click'
 ];
 

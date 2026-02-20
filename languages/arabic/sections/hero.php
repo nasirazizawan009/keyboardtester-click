@@ -57,6 +57,23 @@
     </div>
 </section>
 
+<!-- Tool Stage -->
+<section class="tool-stage" aria-labelledby="tool-stage-title-ar">
+    <div class="container tool-stage-header">
+        <div>
+            <p class="section-kicker">الأداة الرئيسية</p>
+            <h2 id="tool-stage-title-ar">اختبار لوحة المفاتيح</h2>
+            <p class="section-lede">استخدم الأداة أدناه لاختبار كل مفتاح، والتحقق من التخطيطات، وقياس زمن الاستجابة.</p>
+        </div>
+        <div class="tool-stage-actions">
+            <a class="landing-btn landing-btn-ghost" href="#guidelines">عرض النصائح السريعة</a>
+        </div>
+    </div>
+    <div class="tool-shell">
+        <?php include __DIR__ . '/tool.php'; ?>
+    </div>
+</section>
+
 <!-- Trust Strip -->
 <section class="trust-strip" aria-label="المزايا الرئيسية">
     <div class="container trust-grid">
