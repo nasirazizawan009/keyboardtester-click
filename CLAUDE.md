@@ -1,6 +1,6 @@
 # KeyboardTester.Click - Project Guide
 
-**Version:** 17.2.26 (February 2026)
+**Version:** 17.2.27 (February 2026)
 
 ## Project Overview
 A comprehensive suite of free online testing tools for keyboards, mice, screens, audio, and utilities. The site is multilingual with support for 8 languages.
@@ -198,6 +198,33 @@ Use the `url()` function for all internal links:
 - PrintScreen cannot be captured by browsers (OS-level key)
 - Displayed with "N/A" badge and disabled styling
 - Total testable keys: 103 (excluding PrintScreen)
+
+## Recent Update (v17.2.27)
+
+### Multilingual Keyboard Encoding Fix
+- Fixed mojibake/garbled text issues in language keyboard tools
+- Verified UTF-8 content for Arabic, Russian, Korean, and Japanese layouts
+- Confirmed keyboard labels and UI strings render correctly after encoding cleanup
+
+### Cat Progress Module in All Language Keyboards
+- Reusable cat progress module now integrated in all language keyboard tool sections
+- Uses shared component: `includes/components/keyboard-cat-progress.php`
+- Uses shared assets:
+  - `assets/css/keyboard-cat-progress.css`
+  - `assets/js/keyboard-cat-progress.js`
+- Totals are language-aware (Japanese remains 109 keys; other language layouts use 104 where configured)
+- Cat progress state now updates and resets with each keyboard session in every language tool
+
+### Cat Progress Message Localization (Feb 2026)
+- Cat progress text is now locale-aware across all keyboard pages (English + all language keyboards)
+- Shared module supports `locale` option and localized packs for:
+  - `en`, `ar`, `fr`, `de`, `ja`, `ko`, `pt`, `ru`, `es`
+- Localized fields include:
+  - milestone pop-up messages
+  - mood/status text
+  - treats label
+  - completion message
+- Locale is passed from each keyboard tool initializer when creating `KeyboardCatProgress`
 
 ## Google Search Console Setup (Feb 2026)
 

@@ -3,7 +3,17 @@
  * Arabic Keyboard Tester - Full Layout Tool
  * Matches the English keyboard tester design exactly
  */
+$catProgressCssPath = __DIR__ . '/../../../assets/css/keyboard-cat-progress.css';
+$catProgressJsPath = __DIR__ . '/../../../assets/js/keyboard-cat-progress.js';
+$catProgressCssVersion = is_file($catProgressCssPath) ? (string) filemtime($catProgressCssPath) : '1';
+$catProgressJsVersion = is_file($catProgressJsPath) ? (string) filemtime($catProgressJsPath) : '1';
+$catProgressCssBaseHref = function_exists('url') ? url('assets/css/keyboard-cat-progress.css') : '/assets/css/keyboard-cat-progress.css';
+$catProgressScriptBaseHref = function_exists('url') ? url('assets/js/keyboard-cat-progress.js') : '/assets/js/keyboard-cat-progress.js';
+$catProgressCssHref = $catProgressCssBaseHref . '?v=' . rawurlencode($catProgressCssVersion);
+$catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catProgressJsVersion);
 ?>
+<link rel="preload" as="style" href="<?php echo htmlspecialchars($catProgressCssHref, ENT_QUOTES, 'UTF-8'); ?>" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<?php echo htmlspecialchars($catProgressCssHref, ENT_QUOTES, 'UTF-8'); ?>"></noscript>
 
 <section class="keyboard-tester" id="keyboard-tester">
     <!-- Controls -->
@@ -132,6 +142,12 @@
             </div>
         </div>
     </div>
+
+    <?php
+    $catProgressId = 'cat-progress-section';
+    $catProgressTotalKeys = 104;
+    include __DIR__ . '/../../../includes/components/keyboard-cat-progress.php';
+    ?>
 
     <div class="keyboard-container">
         <div class="keyboard-scale-wrapper" id="keyboard-scale-wrapper">
@@ -1066,10 +1082,12 @@
     }
 }
 </style>
+<script src="<?php echo htmlspecialchars($catProgressScriptHref, ENT_QUOTES, 'UTF-8'); ?>"></script>
 
 <script>
 (function() {
     'use strict';
+    const TOTAL_KEYS = 104;
 
     const tester = document.querySelector('.keyboard-tester');
     const state = {
@@ -1088,6 +1106,10 @@
     // DOM helpers
     const $ = id => document.getElementById(id);
     const $$ = sel => document.querySelectorAll(sel);
+    const catProgressRoot = $('cat-progress-section');
+    const catProgress = (catProgressRoot && window.KeyboardCatProgress)
+        ? new window.KeyboardCatProgress(catProgressRoot, { desktopTotalKeys: TOTAL_KEYS, mobileTotalKeys: 42, locale: 'ar' })
+        : null;
 
     // Initialize theme from selector
     const themeSelector = $('theme-selector');
@@ -1180,7 +1202,7 @@
 
     function updateStats() {
         if ($('total-keys')) $('total-keys').textContent = state.totalPresses;
-        if ($('keys-tested')) $('keys-tested').textContent = `${state.uniqueKeys.size}/104`;
+        if ($('keys-tested')) $('keys-tested').textContent = `${state.uniqueKeys.size}/${TOTAL_KEYS}`;
 
         // Find most pressed key
         let maxKey = null;
@@ -1205,6 +1227,19 @@
             if ($('min-latency')) $('min-latency').textContent = min + ' ms';
             if ($('max-latency')) $('max-latency').textContent = max + ' ms';
         }
+    }
+
+    function updateCatProgress() {
+        if (!catProgress) return;
+        catProgress.update({
+            keysPressed: state.uniqueKeys.size,
+            totalKeys: TOTAL_KEYS
+        });
+    }
+
+    function resetCatProgress() {
+        if (!catProgress) return;
+        catProgress.reset({ totalKeys: TOTAL_KEYS });
     }
 
     function handleKeyDown(e) {
@@ -1257,6 +1292,7 @@
 
         updateStats();
         playSound();
+        updateCatProgress();
 
         // Update indicators
         if (e.getModifierState) {
@@ -1292,7 +1328,7 @@
         if ($('key-history')) $('key-history').value = '';
         if ($('total-keys')) $('total-keys').textContent = '0';
         if ($('session-time')) $('session-time').textContent = '00:00';
-        if ($('keys-tested')) $('keys-tested').textContent = '0/104';
+        if ($('keys-tested')) $('keys-tested').textContent = `0/${TOTAL_KEYS}`;
         if ($('most-pressed')) $('most-pressed').textContent = 'لا يوجد';
         if ($('current-latency')) $('current-latency').textContent = '-- مللي ثانية';
         if ($('avg-latency')) $('avg-latency').textContent = '--';
@@ -1307,6 +1343,7 @@
         });
 
         $$('.indicator').forEach(i => i.classList.remove('active'));
+        resetCatProgress();
     }
 
     // Event listeners

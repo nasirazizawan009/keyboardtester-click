@@ -17,28 +17,33 @@
     <!-- Critical CSS to prevent layout shift (CLS optimization) -->
     <style>
     .landing-main{min-height:100vh;contain:layout style}
-    .landing-hero{max-height:75vh;padding:2rem 0 1.5rem;contain:layout}
-    .landing-hero-grid{min-height:320px;contain:layout style}
+    .landing-hero{max-height:75vh;padding:2rem 0 1.5rem;contain:layout;overflow:hidden}
+    .landing-hero-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;align-items:center;min-height:320px;contain:layout style}
     .hero-copy{min-height:200px}
     .hero-shot{aspect-ratio:16/10;contain:layout}
     .hero-shot img{width:100%;height:auto;display:block;border-radius:16px}
-    /* Reserve stable space — keyboard-tester's own CSS sets min-height:0, so we use
-       tool-stage/tool-shell as the outer guards */
     .tool-stage{padding:1.5rem 0 2rem;min-height:680px;contain:layout style}
     .tool-shell{min-height:580px;contain:layout style}
-    /* keyboard-container height is set in keyboard_tester_english.php critical CSS */
-    .trust-strip{min-height:60px;contain:layout}
-    .trust-grid{min-height:50px;display:grid}
-    @media(max-width:980px){.landing-hero{max-height:none;padding:1.5rem 0 1rem}.landing-hero-grid{min-height:auto}}
-    @media(max-width:768px){.trust-strip{min-height:180px}.trust-grid{min-height:160px}.tool-stage{min-height:500px}.tool-shell{min-height:420px}.keyboard-tester{min-height:380px}}
+    .trust-strip{min-height:80px;contain:layout style}
+    .trust-grid{min-height:60px;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    @media(max-width:980px){.landing-hero{max-height:none;padding:1.5rem 0 1rem}.landing-hero-grid{grid-template-columns:1fr;min-height:auto}.trust-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.trust-strip{min-height:180px}.trust-grid{grid-template-columns:1fr;min-height:160px}.tool-stage{min-height:500px}.tool-shell{min-height:420px}.keyboard-tester{min-height:380px}}
     </style>
 
     <!-- Common Head Includes -->
     <?php include 'includes/head-common.php'; ?>
 
-    <!-- Preload keyboard-tool.css (critical path bottleneck at 1831ms) -->
+    <!-- Preload keyboard assets (break network dependency chain - discovered late in body otherwise) -->
     <link rel="preload" as="style" href="<?php echo url('assets/css/keyboard-tool.css'); ?>" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="<?php echo url('assets/css/keyboard-tool.css'); ?>"></noscript>
+    <?php
+    $cpCssPath = __DIR__ . '/assets/css/keyboard-cat-progress.css';
+    $cpJsPath = __DIR__ . '/assets/js/keyboard-cat-progress.js';
+    $cpCssVer = is_file($cpCssPath) ? filemtime($cpCssPath) : '1';
+    $cpJsVer = is_file($cpJsPath) ? filemtime($cpJsPath) : '1';
+    ?>
+    <link rel="preload" as="style" href="<?php echo url('assets/css/keyboard-cat-progress.css') . '?v=' . $cpCssVer; ?>">
+    <link rel="preload" as="script" href="<?php echo url('assets/js/keyboard-cat-progress.js') . '?v=' . $cpJsVer; ?>">
 
     <!-- JetBrains Mono: async with display=optional (keyboard keys have fixed dimensions) -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=optional" onload="this.onload=null;this.rel='stylesheet'">

@@ -81,13 +81,11 @@ html.dark-theme .landing-page,
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
     align-items: center;
-    min-height: auto;
     contain: layout style;
 }
 
 .hero-copy {
     max-width: 620px;
-    min-height: auto;
 }
 
 .hero-kicker {
@@ -270,7 +268,6 @@ html.dark-theme .hero-badge,
 /* Trust strip */
 .trust-strip {
     padding: 2.5rem 0 1.5rem;
-    min-height: 80px;
     contain: layout style;
 }
 
@@ -278,7 +275,6 @@ html.dark-theme .hero-badge,
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
-    min-height: 60px;
 }
 
 @media (max-width: 768px) {
@@ -440,7 +436,6 @@ html.dark-theme .step-number,
         radial-gradient(720px 380px at 90% 25%, rgba(22, 163, 74, 0.14), transparent 60%),
         var(--landing-bg);
     contain: layout style;
-    min-height: 600px;
 }
 
 .tool-stage-header {

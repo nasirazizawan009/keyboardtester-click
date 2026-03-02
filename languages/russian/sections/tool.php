@@ -3,7 +3,18 @@
  * Russian Keyboard Tester - Full Layout Tool (ЙЦУКЕН Layout)
  * Dual labels showing Russian Cyrillic + English
  */
+$catProgressCssPath = __DIR__ . '/../../../assets/css/keyboard-cat-progress.css';
+$catProgressJsPath = __DIR__ . '/../../../assets/js/keyboard-cat-progress.js';
+$catProgressCssVersion = is_file($catProgressCssPath) ? (string) filemtime($catProgressCssPath) : '1';
+$catProgressJsVersion = is_file($catProgressJsPath) ? (string) filemtime($catProgressJsPath) : '1';
+$catProgressCssBaseHref = function_exists('url') ? url('assets/css/keyboard-cat-progress.css') : '/assets/css/keyboard-cat-progress.css';
+$catProgressScriptBaseHref = function_exists('url') ? url('assets/js/keyboard-cat-progress.js') : '/assets/js/keyboard-cat-progress.js';
+$catProgressCssHref = $catProgressCssBaseHref . '?v=' . rawurlencode($catProgressCssVersion);
+$catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catProgressJsVersion);
 ?>
+<link rel="preload" as="style" href="<?php echo htmlspecialchars($catProgressCssHref, ENT_QUOTES, 'UTF-8'); ?>" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<?php echo htmlspecialchars($catProgressCssHref, ENT_QUOTES, 'UTF-8'); ?>"></noscript>
+
 
 <section class="keyboard-tester" id="keyboard-tester">
     <div class="controls-wrapper">
@@ -96,6 +107,12 @@
             </div>
         </div>
     </div>
+
+        <?php
+    $catProgressId = 'cat-progress-section';
+    $catProgressTotalKeys = 104;
+    include __DIR__ . '/../../../includes/components/keyboard-cat-progress.php';
+    ?>
 
     <div class="keyboard-container">
         <div class="keyboard-scale-wrapper" id="keyboard-scale-wrapper">
@@ -424,16 +441,173 @@
 
 @media (max-width: 1200px) { .controls-wrapper { flex-direction: column; gap: 16px; } .button-group { width: 100%; max-width: 400px; margin: 0 auto; } }
 @media (max-width: 768px) { .keyboard-tester { padding: 20px 12px; } .button-group { grid-template-columns: 1fr; height: auto; } .button-group > .select-wrapper:nth-of-type(1) { grid-column: 1; grid-row: 2; } .button-group > .advanced-toggle-wrapper { grid-row: 3; } }
+/* Synced English Keyboard Visual Overrides */
+.keyboard-tester {
+    padding: 10px 12px 6px !important;
+    border-radius: 24px;
+}
+
+.keyboard-container {
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%) !important;
+    border-radius: 24px !important;
+    padding: 24px !important;
+    box-shadow:
+        0 18px 36px -22px var(--key-shadow),
+        0 8px 18px -12px var(--key-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        inset 0 -18px 28px rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid var(--border-subtle) !important;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.keyboard-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 18% 6%, rgba(255, 255, 255, 0.1) 0%, transparent 48%),
+        radial-gradient(ellipse at 84% 10%, rgba(255, 255, 255, 0.08) 0%, transparent 42%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.keyboard-container::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 10px;
+    height: 18px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.22);
+    filter: blur(12px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.keyboard-scale-wrapper {
+    transform-origin: center top;
+    position: relative;
+    z-index: 1;
+    perspective: 1200px;
+}
+
+.keyboard-layout {
+    transform: translateZ(0);
+}
+
+.key {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 34%, rgba(0, 0, 0, 0.12) 100%),
+        var(--key-bg) !important;
+    border-radius: 10px !important;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease !important;
+    box-shadow:
+        0 5px 0 var(--key-shadow),
+        0 10px 16px -8px var(--key-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.22) !important;
+    overflow: hidden;
+}
+
+.key::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    right: 4px;
+    height: 38%;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+}
+
+.key::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 3px;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.24);
+    pointer-events: none;
+    opacity: 0.75;
+}
+
+.key span {
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    position: relative;
+    z-index: 1;
+}
+
+.keyboard-tester[data-theme="light"] .key span {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.key:hover {
+    transform: translateY(-1px) !important;
+    box-shadow:
+        0 6px 0 var(--key-shadow),
+        0 13px 20px -10px var(--key-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.26),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.22) !important;
+    filter: brightness(1.03);
+}
+
+.key:active,
+.key.pressed {
+    transform: translateY(3px) !important;
+    box-shadow:
+        0 1px 0 var(--key-shadow),
+        0 4px 8px -6px var(--key-shadow),
+        inset 0 2px 5px rgba(0, 0, 0, 0.34) !important;
+}
+
+.key.active-1,
+.key.active-2,
+.key.active-3,
+.key.active-4,
+.key.active-5 {
+    transform: translateY(-1px) !important;
+}
+
+.key.active-1 { box-shadow: 0 0 18px rgba(0, 212, 255, 0.45), 0 5px 0 rgba(0, 168, 204, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important; }
+.key.active-2 { box-shadow: 0 0 18px rgba(255, 215, 0, 0.45), 0 5px 0 rgba(204, 170, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important; }
+.key.active-3 { box-shadow: 0 0 18px rgba(0, 255, 136, 0.45), 0 5px 0 rgba(0, 204, 106, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important; }
+.key.active-4 { box-shadow: 0 0 18px rgba(255, 107, 107, 0.45), 0 5px 0 rgba(204, 85, 85, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important; }
+.key.active-5 { box-shadow: 0 0 18px rgba(192, 132, 252, 0.45), 0 5px 0 rgba(153, 102, 204, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important; }
+
+.key.key-disabled::before,
+.key.key-disabled::after {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .keyboard-tester {
+        padding: 8px 10px 6px !important;
+    }
+}
+/* End Synced English Keyboard Visual Overrides */
 </style>
+
+<script src="<?php echo htmlspecialchars($catProgressScriptHref, ENT_QUOTES, 'UTF-8'); ?>"></script>
 
 <script>
 (function() {
     'use strict';
+    const TOTAL_KEYS = 104;
     const tester = document.querySelector('.keyboard-tester');
     const state = { keyPressCount: {}, uniqueKeys: new Set(), totalPresses: 0, sessionStart: null, sessionTimer: null, soundEnabled: false, latencyData: [], lastKeyTime: 0 };
     let audioCtx = null;
     const $ = id => document.getElementById(id);
     const $$ = sel => document.querySelectorAll(sel);
+    const catProgressRoot = $('cat-progress-section');
+    const catProgress = (catProgressRoot && window.KeyboardCatProgress)
+        ? new window.KeyboardCatProgress(catProgressRoot, { desktopTotalKeys: TOTAL_KEYS, mobileTotalKeys: 42, locale: 'ru' })
+        : null;
 
     // Russian key mapping for display
     const russianKeyMap = {
@@ -465,9 +639,12 @@
 
     function playSound() { if (!state.soundEnabled) return; if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); const osc = audioCtx.createOscillator(), gain = audioCtx.createGain(); osc.connect(gain); gain.connect(audioCtx.destination); osc.frequency.value = 800; osc.type = 'sine'; gain.gain.setValueAtTime(0.1, audioCtx.currentTime); gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.08); osc.start(); osc.stop(audioCtx.currentTime + 0.08); }
     function startTimer() { if (state.sessionTimer) return; state.sessionStart = Date.now(); state.sessionTimer = setInterval(() => { const elapsed = Math.floor((Date.now() - state.sessionStart) / 1000); const m = Math.floor(elapsed / 60).toString().padStart(2, '0'); const s = (elapsed % 60).toString().padStart(2, '0'); if ($('session-time')) $('session-time').textContent = `${m}:${s}`; }, 1000); }
-    function updateStats() { if ($('total-keys')) $('total-keys').textContent = state.totalPresses; if ($('keys-tested')) $('keys-tested').textContent = `${state.uniqueKeys.size}/104`; let maxKey = null, maxCount = 0; for (const [key, count] of Object.entries(state.keyPressCount)) { if (count > maxCount) { maxCount = count; maxKey = key; } } if ($('most-pressed') && maxKey) { const displayKey = russianKeyMap[maxKey] || maxKey; $('most-pressed').textContent = `${displayKey} (${maxCount})`; } if (state.latencyData.length > 0) { const avg = Math.round(state.latencyData.reduce((a, b) => a + b, 0) / state.latencyData.length); if ($('avg-latency')) $('avg-latency').textContent = avg + ' мс'; if ($('min-latency')) $('min-latency').textContent = Math.min(...state.latencyData) + ' мс'; if ($('max-latency')) $('max-latency').textContent = Math.max(...state.latencyData) + ' мс'; } }
+    function updateStats() { if ($('total-keys')) $('total-keys').textContent = state.totalPresses; if ($('keys-tested')) $('keys-tested').textContent = `${state.uniqueKeys.size}/${TOTAL_KEYS}`; let maxKey = null, maxCount = 0; for (const [key, count] of Object.entries(state.keyPressCount)) { if (count > maxCount) { maxCount = count; maxKey = key; } } if ($('most-pressed') && maxKey) { const displayKey = russianKeyMap[maxKey] || maxKey; $('most-pressed').textContent = `${displayKey} (${maxCount})`; } if (state.latencyData.length > 0) { const avg = Math.round(state.latencyData.reduce((a, b) => a + b, 0) / state.latencyData.length); if ($('avg-latency')) $('avg-latency').textContent = avg + ' мс'; if ($('min-latency')) $('min-latency').textContent = Math.min(...state.latencyData) + ' мс'; if ($('max-latency')) $('max-latency').textContent = Math.max(...state.latencyData) + ' мс'; } }
 
-    function handleKeyDown(e) {
+        function updateCatProgress() { if (!catProgress) return; catProgress.update({ keysPressed: state.uniqueKeys.size, totalKeys: TOTAL_KEYS }); }
+
+    function resetCatProgress() { if (!catProgress) return; catProgress.reset({ totalKeys: TOTAL_KEYS }); }
+function handleKeyDown(e) {
         e.preventDefault();
         const now = performance.now();
         const latency = state.lastKeyTime ? Math.round(now - state.lastKeyTime) : 0;
@@ -485,11 +662,11 @@
         let keyName = russianKeyMap[e.code] || (e.key.length === 1 ? e.key : e.code);
         const history = $('key-history');
         if (history) history.value = keyName + (history.value ? ' ' + history.value : '');
-        updateStats(); playSound();
+        updateStats(); playSound(); updateCatProgress();
         if (e.getModifierState) { const capsInd = $('caps-indicator'), numInd = $('num-indicator'), scrollInd = $('scroll-indicator'); if (capsInd) capsInd.classList.toggle('active', e.getModifierState('CapsLock')); if (numInd) numInd.classList.toggle('active', e.getModifierState('NumLock')); if (scrollInd) scrollInd.classList.toggle('active', e.getModifierState('ScrollLock')); }
     }
     function handleKeyUp(e) { const keyEl = document.querySelector(`[data-key="${e.code}"]`); if (keyEl) keyEl.classList.remove('pressed'); }
-    function reset() { state.keyPressCount = {}; state.uniqueKeys.clear(); state.totalPresses = 0; state.sessionStart = null; state.latencyData = []; state.lastKeyTime = 0; if (state.sessionTimer) { clearInterval(state.sessionTimer); state.sessionTimer = null; } if ($('key-history')) $('key-history').value = ''; if ($('total-keys')) $('total-keys').textContent = '0'; if ($('session-time')) $('session-time').textContent = '00:00'; if ($('keys-tested')) $('keys-tested').textContent = '0/104'; if ($('most-pressed')) $('most-pressed').textContent = 'Нет'; if ($('current-latency')) $('current-latency').textContent = '-- мс'; if ($('avg-latency')) $('avg-latency').textContent = '--'; if ($('min-latency')) $('min-latency').textContent = '--'; if ($('max-latency')) $('max-latency').textContent = '--'; $$('.key').forEach(k => { k.classList.remove('pressed', 'active-1', 'active-2', 'active-3', 'active-4', 'active-5'); const counter = k.querySelector('.key-counter'); if (counter) counter.remove(); }); $$('.indicator').forEach(i => i.classList.remove('active')); }
+    function reset() { state.keyPressCount = {}; state.uniqueKeys.clear(); state.totalPresses = 0; state.sessionStart = null; state.latencyData = []; state.lastKeyTime = 0; if (state.sessionTimer) { clearInterval(state.sessionTimer); state.sessionTimer = null; } if ($('key-history')) $('key-history').value = ''; if ($('total-keys')) $('total-keys').textContent = '0'; if ($('session-time')) $('session-time').textContent = '00:00'; if ($('keys-tested')) $('keys-tested').textContent = `0/${TOTAL_KEYS}`; if ($('most-pressed')) $('most-pressed').textContent = 'Нет'; if ($('current-latency')) $('current-latency').textContent = '-- мс'; if ($('avg-latency')) $('avg-latency').textContent = '--'; if ($('min-latency')) $('min-latency').textContent = '--'; if ($('max-latency')) $('max-latency').textContent = '--'; $$('.key').forEach(k => { k.classList.remove('pressed', 'active-1', 'active-2', 'active-3', 'active-4', 'active-5'); const counter = k.querySelector('.key-counter'); if (counter) counter.remove(); }); $$('.indicator').forEach(i => i.classList.remove('active')); resetCatProgress(); }
 
     document.addEventListener('keydown', handleKeyDown);
     document.addEventListener('keyup', handleKeyUp);
@@ -529,3 +706,4 @@
     });
 })();
 </script>
+

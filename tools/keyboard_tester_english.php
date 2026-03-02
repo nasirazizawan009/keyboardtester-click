@@ -1,10 +1,20 @@
 <?php
 ob_start();
+$catProgressCssPath = __DIR__ . '/../assets/css/keyboard-cat-progress.css';
+$catProgressJsPath = __DIR__ . '/../assets/js/keyboard-cat-progress.js';
+$catProgressCssVersion = is_file($catProgressCssPath) ? (string) filemtime($catProgressCssPath) : '1';
+$catProgressJsVersion = is_file($catProgressJsPath) ? (string) filemtime($catProgressJsPath) : '1';
+$catProgressCssBaseHref = function_exists('url') ? url('assets/css/keyboard-cat-progress.css') : '/assets/css/keyboard-cat-progress.css';
+$catProgressScriptBaseHref = function_exists('url') ? url('assets/js/keyboard-cat-progress.js') : '/assets/js/keyboard-cat-progress.js';
+$catProgressCssHref = $catProgressCssBaseHref . '?v=' . rawurlencode($catProgressCssVersion);
+$catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catProgressJsVersion);
 ?>
+<link rel="preload" as="style" href="<?php echo $catProgressCssHref; ?>" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<?php echo $catProgressCssHref; ?>"></noscript>
 <style>
 /* Critical pre-render CSS — layout dimensions so the keyboard renders at the correct size.
    Uses CSS variables from head-common.php so it respects light/dark theme. */
-.keyboard-tester{contain:layout;padding:40px 24px;position:relative;overflow:hidden}
+.keyboard-tester{contain:layout;padding:10px 12px 6px;position:relative;overflow:hidden;border-radius:24px}
 .keyboard-container{padding:24px;position:relative;overflow:hidden;
     height:clamp(150px,calc(48px + 340px * (100vw - 96px) / 920px),388px)}
 .keyboard-scale-wrapper{transform-origin:top center;display:flex;justify-content:center}
@@ -264,6 +274,12 @@ ob_start();
             </div>
         </div>
     </div>
+
+    <?php
+    $catProgressId = 'cat-progress-section';
+    $catProgressTotalKeys = 103;
+    include __DIR__ . '/../includes/components/keyboard-cat-progress.php';
+    ?>
 
     <!-- Mobile Keyboard Tester -->
     <div class="mobile-keyboard-section" id="mobile-keyboard-section">
@@ -537,50 +553,6 @@ ob_start();
         </div><!-- /keyboard-scale-wrapper -->
     </div>
 
-    <!-- Cat Progress Section - Always Visible -->
-    <div class="cat-progress-section" id="cat-progress-section">
-        <div class="progress-header">
-            <div class="progress-title">
-                <span class="cat-title-icon">🐱</span>
-                <span class="panel-title">Feed the Cat! Press Keys to Progress</span>
-            </div>
-            <div class="progress-stats">
-                <span id="progress-count">0</span> / <span id="total-keys-display">103</span> Keys
-                <span class="progress-percentage" id="progress-percentage">0%</span>
-            </div>
-        </div>
-
-        <!-- Cat Chase Progress Animation -->
-        <div class="cat-progress-container" id="cat-progress-container">
-            <div class="cat-progress-track">
-                <!-- Treats at every ~10 keys (10, 20, 30, 40, 50, 60, 70, 80, 90, 103) -->
-                <div class="treat" data-treat="10" data-keys="10" title="10 keys - Fish">🐟</div>
-                <div class="treat" data-treat="20" data-keys="20" title="20 keys - Milk">🥛</div>
-                <div class="treat" data-treat="30" data-keys="30" title="30 keys - Water">💧</div>
-                <div class="treat" data-treat="40" data-keys="40" title="40 keys - Mouse Toy">🐭</div>
-                <div class="treat" data-treat="50" data-keys="50" title="50 keys - Yarn">🧶</div>
-                <div class="treat" data-treat="60" data-keys="60" title="60 keys - Tuna">🥫</div>
-                <div class="treat" data-treat="70" data-keys="70" title="70 keys - Chicken">🍗</div>
-                <div class="treat" data-treat="80" data-keys="80" title="80 keys - Candy">🍬</div>
-                <div class="treat" data-treat="90" data-keys="90" title="90 keys - Star">⭐</div>
-                <div class="treat" data-treat="100" data-keys="103" title="103 keys - Trophy!">🏆</div>
-
-                <!-- The Cat -->
-                <div class="progress-cat" id="progress-cat">
-                    <div class="cat-body">🐱</div>
-                    <div class="cat-message" id="cat-message">Press keys to feed me!</div>
-                </div>
-
-                <!-- The Mouse (Goal) -->
-                <div class="progress-mouse" id="progress-mouse">🐭</div>
-            </div>
-            <div class="cat-status" id="cat-status">
-                <span class="cat-mood" id="cat-mood">😺 Hungry</span>
-                <span class="treats-eaten" id="treats-eaten">Treats: 0/10</span>
-            </div>
-        </div>
-    </div>
-
     <!-- Hidden progress section for advanced options -->
     <div class="progress-section" id="progress-section" style="display: none;"></div>
 </section>
@@ -675,12 +647,13 @@ ob_start();
 
 .keyboard-tester {
     width: 100%;
-    padding: 40px 24px;
+    padding: 10px 12px 6px;
     background: var(--bg-primary);
     min-height: 0;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     position: relative;
     overflow: hidden;
+    border-radius: 24px;
 }
 
 .keyboard-tester::before {
@@ -1302,13 +1275,43 @@ ob_start();
 .keyboard-container {
     max-width: 1400px;
     margin: 0 auto;
-    background: var(--bg-secondary);
-    border-radius: 20px;
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border-radius: 24px;
     padding: 24px;
-    box-shadow: 0 4px 24px var(--key-shadow), inset 0 1px 0 var(--border-subtle);
+    box-shadow:
+        0 18px 36px -22px var(--key-shadow),
+        0 8px 18px -12px var(--key-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        inset 0 -18px 28px rgba(0, 0, 0, 0.2);
     border: 1px solid var(--border-subtle);
     position: relative;
     overflow: hidden;
+    isolation: isolate;
+}
+
+.keyboard-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 18% 6%, rgba(255, 255, 255, 0.1) 0%, transparent 48%),
+        radial-gradient(ellipse at 84% 10%, rgba(255, 255, 255, 0.08) 0%, transparent 42%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.keyboard-container::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 10px;
+    height: 18px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.22);
+    filter: blur(12px);
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* Responsive scaling wrapper */
@@ -1316,6 +1319,9 @@ ob_start();
     transform-origin: center top;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 1;
+    perspective: 1200px;
 }
 
 .keyboard-layout {
@@ -1323,6 +1329,7 @@ ob_start();
     gap: 24px;
     justify-content: center;
     align-items: flex-end;
+    transform: translateZ(0);
 }
 
 .keyboard-section {
@@ -1362,20 +1369,52 @@ ob_start();
     position: relative;
     height: 48px;
     width: 48px;
-    background: var(--key-bg);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 34%, rgba(0, 0, 0, 0.12) 100%),
+        var(--key-bg);
     border: 1px solid var(--key-border);
-    border-radius: 8px;
+    border-radius: 10px;
     color: var(--key-text);
     font-size: 12px;
     font-weight: 600;
     font-family: 'Plus Jakarta Sans', sans-serif;
     cursor: pointer;
-    transition: all 0.12s ease;
-    box-shadow: 0 3px 0 var(--key-shadow), 0 4px 8px var(--key-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    box-shadow:
+        0 5px 0 var(--key-shadow),
+        0 10px 16px -8px var(--key-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.22);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
+    overflow: hidden;
+}
+
+.key::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    right: 4px;
+    height: 38%;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+}
+
+.key::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 3px;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.24);
+    pointer-events: none;
+    opacity: 0.75;
 }
 
 .key span {
@@ -1383,16 +1422,31 @@ ob_start();
     line-height: 1.2;
     font-size: 11px;
     pointer-events: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    position: relative;
+    z-index: 1;
+}
+
+.keyboard-tester[data-theme="light"] .key span {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
 }
 
 .key:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 0 var(--key-shadow), 0 6px 12px var(--key-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+    box-shadow:
+        0 6px 0 var(--key-shadow),
+        0 13px 20px -10px var(--key-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.26),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.22);
+    filter: brightness(1.03);
 }
 
 .key:active {
-    transform: translateY(2px);
-    box-shadow: 0 1px 0 var(--key-shadow), 0 2px 4px var(--key-shadow), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(3px);
+    box-shadow:
+        0 1px 0 var(--key-shadow),
+        0 4px 8px -6px var(--key-shadow),
+        inset 0 2px 5px rgba(0, 0, 0, 0.34);
 }
 
 .key.heat-1 { background: linear-gradient(180deg, #fef08a 0%, #facc15 100%) !important; color: #1a1a1a !important; border-color: #eab308 !important; }
@@ -1446,7 +1500,7 @@ ob_start();
     background: linear-gradient(180deg, #00d4ff 0%, #00a8cc 100%) !important;
     color: #000 !important;
     border-color: #00d4ff !important;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 3px 0 rgba(0, 168, 204, 0.5);
+    box-shadow: 0 0 18px rgba(0, 212, 255, 0.45), 0 5px 0 rgba(0, 168, 204, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
     transform: translateY(-1px);
 }
 
@@ -1454,7 +1508,7 @@ ob_start();
     background: linear-gradient(180deg, #ffd700 0%, #ccaa00 100%) !important;
     color: #000 !important;
     border-color: #ffd700 !important;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 3px 0 rgba(204, 170, 0, 0.5);
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.45), 0 5px 0 rgba(204, 170, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
     transform: translateY(-1px);
 }
 
@@ -1462,7 +1516,7 @@ ob_start();
     background: linear-gradient(180deg, #00ff88 0%, #00cc6a 100%) !important;
     color: #000 !important;
     border-color: #00ff88 !important;
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5), 0 3px 0 rgba(0, 204, 106, 0.5);
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.45), 0 5px 0 rgba(0, 204, 106, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
     transform: translateY(-1px);
 }
 
@@ -1470,7 +1524,7 @@ ob_start();
     background: linear-gradient(180deg, #ff6b6b 0%, #cc5555 100%) !important;
     color: #fff !important;
     border-color: #ff6b6b !important;
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5), 0 3px 0 rgba(204, 85, 85, 0.5);
+    box-shadow: 0 0 18px rgba(255, 107, 107, 0.45), 0 5px 0 rgba(204, 85, 85, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
 }
 
@@ -1478,7 +1532,7 @@ ob_start();
     background: linear-gradient(180deg, #c084fc 0%, #9966cc 100%) !important;
     color: #fff !important;
     border-color: #c084fc !important;
-    box-shadow: 0 0 20px rgba(192, 132, 252, 0.5), 0 3px 0 rgba(153, 102, 204, 0.5);
+    box-shadow: 0 0 18px rgba(192, 132, 252, 0.45), 0 5px 0 rgba(153, 102, 204, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
 }
 
@@ -1505,6 +1559,11 @@ ob_start();
     background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 100%) !important;
     border-color: #444 !important;
     position: relative;
+}
+
+.key.key-disabled::before,
+.key.key-disabled::after {
+    display: none;
 }
 
 .key.key-disabled:hover {
@@ -1621,274 +1680,7 @@ ob_start();
     font-size: 14px;
 }
 
-/* Cat Progress Section - Always Visible */
-.cat-progress-section {
-    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-    border: 2px solid var(--border-subtle);
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.cat-progress-section .progress-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.cat-progress-section .progress-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.cat-title-icon {
-    font-size: 28px;
-    animation: catBounce 1s ease-in-out infinite;
-}
-
-@keyframes catBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-.cat-progress-section .panel-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--key-text);
-}
-
-.cat-progress-section .progress-stats {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--text-muted);
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.cat-progress-section .progress-percentage {
-    background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
-    color: #000;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 14px;
-}
-
-/* Cat Progress Animation Styles */
-.cat-progress-container {
-    background: linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
-    border: 2px solid var(--border-subtle);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.cat-progress-track {
-    position: relative;
-    height: 80px;
-    background: linear-gradient(90deg,
-        #2d5a27 0%, #3d7a37 20%, #4d9a47 40%,
-        #5dba57 60%, #6dda67 80%, #7dfa77 100%);
-    border-radius: 40px;
-    border: 3px solid #1a3a14;
-    box-shadow: inset 0 4px 8px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);
-    overflow: visible;
-}
-
-/* Treats */
-.treat {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 28px;
-    z-index: 5;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-    cursor: pointer;
-}
-
-.treat[data-treat="10"] { left: 8%; }
-.treat[data-treat="20"] { left: 18%; }
-.treat[data-treat="30"] { left: 28%; }
-.treat[data-treat="40"] { left: 38%; }
-.treat[data-treat="50"] { left: 48%; }
-.treat[data-treat="60"] { left: 58%; }
-.treat[data-treat="70"] { left: 68%; }
-.treat[data-treat="80"] { left: 78%; }
-.treat[data-treat="90"] { left: 88%; }
-.treat[data-treat="100"] { left: 95%; font-size: 32px; }
-
-.treat.eaten {
-    transform: translateY(-50%) scale(0) rotate(360deg);
-    opacity: 0;
-}
-
-.treat.eating {
-    animation: treatBounce 0.5s ease;
-}
-
-@keyframes treatBounce {
-    0%, 100% { transform: translateY(-50%) scale(1); }
-    50% { transform: translateY(-80%) scale(1.3); }
-}
-
-/* The Cat */
-.progress-cat {
-    position: absolute;
-    left: 0%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    transition: left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.cat-body {
-    font-size: 48px;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
-    transition: filter 0.3s ease, transform 0.3s ease;
-    animation: catIdle 2s ease-in-out infinite;
-}
-
-.progress-cat.walking .cat-body {
-    animation: catWalk 0.3s ease-in-out infinite;
-}
-
-.progress-cat.eating .cat-body {
-    animation: catEat 0.5s ease-in-out;
-}
-
-@keyframes catIdle {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
-}
-
-@keyframes catWalk {
-    0%, 100% { transform: translateY(0) rotate(-5deg); }
-    50% { transform: translateY(-5px) rotate(5deg); }
-}
-
-@keyframes catEat {
-    0% { transform: scale(1); }
-    30% { transform: scale(1.2) rotate(-10deg); }
-    60% { transform: scale(0.9) rotate(10deg); }
-    100% { transform: scale(1) rotate(0); }
-}
-
-/* Cat color levels */
-.progress-cat[data-level="1"] .cat-body { filter: hue-rotate(0deg) drop-shadow(0 4px 8px rgba(0,0,0,0.4)); }
-.progress-cat[data-level="2"] .cat-body { filter: hue-rotate(30deg) drop-shadow(0 4px 8px rgba(255,150,0,0.4)); }
-.progress-cat[data-level="3"] .cat-body { filter: hue-rotate(60deg) drop-shadow(0 4px 8px rgba(255,200,0,0.4)); }
-.progress-cat[data-level="4"] .cat-body { filter: hue-rotate(90deg) drop-shadow(0 4px 8px rgba(150,255,0,0.4)); }
-.progress-cat[data-level="5"] .cat-body { filter: hue-rotate(120deg) drop-shadow(0 4px 8px rgba(0,255,100,0.4)); }
-.progress-cat[data-level="6"] .cat-body { filter: hue-rotate(150deg) drop-shadow(0 4px 8px rgba(0,255,200,0.4)); }
-.progress-cat[data-level="7"] .cat-body { filter: hue-rotate(180deg) drop-shadow(0 4px 8px rgba(0,200,255,0.4)); }
-.progress-cat[data-level="8"] .cat-body { filter: hue-rotate(210deg) drop-shadow(0 4px 8px rgba(100,100,255,0.4)); }
-.progress-cat[data-level="9"] .cat-body { filter: hue-rotate(270deg) drop-shadow(0 4px 8px rgba(200,0,255,0.4)); }
-.progress-cat[data-level="10"] .cat-body {
-    filter: hue-rotate(300deg) drop-shadow(0 0 20px rgba(255,215,0,0.8));
-    animation: catVictory 0.5s ease-in-out infinite;
-}
-
-@keyframes catVictory {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-10px) scale(1.1); }
-}
-
-.cat-message {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.8);
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 600;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.progress-cat.show-message .cat-message {
-    opacity: 1;
-}
-
-/* The Mouse (Goal) */
-.progress-mouse {
-    position: absolute;
-    right: -5px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 36px;
-    z-index: 8;
-    animation: mouseWiggle 1s ease-in-out infinite;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-}
-
-@keyframes mouseWiggle {
-    0%, 100% { transform: translateY(-50%) rotate(-10deg); }
-    50% { transform: translateY(-50%) rotate(10deg); }
-}
-
-.progress-mouse.caught {
-    animation: mouseCaught 0.5s ease forwards;
-}
-
-@keyframes mouseCaught {
-    0% { transform: translateY(-50%) scale(1); opacity: 1; }
-    50% { transform: translateY(-100%) scale(1.5) rotate(180deg); opacity: 0.5; }
-    100% { transform: translateY(-150%) scale(0); opacity: 0; }
-}
-
-/* Cat Status Bar */
-.cat-status {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 12px;
-    padding: 8px 16px;
-    background: var(--bg-secondary);
-    border-radius: 12px;
-    border: 1px solid var(--border-subtle);
-}
-
-.cat-mood {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--accent-primary);
-}
-
-.treats-eaten {
-    font-size: 14px;
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
-/* Sparkle effect when eating */
-@keyframes sparkle {
-    0% { transform: scale(0) rotate(0deg); opacity: 1; }
-    100% { transform: scale(2) rotate(180deg); opacity: 0; }
-}
-
-.sparkle {
-    position: absolute;
-    font-size: 20px;
-    pointer-events: none;
-    animation: sparkle 0.6s ease-out forwards;
-}
+/* Reusable cat progress styles moved to assets/css/keyboard-cat-progress.css */
 
 /* Keyboard scaling handles responsive sizing - full keyboard stays visible and scales */
 
@@ -1896,7 +1688,7 @@ ob_start();
     /* Hide desktop-only elements on mobile */
     .desktop-only { display: none !important; }
 
-    .keyboard-tester { padding: 24px 16px; }
+    .keyboard-tester { padding: 8px 10px 6px; }
     .tool-heading h1 { font-size: 28px; }
     .keyboard-container { padding: 20px 16px; }
     .controls-wrapper {
@@ -2113,9 +1905,6 @@ ob_start();
     .desktop-only {
         display: none !important;
     }
-    .cat-progress-section .panel-title {
-        font-size: 14px;
-    }
 }
 
 /* Hide mobile on desktop */
@@ -2125,27 +1914,8 @@ ob_start();
     }
 }
 
-/* Cat Animation Mobile Styles */
-@media (max-width: 768px) {
-    .cat-progress-container { padding: 12px; }
-    .cat-progress-track { height: 60px; }
-    .cat-body { font-size: 36px; }
-    .treat { font-size: 20px; }
-    .treat[data-treat="100"] { font-size: 24px; }
-    .progress-mouse { font-size: 28px; }
-    .cat-message { font-size: 10px; padding: 4px 8px; }
-    .cat-status { flex-direction: column; gap: 8px; text-align: center; }
-}
-
-@media (max-width: 480px) {
-    .cat-progress-track { height: 50px; }
-    .cat-body { font-size: 28px; }
-    .treat { font-size: 16px; }
-    .treat[data-treat="100"] { font-size: 20px; }
-    .progress-mouse { font-size: 24px; }
-}
 </style>
-
+<script src="<?php echo $catProgressScriptHref; ?>"></script>
 <script>
 (function() {
     'use strict';
@@ -2203,9 +1973,9 @@ ob_start();
     const featureControls = document.getElementById('feature-controls');
     const progressSection = document.getElementById('progress-section');
 
-    // Cat progress elements
-    const progressCount = document.getElementById('progress-count');
-    const progressPercentage = document.getElementById('progress-percentage');
+    // Cat progress component
+    const catProgressRoot = document.getElementById('cat-progress-section');
+    const MOBILE_TOTAL_KEYS = 42; // Total keys on mobile keyboard display
     
     const keyPressCount = {};
     let sessionStartTime = Date.now();
@@ -2222,6 +1992,9 @@ ob_start();
     let latencyTestActive = false;
     let latencyTests = [];
     const TOTAL_KEYS = 103; // Excludes PrintScreen (system key, cannot be captured)
+    const catProgress = (typeof window.KeyboardCatProgress === 'function' && catProgressRoot)
+        ? new window.KeyboardCatProgress(catProgressRoot, { desktopTotalKeys: TOTAL_KEYS, mobileTotalKeys: MOBILE_TOTAL_KEYS, locale: 'en' })
+        : null;
 
     const keyboardLayouts = {
         qwerty: { KeyQ: 'Q', KeyW: 'W', KeyE: 'E', KeyR: 'R', KeyT: 'T', KeyY: 'Y', KeyU: 'U', KeyI: 'I', KeyO: 'O', KeyP: 'P', KeyA: 'A', KeyS: 'S', KeyD: 'D', KeyF: 'F', KeyG: 'G', KeyH: 'H', KeyJ: 'J', KeyK: 'K', KeyL: 'L', KeyZ: 'Z', KeyX: 'X', KeyC: 'C', KeyV: 'V', KeyB: 'B', KeyN: 'N', KeyM: 'M', Semicolon: ':<br>;', Quote: '"<br>\'', Comma: '&lt;<br>,', Period: '&gt;<br>.', Slash: '?<br>/', BracketLeft: '{<br>[', BracketRight: '}<br>]' },
@@ -2250,175 +2023,54 @@ ob_start();
         oscillator.start(audioContext.currentTime);
         oscillator.stop(audioContext.currentTime + 0.05);
     }
-
-    // Cat Progress Animation State
-    let lastCatLevel = 0;
-    let treatsEatenCount = 0;
-    const catMessages = [
-        "Press keys to feed me!",
-        "Yummy fish! 🐟",
-        "Milk is purrfect! 🥛",
-        "So refreshing! 💧",
-        "Caught the mouse toy! 🐭",
-        "Love this yarn! 🧶",
-        "Tuna time! 🥫",
-        "Chicken! My favorite! 🍗",
-        "Mmm treats! 🍬",
-        "I'm a star! ⭐",
-        "VICTORY! I caught the mouse! 🏆"
-    ];
-    const catMoods = [
-        "😺 Hungry",
-        "😸 Happy",
-        "😻 Loving it!",
-        "😽 Content",
-        "🙀 Excited!",
-        "😹 Playful",
-        "😺 Energized",
-        "😸 Thriving",
-        "😻 Amazing!",
-        "🐱 SUPER CAT!",
-        "👑 CHAMPION!"
-    ];
+    function setCatProgressFallback(keysPressed, percentage, totalKeys) {
+        if (!catProgressRoot) return;
+        const countEl = catProgressRoot.querySelector('[data-cat-progress-count]');
+        const percentageEl = catProgressRoot.querySelector('[data-cat-progress-percentage]');
+        const totalEl = catProgressRoot.querySelector('[data-cat-total-keys]');
+        if (countEl) countEl.textContent = String(keysPressed);
+        if (percentageEl) percentageEl.textContent = `${percentage}%`;
+        if (totalEl) totalEl.textContent = String(totalKeys);
+    }
 
     function updateProgressBar() {
         const keysPressed = Object.keys(keyPressCount).length;
         const percentage = Math.round((keysPressed / TOTAL_KEYS) * 100);
-        progressCount.textContent = keysPressed;
-        progressPercentage.textContent = `${percentage}%`;
 
-        // Update Cat Animation with key count
-        updateCatProgress(keysPressed, percentage);
+        if (catProgress) {
+            catProgress.update({
+                mode: 'desktop',
+                keysPressed: keysPressed,
+                totalKeys: TOTAL_KEYS
+            });
+            return;
+        }
+
+        setCatProgressFallback(keysPressed, percentage, TOTAL_KEYS);
     }
 
-    // Treat milestones based on key counts
-    const treatMilestones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 103];
-
-    function updateCatProgress(keysPressed, percentage) {
-        const cat = document.getElementById('progress-cat');
-        const catMessage = document.getElementById('cat-message');
-        const catMood = document.getElementById('cat-mood');
-        const treatsEaten = document.getElementById('treats-eaten');
-        const mouse = document.getElementById('progress-mouse');
-
-        if (!cat) return;
-
-        // Calculate cat position based on percentage (0% to 92% of track width)
-        const catPosition = Math.min(percentage * 0.92, 92);
-        cat.style.left = catPosition + '%';
-
-        // Add walking animation when moving
-        cat.classList.add('walking');
-        setTimeout(() => cat.classList.remove('walking'), 600);
-
-        // Calculate current level based on key count milestones
-        let currentLevel = 0;
-        for (let i = 0; i < treatMilestones.length; i++) {
-            if (keysPressed >= treatMilestones[i]) {
-                currentLevel = i + 1;
-            }
+    function resetCatProgress(totalKeys = TOTAL_KEYS) {
+        if (catProgress) {
+            catProgress.reset({ totalKeys: totalKeys });
+            return;
         }
 
-        // Check if cat reached a new treat
-        if (currentLevel > lastCatLevel && currentLevel <= 10) {
-            const milestone = treatMilestones[currentLevel - 1];
-            const treatPercent = currentLevel === 10 ? 100 : currentLevel * 10;
-            const treatElement = document.querySelector(`.treat[data-treat="${treatPercent}"]`);
-
-            if (treatElement && !treatElement.classList.contains('eaten')) {
-                // Trigger eating animation
-                treatElement.classList.add('eating');
-                cat.classList.add('eating');
-                cat.classList.add('show-message');
-
-                // Create sparkle effect
-                createSparkles(treatElement);
-
-                // Update cat color/level
-                cat.setAttribute('data-level', currentLevel);
-
-                // Update message
-                catMessage.textContent = catMessages[currentLevel] || catMessages[0];
-
-                // Update mood
-                catMood.textContent = catMoods[currentLevel] || catMoods[0];
-
-                // Mark treat as eaten after animation
-                setTimeout(() => {
-                    treatElement.classList.remove('eating');
-                    treatElement.classList.add('eaten');
-                    cat.classList.remove('eating');
-                    treatsEatenCount = currentLevel;
-                    treatsEaten.textContent = `Treats: ${treatsEatenCount}/10`;
-                }, 500);
-
-                // Hide message after delay
-                setTimeout(() => cat.classList.remove('show-message'), 2000);
-
-                lastCatLevel = currentLevel;
-            }
-        }
-
-        // Check if cat caught the mouse (all 103 keys pressed)
-        if (keysPressed >= TOTAL_KEYS && !mouse.classList.contains('caught')) {
-            mouse.classList.add('caught');
-            cat.setAttribute('data-level', '10');
-            catMood.textContent = "👑 CHAMPION!";
-            catMessage.textContent = "I caught the mouse! 🎉";
-            cat.classList.add('show-message');
-            createSparkles(mouse);
-
-            // Create celebration sparkles
-            for (let i = 0; i < 5; i++) {
-                setTimeout(() => createSparkles(cat), i * 200);
-            }
-        }
+        setCatProgressFallback(0, 0, totalKeys);
     }
 
-    function createSparkles(element) {
-        const sparkles = ['✨', '⭐', '💫', '🌟', '✧'];
-        const rect = element.getBoundingClientRect();
-        const container = document.querySelector('.cat-progress-track');
-        const containerRect = container.getBoundingClientRect();
-
-        for (let i = 0; i < 5; i++) {
-            const sparkle = document.createElement('span');
-            sparkle.className = 'sparkle';
-            sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
-            sparkle.style.left = (rect.left - containerRect.left + Math.random() * 40 - 20) + 'px';
-            sparkle.style.top = (rect.top - containerRect.top + Math.random() * 40 - 20) + 'px';
-            container.appendChild(sparkle);
-
-            setTimeout(() => sparkle.remove(), 600);
+    function updateMobileCatProgress(uniqueKeys) {
+        if (catProgress) {
+            catProgress.update({
+                mode: 'mobile',
+                keysPressed: uniqueKeys,
+                totalKeys: MOBILE_TOTAL_KEYS
+            });
+            return;
         }
+
+        const percentage = Math.round((uniqueKeys / MOBILE_TOTAL_KEYS) * 100);
+        setCatProgressFallback(uniqueKeys, percentage, MOBILE_TOTAL_KEYS);
     }
-
-    function resetCatProgress() {
-        const cat = document.getElementById('progress-cat');
-        const catMessage = document.getElementById('cat-message');
-        const catMood = document.getElementById('cat-mood');
-        const treatsEaten = document.getElementById('treats-eaten');
-        const mouse = document.getElementById('progress-mouse');
-
-        if (cat) {
-            cat.style.left = '0%';
-            cat.setAttribute('data-level', '0');
-            cat.classList.remove('walking', 'eating', 'show-message');
-        }
-        if (catMessage) catMessage.textContent = 'Press keys to feed me!';
-        if (catMood) catMood.textContent = '😺 Hungry';
-        if (treatsEaten) treatsEaten.textContent = 'Treats: 0/10';
-        if (mouse) mouse.classList.remove('caught');
-
-        // Reset all treats
-        document.querySelectorAll('.treat').forEach(treat => {
-            treat.classList.remove('eaten', 'eating');
-        });
-
-        lastCatLevel = 0;
-        treatsEatenCount = 0;
-    }
-
     function updateStatistics() {
         const keysPressed = Object.keys(keyPressCount).length;
         document.getElementById('total-keys').textContent = totalKeyPresses;
@@ -2577,7 +2229,7 @@ ob_start();
             counter.textContent = keyPressCount[event.code];
             const displayKey = event.key === ' ' ? '␣' : event.key.length > 1 ? `[${event.code}]` : event.key;
             keyHistory.value += displayKey + ' ';
-            keyHistory.scrollTop = keyHistory.scrollHeight;
+            requestAnimationFrame(() => { keyHistory.scrollTop = keyHistory.scrollHeight; });
             if (event.code === 'CapsLock') capsLed.classList.toggle('active');
             if (event.code === 'NumLock') numLed.classList.toggle('active');
             if (event.code === 'ScrollLock') scrollLed.classList.toggle('active');
@@ -2739,7 +2391,6 @@ ob_start();
     // Responsive keyboard scaling - Optimized to avoid forced reflows
     const scaleKeyboard = (() => {
         let isScaling = false;
-        const containerPadding = 48; // 24px * 2
 
         return function() {
             if (isScaling) return;
@@ -2756,24 +2407,25 @@ ob_start();
                 }
 
                 // Batch read: get all dimensions first
-                const availableWidth = container.clientWidth - containerPadding;
-
-                // Use natural layout width from CSS (avoid reflow)
-                const layoutWidth = 920; // Fixed keyboard natural width
-                const layoutHeight = 340; // Fixed keyboard natural height
+                const style = window.getComputedStyle(container);
+                const horizontalPadding = (parseFloat(style.paddingLeft) || 0) + (parseFloat(style.paddingRight) || 0);
+                const verticalPadding = (parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0);
+                const availableWidth = container.clientWidth - horizontalPadding;
+                const layoutWidth = Math.max(layout.offsetWidth, 1);
+                const layoutHeight = Math.max(layout.offsetHeight, 1);
 
                 // Calculate scale factor
                 let scale = 1;
                 if (layoutWidth > availableWidth && availableWidth > 0) {
                     scale = availableWidth / layoutWidth;
-                    scale = Math.max(scale, 0.3); // Minimum scale of 30%
+                    scale = Math.max(scale, 0.35); // Prevent overly tiny desktop keyboard
                 }
 
                 // Batch write: apply all style changes together
                 requestAnimationFrame(() => {
                     wrapper.style.transform = scale < 1 ? `scale(${scale})` : 'none';
                     const scaledHeight = layoutHeight * scale;
-                    container.style.height = Math.ceil(scaledHeight + containerPadding) + 'px';
+                    container.style.height = Math.ceil(scaledHeight + verticalPadding) + 'px';
                     isScaling = false;
                 });
             });
@@ -2812,8 +2464,6 @@ ob_start();
     const mobileClearBtn = document.getElementById('mobile-clear-btn');
     const mobileCharCount = document.getElementById('mobile-char-count');
     const mobileUniqueKeys = document.getElementById('mobile-unique-keys');
-    const MOBILE_TOTAL_KEYS = 42; // Total keys on mobile keyboard display
-
     const mobileKeyPresses = {};
     let mobileTotalChars = 0;
 
@@ -2849,9 +2499,8 @@ ob_start();
                     }, 150);
                 }
 
-                // Update progress for cat animation (use percentage based on mobile keys)
-                const mobilePercentage = Math.round((uniqueCount / MOBILE_TOTAL_KEYS) * 100);
-                updateMobileCatProgress(uniqueCount, mobilePercentage);
+                // Update progress for cat animation (based on mobile keys)
+                updateMobileCatProgress(uniqueCount);
             }
         });
 
@@ -2870,8 +2519,7 @@ ob_start();
                     const uniqueCount = Object.keys(mobileKeyPresses).length;
                     mobileUniqueKeys.textContent = `${uniqueCount}/${MOBILE_TOTAL_KEYS}`;
 
-                    const mobilePercentage = Math.round((uniqueCount / MOBILE_TOTAL_KEYS) * 100);
-                    updateMobileCatProgress(uniqueCount, mobilePercentage);
+                    updateMobileCatProgress(uniqueCount);
                 }
             }
         });
@@ -2890,109 +2538,33 @@ ob_start();
             });
 
             // Reset cat progress
-            resetCatProgress();
-            lastMobileCatLevel = 0;
+            resetCatProgress(MOBILE_TOTAL_KEYS);
         });
     }
 
-    // Mobile cat progress tracking
-    let lastMobileCatLevel = 0;
-    const mobileTreatMilestones = [4, 8, 13, 17, 21, 25, 29, 34, 38, 42]; // Every ~4 keys for 42 total
-
-    function updateMobileCatProgress(uniqueKeys, percentage) {
-        const cat = document.getElementById('progress-cat');
-        const catMessage = document.getElementById('cat-message');
-        const catMood = document.getElementById('cat-mood');
-        const treatsEaten = document.getElementById('treats-eaten');
-        const mouse = document.getElementById('progress-mouse');
-        const progressCount = document.getElementById('progress-count');
-        const progressPercentage = document.getElementById('progress-percentage');
-
-        if (!cat) return;
-
-        // Update display counts for mobile
-        if (progressCount) progressCount.textContent = uniqueKeys;
-        if (progressPercentage) progressPercentage.textContent = `${percentage}%`;
-
-        // Calculate cat position
-        const catPosition = Math.min(percentage * 0.92, 92);
-        cat.style.left = catPosition + '%';
-
-        // Walking animation
-        cat.classList.add('walking');
-        setTimeout(() => cat.classList.remove('walking'), 600);
-
-        // Calculate level based on mobile milestones
-        let currentLevel = 0;
-        for (let i = 0; i < mobileTreatMilestones.length; i++) {
-            if (uniqueKeys >= mobileTreatMilestones[i]) {
-                currentLevel = i + 1;
-            }
-        }
-
-        // Trigger treat eating
-        if (currentLevel > lastMobileCatLevel && currentLevel <= 10) {
-            const treatPercent = currentLevel === 10 ? 100 : currentLevel * 10;
-            const treatElement = document.querySelector(`.treat[data-treat="${treatPercent}"]`);
-
-            if (treatElement && !treatElement.classList.contains('eaten')) {
-                treatElement.classList.add('eating');
-                cat.classList.add('eating');
-                cat.classList.add('show-message');
-
-                createSparkles(treatElement);
-
-                cat.setAttribute('data-level', currentLevel);
-                catMessage.textContent = catMessages[currentLevel] || catMessages[0];
-                catMood.textContent = catMoods[currentLevel] || catMoods[0];
-
-                setTimeout(() => {
-                    treatElement.classList.remove('eating');
-                    treatElement.classList.add('eaten');
-                    cat.classList.remove('eating');
-                    treatsEaten.textContent = `Treats: ${currentLevel}/10`;
-                }, 500);
-
-                setTimeout(() => cat.classList.remove('show-message'), 2000);
-
-                lastMobileCatLevel = currentLevel;
-            }
-        }
-
-        // Victory at 100%
-        if (uniqueKeys >= MOBILE_TOTAL_KEYS && !mouse.classList.contains('caught')) {
-            mouse.classList.add('caught');
-            cat.setAttribute('data-level', '10');
-            catMood.textContent = "👑 CHAMPION!";
-            catMessage.textContent = "I caught the mouse! 🎉";
-            cat.classList.add('show-message');
-            createSparkles(mouse);
-
-            for (let i = 0; i < 5; i++) {
-                setTimeout(() => createSparkles(cat), i * 200);
-            }
-        }
-    }
-
-    // Update cat progress section header for mobile
+    // Update cat progress component display state
     function updateMobileDisplay() {
         const isMobile = window.innerWidth <= 768;
-        const totalKeysSpan = document.getElementById('total-keys-display');
-        const panelTitle = document.querySelector('.cat-progress-section .panel-title');
+        const activeTotal = isMobile ? MOBILE_TOTAL_KEYS : TOTAL_KEYS;
+        const mobileUniqueCount = Object.keys(mobileKeyPresses).length;
 
-        if (totalKeysSpan) {
-            totalKeysSpan.textContent = isMobile ? '42' : '103';
-        }
-        if (panelTitle) {
-            panelTitle.textContent = isMobile
-                ? 'Tap & Type to Feed the Cat!'
-                : 'Feed the Cat! Press Keys to Progress';
+        if (catProgress) {
+            catProgress.setDisplayMode(isMobile, activeTotal);
+            if (isMobile) {
+                updateMobileCatProgress(mobileUniqueCount);
+            } else {
+                updateProgressBar();
+            }
+            return;
         }
 
-        // Also reset cat progress when switching modes
         if (isMobile) {
-            lastMobileCatLevel = 0;
+            const mobilePercentage = Math.round((mobileUniqueCount / MOBILE_TOTAL_KEYS) * 100);
+            setCatProgressFallback(mobileUniqueCount, mobilePercentage, activeTotal);
+            return;
         }
+
+        updateProgressBar();
     }
 
     // Run on load and resize
