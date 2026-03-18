@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Password Generator - Password Strength | KeyboardTester.click';
-$pageDescription = 'Use this free online password generator to test password strength with live feedback and quick resets.';
-$pageKeywords = 'password strength, password generator, online test, free tool';
+$pageTitle = 'Strong Password Generator Online | KeyboardTester.click';
+$pageDescription = 'Generate strong passwords with custom length and character rules. Create secure browser-based passwords and copy them instantly.';
+$pageKeywords = 'password generator, strong password generator, random password, secure password tool';
 $pageOgImage = 'images/password-generator/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ $pageOgImage = 'images/password-generator/hero.svg';
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-auto-password-generator.php'; ?>
 
-    <section class="tool-stage" id="password-tool" aria-labelledby="tool-stage-title">
+    <section class="tool-stage" id="password-stage" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tool</p>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/password-generator/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Password Strength</p>
-          <h2 id="feature-title">Everything you need for password generator</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Secure Passwords</p>
+          <h2 id="feature-title">Create Strong Passwords With Custom Rules</h2>
+          <p class="section-lede">Adjust length and character sets to generate random passwords you can copy and use right away.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/password-generator/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the password generator</h2>
+            <h2 id="process-title">How to Generate a Strong Password</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Choose your settings, create a password, and copy it into your password manager or app.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">

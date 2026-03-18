@@ -7,7 +7,7 @@ ob_start();
 <meta name="keywords" content="한국어 키보드 테스터, 온라인 키보드 테스트, 키보드 점검, 한국어 키보드 사용법, 키보드 입력 테스트, 한국어 2-Set 키보드, 키보드 고장 진단, 무료 키보드 테스터">
 <!-- Hreflang Tags for Multilingual SEO -->
 <link rel="alternate" hreflang="en" href="https://www.keyboardtester.click/tools/keyboard_tester_guideline.php" />
-<link rel="alternate" hreflang="ko" href="https://www.keyboardtester.click/keyboard_tester_korean_index.php" />
+<link rel="alternate" hreflang="ko" href="https://keyboardtester.click/languages/korean/" />
 -->
 
 <!-- JSON-LD Structured Data for HowTo -->
@@ -39,7 +39,7 @@ ob_start();
       "text": "키가 반응하지 않거나 입력 문제가 발생하면 브라우저, 입력기, 또는 지원 팀을 확인하세요."
     }
   ],
-  "url": "https://www.keyboardtester.click/keyboard_tester_korean_index.php",
+  "url": "https://keyboardtester.click/languages/korean/",
   "inLanguage": "ko"
 }
 </script>

@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Mouse Speed Test - Click Speed | KeyboardTester.click';
-$pageDescription = 'Use this free online mouse speed test to test click speed with live feedback and quick resets.';
-$pageKeywords = 'click speed, mouse speed test, online test, free tool';
+$pageTitle = 'Click Speed Test Online | KeyboardTester.click';
+$pageDescription = 'Test your click speed and measure clicks per second online. Run fast CPS checks in the browser with instant results.';
+$pageKeywords = 'click speed test, cps test, mouse speed test, clicks per second';
 $pageOgImage = 'images/mouse-speed/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/mouse-speed/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Click Speed</p>
-          <h2 id="feature-title">Everything you need for mouse speed test</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Clicks Per Second</p>
+          <h2 id="feature-title">Test Click Speed and CPS in Real Time</h2>
+          <p class="section-lede">Measure how quickly you can click, compare repeat runs, and track your best pace.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/mouse-speed/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the mouse speed test</h2>
+            <h2 id="process-title">How to Test Click Speed Online</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Pick a duration, click as fast as you can, and compare your CPS result instantly.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">

@@ -30,7 +30,22 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mouse/hero.svg'); ?>" alt="Online mouse tester - test left right middle click and scroll wheel" loading="eager">
+        <picture>
+          <source media="(max-width: 980px)" type="image/webp" srcset="<?php echo url('images/mouse/mouse-tester-workstation-640.webp'); ?>">
+          <source media="(min-width: 981px)" type="image/webp" srcset="<?php echo url('images/mouse/mouse-tester-workstation-900.webp'); ?> 900w, <?php echo url('images/mouse/mouse-tester-workstation-1400.webp'); ?> 1400w" sizes="560px">
+          <source media="(max-width: 980px)" type="image/png" srcset="<?php echo url('images/mouse/mouse-tester-workstation-640.png'); ?>">
+          <source media="(min-width: 981px)" type="image/png" srcset="<?php echo url('images/mouse/mouse-tester-workstation-900.png'); ?> 900w, <?php echo url('images/mouse/mouse-tester-workstation-1400.png'); ?> 1400w" sizes="560px">
+          <img
+            src="<?php echo url('images/mouse/mouse-tester-workstation-640.png'); ?>"
+            srcset="<?php echo url('images/mouse/mouse-tester-workstation-640.png'); ?> 640w, <?php echo url('images/mouse/mouse-tester-workstation-900.png'); ?> 900w, <?php echo url('images/mouse/mouse-tester-workstation-1400.png'); ?> 1400w"
+            sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
+            width="640"
+            height="427"
+            alt="Person using the KeyboardTester.click online mouse tester to verify click and scroll input"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high">
+        </picture>
       </div>
       <div class="hero-stack">
         <div class="mini-card">

@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'QR Code Generator - Qr Creation | KeyboardTester.click';
-$pageDescription = 'Use this free online qr code generator to test QR creation with live feedback and quick resets.';
-$pageKeywords = 'QR creation, qr code generator, online test, free tool';
+$pageTitle = 'Free QR Code Generator Online | KeyboardTester.click';
+$pageDescription = 'Create QR codes for URLs, text, phone numbers, and more with a live browser-based generator. Preview and download instantly.';
+$pageKeywords = 'free qr code generator, qr code creator, generate qr code online, qr code maker';
 $pageOgImage = 'images/qr-generator/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/qr-generator/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Qr Creation</p>
-          <h2 id="feature-title">Everything you need for qr code generator</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">QR Code Creation</p>
+          <h2 id="feature-title">Create and Download QR Codes in Seconds</h2>
+          <p class="section-lede">Turn text, URLs, and contact details into QR codes with an instant on-page preview.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/qr-generator/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the qr code generator</h2>
+            <h2 id="process-title">How to Generate a QR Code Online</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Add your content, create the code, and save the final image in three quick steps.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">

@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Webcam Quality</p>
-      <h1 class="hero-title">Run a webcam quality check in seconds</h1>
-      <p class="hero-lede">Use this free online webcam tester to allow camera access and review results instantly.</p>
+      <p class="hero-kicker">Camera Preview</p>
+      <h1 class="hero-title">Webcam Test Online</h1>
+      <p class="hero-lede">Allow camera access to preview your webcam feed and verify video quality instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#webcamtesterindex">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>
@@ -30,7 +30,22 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/webcam-test/hero.svg'); ?>" alt="Online webcam tester - check camera quality resolution and video preview" loading="eager">
+        <picture>
+          <source media="(max-width: 980px)" type="image/webp" srcset="<?php echo url('images/webcam-test/webcam-test-camera-preview-640.webp'); ?>">
+          <source media="(min-width: 981px)" type="image/webp" srcset="<?php echo url('images/webcam-test/webcam-test-camera-preview-900.webp'); ?> 900w, <?php echo url('images/webcam-test/webcam-test-camera-preview-1400.webp'); ?> 1400w" sizes="560px">
+          <source media="(max-width: 980px)" type="image/png" srcset="<?php echo url('images/webcam-test/webcam-test-camera-preview-640.png'); ?>">
+          <source media="(min-width: 981px)" type="image/png" srcset="<?php echo url('images/webcam-test/webcam-test-camera-preview-900.png'); ?> 900w, <?php echo url('images/webcam-test/webcam-test-camera-preview-1400.png'); ?> 1400w" sizes="560px">
+          <img
+            src="<?php echo url('images/webcam-test/webcam-test-camera-preview-640.png'); ?>"
+            srcset="<?php echo url('images/webcam-test/webcam-test-camera-preview-640.png'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-camera-preview-900.png'); ?> 900w, <?php echo url('images/webcam-test/webcam-test-camera-preview-1400.png'); ?> 1400w"
+            sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
+            width="640"
+            height="427"
+            alt="Person previewing webcam quality online with a live camera framing and resolution card"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high">
+        </picture>
       </div>
       <div class="hero-stack">
         <div class="mini-card">

@@ -1,7 +1,7 @@
 <div class="game-container">
-    <h1 class="game-title">Emoji-Spur-Abenteuer</h1>
+    <div class="game-title">Emoji-Spur-Abenteuer</div>
     <div class="game-options">
-        <h2 class="game-subtitle">Passen Sie Ihr Spiel an</h2>
+        <p class="game-subtitle">Passen Sie Ihr Spiel an</p>
         <div class="option-group">
             <select class="game-select" id="trailSelect" onchange="setTrail(this.value)">
                 <option value="sparkles">✨ Funken</option>

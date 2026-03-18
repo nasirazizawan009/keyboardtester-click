@@ -78,6 +78,7 @@ $pageKeywords = 'testador teclado, teste teclado portugues, detector ghosting, m
 
         <!-- Tools List -->
         <?php $currentTool = 'portuguese-keyboard'; include __DIR__ . '/sections/tools-list-pt.php'; ?>
+        <?php $localizedHubLanguage = 'portuguese'; include __DIR__ . '/../../includes/components/localized-hub-discovery.php'; ?>
 
         <!-- Guidelines & Help -->
         <?php include __DIR__ . '/sections/guidelines.php'; ?>

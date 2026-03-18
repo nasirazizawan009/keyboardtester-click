@@ -5,7 +5,7 @@
       <h2>What Is an Online Keyboard Tester?</h2>
       <p>An online keyboard tester is a browser-based diagnostic tool that detects and visualizes every key press in real time. Our free keyboard test shows which keys register, identifies stuck or unresponsive keys, and helps diagnose ghosting problems - all without installing software.</p>
       <p>The tester displays a virtual keyboard layout that highlights keys as you press them. Each key lights up when pressed and dims when released, making it easy to spot keys that don't register, stay stuck, or behave inconsistently.</p>
-      <p>Use this tool to verify a new keyboard before the return window closes, troubleshoot typing issues, test after spills or drops, or document problems for warranty claims. It works with any keyboard: mechanical, membrane, laptop, wireless, or gaming. For complete input testing, also check your <a href="mouse-test.php">mouse buttons and scroll wheel</a>.</p>
+      <p>Use this tool to verify a new keyboard before the return window closes, troubleshoot typing issues, test after spills or drops, or document problems for warranty claims. It works with any keyboard: mechanical, membrane, laptop, wireless, or gaming. If one key feels jammed or repeats, use <a href="stuck-key-test.php">stuck key test</a>. For complete input testing, also check your <a href="mouse-test.php">mouse buttons and scroll wheel</a>.</p>
     </article>
 
     <article class="seo-article">

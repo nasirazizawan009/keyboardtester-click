@@ -1,32 +1,32 @@
 <section class="guidelines landing-guide" id="guidelines">
   <div class="help-header">
     <h2>OCR Tool Guide</h2>
-    <p>Quick steps to run the ocr tool and review your OCR results results.</p>
+    <p>Upload an image, extract text in your browser, and review the OCR result with a quick step-by-step workflow.</p>
   </div>
 
   <div class="help-grid">
     <div class="help-card">
       <h3>Start the test</h3>
       <ol>
-        <li>Open the tool and prepare to begin.</li>
-        <li>Upload an image to extract text.</li>
-        <li>Reset to run another quick check.</li>
+        <li>Select a screenshot, photo, or scanned image that contains readable text.</li>
+        <li>Run OCR to extract the text from the uploaded image.</li>
+        <li>Clear the tool and upload another image if you want to retry.</li>
       </ol>
     </div>
     <div class="help-card">
-      <h3>Adjust settings if needed</h3>
+      <h3>Improve OCR accuracy</h3>
       <ul>
-        <li>Review tool options for your ideal test.</li>
-        <li>Switch inputs or settings if results look off.</li>
-        <li>Reset to run another quick check.</li>
+        <li>Use a high-contrast image with straight, readable text.</li>
+        <li>Crop out extra background so the text is easier to detect.</li>
+        <li>Try a clearer source image if the extracted text looks wrong.</li>
       </ul>
     </div>
     <div class="help-card">
       <h3>Review results</h3>
       <ul>
-        <li>Look for missed inputs or delays.</li>
-        <li>Compare multiple runs for consistency.</li>
-        <li>Export or note results if required.</li>
+        <li>Proofread the extracted text for missing words or character errors.</li>
+        <li>Copy the OCR result into your document, note, or workflow.</li>
+        <li>Run another image if you need to compare different scans.</li>
       </ul>
     </div>
   </div>

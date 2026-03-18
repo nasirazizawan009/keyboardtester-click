@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Latency Checker - Input Latency | KeyboardTester.click';
-$pageDescription = 'Use this free online latency checker to test input latency with live feedback and quick resets.';
-$pageKeywords = 'input latency, latency checker, online test, free tool';
+$pageTitle = 'Input Latency Checker Online | KeyboardTester.click';
+$pageDescription = 'Measure keyboard and mouse input latency in your browser with live millisecond feedback, sample counts, and average response time.';
+$pageKeywords = 'input latency checker, keyboard latency test, mouse latency test, response time tool';
 $pageOgImage = 'images/latency-checker/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ $pageOgImage = 'images/latency-checker/hero.svg';
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-latency-checker.php'; ?>
 
-    <section class="tool-stage" id="latency-tool" aria-labelledby="tool-stage-title">
+    <section class="tool-stage" id="latency-stage" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tool</p>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/latency-checker/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Input Latency</p>
-          <h2 id="feature-title">Everything you need for latency checker</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Input Response Time</p>
+          <h2 id="feature-title">Measure Keyboard and Mouse Latency</h2>
+          <p class="section-lede">Capture live input samples, compare average delay, and spot inconsistent response times.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/latency-checker/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the latency checker</h2>
+            <h2 id="process-title">How to Test Input Latency Online</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Start the test, press keys or click, and compare the live millisecond results.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">

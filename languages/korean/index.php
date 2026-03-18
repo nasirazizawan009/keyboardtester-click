@@ -83,6 +83,7 @@ $pageKeywords = '키보드 테스터, 키보드 테스트, 한글 키보드, 두
 
         <!-- Tools List -->
         <?php $currentTool = 'korean-keyboard'; include __DIR__ . '/sections/tools-list-ko.php'; ?>
+        <?php $localizedHubLanguage = 'korean'; include __DIR__ . '/../../includes/components/localized-hub-discovery.php'; ?>
 
         <!-- Guidelines & Help -->
         <?php include __DIR__ . '/sections/guidelines.php'; ?>

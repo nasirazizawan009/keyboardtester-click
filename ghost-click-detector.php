@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Ghost Click Detector - Ghost Clicks | KeyboardTester.click';
-$pageDescription = 'Use this free online ghost click detector to test ghost clicks with live feedback and quick resets.';
-$pageKeywords = 'ghost clicks, ghost click detector, online test, free tool';
+$pageTitle = 'Ghost Click Detector Online | KeyboardTester.click';
+$pageDescription = 'Test your mouse for ghost clicks and unwanted double clicks with a fast browser-based detector and interval logging.';
+$pageKeywords = 'ghost click detector, double click test, mouse switch test, ghost click test';
 $pageOgImage = 'images/ghost-click/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ $pageOgImage = 'images/ghost-click/hero.svg';
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-ghost-click-detector.php'; ?>
 
-    <section class="tool-stage" id="ghost-click-tool" aria-labelledby="tool-stage-title">
+    <section class="tool-stage" id="ghost-click-stage" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tool</p>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/ghost-click/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Ghost Clicks</p>
-          <h2 id="feature-title">Everything you need for ghost click detector</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Double-Click Issues</p>
+          <h2 id="feature-title">Detect Ghost Clicks and Switch Bounce</h2>
+          <p class="section-lede">Run repeated clicks, inspect interval timing, and spot unwanted double-click behavior quickly.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/ghost-click/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the ghost click detector</h2>
+            <h2 id="process-title">How to Check for Ghost Clicks</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Start the test, click naturally, and review whether extra rapid clicks were detected.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">
@@ -137,6 +137,7 @@ $pageOgImage = 'images/ghost-click/hero.svg';
       </div>
     </section>
 
+    <?php $intentClusterTool = 'mouse'; $currentTool = 'ghost-click'; include 'includes/components/intent-cluster-links.php'; ?>
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/seo-content/ghost-click.php'; ?>
     <?php $currentTool = 'ghost-click'; include 'includes/related-tools.php'; ?>

@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'WhatsApp Sentiment Analyzer - Sentiment | KeyboardTester.click';
-$pageDescription = 'Use this free online whatsapp sentiment analyzer to test sentiment with live feedback and quick resets.';
-$pageKeywords = 'sentiment, whatsapp sentiment analyzer, online test, free tool';
+$pageTitle = 'WhatsApp Sentiment Analyzer Online | KeyboardTester.click';
+$pageDescription = 'Paste chat text and get a quick WhatsApp sentiment check in your browser. Review positive, negative, and overall tone instantly.';
+$pageKeywords = 'whatsapp sentiment analyzer, chat sentiment analysis, message sentiment tool, whatsapp text analyzer';
 $pageOgImage = 'images/whatsapp-sentiment/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ $pageOgImage = 'images/whatsapp-sentiment/hero.svg';
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-whatsapp-sentiment-analyzer.php'; ?>
 
-    <section class="tool-stage" id="sentiment-tool" aria-labelledby="tool-stage-title">
+    <section class="tool-stage" id="sentiment-stage" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tool</p>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/whatsapp-sentiment/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Sentiment</p>
-          <h2 id="feature-title">Everything you need for whatsapp sentiment analyzer</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Chat Tone Analysis</p>
+          <h2 id="feature-title">Check the Tone of a WhatsApp Conversation</h2>
+          <p class="section-lede">Paste WhatsApp chat text and get a quick browser-based estimate of positive and negative sentiment.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/whatsapp-sentiment/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the whatsapp sentiment analyzer</h2>
+            <h2 id="process-title">How to Analyze WhatsApp Chat Sentiment</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Paste the conversation, run the analyzer, and review the overall tone score instantly.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">

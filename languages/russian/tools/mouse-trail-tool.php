@@ -1,7 +1,7 @@
 <div class="game-container">
-    <h1 class="game-title">Приключение Эмодзи Следа</h1>
+    <div class="game-title">Приключение Эмодзи Следа</div>
     <div class="game-options">
-        <h2 class="game-subtitle">Настройте Вашу Игру</h2>
+        <p class="game-subtitle">Настройте Вашу Игру</p>
         <div class="option-group">
             <select class="game-select" id="trailSelect" onchange="setTrail(this.value)">
                 <option value="sparkles">✨ Искры</option>

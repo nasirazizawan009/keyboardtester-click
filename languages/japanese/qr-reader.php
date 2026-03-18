@@ -69,7 +69,7 @@ $pageKeywords = 'QRコードリーダー, QRコードスキャナー, QRコー�
       </div>
     </section>
 
-    <section class="tool-stage" id="qr-reader-tool" aria-labelledby="tool-stage-title">
+    <section class="tool-stage" id="qr-reader-stage" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">メインツール</p>
@@ -134,6 +134,8 @@ $pageKeywords = 'QRコードリーダー, QRコードスキャナー, QRコー�
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'japanese'; $localizedClusterKey = 'qr-reader'; $localizedClusterCurrent = 'qr-reader'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
+    <?php $localizedClusterLanguage = 'japanese'; $localizedClusterKey = 'qr-reader'; $localizedClusterCurrent = 'qr-reader'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'qr-reader'; include __DIR__ . '/sections/tools-list-ja.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

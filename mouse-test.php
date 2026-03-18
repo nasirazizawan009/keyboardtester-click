@@ -1,4 +1,8 @@
 <?php include 'config.php'; ?>
+<?php
+$pageOgImage = 'images/mouse/mouse-tester-workstation-1400.png';
+$pageOgImageAlt = 'Person using the online mouse tester to verify click and scroll input';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,7 +112,11 @@
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse/step-1.svg'); ?>" alt="Mouse tester interface showing live click tracking" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/mouse/mouse-tester-click-test-640.webp'); ?> 640w, <?php echo url('images/mouse/mouse-tester-click-test-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/mouse/mouse-tester-click-test-640.png'); ?> 640w, <?php echo url('images/mouse/mouse-tester-click-test-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/mouse/mouse-tester-click-test-640.png'); ?>" width="640" height="480" alt="Person using the online mouse tester to verify left right and middle click input" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">01</div>
             <h3>Click to begin</h3>
@@ -116,7 +124,11 @@
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse/step-2.svg'); ?>" alt="Mouse scroll wheel test showing direction and count" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/mouse/mouse-tester-scroll-wheel-check-640.webp'); ?> 640w, <?php echo url('images/mouse/mouse-tester-scroll-wheel-check-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/mouse/mouse-tester-scroll-wheel-check-640.png'); ?> 640w, <?php echo url('images/mouse/mouse-tester-scroll-wheel-check-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/mouse/mouse-tester-scroll-wheel-check-640.png'); ?>" width="640" height="480" alt="Person checking mouse scroll wheel direction and count with the online tester" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">02</div>
             <h3>Scroll to test</h3>
@@ -124,7 +136,11 @@
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse/step-3.svg'); ?>" alt="Mouse click verification with quick reset controls" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/mouse/mouse-tester-reset-retest-640.webp'); ?> 640w, <?php echo url('images/mouse/mouse-tester-reset-retest-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/mouse/mouse-tester-reset-retest-640.png'); ?> 640w, <?php echo url('images/mouse/mouse-tester-reset-retest-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/mouse/mouse-tester-reset-retest-640.png'); ?>" width="640" height="480" alt="Person resetting the online mouse tester to repeat click and scroll checks" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">03</div>
             <h3>Reset and repeat</h3>
@@ -134,6 +150,7 @@
       </div>
     </section>
 
+    <?php $intentClusterTool = 'mouse'; $currentTool = 'mouse'; include 'includes/components/intent-cluster-links.php'; ?>
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/seo-content/mouse-test.php'; ?>
     <?php $currentTool = 'mouse'; include 'includes/related-tools.php'; ?>

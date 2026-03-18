@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Input Latency</p>
-      <h1 class="hero-title">Run a input latency check in seconds</h1>
-      <p class="hero-lede">Use this free online latency checker to press keys or click and review results instantly.</p>
+      <p class="hero-kicker">Input Response Time</p>
+      <h1 class="hero-title">Input Latency Checker for Keyboard and Mouse</h1>
+      <p class="hero-lede">Press keys or click to capture live latency samples and compare response time instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#latency-checker">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>

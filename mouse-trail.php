@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Mouse Trail - Mouse Trail | KeyboardTester.click';
-$pageDescription = 'Use this free online mouse trail to test mouse trail with live feedback and quick resets.';
-$pageKeywords = 'mouse trail, mouse trail, online test, free tool';
+$pageTitle = 'Mouse Trail Test Online | KeyboardTester.click';
+$pageDescription = 'Visualize cursor movement with a free mouse trail test. Track pointer paths, smoothness, and motion behavior in the browser.';
+$pageKeywords = 'mouse trail test, cursor trail test, mouse movement test, pointer tracking tool';
 $pageOgImage = 'images/mouse-trail/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/mouse-trail/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Mouse Trail</p>
-          <h2 id="feature-title">Everything you need for mouse trail</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Cursor Path Visualizer</p>
+          <h2 id="feature-title">Visualize Cursor Movement and Pointer Smoothness</h2>
+          <p class="section-lede">Follow the mouse trail on screen, compare patterns, and see how smoothly your cursor tracks movement.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/mouse-trail/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the mouse trail</h2>
+            <h2 id="process-title">How to Use the Mouse Trail Test</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Open the trail area, move the cursor around, and review the visible path and score.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">

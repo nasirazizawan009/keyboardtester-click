@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Qr Creation</p>
-      <h1 class="hero-title">Run a QR creation check in seconds</h1>
-      <p class="hero-lede">Use this free online qr code generator to enter your data and review results instantly.</p>
+      <p class="hero-kicker">QR Code Creation</p>
+      <h1 class="hero-title">Free QR Code Generator Online</h1>
+      <p class="hero-lede">Create QR codes for URLs, text, and other content with an instant browser preview.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#qr-code-generator-scanner">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>

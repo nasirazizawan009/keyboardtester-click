@@ -18,9 +18,9 @@ $pageKeywords = 'Maus-Tester, Maustest, Klicktest, Scrollrad testen, Maustasten 
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('mouse-tester.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo url('mouse-test.php'); ?>">
   <link rel="alternate" hreflang="de" href="<?php echo url('languages/german/mouse-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('mouse-tester.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo url('mouse-test.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

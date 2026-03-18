@@ -81,11 +81,13 @@ html.dark-theme .landing-page,
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
     align-items: center;
+    min-height: 320px;
     contain: layout style;
 }
 
 .hero-copy {
     max-width: 620px;
+    min-height: 200px;
 }
 
 .hero-kicker {
@@ -235,9 +237,15 @@ html.dark-theme .hero-badge,
     box-shadow: var(--landing-shadow);
 }
 
+.hero-shot picture {
+    display: block;
+    aspect-ratio: 3 / 2;
+}
+
 .hero-shot img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: 16px;
     display: block;
 }
@@ -1427,6 +1435,12 @@ html.dark-theme .guidelines.landing-guide .help-accordion details,
 
     .landing-feature-card:active {
         transform: scale(0.99);
+    }
+
+    .landing-hero .hero-copy,
+    .landing-hero .hero-visual,
+    .landing-feature-card {
+        animation: none;
     }
 }
 

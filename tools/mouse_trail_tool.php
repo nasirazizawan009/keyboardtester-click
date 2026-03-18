@@ -1,7 +1,7 @@
 <div class="game-container">
-    <h1 class="game-title">Emoji Trail Adventure</h1>
+    <div class="game-title">Emoji Trail Adventure</div>
     <div class="game-options">
-        <h2 class="game-subtitle">Customize Your Game</h2>
+        <p class="game-subtitle">Customize Your Game</p>
         <div class="option-group">
             <select class="game-select" id="trailSelect" onchange="setTrail(this.value)">
                 <option value="sparkles">✨ Sparkles</option>

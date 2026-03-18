@@ -181,6 +181,8 @@ $pageKeywords = 'QR 코드 리더, QR 코드 스캔, QR 스캐너, QR 디코더'
     </section>
 
     <!-- Tools List -->
+    <?php $localizedClusterLanguage = 'korean'; $localizedClusterKey = 'qr-reader'; $localizedClusterCurrent = 'qr-reader'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
+    <?php $localizedClusterLanguage = 'korean'; $localizedClusterKey = 'qr-reader'; $localizedClusterCurrent = 'qr-reader'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'qr-reader'; include __DIR__ . '/sections/tools-list-ko.php'; ?>
 
     <!-- Guidelines -->

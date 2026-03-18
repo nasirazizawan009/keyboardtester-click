@@ -21,6 +21,12 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
 .keyboard-layout{display:flex;gap:8px;flex-wrap:nowrap}
 .key-row{display:flex;gap:5px}
 .key{display:flex;justify-content:center;align-items:center;padding:8px;min-width:36px;height:36px;border-radius:6px;font-size:13px}
+.desktop-only{display:block}
+.mobile-keyboard-section{display:none}
+@media (max-width:768px){
+    .desktop-only{display:none !important}
+    .mobile-keyboard-section{display:block}
+}
 </style>
 
 <section class="keyboard-tester" id="keyboard-tester">
@@ -2388,73 +2394,112 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
         latencyRating.innerHTML = 'Your keyboard latency will be rated after 10 tests';
     }
 
-    // Responsive keyboard scaling - Optimized to avoid forced reflows
+    // Responsive keyboard scaling - cache static measurements and avoid observing the element we mutate.
     const scaleKeyboard = (() => {
-        let isScaling = false;
+        const wrapper = document.getElementById('keyboard-scale-wrapper');
+        const container = document.querySelector('.keyboard-container');
+        const layout = document.querySelector('.keyboard-layout');
+        const horizontalPadding = 48; // keyboard-container uses 24px left + 24px right padding
+        const verticalPadding = 48;   // keyboard-container uses 24px top + 24px bottom padding
+        let rafId = 0;
+        let naturalLayoutWidth = 0;
+        let naturalLayoutHeight = 0;
+
+        function measureLayout() {
+            if (!wrapper || !layout || (naturalLayoutWidth && naturalLayoutHeight)) {
+                return;
+            }
+
+            naturalLayoutWidth = Math.max(layout.scrollWidth, layout.offsetWidth, 1);
+            naturalLayoutHeight = Math.max(layout.scrollHeight, layout.offsetHeight, 1);
+        }
 
         return function() {
-            if (isScaling) return;
-            isScaling = true;
+            if (rafId || !wrapper || !container || !layout) return;
 
-            requestAnimationFrame(() => {
-                const wrapper = document.getElementById('keyboard-scale-wrapper');
-                const container = document.querySelector('.keyboard-container');
-                const layout = document.querySelector('.keyboard-layout');
+            rafId = requestAnimationFrame(() => {
+                rafId = 0;
+                measureLayout();
 
-                if (!wrapper || !container || !layout) {
-                    isScaling = false;
+                const availableWidth = container.clientWidth - horizontalPadding;
+                if (availableWidth <= 0) {
                     return;
                 }
 
-                // Batch read: get all dimensions first
-                const style = window.getComputedStyle(container);
-                const horizontalPadding = (parseFloat(style.paddingLeft) || 0) + (parseFloat(style.paddingRight) || 0);
-                const verticalPadding = (parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0);
-                const availableWidth = container.clientWidth - horizontalPadding;
-                const layoutWidth = Math.max(layout.offsetWidth, 1);
-                const layoutHeight = Math.max(layout.offsetHeight, 1);
-
-                // Calculate scale factor
                 let scale = 1;
-                if (layoutWidth > availableWidth && availableWidth > 0) {
-                    scale = availableWidth / layoutWidth;
-                    scale = Math.max(scale, 0.35); // Prevent overly tiny desktop keyboard
+                if (naturalLayoutWidth > availableWidth) {
+                    scale = Math.max(availableWidth / naturalLayoutWidth, 0.35);
                 }
 
-                // Batch write: apply all style changes together
-                requestAnimationFrame(() => {
-                    wrapper.style.transform = scale < 1 ? `scale(${scale})` : 'none';
-                    const scaledHeight = layoutHeight * scale;
-                    container.style.height = Math.ceil(scaledHeight + verticalPadding) + 'px';
-                    isScaling = false;
-                });
+                const nextTransform = scale < 1 ? `scale(${scale})` : 'none';
+                const nextHeight = Math.ceil((naturalLayoutHeight * scale) + verticalPadding) + 'px';
+
+                if (wrapper.style.transform !== nextTransform) {
+                    wrapper.style.transform = nextTransform;
+                }
+
+                if (container.style.height !== nextHeight) {
+                    container.style.height = nextHeight;
+                }
             });
         };
     })();
 
-    // Use ResizeObserver for efficient resize handling with debouncing
-    if (typeof ResizeObserver !== 'undefined') {
-        let resizeTimeout;
-        const resizeObserver = new ResizeObserver(() => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(scaleKeyboard, 16); // ~60fps debounce
-        });
-        const container = document.querySelector('.keyboard-container');
-        if (container) resizeObserver.observe(container);
-    } else {
-        // Fallback for older browsers
-        let resizeTimer;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(scaleKeyboard, 150);
-        }, { passive: true });
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(scaleKeyboard, 100);
+    }, { passive: true });
+
+    window.addEventListener('orientationchange', scaleKeyboard, { passive: true });
+
+    const prefersDeferredInitialScale = window.matchMedia && window.matchMedia('(max-width: 980px)').matches;
+    const scheduleKeyboardScale = function() {
+        requestAnimationFrame(scaleKeyboard);
+    };
+
+    if (document.fonts && document.fonts.ready && !prefersDeferredInitialScale) {
+        document.fonts.ready.then(scheduleKeyboardScale).catch(function() {});
     }
+
+    const initializeKeyboardScale = function() {
+        const keyboardContainer = document.querySelector('.keyboard-container');
+
+        if (!prefersDeferredInitialScale || !keyboardContainer || !('IntersectionObserver' in window)) {
+            scheduleKeyboardScale();
+            return;
+        }
+
+        let hasScaledKeyboard = false;
+        let observer;
+        const runDeferredScale = function() {
+            if (hasScaledKeyboard) {
+                return;
+            }
+
+            hasScaledKeyboard = true;
+            if (observer) {
+                observer.disconnect();
+            }
+            scheduleKeyboardScale();
+        };
+
+        observer = new IntersectionObserver((entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+                runDeferredScale();
+            }
+        }, {
+            rootMargin: '240px 0px'
+        });
+
+        observer.observe(keyboardContainer);
+    };
 
     // Initial scale after DOM ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', scaleKeyboard);
+        document.addEventListener('DOMContentLoaded', initializeKeyboardScale, { once: true });
     } else {
-        requestAnimationFrame(scaleKeyboard);
+        initializeKeyboardScale();
     }
 
     // ============================================
@@ -2543,8 +2588,11 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
     }
 
     // Update cat progress component display state
-    function updateMobileDisplay() {
-        const isMobile = window.innerWidth <= 768;
+    let lastMobileDisplayMode = null;
+    function updateMobileDisplay(force = false) {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (!force && lastMobileDisplayMode === isMobile) return;
+        lastMobileDisplayMode = isMobile;
         const activeTotal = isMobile ? MOBILE_TOTAL_KEYS : TOTAL_KEYS;
         const mobileUniqueCount = Object.keys(mobileKeyPresses).length;
 
@@ -2568,8 +2616,15 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
     }
 
     // Run on load and resize
-    updateMobileDisplay();
-    window.addEventListener('resize', updateMobileDisplay);
+    updateMobileDisplay(true);
+    let mobileDisplayRaf = null;
+    window.addEventListener('resize', function() {
+        if (mobileDisplayRaf) return;
+        mobileDisplayRaf = requestAnimationFrame(function() {
+            mobileDisplayRaf = null;
+            updateMobileDisplay();
+        });
+    }, { passive: true });
 })();
 </script>
 

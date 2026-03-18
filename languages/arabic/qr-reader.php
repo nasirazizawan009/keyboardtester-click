@@ -117,6 +117,7 @@ $pageKeywords = 'قارئ QR, مسح QR, ماسح رمز QR, فك رمز QR';
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'arabic'; $localizedClusterKey = 'qr-reader'; $localizedClusterCurrent = 'qr-reader'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'qr-reader'; include __DIR__ . '/sections/tools-list-ar.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

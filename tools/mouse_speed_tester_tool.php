@@ -15,14 +15,14 @@ ob_start();
             </select>
         </div>
         <div class="info-area">
-            <div class="info-box" id="duration-box">⏱️ Duration: <span id="selected-duration">1s</span></div>
-            <div class="info-box" id="clicks-box">👆 Clicks: <span id="current-clicks">0</span></div>
-            <div class="info-box" id="time-left-box">⏳ Time Left: <span id="time-left">0s</span></div>
+            <div class="info-box" id="duration-box">Duration: <span id="selected-duration">1s</span></div>
+            <div class="info-box" id="clicks-box">Clicks: <span id="current-clicks">0</span></div>
+            <div class="info-box" id="time-left-box">Time Left: <span id="time-left">0s</span></div>
         </div>
-        <div class="click-area" id="click-area">Click Here to Start! 🚀</div>
+        <div class="click-area" id="click-area">Click Here to Start!</div>
         <button class="reset-button" id="reset-button">Reset</button>
         <div class="result-popup" id="result-popup">
-            <h2>Your Result 🎉</h2>
+            <p class="result-title">Your Result</p>
             <p id="cpm-result"></p>
             <p id="funny-remark"></p>
             <button id="close-result">Try Again</button>
@@ -76,7 +76,7 @@ ob_start();
         currentClicks.textContent = clickCount;
         timeLeft.textContent = timeRemaining + 's';
         clickArea.classList.add('active');
-        clickArea.textContent = 'Keep Clicking! 💪';
+        clickArea.textContent = 'Keep Clicking!';
         
         timer = setInterval(updateTimer, 1000);
         setTimeout(endTest, duration * 1000);
@@ -96,9 +96,9 @@ ob_start();
         clickArea.classList.remove('active');
         const durationInMinutes = parseInt(durationSelect.value) / 60;
         const cpm = Math.round(clickCount / durationInMinutes);
-        clickArea.textContent = 'Click Here to Start! 🚀';
+        clickArea.textContent = 'Click Here to Start!';
         
-        cpmResult.textContent = `Your CPM: ${cpm} 🎯`;
+        cpmResult.textContent = `Your CPM: ${cpm}`;
         funnyRemark.textContent = getFunnyRemark(cpm);
         resultPopup.style.display = 'block';
     }
@@ -108,18 +108,18 @@ ob_start();
         clearInterval(timer);
         clickCount = 0;
         clickArea.classList.remove('active');
-        clickArea.textContent = 'Click Here to Start! 🚀';
+        clickArea.textContent = 'Click Here to Start!';
         currentClicks.textContent = '0';
         timeLeft.textContent = '0s';
         selectedDuration.textContent = durationSelect.value + 's';
     }
 
     function getFunnyRemark(cpm) {
-        if (cpm > 300) return "Whoa, you're a Cheetah on steroids! 🐆⚡";
-        if (cpm > 200) return "Fast as a Falcon—nice clicking! 🦅💨";
-        if (cpm > 100) return "You're a zippy Rabbit, keep it up! 🐇🏃";
-        if (cpm > 50) return "Turtle speed, but steady wins the race! 🐢👍";
-        return "Snail pace! Even a Sloth would laugh! 🐌😂";
+        if (cpm > 300) return "Whoa, you're a cheetah on steroids!";
+        if (cpm > 200) return "Fast as a falcon. Nice clicking!";
+        if (cpm > 100) return "You're a zippy rabbit. Keep it up!";
+        if (cpm > 50) return "Turtle speed, but steady wins the race!";
+        return "Snail pace! Even a sloth would laugh!";
     }
 
     // Initialize duration display
@@ -258,7 +258,7 @@ ob_start();
         color: #d1d5db;
     }
 
-    .result-popup h2 {
+    .result-popup .result-title {
         font-size: 1.8rem;
         color: #f3f4f6;
         margin-bottom: 1rem;

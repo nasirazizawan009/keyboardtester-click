@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'WhatsApp Link Generator - Whatsapp Link | KeyboardTester.click';
-$pageDescription = 'Use this free online whatsapp link generator to test WhatsApp link with live feedback and quick resets.';
-$pageKeywords = 'WhatsApp link, whatsapp link generator, online test, free tool';
+$pageTitle = 'WhatsApp Link Generator Online | KeyboardTester.click';
+$pageDescription = 'Create WhatsApp click-to-chat links online with phone numbers and prefilled messages. Generate shareable wa.me links instantly.';
+$pageKeywords = 'whatsapp link generator, wa.me link generator, click to chat link, whatsapp chat link';
 $pageOgImage = 'images/whatsapp-link/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/whatsapp-link/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Whatsapp Link</p>
-          <h2 id="feature-title">Everything you need for whatsapp link generator</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Click-to-Chat Links</p>
+          <h2 id="feature-title">Create Shareable WhatsApp Links in Seconds</h2>
+          <p class="section-lede">Build wa.me links with a phone number and optional prefilled message directly in the browser.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/whatsapp-link/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the whatsapp link generator</h2>
+            <h2 id="process-title">How to Generate a WhatsApp Link</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Enter the phone number, add an optional message, and copy the finished share link.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">

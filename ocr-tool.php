@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'OCR Tool - Ocr Results | KeyboardTester.click';
-$pageDescription = 'Use this free online ocr tool to test OCR results with live feedback and quick resets.';
-$pageKeywords = 'OCR results, ocr tool, online test, free tool';
+$pageTitle = 'Image to Text OCR Tool Online | KeyboardTester.click';
+$pageDescription = 'Extract text from images online with a browser-based OCR tool. Upload a screenshot or photo and copy the detected text.';
+$pageKeywords = 'image to text, ocr online, extract text from image, free ocr tool';
 $pageOgImage = 'images/ocr-tool/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/ocr-tool/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Ocr Results</p>
-          <h2 id="feature-title">Everything you need for ocr tool</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Image to Text OCR</p>
+          <h2 id="feature-title">Extract Text From Images Without Installing Software</h2>
+          <p class="section-lede">Upload a photo or screenshot and convert printed text into editable text in your browser.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/ocr-tool/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the ocr tool</h2>
+            <h2 id="process-title">How to Convert an Image to Text Online</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Add an image, run OCR, and review the extracted text in a few simple steps.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">
@@ -137,6 +137,9 @@ $pageOgImage = 'images/ocr-tool/hero.svg';
       </div>
     </section>
 
+    <?php $intentClusterTool = 'ocr'; $currentTool = 'ocr'; include 'includes/components/intent-cluster-links.php'; ?>
+    <?php include 'help/seo-content/ocr-tool.php'; ?>
+    <?php include 'includes/related-tools.php'; ?>
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/ocr-tool.php'; ?>
   </main>

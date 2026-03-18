@@ -78,6 +78,7 @@ $pageKeywords = 'Webcam Test, Kamera Test, Webcam ueberpruefen, Video testen, We
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'german'; $localizedClusterKey = 'webcam'; $localizedClusterCurrent = 'webcam-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'webcam-test'; include __DIR__ . '/sections/tools-list-de.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

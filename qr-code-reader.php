@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'QR Code Reader - Qr Results | KeyboardTester.click';
-$pageDescription = 'Use this free online qr code reader to test QR results with live feedback and quick resets.';
-$pageKeywords = 'QR results, qr code reader, online test, free tool';
+$pageTitle = 'QR Code Reader Online | KeyboardTester.click';
+$pageDescription = 'Upload a QR code image and decode it in your browser. Read links, text, and other QR content instantly.';
+$pageKeywords = 'qr code reader online, qr scanner from image, decode qr code, read qr code online';
 $pageOgImage = 'images/qr-reader/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ $pageOgImage = 'images/qr-reader/hero.svg';
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-qr-code-reader.php'; ?>
 
-    <section class="tool-stage" id="qr-reader-tool" aria-labelledby="tool-stage-title">
+    <section class="tool-stage" id="qr-reader-stage" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tool</p>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/qr-reader/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Qr Results</p>
-          <h2 id="feature-title">Everything you need for qr code reader</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">QR Code Scanning</p>
+          <h2 id="feature-title">Scan QR Codes From Images in Your Browser</h2>
+          <p class="section-lede">Upload a QR image, decode it locally, and copy the content without leaving the page.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/qr-reader/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the qr code reader</h2>
+            <h2 id="process-title">How to Read a QR Code Online</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Choose an image, run the decoder, and review the extracted text in seconds.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">
@@ -119,11 +119,11 @@ $pageOgImage = 'images/qr-reader/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-reader/step-2.svg'); ?>" alt="QR code reader step 2 - scan with camera or upload image" loading="lazy">
+              <img src="<?php echo url('images/qr-reader/step-2.svg'); ?>" alt="QR code reader step 2 - upload QR image for decoding" loading="lazy">
             </div>
             <div class="step-number">02</div>
-            <h3>Scan a QR code</h3>
-            <p>with camera or upload.</p>
+            <h3>Upload the QR image</h3>
+            <p>and let the browser decode the content locally.</p>
           </article>
           <article class="process-card">
             <div class="process-media">
@@ -137,6 +137,9 @@ $pageOgImage = 'images/qr-reader/hero.svg';
       </div>
     </section>
 
+    <?php $intentClusterTool = 'qr-reader'; $currentTool = 'qr-reader'; include 'includes/components/intent-cluster-links.php'; ?>
+    <?php include 'help/seo-content/qr-reader.php'; ?>
+    <?php include 'includes/related-tools.php'; ?>
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/qr-code-reader.php'; ?>
   </main>

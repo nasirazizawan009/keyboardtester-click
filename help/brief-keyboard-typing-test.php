@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Typing Speed</p>
-      <h1 class="hero-title">Run a typing speed check in seconds</h1>
-      <p class="hero-lede">Use this free online typing speed test to type the prompt and review results instantly.</p>
+      <p class="hero-kicker">Typing Speed and Accuracy</p>
+      <h1 class="hero-title">Typing Speed Test Online</h1>
+      <p class="hero-lede">Type the prompt to measure WPM, accuracy, and typing consistency in real time.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#keyboard-typing-test">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>

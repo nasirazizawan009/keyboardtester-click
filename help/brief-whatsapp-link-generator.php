@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Whatsapp Link</p>
-      <h1 class="hero-title">Run a WhatsApp link check in seconds</h1>
-      <p class="hero-lede">Use this free online whatsapp link generator to enter phone and message and review results instantly.</p>
+      <p class="hero-kicker">Click-to-Chat Links</p>
+      <h1 class="hero-title">WhatsApp Link Generator for Click-to-Chat URLs</h1>
+      <p class="hero-lede">Enter a phone number and optional message to build a shareable wa.me link instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#whatsapp-link-generator">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>

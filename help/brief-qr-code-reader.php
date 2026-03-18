@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Qr Results</p>
-      <h1 class="hero-title">Run a QR results check in seconds</h1>
-      <p class="hero-lede">Use this free online qr code reader to scan a qr code and review results instantly.</p>
+      <p class="hero-kicker">QR Code Scanning</p>
+      <h1 class="hero-title">QR Code Reader Online From Image Uploads</h1>
+      <p class="hero-lede">Upload a QR image and decode its content locally in your browser.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#qr-code-reader">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>

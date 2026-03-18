@@ -79,6 +79,7 @@ $pageKeywords = 'probador teclado, test teclado español, detector ghosting, med
 
         <!-- Tools List -->
         <?php $currentTool = 'spanish-keyboard'; include __DIR__ . '/sections/tools-list-es.php'; ?>
+        <?php $localizedHubLanguage = 'spanish'; include __DIR__ . '/../../includes/components/localized-hub-discovery.php'; ?>
 
         <!-- Guidelines & Help -->
         <?php include __DIR__ . '/sections/guidelines.php'; ?>

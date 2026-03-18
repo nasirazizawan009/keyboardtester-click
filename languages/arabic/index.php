@@ -131,6 +131,7 @@ $pageKeywords = 'اختبار لوحة المفاتيح, اختبار الكيب
 
         <!-- Tools List (Arabic) -->
         <?php $currentTool = 'arabic-keyboard'; include __DIR__ . '/sections/tools-list-ar.php'; ?>
+        <?php $localizedHubLanguage = 'arabic'; include __DIR__ . '/../../includes/components/localized-hub-discovery.php'; ?>
 
         <!-- Guidelines & Help -->
         <?php include __DIR__ . '/sections/guidelines.php'; ?>

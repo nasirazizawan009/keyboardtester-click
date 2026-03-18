@@ -117,6 +117,7 @@ $pageKeywords = 'اختبار الميكروفون, فحص الصوت, جودة 
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'arabic'; $localizedClusterKey = 'mic'; $localizedClusterCurrent = 'mic-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'mic-test'; include __DIR__ . '/sections/tools-list-ar.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

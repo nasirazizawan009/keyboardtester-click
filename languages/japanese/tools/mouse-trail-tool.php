@@ -1,7 +1,7 @@
 <div class="game-container">
-    <h1 class="game-title">絵文字トレイルアドベンチャー</h1>
+    <div class="game-title">絵文字トレイルアドベンチャー</div>
     <div class="game-options">
-        <h2 class="game-subtitle">ゲームをカスタマイズ</h2>
+        <p class="game-subtitle">ゲームをカスタマイズ</p>
         <div class="option-group">
             <select class="game-select" id="trailSelect" onchange="setTrail(this.value)">
                 <option value="sparkles">✨ キラキラ</option>

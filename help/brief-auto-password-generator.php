@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Password Strength</p>
-      <h1 class="hero-title">Run a password strength check in seconds</h1>
-      <p class="hero-lede">Use this free online password generator to choose options and review results instantly.</p>
+      <p class="hero-kicker">Secure Passwords</p>
+      <h1 class="hero-title">Strong Password Generator Online</h1>
+      <p class="hero-lede">Choose length, symbols, and character types to create a secure password instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#auto-password-generator">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>

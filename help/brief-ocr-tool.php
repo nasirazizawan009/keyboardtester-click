@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Ocr Results</p>
-      <h1 class="hero-title">Run a OCR results check in seconds</h1>
-      <p class="hero-lede">Use this free online ocr tool to upload an image and review results instantly.</p>
+      <p class="hero-kicker">Image to Text OCR</p>
+      <h1 class="hero-title">Image to Text OCR Tool Online</h1>
+      <p class="hero-lede">Upload a screenshot or photo and extract text without installing desktop software.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#ocr-tool">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>

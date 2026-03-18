@@ -6,11 +6,14 @@
  */
 
 // Detect environment - more robust for cPanel
+$httpHost = $_SERVER['HTTP_HOST'] ?? '';
+$serverAddr = $_SERVER['SERVER_ADDR'] ?? '';
+
 $isLocalhost = (
-    strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ||
-    strpos($_SERVER['HTTP_HOST'], '127.0.0.1') !== false ||
-    strpos($_SERVER['HTTP_HOST'], '::1') !== false ||
-    $_SERVER['SERVER_ADDR'] === '127.0.0.1'
+    strpos($httpHost, 'localhost') !== false ||
+    strpos($httpHost, '127.0.0.1') !== false ||
+    strpos($httpHost, '::1') !== false ||
+    $serverAddr === '127.0.0.1'
 );
 
 // Set base URLs based on environment
@@ -81,6 +84,90 @@ function absoluteUrl($path = '') {
 }
 
 /**
+ * Normalize the current request path into the site's preferred canonical path.
+ * Handles legacy aliases, .html fallbacks, and /index.php entry points.
+ *
+ * @param string $requestUri
+ * @return string Canonical path relative to site root, or empty string for homepage.
+ */
+function canonicalizeRequestPath($requestUri = '') {
+    global $baseUrl;
+
+    $requestPath = parse_url((string) $requestUri, PHP_URL_PATH) ?? (string) $requestUri;
+    $requestPath = ltrim($requestPath, '/');
+    $basePath = trim((string) $baseUrl, '/');
+
+    if ($basePath !== '' && strpos($requestPath, $basePath) === 0) {
+        $requestPath = substr($requestPath, strlen($basePath));
+    }
+
+    $requestPath = ltrim($requestPath, '/');
+    if ($requestPath === '' || $requestPath === 'index.php' || $requestPath === 'index.html') {
+        return '';
+    }
+
+    if (preg_match('~^languages/([a-z-]+)/index\.(php|html)$~i', $requestPath, $matches)) {
+        return 'languages/' . strtolower($matches[1]) . '/';
+    }
+
+    $requestPath = preg_replace('~/index\.(php|html)$~i', '/', $requestPath);
+    $requestPathLower = strtolower($requestPath);
+
+    $legacyMap = [
+        'about.php' => 'about-us.php',
+        'contact.php' => 'feedback.php',
+        'ghost-click-detector.html' => 'ghost-click-detector.php',
+        'headphone-speaker-tester.php' => 'headphone_speaker_tester_index.php',
+        'keyboard-tester.php' => 'tools/keyboard-tester/',
+        'keyboard-typing-test.php' => 'keyboard_typing_test.php',
+        'keyboard_tester_arabic.php' => 'languages/arabic/',
+        'keyboard_tester_english.php' => 'tools/keyboard-tester/',
+        'keyboard_tester_french.php' => 'languages/french/',
+        'keyboard_tester_french_v2.php' => 'languages/french/',
+        'keyboard_tester_german.php' => 'languages/german/',
+        'keyboard_tester_japanese.php' => 'languages/japanese/',
+        'keyboard_tester_korean_index.php' => 'languages/korean/',
+        'keyboard_tester_portuguese.php' => 'languages/portuguese/',
+        'keyboard_tester_russian.php' => 'languages/russian/',
+        'keyboard_tester_spanish.php' => 'languages/spanish/',
+        'mouse-sensitivity-dpi-tester.php' => 'mouse_sensitivity_DPI_tester.php',
+        'mouse-speed-tester.php' => 'mouse_speed_tester.php',
+        'mouse_speed_tester.html' => 'mouse_speed_tester.php',
+        'privacy.php' => 'privacy-policy.php',
+        'qr-code-generator.php' => 'QR_code_generator_scanner.php',
+        'screen-tester.php' => 'screentestindex.php',
+        'sitemap-index.xml' => 'sitemap.xml',
+        'tools.php' => 'pages/tools.php',
+        'webcam-tester.php' => 'webcamtesterindex.php',
+        'whatsapp-brand-link-generator.php' => 'whatsapp-Brand-link-generator.php',
+    ];
+
+    if (isset($legacyMap[$requestPathLower])) {
+        return $legacyMap[$requestPathLower];
+    }
+
+    if (substr($requestPathLower, -5) === '.html') {
+        $phpCandidate = substr($requestPath, 0, -5) . '.php';
+        if (is_file(__DIR__ . '/' . $phpCandidate)) {
+            return canonicalizeRequestPath($phpCandidate);
+        }
+    }
+
+    return $requestPath;
+}
+
+/**
+ * Generate the preferred canonical URL for a request or path.
+ *
+ * @param string $requestUri
+ * @return string
+ */
+function canonicalUrl($requestUri = '') {
+    $canonicalPath = canonicalizeRequestPath($requestUri);
+    return $canonicalPath === '' ? absoluteUrl('') : absoluteUrl($canonicalPath);
+}
+
+/**
  * Get blog URL
  * @param string $path - Optional path within blog
  * @return string
@@ -119,22 +206,41 @@ $pages = [
     'home' => url(''),
     'mouse_test' => url('mouse-test.php'),
     'mouse_trail' => url('mouse-trail.php'),
+    'scroll_wheel_test' => url('scroll-wheel-test.php'),
+    'double_click_test' => url('double-click-test.php'),
     'keyboard_typing' => url('keyboard_typing_test.php'),
     'click_speed' => url('mouse_speed_tester.php'),
     'ghost_click' => url('ghost-click-detector.php'),
     'dpi_tester' => url('mouse_sensitivity_DPI_tester.php'),
     'screen_test' => url('screentestindex.php'),
+    'black_screen_test' => url('black-screen-test.php'),
+    'white_screen_test' => url('white-screen-test.php'),
+    'dead_pixel_test' => url('dead-pixel-test.php'),
+    'stuck_pixel_test' => url('stuck-pixel-test.php'),
+    'stuck_key_test' => url('stuck-key-test.php'),
     'mic_test' => url('mic-tester.php'),
+    'test_my_mic' => url('test-my-mic.php'),
+    'microphone_volume_test' => url('microphone-volume-test.php'),
     'webcam_test' => url('webcamtesterindex.php'),
+    'camera_resolution_test' => url('camera-resolution-test.php'),
+    'webcam_not_working_test' => url('webcam-not-working-test.php'),
+    'take_picture_with_webcam' => url('take-picture-with-webcam.php'),
     'headphone_test' => url('headphone_speaker_tester_index.php'),
+    'left_right_speaker_test' => url('left-right-speaker-test.php'),
+    'stereo_test' => url('stereo-test.php'),
     'qr_generator' => url('QR_code_generator_scanner.php'),
     'qr_reader' => url('qr-code-reader.php'),
+    'scan_qr_from_image' => url('scan-qr-from-image.php'),
     'ocr_tool' => url('ocr-tool.php'),
+    'screenshot_to_text' => url('screenshot-to-text.php'),
+    'photo_to_text' => url('photo-to-text.php'),
     'password_gen' => url('auto-password-generator.php'),
     'whatsapp_link' => url('whatsapp-link-generator.php'),
     'whatsapp_brand' => url('whatsapp-Brand-link-generator.php'),
     'lucky_wheel' => url('luckywheeltoolindex.php'),
     'latency_check' => url('latency-checker.php'),
+    'keyboard_ghosting' => url('keyboard-ghosting-test.php'),
+    'n_key_rollover' => url('n-key-rollover-test.php'),
     'about' => url('about-us.php'),
     'privacy' => url('privacy-policy.php'),
     'disclaimer' => url('disclaimer.php'),
@@ -145,12 +251,12 @@ $pages = [
 // Language keyboard pages
 $keyboardLanguages = [
     'en' => ['url' => url(''), 'name' => 'English', 'native' => 'English', 'flag' => 'flags/uk_flag.svg'],
-    'ar' => ['url' => url('keyboard_tester_arabic.php'), 'name' => 'Arabic', 'native' => 'العربية', 'flag' => 'flags/arabic_flag.svg'],
-    'fr' => ['url' => url('keyboard_tester_french.php'), 'name' => 'French', 'native' => 'Français', 'flag' => 'flags/french_flag.svg'],
-    'de' => ['url' => url('keyboard_tester_german.php'), 'name' => 'German', 'native' => 'Deutsch', 'flag' => 'flags/german_flag.svg'],
-    'es' => ['url' => url('keyboard_tester_spanish.php'), 'name' => 'Spanish', 'native' => 'Español', 'flag' => 'flags/spanish_flag.svg'],
-    'pt' => ['url' => url('keyboard_tester_portuguese.php'), 'name' => 'Portuguese', 'native' => 'Português', 'flag' => 'flags/Portugal_flag.svg'],
-    'ru' => ['url' => url('keyboard_tester_russian.php'), 'name' => 'Russian', 'native' => 'Русский', 'flag' => 'flags/russian_flag.svg'],
-    'ja' => ['url' => url('keyboard_tester_japanese.php'), 'name' => 'Japanese', 'native' => '日本語', 'flag' => 'flags/japan_flag.svg'],
-    'ko' => ['url' => url('keyboard_tester_korean_index.php'), 'name' => 'Korean', 'native' => '한국어', 'flag' => 'flags/korean_flag.svg'],
+    'ar' => ['url' => url('languages/arabic/'), 'name' => 'Arabic', 'native' => 'العربية', 'flag' => 'flags/arabic_flag.svg'],
+    'fr' => ['url' => url('languages/french/'), 'name' => 'French', 'native' => 'Français', 'flag' => 'flags/french_flag.svg'],
+    'de' => ['url' => url('languages/german/'), 'name' => 'German', 'native' => 'Deutsch', 'flag' => 'flags/german_flag.svg'],
+    'es' => ['url' => url('languages/spanish/'), 'name' => 'Spanish', 'native' => 'Español', 'flag' => 'flags/spanish_flag.svg'],
+    'pt' => ['url' => url('languages/portuguese/'), 'name' => 'Portuguese', 'native' => 'Português', 'flag' => 'flags/Portugal_flag.svg'],
+    'ru' => ['url' => url('languages/russian/'), 'name' => 'Russian', 'native' => 'Русский', 'flag' => 'flags/russian_flag.svg'],
+    'ja' => ['url' => url('languages/japanese/'), 'name' => 'Japanese', 'native' => '日本語', 'flag' => 'flags/japan_flag.svg'],
+    'ko' => ['url' => url('languages/korean/'), 'name' => 'Korean', 'native' => '한국어', 'flag' => 'flags/korean_flag.svg'],
 ];

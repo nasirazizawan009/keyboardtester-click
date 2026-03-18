@@ -78,6 +78,7 @@ $pageKeywords = 'prueba pantalla, píxeles muertos, test monitor, detectar píxe
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'spanish'; $localizedClusterKey = 'screen'; $localizedClusterCurrent = 'screen-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'screen-test'; include __DIR__ . '/sections/tools-list-es.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

@@ -1,6 +1,6 @@
 # KeyboardTester.Click - Project Guide
 
-**Version:** 17.2.27 (February 2026)
+**Version:** 17.2.34 (March 2026)
 
 ## Project Overview
 A comprehensive suite of free online testing tools for keyboards, mice, screens, audio, and utilities. The site is multilingual with support for 8 languages.
@@ -218,6 +218,27 @@ Use the `url()` function for all internal links:
 ### Cat Progress Message Localization (Feb 2026)
 - Cat progress text is now locale-aware across all keyboard pages (English + all language keyboards)
 - Shared module supports `locale` option and localized packs for:
+
+## Recent Update (v17.2.28)
+
+### SEO Intent Cluster Pages
+- Added search-intent entry pages that reuse existing live tools instead of duplicating tool logic
+- New pages target tighter keyword clusters:
+  - `dead-pixel-test.php`
+  - `stuck-pixel-test.php`
+  - `keyboard-ghosting-test.php`
+  - `n-key-rollover-test.php`
+  - `camera-resolution-test.php`
+  - `scan-qr-from-image.php`
+  - `screenshot-to-text.php`
+- Shared intent cluster config lives in `includes/seo-clusters.php`
+- Shared sibling-linking component lives in `includes/components/intent-cluster-links.php`
+- Shared variant page renderer lives in `includes/render-tool-intent-page.php`
+
+### Accuracy Fixes for SEO and Schema
+- Corrected QR reader descriptions to match the current image-upload workflow
+- Corrected microphone SEO/schema text to match the current live meter and peak-level tool
+- Corrected OCR and QR generator schema features so search metadata does not promise unavailable features
   - `en`, `ar`, `fr`, `de`, `ja`, `ko`, `pt`, `ru`, `es`
 - Localized fields include:
   - milestone pop-up messages
@@ -225,6 +246,170 @@ Use the `url()` function for all internal links:
   - treats label
   - completion message
 - Locale is passed from each keyboard tool initializer when creating `KeyboardCatProgress`
+
+## Recent Update (v17.2.29)
+
+### Second-Wave Intent Cluster Pages
+- Added another 4 search-intent entry pages that reuse the existing live tools:
+  - `stuck-key-test.php`
+  - `test-my-mic.php`
+  - `webcam-not-working-test.php`
+  - `photo-to-text.php`
+- Extended `includes/seo-clusters.php` so the keyboard, mic, webcam, and OCR hubs can cross-link these variants
+- Added page-specific schema, FAQs, and supporting SEO content for each new intent page
+
+## Recent Update (v17.2.30)
+
+### Third-Wave Intent Cluster Pages
+- Added another 4 search-intent entry pages that reuse the existing live tools:
+  - `black-screen-test.php`
+  - `white-screen-test.php`
+  - `scroll-wheel-test.php`
+  - `double-click-test.php`
+- Extended the shared cluster system so screen and mouse hub pages cross-link these variants
+- Added page-specific schema, FAQs, and supporting SEO content for each new intent page
+
+### Accuracy and Preset Improvements
+- Corrected the main mouse tester SEO/schema copy so it only claims supported inputs: left, middle, right, and scroll
+- Added safe preset support to `screentesttool.php` so intent pages can start on the correct default color without changing existing page behavior
+
+## Recent Update (v17.2.31)
+
+### Fourth-Wave Intent Cluster Pages
+- Added 4 more search-intent entry pages around existing audio/video tools:
+  - `left-right-speaker-test.php`
+  - `stereo-test.php`
+  - `microphone-volume-test.php`
+  - `take-picture-with-webcam.php`
+- Extended the shared cluster system so audio-output, mic, and webcam hubs can cross-link these variants
+- Added page-specific schema, FAQs, and supporting SEO content for each new intent page
+
+### Audio Hub SEO Upgrade
+- Upgraded `headphone_speaker_tester_index.php` from a standalone tool page into a proper cluster hub
+- Added supporting SEO content and related-tools internal linking for the headphone/speaker tool
+
+### Hub and Discovery Updates
+- Main `mic-tester.php` now includes the intent-cluster section like the other updated hubs
+- Updated internal linking across keyboard, mic, webcam, and OCR SEO content to point into the new variants
+- Updated `generate-sitemap.php`, `submit-indexnow.php`, and `config.php` for the new URLs
+
+## Recent Update (v17.2.32)
+
+### OCR Runtime Fix
+- Fixed the OCR production failure by allowing `https://cdn.jsdelivr.net` in CSP `connect-src`
+- Root cause: Tesseract.js loaded from jsDelivr, but runtime OCR asset fetches were blocked by the old CSP
+- Verified locally and on production with a real browser OCR upload test returning `HELLO 123`
+
+### Localized Phase-5 Intent Pages
+- Added a shared localized intent-page system:
+  - `includes/localized-intent-pages.php`
+  - `includes/render-localized-intent-page.php`
+  - `includes/components/localized-intent-links.php`
+- Rolled out 16 localized cluster pages across `es`, `de`, `pt`, and `ar` using existing live tools:
+  - `dead-pixel-test.php`
+  - `microphone-volume-test.php`
+  - `camera-resolution-test.php`
+  - `scan-qr-from-image.php`
+- Added localized internal cluster links on the corresponding `screen-test`, `mic-test`, `webcam-test`, and `qr-reader` hub pages
+- Extended sitemap and IndexNow discovery to read localized intent URLs from the shared config
+
+## Recent Update (v17.2.33)
+
+### Session Handoff (March 18, 2026)
+- OCR is fixed locally and live
+- Root cause was CSP: `tesseract.js` runtime fetches from jsDelivr were blocked until `.htaccess` added `https://cdn.jsdelivr.net` to `connect-src`
+- Production OCR verification passed with a real browser upload run on `ocr-tool.php`, returning extracted text `HELLO 123`
+
+### Phase-5 Final State
+- Localized phase-5 rollout is live for `es`, `de`, `pt`, and `ar`
+- Added 16 localized intent pages total:
+  - `dead-pixel-test.php`
+  - `microphone-volume-test.php`
+  - `camera-resolution-test.php`
+  - `scan-qr-from-image.php`
+- Shared localized system now lives in:
+  - `includes/localized-intent-pages.php`
+  - `includes/render-localized-intent-page.php`
+  - `includes/components/localized-intent-links.php`
+
+### Important Deployment Note
+- After the initial phase-5 deploy, the localized wrapper pages were live, but the reused localized tool partials also needed syncing to ensure production matched local behavior
+- Synced localized tool partials for `screen`, `mic`, `webcam`, and `qr-reader` across:
+  - `languages/spanish/tools/*`
+  - `languages/german/tools/*`
+  - `languages/portuguese/tools/*`
+  - `languages/arabic/tools/*`
+- This mattered because the Portuguese `camera-resolution-test.php` initially reported `640x480` in the fake-device browser check until the localized tool partials were re-uploaded
+
+### Production Verification Completed
+- New localized pages render live with exactly `1` `h1`
+- Localized cluster-link sections render live on the new pages and the updated hub pages
+- Live `sitemap.xml` includes the new localized URLs
+- Live `submit-indexnow.php` submission returned HTTP `200` and included the new localized URLs
+- Localized permission-flow verification passed:
+  - German mic volume page reached `Status: Hoert zu` then `Status: Gestoppt`
+  - Portuguese camera resolution page reached `Ativa`, then `Nao Iniciada`, and reported `1280x720`
+
+### Small Infrastructure Fix
+- `config.php` now safely handles CLI runs without assuming `$_SERVER['HTTP_HOST']` and `$_SERVER['SERVER_ADDR']` always exist
+- This removes noisy warnings during CLI sitemap generation and other maintenance scripts
+
+## Recent Update (v17.2.34)
+
+### Phase-6 Localized Intent Rollout
+- Extended the shared localized intent system to the remaining 4 languages:
+  - French
+  - Russian
+  - Japanese
+  - Korean
+- Added 16 localized intent wrapper pages total:
+  - `dead-pixel-test.php`
+  - `microphone-volume-test.php`
+  - `camera-resolution-test.php`
+  - `scan-qr-from-image.php`
+- Added localized cluster-link sections on the corresponding `screen-test`, `mic-test`, `webcam-test`, and `qr-reader` hub pages for all 4 languages
+- Kept the shared localized catalog split cleanly by loading:
+  - `includes/localized-intent-pages-phase6.php`
+  - `includes/localized-intent-pages-phase6-russian.php`
+  - `includes/localized-intent-pages-phase6-japanese.php`
+  - `includes/localized-intent-pages-phase6-korean.php`
+  from `includes/localized-intent-pages.php`
+
+### Verification Completed Locally
+- `php -l` passed for:
+  - `includes/localized-intent-pages.php`
+  - `includes/localized-intent-pages-phase6.php`
+  - `includes/render-localized-intent-page.php`
+  - new phase-6 wrappers and updated hub pages
+- `getLocalizedIntentUrlEntries()` now returns `4` localized intent URLs for each of:
+  - `french`
+  - `russian`
+  - `japanese`
+  - `korean`
+- `php generate-sitemap.php` now includes the new phase-6 URLs in `sitemap.xml`
+
+### Sitemap Generator Fix
+- While verifying phase 6, `generate-sitemap.php` was found to emit malformed protocol-relative URLs like `//mouse-test.php` for non-localized entries
+- Root cause:
+  - loading localized intent config pulled in `config.php`
+  - `config.php` also defines `$baseUrl`
+  - that collided with the sitemap generator's own `$baseUrl`
+- Fix:
+  - renamed the generator variable to `\$sitemapBaseUrl`
+  - updated sitemap normalization to use the renamed variable
+  - regenerated `sitemap.xml`
+
+### Best Next Starting Point
+- Deploy the new phase-6 pages plus the updated localized tool partials for:
+  - `languages/french/tools/*`
+  - `languages/russian/tools/*`
+  - `languages/japanese/tools/*`
+  - `languages/korean/tools/*`
+- After deploy, verify on production:
+  - each new localized page renders with exactly `1` `h1`
+  - each updated hub page shows the localized cluster-link section
+  - live `sitemap.xml` contains the new localized URLs
+  - live `submit-indexnow.php` includes the new localized URLs
 
 ## Google Search Console Setup (Feb 2026)
 

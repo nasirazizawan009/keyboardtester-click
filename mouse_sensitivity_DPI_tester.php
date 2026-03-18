@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Mouse DPI Tester - Dpi And Sensitivity | KeyboardTester.click';
-$pageDescription = 'Use this free online mouse dpi tester to test DPI and sensitivity with live feedback and quick resets.';
-$pageKeywords = 'DPI and sensitivity, mouse dpi tester, online test, free tool';
+$pageTitle = 'Mouse DPI Tester Online | KeyboardTester.click';
+$pageDescription = 'Estimate mouse DPI and sensitivity online by measuring cursor movement against a known physical distance.';
+$pageKeywords = 'mouse dpi tester, mouse sensitivity test, dpi calculator, mouse dpi check';
 $pageOgImage = 'images/mouse-dpi/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ $pageOgImage = 'images/mouse-dpi/hero.svg';
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-mouse-sensitivity-dpi-tester.php'; ?>
 
-    <section class="tool-stage" id="dpi-tool" aria-labelledby="tool-stage-title">
+    <section class="tool-stage" id="dpi-stage" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tool</p>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/mouse-dpi/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Dpi And Sensitivity</p>
-          <h2 id="feature-title">Everything you need for mouse dpi tester</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">DPI and Sensitivity</p>
+          <h2 id="feature-title">Estimate Mouse DPI From Real Movement</h2>
+          <p class="section-lede">Measure cursor travel against a known physical distance to estimate DPI and compare sensitivity changes.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/mouse-dpi/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the mouse dpi tester</h2>
+            <h2 id="process-title">How to Estimate Mouse DPI Online</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Enter the real-world distance, drag through the track area, and review the estimated DPI.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">

@@ -1,9 +1,10 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Headphone & Speaker Tester - Audio Output | KeyboardTester.click';
-$pageDescription = 'Use this free online headphone & speaker tester to test audio output with live feedback and quick resets.';
-$pageKeywords = 'audio output, headphone & speaker tester, online test, free tool';
-$pageOgImage = 'images/headphone-test/hero.svg';
+$pageTitle = 'Headphone and Speaker Test Online | KeyboardTester.click';
+$pageDescription = 'Test speakers and headphones online with stereo audio playback, left-right channel checks, and quick browser-based sound tests.';
+$pageKeywords = 'headphone test, speaker test, audio test online, stereo sound test';
+$pageOgImage = 'images/headphone-test/speaker-headphone-test-stereo-preview-1400.png';
+$pageOgImageAlt = 'Person verifying stereo speaker and headphone output online with left and right channel controls';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,9 +75,9 @@ $pageOgImage = 'images/headphone-test/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Audio Output</p>
-          <h2 id="feature-title">Everything you need for headphone & speaker tester</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Audio Output Check</p>
+          <h2 id="feature-title">Test Speakers, Headphones, and Stereo Channels</h2>
+          <p class="section-lede">Play browser-based audio to confirm sound output, left/right balance, and basic clarity.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,14 +105,18 @@ $pageOgImage = 'images/headphone-test/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the headphone & speaker tester</h2>
+            <h2 id="process-title">How to Test Speakers and Headphones Online</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Connect your device, play the test sounds, and verify both channels sound correct.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/headphone-test/step-1.svg'); ?>" alt="Headphone speaker test step 1 - connect audio device" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-connect-device-640.webp'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-connect-device-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-connect-device-640.png'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-connect-device-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/headphone-test/speaker-headphone-test-connect-device-640.png'); ?>" width="640" height="480" alt="Person connecting headphones for an online speaker and headphone test" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +124,11 @@ $pageOgImage = 'images/headphone-test/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/headphone-test/step-2.svg'); ?>" alt="Headphone test step 2 - play stereo audio sample" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-play-left-right-audio-640.webp'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-play-left-right-audio-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-play-left-right-audio-640.png'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-play-left-right-audio-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/headphone-test/speaker-headphone-test-play-left-right-audio-640.png'); ?>" width="640" height="480" alt="Stereo left and right audio check card for online speaker and headphone testing" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">02</div>
             <h3>Play test audio</h3>
@@ -127,7 +136,11 @@ $pageOgImage = 'images/headphone-test/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/headphone-test/step-3.svg'); ?>" alt="Audio test results - verify left and right speaker output" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-review-stereo-output-640.webp'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-review-stereo-output-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-review-stereo-output-640.png'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-review-stereo-output-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/headphone-test/speaker-headphone-test-review-stereo-output-640.png'); ?>" width="640" height="480" alt="Online audio output test results showing stereo balance and playback status" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -137,6 +150,9 @@ $pageOgImage = 'images/headphone-test/hero.svg';
       </div>
     </section>
 
+    <?php $intentClusterTool = 'audio-output'; $currentTool = 'headphone'; include 'includes/components/intent-cluster-links.php'; ?>
+    <?php include 'help/seo-content/headphone-speaker-tester.php'; ?>
+    <?php include 'includes/related-tools.php'; ?>
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/headphone-speaker-tester.php'; ?>
   </main>

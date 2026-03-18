@@ -31,6 +31,14 @@ RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
 # ============================================
 
+# Canonical entry points and legacy aliases
+RewriteRule ^index\.(php|html)$ / [R=301,L]
+RewriteRule ^(languages/(arabic|russian|spanish|french|german|portuguese|japanese|korean))/index\.(php|html)$ /$1/ [R=301,L]
+RewriteRule ^about\.php$ /about-us.php [R=301,L]
+RewriteRule ^privacy\.php$ /privacy-policy.php [R=301,L]
+RewriteRule ^contact\.php$ /feedback.php [R=301,L]
+RewriteRule ^sitemap-index\.xml$ /sitemap.xml [R=301,L]
+
 # Serve WebP when supported and available
 RewriteCond %{HTTP_ACCEPT} image/webp
 RewriteCond %{REQUEST_FILENAME} \.(png|jpe?g)$
@@ -40,16 +48,16 @@ RewriteRule ^(.+)\.(png|jpe?g)$ $1.$2.webp [T=image/webp,E=WEBP:1,L]
 # Redirect old keyboard tester URLs to new organized structure
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^keyboard_tester_english\.php$ /tools/keyboard-tester/ [R=301,L]
-RewriteRule ^keyboard-tester\.php$ /tools/keyboard-tester/ [R=301,L]
-RewriteRule ^keyboard_tester_arabic\.php$ /languages/arabic/ [R=301,L]
-RewriteRule ^keyboard_tester_russian\.php$ /languages/russian/ [R=301,L]
-RewriteRule ^keyboard_tester_spanish\.php$ /languages/spanish/ [R=301,L]
-RewriteRule ^keyboard_tester_french\.php$ /languages/french/ [R=301,L]
-RewriteRule ^keyboard_tester_portuguese\.php$ /languages/portuguese/ [R=301,L]
-RewriteRule ^keyboard_tester_japanese\.php$ /languages/japanese/ [R=301,L]
-RewriteRule ^keyboard_tester_german\.php$ /languages/german/ [R=301,L]
-RewriteRule ^keyboard_tester_korean_index\.php$ /languages/korean/ [R=301,L]
+RewriteRule ^keyboard_tester_english\.(php|html)$ /tools/keyboard-tester/ [R=301,L]
+RewriteRule ^keyboard-tester\.(php|html)$ /tools/keyboard-tester/ [R=301,L]
+RewriteRule ^keyboard_tester_arabic\.(php|html)$ /languages/arabic/ [R=301,L]
+RewriteRule ^keyboard_tester_russian\.(php|html)$ /languages/russian/ [R=301,L]
+RewriteRule ^keyboard_tester_spanish\.(php|html)$ /languages/spanish/ [R=301,L]
+RewriteRule ^keyboard_tester_french\.(php|html)$ /languages/french/ [R=301,L]
+RewriteRule ^keyboard_tester_portuguese\.(php|html)$ /languages/portuguese/ [R=301,L]
+RewriteRule ^keyboard_tester_japanese\.(php|html)$ /languages/japanese/ [R=301,L]
+RewriteRule ^keyboard_tester_german\.(php|html)$ /languages/german/ [R=301,L]
+RewriteRule ^keyboard_tester_korean_index\.(php|html)$ /languages/korean/ [R=301,L]
 
 # Redirect old tool URLs to current versions  
 RewriteRule ^keyboard-typing-test\.php$ /keyboard_typing_test.php [R=301,L]
@@ -76,7 +84,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} \.html$
 RewriteCond %{DOCUMENT_ROOT}/$1.php -f
-RewriteRule ^(.*)\.html$ /$1.php [QSA,L]
+RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
 
 # ============================================
 # GZIP COMPRESSION - Reduces file sizes by 70%
@@ -186,7 +194,7 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,L]
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
     # Content Security Policy (CSP) - Prevents XSS attacks
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://*.clarity.ms https://www.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.clarity.ms https://www.clarity.ms https://www.google-analytics.com https://*.google-analytics.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://*.clarity.ms https://www.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; img-src 'self' data: https: blob:; connect-src 'self' https://cdn.jsdelivr.net https://*.clarity.ms https://www.clarity.ms https://www.google-analytics.com https://*.google-analytics.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
 
     # Vary headers for proper caching
     Header append Vary "Accept-Encoding"

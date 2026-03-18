@@ -8,28 +8,37 @@
 
     <?php include __DIR__ . '/includes/seo-meta.php'; ?>
 
-    <!-- Preload Hero Image (LCP element) -->
-    <link rel="preload" as="image" href="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?>" type="image/webp" fetchpriority="high">
+    <!-- Preload Hero Image (LCP element) with viewport-specific candidates -->
+    <link rel="preload" as="image"
+          href="<?php echo url('images/keyboard/hero-keyboard-test-560.webp'); ?>"
+          media="(max-width: 980px)"
+          type="image/webp"
+          fetchpriority="high">
+    <link rel="preload" as="image"
+          href="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?>"
+          media="(min-width: 981px)"
+          type="image/webp"
+          fetchpriority="high">
 
     <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl(''); ?>">
     <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl(''); ?>">
 
-    <!-- Critical CSS to prevent layout shift (CLS optimization) -->
+    <!-- Minimal critical CSS: keep above-the-fold structure stable before full CSS arrives -->
     <style>
-    .landing-main{min-height:100vh;contain:layout style}
-    .landing-hero{max-height:75vh;padding:2rem 0 1.5rem;contain:layout;overflow:hidden}
-    .landing-hero-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;align-items:center;min-height:320px;contain:layout style}
+    .landing-main{min-height:100vh}
+    .landing-hero-grid{min-height:320px}
     .hero-copy{min-height:200px}
-    .hero-shot{aspect-ratio:16/10;contain:layout}
-    .hero-shot img{width:100%;height:auto;display:block;border-radius:16px}
-    .tool-stage{padding:1.5rem 0 2rem;min-height:680px;contain:layout style}
-    .tool-shell{min-height:580px;contain:layout style}
-    .trust-strip{min-height:80px;contain:layout style}
-    .trust-grid{min-height:60px;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    @media(max-width:980px){.landing-hero{max-height:none;padding:1.5rem 0 1rem}.landing-hero-grid{grid-template-columns:1fr;min-height:auto}.trust-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.trust-strip{min-height:180px}.trust-grid{grid-template-columns:1fr;min-height:160px}.tool-stage{min-height:500px}.tool-shell{min-height:420px}.keyboard-tester{min-height:380px}}
+    .tool-stage{min-height:680px}
+    .tool-shell{min-height:580px}
+    @media(max-width:980px){.landing-hero-grid{min-height:auto}}
+    @media(max-width:768px){.tool-stage{min-height:500px}.tool-shell{min-height:420px}.keyboard-tester{min-height:380px}}
     </style>
 
+    <?php
+    $loadBootstrapCss = false;
+    $loadBootstrapJs = false;
+    $loadMobileToolAdapters = false;
+    ?>
     <!-- Common Head Includes -->
     <?php include 'includes/head-common.php'; ?>
 
@@ -49,9 +58,9 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=optional" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=optional"></noscript>
 
-    <!-- Preload index-modern.css (was 1176ms via loadCSS — now fetched as early as preload) -->
-    <link rel="preload" as="style" href="<?php echo url('assets/css/index-modern.css'); ?>" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>"></noscript>
+    <!-- Load landing stylesheet before first paint to avoid hero/main CLS -->
+    <link rel="preload" as="style" href="<?php echo url('assets/css/index-modern.css'); ?>">
+    <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
 
     <!-- Clarity Analytics (delayed 4s to avoid forced reflow on initial render) -->
     <script>
@@ -77,7 +86,7 @@
 <main id="main-content" class="landing-main">
   <?php include 'help/brief-keyboard-tester.php'; ?>
 
-  <section class="tool-stage" id="keyboard-tester" aria-labelledby="tool-stage-title">
+  <section class="tool-stage" id="keyboard-stage" aria-labelledby="tool-stage-title">
     <div class="container tool-stage-header">
       <div>
         <p class="section-kicker">Primary tester</p>
@@ -169,9 +178,9 @@
         <article class="process-card">
           <div class="process-media">
             <picture>
-              <source type="image/webp" srcset="<?php echo url('images/keyboard/special-keys-layout-640.webp'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 411px">
-              <source type="image/png" srcset="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 411px">
-              <img src="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?>" width="640" height="426" alt="Keyboard tester special keys and layout highlights on KeyboardTester.click" loading="lazy" decoding="async">
+              <source type="image/webp" srcset="<?php echo url('images/keyboard/special-keys-layout-448.webp'); ?>">
+              <source type="image/png" srcset="<?php echo url('images/keyboard/special-keys-layout-448.png'); ?>">
+              <img src="<?php echo url('images/keyboard/special-keys-layout-448.png'); ?>" width="448" height="299" alt="Keyboard tester special keys and layout highlights on KeyboardTester.click" loading="lazy" decoding="async">
             </picture>
           </div>
           <div class="process-body">
@@ -183,9 +192,9 @@
         <article class="process-card">
           <div class="process-media">
             <picture>
-              <source type="image/webp" srcset="<?php echo url('images/keyboard/color-system-guide-640.webp'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 411px">
-              <source type="image/png" srcset="<?php echo url('images/keyboard/color-system-guide-640.png'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 411px">
-              <img src="<?php echo url('images/keyboard/color-system-guide-640.png'); ?>" width="640" height="426" alt="Keyboard tester color system and exportable test results on KeyboardTester.click" loading="lazy" decoding="async">
+              <source type="image/webp" srcset="<?php echo url('images/keyboard/color-system-guide-448.webp'); ?>">
+              <source type="image/png" srcset="<?php echo url('images/keyboard/color-system-guide-448.png'); ?>">
+              <img src="<?php echo url('images/keyboard/color-system-guide-448.png'); ?>" width="448" height="299" alt="Keyboard tester color system and exportable test results on KeyboardTester.click" loading="lazy" decoding="async">
             </picture>
           </div>
           <div class="process-body">
@@ -198,6 +207,7 @@
     </div>
   </section>
 
+  <?php $intentClusterTool = 'keyboard'; include 'includes/components/intent-cluster-links.php'; ?>
   <?php include 'includes/components/tools-list.php'; ?>
   <?php include 'help/seo-content/keyboard-tester.php'; ?>
   <?php $currentTool = 'keyboard'; include 'includes/related-tools.php'; ?>

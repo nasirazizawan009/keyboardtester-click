@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Audio Output</p>
-      <h1 class="hero-title">Run a audio output check in seconds</h1>
-      <p class="hero-lede">Use this free online headphone & speaker tester to play test audio and review results instantly.</p>
+      <p class="hero-kicker">Audio Output Check</p>
+      <h1 class="hero-title">Headphone and Speaker Test Online</h1>
+      <p class="hero-lede">Play stereo test audio to verify speakers, headphones, and left-right channel balance.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#headphone-speaker-tester-index">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>
@@ -30,7 +30,22 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/headphone-test/hero.svg'); ?>" alt="Online headphone and speaker tester - test stereo audio channels left and right" loading="eager">
+        <picture>
+          <source media="(max-width: 980px)" type="image/webp" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-640.webp'); ?>">
+          <source media="(min-width: 981px)" type="image/webp" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-900.webp'); ?> 900w, <?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-1400.webp'); ?> 1400w" sizes="560px">
+          <source media="(max-width: 980px)" type="image/png" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-640.png'); ?>">
+          <source media="(min-width: 981px)" type="image/png" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-900.png'); ?> 900w, <?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-1400.png'); ?> 1400w" sizes="560px">
+          <img
+            src="<?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-640.png'); ?>"
+            srcset="<?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-640.png'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-900.png'); ?> 900w, <?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-1400.png'); ?> 1400w"
+            sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
+            width="640"
+            height="427"
+            alt="Person verifying stereo speaker and headphone output online with left and right channel controls"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high">
+        </picture>
       </div>
       <div class="hero-stack">
         <div class="mini-card">

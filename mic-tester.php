@@ -1,9 +1,10 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Mic Tester - Microphone Input | KeyboardTester.click';
-$pageDescription = 'Use this free online mic tester to test microphone input with live feedback and quick resets.';
-$pageKeywords = 'microphone input, mic tester, online test, free tool';
-$pageOgImage = 'images/mic-test/hero.svg';
+$pageTitle = 'Microphone Test Online | KeyboardTester.click';
+$pageDescription = 'Check whether your microphone works with a free online mic test. View input activity and confirm voice capture in seconds.';
+$pageKeywords = 'microphone test online, mic test, test microphone, microphone checker';
+$pageOgImage = 'images/mic-test/microphone-test-live-input-check-1400.png';
+$pageOgImageAlt = 'Person checking microphone input online with a live waveform and audio level meter';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,9 +75,9 @@ $pageOgImage = 'images/mic-test/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Microphone Input</p>
-          <h2 id="feature-title">Everything you need for mic tester</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Microphone Input Check</p>
+          <h2 id="feature-title">Check Microphone Input and Voice Activity</h2>
+          <p class="section-lede">Test whether your mic is detected, monitor input movement, and confirm it captures audio.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,14 +105,18 @@ $pageOgImage = 'images/mic-test/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the mic tester</h2>
+            <h2 id="process-title">How to Test a Microphone Online</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Allow mic access, speak normally, and confirm the input meter responds to your voice.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mic-test/step-1.svg'); ?>" alt="Microphone test step 1 - allow mic access permission" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/mic-test/microphone-test-allow-browser-access-640.webp'); ?> 640w, <?php echo url('images/mic-test/microphone-test-allow-browser-access-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/mic-test/microphone-test-allow-browser-access-640.png'); ?> 640w, <?php echo url('images/mic-test/microphone-test-allow-browser-access-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/mic-test/microphone-test-allow-browser-access-640.png'); ?>" width="640" height="480" alt="Online microphone test permission step with browser access prompt and person at desk" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +124,11 @@ $pageOgImage = 'images/mic-test/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mic-test/step-2.svg'); ?>" alt="Mic test step 2 - speak to monitor input levels" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/mic-test/microphone-test-speak-and-check-levels-640.webp'); ?> 640w, <?php echo url('images/mic-test/microphone-test-speak-and-check-levels-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/mic-test/microphone-test-speak-and-check-levels-640.png'); ?> 640w, <?php echo url('images/mic-test/microphone-test-speak-and-check-levels-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/mic-test/microphone-test-speak-and-check-levels-640.png'); ?>" width="640" height="480" alt="Person using an online mic test while watching live audio waveform levels" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">02</div>
             <h3>Speak into the mic</h3>
@@ -127,7 +136,11 @@ $pageOgImage = 'images/mic-test/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mic-test/step-3.svg'); ?>" alt="Microphone test results - audio input level display" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/mic-test/microphone-test-review-input-results-640.webp'); ?> 640w, <?php echo url('images/mic-test/microphone-test-review-input-results-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/mic-test/microphone-test-review-input-results-640.png'); ?> 640w, <?php echo url('images/mic-test/microphone-test-review-input-results-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/mic-test/microphone-test-review-input-results-640.png'); ?>" width="640" height="480" alt="Online microphone tester status card showing live input and peak level results" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -137,9 +150,10 @@ $pageOgImage = 'images/mic-test/hero.svg';
       </div>
     </section>
 
-    <?php include 'includes/components/tools-list.php'; ?>
+    <?php $intentClusterTool = 'mic'; $currentTool = 'mic'; include 'includes/components/intent-cluster-links.php'; ?>
     <?php include 'help/seo-content/mic-tester.php'; ?>
-    <?php $currentTool = 'mic'; include 'includes/related-tools.php'; ?>
+    <?php include 'includes/related-tools.php'; ?>
+    <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/mic-tester.php'; ?>
   </main>
 

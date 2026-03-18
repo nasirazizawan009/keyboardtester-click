@@ -4,6 +4,7 @@
     <article class="seo-article">
       <h2>What Is a Ghost Click Test?</h2>
       <p>A ghost click test is an online diagnostic tool that detects whether your mouse registers unwanted extra clicks. When you click once but your computer registers two or more clicks, you have a ghost click problem (also called phantom click or double click issue).</p>
+      <p>If you specifically searched for a double click test, use our focused <a href="double-click-test.php">double click test page</a>. It uses the same detector but targets that exact troubleshooting intent.</p>
       <p>Our free ghost click detector works by monitoring every mouse click event in real time. You click inside the test area, and the tool counts exactly how many clicks your system receives. If you press once and see "2" or more, your mouse has a ghost clicking problem that needs attention. For a complete button and scroll test, also try our <a href="mouse-test.php">online mouse tester</a>.</p>
       <p>This test runs entirely in your browser. No downloads, no installations, no data collection. Just click and get instant results.</p>
     </article>

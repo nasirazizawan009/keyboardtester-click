@@ -78,6 +78,8 @@ $pageKeywords = 'test ecran, pixels morts, test moniteur, detecter pixels, test 
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'french'; $localizedClusterKey = 'screen'; $localizedClusterCurrent = 'screen-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
+    <?php $localizedClusterLanguage = 'french'; $localizedClusterKey = 'screen'; $localizedClusterCurrent = 'screen-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'screen-test'; include __DIR__ . '/sections/tools-list-fr.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

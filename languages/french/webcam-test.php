@@ -78,6 +78,8 @@ $pageKeywords = 'test webcam, test camera, verifier webcam, tester video, webcam
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'french'; $localizedClusterKey = 'webcam'; $localizedClusterCurrent = 'webcam-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
+    <?php $localizedClusterLanguage = 'french'; $localizedClusterKey = 'webcam'; $localizedClusterCurrent = 'webcam-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'webcam-test'; include __DIR__ . '/sections/tools-list-fr.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

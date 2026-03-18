@@ -3,9 +3,9 @@
 ?>
 
 <div class="game-container">
-    <h1 class="game-title">مغامرة مسار الإيموجي</h1>
+    <div class="game-title">مغامرة مسار الإيموجي</div>
     <div class="game-options">
-        <h2 class="game-subtitle">إعدادات اللعبة</h2>
+        <p class="game-subtitle">إعدادات اللعبة</p>
         <div class="option-group">
             <select class="game-select" id="trailSelect" onchange="setTrail(this.value)">
                 <option value="sparkles">✨ بريق</option>

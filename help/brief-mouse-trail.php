@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Mouse Trail</p>
-      <h1 class="hero-title">Run a mouse trail check in seconds</h1>
-      <p class="hero-lede">Use this free online mouse trail to move the mouse and review results instantly.</p>
+      <p class="hero-kicker">Cursor Path Visualizer</p>
+      <h1 class="hero-title">Free Mouse Trail Test and Cursor Path Visualizer</h1>
+      <p class="hero-lede">Move your cursor to draw a visible trail and review how smoothly your mouse tracks on screen.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#mouse-trail">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>

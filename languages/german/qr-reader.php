@@ -78,6 +78,7 @@ $pageKeywords = 'QR-Leser, QR-Code scannen, QR dekodieren, QR Scanner, QR lesen'
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'german'; $localizedClusterKey = 'qr-reader'; $localizedClusterCurrent = 'qr-reader'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'qr-reader'; include __DIR__ . '/sections/tools-list-de.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

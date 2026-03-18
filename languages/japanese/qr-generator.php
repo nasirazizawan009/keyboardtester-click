@@ -69,7 +69,7 @@ $pageKeywords = 'QRコード生成, QRコード作成, QRコードメーカー, 
       </div>
     </section>
 
-    <section class="tool-stage" id="qr-generator-tool" aria-labelledby="tool-stage-title">
+    <section class="tool-stage" id="qr-generator-stage" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">メインツール</p>

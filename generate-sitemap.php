@@ -20,9 +20,13 @@ if (php_sapi_name() !== 'cli') {
 }
 
 // Configuration
-$baseUrl = 'https://keyboardtester.click';
+$sitemapBaseUrl = 'https://keyboardtester.click';
 $rootDir = __DIR__;
 $outputFile = $rootDir . '/sitemap.xml';
+
+if (file_exists($rootDir . '/includes/localized-intent-pages.php')) {
+    require_once $rootDir . '/includes/localized-intent-pages.php';
+}
 
 // Directories to exclude
 $excludeDirs = [
@@ -44,7 +48,7 @@ $excludeDirs = [
 
 // Files to exclude (patterns)
 $excludePatterns = [
-    '/^test-/',
+    '/^test-(?!my-mic\.php$)/',
     '/^debug-/',
     '/^fix-/',
     '/^clear-/',
@@ -53,15 +57,20 @@ $excludePatterns = [
     '/^deploy-/',
     '/^generate-sitemap\.php$/',
     '/^config\.php$/',
+    '/^config\.example\.php$/',
     '/^meta-config\.php$/',
     '/^seo-config\.php$/',
     '/^modular-utils\.php$/',
     '/^sitemap\.php$/',
+    '/^cache-test\.php$/',
     '/^send_email\.php$/',
     '/^send_feedback\.php$/',
     '/^favicon\.php$/',
     '/^header\.php$/',
     '/^footer\.php$/',
+    '/^submit-indexnow\.php$/',
+    '/^submit-indexnow\.example\.php$/',
+    '/^tools\.php$/',
     '/\.py$/',
     '/_tool\.php$/',  // Tool implementation files
     '/tester_tool\.php$/',
@@ -93,23 +102,42 @@ $pageConfig = [
 
     // Main tools (high priority)
     'mouse-test.php' => ['priority' => '0.9', 'changefreq' => 'weekly'],
+    'scroll-wheel-test.php' => ['priority' => '0.84', 'changefreq' => 'weekly'],
+    'double-click-test.php' => ['priority' => '0.84', 'changefreq' => 'weekly'],
     'keyboard_typing_test.php' => ['priority' => '0.9', 'changefreq' => 'weekly'],
     'ghost-click-detector.php' => ['priority' => '0.85', 'changefreq' => 'weekly'],
     'mouse_speed_tester.php' => ['priority' => '0.85', 'changefreq' => 'weekly'],
     'mouse_sensitivity_DPI_tester.php' => ['priority' => '0.85', 'changefreq' => 'weekly'],
     'latency-checker.php' => ['priority' => '0.85', 'changefreq' => 'weekly'],
     'mic-tester.php' => ['priority' => '0.85', 'changefreq' => 'weekly'],
+    'microphone-volume-test.php' => ['priority' => '0.83', 'changefreq' => 'weekly'],
+    'keyboard-ghosting-test.php' => ['priority' => '0.88', 'changefreq' => 'weekly'],
+    'n-key-rollover-test.php' => ['priority' => '0.88', 'changefreq' => 'weekly'],
+    'stuck-key-test.php' => ['priority' => '0.86', 'changefreq' => 'weekly'],
 
     // Secondary tools
     'mouse-trail.php' => ['priority' => '0.8', 'changefreq' => 'monthly'],
     'screentestindex.php' => ['priority' => '0.8', 'changefreq' => 'monthly'],
+    'black-screen-test.php' => ['priority' => '0.83', 'changefreq' => 'weekly'],
+    'white-screen-test.php' => ['priority' => '0.83', 'changefreq' => 'weekly'],
+    'dead-pixel-test.php' => ['priority' => '0.84', 'changefreq' => 'weekly'],
+    'stuck-pixel-test.php' => ['priority' => '0.84', 'changefreq' => 'weekly'],
     'webcamtesterindex.php' => ['priority' => '0.8', 'changefreq' => 'monthly'],
+    'camera-resolution-test.php' => ['priority' => '0.82', 'changefreq' => 'weekly'],
+    'webcam-not-working-test.php' => ['priority' => '0.82', 'changefreq' => 'weekly'],
+    'test-my-mic.php' => ['priority' => '0.82', 'changefreq' => 'weekly'],
     'headphone_speaker_tester_index.php' => ['priority' => '0.8', 'changefreq' => 'monthly'],
+    'left-right-speaker-test.php' => ['priority' => '0.82', 'changefreq' => 'weekly'],
+    'stereo-test.php' => ['priority' => '0.82', 'changefreq' => 'weekly'],
+    'take-picture-with-webcam.php' => ['priority' => '0.81', 'changefreq' => 'weekly'],
 
     // Utility tools
     'QR_code_generator_scanner.php' => ['priority' => '0.75', 'changefreq' => 'monthly'],
     'qr-code-reader.php' => ['priority' => '0.75', 'changefreq' => 'monthly'],
+    'scan-qr-from-image.php' => ['priority' => '0.8', 'changefreq' => 'weekly'],
     'ocr-tool.php' => ['priority' => '0.75', 'changefreq' => 'monthly'],
+    'screenshot-to-text.php' => ['priority' => '0.8', 'changefreq' => 'weekly'],
+    'photo-to-text.php' => ['priority' => '0.8', 'changefreq' => 'weekly'],
     'auto-password-generator.php' => ['priority' => '0.75', 'changefreq' => 'monthly'],
 
     // WhatsApp tools
@@ -141,6 +169,28 @@ $languagePages = [
     'languages/korean/' => ['priority' => '0.8', 'changefreq' => 'weekly'],
 ];
 
+$localizedPageConfig = [
+    'camera-resolution-test.php' => ['priority' => '0.73', 'changefreq' => 'weekly'],
+    'click-speed.php' => ['priority' => '0.74', 'changefreq' => 'weekly'],
+    'dead-pixel-test.php' => ['priority' => '0.74', 'changefreq' => 'weekly'],
+    'dpi-tester.php' => ['priority' => '0.74', 'changefreq' => 'weekly'],
+    'ghost-click.php' => ['priority' => '0.74', 'changefreq' => 'weekly'],
+    'headphone-test.php' => ['priority' => '0.73', 'changefreq' => 'weekly'],
+    'latency-checker.php' => ['priority' => '0.74', 'changefreq' => 'weekly'],
+    'mic-test.php' => ['priority' => '0.74', 'changefreq' => 'weekly'],
+    'microphone-volume-test.php' => ['priority' => '0.73', 'changefreq' => 'weekly'],
+    'mouse-test.php' => ['priority' => '0.78', 'changefreq' => 'weekly'],
+    'mouse-trail.php' => ['priority' => '0.72', 'changefreq' => 'weekly'],
+    'ocr-tool.php' => ['priority' => '0.72', 'changefreq' => 'weekly'],
+    'password-generator.php' => ['priority' => '0.70', 'changefreq' => 'weekly'],
+    'qr-generator.php' => ['priority' => '0.72', 'changefreq' => 'weekly'],
+    'qr-reader.php' => ['priority' => '0.72', 'changefreq' => 'weekly'],
+    'scan-qr-from-image.php' => ['priority' => '0.72', 'changefreq' => 'weekly'],
+    'screen-test.php' => ['priority' => '0.74', 'changefreq' => 'weekly'],
+    'typing-test.php' => ['priority' => '0.74', 'changefreq' => 'weekly'],
+    'webcam-test.php' => ['priority' => '0.74', 'changefreq' => 'weekly'],
+];
+
 // Category pages
 $categoryPages = [
     'pages/tools.php' => ['priority' => '0.8', 'changefreq' => 'weekly'],
@@ -161,6 +211,17 @@ function sitemap_shouldExclude($filename, $excludePatterns) {
         }
     }
     return false;
+}
+
+function sitemap_shouldExcludeLocalizedFile($filename) {
+    return (bool) preg_match(
+        '/^(config-[^.]+|header-[^.]+|footer-[^.]+)\.php$|^index\.php$|^index_old(?:_backup)?\.php$/i',
+        $filename
+    );
+}
+
+function sitemap_getLocalizedPageConfig($filename, $localizedPageConfig) {
+    return $localizedPageConfig[$filename] ?? ['priority' => '0.68', 'changefreq' => 'weekly'];
 }
 
 /**
@@ -185,6 +246,21 @@ function sitemap_generateUrlEntry($loc, $lastmod, $changefreq, $priority) {
            "  </url>\n";
 }
 
+function sitemap_normalizeLoc($loc, $baseUrl) {
+    $loc = trim((string) $loc);
+    $baseUrl = rtrim($baseUrl, '/');
+
+    if ($loc === '') {
+        return $baseUrl . '/';
+    }
+
+    if (preg_match('~^https?://~i', $loc)) {
+        return $loc;
+    }
+
+    return $baseUrl . '/' . ltrim($loc, '/');
+}
+
 // Start building sitemap
 $urls = [];
 
@@ -203,9 +279,9 @@ foreach ($files as $file) {
 
     // Handle index.php specially (use root URL)
     if ($filename === 'index.php') {
-        $url = $baseUrl . '/';
+        $url = $sitemapBaseUrl . '/';
     } else {
-        $url = $baseUrl . '/' . $filename;
+        $url = $sitemapBaseUrl . '/' . $filename;
     }
 
     $urls[] = [
@@ -221,7 +297,7 @@ foreach ($languagePages as $path => $config) {
     $fullPath = $rootDir . '/' . $path . 'index.php';
     if (file_exists($fullPath)) {
         $urls[] = [
-            'loc' => $baseUrl . '/' . $path,
+            'loc' => $sitemapBaseUrl . '/' . $path,
             'lastmod' => sitemap_getLastMod($fullPath),
             'changefreq' => $config['changefreq'],
             'priority' => $config['priority']
@@ -234,7 +310,7 @@ foreach ($categoryPages as $path => $config) {
     $fullPath = $rootDir . '/' . $path;
     if (file_exists($fullPath)) {
         $urls[] = [
-            'loc' => $baseUrl . '/' . $path,
+            'loc' => $sitemapBaseUrl . '/' . $path,
             'lastmod' => sitemap_getLastMod($fullPath),
             'changefreq' => $config['changefreq'],
             'priority' => $config['priority']
@@ -246,7 +322,7 @@ foreach ($categoryPages as $path => $config) {
 $keyboardTesterDir = $rootDir . '/tools/keyboard-tester/index.php';
 if (file_exists($keyboardTesterDir)) {
     $urls[] = [
-        'loc' => $baseUrl . '/tools/keyboard-tester/',
+        'loc' => $sitemapBaseUrl . '/tools/keyboard-tester/',
         'lastmod' => sitemap_getLastMod($keyboardTesterDir),
         'changefreq' => 'weekly',
         'priority' => '0.95'
@@ -257,17 +333,60 @@ if (file_exists($keyboardTesterDir)) {
 $blogIndex = $rootDir . '/blog/index.php';
 if (file_exists($blogIndex)) {
     $urls[] = [
-        'loc' => $baseUrl . '/blog/',
+        'loc' => $sitemapBaseUrl . '/blog/',
         'lastmod' => sitemap_getLastMod($blogIndex),
         'changefreq' => 'weekly',
         'priority' => '0.7'
     ];
 }
 
+// Add localized phase-5 intent pages
+if (function_exists('getLocalizedIntentUrlEntries')) {
+    foreach (getLocalizedIntentUrlEntries() as $entry) {
+        $fullPath = $rootDir . '/' . $entry['lastmodSource'];
+        if (!file_exists($fullPath)) {
+            continue;
+        }
+
+        $urls[] = [
+            'loc' => $entry['url'],
+            'lastmod' => sitemap_getLastMod($fullPath),
+            'changefreq' => $entry['changefreq'],
+            'priority' => $entry['priority']
+        ];
+    }
+}
+
+// Add localized tool pages that live directly inside each language directory.
+foreach (array_keys($languagePages) as $languagePath) {
+    $languagePath = rtrim($languagePath, '/');
+    foreach (glob($rootDir . '/' . $languagePath . '/*.php') as $file) {
+        $filename = basename($file);
+        if (sitemap_shouldExcludeLocalizedFile($filename)) {
+            continue;
+        }
+
+        $config = sitemap_getLocalizedPageConfig($filename, $localizedPageConfig);
+        $urls[] = [
+            'loc' => $sitemapBaseUrl . '/' . $languagePath . '/' . $filename,
+            'lastmod' => sitemap_getLastMod($file),
+            'changefreq' => $config['changefreq'],
+            'priority' => $config['priority']
+        ];
+    }
+}
+
 // Sort URLs by priority (highest first)
 usort($urls, function($a, $b) {
     return floatval($b['priority']) <=> floatval($a['priority']);
 });
+
+$dedupedUrls = [];
+foreach ($urls as $url) {
+    $url['loc'] = sitemap_normalizeLoc($url['loc'], $sitemapBaseUrl);
+    $dedupedUrls[$url['loc']] = $url;
+}
+$urls = array_values($dedupedUrls);
 
 // Generate XML
 $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";

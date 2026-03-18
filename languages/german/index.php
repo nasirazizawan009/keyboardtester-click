@@ -78,6 +78,7 @@ $pageKeywords = 'tastatur tester, tastatur test deutsch, ghosting erkennung, lat
 
         <!-- Tools List -->
         <?php $currentTool = 'german-keyboard'; include __DIR__ . '/sections/tools-list-de.php'; ?>
+        <?php $localizedHubLanguage = 'german'; include __DIR__ . '/../../includes/components/localized-hub-discovery.php'; ?>
 
         <!-- Guidelines & Help -->
         <?php include __DIR__ . '/sections/guidelines.php'; ?>

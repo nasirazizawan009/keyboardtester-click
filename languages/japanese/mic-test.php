@@ -134,6 +134,8 @@ $pageKeywords = 'マイクテスター, マイクテスト, マイク確認, オ
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'japanese'; $localizedClusterKey = 'mic'; $localizedClusterCurrent = 'mic-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
+    <?php $localizedClusterLanguage = 'japanese'; $localizedClusterKey = 'mic'; $localizedClusterCurrent = 'mic-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'mic-test'; include __DIR__ . '/sections/tools-list-ja.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

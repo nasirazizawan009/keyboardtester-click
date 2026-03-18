@@ -3,9 +3,9 @@
 ?>
 
 <div class="game-container">
-    <h1 class="game-title">이모지 트레일 어드벤처</h1>
+    <div class="game-title">이모지 트레일 어드벤처</div>
     <div class="game-options">
-        <h2 class="game-subtitle">게임 설정</h2>
+        <p class="game-subtitle">게임 설정</p>
         <div class="option-group">
             <select class="game-select" id="trailSelect" onchange="setTrail(this.value)">
                 <option value="sparkles">✨ 반짝임</option>

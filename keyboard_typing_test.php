@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Typing Speed Test - Typing Speed | KeyboardTester.click';
-$pageDescription = 'Use this free online typing speed test to test typing speed with live feedback and quick resets.';
-$pageKeywords = 'typing speed, typing speed test, online test, free tool';
+$pageTitle = 'Typing Speed Test Online | KeyboardTester.click';
+$pageDescription = 'Measure typing speed, WPM, and accuracy with a free browser-based typing test. Start instantly and compare repeat runs.';
+$pageKeywords = 'typing speed test, wpm test, online typing test, typing accuracy';
 $pageOgImage = 'images/typing-test/hero.svg';
 ?>
 <!DOCTYPE html>
@@ -74,9 +74,9 @@ $pageOgImage = 'images/typing-test/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Typing Speed</p>
-          <h2 id="feature-title">Everything you need for typing speed test</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Typing Speed and Accuracy</p>
+          <h2 id="feature-title">Measure WPM, Accuracy, and Typing Rhythm</h2>
+          <p class="section-lede">Practice with a browser-based typing test and see speed and accuracy update as you type.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,9 +104,9 @@ $pageOgImage = 'images/typing-test/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the typing speed test</h2>
+            <h2 id="process-title">How to Run a Typing Speed Test</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Start the timer, type the prompt, and review your WPM and accuracy at the end.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">

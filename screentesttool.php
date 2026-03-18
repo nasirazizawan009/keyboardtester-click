@@ -1,6 +1,14 @@
 <?php
 // screentesttool.php — embeddable Screen Test module (no <html> shell)
 ?>
+<?php
+$screenTestPreset = isset($screenTestPreset) ? strtolower((string) $screenTestPreset) : 'black';
+$screenTestPresetMap = [
+  'black' => ['hex' => '#000000', 'name' => 'Black', 'index' => 0, 'textColor' => '#ffffff', 'textShadow' => '2px 2px 4px rgba(0,0,0,0.5)'],
+  'white' => ['hex' => '#FFFFFF', 'name' => 'White', 'index' => 1, 'textColor' => '#000000', 'textShadow' => 'none'],
+];
+$screenTestPresetData = $screenTestPresetMap[$screenTestPreset] ?? $screenTestPresetMap['black'];
+?>
 <style>
   :root {
     --bg: #f6f8fc;
@@ -84,18 +92,18 @@
     <!-- Left Column: Screen Test Preview & Controls -->
     <div>
       <div class="st-card">
-        <h2 style="margin: 0 0 16px 0; font-size: 20px; color: var(--text); display: flex; align-items: center; gap: 10px;">
+        <div class="st-panel-title" style="margin: 0 0 16px 0; font-size: 20px; color: var(--text); display: flex; align-items: center; gap: 10px;">
           <span class="st-icon">🖥️</span>
           Screen Test Preview
-        </h2>
+        </div>
         
         <div class="st-preview-container" id="st-preview-box" onclick="startScreenTest()">
-          <div class="st-preview" id="st-preview-display" style="background: #000;">
+          <div class="st-preview" id="st-preview-display" style="background: <?php echo htmlspecialchars($screenTestPresetData['hex'], ENT_QUOTES, 'UTF-8'); ?>; color: <?php echo htmlspecialchars($screenTestPresetData['textColor'], ENT_QUOTES, 'UTF-8'); ?>; text-shadow: <?php echo htmlspecialchars($screenTestPresetData['textShadow'], ENT_QUOTES, 'UTF-8'); ?>;">
             Click to Start Full Screen Test
           </div>
           <div class="st-overlay">
             <div class="st-badge">
-              <span id="st-current-color">Ready</span>
+              <span id="st-current-color"><?php echo htmlspecialchars($screenTestPresetData['name'], ENT_QUOTES, 'UTF-8'); ?></span>
             </div>
             <div class="st-badge">
               Click anywhere to test
@@ -216,7 +224,7 @@
     { hex: '#00FFFF', name: 'Cyan', desc: 'Green + Blue sub-pixels' }
   ];
 
-  let currentColorIndex = 0;
+  let currentColorIndex = <?php echo (int) $screenTestPresetData['index']; ?>;
   let testCount = parseInt(localStorage.getItem('st_test_count') || '0');
   let colorsTested = new Set(JSON.parse(localStorage.getItem('st_colors_tested') || '[]'));
   let isFullScreen = false;

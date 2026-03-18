@@ -1,32 +1,32 @@
 <section class="guidelines landing-guide" id="guidelines">
   <div class="help-header">
     <h2>QR Code Reader Guide</h2>
-    <p>Quick steps to run the qr code reader and review your QR results results.</p>
+    <p>Upload a QR image, decode it locally in your browser, and copy the extracted content in a few steps.</p>
   </div>
 
   <div class="help-grid">
     <div class="help-card">
       <h3>Start the test</h3>
       <ol>
-        <li>Open the tool and prepare to begin.</li>
-        <li>Scan a QR code with camera or upload.</li>
-        <li>Reset to run another quick check.</li>
+        <li>Choose an image file that contains a QR code.</li>
+        <li>Click Decode to read the QR content from the uploaded image.</li>
+        <li>Use Clear to remove the image and try another QR code.</li>
       </ol>
     </div>
     <div class="help-card">
-      <h3>Adjust settings if needed</h3>
+      <h3>Improve scan quality</h3>
       <ul>
-        <li>Review tool options for your ideal test.</li>
-        <li>Switch inputs or settings if results look off.</li>
-        <li>Reset to run another quick check.</li>
+        <li>Use a sharp, well-lit image with the full QR code visible.</li>
+        <li>Crop extra background so the code fills more of the frame.</li>
+        <li>Try a higher-contrast image if decoding fails.</li>
       </ul>
     </div>
     <div class="help-card">
       <h3>Review results</h3>
       <ul>
-        <li>Look for missed inputs or delays.</li>
-        <li>Compare multiple runs for consistency.</li>
-        <li>Export or note results if required.</li>
+        <li>Check that the decoded link or text matches the original QR code.</li>
+        <li>Copy the result for use in another app or document.</li>
+        <li>Test another image if you want to compare multiple QR codes.</li>
       </ul>
     </div>
   </div>

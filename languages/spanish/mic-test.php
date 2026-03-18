@@ -78,6 +78,7 @@ $pageKeywords = 'prueba micrófono, test mic, verificar audio, probar micrófono
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'spanish'; $localizedClusterKey = 'mic'; $localizedClusterCurrent = 'mic-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'mic-test'; include __DIR__ . '/sections/tools-list-es.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

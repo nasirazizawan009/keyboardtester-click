@@ -56,7 +56,7 @@ ob_start();
     <ul>
         <li><a href="https://www.keyboardtester.click/">Keyboard Tester</a>: Check every key on your keyboard.</li>
         <li><a href="https://www.keyboardtester.click/mouse-test.php">Mouse Tester</a>: Test mouse buttons and scroll wheel.</li>
-        <li><a href="https://www.keyboardtester.click/keyboard_tester_korean_index.php">Korean Keyboard Tester</a>: Support for Korean layouts.</li>
+        <li><a href="https://keyboardtester.click/languages/korean/">Korean Keyboard Tester</a>: Support for Korean layouts.</li>
         <li><a href="https://www.keyboardtester.click/whatsapp-Brand-link-generator.php">WhatsApp Link Generator</a>: Create instant chat links.</li>
         <li><a href="https://www.keyboardtester.click/qr-code-reader.php">QR Code Reader</a>: Scan and generate QR codes.</li>
         <li><a href="https://www.keyboardtester.click/about-us.php">About Us</a>: Learn about our mission and team.</li>

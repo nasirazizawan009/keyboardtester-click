@@ -1,256 +1,61 @@
 <section class="seo-content" id="seo-content">
   <div class="container">
-
     <article class="seo-article">
-      <h2>What Is an Online Mouse Tester?</h2>
-      <p>An online mouse tester is a browser-based diagnostic tool that verifies whether your mouse buttons, scroll wheel, and sensor are working correctly. Our free mouse test detects and displays every input in real time, helping you identify hardware problems without installing any software.</p>
-      <p>The tool monitors left clicks, right clicks, middle clicks, side button presses (Mouse 4/5), and scroll wheel events. Each action highlights visually on screen, making it easy to spot buttons that don't register, double-click issues, or scroll problems.</p>
-      <p>Use this mouse tester when troubleshooting issues, verifying a new mouse works before the return window closes, or documenting problems for warranty claims. It works with any mouse: wired, wireless, gaming, office, or trackball.</p>
+      <h2>What This Online Mouse Tester Checks</h2>
+      <p>This mouse tester verifies the inputs your browser can read directly: left click, middle click, right click, and scroll-wheel movement. It is useful when you want a fast answer about whether the main buttons and wheel are working at all.</p>
+      <p>If you came here for a more specific problem, use our focused <a href="scroll-wheel-test.php">scroll wheel test</a> or <a href="double-click-test.php">double click test</a> pages. They reuse the same working tools but match the exact issue people usually search for.</p>
     </article>
 
     <article class="seo-article">
-      <h2>Why Mouse Testing Matters</h2>
-      <p>Detecting mouse problems early saves frustration and money.</p>
-
-      <h3>Catching Defects Early</h3>
-      <ul>
-        <li>New mice sometimes arrive with defects - test within return window</li>
-        <li>Intermittent issues are easier to demonstrate with a tester than describing</li>
-        <li>Document problems before contacting support or making warranty claims</li>
-      </ul>
-
-      <h3>Performance Troubleshooting</h3>
-      <ul>
-        <li>Verify if missed clicks are hardware or software issues</li>
-        <li>Test after driver updates that may have broken functionality</li>
-        <li>Isolate mouse problems from game or application bugs</li>
-      </ul>
-
-      <h3>Before Important Events</h3>
-      <ul>
-        <li>Gamers should test before tournaments or ranked sessions</li>
-        <li>Professionals should verify before important presentations</li>
-        <li>Content creators should check before recordings or streams</li>
-      </ul>
-    </article>
-
-    <article class="seo-article">
-      <h2>How to Test Your Mouse Completely</h2>
-      <p>Follow this systematic approach to check every mouse function.</p>
-
-      <h3>Step 1: Test Primary Buttons</h3>
+      <h2>How to Test Your Mouse on This Page</h2>
       <ol>
-        <li><strong>Left click</strong> - Click once and verify single registration. Click rapidly and watch for missed or doubled inputs.</li>
-        <li><strong>Right click</strong> - Press firmly. Note if there's delay or if clicks don't register consistently.</li>
-        <li><strong>Middle click</strong> - Press down on scroll wheel. This button fails frequently on heavily-used mice.</li>
-      </ol>
-
-      <h3>Step 2: Test Additional Buttons</h3>
-      <ol>
-        <li><strong>Side buttons (Mouse 4/5)</strong> - Press thumb buttons if present. Verify both forward and back buttons respond.</li>
-        <li><strong>DPI button</strong> - May not register in browser but should change sensitivity when pressed.</li>
-        <li><strong>Profile buttons</strong> - Gaming mice may have additional programmable buttons.</li>
-      </ol>
-
-      <h3>Step 3: Test Scroll Wheel</h3>
-      <ol>
-        <li><strong>Scroll up</strong> - Roll wheel toward screen. Count should increment smoothly.</li>
-        <li><strong>Scroll down</strong> - Roll wheel toward yourself. Count should decrement consistently.</li>
-        <li><strong>Look for problems</strong> - Skipped steps, wrong direction, or stuttering indicate encoder issues.</li>
-      </ol>
-
-      <h3>Step 4: Test Movement (Sensor)</h3>
-      <ul>
-        <li>Move mouse slowly - cursor should track smoothly without jumps</li>
-        <li>Move quickly - cursor shouldn't lag behind or lose tracking</li>
-        <li>Lift and place - cursor should stay still when mouse isn't touching surface</li>
-      </ul>
-    </article>
-
-    <article class="seo-article">
-      <h2>Common Mouse Problems and Fixes</h2>
-      <p>Here are the issues our mouse tester helps diagnose and how to resolve them.</p>
-
-      <h3>Double Clicking / Ghost Clicking</h3>
-      <p>Single clicks register as multiple clicks. Use our dedicated <a href="ghost-click-detector.php">ghost click detector</a> for detailed diagnosis.</p>
-      <ul>
-        <li><strong>Cause</strong> - Usually worn micro-switches that fail to debounce properly</li>
-        <li><strong>Quick fixes</strong> - Update drivers, adjust Windows double-click speed, clean around button</li>
-        <li><strong>Permanent fix</strong> - Replace micro-switch (requires soldering) or replace mouse</li>
-      </ul>
-
-      <h3>Missed Clicks</h3>
-      <p>Clicks don't register, especially rapid ones.</p>
-      <ul>
-        <li><strong>Cause</strong> - USB connection issues, driver problems, or failing switch contacts</li>
-        <li><strong>Quick fixes</strong> - Try different USB port, reinstall drivers, check wireless connection</li>
-        <li><strong>Permanent fix</strong> - If hardware issue, switch or mouse replacement needed</li>
-      </ul>
-
-      <h3>Scroll Wheel Problems</h3>
-      <p>Scrolling skips, reverses, or stops working.</p>
-      <ul>
-        <li><strong>Cause</strong> - Dust in rotary encoder, worn encoder, or software glitch</li>
-        <li><strong>Quick fixes</strong> - Blow compressed air into scroll wheel gap, update drivers</li>
-        <li><strong>Permanent fix</strong> - Clean encoder internals or replace mouse</li>
-      </ul>
-
-      <h3>Middle Click Not Working</h3>
-      <p>Pressing scroll wheel doesn't register.</p>
-      <ul>
-        <li><strong>Cause</strong> - Scroll wheel switch worn out (common on heavily-used mice)</li>
-        <li><strong>Quick fixes</strong> - Try pressing harder, check if mouse software has alternative binding</li>
-        <li><strong>Permanent fix</strong> - Replace scroll wheel encoder assembly or mouse</li>
-      </ul>
-
-      <h3>Cursor Jumping or Drifting</h3>
-      <p>Pointer moves erratically or without mouse movement.</p>
-      <ul>
-        <li><strong>Cause</strong> - Dirty sensor, unsuitable surface, or sensor malfunction</li>
-        <li><strong>Quick fixes</strong> - Clean sensor lens, use proper mousepad, check for reflective surface</li>
-        <li><strong>Permanent fix</strong> - If persists on all surfaces, sensor is failing</li>
-      </ul>
-    </article>
-
-    <article class="seo-article">
-      <h2>Mouse Testing for Gamers</h2>
-      <p>Competitive gaming demands reliable mouse performance. Here's what gamers should test.</p>
-
-      <h3>FPS Game Requirements</h3>
-      <p>Before competitive play, also <a href="mouse_sensitivity_DPI_tester.php">test your mouse DPI</a> for optimal sensitivity:</p>
-      <ul>
-        <li><strong>Left click reliability</strong> - Every shot must register, especially with semi-auto weapons</li>
-        <li><strong>No double-clicks</strong> - Phantom extra shots reveal position and waste ammo</li>
-        <li><strong>Smooth tracking</strong> - Cursor should follow fast flicks without jumping</li>
-        <li><strong>Side buttons</strong> - Must work reliably for push-to-talk, abilities, or weapon switching</li>
-      </ul>
-
-      <h3>MOBA Game Requirements</h3>
-      <ul>
-        <li><strong>Right click accuracy</strong> - Movement commands must register every time</li>
-        <li><strong>Rapid clicking</strong> - Kiting and orbwalking require consistent click registration</li>
-        <li><strong>Middle click</strong> - Often used for camera control or pings</li>
-      </ul>
-
-      <h3>MMO Game Requirements</h3>
-      <ul>
-        <li><strong>Side buttons</strong> - Critical for ability bindings, must be 100% reliable</li>
-        <li><strong>Scroll wheel</strong> - Used for camera zoom and action bar switching</li>
-        <li><strong>Long session durability</strong> - Mouse must maintain performance over hours</li>
-      </ul>
-
-      <h3>Pre-Session Testing Routine</h3>
-      <p>Before ranked matches or tournaments:</p>
-      <ol>
-        <li>Test all buttons used in your game</li>
-        <li>Verify no double-clicking issues with our <a href="ghost-click-detector.php">ghost click test</a></li>
-        <li>Check scroll wheel responsiveness</li>
-        <li>Confirm DPI setting is correct using our <a href="mouse_sensitivity_DPI_tester.php">DPI tester</a></li>
-        <li>Test on your actual gaming surface</li>
+        <li>Click the left, middle, and right mouse buttons on the test canvas and confirm each counter increases once per press.</li>
+        <li>Watch the live status boxes to make sure buttons return to <strong>Released</strong> after you let go.</li>
+        <li>Roll the wheel up and down inside the canvas and verify the scroll counter plus direction status update smoothly.</li>
+        <li>Use the reset button after any adjustment so you can compare before-and-after behavior cleanly.</li>
       </ol>
     </article>
 
     <article class="seo-article">
-      <h2>Mouse Testing for Office Work</h2>
-      <p>Reliable mouse performance prevents productivity loss in professional settings.</p>
-
-      <h3>Common Office Mouse Issues</h3>
+      <h2>Common Problems This Mouse Test Helps Confirm</h2>
       <ul>
-        <li><strong>Double-click opens instead of selects</strong> - Makes file management frustrating</li>
-        <li><strong>Scroll wheel jumps</strong> - Documents and spreadsheets jump unpredictably</li>
-        <li><strong>Middle click doesn't work</strong> - Can't open links in new tabs or close tabs</li>
-        <li><strong>Intermittent connection</strong> - Wireless mice dropping out during meetings</li>
+        <li>Left, middle, or right clicks that fail to register consistently</li>
+        <li>Middle-click issues on heavily used wheels</li>
+        <li>Scroll wheels that skip, reverse, or stop updating cleanly</li>
+        <li>Buttons that appear to stay active longer than expected</li>
       </ul>
-
-      <h3>Testing for Office Users</h3>
-      <ol>
-        <li>Verify single clicks don't double-click</li>
-        <li>Test scroll wheel for smooth, consistent scrolling</li>
-        <li>Confirm middle click works (essential for browsers)</li>
-        <li>Check battery level if wireless (our tester doesn't show this, but OS does)</li>
-      </ol>
-
-      <h3>IT Department Best Practices</h3>
-      <ul>
-        <li>Include mouse testing in new equipment verification</li>
-        <li>Keep spare mice for quick swaps</li>
-        <li>Replace mice on 2-3 year cycles for heavy users</li>
-        <li>Use this tester as part of troubleshooting workflows</li>
-      </ul>
+      <p>For suspicious extra clicks from a single press, switch to the dedicated <a href="double-click-test.php">double click test</a>. For movement, sensor, or sensitivity work, use the <a href="mouse_sensitivity_DPI_tester.php">DPI tester</a> or <a href="mouse-trail.php">mouse trail test</a>.</p>
     </article>
 
     <article class="seo-article">
-      <h2>Troubleshooting Mouse Test Issues</h2>
-      <p>If the tester doesn't work as expected, try these solutions.</p>
-
-      <h3>Browser Not Detecting Clicks</h3>
-      <ul>
-        <li>Click inside the test area, not outside it</li>
-        <li>Ensure browser window is focused (click on it)</li>
-        <li>Try a different browser (Chrome, Firefox, Edge)</li>
-        <li>Disable browser extensions that might interfere</li>
-      </ul>
-
-      <h3>Side Buttons Not Registering</h3>
-      <ul>
-        <li>Some mice send keyboard shortcuts instead of mouse events</li>
-        <li>Check mouse software - buttons may be bound to keyboard keys</li>
-        <li>Try resetting buttons to default "Back/Forward" functions</li>
-      </ul>
-
-      <h3>Scroll Direction Reversed</h3>
-      <ul>
-        <li>This may be a Windows or Mac setting, not a mouse problem</li>
-        <li>Check system preferences for "natural scrolling" settings</li>
-        <li>Mouse software may have direction inversion option</li>
-      </ul>
+      <h2>What This Page Does Not Measure</h2>
+      <p>This page does not validate vendor-specific side buttons, DPI-profile buttons, polling rate, or raw sensor accuracy. Those features depend on browser support, mouse firmware, and manufacturer software. That is why KeyboardTester.Click splits related mouse problems into narrower pages instead of claiming one panel covers everything.</p>
     </article>
 
     <article class="seo-article seo-faq">
       <h2>Mouse Tester FAQ</h2>
       <div class="faq-list">
         <details>
-          <summary>Why isn't my mouse working in the tester?</summary>
-          <p>First, make sure you're clicking inside the test area and the browser window is focused. Try a different browser if clicks still don't register. If the mouse doesn't work anywhere on your computer, check the USB connection or replace batteries for wireless mice.</p>
+          <summary>How do I test my mouse buttons online?</summary>
+          <p>Click inside the mouse test area and press the left, middle, and right buttons. Each press should update the correct counter and status box immediately.</p>
         </details>
         <details>
-          <summary>Does this work with wireless mice?</summary>
-          <p>Yes. Our tester works identically with wired and wireless mice. Ensure your wireless receiver is connected or Bluetooth is paired. If experiencing issues, move the receiver closer to the mouse and check battery level.</p>
+          <summary>How do I test my scroll wheel?</summary>
+          <p>Move the wheel up and down while the pointer is over the test area. The scroll counter should rise and the status line should show the latest direction.</p>
         </details>
         <details>
-          <summary>Can I test my laptop touchpad?</summary>
-          <p>Yes. Touchpad clicks, taps, and scrolling register the same as mouse inputs. You can test tap-to-click, physical buttons, and two-finger scrolling. Some touchpad gestures may not register as standard mouse events.</p>
+          <summary>Can this page detect double-click problems?</summary>
+          <p>It can show suspicious behavior, but the better choice is the focused <a href="double-click-test.php">double click test</a>, which logs rapid click intervals for switch-bounce checks.</p>
         </details>
         <details>
-          <summary>Why does my mouse double-click when I single-click?</summary>
-          <p>This is usually caused by worn micro-switches inside your mouse. The switch contacts don't properly debounce, sending multiple signals. Try updating drivers and adjusting Windows double-click speed first. If it persists, the switch needs replacement or it's time for a new mouse.</p>
+          <summary>Does the mouse tester work with wireless mice?</summary>
+          <p>Yes. Wired, wireless, Bluetooth, and many trackpads work as long as the browser receives standard mouse events.</p>
         </details>
         <details>
-          <summary>My scroll wheel skips or jumps. What's wrong?</summary>
-          <p>Dust or debris is likely inside the scroll wheel encoder. Try blowing compressed air into the gap around the scroll wheel. If that doesn't help, the encoder may be worn. Some mice allow encoder cleaning with disassembly, but many require replacement.</p>
-        </details>
-        <details>
-          <summary>How do I know if my mouse needs replacing?</summary>
-          <p>Replace your mouse if: buttons double-click or miss clicks consistently, scroll wheel is unreliable, sensor causes jumping or drifting on clean surfaces, buttons are physically damaged, or the mouse disconnects frequently despite good batteries/connection.</p>
-        </details>
-        <details>
-          <summary>Can this test detect if my mouse has latency issues?</summary>
-          <p>Our test shows click registration, which helps identify some latency issues (missed clicks during fast input). For precise latency measurement, you'd need specialized hardware like a high-speed camera or dedicated input lag testing equipment.</p>
-        </details>
-        <details>
-          <summary>Why don't my side buttons show up in the test?</summary>
-          <p>Some mice program side buttons to send keyboard shortcuts instead of mouse events. Check your mouse software - if Mouse 4/5 buttons are bound to keyboard keys, they won't register as mouse clicks here. Reset them to default "Back/Forward" to test properly.</p>
-        </details>
-        <details>
-          <summary>Is this test accurate compared to games?</summary>
-          <p>Yes. We detect the same click and scroll events that reach any application. If clicks register here, they'll register in games. If they don't register here, they won't work in games either. This makes our tester useful for diagnosing game input issues.</p>
-        </details>
-        <details>
-          <summary>How often should I test my mouse?</summary>
-          <p>Test when you notice problems, after driver updates, or before competitive gaming sessions. For general use, testing every few months or when something feels wrong is sufficient. Heavy gamers may want to test weekly as part of setup verification.</p>
+          <summary>Is the mouse test private?</summary>
+          <p>Yes. Input is handled locally in the browser and the page does not upload mouse data.</p>
         </details>
       </div>
     </article>
-
   </div>
 </section>

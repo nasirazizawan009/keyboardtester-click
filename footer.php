@@ -224,7 +224,7 @@ if (!isset($baseUrl)) {
         border-radius: 999px;
         font-size: 0.875rem;
         font-weight: 600;
-        transition: all 0.25s ease;
+        transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
         border: 1px solid rgba(56, 189, 248, 0.2);
     }
 
@@ -280,7 +280,7 @@ if (!isset($baseUrl)) {
         color: var(--footer-muted);
         text-decoration: none;
         font-size: 0.9375rem;
-        transition: all 0.25s ease;
+        transition: color 0.25s ease, padding-left 0.25s ease;
         display: inline-block;
     }
 
@@ -344,7 +344,7 @@ if (!isset($baseUrl)) {
         color: var(--footer-text);
         border-radius: 10px;
         font-size: 0.875rem;
-        transition: all 0.25s ease;
+        transition: border-color 0.25s ease, background-color 0.25s ease;
         box-sizing: border-box;
     }
 
@@ -370,7 +370,7 @@ if (!isset($baseUrl)) {
         font-weight: 600;
         font-size: 0.875rem;
         cursor: pointer;
-        transition: all 0.25s ease;
+        transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
         white-space: nowrap;
         display: flex;
         align-items: center;
@@ -503,6 +503,10 @@ if (!isset($baseUrl)) {
             min-width: unset;
             height: 46px;
         }
+
+        .heart {
+            animation: none;
+        }
     }
 
     /* Accessibility */
@@ -532,15 +536,26 @@ if (!isset($baseUrl)) {
 <script>
     const backToTop = document.getElementById('back-to-top');
     if (backToTop) {
-        const toggleBackToTop = () => {
-            if (window.scrollY > 400) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        };
-        window.addEventListener('scroll', toggleBackToTop, { passive: true });
-        toggleBackToTop();
+        if ('IntersectionObserver' in window) {
+            const threshold = document.createElement('div');
+            threshold.setAttribute('aria-hidden', 'true');
+            threshold.style.cssText = 'position:absolute;top:400px;left:0;width:1px;height:1px;opacity:0;pointer-events:none;';
+            document.body.appendChild(threshold);
+
+            const observer = new IntersectionObserver((entries) => {
+                backToTop.classList.toggle('show', !entries[0].isIntersecting);
+            });
+
+            observer.observe(threshold);
+        } else {
+            const toggleBackToTop = () => {
+                backToTop.classList.toggle('show', window.scrollY > 400);
+            };
+
+            window.addEventListener('scroll', toggleBackToTop, { passive: true });
+            toggleBackToTop();
+        }
+
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });

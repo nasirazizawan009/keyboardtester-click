@@ -1,9 +1,10 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Webcam Tester - Webcam Quality | KeyboardTester.click';
-$pageDescription = 'Use this free online webcam tester to test webcam quality with live feedback and quick resets.';
-$pageKeywords = 'webcam quality, webcam tester, online test, free tool';
-$pageOgImage = 'images/webcam-test/hero.svg';
+$pageTitle = 'Webcam Test Online | KeyboardTester.click';
+$pageDescription = 'Test your webcam online, preview the camera feed, and verify video quality without installing any software.';
+$pageKeywords = 'webcam test, webcam tester online, camera test, webcam quality check';
+$pageOgImage = 'images/webcam-test/webcam-test-camera-preview-1400.png';
+$pageOgImageAlt = 'Person previewing webcam quality online with a live camera framing and resolution card';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,9 +75,9 @@ $pageOgImage = 'images/webcam-test/hero.svg';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Webcam Quality</p>
-          <h2 id="feature-title">Everything you need for webcam tester</h2>
-          <p class="section-lede">Run focused checks and confirm results in seconds.</p>
+          <p class="section-kicker">Camera Preview</p>
+          <h2 id="feature-title">Preview Your Webcam Feed and Camera Quality</h2>
+          <p class="section-lede">Open your camera in the browser, confirm it works, and review clarity before calls or recordings.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
@@ -104,14 +105,18 @@ $pageOgImage = 'images/webcam-test/hero.svg';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">Three steps to run the webcam tester</h2>
+            <h2 id="process-title">How to Test a Webcam Online</h2>
           </div>
-          <p class="section-lede">Follow the quick steps below to test and confirm results.</p>
+          <p class="section-lede">Allow camera access, preview the live feed, and verify that your webcam is working correctly.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/webcam-test/step-1.svg'); ?>" alt="Webcam test step 1 - start camera quality check" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/webcam-test/webcam-test-start-camera-check-640.webp'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-start-camera-check-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/webcam-test/webcam-test-start-camera-check-640.png'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-start-camera-check-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/webcam-test/webcam-test-start-camera-check-640.png'); ?>" width="640" height="480" alt="Person opening an online webcam tester to start a camera check" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +124,11 @@ $pageOgImage = 'images/webcam-test/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/webcam-test/step-2.svg'); ?>" alt="Webcam test step 2 - allow camera access and preview" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/webcam-test/webcam-test-allow-camera-access-640.webp'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-allow-camera-access-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/webcam-test/webcam-test-allow-camera-access-640.png'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-allow-camera-access-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/webcam-test/webcam-test-allow-camera-access-640.png'); ?>" width="640" height="480" alt="Webcam test permission step showing browser camera access prompt" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">02</div>
             <h3>Allow camera access</h3>
@@ -127,7 +136,11 @@ $pageOgImage = 'images/webcam-test/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/webcam-test/step-3.svg'); ?>" alt="Webcam test results - video quality and resolution display" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="<?php echo url('images/webcam-test/webcam-test-review-video-preview-640.webp'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-review-video-preview-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <source type="image/png" srcset="<?php echo url('images/webcam-test/webcam-test-review-video-preview-640.png'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-review-video-preview-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
+                <img src="<?php echo url('images/webcam-test/webcam-test-review-video-preview-640.png'); ?>" width="640" height="480" alt="Online webcam tester preview card showing framing and resolution check" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -137,6 +150,9 @@ $pageOgImage = 'images/webcam-test/hero.svg';
       </div>
     </section>
 
+    <?php $intentClusterTool = 'webcam'; $currentTool = 'webcam'; include 'includes/components/intent-cluster-links.php'; ?>
+    <?php include 'help/seo-content/webcam-tester.php'; ?>
+    <?php include 'includes/related-tools.php'; ?>
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/webcam-tester.php'; ?>
   </main>

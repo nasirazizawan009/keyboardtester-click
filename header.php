@@ -554,7 +554,7 @@ if (!isset($baseUrl)) {
                             <span class="lang-flag">🇯🇵</span>
                             <span>日本語</span>
                         </a>
-                        <a href="<?php echo url('keyboard_tester_korean_index.php'); ?>" class="lang-option">
+                        <a href="<?php echo url('languages/korean/'); ?>" class="lang-option">
                             <span class="lang-flag">🇰🇷</span>
                             <span>한국어</span>
                         </a>

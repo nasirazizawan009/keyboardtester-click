@@ -103,6 +103,8 @@ $pageKeywords = 'сканер QR-кода, читать QR-код, QR scanner о
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'russian'; $localizedClusterKey = 'qr-reader'; $localizedClusterCurrent = 'qr-reader'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
+    <?php $localizedClusterLanguage = 'russian'; $localizedClusterKey = 'qr-reader'; $localizedClusterCurrent = 'qr-reader'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'qr-reader'; include __DIR__ . '/sections/tools-list-ru.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

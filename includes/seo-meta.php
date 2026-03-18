@@ -5,6 +5,7 @@
  */
 
 include_once __DIR__ . '/../config.php';
+$seoMetaHandled = true;
 
 $metaConfig = [];
 if (file_exists(__DIR__ . '/../meta-config.php')) {
@@ -45,25 +46,10 @@ $author = $pageAuthor ?? $meta['author'] ?? $siteName;
 $robots = $pageRobots ?? $meta['robots'] ?? 'index, follow';
 
 // Build canonical URL - always absolute, HTTPS, non-www
-$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
-$requestPath = ltrim($requestPath, '/');
-$basePath = ltrim($baseUrl, '/');
-if ($basePath !== '' && strpos($requestPath, $basePath) === 0) {
-    $requestPath = substr($requestPath, strlen($basePath));
-}
-$requestPath = ltrim($requestPath, '/');
-
-// Normalize: index.php -> root, remove query strings
-if ($requestPath === 'index.php' || $requestPath === 'index.html') {
-    $requestPath = '';
-}
-// Remove trailing index.php from paths like /languages/korean/index.php
-$requestPath = preg_replace('~/index\.(php|html)$~', '/', $requestPath);
-
 // Build canonical from page override, meta config, or request path
 $canonical = $pageCanonical ?? $meta['canonical'] ?? null;
 if (!$canonical) {
-    $canonical = $requestPath === '' ? absoluteUrl('') : absoluteUrl($requestPath);
+    $canonical = canonicalUrl($_SERVER['REQUEST_URI'] ?? '');
 }
 
 // Ensure canonical is always absolute URL with correct format

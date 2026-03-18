@@ -117,6 +117,7 @@ $pageKeywords = 'اختبار الشاشة, بكسل ميت, فحص الشاشة
       </div>
     </section>
 
+    <?php $localizedClusterLanguage = 'arabic'; $localizedClusterKey = 'screen'; $localizedClusterCurrent = 'screen-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'screen-test'; include __DIR__ . '/sections/tools-list-ar.php'; ?>
 
     <section id="guidelines" class="guidelines-section">

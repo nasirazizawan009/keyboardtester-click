@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const fileInput = document.getElementById('qr-reader-file');

@@ -7,6 +7,13 @@
 // Determine base path
 $basePath = '';
 $phpSelf = $_SERVER['PHP_SELF'];
+$loadGlobalCss = $loadGlobalCss ?? true;
+$loadBootstrapCss = $loadBootstrapCss ?? true;
+$loadBootstrapJs = $loadBootstrapJs ?? $loadBootstrapCss;
+$loadMobileToolAdapters = $loadMobileToolAdapters ?? true;
+$preconnectJsdelivr = $preconnectJsdelivr ?? ($loadBootstrapCss || $loadBootstrapJs);
+$headRobots = null;
+$headCanonical = null;
 
 if (
     strpos($phpSelf, '/tools/') !== false ||
@@ -33,11 +40,26 @@ if (
 ?>
 <!-- Google Site Verification -->
 <meta name="google-site-verification" content="onILKj31lZD-N2oSgtXNpKZnKJZi1oK0N_yMWIP71_4">
+<?php if (empty($seoMetaHandled)): ?>
+<?php
+$headRobots = $pageRobots ?? 'index, follow';
+$headCanonical = $pageCanonical ?? canonicalUrl($_SERVER['REQUEST_URI'] ?? '');
+if ($headCanonical && !preg_match('~^https?://~i', $headCanonical)) {
+    $headCanonical = absoluteUrl(ltrim($headCanonical, '/'));
+}
+$headCanonical = preg_replace('~^http://~i', 'https://', $headCanonical);
+$headCanonical = preg_replace('~^(https?://)www\.~i', '$1', $headCanonical);
+?>
+<meta name="robots" content="<?php echo htmlspecialchars($headRobots, ENT_QUOTES, 'UTF-8'); ?>">
+<link rel="canonical" href="<?php echo htmlspecialchars($headCanonical, ENT_QUOTES, 'UTF-8'); ?>">
+<?php endif; ?>
 
 <!-- Preconnect to critical font domains (preconnect beats dns-prefetch for CLS) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<?php if ($preconnectJsdelivr): ?>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<?php endif; ?>
 <!-- DNS-prefetch for analytics (non-critical) -->
 <link rel="dns-prefetch" href="https://www.clarity.ms">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -67,26 +89,27 @@ a{color:inherit;text-decoration:none}
 (function(){var t=localStorage.getItem('kbt-theme')||localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark-theme');document.documentElement.setAttribute('data-theme','dark')}})();
 </script>
 
-<!-- Async CSS Loader Function -->
-<script>
-function loadCSS(href){var ss=document.createElement('link');ss.rel='stylesheet';ss.href=href;document.head.appendChild(ss);return ss}
-</script>
-
-<!-- Load CSS asynchronously (non-blocking) -->
-<script>
-loadCSS('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
-loadCSS('<?php echo $basePath; ?>assets/css/global.css');
-</script>
-
-<!-- Fallback for no-JS -->
-<noscript>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/global.css">
-</noscript>
+<!-- Load core site styles early without blocking first paint -->
+<?php if ($loadGlobalCss): ?>
+<link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/global.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/global.css"></noscript>
+<?php endif; ?>
+<?php if ($loadMobileToolAdapters): ?>
+<link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/mobile-tool-adapters.css?v=1" onload="this.onload=null;this.rel='stylesheet'">
+<?php endif; ?>
+<?php if ($loadBootstrapCss): ?>
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></noscript>
+<?php endif; ?>
 
 <!-- Deferred JS -->
 <script defer src="<?php echo $basePath; ?>assets/js/theme.js?v=2.2"></script>
+<?php if ($loadMobileToolAdapters): ?>
+<script defer src="<?php echo $basePath; ?>assets/js/mobile-tool-adapters.js?v=1"></script>
+<?php endif; ?>
+<?php if ($loadBootstrapJs): ?>
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<?php endif; ?>
 
 <!-- Favicon -->
 <?php if (file_exists(__DIR__ . '/../favicon.php')): ?>

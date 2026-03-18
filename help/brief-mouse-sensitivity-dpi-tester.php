@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Dpi And Sensitivity</p>
-      <h1 class="hero-title">Free Mouse DPI Tester - Check Sensitivity Online</h1>
-      <p class="hero-lede">Use this free online mouse dpi tester to move the mouse and review results instantly.</p>
+      <p class="hero-kicker">Mouse DPI and Sensitivity</p>
+      <h1 class="hero-title">Mouse DPI Tester Online</h1>
+      <p class="hero-lede">Move the mouse across a measured distance to estimate DPI and sensitivity instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#mouse-sensitivity-dpi-tester">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>

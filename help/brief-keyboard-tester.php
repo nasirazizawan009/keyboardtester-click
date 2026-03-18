@@ -31,9 +31,19 @@
     <div class="hero-visual">
       <div class="hero-shot">
         <picture>
-          <source type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.webp'); ?> 1400w" sizes="(max-width: 980px) 92vw, 520px">
-          <source type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w" sizes="(max-width: 980px) 92vw, 520px">
-          <img src="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?>" width="900" height="600" alt="KeyboardTester.click online keyboard tester interface preview" loading="eager" decoding="async" fetchpriority="high">
+          <source media="(max-width: 980px)" type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.webp'); ?>">
+          <source media="(min-width: 981px)" type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.webp'); ?> 1400w" sizes="560px">
+          <source media="(max-width: 980px)" type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.png'); ?>">
+          <source media="(min-width: 981px)" type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w" sizes="560px">
+          <img src="<?php echo url('images/keyboard/hero-keyboard-test-560.png'); ?>"
+               srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.png'); ?> 560w, <?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w"
+               sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
+               width="560"
+               height="373"
+               alt="KeyboardTester.click online keyboard tester interface preview"
+               loading="eager"
+               decoding="async"
+               fetchpriority="high">
         </picture>
       </div>
       <div class="hero-stack">

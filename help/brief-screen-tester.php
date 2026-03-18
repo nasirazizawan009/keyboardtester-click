@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Pixel Issues</p>
-      <h1 class="hero-title">Run a pixel issues check in seconds</h1>
-      <p class="hero-lede">Use this free online screen tester to cycle colors and review results instantly.</p>
+      <p class="hero-kicker">Dead Pixel Check</p>
+      <h1 class="hero-title">Screen Tester for Dead and Stuck Pixels</h1>
+      <p class="hero-lede">Cycle full-screen colors to spot dead pixels, stuck pixels, and uniformity issues.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#screentestindex">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>
@@ -30,7 +30,22 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/screen-test/hero.svg'); ?>" alt="Dead pixel tester - detect stuck and hot pixels on monitor screen" loading="eager">
+        <picture>
+          <source media="(max-width: 980px)" type="image/webp" srcset="<?php echo url('images/screen-test/screen-tester-monitor-inspection-640.webp'); ?>">
+          <source media="(min-width: 981px)" type="image/webp" srcset="<?php echo url('images/screen-test/screen-tester-monitor-inspection-900.webp'); ?> 900w, <?php echo url('images/screen-test/screen-tester-monitor-inspection-1400.webp'); ?> 1400w" sizes="560px">
+          <source media="(max-width: 980px)" type="image/png" srcset="<?php echo url('images/screen-test/screen-tester-monitor-inspection-640.png'); ?>">
+          <source media="(min-width: 981px)" type="image/png" srcset="<?php echo url('images/screen-test/screen-tester-monitor-inspection-900.png'); ?> 900w, <?php echo url('images/screen-test/screen-tester-monitor-inspection-1400.png'); ?> 1400w" sizes="560px">
+          <img
+            src="<?php echo url('images/screen-test/screen-tester-monitor-inspection-640.png'); ?>"
+            srcset="<?php echo url('images/screen-test/screen-tester-monitor-inspection-640.png'); ?> 640w, <?php echo url('images/screen-test/screen-tester-monitor-inspection-900.png'); ?> 900w, <?php echo url('images/screen-test/screen-tester-monitor-inspection-1400.png'); ?> 1400w"
+            sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
+            width="640"
+            height="427"
+            alt="Person preparing an online screen tester to inspect a display for dead and stuck pixels"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high">
+        </picture>
       </div>
       <div class="hero-stack">
         <div class="mini-card">

@@ -274,7 +274,7 @@ function getToolSchemaData($toolKey) {
         'keyboard_tester' => [
             'name' => 'Online Keyboard Tester',
             'description' => 'Free online keyboard tester to check every key, detect stuck keys, test ghosting, and verify keyboard functionality. Works with all keyboard types and layouts.',
-            'url' => '',
+            'url' => '/',
             'category' => 'UtilityApplication',
             'screenshot' => 'images/keyboard/hero-keyboard-test-1400.png',
             'features' => [
@@ -288,16 +288,15 @@ function getToolSchemaData($toolKey) {
         ],
         'mouse_tester' => [
             'name' => 'Online Mouse Tester',
-            'description' => 'Free online mouse tester to check all buttons, scroll wheel, and click functionality. Test left, right, middle clicks and side buttons.',
+            'description' => 'Free online mouse tester to check left, right, middle clicks and scroll wheel functionality in your browser.',
             'url' => 'mouse-test.php',
             'category' => 'UtilityApplication',
-            'screenshot' => 'images/mouse/mouse-test-guide-1200.png',
+            'screenshot' => 'images/mouse/mouse-tester-workstation-1400.png',
             'features' => [
-                'Left, right, middle click detection',
+                'Left, right, and middle click detection',
                 'Scroll wheel testing',
-                'Side button testing',
-                'Click counter',
-                'Double-click detection'
+                'Live button status',
+                'Click counters'
             ]
         ],
         'click_speed' => [
@@ -336,6 +335,18 @@ function getToolSchemaData($toolKey) {
                 'Hardware issue diagnosis'
             ]
         ],
+        'double_click_test' => [
+            'name' => 'Double Click Test',
+            'description' => 'Free online double click test to inspect suspicious rapid click intervals and possible mouse switch bounce.',
+            'url' => 'double-click-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Rapid click interval logging',
+                'Fast click flagging',
+                'Resettable click history',
+                'Browser-based mouse check'
+            ]
+        ],
         'dpi_tester' => [
             'name' => 'Mouse DPI Tester',
             'description' => 'Free mouse DPI and sensitivity tester. Measure and optimize your mouse settings for gaming or work.',
@@ -361,14 +372,15 @@ function getToolSchemaData($toolKey) {
         ],
         'mic_tester' => [
             'name' => 'Online Microphone Tester',
-            'description' => 'Free online microphone tester to check audio quality and volume levels. Record and playback samples.',
+            'description' => 'Free online microphone tester to check microphone access, live input levels, and peak volume in your browser.',
             'url' => 'mic-tester.php',
             'category' => 'UtilityApplication',
+            'screenshot' => 'images/mic-test/microphone-test-live-input-check-1400.png',
             'features' => [
                 'Real-time mic testing',
-                'Audio level visualization',
-                'Sample recording',
-                'Volume adjustment'
+                'Live audio level meter',
+                'Peak level tracking',
+                'Browser-based permission check'
             ]
         ],
         'webcam_tester' => [
@@ -376,6 +388,7 @@ function getToolSchemaData($toolKey) {
             'description' => 'Free online webcam tester to check video quality and camera functionality. Take test snapshots.',
             'url' => 'webcamtesterindex.php',
             'category' => 'UtilityApplication',
+            'screenshot' => 'images/webcam-test/webcam-test-camera-preview-1400.png',
             'features' => [
                 'Real-time video feed',
                 'Snapshot capture',
@@ -388,11 +401,36 @@ function getToolSchemaData($toolKey) {
             'description' => 'Free online screen tester to detect dead pixels, stuck pixels, and display issues.',
             'url' => 'screentestindex.php',
             'category' => 'UtilityApplication',
+            'screenshot' => 'images/screen-test/screen-tester-monitor-inspection-1400.png',
             'features' => [
                 'Dead pixel detection',
                 'Stuck pixel finder',
-                'Color accuracy testing',
-                'Full-screen test modes'
+                'Full-screen color cycling',
+                'Panel inspection tips'
+            ]
+        ],
+        'black_screen_test' => [
+            'name' => 'Black Screen Test',
+            'description' => 'Free online black screen test to inspect monitors for backlight bleed, glow, and bright display defects.',
+            'url' => 'black-screen-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Full black screen mode',
+                'Backlight bleed inspection',
+                'Bright defect checking',
+                'Browser-based display test'
+            ]
+        ],
+        'white_screen_test' => [
+            'name' => 'White Screen Test',
+            'description' => 'Free online white screen test to spot stuck pixels, tint, dust, and panel uniformity issues.',
+            'url' => 'white-screen-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Full white screen mode',
+                'Stuck pixel checking',
+                'Uniformity inspection',
+                'Browser-based display test'
             ]
         ],
         'headphone_tester' => [
@@ -400,6 +438,7 @@ function getToolSchemaData($toolKey) {
             'description' => 'Free headphone and speaker tester to check left/right audio channels and stereo balance.',
             'url' => 'headphone_speaker_tester_index.php',
             'category' => 'UtilityApplication',
+            'screenshot' => 'images/headphone-test/speaker-headphone-test-stereo-preview-1400.png',
             'features' => [
                 'Left/right channel testing',
                 'Stereo balance check',
@@ -407,41 +446,232 @@ function getToolSchemaData($toolKey) {
                 'Frequency range test'
             ]
         ],
+        'left_right_speaker_test' => [
+            'name' => 'Left Right Speaker Test',
+            'description' => 'Free online left right speaker test to verify stereo channel mapping on speakers and headphones.',
+            'url' => 'left-right-speaker-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Isolated left channel playback',
+                'Isolated right channel playback',
+                'Stereo mapping verification',
+                'Browser-based audio output test'
+            ]
+        ],
+        'stereo_test' => [
+            'name' => 'Stereo Test',
+            'description' => 'Free online stereo test to check left and right audio channels, balance, and headphone or speaker output.',
+            'url' => 'stereo-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Stereo playback',
+                'Left/right channel checks',
+                'Balance testing',
+                'Frequency and noise tests'
+            ]
+        ],
         'qr_generator' => [
             'name' => 'QR Code Generator',
-            'description' => 'Free QR code generator to create custom QR codes for URLs, text, WiFi, and contacts.',
+            'description' => 'Free QR code generator to create custom QR codes for URLs and text in your browser.',
             'url' => 'QR_code_generator_scanner.php',
             'category' => 'UtilityApplication',
             'features' => [
                 'URL QR codes',
                 'Text QR codes',
-                'WiFi QR codes',
-                'Contact QR codes',
-                'Download options'
+                'Size selection',
+                'PNG download'
             ]
         ],
         'qr_reader' => [
             'name' => 'QR Code Reader',
-            'description' => 'Free online QR code reader to scan and decode QR codes using camera or image upload.',
+            'description' => 'Free online QR code reader to scan and decode QR codes from uploaded images in your browser.',
             'url' => 'qr-code-reader.php',
             'category' => 'UtilityApplication',
             'features' => [
-                'Camera scanning',
                 'Image upload',
+                'Browser-side decoding',
                 'URL extraction',
                 'Text decoding'
             ]
         ],
         'ocr_tool' => [
             'name' => 'OCR Text Extractor',
-            'description' => 'Free online OCR tool to extract text from images and screenshots.',
+            'description' => 'Free online OCR tool to extract text from images and screenshots in your browser.',
             'url' => 'ocr-tool.php',
             'category' => 'UtilityApplication',
             'features' => [
                 'Image text extraction',
                 'Screenshot OCR',
-                'Multi-language support',
-                'Copy to clipboard'
+                'Browser-based processing',
+                'Editable text output'
+            ]
+        ],
+        'dead_pixel_test' => [
+            'name' => 'Dead Pixel Test',
+            'description' => 'Free online dead pixel test to inspect monitors, laptops, and displays for black pixels that never light up.',
+            'url' => 'dead-pixel-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Full-screen color screens',
+                'Dead pixel inspection',
+                'Monitor and laptop support',
+                'Browser-based testing'
+            ]
+        ],
+        'stuck_pixel_test' => [
+            'name' => 'Stuck Pixel Test',
+            'description' => 'Free online stuck pixel test to find red, green, blue, or white pixels that stay lit on a display.',
+            'url' => 'stuck-pixel-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'RGB color screens',
+                'Stuck pixel detection',
+                'Hot pixel checking',
+                'Full-screen test mode'
+            ]
+        ],
+        'keyboard_ghosting' => [
+            'name' => 'Keyboard Ghosting Test',
+            'description' => 'Free online keyboard ghosting test to check blocked key combinations and anti-ghosting limits.',
+            'url' => 'keyboard-ghosting-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Multi-key combo testing',
+                'Ghosting detection',
+                'Live key highlight feedback',
+                'Gaming keyboard checks'
+            ]
+        ],
+        'n_key_rollover' => [
+            'name' => 'N-Key Rollover Test',
+            'description' => 'Free online N-key rollover test to check how many simultaneous key presses your keyboard supports.',
+            'url' => 'n-key-rollover-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Simultaneous key press testing',
+                'NKRO and 6KRO checks',
+                'Live rollover feedback',
+                'Keyboard matrix troubleshooting'
+            ]
+        ],
+        'stuck_key_test' => [
+            'name' => 'Stuck Key Test',
+            'description' => 'Free online stuck key test to check repeating, jammed, or unresponsive keyboard keys in the browser.',
+            'url' => 'stuck-key-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Single-key verification',
+                'Repeating key troubleshooting',
+                'Live key highlight feedback',
+                'Keyboard issue diagnosis'
+            ]
+        ],
+        'test_my_mic' => [
+            'name' => 'Test My Mic',
+            'description' => 'Free online mic check to verify browser microphone access and confirm live voice input quickly.',
+            'url' => 'test-my-mic.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Quick microphone check',
+                'Live input meter',
+                'Peak level tracking',
+                'Browser permission troubleshooting'
+            ]
+        ],
+        'microphone_volume_test' => [
+            'name' => 'Microphone Volume Test',
+            'description' => 'Free online microphone volume test to check current input level and peak mic volume in the browser.',
+            'url' => 'microphone-volume-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Live mic level meter',
+                'Peak volume tracking',
+                'Browser permission check',
+                'No recording or upload'
+            ]
+        ],
+        'camera_resolution_test' => [
+            'name' => 'Camera Resolution Test',
+            'description' => 'Free online camera resolution test to verify the live video size your webcam delivers in the browser.',
+            'url' => 'camera-resolution-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Resolution presets',
+                'Live video preview',
+                'Device switching',
+                'Snapshot comparison'
+            ]
+        ],
+        'webcam_not_working' => [
+            'name' => 'Webcam Not Working Test',
+            'description' => 'Free webcam troubleshooting test to check browser access, live preview, and camera detection when your webcam is not working.',
+            'url' => 'webcam-not-working-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Camera permission check',
+                'Live webcam preview',
+                'Device detection',
+                'Resolution and status readout'
+            ]
+        ],
+        'take_picture_with_webcam' => [
+            'name' => 'Take Picture With Webcam',
+            'description' => 'Free online webcam snapshot tool to preview your camera, take pictures, and download webcam images in the browser.',
+            'url' => 'take-picture-with-webcam.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Live webcam preview',
+                'Snapshot capture',
+                'Multiple image downloads',
+                'Camera and resolution selection'
+            ]
+        ],
+        'scroll_wheel_test' => [
+            'name' => 'Scroll Wheel Test',
+            'description' => 'Free online scroll wheel test to verify mouse wheel direction, wheel clicks, and inconsistent scrolling.',
+            'url' => 'scroll-wheel-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Scroll up/down detection',
+                'Scroll counter',
+                'Live direction readout',
+                'Middle click support'
+            ]
+        ],
+        'scan_qr_from_image' => [
+            'name' => 'Scan QR From Image',
+            'description' => 'Free online tool to scan QR codes from uploaded screenshots, photos, and saved images.',
+            'url' => 'scan-qr-from-image.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Screenshot upload',
+                'Photo-based QR decoding',
+                'Local browser processing',
+                'Instant text and URL output'
+            ]
+        ],
+        'screenshot_to_text' => [
+            'name' => 'Screenshot to Text',
+            'description' => 'Free online screenshot to text converter that extracts editable text from uploaded screen captures.',
+            'url' => 'screenshot-to-text.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Screenshot OCR',
+                'Browser-based text extraction',
+                'Editable output',
+                'PNG and JPG support'
+            ]
+        ],
+        'photo_to_text' => [
+            'name' => 'Photo to Text',
+            'description' => 'Free online photo to text converter that extracts editable text from uploaded phone photos and document images.',
+            'url' => 'photo-to-text.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Photo OCR',
+                'Receipt and label text extraction',
+                'Browser-based processing',
+                'Editable text output'
             ]
         ],
         'password_generator' => [
@@ -536,7 +766,7 @@ function getToolFAQs($toolKey) {
         'mouse_tester' => [
             ['question' => 'How do I test my mouse buttons online?', 'answer' => 'Click inside the tester, then press left, middle, and right buttons. Each press updates the counter and highlight.'],
             ['question' => 'How do I test my mouse scroll wheel?', 'answer' => 'Scroll up and down and watch the direction indicator and count to confirm consistent wheel input.'],
-            ['question' => 'Can I test double click issues?', 'answer' => 'Yes. Rapidly click the button and watch the counter for unexpected extra clicks indicating hardware issues.'],
+            ['question' => 'Can I test double click issues?', 'answer' => 'For double click problems, use the dedicated double click test page that logs suspiciously fast click intervals.'],
             ['question' => 'Does the mouse tester work on laptops and touchpads?', 'answer' => 'Yes, it works with trackpads, but external mice give the most accurate results.'],
             ['question' => 'Is the mouse test private?', 'answer' => 'Yes. All testing runs in your browser and does not upload data.']
         ],
@@ -551,8 +781,8 @@ function getToolFAQs($toolKey) {
             ['question' => 'How can I improve my typing speed?', 'answer' => 'Practice touch typing, maintain proper posture, use all fingers, and practice regularly with typing tests.']
         ],
         'mic_tester' => [
-            ['question' => 'Why is my microphone not working in the tester?', 'answer' => 'Check browser permissions, ensure the correct microphone is selected, and verify the mic is not muted in system settings.'],
-            ['question' => 'How do I test my microphone quality?', 'answer' => 'Record a sample, listen to playback, and check for clarity, background noise, and volume levels.'],
+            ['question' => 'Why is my microphone not working in the tester?', 'answer' => 'Check browser permissions, make sure the correct microphone is active in your system settings, and verify the mic is not muted.'],
+            ['question' => 'How do I test my microphone online?', 'answer' => 'Allow microphone access, speak normally, and confirm the live level meter and peak indicator respond to your voice.'],
             ['question' => 'Is the microphone test private?', 'answer' => 'Yes. Audio is processed locally in your browser and never uploaded to our servers.']
         ],
         'webcam_tester' => [
@@ -564,6 +794,116 @@ function getToolFAQs($toolKey) {
             ['question' => 'How do I find dead pixels on my monitor?', 'answer' => 'Use solid color test screens (red, green, blue, white, black) and look closely for pixels that don\'t match the background color.'],
             ['question' => 'What is a stuck pixel vs a dead pixel?', 'answer' => 'Dead pixels are always black. Stuck pixels are always lit in one color (red, green, or blue).'],
             ['question' => 'Can stuck pixels be fixed?', 'answer' => 'Sometimes. Try pixel-fixing tools that rapidly flash colors. Dead pixels usually cannot be fixed.']
+        ],
+        'headphone_tester' => [
+            ['question' => 'How do I test left and right speakers online?', 'answer' => 'Use the browser audio tester and play isolated left and right channel sounds to confirm each side maps correctly.'],
+            ['question' => 'Can I test headphones and speakers on the same page?', 'answer' => 'Yes. The audio output tool works for headphones, speakers, and many external audio devices as long as the browser can play sound.'],
+            ['question' => 'Does this audio test upload sound?', 'answer' => 'No. The test generates playback in your browser and does not upload audio data.']
+        ],
+        'left_right_speaker_test' => [
+            ['question' => 'How do I know if left and right speakers are swapped?', 'answer' => 'Play isolated left and right channel sounds and check whether audio comes from the matching side. If it does not, your channels are swapped somewhere in the chain.'],
+            ['question' => 'Can I use this left right speaker test with headphones?', 'answer' => 'Yes. It works with headphones, speakers, and many external audio interfaces that the browser can use for playback.'],
+            ['question' => 'What should I do if only one side plays?', 'answer' => 'Check cable seating, output device selection, balance settings, and whether the problem follows the device on another computer.']
+        ],
+        'stereo_test' => [
+            ['question' => 'What does a stereo test check?', 'answer' => 'A stereo test checks whether both audio channels play correctly, whether left and right mapping is accurate, and whether output sounds balanced.'],
+            ['question' => 'Can this help with stereo balance problems?', 'answer' => 'Yes. You can compare both sides and use the left/right channel tests plus balance playback to spot uneven output.'],
+            ['question' => 'Do I need headphones for a stereo test?', 'answer' => 'Headphones give the clearest result, but the page also works with speakers if your setup has proper stereo output.']
+        ],
+        'black_screen_test' => [
+            ['question' => 'What is a black screen test used for?', 'answer' => 'A black screen test helps you inspect backlight bleed, bright spots, IPS glow, and other defects that show up more clearly on a dark background.'],
+            ['question' => 'Can a black screen help me find dead pixels?', 'answer' => 'It can help with bright or hot defects, but dead pixels are often easier to confirm by comparing black, white, and RGB screens.'],
+            ['question' => 'Does this black screen run full screen?', 'answer' => 'Yes. Start the tester and switch into full-screen mode for a cleaner monitor inspection view.']
+        ],
+        'white_screen_test' => [
+            ['question' => 'What is a white screen test used for?', 'answer' => 'A white screen test helps you spot stuck pixels, color tint, dust, and panel uniformity problems on bright backgrounds.'],
+            ['question' => 'Why is white useful for monitor testing?', 'answer' => 'A full white screen makes tiny colored dots, dirt, and uneven brightness easier to see than a busy desktop wallpaper.'],
+            ['question' => 'Can I use this white screen on a laptop or phone?', 'answer' => 'Yes. The browser-based white screen works on laptops, external monitors, and many mobile displays.']
+        ],
+        'qr_reader' => [
+            ['question' => 'Can I read a QR code from an image file?', 'answer' => 'Yes. Upload the image containing the QR code and the browser decoder will try to extract the text or link.'],
+            ['question' => 'Does this QR code reader use my camera?', 'answer' => 'No. This version of the QR reader is designed for uploaded images rather than live camera scanning.'],
+            ['question' => 'Is the QR image uploaded to your server?', 'answer' => 'No. The QR image is processed locally in your browser for privacy-focused decoding.']
+        ],
+        'ocr_tool' => [
+            ['question' => 'What kinds of images work best with OCR?', 'answer' => 'Sharp screenshots, photos, and scans with clear text and good contrast usually produce the best results.'],
+            ['question' => 'Can I extract text from a screenshot?', 'answer' => 'Yes. Upload the screenshot, run OCR, and review the extracted text in the result area.'],
+            ['question' => 'Does OCR processing happen in the browser?', 'answer' => 'Yes. The OCR tool runs in your browser after you upload the image.']
+        ],
+        'dead_pixel_test' => [
+            ['question' => 'How do I test for dead pixels online?', 'answer' => 'Open the full-screen tester, switch through solid colors, and look for pixels that remain black on every screen.'],
+            ['question' => 'What does a dead pixel look like?', 'answer' => 'A dead pixel usually appears as a tiny black dot that does not light up even on bright color screens.'],
+            ['question' => 'Can I use this dead pixel test on a laptop?', 'answer' => 'Yes. The browser-based test works on laptop displays, external monitors, and many mobile screens.']
+        ],
+        'stuck_pixel_test' => [
+            ['question' => 'What is a stuck pixel?', 'answer' => 'A stuck pixel is a pixel or sub-pixel that stays lit in one color, such as red, green, blue, or white.'],
+            ['question' => 'How do I check for stuck pixels?', 'answer' => 'Switch through black, white, and RGB color screens and look for dots that remain the same color while the background changes.'],
+            ['question' => 'Can a stuck pixel fix itself?', 'answer' => 'Sometimes. Some stuck pixels respond to time or pixel exercise methods, though results vary.']
+        ],
+        'keyboard_ghosting' => [
+            ['question' => 'How do I test keyboard ghosting online?', 'answer' => 'Open the keyboard tester and press several keys together. If a held key does not light up, you have found a blocked combination.'],
+            ['question' => 'What keys should I use in a ghosting test?', 'answer' => 'Test the real combos you use, such as WASD with Shift or Space, plus any shortcuts that often fail.'],
+            ['question' => 'Is ghosting the same as rollover?', 'answer' => 'They are related but different. Ghosting focuses on failed or blocked combinations, while rollover focuses on how many keys can register together.']
+        ],
+        'n_key_rollover' => [
+            ['question' => 'What is NKRO?', 'answer' => 'NKRO stands for N-key rollover, meaning a keyboard can register many simultaneous key presses independently.'],
+            ['question' => 'How do I test rollover?', 'answer' => 'Hold more and more keys at the same time while watching the live key map to see when inputs stop appearing.'],
+            ['question' => 'Is 6KRO enough for gaming?', 'answer' => 'For many games, yes, but some players and combinations benefit from higher rollover or better anti-ghosting support.']
+        ],
+        'stuck_key_test' => [
+            ['question' => 'How do I test a stuck keyboard key online?', 'answer' => 'Open the keyboard tester, press the problem key several times, and check whether it highlights, repeats unexpectedly, or fails to release.'],
+            ['question' => 'Can this help with repeating keys?', 'answer' => 'Yes. A repeating key often shows up as rapid repeated input or a key that appears to stay active longer than expected.'],
+            ['question' => 'What causes a stuck key?', 'answer' => 'Common causes include debris, liquid damage, worn switches, damaged membranes, or a hardware fault in the keyboard matrix.']
+        ],
+        'test_my_mic' => [
+            ['question' => 'How do I test my mic quickly?', 'answer' => 'Click start, allow microphone access, speak normally, and watch the live meter and peak indicator respond to your voice.'],
+            ['question' => 'Does this page record my voice?', 'answer' => 'No. This mic check is designed for live browser-level input confirmation, not recording or uploading audio.'],
+            ['question' => 'Why does my mic show no activity?', 'answer' => 'Check browser permission, verify the mic is not muted, and confirm the correct input device is active in your system settings.']
+        ],
+        'microphone_volume_test' => [
+            ['question' => 'How do I test microphone volume online?', 'answer' => 'Start the live mic meter, allow permission, speak at your normal volume, and watch the current level plus peak value.'],
+            ['question' => 'What is a good microphone volume?', 'answer' => 'You want visible input activity without clipping or constant silence. The right level depends on your voice, mic, and meeting or recording app settings.'],
+            ['question' => 'Does this page record audio?', 'answer' => 'No. It is designed for live volume checking only and does not record or upload your voice.']
+        ],
+        'camera_resolution_test' => [
+            ['question' => 'How do I test webcam resolution online?', 'answer' => 'Allow camera access, choose a resolution preset, and compare the live preview with the reported output dimensions.'],
+            ['question' => 'Why does my webcam look blurry at 1080p?', 'answer' => 'Resolution is only one factor. Lighting, focus, compression, and sensor quality also affect sharpness.'],
+            ['question' => 'Can I compare multiple webcams?', 'answer' => 'Yes. Switch between available devices in the same browser session and review the reported resolution values.']
+        ],
+        'double_click_test' => [
+            ['question' => 'How do I run a double click test online?', 'answer' => 'Start the detector, click naturally in the test area, and review whether suspiciously fast click intervals appear in the log.'],
+            ['question' => 'What does a fast double click mean?', 'answer' => 'A fast interval can point to deliberate user double clicking or possible mouse switch bounce, so you should repeat the test several times for confirmation.'],
+            ['question' => 'Does this prove my mouse is broken?', 'answer' => 'Not by itself. It helps surface suspicious click timing, but you should retest on another system and compare with normal use before deciding the switch is faulty.']
+        ],
+        'webcam_not_working' => [
+            ['question' => 'How do I check if my webcam is working?', 'answer' => 'Allow camera access, confirm the preview appears, and review the device and resolution information shown by the browser.'],
+            ['question' => 'Why is my webcam not working in the browser?', 'answer' => 'The most common causes are blocked permission, another app using the camera, or the wrong webcam being selected.'],
+            ['question' => 'Can this help if my webcam is black or blank?', 'answer' => 'Yes. A black preview or missing feed can indicate permission, device, cable, or hardware problems that this live test helps isolate.']
+        ],
+        'take_picture_with_webcam' => [
+            ['question' => 'Can I take a picture with my webcam in the browser?', 'answer' => 'Yes. Start the webcam, preview the feed, click the snapshot button, and download the captured image.'],
+            ['question' => 'Does this webcam snapshot tool upload my photos?', 'answer' => 'No. Snapshots stay in your browser until you choose to download them.'],
+            ['question' => 'Can I take more than one webcam picture?', 'answer' => 'Yes. The tool supports multiple snapshots in one session and can download them afterward.']
+        ],
+        'scroll_wheel_test' => [
+            ['question' => 'How do I test my scroll wheel online?', 'answer' => 'Move the wheel up and down inside the test area and watch the scroll counter plus direction status update in real time.'],
+            ['question' => 'Can this page detect reverse or jumpy scrolling?', 'answer' => 'Yes. Inconsistent counts or unexpected direction changes can reveal encoder problems or software settings that need checking.'],
+            ['question' => 'Does the scroll wheel test also check middle click?', 'answer' => 'Yes. You can press the wheel as a middle click in the same mouse test panel.']
+        ],
+        'scan_qr_from_image' => [
+            ['question' => 'Can I scan a QR code from a screenshot?', 'answer' => 'Yes. Upload the screenshot file and the tool will try to decode the QR locally in your browser.'],
+            ['question' => 'Does this QR scanner need camera access?', 'answer' => 'No. This page is built for saved screenshots, photos, and downloaded QR images.'],
+            ['question' => 'What should I do if the QR image does not decode?', 'answer' => 'Try a sharper screenshot or crop closer to the QR code so the decoder can read it more easily.']
+        ],
+        'screenshot_to_text' => [
+            ['question' => 'Can I extract text from a screenshot online?', 'answer' => 'Yes. Upload the screenshot and the OCR tool will convert visible text into editable output.'],
+            ['question' => 'What screenshots work best for OCR?', 'answer' => 'Sharp screenshots with clear text and a clean background usually produce the best OCR output.'],
+            ['question' => 'Why should I crop the screenshot before OCR?', 'answer' => 'Tighter crops remove extra UI noise and often improve recognition accuracy.']
+        ],
+        'photo_to_text' => [
+            ['question' => 'Can I convert a photo to text online?', 'answer' => 'Yes. Upload a phone photo or document image and the OCR tool will extract the readable text in your browser.'],
+            ['question' => 'What photos work best for OCR?', 'answer' => 'Sharp, well-lit photos with clear contrast between text and background usually give the best results.'],
+            ['question' => 'Can I use this for receipts or labels?', 'answer' => 'Yes. Receipts, labels, signs, and printed documents are common photo-to-text OCR use cases.']
         ]
     ];
 
@@ -621,7 +961,7 @@ function generateHomepageSchema() {
 
     // Homepage breadcrumb (just Home)
     $output .= schemaBreadcrumbs([
-        ['name' => 'Home', 'url' => '']
+        ['name' => 'Home', 'url' => '/']
     ]);
 
     // Homepage FAQs

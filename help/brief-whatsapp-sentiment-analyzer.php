@@ -1,9 +1,9 @@
 <section class="landing-hero">
   <div class="container landing-hero-grid">
     <div class="hero-copy">
-      <p class="hero-kicker">Sentiment</p>
-      <h1 class="hero-title">Run a sentiment check in seconds</h1>
-      <p class="hero-lede">Use this free online whatsapp sentiment analyzer to paste chat text and review results instantly.</p>
+      <p class="hero-kicker">Chat Tone Analysis</p>
+      <h1 class="hero-title">WhatsApp Sentiment Analyzer for Chat Tone</h1>
+      <p class="hero-lede">Paste chat text to estimate positive, neutral, and negative tone in seconds.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#whatsapp-sentiment-analyzer">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>

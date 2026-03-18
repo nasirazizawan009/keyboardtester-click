@@ -79,6 +79,7 @@ $pageKeywords = 'тестер клавиатуры, тест русской кл
 
         <!-- Tools List -->
         <?php $currentTool = 'russian-keyboard'; include __DIR__ . '/sections/tools-list-ru.php'; ?>
+        <?php $localizedHubLanguage = 'russian'; include __DIR__ . '/../../includes/components/localized-hub-discovery.php'; ?>
 
         <!-- Guidelines & Help -->
         <?php include __DIR__ . '/sections/guidelines.php'; ?>

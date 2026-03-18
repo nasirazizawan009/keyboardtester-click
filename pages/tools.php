@@ -6,7 +6,7 @@
 
 include __DIR__ . '/../config.php';
 
-$pageTitle = 'Free Online Testing Tools - Keyboard, Mouse, Webcam & Screen Tester';
+$pageTitle = 'Free Online Hardware Testing Tools | KeyboardTester.click';
 $pageDescription = 'Comprehensive suite of free online testing tools. Test keyboard, mouse, webcam, screen, and microphone without downloads or signup.';
 ?>
 

@@ -57,7 +57,7 @@
 </section>
 
 <!-- Tool Stage - Above the Fold -->
-<section class="tool-stage" id="keyboard-tester" aria-labelledby="tool-stage-title-es">
+<section class="tool-stage" id="keyboard-stage-es" aria-labelledby="tool-stage-title-es">
     <div class="container tool-stage-header">
         <div>
             <p class="section-kicker">Herramienta Principal</p>

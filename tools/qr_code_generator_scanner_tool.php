@@ -2,7 +2,7 @@
 // QR Code Generator tool (standalone)
 ?>
 
-<div class="kbt-tool kbt-qr-tool" id="qr-generator-tool">
+<div class="kbt-tool kbt-qr-tool" id="qr-generator-widget">
   <div class="kbt-tool-grid two">
     <div class="kbt-tool-card">
       <h3>Generate QR code</h3>
@@ -30,7 +30,7 @@
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const textInput = document.getElementById('qr-text');
@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const text = textInput.value.trim();
     if (!text) {
       output.textContent = 'QR code preview';
+      return;
+    }
+    if (typeof QRCode === 'undefined') {
+      output.textContent = 'QR generator failed to load. Refresh the page and try again.';
       return;
     }
     const size = parseInt(sizeInput.value, 10) || 220;

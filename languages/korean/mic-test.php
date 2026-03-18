@@ -188,6 +188,8 @@ $pageKeywords = '마이크 테스트, 마이크 테스터, 오디오 테스트, 
     </section>
 
     <!-- Tools List -->
+    <?php $localizedClusterLanguage = 'korean'; $localizedClusterKey = 'mic'; $localizedClusterCurrent = 'mic-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
+    <?php $localizedClusterLanguage = 'korean'; $localizedClusterKey = 'mic'; $localizedClusterCurrent = 'mic-test'; include __DIR__ . '/../../includes/components/localized-intent-links.php'; ?>
     <?php $currentTool = 'mic-test'; include __DIR__ . '/sections/tools-list-ko.php'; ?>
 
     <!-- Guidelines -->

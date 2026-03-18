@@ -78,6 +78,7 @@ $pageKeywords = 'testeur clavier, test clavier francais, detecteur ghosting, mes
 
         <!-- Tools List -->
         <?php $currentTool = 'french-keyboard'; include __DIR__ . '/sections/tools-list-fr.php'; ?>
+        <?php $localizedHubLanguage = 'french'; include __DIR__ . '/../../includes/components/localized-hub-discovery.php'; ?>
 
         <!-- Guidelines & Help -->
         <?php include __DIR__ . '/sections/guidelines.php'; ?>

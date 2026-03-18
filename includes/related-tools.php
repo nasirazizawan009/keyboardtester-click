@@ -94,6 +94,34 @@ $allTools = [
         'anchor' => 'test monitor for dead pixels',
         'description' => 'Detect dead pixels, stuck pixels, and screen uniformity issues.',
         'category' => ['display', 'troubleshooting']
+    ],
+    'qr-generator' => [
+        'url' => 'QR_code_generator_scanner.php',
+        'name' => 'QR Code Generator',
+        'anchor' => 'create qr codes online',
+        'description' => 'Generate QR codes for URLs and text, then download the result as an image.',
+        'category' => ['utility', 'sharing']
+    ],
+    'qr-reader' => [
+        'url' => 'qr-code-reader.php',
+        'name' => 'QR Code Reader',
+        'anchor' => 'scan qr codes from images',
+        'description' => 'Decode QR codes from screenshots, photos, and saved images in your browser.',
+        'category' => ['utility', 'sharing']
+    ],
+    'ocr' => [
+        'url' => 'ocr-tool.php',
+        'name' => 'OCR Tool',
+        'anchor' => 'extract text from images',
+        'description' => 'Pull text from screenshots and images with browser-based OCR.',
+        'category' => ['utility', 'productivity']
+    ],
+    'password' => [
+        'url' => 'auto-password-generator.php',
+        'name' => 'Password Generator',
+        'anchor' => 'generate strong passwords',
+        'description' => 'Create strong passwords quickly with adjustable settings.',
+        'category' => ['utility', 'security']
     ]
 ];
 
@@ -110,7 +138,11 @@ $relatedToolsMap = [
     'typing' => ['keyboard', 'cps', 'latency', 'mouse'],
     'latency' => ['keyboard', 'mouse', 'ghost-click', 'cps', 'typing'],
     'webcam' => ['mic', 'headphone', 'screen', 'keyboard'],
-    'screen' => ['webcam', 'keyboard', 'mouse', 'headphone']
+    'screen' => ['webcam', 'keyboard', 'mouse', 'headphone'],
+    'qr-generator' => ['qr-reader', 'ocr', 'password', 'keyboard'],
+    'qr-reader' => ['qr-generator', 'ocr', 'password', 'keyboard'],
+    'ocr' => ['qr-reader', 'qr-generator', 'password', 'keyboard'],
+    'password' => ['ocr', 'qr-generator', 'qr-reader', 'keyboard']
 ];
 
 // Detect current page
@@ -130,7 +162,30 @@ $scriptToKey = [
     'keyboard_typing_test' => 'typing',
     'latency-checker' => 'latency',
     'webcamtesterindex' => 'webcam',
-    'screentestindex' => 'screen'
+    'screentestindex' => 'screen',
+    'QR_code_generator_scanner' => 'qr-generator',
+    'qr-code-reader' => 'qr-reader',
+    'ocr-tool' => 'ocr',
+    'auto-password-generator' => 'password',
+    'dead-pixel-test' => 'screen',
+    'stuck-pixel-test' => 'screen',
+    'black-screen-test' => 'screen',
+    'white-screen-test' => 'screen',
+    'stuck-key-test' => 'keyboard',
+    'keyboard-ghosting-test' => 'keyboard',
+    'n-key-rollover-test' => 'keyboard',
+    'test-my-mic' => 'mic',
+    'microphone-volume-test' => 'mic',
+    'camera-resolution-test' => 'webcam',
+    'webcam-not-working-test' => 'webcam',
+    'take-picture-with-webcam' => 'webcam',
+    'left-right-speaker-test' => 'headphone',
+    'stereo-test' => 'headphone',
+    'scroll-wheel-test' => 'mouse',
+    'double-click-test' => 'ghost-click',
+    'scan-qr-from-image' => 'qr-reader',
+    'screenshot-to-text' => 'ocr',
+    'photo-to-text' => 'ocr'
 ];
 
 if (isset($scriptToKey[$currentScript])) {
@@ -172,7 +227,7 @@ foreach (array_slice($relatedKeys, 0, 5) as $key) {
         </div>
 
         <div class="related-tools-cta">
-            <a href="<?php echo url('tools.php'); ?>" class="view-all-tools">View all testing tools</a>
+            <a href="<?php echo url('pages/tools.php'); ?>" class="view-all-tools">View all testing tools</a>
         </div>
     </div>
 </section>
@@ -215,6 +270,7 @@ foreach (array_slice($relatedKeys, 0, 5) as $key) {
     background: var(--landing-surface, var(--card-bg, #ffffff));
     border: 1px solid var(--landing-border, var(--card-border, rgba(15, 23, 42, 0.12)));
     border-radius: 12px;
+    color: var(--landing-text, var(--landing-ink, var(--text-color, #0f172a)));
     text-decoration: none;
     transition: all 0.2s ease;
 }
@@ -242,16 +298,16 @@ foreach (array_slice($relatedKeys, 0, 5) as $key) {
 .related-tool-link {
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--landing-accent, var(--link-color, #0369a1));
+    color: #0c4a6e;
 }
 
 html.dark-theme .related-tool-link,
 [data-theme="dark"] .related-tool-link {
-    color: #38bdf8;
+    color: #7dd3fc;
 }
 
 .related-tool-card:hover .related-tool-link {
-    color: var(--landing-accent-hover, #1d4ed8);
+    color: #0b3b8f;
 }
 
 .related-tools-cta {
