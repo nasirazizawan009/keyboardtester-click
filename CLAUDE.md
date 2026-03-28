@@ -75,11 +75,6 @@ kbt/
 
 ## Deployment
 
-### FTP Credentials
-- **Server:** ftp.keyboardtester.click
-- **User:** nasir@keyboardtester.click
-- **Path:** / (root)
-
 ### Deploy Scripts
 - `deploy-latest.py` - Deploy recent changes
 - `deploy-to-cpanel.py` - Full deployment
@@ -410,6 +405,12 @@ Use the `url()` function for all internal links:
   - each updated hub page shows the localized cluster-link section
   - live `sitemap.xml` contains the new localized URLs
   - live `submit-indexnow.php` includes the new localized URLs
+
+## Google AdSense (March 2026)
+- **Publisher ID:** `ca-pub-7056306765580248`
+- **Integration:** Auto ads via single `<script async>` tag in `includes/head-common.php`
+- **Scope:** All pages site-wide (loaded via shared head include)
+- **CSP:** `.htaccess` updated to allow AdSense domains (`pagead2.googlesyndication.com`, `adservice.google.com`, `googleads.g.doubleclick.net`, etc.)
 
 ## Google Search Console Setup (Feb 2026)
 
