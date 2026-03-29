@@ -3,7 +3,7 @@
 $pageTitle = 'Input Latency Checker Online | KeyboardTester.click';
 $pageDescription = 'Measure keyboard and mouse input latency in your browser with live millisecond feedback, sample counts, and average response time.';
 $pageKeywords = 'input latency checker, keyboard latency test, mouse latency test, response time tool';
-$pageOgImage = 'images/latency-checker/hero.svg';
+$pageOgImage = 'images/latency-checker/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/latency-checker/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/latency-checker/step-1.svg'); ?>" alt="Input latency checker step 1 - open response time tester" loading="lazy">
+              <img src="<?php echo url('images/latency-checker/step-1.png'); ?>" alt="Input latency checker step 1 - open response time tester" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/latency-checker/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/latency-checker/step-2.svg'); ?>" alt="Latency test step 2 - press keys to measure response time" loading="lazy">
+              <img src="<?php echo url('images/latency-checker/step-2.png'); ?>" alt="Latency test step 2 - press keys to measure response time" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Press keys or click</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/latency-checker/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/latency-checker/step-3.svg'); ?>" alt="Input latency results - millisecond response time display" loading="lazy">
+              <img src="<?php echo url('images/latency-checker/step-3.png'); ?>" alt="Input latency results - millisecond response time display" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

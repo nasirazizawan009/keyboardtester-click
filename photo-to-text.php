@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Photo to Text Online | Extract Text From Photos',
         'description' => 'Convert a photo to text online with browser-based OCR. Upload phone photos, receipts, labels, and printed documents to extract editable text.',
         'keywords' => 'photo to text, text from photo, OCR photo to text, extract text from photo',
-        'ogImage' => 'images/ocr-tool/hero.svg',
+        'ogImage' => 'images/ocr-tool/hero.png',
         'ogImageAlt' => 'Photo to text OCR tool for phone photos and document images'
     ],
     'schemaKey' => 'photo_to_text',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Live', 'label' => 'Text output'],
             ['value' => '0', 'label' => 'Uploads to server']
         ],
-        'image' => 'images/ocr-tool/hero.svg',
+        'image' => 'images/ocr-tool/hero.png',
         'imageAlt' => 'Photo to text OCR converter online',
         'miniCards' => [
             ['title' => 'Receipt and label OCR', 'text' => 'Useful for prices, package labels, forms, menus, and signs.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Convert a Photo to Text',
         'lede' => 'Upload the photo, run OCR, and review the extracted text. If the image is busy or angled, crop it and try again.',
         'steps' => [
-            ['image' => 'images/ocr-tool/step-1.svg', 'alt' => 'Photo to text step 1 open the OCR tool', 'title' => 'Open the OCR tool', 'text' => 'Start with the browser-based OCR page and choose your photo file.'],
-            ['image' => 'images/ocr-tool/step-2.svg', 'alt' => 'Photo to text step 2 upload a phone photo or receipt image', 'title' => 'Upload the photo', 'text' => 'Use a phone photo, receipt image, or document photo with readable text.'],
-            ['image' => 'images/ocr-tool/step-3.svg', 'alt' => 'Photo to text step 3 review extracted OCR result', 'title' => 'Review the OCR result', 'text' => 'Copy the extracted text, then crop or retake the photo if you need a cleaner second pass.']
+            ['image' => 'images/ocr-tool/step-1.png', 'alt' => 'Photo to text step 1 open the OCR tool', 'title' => 'Open the OCR tool', 'text' => 'Start with the browser-based OCR page and choose your photo file.'],
+            ['image' => 'images/ocr-tool/step-2.png', 'alt' => 'Photo to text step 2 upload a phone photo or receipt image', 'title' => 'Upload the photo', 'text' => 'Use a phone photo, receipt image, or document photo with readable text.'],
+            ['image' => 'images/ocr-tool/step-3.png', 'alt' => 'Photo to text step 3 review extracted OCR result', 'title' => 'Review the OCR result', 'text' => 'Copy the extracted text, then crop or retake the photo if you need a cleaner second pass.']
         ]
     ],
     'clusterTool' => 'ocr',

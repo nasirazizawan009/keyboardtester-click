@@ -3,7 +3,7 @@
 $pageTitle = 'QR Code Reader Online | KeyboardTester.click';
 $pageDescription = 'Upload a QR code image and decode it in your browser. Read links, text, and other QR content instantly.';
 $pageKeywords = 'qr code reader online, qr scanner from image, decode qr code, read qr code online';
-$pageOgImage = 'images/qr-reader/hero.svg';
+$pageOgImage = 'images/qr-reader/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/qr-reader/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-reader/step-1.svg'); ?>" alt="QR code reader step 1 - open QR scanner tool" loading="lazy">
+              <img src="<?php echo url('images/qr-reader/step-1.png'); ?>" alt="QR code reader step 1 - open QR scanner tool" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/qr-reader/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-reader/step-2.svg'); ?>" alt="QR code reader step 2 - upload QR image for decoding" loading="lazy">
+              <img src="<?php echo url('images/qr-reader/step-2.png'); ?>" alt="QR code reader step 2 - upload QR image for decoding" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Upload the QR image</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/qr-reader/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-reader/step-3.svg'); ?>" alt="QR scan results - decoded text and URL content" loading="lazy">
+              <img src="<?php echo url('images/qr-reader/step-3.png'); ?>" alt="QR scan results - decoded text and URL content" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

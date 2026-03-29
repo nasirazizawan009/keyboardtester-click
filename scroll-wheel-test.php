@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Scroll Wheel Test Online | Check Mouse Wheel Direction',
         'description' => 'Test your mouse scroll wheel online. Verify up/down wheel input, middle click, and inconsistent scrolling in a browser-based checker.',
         'keywords' => 'scroll wheel test, mouse wheel test, test mouse scroll wheel, middle click test',
-        'ogImage' => 'images/mouse/hero.svg',
+        'ogImage' => 'images/mouse/hero.png',
         'ogImageAlt' => 'Scroll wheel test page for checking mouse wheel direction and count'
     ],
     'schemaKey' => 'scroll_wheel_test',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Live', 'label' => 'Status updates'],
             ['value' => '0', 'label' => 'Installs']
         ],
-        'image' => 'images/mouse/hero.svg',
+        'image' => 'images/mouse/hero.png',
         'imageAlt' => 'Scroll wheel test page for mouse wheel direction and middle-click checks',
         'miniCards' => [
             ['title' => 'Wheel troubleshooting', 'text' => 'Useful when scrolling skips, reverses, or stops responding cleanly.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Test a Scroll Wheel',
         'lede' => 'Roll up, roll down, then press the wheel once or twice to confirm the main wheel functions respond correctly.',
         'steps' => [
-            ['image' => 'images/mouse/step-1.svg', 'alt' => 'Scroll wheel test step 1 focus the mouse test area', 'title' => 'Focus the test area', 'text' => 'Move the pointer over the mouse panel so wheel events are captured by the browser.'],
-            ['image' => 'images/mouse/step-2.svg', 'alt' => 'Scroll wheel test step 2 roll the wheel up and down', 'title' => 'Scroll in both directions', 'text' => 'Roll up and down several times and confirm the counter plus status update cleanly.'],
-            ['image' => 'images/mouse/step-3.svg', 'alt' => 'Scroll wheel test step 3 press the wheel for middle click', 'title' => 'Press the wheel', 'text' => 'Use middle click too if you suspect the wheel button is weak or inconsistent.']
+            ['image' => 'images/mouse/step-1.png', 'alt' => 'Scroll wheel test step 1 focus the mouse test area', 'title' => 'Focus the test area', 'text' => 'Move the pointer over the mouse panel so wheel events are captured by the browser.'],
+            ['image' => 'images/mouse/step-2.png', 'alt' => 'Scroll wheel test step 2 roll the wheel up and down', 'title' => 'Scroll in both directions', 'text' => 'Roll up and down several times and confirm the counter plus status update cleanly.'],
+            ['image' => 'images/mouse/step-3.png', 'alt' => 'Scroll wheel test step 3 press the wheel for middle click', 'title' => 'Press the wheel', 'text' => 'Use middle click too if you suspect the wheel button is weak or inconsistent.']
         ]
     ],
     'clusterTool' => 'mouse',

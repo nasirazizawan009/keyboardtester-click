@@ -64,8 +64,18 @@ $headCanonical = preg_replace('~^(https?://)www\.~i', '$1', $headCanonical);
 <link rel="dns-prefetch" href="https://www.clarity.ms">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7056306765580248" crossorigin="anonymous"></script>
+<!-- Google AdSense (delayed to reduce main-thread blocking) -->
+<script>
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        var s = document.createElement('script');
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7056306765580248';
+        s.crossOrigin = 'anonymous';
+        s.async = true;
+        document.head.appendChild(s);
+    }, 2000);
+});
+</script>
 
 <!-- Inter font: async + metric overrides = no render-blocking AND no CLS -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=optional" onload="this.onload=null;this.rel='stylesheet'">
@@ -94,8 +104,8 @@ a{color:inherit;text-decoration:none}
 
 <!-- Load core site styles early without blocking first paint -->
 <?php if ($loadGlobalCss): ?>
-<link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/global.css" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/global.css"></noscript>
+<link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/global.min.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/global.min.css"></noscript>
 <?php endif; ?>
 <?php if ($loadMobileToolAdapters): ?>
 <link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/mobile-tool-adapters.css?v=1" onload="this.onload=null;this.rel='stylesheet'">

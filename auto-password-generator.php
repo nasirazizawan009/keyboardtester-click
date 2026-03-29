@@ -3,7 +3,7 @@
 $pageTitle = 'Strong Password Generator Online | KeyboardTester.click';
 $pageDescription = 'Generate strong passwords with custom length and character rules. Create secure browser-based passwords and copy them instantly.';
 $pageKeywords = 'password generator, strong password generator, random password, secure password tool';
-$pageOgImage = 'images/password-generator/hero.svg';
+$pageOgImage = 'images/password-generator/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/password-generator/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/password-generator/step-1.svg'); ?>" alt="Password generator step 1 - open secure password creator" loading="lazy">
+              <img src="<?php echo url('images/password-generator/step-1.png'); ?>" alt="Password generator step 1 - open secure password creator" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/password-generator/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/password-generator/step-2.svg'); ?>" alt="Password generator step 2 - select length and character types" loading="lazy">
+              <img src="<?php echo url('images/password-generator/step-2.png'); ?>" alt="Password generator step 2 - select length and character types" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Choose options</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/password-generator/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/password-generator/step-3.svg'); ?>" alt="Generated secure password ready to copy" loading="lazy">
+              <img src="<?php echo url('images/password-generator/step-3.png'); ?>" alt="Generated secure password ready to copy" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/typing-test/hero.svg'); ?>" alt="Typing speed test interface - measure WPM and typing accuracy online" loading="eager">
+        <img src="<?php echo url('images/typing-test/hero.png'); ?>" alt="Typing speed test interface - measure WPM and typing accuracy online" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

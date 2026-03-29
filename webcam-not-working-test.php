@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Webcam Not Working? Run This Online Camera Test',
         'description' => 'If your webcam is not working, run this browser-based camera test to check permission, device detection, live preview, and basic webcam status.',
         'keywords' => 'webcam not working test, camera not working online test, webcam troubleshooting, test webcam not working',
-        'ogImage' => 'images/webcam-test/hero.svg',
+        'ogImage' => 'images/webcam-test/hero.png',
         'ogImageAlt' => 'Webcam not working troubleshooting page with live browser camera test'
     ],
     'schemaKey' => 'webcam_not_working',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Status', 'label' => 'Browser feedback'],
             ['value' => '0', 'label' => 'Downloads']
         ],
-        'image' => 'images/webcam-test/hero.svg',
+        'image' => 'images/webcam-test/hero.png',
         'imageAlt' => 'Webcam not working help page with live online camera test',
         'miniCards' => [
             ['title' => 'Black screen diagnosis', 'text' => 'Useful when apps show no picture, the wrong camera, or a blocked feed.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Check a Webcam That Is Not Working',
         'lede' => 'Start the live preview, allow permission, and compare the device list and status output with what you expected to see.',
         'steps' => [
-            ['image' => 'images/webcam-test/step-1.svg', 'alt' => 'Webcam not working test step 1 allow camera permission', 'title' => 'Allow camera access', 'text' => 'If permission is denied, the browser cannot open the webcam at all.'],
-            ['image' => 'images/webcam-test/step-2.svg', 'alt' => 'Webcam not working test step 2 check device list and preview', 'title' => 'Check the preview and device list', 'text' => 'Confirm that the expected webcam appears and that a live image is shown.'],
-            ['image' => 'images/webcam-test/step-3.svg', 'alt' => 'Webcam not working test step 3 review camera status and resolution', 'title' => 'Review the status output', 'text' => 'Use the reported camera information to decide whether the issue is permission, selection, or hardware related.']
+            ['image' => 'images/webcam-test/step-1.png', 'alt' => 'Webcam not working test step 1 allow camera permission', 'title' => 'Allow camera access', 'text' => 'If permission is denied, the browser cannot open the webcam at all.'],
+            ['image' => 'images/webcam-test/step-2.png', 'alt' => 'Webcam not working test step 2 check device list and preview', 'title' => 'Check the preview and device list', 'text' => 'Confirm that the expected webcam appears and that a live image is shown.'],
+            ['image' => 'images/webcam-test/step-3.png', 'alt' => 'Webcam not working test step 3 review camera status and resolution', 'title' => 'Review the status output', 'text' => 'Use the reported camera information to decide whether the issue is permission, selection, or hardware related.']
         ]
     ],
     'clusterTool' => 'webcam',

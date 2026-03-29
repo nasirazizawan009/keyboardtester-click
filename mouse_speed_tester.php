@@ -3,7 +3,7 @@
 $pageTitle = 'Click Speed Test Online | KeyboardTester.click';
 $pageDescription = 'Test your click speed and measure clicks per second online. Run fast CPS checks in the browser with instant results.';
 $pageKeywords = 'click speed test, cps test, mouse speed test, clicks per second';
-$pageOgImage = 'images/mouse-speed/hero.svg';
+$pageOgImage = 'images/mouse-speed/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/mouse-speed/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-speed/step-1.svg'); ?>" alt="Mouse click speed test step 1 - prepare to measure CPS" loading="lazy">
+              <img src="<?php echo url('images/mouse-speed/step-1.png'); ?>" alt="Mouse click speed test step 1 - prepare to measure CPS" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/mouse-speed/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-speed/step-2.svg'); ?>" alt="Mouse speed test step 2 - click as fast as possible" loading="lazy">
+              <img src="<?php echo url('images/mouse-speed/step-2.png'); ?>" alt="Mouse speed test step 2 - click as fast as possible" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Click</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/mouse-speed/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-speed/step-3.svg'); ?>" alt="Mouse speed test results - clicks per second CPS score" loading="lazy">
+              <img src="<?php echo url('images/mouse-speed/step-3.png'); ?>" alt="Mouse speed test results - clicks per second CPS score" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

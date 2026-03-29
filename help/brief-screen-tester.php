@@ -40,8 +40,8 @@
             srcset="<?php echo url('images/screen-test/screen-tester-monitor-inspection-640.png'); ?> 640w, <?php echo url('images/screen-test/screen-tester-monitor-inspection-900.png'); ?> 900w, <?php echo url('images/screen-test/screen-tester-monitor-inspection-1400.png'); ?> 1400w"
             sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
             width="640"
-            height="427"
-            alt="Person preparing an online screen tester to inspect a display for dead and stuck pixels"
+            height="426"
+            alt="Dual monitor desk setup with ambient lighting for online dead pixel and display testing"
             loading="eager"
             decoding="async"
             fetchpriority="high">

@@ -40,8 +40,8 @@
             srcset="<?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-640.png'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-900.png'); ?> 900w, <?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-1400.png'); ?> 1400w"
             sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
             width="640"
-            height="427"
-            alt="Person verifying stereo speaker and headphone output online with left and right channel controls"
+            height="426"
+            alt="Professional headphones on condenser microphone in studio for online stereo audio testing"
             loading="eager"
             decoding="async"
             fetchpriority="high">

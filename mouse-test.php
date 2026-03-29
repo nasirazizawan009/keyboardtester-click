@@ -115,7 +115,7 @@ $pageOgImageAlt = 'Person using the online mouse tester to verify click and scro
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/mouse/mouse-tester-click-test-640.webp'); ?> 640w, <?php echo url('images/mouse/mouse-tester-click-test-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/mouse/mouse-tester-click-test-640.png'); ?> 640w, <?php echo url('images/mouse/mouse-tester-click-test-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/mouse/mouse-tester-click-test-640.png'); ?>" width="640" height="480" alt="Person using the online mouse tester to verify left right and middle click input" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/mouse/mouse-tester-click-test-640.png'); ?>" width="640" height="426" alt="Close-up of mouse and keyboard electronics for testing mouse click inputs online" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">01</div>
@@ -127,7 +127,7 @@ $pageOgImageAlt = 'Person using the online mouse tester to verify click and scro
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/mouse/mouse-tester-scroll-wheel-check-640.webp'); ?> 640w, <?php echo url('images/mouse/mouse-tester-scroll-wheel-check-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/mouse/mouse-tester-scroll-wheel-check-640.png'); ?> 640w, <?php echo url('images/mouse/mouse-tester-scroll-wheel-check-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/mouse/mouse-tester-scroll-wheel-check-640.png'); ?>" width="640" height="480" alt="Person checking mouse scroll wheel direction and count with the online tester" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/mouse/mouse-tester-scroll-wheel-check-640.png'); ?>" width="640" height="348" alt="Close-up of computer mouse on wooden surface showing scroll wheel for online testing" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">02</div>
@@ -139,7 +139,7 @@ $pageOgImageAlt = 'Person using the online mouse tester to verify click and scro
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/mouse/mouse-tester-reset-retest-640.webp'); ?> 640w, <?php echo url('images/mouse/mouse-tester-reset-retest-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/mouse/mouse-tester-reset-retest-640.png'); ?> 640w, <?php echo url('images/mouse/mouse-tester-reset-retest-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/mouse/mouse-tester-reset-retest-640.png'); ?>" width="640" height="480" alt="Person resetting the online mouse tester to repeat click and scroll checks" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/mouse/mouse-tester-reset-retest-640.png'); ?>" width="640" height="439" alt="Minimalist workspace desk setup ready to reset and repeat mouse testing" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">03</div>

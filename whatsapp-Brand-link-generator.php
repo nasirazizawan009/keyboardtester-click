@@ -3,7 +3,7 @@
 $pageTitle = 'WhatsApp Brand Links - Branded Links | KeyboardTester.click';
 $pageDescription = 'Use this free online whatsapp brand links to test branded links with live feedback and quick resets.';
 $pageKeywords = 'branded links, whatsapp brand links, online test, free tool';
-$pageOgImage = 'images/whatsapp-brand/hero.svg';
+$pageOgImage = 'images/whatsapp-brand/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/whatsapp-brand/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-brand/step-1.svg'); ?>" alt="WhatsApp brand link step 1 - open business link generator" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-brand/step-1.png'); ?>" alt="WhatsApp brand link step 1 - open business link generator" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/whatsapp-brand/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-brand/step-2.svg'); ?>" alt="WhatsApp brand link step 2 - enter business details" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-brand/step-2.png'); ?>" alt="WhatsApp brand link step 2 - enter business details" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Enter brand info</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/whatsapp-brand/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-brand/step-3.svg'); ?>" alt="Generated branded WhatsApp link with QR code" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-brand/step-3.png'); ?>" alt="Generated branded WhatsApp link with QR code" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

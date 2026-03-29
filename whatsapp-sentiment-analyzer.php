@@ -3,7 +3,7 @@
 $pageTitle = 'WhatsApp Sentiment Analyzer Online | KeyboardTester.click';
 $pageDescription = 'Paste chat text and get a quick WhatsApp sentiment check in your browser. Review positive, negative, and overall tone instantly.';
 $pageKeywords = 'whatsapp sentiment analyzer, chat sentiment analysis, message sentiment tool, whatsapp text analyzer';
-$pageOgImage = 'images/whatsapp-sentiment/hero.svg';
+$pageOgImage = 'images/whatsapp-sentiment/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/whatsapp-sentiment/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-sentiment/step-1.svg'); ?>" alt="WhatsApp sentiment analyzer step 1 - open chat analysis tool" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-sentiment/step-1.png'); ?>" alt="WhatsApp sentiment analyzer step 1 - open chat analysis tool" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/whatsapp-sentiment/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-sentiment/step-2.svg'); ?>" alt="Sentiment analysis step 2 - paste chat text for tone analysis" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-sentiment/step-2.png'); ?>" alt="Sentiment analysis step 2 - paste chat text for tone analysis" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Paste chat text</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/whatsapp-sentiment/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-sentiment/step-3.svg'); ?>" alt="Sentiment analysis results - positive negative neutral breakdown" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-sentiment/step-3.png'); ?>" alt="Sentiment analysis results - positive negative neutral breakdown" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

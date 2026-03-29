@@ -115,7 +115,7 @@ $pageOgImageAlt = 'Person previewing webcam quality online with a live camera fr
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/webcam-test/webcam-test-start-camera-check-640.webp'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-start-camera-check-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/webcam-test/webcam-test-start-camera-check-640.png'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-start-camera-check-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/webcam-test/webcam-test-start-camera-check-640.png'); ?>" width="640" height="480" alt="Person opening an online webcam tester to start a camera check" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/webcam-test/webcam-test-start-camera-check-640.png'); ?>" width="640" height="426" alt="Person opening an online webcam tester to start a camera check" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">01</div>
@@ -127,7 +127,7 @@ $pageOgImageAlt = 'Person previewing webcam quality online with a live camera fr
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/webcam-test/webcam-test-allow-camera-access-640.webp'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-allow-camera-access-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/webcam-test/webcam-test-allow-camera-access-640.png'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-allow-camera-access-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/webcam-test/webcam-test-allow-camera-access-640.png'); ?>" width="640" height="480" alt="Webcam test permission step showing browser camera access prompt" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/webcam-test/webcam-test-allow-camera-access-640.png'); ?>" width="640" height="426" alt="Webcam test permission step showing browser camera access prompt" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">02</div>
@@ -139,7 +139,7 @@ $pageOgImageAlt = 'Person previewing webcam quality online with a live camera fr
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/webcam-test/webcam-test-review-video-preview-640.webp'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-review-video-preview-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/webcam-test/webcam-test-review-video-preview-640.png'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-review-video-preview-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/webcam-test/webcam-test-review-video-preview-640.png'); ?>" width="640" height="480" alt="Online webcam tester preview card showing framing and resolution check" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/webcam-test/webcam-test-review-video-preview-640.png'); ?>" width="640" height="426" alt="Online webcam tester preview card showing framing and resolution check" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">03</div>

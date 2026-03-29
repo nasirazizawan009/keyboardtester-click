@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Black Screen Test Online | Full Screen Monitor Check',
         'description' => 'Use a black screen test online to inspect backlight bleed, IPS glow, bright defects, and display issues on monitors, laptops, and TVs.',
         'keywords' => 'black screen test, full black screen, monitor black screen test, backlight bleed test',
-        'ogImage' => 'images/screen-test/hero.svg',
+        'ogImage' => 'images/screen-test/hero.png',
         'ogImageAlt' => 'Black screen test tool for monitor and laptop inspection'
     ],
     'schemaKey' => 'black_screen_test',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Live', 'label' => 'Full-screen check'],
             ['value' => '0', 'label' => 'Installs']
         ],
-        'image' => 'images/screen-test/hero.svg',
+        'image' => 'images/screen-test/hero.png',
         'imageAlt' => 'Black screen test page for monitor backlight bleed inspection',
         'miniCards' => [
             ['title' => 'Dark-room friendly', 'text' => 'Useful for edge glow and bleed checks that only show clearly on a dark screen.'],
@@ -66,9 +66,9 @@ $intentPage = [
         'title' => 'How to Use the Black Screen Test',
         'lede' => 'Darken the room, open the full-screen test, and scan the panel slowly from the center outward.',
         'steps' => [
-            ['image' => 'images/screen-test/step-1.svg', 'alt' => 'Black screen test step 1 open the monitor checker', 'title' => 'Open the black screen', 'text' => 'Start the page and confirm the preview is already on a black background.'],
-            ['image' => 'images/screen-test/step-2.svg', 'alt' => 'Black screen test step 2 switch to full screen mode', 'title' => 'Go full screen', 'text' => 'Use the full-screen mode so the display can be checked without browser chrome around it.'],
-            ['image' => 'images/screen-test/step-3.svg', 'alt' => 'Black screen test step 3 inspect edges and corners', 'title' => 'Inspect edges and corners', 'text' => 'Check for glow, bleed, or bright defects before comparing with white or RGB screens if needed.']
+            ['image' => 'images/screen-test/step-1.png', 'alt' => 'Black screen test step 1 open the monitor checker', 'title' => 'Open the black screen', 'text' => 'Start the page and confirm the preview is already on a black background.'],
+            ['image' => 'images/screen-test/step-2.png', 'alt' => 'Black screen test step 2 switch to full screen mode', 'title' => 'Go full screen', 'text' => 'Use the full-screen mode so the display can be checked without browser chrome around it.'],
+            ['image' => 'images/screen-test/step-3.png', 'alt' => 'Black screen test step 3 inspect edges and corners', 'title' => 'Inspect edges and corners', 'text' => 'Check for glow, bleed, or bright defects before comparing with white or RGB screens if needed.']
         ]
     ],
     'clusterTool' => 'screen',

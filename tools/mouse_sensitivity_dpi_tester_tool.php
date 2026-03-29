@@ -2,6 +2,24 @@
 // Mouse DPI / Sensitivity Tester tool (standalone)
 ?>
 
+<style>
+.dpi-track.active {
+  border-color: #22c55e !important;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3), inset 0 0 20px rgba(34, 197, 94, 0.05);
+  animation: dpi-pulse 1.5s ease-in-out infinite;
+  color: #22c55e;
+  font-weight: 600;
+}
+@keyframes dpi-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.15); }
+}
+.kbt-tool-button.primary.active {
+  background: #22c55e;
+  cursor: default;
+  opacity: 0.9;
+}
+</style>
 <div class="kbt-tool kbt-dpi-tool" id="dpi-tool">
   <div class="kbt-tool-grid two">
     <div class="kbt-tool-card">
@@ -65,19 +83,34 @@ document.addEventListener('DOMContentLoaded', function () {
     resultEl.textContent = dpi ? `${Math.round(dpi)} DPI` : '--';
   }
 
+  function setActiveState(isActive) {
+    active = isActive;
+    if (isActive) {
+      startBtn.textContent = 'Measuring…';
+      startBtn.classList.add('active');
+      startBtn.disabled = true;
+      track.classList.add('active');
+      track.textContent = 'Drag here now — tracking is active';
+    } else {
+      startBtn.textContent = 'Start measure';
+      startBtn.classList.remove('active');
+      startBtn.disabled = false;
+      track.classList.remove('active');
+      track.textContent = 'Drag here while holding the mouse button.';
+    }
+  }
+
   startBtn.addEventListener('click', function () {
-    active = true;
+    setActiveState(true);
     totalPixels = 0;
     updateDisplay();
-    track.classList.add('active');
   });
 
   resetBtn.addEventListener('click', function () {
-    active = false;
     tracking = false;
     totalPixels = 0;
     updateDisplay();
-    track.classList.remove('active');
+    setActiveState(false);
   });
 
   track.addEventListener('pointerdown', function (event) {
@@ -104,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
     tracking = false;
   });
 
-  track.addEventListener('pointerleave', function () {
+  track.addEventListener('lostpointercapture', function () {
     tracking = false;
   });
 

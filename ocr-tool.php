@@ -3,7 +3,7 @@
 $pageTitle = 'Image to Text OCR Tool Online | KeyboardTester.click';
 $pageDescription = 'Extract text from images online with a browser-based OCR tool. Upload a screenshot or photo and copy the detected text.';
 $pageKeywords = 'image to text, ocr online, extract text from image, free ocr tool';
-$pageOgImage = 'images/ocr-tool/hero.svg';
+$pageOgImage = 'images/ocr-tool/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/ocr-tool/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ocr-tool/step-1.svg'); ?>" alt="OCR tool step 1 - open image to text converter" loading="lazy">
+              <img src="<?php echo url('images/ocr-tool/step-1.png'); ?>" alt="OCR tool step 1 - open image to text converter" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/ocr-tool/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ocr-tool/step-2.svg'); ?>" alt="OCR tool step 2 - upload image for text extraction" loading="lazy">
+              <img src="<?php echo url('images/ocr-tool/step-2.png'); ?>" alt="OCR tool step 2 - upload image for text extraction" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Upload an image</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/ocr-tool/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ocr-tool/step-3.svg'); ?>" alt="OCR results - extracted text ready to copy" loading="lazy">
+              <img src="<?php echo url('images/ocr-tool/step-3.png'); ?>" alt="OCR results - extracted text ready to copy" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

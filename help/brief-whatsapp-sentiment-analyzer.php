@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/whatsapp-sentiment/hero.svg'); ?>" alt="WhatsApp chat sentiment analyzer - analyze message tone and emotion" loading="eager">
+        <img src="<?php echo url('images/whatsapp-sentiment/hero.png'); ?>" alt="WhatsApp chat sentiment analyzer - analyze message tone and emotion" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

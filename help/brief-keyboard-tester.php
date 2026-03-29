@@ -32,9 +32,9 @@
       <div class="hero-shot">
         <picture>
           <source media="(max-width: 980px)" type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.webp'); ?>">
-          <source media="(min-width: 981px)" type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.webp'); ?> 1400w" sizes="560px">
+          <source media="(min-width: 981px)" type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.webp'); ?> 560w, <?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.webp'); ?> 1400w" sizes="560px">
           <source media="(max-width: 980px)" type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.png'); ?>">
-          <source media="(min-width: 981px)" type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w" sizes="560px">
+          <source media="(min-width: 981px)" type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.png'); ?> 560w, <?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w" sizes="560px">
           <img src="<?php echo url('images/keyboard/hero-keyboard-test-560.png'); ?>"
                srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.png'); ?> 560w, <?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w"
                sizes="(max-width: 980px) calc(100vw - 2rem), 560px"

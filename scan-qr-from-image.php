@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Scan QR From Image Online | Decode QR From Screenshot or Photo',
         'description' => 'Scan a QR code from an image online. Upload a screenshot, saved QR picture, or camera photo and decode it locally in your browser.',
         'keywords' => 'scan qr from image, qr from screenshot, decode qr from photo, read qr code from image',
-        'ogImage' => 'images/qr-reader/hero.svg',
+        'ogImage' => 'images/qr-reader/hero.png',
         'ogImageAlt' => 'Scan QR from image online using uploaded screenshots and photos'
     ],
     'schemaKey' => 'scan_qr_from_image',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Live', 'label' => 'Decode result'],
             ['value' => '0', 'label' => 'Installs']
         ],
-        'image' => 'images/qr-reader/hero.svg',
+        'image' => 'images/qr-reader/hero.png',
         'imageAlt' => 'Upload an image to scan a QR code online',
         'miniCards' => [
             ['title' => 'Screenshot friendly', 'text' => 'Useful when the QR code is inside a PDF, email, or desktop app.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Scan a QR Code From an Image',
         'lede' => 'Choose the QR screenshot or photo, let the reader decode it, and copy the resulting text or link.',
         'steps' => [
-            ['image' => 'images/qr-reader/step-1.svg', 'alt' => 'Scan QR from image step 1 open the image-based reader', 'title' => 'Open the reader', 'text' => 'Stay on the upload-based workflow instead of opening the camera.'],
-            ['image' => 'images/qr-reader/step-2.svg', 'alt' => 'Scan QR from image step 2 upload a screenshot or photo', 'title' => 'Upload the image file', 'text' => 'Choose the screenshot, document export, or camera photo that contains the QR code.'],
-            ['image' => 'images/qr-reader/step-3.svg', 'alt' => 'Scan QR from image step 3 review decoded content', 'title' => 'Review the decoded content', 'text' => 'Copy the text or URL after the local decoder identifies the QR pattern.']
+            ['image' => 'images/qr-reader/step-1.png', 'alt' => 'Scan QR from image step 1 open the image-based reader', 'title' => 'Open the reader', 'text' => 'Stay on the upload-based workflow instead of opening the camera.'],
+            ['image' => 'images/qr-reader/step-2.png', 'alt' => 'Scan QR from image step 2 upload a screenshot or photo', 'title' => 'Upload the image file', 'text' => 'Choose the screenshot, document export, or camera photo that contains the QR code.'],
+            ['image' => 'images/qr-reader/step-3.png', 'alt' => 'Scan QR from image step 3 review decoded content', 'title' => 'Review the decoded content', 'text' => 'Copy the text or URL after the local decoder identifies the QR pattern.']
         ]
     ],
     'clusterTool' => 'qr-reader',

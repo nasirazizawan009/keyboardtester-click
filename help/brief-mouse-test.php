@@ -40,8 +40,8 @@
             srcset="<?php echo url('images/mouse/mouse-tester-workstation-640.png'); ?> 640w, <?php echo url('images/mouse/mouse-tester-workstation-900.png'); ?> 900w, <?php echo url('images/mouse/mouse-tester-workstation-1400.png'); ?> 1400w"
             sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
             width="640"
-            height="427"
-            alt="Person using the KeyboardTester.click online mouse tester to verify click and scroll input"
+            height="426"
+            alt="Close-up of a gaming mouse with RGB lighting for online mouse button and scroll testing"
             loading="eager"
             decoding="async"
             fetchpriority="high">

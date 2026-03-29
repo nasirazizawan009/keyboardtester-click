@@ -115,7 +115,7 @@ $pageOgImageAlt = 'Person using an online screen tester to inspect a display for
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/screen-test/screen-tester-start-display-check-640.webp'); ?> 640w, <?php echo url('images/screen-test/screen-tester-start-display-check-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/screen-test/screen-tester-start-display-check-640.png'); ?> 640w, <?php echo url('images/screen-test/screen-tester-start-display-check-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/screen-test/screen-tester-start-display-check-640.png'); ?>" width="640" height="480" alt="Person starting an online screen tester to inspect the display for dead pixels" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/screen-test/screen-tester-start-display-check-640.png'); ?>" width="640" height="426" alt="Person starting an online screen tester to inspect the display for dead pixels" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">01</div>
@@ -127,7 +127,7 @@ $pageOgImageAlt = 'Person using an online screen tester to inspect a display for
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/screen-test/screen-tester-cycle-colors-640.webp'); ?> 640w, <?php echo url('images/screen-test/screen-tester-cycle-colors-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/screen-test/screen-tester-cycle-colors-640.png'); ?> 640w, <?php echo url('images/screen-test/screen-tester-cycle-colors-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/screen-test/screen-tester-cycle-colors-640.png'); ?>" width="640" height="480" alt="Screen tester workflow showing solid colors used to find stuck or dead pixels" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/screen-test/screen-tester-cycle-colors-640.png'); ?>" width="640" height="426" alt="Screen tester workflow showing solid colors used to find stuck or dead pixels" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">02</div>
@@ -139,7 +139,7 @@ $pageOgImageAlt = 'Person using an online screen tester to inspect a display for
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/screen-test/screen-tester-review-pixel-results-640.webp'); ?> 640w, <?php echo url('images/screen-test/screen-tester-review-pixel-results-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/screen-test/screen-tester-review-pixel-results-640.png'); ?> 640w, <?php echo url('images/screen-test/screen-tester-review-pixel-results-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/screen-test/screen-tester-review-pixel-results-640.png'); ?>" width="640" height="480" alt="Online screen tester review highlighting a suspicious pixel area on the display" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/screen-test/screen-tester-review-pixel-results-640.png'); ?>" width="640" height="426" alt="Online screen tester review highlighting a suspicious pixel area on the display" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">03</div>

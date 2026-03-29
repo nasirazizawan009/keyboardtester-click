@@ -3,7 +3,7 @@
 $pageTitle = 'Ghost Click Detector Online | KeyboardTester.click';
 $pageDescription = 'Test your mouse for ghost clicks and unwanted double clicks with a fast browser-based detector and interval logging.';
 $pageKeywords = 'ghost click detector, double click test, mouse switch test, ghost click test';
-$pageOgImage = 'images/ghost-click/hero.svg';
+$pageOgImage = 'images/ghost-click/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/ghost-click/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-1.svg'); ?>" alt="Ghost click detector step 1 - start the mouse double click test" loading="lazy">
+              <img src="<?php echo url('images/ghost-click/step-1.png'); ?>" alt="Ghost click detector step 1 - start the mouse double click test" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/ghost-click/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-2.svg'); ?>" alt="Ghost click test step 2 - click normally to detect phantom double clicks" loading="lazy">
+              <img src="<?php echo url('images/ghost-click/step-2.png'); ?>" alt="Ghost click test step 2 - click normally to detect phantom double clicks" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Click normally</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/ghost-click/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-3.svg'); ?>" alt="Ghost click test results - view detected double click issues" loading="lazy">
+              <img src="<?php echo url('images/ghost-click/step-3.png'); ?>" alt="Ghost click test results - view detected double click issues" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

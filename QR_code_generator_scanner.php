@@ -3,7 +3,7 @@
 $pageTitle = 'Free QR Code Generator Online | KeyboardTester.click';
 $pageDescription = 'Create QR codes for URLs, text, phone numbers, and more with a live browser-based generator. Preview and download instantly.';
 $pageKeywords = 'free qr code generator, qr code creator, generate qr code online, qr code maker';
-$pageOgImage = 'images/qr-generator/hero.svg';
+$pageOgImage = 'images/qr-generator/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/qr-generator/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-generator/step-1.svg'); ?>" alt="QR code generator step 1 - open free QR creator" loading="lazy">
+              <img src="<?php echo url('images/qr-generator/step-1.png'); ?>" alt="QR code generator step 1 - open free QR creator" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/qr-generator/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-generator/step-2.svg'); ?>" alt="QR code generator step 2 - enter URL or text data" loading="lazy">
+              <img src="<?php echo url('images/qr-generator/step-2.png'); ?>" alt="QR code generator step 2 - enter URL or text data" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Enter your data</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/qr-generator/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-generator/step-3.svg'); ?>" alt="Generated QR code ready to download" loading="lazy">
+              <img src="<?php echo url('images/qr-generator/step-3.png'); ?>" alt="Generated QR code ready to download" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

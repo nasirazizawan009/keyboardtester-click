@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mouse-speed/hero.svg'); ?>" alt="Mouse click speed test - measure CPS clicks per second online" loading="eager">
+        <img src="<?php echo url('images/mouse-speed/hero.png'); ?>" alt="Mouse click speed test - measure CPS clicks per second online" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Test My Mic Online | Quick Microphone Check',
         'description' => 'Test my mic online with a quick browser-based microphone check. Verify mic access, live voice input, and peak level before meetings or recordings.',
         'keywords' => 'test my mic, test my microphone, quick mic test, microphone check online',
-        'ogImage' => 'images/mic-test/hero.svg',
+        'ogImage' => 'images/mic-test/hero.png',
         'ogImageAlt' => 'Quick test my mic page with live browser microphone meter'
     ],
     'schemaKey' => 'test_my_mic',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Peak', 'label' => 'Volume check'],
             ['value' => '0', 'label' => 'Uploads']
         ],
-        'image' => 'images/mic-test/hero.svg',
+        'image' => 'images/mic-test/hero.png',
         'imageAlt' => 'Test my mic page with real-time browser input meter',
         'miniCards' => [
             ['title' => 'Meeting-ready', 'text' => 'Useful right before Zoom, Meet, Teams, classes, and interviews.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Test My Mic Quickly',
         'lede' => 'Start the live meter, allow access, speak normally, and make sure the level display reacts immediately.',
         'steps' => [
-            ['image' => 'images/mic-test/step-1.svg', 'alt' => 'Test my mic step 1 allow microphone permission', 'title' => 'Start and allow access', 'text' => 'Click the start button and allow microphone permission when the browser asks.'],
-            ['image' => 'images/mic-test/step-2.svg', 'alt' => 'Test my mic step 2 speak into microphone and watch levels', 'title' => 'Speak into the mic', 'text' => 'Use your normal voice and watch whether the level meter and peak value rise.'],
-            ['image' => 'images/mic-test/step-3.svg', 'alt' => 'Test my mic step 3 confirm the browser receives audio input', 'title' => 'Confirm the result', 'text' => 'If the meter moves, the browser is receiving your microphone input and the check passes.']
+            ['image' => 'images/mic-test/step-1.png', 'alt' => 'Test my mic step 1 allow microphone permission', 'title' => 'Start and allow access', 'text' => 'Click the start button and allow microphone permission when the browser asks.'],
+            ['image' => 'images/mic-test/step-2.png', 'alt' => 'Test my mic step 2 speak into microphone and watch levels', 'title' => 'Speak into the mic', 'text' => 'Use your normal voice and watch whether the level meter and peak value rise.'],
+            ['image' => 'images/mic-test/step-3.png', 'alt' => 'Test my mic step 3 confirm the browser receives audio input', 'title' => 'Confirm the result', 'text' => 'If the meter moves, the browser is receiving your microphone input and the check passes.']
         ]
     ],
     'clusterTool' => 'mic',

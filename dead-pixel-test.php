@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Dead Pixel Test Online | Free Monitor Checker',
         'description' => 'Run a free dead pixel test online with full-screen solid colors. Check your monitor, laptop, or phone screen for black pixels that never light up.',
         'keywords' => 'dead pixel test, dead pixel checker, monitor dead pixel test, screen dead pixel test',
-        'ogImage' => 'images/screen-test/hero.svg',
+        'ogImage' => 'images/screen-test/hero.png',
         'ogImageAlt' => 'Dead pixel test tool with full-screen monitor color checks'
     ],
     'schemaKey' => 'dead_pixel_test',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => '100%', 'label' => 'Browser based'],
             ['value' => 'Live', 'label' => 'Visual check']
         ],
-        'image' => 'images/screen-test/hero.svg',
+        'image' => 'images/screen-test/hero.png',
         'imageAlt' => 'Online dead pixel checker with solid monitor test colors',
         'miniCards' => [
             ['title' => 'Black-screen inspection', 'text' => 'Spot pixels that stay dark while the rest of the panel lights correctly.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Find Dead Pixels',
         'lede' => 'Switch through solid colors, go full screen, and scan each zone of the panel from left to right.',
         'steps' => [
-            ['image' => 'images/screen-test/step-1.svg', 'alt' => 'Dead pixel test step 1 open the live monitor checker', 'title' => 'Open the tester', 'text' => 'Start with the live preview and click into full-screen mode for a clean inspection view.'],
-            ['image' => 'images/screen-test/step-2.svg', 'alt' => 'Dead pixel test step 2 cycle color screens', 'title' => 'Cycle through color screens', 'text' => 'Use white plus the main RGB colors to reveal black pixels that stay unchanged.'],
-            ['image' => 'images/screen-test/step-3.svg', 'alt' => 'Dead pixel test step 3 inspect corners and center', 'title' => 'Inspect the full panel', 'text' => 'Check the center, edges, and corners carefully before moving to the next color.']
+            ['image' => 'images/screen-test/step-1.png', 'alt' => 'Dead pixel test step 1 open the live monitor checker', 'title' => 'Open the tester', 'text' => 'Start with the live preview and click into full-screen mode for a clean inspection view.'],
+            ['image' => 'images/screen-test/step-2.png', 'alt' => 'Dead pixel test step 2 cycle color screens', 'title' => 'Cycle through color screens', 'text' => 'Use white plus the main RGB colors to reveal black pixels that stay unchanged.'],
+            ['image' => 'images/screen-test/step-3.png', 'alt' => 'Dead pixel test step 3 inspect corners and center', 'title' => 'Inspect the full panel', 'text' => 'Check the center, edges, and corners carefully before moving to the next color.']
         ]
     ],
     'clusterTool' => 'screen',

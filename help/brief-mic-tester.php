@@ -41,7 +41,7 @@
             sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
             width="640"
             height="427"
-            alt="Person checking microphone input online with a live waveform and audio level meter"
+            alt="Professional condenser microphone in studio setup for online microphone input testing"
             loading="eager"
             decoding="async"
             fetchpriority="high">

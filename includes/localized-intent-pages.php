@@ -110,7 +110,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'Prueba de Píxeles Muertos Online | KeyboardTester.click',
                         'description' => 'Detecta píxeles muertos en tu monitor con colores sólidos y pantalla completa. Revisa monitores, laptops y pantallas externas en el navegador.',
                         'keywords' => 'prueba de píxeles muertos, detectar píxeles muertos, test monitor, pantalla con píxeles muertos',
-                        'ogImage' => 'images/screen-test/hero.svg'
+                        'ogImage' => 'images/screen-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'Prueba de Píxeles Muertos',
@@ -144,7 +144,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Herramienta online para detectar píxeles muertos con colores sólidos y pantalla completa.',
                         'url' => 'languages/spanish/dead-pixel-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/screen-test/hero.svg',
+                        'screenshot' => 'images/screen-test/hero.png',
                         'features' => ['Pantalla completa', 'Colores sólidos', 'Inspección visual', 'Cambio rápido de fondo']
                     ],
                     'breadcrumbs' => [
@@ -164,7 +164,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'Prueba de Volumen del Micrófono | KeyboardTester.click',
                         'description' => 'Comprueba el nivel de entrada y el pico de tu micrófono con un medidor visual en vivo. Útil para reuniones, streaming y grabación.',
                         'keywords' => 'prueba de volumen del micrófono, nivel de micrófono, medir micrófono, medidor de micrófono',
-                        'ogImage' => 'images/mic-test/hero.svg'
+                        'ogImage' => 'images/mic-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'Prueba de Volumen del Micrófono',
@@ -198,7 +198,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Herramienta online para medir el nivel y pico del micrófono en el navegador.',
                         'url' => 'languages/spanish/microphone-volume-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/mic-test/hero.svg',
+                        'screenshot' => 'images/mic-test/hero.png',
                         'features' => ['Medidor en vivo', 'Nivel máximo', 'Permisos del navegador', 'Sin grabación']
                     ],
                     'breadcrumbs' => [
@@ -218,7 +218,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'Prueba de Resolución de Cámara | KeyboardTester.click',
                         'description' => 'Comprueba si tu webcam entrega 480p, 720p o 1080p en el navegador. Cambia la resolución y confirma el tamaño real del video.',
                         'keywords' => 'prueba de resolución de cámara, resolución webcam, test webcam 720p, test webcam 1080p',
-                        'ogImage' => 'images/webcam-test/hero.svg'
+                        'ogImage' => 'images/webcam-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'Prueba de Resolución de Cámara',
@@ -252,7 +252,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Herramienta online para comprobar la resolución real que entrega una webcam.',
                         'url' => 'languages/spanish/camera-resolution-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/webcam-test/hero.svg',
+                        'screenshot' => 'images/webcam-test/hero.png',
                         'features' => ['Vista previa en vivo', 'Resoluciones predefinidas', 'Tamaño real del video', 'Cambio de dispositivo']
                     ],
                     'breadcrumbs' => [
@@ -272,7 +272,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'Escanear QR desde Imagen | KeyboardTester.click',
                         'description' => 'Sube una captura, foto o imagen guardada para leer un código QR online. Decodifica QR desde archivos sin instalar apps.',
                         'keywords' => 'escanear qr desde imagen, leer qr de una foto, qr desde captura, decodificar qr de imagen',
-                        'ogImage' => 'images/qr-reader/hero.svg'
+                        'ogImage' => 'images/qr-reader/hero.png'
                     ],
                     'hero' => [
                         'title' => 'Escanear QR desde Imagen',
@@ -306,7 +306,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Herramienta online para leer códigos QR desde imágenes, capturas de pantalla y fotos.',
                         'url' => 'languages/spanish/scan-qr-from-image.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/qr-reader/hero.svg',
+                        'screenshot' => 'images/qr-reader/hero.png',
                         'features' => ['Subida de imágenes', 'Decodificación local', 'Resultados instantáneos', 'Sin instalar apps']
                     ],
                     'breadcrumbs' => [
@@ -415,7 +415,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'Test für tote Pixel Online | KeyboardTester.click',
                         'description' => 'Prüfen Sie Ihren Monitor mit Vollfarben und Vollbildmodus auf tote Pixel. Geeignet für Monitore, Laptops und externe Displays.',
                         'keywords' => 'test für tote pixel, tote pixel erkennen, monitor test, display fehler finden',
-                        'ogImage' => 'images/screen-test/hero.svg'
+                        'ogImage' => 'images/screen-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'Test für tote Pixel',
@@ -449,7 +449,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Online-Werkzeug zum Erkennen toter Pixel mit Vollfarben und Vollbildmodus.',
                         'url' => 'languages/german/dead-pixel-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/screen-test/hero.svg',
+                        'screenshot' => 'images/screen-test/hero.png',
                         'features' => ['Vollbildmodus', 'Vollfarben', 'Visuelle Prüfung', 'Schneller Farbwechsel']
                     ],
                     'breadcrumbs' => [
@@ -469,7 +469,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'Mikrofon-Lautstärketest | KeyboardTester.click',
                         'description' => 'Prüfen Sie Eingangspegel und Spitzenwert Ihres Mikrofons mit einer Live-Anzeige. Ideal für Meetings, Streaming und Aufnahmen.',
                         'keywords' => 'mikrofon lautstärke test, mikrofon pegel prüfen, mikrofon lautstärke messen, mikrofon meter',
-                        'ogImage' => 'images/mic-test/hero.svg'
+                        'ogImage' => 'images/mic-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'Mikrofon-Lautstärketest',
@@ -503,7 +503,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Online-Werkzeug zum Messen von Mikrofonpegel und Spitzenlautstärke im Browser.',
                         'url' => 'languages/german/microphone-volume-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/mic-test/hero.svg',
+                        'screenshot' => 'images/mic-test/hero.png',
                         'features' => ['Live-Anzeige', 'Spitzenwert', 'Browser-Berechtigung', 'Keine Aufnahme']
                     ],
                     'breadcrumbs' => [
@@ -523,7 +523,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'Kamera-Auflösungstest | KeyboardTester.click',
                         'description' => 'Prüfen Sie, ob Ihre Webcam im Browser 480p, 720p oder 1080p liefert. Wechseln Sie Auflösungen und vergleichen Sie die tatsächliche Größe.',
                         'keywords' => 'kamera auflösungstest, webcam auflösung testen, webcam 720p test, webcam 1080p prüfen',
-                        'ogImage' => 'images/webcam-test/hero.svg'
+                        'ogImage' => 'images/webcam-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'Kamera-Auflösungstest',
@@ -557,7 +557,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Online-Werkzeug zum Prüfen der tatsächlichen Webcam-Auflösung im Browser.',
                         'url' => 'languages/german/camera-resolution-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/webcam-test/hero.svg',
+                        'screenshot' => 'images/webcam-test/hero.png',
                         'features' => ['Live-Vorschau', 'Auflösungs-Presets', 'Reale Videogröße', 'Gerätewechsel']
                     ],
                     'breadcrumbs' => [
@@ -577,7 +577,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'QR aus Bild scannen | KeyboardTester.click',
                         'description' => 'Laden Sie Screenshots, Fotos oder gespeicherte Bilder hoch, um QR-Codes online auszulesen. Kein App-Download erforderlich.',
                         'keywords' => 'qr aus bild scannen, qr code aus foto lesen, qr screenshot lesen, qr bild dekodieren',
-                        'ogImage' => 'images/qr-reader/hero.svg'
+                        'ogImage' => 'images/qr-reader/hero.png'
                     ],
                     'hero' => [
                         'title' => 'QR aus Bild scannen',
@@ -611,7 +611,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Online-Werkzeug zum Lesen von QR-Codes aus Screenshots, Fotos und gespeicherten Bildern.',
                         'url' => 'languages/german/scan-qr-from-image.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/qr-reader/hero.svg',
+                        'screenshot' => 'images/qr-reader/hero.png',
                         'features' => ['Bild-Upload', 'Lokale Dekodierung', 'Sofortige Ergebnisse', 'Kein App-Download']
                     ],
                     'breadcrumbs' => [
@@ -720,7 +720,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'Teste de Pixel Morto Online | KeyboardTester.click',
                         'description' => 'Procure pixels mortos com cores sólidas e modo de tela cheia. Teste monitores, notebooks e telas externas no navegador.',
                         'keywords' => 'teste de pixel morto, detectar pixel morto, teste monitor, defeito na tela',
-                        'ogImage' => 'images/screen-test/hero.svg'
+                        'ogImage' => 'images/screen-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'Teste de Pixel Morto',
@@ -754,7 +754,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Ferramenta online para detectar pixels mortos com cores sólidas e tela cheia.',
                         'url' => 'languages/portuguese/dead-pixel-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/screen-test/hero.svg',
+                        'screenshot' => 'images/screen-test/hero.png',
                         'features' => ['Tela cheia', 'Cores sólidas', 'Inspeção visual', 'Troca rápida de fundo']
                     ],
                     'breadcrumbs' => [
@@ -774,7 +774,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'Teste de Volume do Microfone | KeyboardTester.click',
                         'description' => 'Confira o nível de entrada e o pico do microfone com um medidor visual ao vivo. Útil para chamadas, streaming e gravações.',
                         'keywords' => 'teste de volume do microfone, nivel do microfone, medir microfone, medidor de microfone',
-                        'ogImage' => 'images/mic-test/hero.svg'
+                        'ogImage' => 'images/mic-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'Teste de Volume do Microfone',
@@ -808,7 +808,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Ferramenta online para medir o nível e o pico do microfone no navegador.',
                         'url' => 'languages/portuguese/microphone-volume-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/mic-test/hero.svg',
+                        'screenshot' => 'images/mic-test/hero.png',
                         'features' => ['Medidor ao vivo', 'Pico máximo', 'Permissão do navegador', 'Sem gravação']
                     ],
                     'breadcrumbs' => [
@@ -828,7 +828,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'Teste de Resolucao da Camera | KeyboardTester.click',
                         'description' => 'Confira se sua webcam realmente entrega 480p, 720p ou 1080p no navegador. Troque a resolucao e compare o tamanho real do video.',
                         'keywords' => 'teste de resolucao da camera, resolucao webcam, teste webcam 720p, teste webcam 1080p',
-                        'ogImage' => 'images/webcam-test/hero.svg'
+                        'ogImage' => 'images/webcam-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'Teste de Resolucao da Camera',
@@ -862,7 +862,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Ferramenta online para verificar a resolucao real entregue por uma webcam.',
                         'url' => 'languages/portuguese/camera-resolution-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/webcam-test/hero.svg',
+                        'screenshot' => 'images/webcam-test/hero.png',
                         'features' => ['Previa ao vivo', 'Presets de resolucao', 'Tamanho real do video', 'Troca de dispositivo']
                     ],
                     'breadcrumbs' => [
@@ -882,7 +882,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'Escanear QR de Imagem | KeyboardTester.click',
                         'description' => 'Envie uma captura, foto ou imagem salva para ler um codigo QR online. Decodifique QR de arquivo sem instalar aplicativos.',
                         'keywords' => 'escanear qr de imagem, ler qr de foto, qr de captura de tela, decodificar qr de imagem',
-                        'ogImage' => 'images/qr-reader/hero.svg'
+                        'ogImage' => 'images/qr-reader/hero.png'
                     ],
                     'hero' => [
                         'title' => 'Escanear QR de Imagem',
@@ -916,7 +916,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'Ferramenta online para ler codigos QR de imagens, capturas de tela e fotos.',
                         'url' => 'languages/portuguese/scan-qr-from-image.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/qr-reader/hero.svg',
+                        'screenshot' => 'images/qr-reader/hero.png',
                         'features' => ['Upload de imagem', 'Decodificacao local', 'Resultados rapidos', 'Sem instalar aplicativo']
                     ],
                     'breadcrumbs' => [
@@ -1026,7 +1026,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'اختبار البكسلات الميتة أونلاين | KeyboardTester.click',
                         'description' => 'افحص الشاشة بحثاً عن البكسلات الميتة باستخدام ألوان كاملة ووضع ملء الشاشة. مناسب للشاشات واللابتوبات والشاشات الخارجية.',
                         'keywords' => 'اختبار البكسلات الميتة, كشف البكسلات الميتة, فحص الشاشة, عيوب الشاشة',
-                        'ogImage' => 'images/screen-test/hero.svg'
+                        'ogImage' => 'images/screen-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'اختبار البكسلات الميتة',
@@ -1060,7 +1060,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'أداة عبر المتصفح لاكتشاف البكسلات الميتة باستخدام ألوان كاملة ووضع ملء الشاشة.',
                         'url' => 'languages/arabic/dead-pixel-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/screen-test/hero.svg',
+                        'screenshot' => 'images/screen-test/hero.png',
                         'features' => ['وضع ملء الشاشة', 'ألوان كاملة', 'فحص بصري', 'تبديل سريع للخلفيات']
                     ],
                     'breadcrumbs' => [
@@ -1080,7 +1080,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'اختبار مستوى صوت الميكروفون | KeyboardTester.click',
                         'description' => 'تحقق من مستوى إدخال الميكروفون وقمة الإشارة بمؤشر مباشر داخل المتصفح. مناسب للاجتماعات والبث والتسجيل.',
                         'keywords' => 'اختبار مستوى صوت الميكروفون, قياس مستوى الميكروفون, مؤشر الميكروفون, فحص الميكروفون',
-                        'ogImage' => 'images/mic-test/hero.svg'
+                        'ogImage' => 'images/mic-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'اختبار مستوى صوت الميكروفون',
@@ -1114,7 +1114,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'أداة عبر المتصفح لقياس مستوى الميكروفون وقمة الإشارة بشكل مباشر.',
                         'url' => 'languages/arabic/microphone-volume-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/mic-test/hero.svg',
+                        'screenshot' => 'images/mic-test/hero.png',
                         'features' => ['مؤشر مباشر', 'قمة الإشارة', 'أذونات المتصفح', 'بدون تسجيل']
                     ],
                     'breadcrumbs' => [
@@ -1134,7 +1134,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'اختبار دقة الكاميرا | KeyboardTester.click',
                         'description' => 'تحقق مما إذا كانت كاميرا الويب تقدم 480p أو 720p أو 1080p فعلياً داخل المتصفح. بدّل الدقة وقارن الحجم الحقيقي للفيديو.',
                         'keywords' => 'اختبار دقة الكاميرا, دقة كاميرا الويب, اختبار 720p, اختبار 1080p',
-                        'ogImage' => 'images/webcam-test/hero.svg'
+                        'ogImage' => 'images/webcam-test/hero.png'
                     ],
                     'hero' => [
                         'title' => 'اختبار دقة الكاميرا',
@@ -1168,7 +1168,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'أداة عبر المتصفح للتحقق من الدقة الحقيقية التي تقدمها كاميرا الويب.',
                         'url' => 'languages/arabic/camera-resolution-test.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/webcam-test/hero.svg',
+                        'screenshot' => 'images/webcam-test/hero.png',
                         'features' => ['معاينة مباشرة', 'دقات محددة مسبقاً', 'الحجم الحقيقي للفيديو', 'تبديل الجهاز']
                     ],
                     'breadcrumbs' => [
@@ -1188,7 +1188,7 @@ function getLocalizedIntentCatalog() {
                         'title' => 'مسح رمز QR من صورة | KeyboardTester.click',
                         'description' => 'ارفع لقطة شاشة أو صورة أو ملفاً محفوظاً لقراءة رمز QR أونلاين. فك التشفير من الصور بدون تثبيت تطبيقات.',
                         'keywords' => 'مسح qr من صورة, قراءة qr من لقطة شاشة, فك qr من صورة, قارئ qr من ملف',
-                        'ogImage' => 'images/qr-reader/hero.svg'
+                        'ogImage' => 'images/qr-reader/hero.png'
                     ],
                     'hero' => [
                         'title' => 'مسح رمز QR من صورة',
@@ -1222,7 +1222,7 @@ function getLocalizedIntentCatalog() {
                         'description' => 'أداة عبر المتصفح لقراءة رموز QR من الصور ولقطات الشاشة والملفات المحفوظة.',
                         'url' => 'languages/arabic/scan-qr-from-image.php',
                         'category' => 'UtilityApplication',
-                        'screenshot' => 'images/qr-reader/hero.svg',
+                        'screenshot' => 'images/qr-reader/hero.png',
                         'features' => ['رفع الصور', 'فك تشفير محلي', 'نتائج سريعة', 'بدون تثبيت تطبيق']
                     ],
                     'breadcrumbs' => [

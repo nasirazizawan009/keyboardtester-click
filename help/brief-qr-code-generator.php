@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/qr-generator/hero.svg'); ?>" alt="Free QR code generator - create custom QR codes for URLs and text" loading="eager">
+        <img src="<?php echo url('images/qr-generator/hero.png'); ?>" alt="Free QR code generator - create custom QR codes for URLs and text" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Microphone Volume Test Online | Check Mic Input Level',
         'description' => 'Test microphone volume online with a live browser meter. See current level and peak mic volume without recording audio.',
         'keywords' => 'microphone volume test, mic volume test online, test mic input level, microphone level checker',
-        'ogImage' => 'images/mic-test/hero.svg',
+        'ogImage' => 'images/mic-test/hero.png',
         'ogImageAlt' => 'Microphone volume test page with live browser meter'
     ],
     'schemaKey' => 'microphone_volume_test',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Peak', 'label' => 'Volume check'],
             ['value' => '0', 'label' => 'Uploads']
         ],
-        'image' => 'images/mic-test/hero.svg',
+        'image' => 'images/mic-test/hero.png',
         'imageAlt' => 'Microphone volume test page with current and peak input meter',
         'miniCards' => [
             ['title' => 'Pre-call volume check', 'text' => 'Useful before meetings, interviews, classes, or support calls.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Test Microphone Volume',
         'lede' => 'Start the meter, allow access, speak normally, then compare the current level and peak readout.',
         'steps' => [
-            ['image' => 'images/mic-test/step-1.svg', 'alt' => 'Microphone volume test step 1 allow mic permission', 'title' => 'Start and allow access', 'text' => 'Click start and approve microphone access when the browser asks.'],
-            ['image' => 'images/mic-test/step-2.svg', 'alt' => 'Microphone volume test step 2 speak and watch live meter', 'title' => 'Speak at normal volume', 'text' => 'Use the voice level you expect to use in a call or recording and watch the meter move.'],
-            ['image' => 'images/mic-test/step-3.svg', 'alt' => 'Microphone volume test step 3 compare current level and peak value', 'title' => 'Check the peak', 'text' => 'Use the peak reading to see whether your voice ever reaches a healthy input level during the test.']
+            ['image' => 'images/mic-test/step-1.png', 'alt' => 'Microphone volume test step 1 allow mic permission', 'title' => 'Start and allow access', 'text' => 'Click start and approve microphone access when the browser asks.'],
+            ['image' => 'images/mic-test/step-2.png', 'alt' => 'Microphone volume test step 2 speak and watch live meter', 'title' => 'Speak at normal volume', 'text' => 'Use the voice level you expect to use in a call or recording and watch the meter move.'],
+            ['image' => 'images/mic-test/step-3.png', 'alt' => 'Microphone volume test step 3 compare current level and peak value', 'title' => 'Check the peak', 'text' => 'Use the peak reading to see whether your voice ever reaches a healthy input level during the test.']
         ]
     ],
     'clusterTool' => 'mic',

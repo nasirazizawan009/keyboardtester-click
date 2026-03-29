@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Double Click Test Online | Check Mouse Switch Bounce',
         'description' => 'Run a double click test online to inspect suspicious rapid clicks, switch bounce, and possible ghost-click behavior in your mouse.',
         'keywords' => 'double click test, mouse double click test, switch bounce test, ghost click test',
-        'ogImage' => 'images/ghost-click/hero.svg',
+        'ogImage' => 'images/ghost-click/hero.png',
         'ogImageAlt' => 'Double click test page for checking mouse switch bounce'
     ],
     'schemaKey' => 'double_click_test',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Live', 'label' => 'Click log'],
             ['value' => '0', 'label' => 'Installs']
         ],
-        'image' => 'images/ghost-click/hero.svg',
+        'image' => 'images/ghost-click/hero.png',
         'imageAlt' => 'Double click test page with live click interval detector',
         'miniCards' => [
             ['title' => 'Switch-bounce checks', 'text' => 'Useful when a single press sometimes behaves like a double click.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Check for Double Click Issues',
         'lede' => 'Start the detector, click naturally, and watch the interval log for suspicious rapid repeats.',
         'steps' => [
-            ['image' => 'images/ghost-click/step-1.svg', 'alt' => 'Double click test step 1 start the detector', 'title' => 'Start the detector', 'text' => 'Activate the test so every click inside the area is logged.'],
-            ['image' => 'images/ghost-click/step-2.svg', 'alt' => 'Double click test step 2 click naturally in the test area', 'title' => 'Click naturally', 'text' => 'Use the button as you normally would instead of trying to game the result.'],
-            ['image' => 'images/ghost-click/step-3.svg', 'alt' => 'Double click test step 3 review suspicious rapid click intervals', 'title' => 'Review the log', 'text' => 'Look for repeated fast intervals, reset, and retest a few times before drawing conclusions.']
+            ['image' => 'images/ghost-click/step-1.png', 'alt' => 'Double click test step 1 start the detector', 'title' => 'Start the detector', 'text' => 'Activate the test so every click inside the area is logged.'],
+            ['image' => 'images/ghost-click/step-2.png', 'alt' => 'Double click test step 2 click naturally in the test area', 'title' => 'Click naturally', 'text' => 'Use the button as you normally would instead of trying to game the result.'],
+            ['image' => 'images/ghost-click/step-3.png', 'alt' => 'Double click test step 3 review suspicious rapid click intervals', 'title' => 'Review the log', 'text' => 'Look for repeated fast intervals, reset, and retest a few times before drawing conclusions.']
         ]
     ],
     'clusterTool' => 'mouse',

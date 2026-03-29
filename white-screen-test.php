@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'White Screen Test Online | Full White Screen Checker',
         'description' => 'Use a white screen test online to inspect stuck pixels, dust, tint, and panel uniformity on monitors, laptops, and mobile displays.',
         'keywords' => 'white screen test, full white screen, monitor white screen test, stuck pixel white screen',
-        'ogImage' => 'images/screen-test/hero.svg',
+        'ogImage' => 'images/screen-test/hero.png',
         'ogImageAlt' => 'White screen test tool for stuck pixel and monitor checks'
     ],
     'schemaKey' => 'white_screen_test',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Live', 'label' => 'Panel check'],
             ['value' => '0', 'label' => 'Uploads']
         ],
-        'image' => 'images/screen-test/hero.svg',
+        'image' => 'images/screen-test/hero.png',
         'imageAlt' => 'White screen test page for stuck pixel and uniformity inspection',
         'miniCards' => [
             ['title' => 'Bright-background checks', 'text' => 'Good for finding colored dots, dust, and uneven white balance across the panel.'],
@@ -66,9 +66,9 @@ $intentPage = [
         'title' => 'How to Use the White Screen Test',
         'lede' => 'Open the page, go full screen, and scan the panel in slow rows from top to bottom.',
         'steps' => [
-            ['image' => 'images/screen-test/step-1.svg', 'alt' => 'White screen test step 1 open the full white monitor checker', 'title' => 'Open the white screen', 'text' => 'Start the page and confirm the preview opens directly on a white background.'],
-            ['image' => 'images/screen-test/step-2.svg', 'alt' => 'White screen test step 2 switch to full screen mode', 'title' => 'Go full screen', 'text' => 'Use full-screen mode for a cleaner inspection surface and fewer distractions.'],
-            ['image' => 'images/screen-test/step-3.svg', 'alt' => 'White screen test step 3 inspect the full panel for tint and stuck pixels', 'title' => 'Inspect the whole panel', 'text' => 'Look for colored dots, tint shifts, dust, and brightness differences before comparing with other colors.']
+            ['image' => 'images/screen-test/step-1.png', 'alt' => 'White screen test step 1 open the full white monitor checker', 'title' => 'Open the white screen', 'text' => 'Start the page and confirm the preview opens directly on a white background.'],
+            ['image' => 'images/screen-test/step-2.png', 'alt' => 'White screen test step 2 switch to full screen mode', 'title' => 'Go full screen', 'text' => 'Use full-screen mode for a cleaner inspection surface and fewer distractions.'],
+            ['image' => 'images/screen-test/step-3.png', 'alt' => 'White screen test step 3 inspect the full panel for tint and stuck pixels', 'title' => 'Inspect the whole panel', 'text' => 'Look for colored dots, tint shifts, dust, and brightness differences before comparing with other colors.']
         ]
     ],
     'clusterTool' => 'screen',

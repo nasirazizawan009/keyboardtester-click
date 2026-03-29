@@ -3,7 +3,7 @@
 $pageTitle = 'Lucky Wheel - Random Picker | KeyboardTester.click';
 $pageDescription = 'Spin a lucky wheel to randomly pick a winner. Add entries, spin, and share results instantly.';
 $pageKeywords = 'lucky wheel, random picker, spin wheel, name picker, online wheel';
-$pageOgImage = 'images/lucky-wheel/hero.svg';
+$pageOgImage = 'images/lucky-wheel/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/lucky-wheel/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/lucky-wheel/step-1.svg'); ?>" alt="Add entries" loading="lazy">
+              <img src="<?php echo url('images/lucky-wheel/step-1.png'); ?>" alt="Lucky wheel spinner step 1 - add names or options to the random picker" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Add entries</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/lucky-wheel/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/lucky-wheel/step-2.svg'); ?>" alt="Spin the wheel" loading="lazy">
+              <img src="<?php echo url('images/lucky-wheel/step-2.png'); ?>" alt="Lucky wheel spinner step 2 - spin to randomly pick a winner online" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Spin the wheel</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/lucky-wheel/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/lucky-wheel/step-3.svg'); ?>" alt="Share winner" loading="lazy">
+              <img src="<?php echo url('images/lucky-wheel/step-3.png'); ?>" alt="Lucky wheel results - share the randomly selected winner" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Share winner</h3>

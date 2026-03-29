@@ -3,7 +3,7 @@
 $pageTitle = 'Typing Speed Test Online | KeyboardTester.click';
 $pageDescription = 'Measure typing speed, WPM, and accuracy with a free browser-based typing test. Start instantly and compare repeat runs.';
 $pageKeywords = 'typing speed test, wpm test, online typing test, typing accuracy';
-$pageOgImage = 'images/typing-test/hero.svg';
+$pageOgImage = 'images/typing-test/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/typing-test/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/typing-test/step-1.svg'); ?>" alt="Typing speed test step 1 - start WPM measurement" loading="lazy">
+              <img src="<?php echo url('images/typing-test/step-1.png'); ?>" alt="Typing speed test step 1 - start WPM measurement" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/typing-test/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/typing-test/step-2.svg'); ?>" alt="Typing test step 2 - type the text to measure speed" loading="lazy">
+              <img src="<?php echo url('images/typing-test/step-2.png'); ?>" alt="Typing test step 2 - type the text to measure speed" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Type the prompt</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/typing-test/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/typing-test/step-3.svg'); ?>" alt="Typing speed results - WPM score and accuracy display" loading="lazy">
+              <img src="<?php echo url('images/typing-test/step-3.png'); ?>" alt="Typing speed results - WPM score and accuracy display" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

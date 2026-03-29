@@ -115,7 +115,7 @@ $pageOgImageAlt = 'Person checking microphone input online with a live waveform 
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/mic-test/microphone-test-allow-browser-access-640.webp'); ?> 640w, <?php echo url('images/mic-test/microphone-test-allow-browser-access-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/mic-test/microphone-test-allow-browser-access-640.png'); ?> 640w, <?php echo url('images/mic-test/microphone-test-allow-browser-access-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/mic-test/microphone-test-allow-browser-access-640.png'); ?>" width="640" height="480" alt="Online microphone test permission step with browser access prompt and person at desk" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/mic-test/microphone-test-allow-browser-access-640.png'); ?>" width="640" height="426" alt="Online microphone test permission step with browser access prompt and person at desk" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">01</div>
@@ -127,7 +127,7 @@ $pageOgImageAlt = 'Person checking microphone input online with a live waveform 
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/mic-test/microphone-test-speak-and-check-levels-640.webp'); ?> 640w, <?php echo url('images/mic-test/microphone-test-speak-and-check-levels-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/mic-test/microphone-test-speak-and-check-levels-640.png'); ?> 640w, <?php echo url('images/mic-test/microphone-test-speak-and-check-levels-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/mic-test/microphone-test-speak-and-check-levels-640.png'); ?>" width="640" height="480" alt="Person using an online mic test while watching live audio waveform levels" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/mic-test/microphone-test-speak-and-check-levels-640.png'); ?>" width="640" height="426" alt="Person using an online mic test while watching live audio waveform levels" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">02</div>
@@ -139,7 +139,7 @@ $pageOgImageAlt = 'Person checking microphone input online with a live waveform 
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/mic-test/microphone-test-review-input-results-640.webp'); ?> 640w, <?php echo url('images/mic-test/microphone-test-review-input-results-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/mic-test/microphone-test-review-input-results-640.png'); ?> 640w, <?php echo url('images/mic-test/microphone-test-review-input-results-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/mic-test/microphone-test-review-input-results-640.png'); ?>" width="640" height="480" alt="Online microphone tester status card showing live input and peak level results" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/mic-test/microphone-test-review-input-results-640.png'); ?>" width="640" height="426" alt="Online microphone tester status card showing live input and peak level results" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">03</div>

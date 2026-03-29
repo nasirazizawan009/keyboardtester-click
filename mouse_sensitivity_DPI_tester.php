@@ -3,7 +3,7 @@
 $pageTitle = 'Mouse DPI Tester Online | KeyboardTester.click';
 $pageDescription = 'Estimate mouse DPI and sensitivity online by measuring cursor movement against a known physical distance.';
 $pageKeywords = 'mouse dpi tester, mouse sensitivity test, dpi calculator, mouse dpi check';
-$pageOgImage = 'images/mouse-dpi/hero.svg';
+$pageOgImage = 'images/mouse-dpi/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/mouse-dpi/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-dpi/step-1.svg'); ?>" alt="Mouse DPI sensitivity test step 1 - start calibration" loading="lazy">
+              <img src="<?php echo url('images/mouse-dpi/step-1.png'); ?>" alt="Mouse DPI sensitivity test step 1 - start calibration" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/mouse-dpi/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-dpi/step-2.svg'); ?>" alt="Mouse DPI test step 2 - move cursor to calibrate sensitivity" loading="lazy">
+              <img src="<?php echo url('images/mouse-dpi/step-2.png'); ?>" alt="Mouse DPI test step 2 - move cursor to calibrate sensitivity" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Move the mouse</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/mouse-dpi/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-dpi/step-3.svg'); ?>" alt="Mouse DPI test results - sensitivity measurement display" loading="lazy">
+              <img src="<?php echo url('images/mouse-dpi/step-3.png'); ?>" alt="Mouse DPI test results - sensitivity measurement display" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

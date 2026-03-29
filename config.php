@@ -39,7 +39,9 @@ $siteYear = date('Y');
 $socialLinks = [
     'twitter' => 'https://x.com/keyboardtester',
     'github' => 'https://github.com/nasirazizawan009/keyboardtester-click',
-    'gitlab' => 'https://gitlab.com/nasirazizawan/keyboardtester.click'
+    'gitlab' => 'https://gitlab.com/nasirazizawan/keyboardtester.click',
+    'youtube' => 'https://www.youtube.com/@KeyboardTester-dot-click',
+    'facebook' => 'https://www.facebook.com/keyboardtester.click'
 ];
 
 // Amazon affiliate links (by region)

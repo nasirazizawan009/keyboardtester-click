@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Screenshot to Text Online | Extract Text From Screenshots',
         'description' => 'Convert a screenshot to text online with a browser-based OCR tool. Upload screen captures, chat screenshots, and saved app images to extract text.',
         'keywords' => 'screenshot to text, extract text from screenshot, screenshot ocr online, copy text from screenshot',
-        'ogImage' => 'images/ocr-tool/hero.svg',
+        'ogImage' => 'images/ocr-tool/hero.png',
         'ogImageAlt' => 'Screenshot to text OCR tool in the browser'
     ],
     'schemaKey' => 'screenshot_to_text',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Live', 'label' => 'Text extraction'],
             ['value' => '0', 'label' => 'Software installs']
         ],
-        'image' => 'images/ocr-tool/hero.svg',
+        'image' => 'images/ocr-tool/hero.png',
         'imageAlt' => 'Screenshot to text OCR converter online',
         'miniCards' => [
             ['title' => 'Good for saved chats', 'text' => 'Pull text out of screenshots when copy and paste is not available.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Convert a Screenshot to Text',
         'lede' => 'Upload the screenshot, run OCR, and review the extracted text for quick copy-and-paste reuse.',
         'steps' => [
-            ['image' => 'images/ocr-tool/step-1.svg', 'alt' => 'Screenshot to text step 1 open the OCR tool', 'title' => 'Open the OCR tool', 'text' => 'Stay on the screenshot-focused workflow if your source is a saved screen capture.'],
-            ['image' => 'images/ocr-tool/step-2.svg', 'alt' => 'Screenshot to text step 2 upload the screenshot image', 'title' => 'Upload the screenshot', 'text' => 'Choose the saved PNG or JPG that contains the text you want to copy.'],
-            ['image' => 'images/ocr-tool/step-3.svg', 'alt' => 'Screenshot to text step 3 review extracted OCR text', 'title' => 'Review the extracted text', 'text' => 'Copy the result, then retry with a cleaner crop if the screenshot contains too much extra UI.']
+            ['image' => 'images/ocr-tool/step-1.png', 'alt' => 'Screenshot to text step 1 open the OCR tool', 'title' => 'Open the OCR tool', 'text' => 'Stay on the screenshot-focused workflow if your source is a saved screen capture.'],
+            ['image' => 'images/ocr-tool/step-2.png', 'alt' => 'Screenshot to text step 2 upload the screenshot image', 'title' => 'Upload the screenshot', 'text' => 'Choose the saved PNG or JPG that contains the text you want to copy.'],
+            ['image' => 'images/ocr-tool/step-3.png', 'alt' => 'Screenshot to text step 3 review extracted OCR text', 'title' => 'Review the extracted text', 'text' => 'Copy the result, then retry with a cleaner crop if the screenshot contains too much extra UI.']
         ]
     ],
     'clusterTool' => 'ocr',

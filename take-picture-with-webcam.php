@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Take Picture With Webcam Online | Free Camera Snapshots',
         'description' => 'Take pictures with your webcam online, preview the live feed, capture snapshots, and download webcam images in the browser.',
         'keywords' => 'take picture with webcam online, webcam snapshot, webcam photo online, camera snapshot test',
-        'ogImage' => 'images/webcam-test/hero.svg',
+        'ogImage' => 'images/webcam-test/hero.png',
         'ogImageAlt' => 'Take picture with webcam page for browser camera snapshots'
     ],
     'schemaKey' => 'take_picture_with_webcam',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Multi', 'label' => 'Snapshots'],
             ['value' => '0', 'label' => 'Uploads']
         ],
-        'image' => 'images/webcam-test/hero.svg',
+        'image' => 'images/webcam-test/hero.png',
         'imageAlt' => 'Take picture with webcam page for browser snapshot capture',
         'miniCards' => [
             ['title' => 'Quick camera proof', 'text' => 'Useful when you want to confirm your webcam can actually capture a usable picture.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Take a Picture With Your Webcam',
         'lede' => 'Allow camera access, preview the feed, take a snapshot, then download the captured image if it looks right.',
         'steps' => [
-            ['image' => 'images/webcam-test/step-1.svg', 'alt' => 'Take picture with webcam step 1 allow camera access', 'title' => 'Start the webcam', 'text' => 'Allow camera access so the live preview can open in the browser.'],
-            ['image' => 'images/webcam-test/step-2.svg', 'alt' => 'Take picture with webcam step 2 preview the camera feed and capture a snapshot', 'title' => 'Preview and capture', 'text' => 'Check framing and lighting, then click the snapshot button to take a webcam picture.'],
-            ['image' => 'images/webcam-test/step-3.svg', 'alt' => 'Take picture with webcam step 3 download saved webcam images', 'title' => 'Review and download', 'text' => 'Keep the best snapshots and download them after you finish testing.']
+            ['image' => 'images/webcam-test/step-1.png', 'alt' => 'Take picture with webcam step 1 allow camera access', 'title' => 'Start the webcam', 'text' => 'Allow camera access so the live preview can open in the browser.'],
+            ['image' => 'images/webcam-test/step-2.png', 'alt' => 'Take picture with webcam step 2 preview the camera feed and capture a snapshot', 'title' => 'Preview and capture', 'text' => 'Check framing and lighting, then click the snapshot button to take a webcam picture.'],
+            ['image' => 'images/webcam-test/step-3.png', 'alt' => 'Take picture with webcam step 3 download saved webcam images', 'title' => 'Review and download', 'text' => 'Keep the best snapshots and download them after you finish testing.']
         ]
     ],
     'clusterTool' => 'webcam',

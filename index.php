@@ -15,7 +15,7 @@
           type="image/webp"
           fetchpriority="high">
     <link rel="preload" as="image"
-          href="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?>"
+          href="<?php echo url('images/keyboard/hero-keyboard-test-560.webp'); ?>"
           media="(min-width: 981px)"
           type="image/webp"
           fetchpriority="high">

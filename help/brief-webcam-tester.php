@@ -40,8 +40,8 @@
             srcset="<?php echo url('images/webcam-test/webcam-test-camera-preview-640.png'); ?> 640w, <?php echo url('images/webcam-test/webcam-test-camera-preview-900.png'); ?> 900w, <?php echo url('images/webcam-test/webcam-test-camera-preview-1400.png'); ?> 1400w"
             sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
             width="640"
-            height="427"
-            alt="Person previewing webcam quality online with a live camera framing and resolution card"
+            height="426"
+            alt="Video call on laptop showing webcam preview for online camera quality testing"
             loading="eager"
             decoding="async"
             fetchpriority="high">

@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Stereo Test Online | Check Headphones and Speakers',
         'description' => 'Run a stereo test online to verify both audio channels, left-right balance, and speaker or headphone output in the browser.',
         'keywords' => 'stereo test online, stereo sound test, speaker stereo test, headphone stereo test',
-        'ogImage' => 'images/headphone-test/hero.svg',
+        'ogImage' => 'images/headphone-test/hero.png',
         'ogImageAlt' => 'Stereo test page for headphones and speakers'
     ],
     'schemaKey' => 'stereo_test',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => '6', 'label' => 'Audio modes'],
             ['value' => '0', 'label' => 'Uploads']
         ],
-        'image' => 'images/headphone-test/hero.svg',
+        'image' => 'images/headphone-test/hero.png',
         'imageAlt' => 'Stereo test page for speaker and headphone output',
         'miniCards' => [
             ['title' => 'Balance testing', 'text' => 'Useful when one side sounds weaker, quieter, or missing.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Run a Stereo Test',
         'lede' => 'Start with channel isolation, then move to stereo playback and extra sound modes if you suspect a wider audio problem.',
         'steps' => [
-            ['image' => 'images/headphone-test/step-1.svg', 'alt' => 'Stereo test step 1 connect audio device', 'title' => 'Connect the device you want to test', 'text' => 'Use the exact speakers or headphones you want to verify.'],
-            ['image' => 'images/headphone-test/step-2.svg', 'alt' => 'Stereo test step 2 run stereo and channel playback', 'title' => 'Play stereo and channel tests', 'text' => 'Check left, right, and stereo playback before moving to deeper sound modes.'],
-            ['image' => 'images/headphone-test/step-3.svg', 'alt' => 'Stereo test step 3 compare balance and audio quality', 'title' => 'Compare the result', 'text' => 'Listen for missing channels, imbalanced sound, or weak frequency ranges and retest after any settings change.']
+            ['image' => 'images/headphone-test/step-1.png', 'alt' => 'Stereo test step 1 connect audio device', 'title' => 'Connect the device you want to test', 'text' => 'Use the exact speakers or headphones you want to verify.'],
+            ['image' => 'images/headphone-test/step-2.png', 'alt' => 'Stereo test step 2 run stereo and channel playback', 'title' => 'Play stereo and channel tests', 'text' => 'Check left, right, and stereo playback before moving to deeper sound modes.'],
+            ['image' => 'images/headphone-test/step-3.png', 'alt' => 'Stereo test step 3 compare balance and audio quality', 'title' => 'Compare the result', 'text' => 'Listen for missing channels, imbalanced sound, or weak frequency ranges and retest after any settings change.']
         ]
     ],
     'clusterTool' => 'audio-output',

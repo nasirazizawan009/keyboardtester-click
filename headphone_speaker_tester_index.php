@@ -115,7 +115,7 @@ $pageOgImageAlt = 'Person verifying stereo speaker and headphone output online w
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-connect-device-640.webp'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-connect-device-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-connect-device-640.png'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-connect-device-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/headphone-test/speaker-headphone-test-connect-device-640.png'); ?>" width="640" height="480" alt="Person connecting headphones for an online speaker and headphone test" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/headphone-test/speaker-headphone-test-connect-device-640.png'); ?>" width="640" height="426" alt="Person connecting headphones for an online speaker and headphone test" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">01</div>
@@ -127,7 +127,7 @@ $pageOgImageAlt = 'Person verifying stereo speaker and headphone output online w
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-play-left-right-audio-640.webp'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-play-left-right-audio-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-play-left-right-audio-640.png'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-play-left-right-audio-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/headphone-test/speaker-headphone-test-play-left-right-audio-640.png'); ?>" width="640" height="480" alt="Stereo left and right audio check card for online speaker and headphone testing" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/headphone-test/speaker-headphone-test-play-left-right-audio-640.png'); ?>" width="640" height="426" alt="Stereo left and right audio check card for online speaker and headphone testing" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">02</div>
@@ -139,7 +139,7 @@ $pageOgImageAlt = 'Person verifying stereo speaker and headphone output online w
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-review-stereo-output-640.webp'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-review-stereo-output-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/headphone-test/speaker-headphone-test-review-stereo-output-640.png'); ?> 640w, <?php echo url('images/headphone-test/speaker-headphone-test-review-stereo-output-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/headphone-test/speaker-headphone-test-review-stereo-output-640.png'); ?>" width="640" height="480" alt="Online audio output test results showing stereo balance and playback status" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/headphone-test/speaker-headphone-test-review-stereo-output-640.png'); ?>" width="640" height="426" alt="Online audio output test results showing stereo balance and playback status" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">03</div>

@@ -100,7 +100,7 @@ return [
                     'title' => 'ドット抜けテスト | KeyboardTester.click',
                     'description' => '単色表示とフルスクリーンでモニターのドット抜けを確認できます。ディスプレイ、ノートPC、外部モニターをブラウザですぐ検査できます。',
                     'keywords' => 'ドット抜けテスト, デッドピクセル確認, モニターテスト, 画面不良チェック',
-                    'ogImage' => 'images/screen-test/hero.svg'
+                    'ogImage' => 'images/screen-test/hero.png'
                 ],
                 'hero' => [
                     'title' => 'ドット抜けテスト',
@@ -134,7 +134,7 @@ return [
                     'description' => '単色表示とフルスクリーンでドット抜けを確認できるオンラインツールです。',
                     'url' => 'languages/japanese/dead-pixel-test.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/screen-test/hero.svg',
+                    'screenshot' => 'images/screen-test/hero.png',
                     'features' => ['フルスクリーン', '単色表示', '目視チェック', '背景の即切替']
                 ],
                 'breadcrumbs' => [
@@ -154,7 +154,7 @@ return [
                     'title' => 'マイク音量テスト | KeyboardTester.click',
                     'description' => 'ライブメーターでマイク入力レベルとピーク値を確認できます。会議、配信、録音前のチェックに便利です。',
                     'keywords' => 'マイク音量テスト, マイク入力レベル, マイクピーク確認, マイクメーター',
-                    'ogImage' => 'images/mic-test/hero.svg'
+                    'ogImage' => 'images/mic-test/hero.png'
                 ],
                 'hero' => [
                     'title' => 'マイク音量テスト',
@@ -188,7 +188,7 @@ return [
                     'description' => 'ブラウザでマイクの入力レベルとピークを確認できるオンラインツールです。',
                     'url' => 'languages/japanese/microphone-volume-test.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/mic-test/hero.svg',
+                    'screenshot' => 'images/mic-test/hero.png',
                     'features' => ['ライブメーター', 'ピーク表示', 'ブラウザ権限確認', '録音なし']
                 ],
                 'breadcrumbs' => [
@@ -208,7 +208,7 @@ return [
                     'title' => 'カメラ解像度テスト | KeyboardTester.click',
                     'description' => 'ブラウザでウェブカメラが480p、720p、1080pを本当に出せるか確認できます。解像度を切り替えて実際の動画サイズを比較できます。',
                     'keywords' => 'カメラ解像度テスト, webcam 720p テスト, webcam 1080p テスト, 実解像度確認',
-                    'ogImage' => 'images/webcam-test/hero.svg'
+                    'ogImage' => 'images/webcam-test/hero.png'
                 ],
                 'hero' => [
                     'title' => 'カメラ解像度テスト',
@@ -242,7 +242,7 @@ return [
                     'description' => 'ウェブカメラが実際に出力している解像度を確認できるオンラインツールです。',
                     'url' => 'languages/japanese/camera-resolution-test.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/webcam-test/hero.svg',
+                    'screenshot' => 'images/webcam-test/hero.png',
                     'features' => ['ライブプレビュー', '解像度プリセット', '実際の動画サイズ', 'デバイス切替']
                 ],
                 'breadcrumbs' => [
@@ -262,7 +262,7 @@ return [
                     'title' => '画像からQRを読み取る | KeyboardTester.click',
                     'description' => 'スクリーンショット、写真、保存済みファイルをアップロードしてQRコードをオンラインで読み取れます。アプリなしで画像からQRをデコードできます。',
                     'keywords' => '画像 qr 読み取り, スクリーンショット qr, 写真 qr デコード, qr ファイル 読み取り',
-                    'ogImage' => 'images/qr-reader/hero.svg'
+                    'ogImage' => 'images/qr-reader/hero.png'
                 ],
                 'hero' => [
                     'title' => '画像からQRを読み取る',
@@ -296,7 +296,7 @@ return [
                     'description' => '画像、スクリーンショット、保存済みファイルからQRコードを読むオンラインツールです。',
                     'url' => 'languages/japanese/scan-qr-from-image.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/qr-reader/hero.svg',
+                    'screenshot' => 'images/qr-reader/hero.png',
                     'features' => ['画像アップロード', 'ローカル解析', 'すばやい結果', 'アプリ不要']
                 ],
                 'breadcrumbs' => [

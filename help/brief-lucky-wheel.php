@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/lucky-wheel/hero.svg'); ?>" alt="Random name picker wheel - spin to choose winner online free" loading="eager">
+        <img src="<?php echo url('images/lucky-wheel/hero.png'); ?>" alt="Random name picker wheel - spin to choose winner online free" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

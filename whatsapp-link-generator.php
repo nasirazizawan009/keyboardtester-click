@@ -3,7 +3,7 @@
 $pageTitle = 'WhatsApp Link Generator Online | KeyboardTester.click';
 $pageDescription = 'Create WhatsApp click-to-chat links online with phone numbers and prefilled messages. Generate shareable wa.me links instantly.';
 $pageKeywords = 'whatsapp link generator, wa.me link generator, click to chat link, whatsapp chat link';
-$pageOgImage = 'images/whatsapp-link/hero.svg';
+$pageOgImage = 'images/whatsapp-link/hero.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ $pageOgImage = 'images/whatsapp-link/hero.svg';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-link/step-1.svg'); ?>" alt="WhatsApp link generator step 1 - open wa.me link creator" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-link/step-1.png'); ?>" alt="WhatsApp link generator step 1 - open wa.me link creator" loading="lazy">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -119,7 +119,7 @@ $pageOgImage = 'images/whatsapp-link/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-link/step-2.svg'); ?>" alt="WhatsApp link step 2 - enter phone number and message" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-link/step-2.png'); ?>" alt="WhatsApp link step 2 - enter phone number and message" loading="lazy">
             </div>
             <div class="step-number">02</div>
             <h3>Enter phone and message</h3>
@@ -127,7 +127,7 @@ $pageOgImage = 'images/whatsapp-link/hero.svg';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-link/step-3.svg'); ?>" alt="Generated WhatsApp link ready to copy and share" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-link/step-3.png'); ?>" alt="Generated WhatsApp link ready to copy and share" loading="lazy">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

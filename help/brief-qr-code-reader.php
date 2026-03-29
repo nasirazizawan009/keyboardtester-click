@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/qr-reader/hero.svg'); ?>" alt="QR code scanner tool - scan and decode QR codes with camera or upload" loading="eager">
+        <img src="<?php echo url('images/qr-reader/hero.png'); ?>" alt="QR code scanner tool - scan and decode QR codes with camera or upload" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

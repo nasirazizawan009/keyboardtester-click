@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/ocr-tool/hero.svg'); ?>" alt="OCR image to text converter - extract text from images online free" loading="eager">
+        <img src="<?php echo url('images/ocr-tool/hero.png'); ?>" alt="OCR image to text converter - extract text from images online free" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

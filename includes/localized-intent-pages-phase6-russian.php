@@ -98,7 +98,7 @@ return [
                     'title' => 'Тест Битых Пикселей Онлайн | KeyboardTester.click',
                     'description' => 'Проверьте монитор на битые пиксели с помощью сплошных цветов и полноэкранного режима. Подходит для мониторов, ноутбуков и внешних дисплеев.',
                     'keywords' => 'тест битых пикселей, найти битый пиксель, тест монитора, дефекты экрана',
-                    'ogImage' => 'images/screen-test/hero.svg'
+                    'ogImage' => 'images/screen-test/hero.png'
                 ],
                 'hero' => [
                     'title' => 'Тест Битых Пикселей',
@@ -132,7 +132,7 @@ return [
                     'description' => 'Онлайн-инструмент для поиска битых пикселей с помощью сплошных цветов и полноэкранного режима.',
                     'url' => 'languages/russian/dead-pixel-test.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/screen-test/hero.svg',
+                    'screenshot' => 'images/screen-test/hero.png',
                     'features' => ['Полный экран', 'Сплошные цвета', 'Визуальная проверка', 'Быстрая смена фона']
                 ],
                 'breadcrumbs' => [
@@ -152,7 +152,7 @@ return [
                     'title' => 'Тест Громкости Микрофона | KeyboardTester.click',
                     'description' => 'Проверьте уровень входа и пиковое значение микрофона с помощью живого индикатора. Полезно для звонков, стримов и записи.',
                     'keywords' => 'тест громкости микрофона, уровень микрофона, измерить микрофон, индикатор микрофона',
-                    'ogImage' => 'images/mic-test/hero.svg'
+                    'ogImage' => 'images/mic-test/hero.png'
                 ],
                 'hero' => [
                     'title' => 'Тест Громкости Микрофона',
@@ -186,7 +186,7 @@ return [
                     'description' => 'Онлайн-инструмент для измерения уровня и пика микрофона в браузере.',
                     'url' => 'languages/russian/microphone-volume-test.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/mic-test/hero.svg',
+                    'screenshot' => 'images/mic-test/hero.png',
                     'features' => ['Живой индикатор', 'Пиковый уровень', 'Разрешения браузера', 'Без записи']
                 ],
                 'breadcrumbs' => [
@@ -206,7 +206,7 @@ return [
                     'title' => 'Тест Разрешения Камеры | KeyboardTester.click',
                     'description' => 'Проверьте, выдает ли ваша веб-камера 480p, 720p или 1080p в браузере. Меняйте разрешение и сверяйте реальный размер видео.',
                     'keywords' => 'тест разрешения камеры, разрешение веб-камеры, тест камеры 720p, тест камеры 1080p',
-                    'ogImage' => 'images/webcam-test/hero.svg'
+                    'ogImage' => 'images/webcam-test/hero.png'
                 ],
                 'hero' => [
                     'title' => 'Тест Разрешения Камеры',
@@ -240,7 +240,7 @@ return [
                     'description' => 'Онлайн-инструмент для проверки реального разрешения, которое выдает веб-камера.',
                     'url' => 'languages/russian/camera-resolution-test.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/webcam-test/hero.svg',
+                    'screenshot' => 'images/webcam-test/hero.png',
                     'features' => ['Живой просмотр', 'Предустановленные разрешения', 'Реальный размер видео', 'Смена устройства']
                 ],
                 'breadcrumbs' => [
@@ -260,7 +260,7 @@ return [
                     'title' => 'Сканировать QR с Изображения | KeyboardTester.click',
                     'description' => 'Загрузите скриншот, фото или сохраненный файл, чтобы прочитать QR-код онлайн. Декодируйте QR из изображений без установки приложения.',
                     'keywords' => 'сканировать qr с изображения, qr со скриншота, декодировать qr фото, qr из файла',
-                    'ogImage' => 'images/qr-reader/hero.svg'
+                    'ogImage' => 'images/qr-reader/hero.png'
                 ],
                 'hero' => [
                     'title' => 'Сканировать QR с Изображения',
@@ -294,7 +294,7 @@ return [
                     'description' => 'Онлайн-инструмент для чтения QR-кодов из изображений, скриншотов и сохраненных файлов.',
                     'url' => 'languages/russian/scan-qr-from-image.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/qr-reader/hero.svg',
+                    'screenshot' => 'images/qr-reader/hero.png',
                     'features' => ['Загрузка изображения', 'Локальное декодирование', 'Быстрый результат', 'Без установки приложения']
                 ],
                 'breadcrumbs' => [

@@ -100,7 +100,7 @@ return [
                     'title' => '불량 화소 테스트 | KeyboardTester.click',
                     'description' => '단색 화면과 전체 화면 모드로 모니터의 불량 화소를 확인하세요. 모니터, 노트북, 외부 디스플레이를 브라우저에서 바로 점검할 수 있습니다.',
                     'keywords' => '불량 화소 테스트, 데드 픽셀 확인, 모니터 테스트, 화면 결함 점검',
-                    'ogImage' => 'images/screen-test/hero.svg'
+                    'ogImage' => 'images/screen-test/hero.png'
                 ],
                 'hero' => [
                     'title' => '불량 화소 테스트',
@@ -134,7 +134,7 @@ return [
                     'description' => '단색 화면과 전체 화면 모드로 불량 화소를 확인하는 온라인 도구입니다.',
                     'url' => 'languages/korean/dead-pixel-test.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/screen-test/hero.svg',
+                    'screenshot' => 'images/screen-test/hero.png',
                     'features' => ['전체 화면', '단색 표시', '시각 점검', '빠른 배경 전환']
                 ],
                 'breadcrumbs' => [
@@ -154,7 +154,7 @@ return [
                     'title' => '마이크 볼륨 테스트 | KeyboardTester.click',
                     'description' => '실시간 미터로 마이크 입력 레벨과 피크 값을 확인하세요. 회의, 방송, 녹음 전 점검에 유용합니다.',
                     'keywords' => '마이크 볼륨 테스트, 마이크 입력 레벨, 마이크 피크 확인, 마이크 미터',
-                    'ogImage' => 'images/mic-test/hero.svg'
+                    'ogImage' => 'images/mic-test/hero.png'
                 ],
                 'hero' => [
                     'title' => '마이크 볼륨 테스트',
@@ -188,7 +188,7 @@ return [
                     'description' => '브라우저에서 마이크 입력 레벨과 피크를 확인할 수 있는 온라인 도구입니다.',
                     'url' => 'languages/korean/microphone-volume-test.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/mic-test/hero.svg',
+                    'screenshot' => 'images/mic-test/hero.png',
                     'features' => ['실시간 미터', '피크 표시', '브라우저 권한 확인', '녹음 없음']
                 ],
                 'breadcrumbs' => [
@@ -208,7 +208,7 @@ return [
                     'title' => '카메라 해상도 테스트 | KeyboardTester.click',
                     'description' => '브라우저에서 웹캠이 480p, 720p, 1080p를 실제로 제공하는지 확인할 수 있습니다. 해상도를 바꾸고 실제 영상 크기를 비교하세요.',
                     'keywords' => '카메라 해상도 테스트, 웹캠 해상도 확인, 웹캠 720p 테스트, 웹캠 1080p 테스트',
-                    'ogImage' => 'images/webcam-test/hero.svg'
+                    'ogImage' => 'images/webcam-test/hero.png'
                 ],
                 'hero' => [
                     'title' => '카메라 해상도 테스트',
@@ -242,7 +242,7 @@ return [
                     'description' => '웹캠이 실제로 출력하는 해상도를 확인할 수 있는 온라인 도구입니다.',
                     'url' => 'languages/korean/camera-resolution-test.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/webcam-test/hero.svg',
+                    'screenshot' => 'images/webcam-test/hero.png',
                     'features' => ['라이브 미리보기', '해상도 프리셋', '실제 영상 크기', '장치 전환']
                 ],
                 'breadcrumbs' => [
@@ -262,7 +262,7 @@ return [
                     'title' => '이미지에서 QR 스캔 | KeyboardTester.click',
                     'description' => '스크린샷, 사진, 저장한 파일을 업로드해 온라인으로 QR 코드를 읽을 수 있습니다. 앱 설치 없이 이미지에서 QR을 해독하세요.',
                     'keywords' => '이미지 qr 스캔, 스크린샷 qr 읽기, 사진 qr 해독, 파일 qr 리더',
-                    'ogImage' => 'images/qr-reader/hero.svg'
+                    'ogImage' => 'images/qr-reader/hero.png'
                 ],
                 'hero' => [
                     'title' => '이미지에서 QR 스캔',
@@ -296,7 +296,7 @@ return [
                     'description' => '이미지, 스크린샷, 저장된 파일에서 QR 코드를 읽는 온라인 도구입니다.',
                     'url' => 'languages/korean/scan-qr-from-image.php',
                     'category' => 'UtilityApplication',
-                    'screenshot' => 'images/qr-reader/hero.svg',
+                    'screenshot' => 'images/qr-reader/hero.png',
                     'features' => ['이미지 업로드', '로컬 해독', '빠른 결과', '앱 설치 불필요']
                 ],
                 'breadcrumbs' => [

@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/ghost-click/hero.svg'); ?>" alt="Ghost click detector tool - detect mouse double click and phantom click issues" loading="eager">
+        <img src="<?php echo url('images/ghost-click/hero.png'); ?>" alt="Ghost click detector tool - detect mouse double click and phantom click issues" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

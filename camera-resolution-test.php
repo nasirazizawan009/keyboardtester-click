@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Camera Resolution Test Online | Check Webcam Size and Quality',
         'description' => 'Run a camera resolution test online to check your webcam at 480p, 720p, 1080p, or higher. Verify the actual video size your browser receives.',
         'keywords' => 'camera resolution test, webcam resolution test, test webcam quality online, test camera 1080p',
-        'ogImage' => 'images/webcam-test/hero.svg',
+        'ogImage' => 'images/webcam-test/hero.png',
         'ogImageAlt' => 'Camera resolution test tool with live webcam preview'
     ],
     'schemaKey' => 'camera_resolution_test',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Live', 'label' => 'Video preview'],
             ['value' => '0', 'label' => 'Downloads needed']
         ],
-        'image' => 'images/webcam-test/hero.svg',
+        'image' => 'images/webcam-test/hero.png',
         'imageAlt' => 'Online webcam resolution checker with live preview',
         'miniCards' => [
             ['title' => 'Call-ready checks', 'text' => 'Confirm whether your webcam is really outputting HD before meetings or streams.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Check Webcam Resolution',
         'lede' => 'Allow camera access, choose your preferred resolution target, and compare the live preview with the reported dimensions.',
         'steps' => [
-            ['image' => 'images/webcam-test/step-1.svg', 'alt' => 'Camera resolution test step 1 allow webcam access', 'title' => 'Allow webcam access', 'text' => 'Start the live preview so the browser can query available devices and video settings.'],
-            ['image' => 'images/webcam-test/step-2.svg', 'alt' => 'Camera resolution test step 2 choose preferred resolution', 'title' => 'Choose a resolution target', 'text' => 'Switch between the built-in presets to see which sizes your webcam can actually provide.'],
-            ['image' => 'images/webcam-test/step-3.svg', 'alt' => 'Camera resolution test step 3 compare reported resolution values', 'title' => 'Review the reported output', 'text' => 'Check the live resolution readout and capture snapshots if you want a side-by-side quality comparison.']
+            ['image' => 'images/webcam-test/step-1.png', 'alt' => 'Camera resolution test step 1 allow webcam access', 'title' => 'Allow webcam access', 'text' => 'Start the live preview so the browser can query available devices and video settings.'],
+            ['image' => 'images/webcam-test/step-2.png', 'alt' => 'Camera resolution test step 2 choose preferred resolution', 'title' => 'Choose a resolution target', 'text' => 'Switch between the built-in presets to see which sizes your webcam can actually provide.'],
+            ['image' => 'images/webcam-test/step-3.png', 'alt' => 'Camera resolution test step 3 compare reported resolution values', 'title' => 'Review the reported output', 'text' => 'Check the live resolution readout and capture snapshots if you want a side-by-side quality comparison.']
         ]
     ],
     'clusterTool' => 'webcam',

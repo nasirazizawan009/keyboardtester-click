@@ -4,7 +4,7 @@ $intentPage = [
         'title' => 'Left Right Speaker Test Online | Check Stereo Channels',
         'description' => 'Test left and right speakers or headphones online. Play isolated channel audio and confirm stereo output is mapped correctly in the browser.',
         'keywords' => 'left right speaker test, left right audio test, test left and right speakers, headphone left right test',
-        'ogImage' => 'images/headphone-test/hero.svg',
+        'ogImage' => 'images/headphone-test/hero.png',
         'ogImageAlt' => 'Left right speaker test page for stereo channel mapping'
     ],
     'schemaKey' => 'left_right_speaker_test',
@@ -26,7 +26,7 @@ $intentPage = [
             ['value' => 'Live', 'label' => 'Audio output'],
             ['value' => '0', 'label' => 'Installs']
         ],
-        'image' => 'images/headphone-test/hero.svg',
+        'image' => 'images/headphone-test/hero.png',
         'imageAlt' => 'Left right speaker test page for headphone and speaker channels',
         'miniCards' => [
             ['title' => 'Swapped-channel checks', 'text' => 'Useful when left and right audio feel reversed in games, meetings, or editing work.'],
@@ -63,9 +63,9 @@ $intentPage = [
         'title' => 'How to Test Left and Right Speakers',
         'lede' => 'Play the left channel, play the right channel, then confirm both match the correct side before moving on.',
         'steps' => [
-            ['image' => 'images/headphone-test/step-1.svg', 'alt' => 'Left right speaker test step 1 connect speakers or headphones', 'title' => 'Connect your audio device', 'text' => 'Use the actual headphones or speakers you want to verify.'],
-            ['image' => 'images/headphone-test/step-2.svg', 'alt' => 'Left right speaker test step 2 play isolated channel sounds', 'title' => 'Play each side separately', 'text' => 'Use the left and right channel controls to confirm the audio reaches the matching side.'],
-            ['image' => 'images/headphone-test/step-3.svg', 'alt' => 'Left right speaker test step 3 confirm stereo mapping is correct', 'title' => 'Confirm the mapping', 'text' => 'If a side is swapped or silent, retest after changing cables, output devices, or system balance settings.']
+            ['image' => 'images/headphone-test/step-1.png', 'alt' => 'Left right speaker test step 1 connect speakers or headphones', 'title' => 'Connect your audio device', 'text' => 'Use the actual headphones or speakers you want to verify.'],
+            ['image' => 'images/headphone-test/step-2.png', 'alt' => 'Left right speaker test step 2 play isolated channel sounds', 'title' => 'Play each side separately', 'text' => 'Use the left and right channel controls to confirm the audio reaches the matching side.'],
+            ['image' => 'images/headphone-test/step-3.png', 'alt' => 'Left right speaker test step 3 confirm stereo mapping is correct', 'title' => 'Confirm the mapping', 'text' => 'If a side is swapped or silent, retest after changing cables, output devices, or system balance settings.']
         ]
     ],
     'clusterTool' => 'audio-output',

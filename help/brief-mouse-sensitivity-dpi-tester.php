@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mouse-dpi/hero.svg'); ?>" alt="Mouse DPI and sensitivity tester - calibrate cursor speed online" loading="eager">
+        <img src="<?php echo url('images/mouse-dpi/hero.png'); ?>" alt="Mouse DPI and sensitivity tester - calibrate cursor speed online" loading="eager">
       </div>
       <div class="hero-stack">
         <div class="mini-card">
