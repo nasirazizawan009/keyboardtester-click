@@ -71,6 +71,7 @@ RewriteRule ^webcam-tester\.php$ /webcamtesterindex.php [R=301,L]
 RewriteRule ^qr-code-generator\.php$ /QR_code_generator_scanner.php [R=301,L]
 RewriteRule ^whatsapp-brand-link-generator\.php$ /whatsapp-Brand-link-generator.php [R=301,L]
 RewriteRule ^headphone-speaker-tester\.php$ /headphone_speaker_tester_index.php [R=301,L]
+RewriteRule ^click-speed-test\.php$ /mouse_speed_tester.php [R=301,L]
 
 # Tool pages redirect
 RewriteRule ^tools\.php$ /pages/tools.php [R=301,L]

@@ -17,9 +17,9 @@ $pageKeywords = '마이크 테스트, 마이크 테스터, 오디오 테스트, 
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('mic-tester.php'); ?>">
-  <link rel="alternate" hreflang="ko" href="<?php echo url('languages/korean/mic-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('mic-tester.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('mic-tester.php'); ?>">
+  <link rel="alternate" hreflang="ko" href="<?php echo absoluteUrl('languages/korean/mic-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('mic-tester.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

@@ -15,9 +15,13 @@ Allow: /pages/
 # Disallow internal/admin directories only
 Disallow: /includes/
 Disallow: /admin/
-Disallow: /assets/
 Disallow: /docs/
 Disallow: /api/
+
+# Allow assets (CSS, JS, images) for proper page rendering
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
 
 # Disallow utility and config files
 Disallow: /generate-sitemap.php
@@ -29,7 +33,10 @@ Disallow: /sitemap.php
 Disallow: /submit-indexnow.php
 
 # Disallow debug/test/temp files
-Disallow: /test-
+Disallow: /test-ftp
+Disallow: /test-upload
+Disallow: /test_db
+Disallow: /testpage
 Disallow: /debug-
 Disallow: /fix-
 Disallow: /clear-
@@ -49,10 +56,12 @@ Disallow: /_backup
 # Specific rules for Googlebot
 User-agent: Googlebot
 Allow: /
+Allow: /assets/
 Allow: /tools/
 Allow: /help/
 Allow: /languages/
 Allow: /pages/
+Allow: /images/
 Disallow: /includes/
 Disallow: /admin/
 Disallow: /api/
@@ -62,10 +71,12 @@ Disallow: /*.py$
 # Specific rules for Bingbot
 User-agent: Bingbot
 Allow: /
+Allow: /assets/
 Allow: /tools/
 Allow: /help/
 Allow: /languages/
 Allow: /pages/
+Allow: /images/
 Disallow: /includes/
 Disallow: /admin/
 Disallow: /api/

@@ -18,9 +18,9 @@ $pageKeywords = '클릭 속도 테스트, 마우스 속도 테스트, CPS 테스
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('mouse_speed_tester.php'); ?>">
-  <link rel="alternate" hreflang="ko" href="<?php echo url('languages/korean/click-speed.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('mouse_speed_tester.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('mouse_speed_tester.php'); ?>">
+  <link rel="alternate" hreflang="ko" href="<?php echo absoluteUrl('languages/korean/click-speed.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('mouse_speed_tester.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

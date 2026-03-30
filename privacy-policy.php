@@ -54,16 +54,37 @@ $pageOgImage = 'images/shared/keyboard-and-mouse.png';
             </ul>
 
             <h2>Analytics and Session Tools</h2>
-            <p>We may use third-party analytics tools (such as Microsoft Clarity or similar services) to understand site usage. These tools may set cookies and collect standard usage data. We use them for site improvement only.</p>
+            <p>We use third-party analytics tools to understand site usage:</p>
+            <ul>
+                <li><strong>Microsoft Clarity:</strong> Records anonymized session replays and heatmaps to help us improve the user experience. Clarity may set cookies and collect standard usage data such as pages visited, device type, and interaction patterns.</li>
+                <li><strong>Google Analytics:</strong> Collects aggregated site usage data including page views, session duration, and traffic sources. Google Analytics uses cookies to distinguish unique users.</li>
+            </ul>
+            <p>We use these tools for site improvement only and do not use them to identify individual users.</p>
 
-            <h2>Advertising and Affiliate Disclosure (FTC)</h2>
-            <p>To keep the site free, we may display ads or use affiliate links. If you click an affiliate link and make a purchase, we may earn a commission at no extra cost to you. We will clearly label or disclose affiliate links and sponsored content when present.</p>
+            <h2>Google AdSense and Advertising</h2>
+            <p>We use Google AdSense to display advertisements on our site. Google AdSense is a third-party advertising service provided by Google LLC. Here is how it works:</p>
+            <ul>
+                <li><strong>Third-party vendors, including Google, use cookies</strong> to serve ads based on your prior visits to this website or other websites.</li>
+                <li><strong>Google's use of advertising cookies</strong> enables it and its partners to serve ads to you based on your visit to this site and/or other sites on the Internet.</li>
+                <li><strong>Personalized advertising:</strong> Google may use information about your browsing activity to show you ads that are more relevant to your interests. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</li>
+                <li><strong>Third-party ad vendors and ad networks</strong> may also serve ads on this site. You can visit the <a href="https://optout.aboutads.info/" target="_blank" rel="noopener noreferrer">Digital Advertising Alliance opt-out page</a> to opt out of third-party cookies used for personalized advertising.</li>
+            </ul>
+            <p>For more information about how Google uses data when you use our site, visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Google's Privacy & Terms page</a>.</p>
+
+            <h2>Affiliate Disclosure (FTC)</h2>
+            <p>To keep the site free, we may also use affiliate links. If you click an affiliate link and make a purchase, we may earn a commission at no extra cost to you. We will clearly label or disclose affiliate links and sponsored content when present.</p>
 
             <h2>Third-Party Links</h2>
             <p>Our site may link to third-party websites. We are not responsible for their privacy practices. Please review their policies before using those sites.</p>
 
             <h2>Cookies and Your Choices</h2>
-            <p>You can control cookies through your browser settings. Disabling cookies may affect site features such as saved preferences.</p>
+            <p>Our site uses the following types of cookies:</p>
+            <ul>
+                <li><strong>Essential cookies:</strong> Store your theme preference (dark/light mode) via localStorage. These are necessary for site functionality.</li>
+                <li><strong>Analytics cookies:</strong> Set by Microsoft Clarity and Google Analytics to understand how visitors use the site.</li>
+                <li><strong>Advertising cookies:</strong> Set by Google AdSense and its partners to serve relevant advertisements. These cookies may track your browsing activity across multiple websites.</li>
+            </ul>
+            <p>You can control or disable cookies through your browser settings. Most browsers allow you to block third-party cookies specifically. Disabling cookies may affect site features such as saved preferences and ad personalization. You can also opt out of Google's personalized advertising at <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>.</p>
 
             <h2>Data Retention</h2>
             <p>We keep analytics data only as long as needed for performance and reporting. If you contact us, we retain communications only as needed to respond and provide support.</p>
@@ -76,7 +97,7 @@ $pageOgImage = 'images/shared/keyboard-and-mouse.png';
 
             <h2>Changes to This Policy</h2>
             <p>We may update this policy from time to time. Changes will be posted on this page with an updated effective date.</p>
-            <p><strong>Effective Date:</strong> January 31, 2026</p>
+            <p><strong>Effective Date:</strong> March 28, 2026</p>
 
             <h2>Contact Us</h2>
             <p>If you have questions about this policy, contact us at <a href="mailto:<?php echo $siteEmail; ?>"><?php echo $siteEmail; ?></a> or via the contact form on the <a href="<?php echo $pages['about']; ?>">About page</a>.</p>

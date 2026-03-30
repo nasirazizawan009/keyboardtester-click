@@ -18,9 +18,9 @@ $pageKeywords = 'مسار الماوس, تتبع الماوس, حركة الما
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('mouse-trail.php'); ?>">
-  <link rel="alternate" hreflang="ar" href="<?php echo url('languages/arabic/mouse-trail.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('mouse-trail.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('mouse-trail.php'); ?>">
+  <link rel="alternate" hreflang="ar" href="<?php echo absoluteUrl('languages/arabic/mouse-trail.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('mouse-trail.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

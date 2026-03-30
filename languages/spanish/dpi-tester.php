@@ -18,9 +18,9 @@ $pageKeywords = 'DPI ratón, sensibilidad mouse, test DPI, prueba sensibilidad, 
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('dpi-tester.php'); ?>">
-  <link rel="alternate" hreflang="es" href="<?php echo url('languages/spanish/dpi-tester.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('dpi-tester.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('dpi-tester.php'); ?>">
+  <link rel="alternate" hreflang="es" href="<?php echo absoluteUrl('languages/spanish/dpi-tester.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('dpi-tester.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

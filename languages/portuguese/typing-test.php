@@ -18,9 +18,9 @@ $pageKeywords = 'teste de digitacao, PPM, velocidade de digitacao, teste de tecl
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('keyboard_typing_test.php'); ?>">
-  <link rel="alternate" hreflang="pt" href="<?php echo url('languages/portuguese/typing-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('keyboard_typing_test.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('keyboard_typing_test.php'); ?>">
+  <link rel="alternate" hreflang="pt" href="<?php echo absoluteUrl('languages/portuguese/typing-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('keyboard_typing_test.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

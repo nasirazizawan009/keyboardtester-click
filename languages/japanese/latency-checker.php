@@ -18,9 +18,9 @@ $pageKeywords = 'レイテンシーチェッカー, 入力遅延, 遅延測定, 
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('latency-checker.php'); ?>">
-  <link rel="alternate" hreflang="ja" href="<?php echo url('languages/japanese/latency-checker.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('latency-checker.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('latency-checker.php'); ?>">
+  <link rel="alternate" hreflang="ja" href="<?php echo absoluteUrl('languages/japanese/latency-checker.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('latency-checker.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

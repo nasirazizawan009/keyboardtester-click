@@ -18,9 +18,9 @@ $pageKeywords = 'prueba micrófono, test mic, verificar audio, probar micrófono
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('mic-test.php'); ?>">
-  <link rel="alternate" hreflang="es" href="<?php echo url('languages/spanish/mic-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('mic-test.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('mic-test.php'); ?>">
+  <link rel="alternate" hreflang="es" href="<?php echo absoluteUrl('languages/spanish/mic-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('mic-test.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

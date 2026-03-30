@@ -18,9 +18,9 @@ $pageKeywords = '웹캠 테스트, 웹캠 테스터, 카메라 테스트, 비디
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('webcamtesterindex.php'); ?>">
-  <link rel="alternate" hreflang="ko" href="<?php echo url('languages/korean/webcam-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('webcamtesterindex.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('webcamtesterindex.php'); ?>">
+  <link rel="alternate" hreflang="ko" href="<?php echo absoluteUrl('languages/korean/webcam-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('webcamtesterindex.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

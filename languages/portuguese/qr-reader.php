@@ -18,9 +18,9 @@ $pageKeywords = 'leitor de QR, escanear codigo QR, decodificar QR, QR scanner, l
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('qr-reader.php'); ?>">
-  <link rel="alternate" hreflang="pt" href="<?php echo url('languages/portuguese/qr-reader.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('qr-reader.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('qr-reader.php'); ?>">
+  <link rel="alternate" hreflang="pt" href="<?php echo absoluteUrl('languages/portuguese/qr-reader.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('qr-reader.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

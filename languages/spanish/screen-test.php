@@ -18,9 +18,9 @@ $pageKeywords = 'prueba pantalla, píxeles muertos, test monitor, detectar píxe
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('screen-test.php'); ?>">
-  <link rel="alternate" hreflang="es" href="<?php echo url('languages/spanish/screen-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('screen-test.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('screen-test.php'); ?>">
+  <link rel="alternate" hreflang="es" href="<?php echo absoluteUrl('languages/spanish/screen-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('screen-test.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

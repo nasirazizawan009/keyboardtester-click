@@ -18,9 +18,9 @@ $pageKeywords = 'タイピングテスト, タイピング速度, WPM測定, タ
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('keyboard_typing_test.php'); ?>">
-  <link rel="alternate" hreflang="ja" href="<?php echo url('languages/japanese/typing-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('keyboard_typing_test.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('keyboard_typing_test.php'); ?>">
+  <link rel="alternate" hreflang="ja" href="<?php echo absoluteUrl('languages/japanese/typing-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('keyboard_typing_test.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

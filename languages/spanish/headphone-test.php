@@ -18,9 +18,9 @@ $pageKeywords = 'prueba auriculares, test altavoces, verificar estéreo, probar 
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('headphone-test.php'); ?>">
-  <link rel="alternate" hreflang="es" href="<?php echo url('languages/spanish/headphone-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('headphone-test.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('headphone-test.php'); ?>">
+  <link rel="alternate" hreflang="es" href="<?php echo absoluteUrl('languages/spanish/headphone-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('headphone-test.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

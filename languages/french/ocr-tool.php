@@ -18,9 +18,9 @@ $pageKeywords = 'OCR, extraire texte image, convertir image texte, reconnaissanc
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('ocr-tool.php'); ?>">
-  <link rel="alternate" hreflang="fr" href="<?php echo url('languages/french/ocr-tool.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('ocr-tool.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('ocr-tool.php'); ?>">
+  <link rel="alternate" hreflang="fr" href="<?php echo absoluteUrl('languages/french/ocr-tool.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('ocr-tool.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

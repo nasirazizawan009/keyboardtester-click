@@ -18,9 +18,9 @@ $pageKeywords = 'QR 코드 생성기, QR 코드 만들기, QR 생성, 무료 QR 
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('QR_code_generator_scanner.php'); ?>">
-  <link rel="alternate" hreflang="ko" href="<?php echo url('languages/korean/qr-generator.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('QR_code_generator_scanner.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('QR_code_generator_scanner.php'); ?>">
+  <link rel="alternate" hreflang="ko" href="<?php echo absoluteUrl('languages/korean/qr-generator.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('QR_code_generator_scanner.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

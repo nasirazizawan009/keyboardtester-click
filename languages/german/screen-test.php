@@ -18,9 +18,9 @@ $pageKeywords = 'Bildschirmtest, tote Pixel, Monitor Test, Pixel erkennen, LCD T
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('screen-test.php'); ?>">
-  <link rel="alternate" hreflang="de" href="<?php echo url('languages/german/screen-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('screen-test.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('screen-test.php'); ?>">
+  <link rel="alternate" hreflang="de" href="<?php echo absoluteUrl('languages/german/screen-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('screen-test.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

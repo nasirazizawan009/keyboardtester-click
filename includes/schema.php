@@ -111,11 +111,7 @@ function schemaWebApplication($tool) {
         'applicationCategory' => $tool['category'] ?? 'UtilityApplication',
         'operatingSystem' => 'Any',
         'browserRequirements' => 'Requires JavaScript',
-        'offers' => [
-            '@type' => 'Offer',
-            'price' => '0',
-            'priceCurrency' => 'USD'
-        ],
+        'isAccessibleForFree' => true,
         'provider' => [
             '@type' => 'Organization',
             'name' => 'KeyboardTester.Click',

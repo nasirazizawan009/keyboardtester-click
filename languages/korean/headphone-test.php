@@ -18,9 +18,9 @@ $pageKeywords = '헤드폰 테스트, 스피커 테스트, 오디오 테스트, 
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('tools/headphone_speaker_tester.php'); ?>">
-  <link rel="alternate" hreflang="ko" href="<?php echo url('languages/korean/headphone-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('tools/headphone_speaker_tester.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('tools/headphone_speaker_tester.php'); ?>">
+  <link rel="alternate" hreflang="ko" href="<?php echo absoluteUrl('languages/korean/headphone-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('tools/headphone_speaker_tester.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

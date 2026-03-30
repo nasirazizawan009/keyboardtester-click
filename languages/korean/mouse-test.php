@@ -18,9 +18,9 @@ $pageKeywords = '마우스 테스터, 마우스 테스트, 클릭 테스트, 스
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('mouse-test.php'); ?>">
-  <link rel="alternate" hreflang="ko" href="<?php echo url('languages/korean/mouse-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('mouse-test.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('mouse-test.php'); ?>">
+  <link rel="alternate" hreflang="ko" href="<?php echo absoluteUrl('languages/korean/mouse-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('mouse-test.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

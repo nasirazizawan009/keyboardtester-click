@@ -27,9 +27,9 @@ $pageKeywords = '키보드 테스터, 키보드 테스트, 한글 키보드, 두
     <?php include __DIR__ . '/../../includes/seo-meta.php'; ?>
 
     <!-- Language alternatives -->
-    <link rel="alternate" hreflang="en" href="<?php echo url('tools/keyboard-tester/'); ?>">
-    <link rel="alternate" hreflang="ko" href="<?php echo url('languages/korean/'); ?>">
-    <link rel="alternate" hreflang="x-default" href="<?php echo url('tools/keyboard-tester/'); ?>">
+    <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('tools/keyboard-tester/'); ?>">
+    <link rel="alternate" hreflang="ko" href="<?php echo absoluteUrl('languages/korean/'); ?>">
+    <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('tools/keyboard-tester/'); ?>">
 
     <!-- Common Head -->
     <?php include __DIR__ . '/../../includes/head-common.php'; ?>

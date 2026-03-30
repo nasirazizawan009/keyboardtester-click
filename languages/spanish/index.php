@@ -27,9 +27,9 @@ $pageKeywords = 'probador teclado, test teclado español, detector ghosting, med
     <?php include __DIR__ . '/../../includes/seo-meta.php'; ?>
 
     <!-- Language alternatives -->
-    <link rel="alternate" hreflang="en" href="<?php echo url('tools/keyboard-tester/'); ?>">
-    <link rel="alternate" hreflang="es" href="<?php echo url('languages/spanish/'); ?>">
-    <link rel="alternate" hreflang="x-default" href="<?php echo url('tools/keyboard-tester/'); ?>">
+    <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('tools/keyboard-tester/'); ?>">
+    <link rel="alternate" hreflang="es" href="<?php echo absoluteUrl('languages/spanish/'); ?>">
+    <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('tools/keyboard-tester/'); ?>">
 
     <!-- Common Head -->
     <?php include __DIR__ . '/../../includes/head-common.php'; ?>

@@ -18,9 +18,9 @@ $pageKeywords = 'QRコード生成, QRコード作成, QRコードメーカー, 
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('QR_code_generator_scanner.php'); ?>">
-  <link rel="alternate" hreflang="ja" href="<?php echo url('languages/japanese/qr-generator.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('QR_code_generator_scanner.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('QR_code_generator_scanner.php'); ?>">
+  <link rel="alternate" hreflang="ja" href="<?php echo absoluteUrl('languages/japanese/qr-generator.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('QR_code_generator_scanner.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 

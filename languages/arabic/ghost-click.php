@@ -18,9 +18,9 @@ $pageKeywords = 'كاشف النقرات الوهمية, النقر المزدو
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo url('ghost-click-detector.php'); ?>">
-  <link rel="alternate" hreflang="ar" href="<?php echo url('languages/arabic/ghost-click.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo url('ghost-click-detector.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('ghost-click-detector.php'); ?>">
+  <link rel="alternate" hreflang="ar" href="<?php echo absoluteUrl('languages/arabic/ghost-click.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('ghost-click-detector.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 
