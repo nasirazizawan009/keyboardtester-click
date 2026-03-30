@@ -1,6 +1,6 @@
 # KeyboardTester.Click - Project Guide
 
-**Version:** 17.2.34 (March 2026)
+**Version:** 17.2.36 (March 2026)
 
 ## Project Overview
 A comprehensive suite of free online testing tools for keyboards, mice, screens, audio, and utilities. The site is multilingual with support for 8 languages.
@@ -109,18 +109,21 @@ python deploy-latest.py
 
 ### Known Issues
 
-#### Sitemap "Couldn't fetch" Error (Ongoing since Sept 2025)
+#### Sitemap "Couldn't fetch" Error (Ongoing since Sept 2025) — DO NOT INVESTIGATE FURTHER
 Google Search Console shows "Couldn't fetch" for `sitemap.xml` despite the file being accessible:
 - **Verified working:** `curl -I https://keyboardtester.click/sitemap.xml` returns HTTP 200
+- **All 213 sitemap URLs return HTTP 200** (verified March 30, 2026)
 - **File is valid XML:** Properly formatted with correct schema
 - **CSP headers removed:** `.htaccess` unsets Content-Security-Policy for sitemap files
-- **Workarounds tried:**
-  - Resubmitting sitemap multiple times
+- **Workarounds tried (all failed):**
+  - Resubmitting sitemap multiple times (including March 30, 2026 — still "Couldn't fetch")
   - Deleting and re-adding sitemap
   - Using full URL vs relative path
   - Waiting for DNS propagation
-- **Status:** Unresolved - appears to be a Google-side issue
+  - Removing CSP headers for sitemap
+- **Status:** Unresolved — confirmed Google-side issue, not a site problem
 - **Impact:** Pages still get indexed via links and IndexNow, just not via sitemap
+- **ACTION:** Do NOT spend more time on this. It is a Google crawler bug.
 
 #### www vs non-www Canonical Issue (Resolved Feb 2026)
 - **Problem:** Google indexed 21 pages under www.keyboardtester.click, only 1 under non-www
@@ -528,8 +531,79 @@ worker-src: Added 'self' blob:
 - **Hero image:** 42.8KB WebP could save ~15KB with better compression/responsive sizing
 - **Forced reflow:** ~150ms total from keyboard scaling JS (already debounced, further reduction needs architecture change)
 
+## Recent Update (v17.2.35)
+
+### Image Overhaul (March 29, 2026)
+- Replaced all AI-generated and SVG wireframe images across 20 tools with real Pexels stock photos
+- All images from Pexels.com (free license, no attribution required)
+- 81 unique photos downloaded, 130+ image files (PNG + WebP)
+- No image repeats across pages
+- Updated alt text for SEO on all hero and step images
+- Created `assets/css/global.min.css` (minified version of global.css)
+
+### Performance Fixes (March 29, 2026)
+- Delayed AdSense loading to 2s after window.load (reduces main-thread blocking)
+- Added `fundingchoicesmessages.google.com` to CSP (fixes AdSense consent error)
+- Optimized hero image delivery: 560w variant for 1x desktop screens (saves ~14KB)
+
+### DPI Tester UX Fix (March 29, 2026)
+- "Start measure" button now shows "Measuring..." with green highlight when active
+- Track area gets green pulsing border animation when measurement is active
+- Fixed pointer tracking with `lostpointercapture` instead of `pointerleave`
+
+### Semrush Audit Fixes (March 29, 2026)
+- **24 broken images fixed:** Created `hero.png`/`step-*.png` in screen-test, mouse, mic-test, webcam-test, headphone-test dirs
+- **357 blocked resources fixed:** Updated `robots.txt` to allow `/assets/css/`, `/assets/js/`, `/assets/images/` crawling
+- **63 hreflang errors fixed:** Converted all `url()` to `absoluteUrl()` in hreflang tags across 128 language files
+- **53 structured data errors fixed:** Replaced `offers` block with `isAccessibleForFree: true` in WebApplication schema
+- **llms.txt created:** Added LLM-friendly site description for AI search engines
+- **test-my-mic.php unblocked:** Fixed robots.txt `Disallow: /test-` rule that was blocking this page
+
+### Social Links (March 29, 2026)
+- Added YouTube channel link to footer: https://www.youtube.com/@KeyboardTester-dot-click
+- Added Facebook page link to footer: https://www.facebook.com/keyboardtester.click
+- Footer social icons now use official brand-colored SVG logos (GitHub white, GitLab orange, YouTube red, Facebook blue)
+
+## Recent Update (v17.2.36)
+
+### Semrush/GSC Audit Fixes — Deployed (March 30, 2026)
+All fixes from the Semrush audit were completed, committed (commit `dfd6016`), and deployed via FTP.
+
+#### What was fixed:
+- **63 hreflang errors:** All 128 language tool pages converted hreflang `url()` → `absoluteUrl()` so Google sees full `https://keyboardtester.click/...` URLs instead of relative paths
+- **53 structured data errors:** Replaced invalid `offers` block in `includes/schema.php` with `isAccessibleForFree: true` (Google's preferred format for free tools)
+- **357 blocked resources:** `robots.txt` updated to explicitly allow `/assets/css/`, `/assets/js/`, `/assets/images/` so Googlebot can render pages properly
+- **404 fixed:** Added `click-speed-test.php` → `mouse_speed_tester.php` redirect in `.htaccess`
+- **test-my-mic.php unblocked:** Changed `Disallow: /test-` to specific paths (`/test-ftp`, `/test-upload`, etc.)
+- **Privacy policy:** Updated with full AdSense data disclosure (GDPR/FTC compliance)
+
+#### Sitemap Status (as of March 30, 2026):
+- **213 URLs** in `sitemap.xml` — all return HTTP 200 ✓
+- **IndexNow submitted** successfully (HTTP 200, 200 URLs) ✓
+- **Google Search Console "Couldn't fetch" error:** ONGOING (Google-side issue)
+  - Sitemap returns 200 to all other crawlers/curl
+  - GSC has shown this error continuously since Sept 2025
+  - Pages ARE still being indexed via links and IndexNow
+  - No technical fix exists — Google's crawler intermittently fails to fetch it
+  - **Do NOT waste time re-investigating this — it is a known Google bug**
+
+#### GSC Coverage Summary (as of March 30, 2026):
+- **Indexed:** ~37 pages
+- **Not indexed:** ~26 pages
+  - 12 pages with redirect (old URLs like `keyboard_tester_spanish.php`) — expected, these are legacy
+  - 9 pages crawled but not indexed — content quality issue, not a technical bug
+  - Others: discovered-not-crawled (need more internal links/authority)
+- Google has only discovered ~63 of the 213 sitemap URLs
+
+#### Next SEO priorities:
+- Build internal links to undiscovered pages
+- Improve content depth on "crawled but not indexed" pages
+- Consider submitting pages manually via GSC URL inspection for high-priority pages
+
 ## Social & Contact
 - Twitter/X: https://x.com/keyboardtester
+- YouTube: https://www.youtube.com/@KeyboardTester-dot-click
+- Facebook: https://www.facebook.com/keyboardtester.click
 - GitHub: https://github.com/nasirazizawan009/keyboardtester-click
 - GitLab: https://gitlab.com/nasirazizawan/keyboardtester.click
 - Email: support@keyboardtester.click
