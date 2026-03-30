@@ -1,6 +1,6 @@
 # KeyboardTester.Click - Project Guide
 
-**Version:** 17.2.36 (March 2026)
+**Version:** 17.2.37 (March 2026)
 
 ## Project Overview
 A comprehensive suite of free online testing tools for keyboards, mice, screens, audio, and utilities. The site is multilingual with support for 8 languages.
@@ -599,6 +599,38 @@ All fixes from the Semrush audit were completed, committed (commit `dfd6016`), a
 - Build internal links to undiscovered pages
 - Improve content depth on "crawled but not indexed" pages
 - Consider submitting pages manually via GSC URL inspection for high-priority pages
+
+## Recent Update (v17.2.37)
+
+### Bing Webmaster Tools — Meta Description Fix (March 31, 2026)
+Bing flagged 49 URLs with meta descriptions that were too short (Bing target: 150–160 characters).
+
+#### Root Cause
+Language pages (French, German, Spanish, Portuguese, Arabic, Korean, Japanese, Russian) had very short descriptions (60–95 characters). Several English main tool pages were also under 130 characters.
+
+#### Pages Fixed (42 total, commit `26786cd`)
+All descriptions extended to provide full page summaries with key features and no-install messaging.
+
+| Language | Files updated |
+|----------|--------------|
+| English | `ghost-click-detector.php`, `latency-checker.php`, `about-us.php`, `mouse_speed_tester.php`, `qr-code-reader.php`, `keyboard_typing_test.php`, `QR_code_generator_scanner.php` |
+| French | `webcam-test.php`, `qr-reader.php` |
+| German | `mouse-test.php`, `latency-checker.php`, `webcam-test.php`, `ocr-tool.php` |
+| Spanish | `mouse-trail.php`, `qr-generator.php`, `qr-reader.php`, `ocr-tool.php`, `webcam-test.php` |
+| Portuguese | `ocr-tool.php` |
+| Arabic | `ocr-tool.php`, `typing-test.php`, `password-generator.php`, `dpi-tester.php`, `qr-reader.php`, `headphone-test.php`, `latency-checker.php`, `ghost-click.php` |
+| Korean | `latency-checker.php`, `webcam-test.php`, `mic-test.php`, `mouse-trail.php`, `headphone-test.php` |
+| Japanese | `mouse-test.php`, `webcam-test.php`, `qr-generator.php`, `typing-test.php`, `latency-checker.php`, `mouse-trail.php`, `password-generator.php` |
+| Russian | `qr-generator.php`, `webcam-test.php`, `latency-checker.php` |
+
+#### Remaining Bing-Flagged URLs (not a technical fix needed)
+- `www.keyboardtester.click/*` URLs — these 301 redirect to non-www. Bing follows the redirect; once it re-crawls the canonical non-www pages, the warnings should clear automatically.
+- `.html` URLs (`ghost-click-detector.html`, `keyboard_typing_test.html`, `mouse_speed_tester.html`) — `.htaccess` already redirects `.html` → `.php`. Bing will clear these after re-crawl.
+
+#### Note on Non-Latin Languages
+- Arabic characters count as ~2 bytes each in UTF-8, Korean/Japanese as ~3 bytes. The 150-char recommendation applies to visible characters, not bytes.
+- For CJK (Japanese/Korean): aim for 60–80 actual characters — this conveys the same information density as 150 Latin chars.
+- Descriptions were extended to be substantively longer than before, which should satisfy Bing's check regardless of exact byte count.
 
 ## Social & Contact
 - Twitter/X: https://x.com/keyboardtester
