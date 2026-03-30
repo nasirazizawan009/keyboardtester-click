@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
 $pageTitle = 'Input Latency Checker Online | KeyboardTester.click';
-$pageDescription = 'Measure keyboard and mouse input latency in your browser with live millisecond feedback, sample counts, and average response time.';
+$pageDescription = 'Measure keyboard and mouse input latency in real time. Get live millisecond readings, sample counts, average response time, and jitter stats directly in your browser.';
 $pageKeywords = 'input latency checker, keyboard latency test, mouse latency test, response time tool';
 $pageOgImage = 'images/latency-checker/hero.png';
 ?>

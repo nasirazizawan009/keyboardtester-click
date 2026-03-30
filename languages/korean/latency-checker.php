@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-ko.php';
 
 $pageTitle = '지연 시간 검사기 - 무료 온라인 키보드 지연 테스트';
-$pageDescription = '무료 온라인 지연 시간 검사기로 키보드 입력 지연을 측정하세요. 실시간 지연 시간 통계를 제공합니다.';
+$pageDescription = '무료 온라인 지연 시간 검사기로 키보드와 마우스의 입력 지연을 정확히 측정하세요. 실시간 밀리초 데이터, 평균 응답 시간, 지터 통계를 제공하여 게임 성능을 최적화하세요.';
 $pageKeywords = '지연 시간 테스트, 키보드 지연, 입력 지연, 레이턴시 테스트, 반응 속도';
 ?>
 <!DOCTYPE html>

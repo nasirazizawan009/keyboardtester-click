@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
 $pageTitle = 'Latenz-Pruefer - Messen Sie die Reaktionszeit';
-$pageDescription = 'Messen Sie die Reaktionszeit Ihrer Eingabegeraete. Praeziser Latenztest in Millisekunden.';
+$pageDescription = 'Messen Sie die Eingabe-Latenz von Tastatur und Maus präzise im Browser. Live-Millisekunden-Feedback, Durchschnittswerte und Jitter-Analyse – kostenlos und ohne Installation.';
 $pageKeywords = 'Latenz, Reaktionszeit, Input Lag, Latenztest, Verzoegerung messen';
 ?>
 <!DOCTYPE html>

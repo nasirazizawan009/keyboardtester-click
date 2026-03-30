@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
 $pageTitle = 'OCR-Werkzeug - Text aus Bildern Extrahieren Kostenlos';
-$pageDescription = 'Extrahieren Sie Text aus Bildern mit OCR. Konvertieren Sie Bilder sofort in bearbeitbaren Text.';
+$pageDescription = 'Extrahieren Sie Text aus Bildern mit dem kostenlosen OCR-Tool im Browser. Wandeln Sie Fotos und Bilder sofort in kopierbaren, bearbeitbaren Text um – ohne Installation.';
 $pageKeywords = 'OCR, Text aus Bild extrahieren, Bild zu Text konvertieren, Zeichenerkennung, OCR online';
 ?>
 <!DOCTYPE html>

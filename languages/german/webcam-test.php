@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
 $pageTitle = 'Webcam-Tester - Ueberpruefen Sie Ihre Webcam Kostenlos';
-$pageDescription = 'Testen Sie Ihre Webcam online. Ueberpruefen Sie Videoqualitaet, Aufloesung und Funktion.';
+$pageDescription = 'Testen Sie Ihre Webcam kostenlos online. Überprüfen Sie Videoqualität, Auflösung und Kamerafunktion direkt im Browser – ohne Registrierung oder Installation erforderlich.';
 $pageKeywords = 'Webcam Test, Kamera Test, Webcam ueberpruefen, Video testen, Webcam Tester';
 ?>
 <!DOCTYPE html>

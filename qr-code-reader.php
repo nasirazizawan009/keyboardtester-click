@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
 $pageTitle = 'QR Code Reader Online | KeyboardTester.click';
-$pageDescription = 'Upload a QR code image and decode it in your browser. Read links, text, and other QR content instantly.';
+$pageDescription = 'Upload a QR code image and decode it instantly in your browser. Read URLs, text, contacts, Wi-Fi passwords, and other QR content — no app or install needed.';
 $pageKeywords = 'qr code reader online, qr scanner from image, decode qr code, read qr code online';
 $pageOgImage = 'images/qr-reader/hero.png';
 ?>

@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-es.php';
 
 $pageTitle = 'Rastro del Ratón - Visualiza el Movimiento del Cursor';
-$pageDescription = 'Visualiza el rastro de movimiento del ratón. Analiza la precisión y fluidez del cursor.';
+$pageDescription = 'Visualiza el rastro de movimiento del ratón en tiempo real. Analiza la precisión y fluidez del cursor con efectos visuales coloridos directamente en tu navegador.';
 $pageKeywords = 'rastro ratón, mouse trail, movimiento cursor, visualizar ratón, precisión mouse';
 ?>
 <!DOCTYPE html>

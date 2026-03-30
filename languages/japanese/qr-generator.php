@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-ja.php';
 
 $pageTitle = 'QRコード生成器 - 無料でQRコードを作成';
-$pageDescription = 'テキストやURLからQRコードを無料で生成。カスタマイズ可能なサイズでダウンロード可能。';
+$pageDescription = 'テキスト、URL、電話番号、メールからQRコードを無料で生成。カスタマイズ可能なサイズでリアルタイムプレビューし、PNG形式でダウンロードできます。';
 $pageKeywords = 'QRコード生成, QRコード作成, QRコードメーカー, QRコードジェネレーター, 無料QRコード';
 ?>
 <!DOCTYPE html>

@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-ko.php';
 
 $pageTitle = '마우스 트레일 - 이모지 트레일 어드벤처';
-$pageDescription = '재미있는 이모지 트레일 게임을 즐겨보세요. 마우스를 움직여 다양한 이모지로 트레일을 만들 수 있습니다.';
+$pageDescription = '재미있는 이모지 마우스 트레일 게임을 즐겨보세요. 마우스를 움직여 다양한 이모지와 색상으로 트레일을 만들고, 커서의 이동 경로를 시각적으로 확인하세요.';
 $pageKeywords = '마우스 트레일, 이모지 게임, 마우스 게임, 트레일 만들기, 재미있는 게임';
 ?>
 <!DOCTYPE html>

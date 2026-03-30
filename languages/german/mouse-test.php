@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
 $pageTitle = 'Maus-Tester - Testen Sie Klicks und Scrollrad Kostenlos';
-$pageDescription = 'Testen Sie alle Maustasten, Scrollrad und Cursorbewegung. Erkennen Sie Mausprobleme sofort.';
+$pageDescription = 'Testen Sie alle Maustasten, das Scrollrad und die Cursorbewegung online. Erkennen Sie Mausprobleme sofort im Browser – kostenlos und ohne Installation erforderlich.';
 $pageKeywords = 'Maus-Tester, Maustest, Klicktest, Scrollrad testen, Maustasten pruefen';
 ?>
 <!DOCTYPE html>

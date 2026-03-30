@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
 $pageTitle = 'Test de Webcam - Verifiez Votre Camera Gratuitement';
-$pageDescription = 'Testez votre webcam en ligne. Verifiez la qualite video, resolution et fonctionnement.';
+$pageDescription = 'Testez votre webcam gratuitement en ligne. Vérifiez la qualité vidéo, la résolution et les paramètres de votre caméra directement dans le navigateur, sans installation requise.';
 $pageKeywords = 'test webcam, test camera, verifier webcam, tester video, webcam test';
 ?>
 <!DOCTYPE html>

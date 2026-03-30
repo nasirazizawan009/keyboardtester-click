@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
 $pageTitle = 'Typing Speed Test Online | KeyboardTester.click';
-$pageDescription = 'Measure typing speed, WPM, and accuracy with a free browser-based typing test. Start instantly and compare repeat runs.';
+$pageDescription = 'Measure your typing speed (WPM), accuracy, and consistency with a free browser-based typing test. Start instantly and track your improvement across multiple timed sessions.';
 $pageKeywords = 'typing speed test, wpm test, online typing test, typing accuracy';
 $pageOgImage = 'images/typing-test/hero.png';
 ?>

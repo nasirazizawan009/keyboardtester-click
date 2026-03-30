@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
 $pageTitle = 'Ghost Click Detector Online | KeyboardTester.click';
-$pageDescription = 'Test your mouse for ghost clicks and unwanted double clicks with a fast browser-based detector and interval logging.';
+$pageDescription = 'Test your mouse for ghost clicks and unintended double clicks with our free browser-based detector. View click intervals in real time and identify faulty mouse switches instantly.';
 $pageKeywords = 'ghost click detector, double click test, mouse switch test, ghost click test';
 $pageOgImage = 'images/ghost-click/hero.png';
 ?>

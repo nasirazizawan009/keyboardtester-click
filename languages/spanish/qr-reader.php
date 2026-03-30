@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-es.php';
 
 $pageTitle = 'Lector de Códigos QR - Escanea QR Gratis';
-$pageDescription = 'Escanea códigos QR con tu cámara o sube una imagen. Decodifica QR al instante.';
+$pageDescription = 'Escanea códigos QR con tu cámara o sube una imagen para decodificarlos al instante. Lee URLs, textos, contactos y contraseñas Wi-Fi sin instalar ninguna aplicación.';
 $pageKeywords = 'lector QR, escanear código QR, decodificar QR, QR scanner, leer QR';
 ?>
 <!DOCTYPE html>

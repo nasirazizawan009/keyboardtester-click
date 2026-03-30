@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-ar.php';
 
 $pageTitle = 'قارئ رمز QR - مسح رموز QR مجاناً';
-$pageDescription = 'امسح رموز QR باستخدام الكاميرا أو رفع صورة. قارئ سريع ومجاني.';
+$pageDescription = 'امسح رموز QR باستخدام الكاميرا أو بتحميل صورة مباشرة. قارئ QR مجاني يعمل في المتصفح لقراءة الروابط والنصوص وجهات الاتصال وكلمات مرور Wi-Fi فوراً دون تطبيق.';
 $pageKeywords = 'قارئ QR, مسح QR, ماسح رمز QR, فك رمز QR';
 ?>
 <!DOCTYPE html>

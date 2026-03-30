@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-ja.php';
 
 $pageTitle = 'タイピング速度テスト - WPMを測定';
-$pageDescription = 'タイピング速度と精度を測定。WPM（1分間の単語数）であなたのタイピングスキルを確認。';
+$pageDescription = 'タイピング速度と精度を無料で測定。WPM（1分間の単語数）でスキルを確認し、複数のセッションで結果を比較。ブラウザで即座に開始できる無料タイピングテストです。';
 $pageKeywords = 'タイピングテスト, タイピング速度, WPM測定, タイピング練習, キーボードテスト';
 ?>
 <!DOCTYPE html>

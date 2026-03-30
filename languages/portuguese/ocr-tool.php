@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-pt.php';
 
 $pageTitle = 'Ferramenta OCR - Extraia Texto de Imagens Gratis';
-$pageDescription = 'Extraia texto de imagens usando OCR. Converta imagens em texto editavel instantaneamente.';
+$pageDescription = 'Extraia texto de imagens com a ferramenta OCR gratuita no navegador. Converta fotos, capturas e imagens em texto editável e copiável de forma instantânea, sem instalar nada.';
 $pageKeywords = 'OCR, extrair texto de imagem, converter imagem em texto, reconhecimento de caracteres, OCR online';
 ?>
 <!DOCTYPE html>

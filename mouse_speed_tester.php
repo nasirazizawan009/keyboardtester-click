@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
 $pageTitle = 'Click Speed Test Online | KeyboardTester.click';
-$pageDescription = 'Test your click speed and measure clicks per second online. Run fast CPS checks in the browser with instant results.';
+$pageDescription = 'Test your click speed and measure clicks per second (CPS) with free timed online challenges. Track your score, compare runs, and improve your clicking performance.';
 $pageKeywords = 'click speed test, cps test, mouse speed test, clicks per second';
 $pageOgImage = 'images/mouse-speed/hero.png';
 ?>

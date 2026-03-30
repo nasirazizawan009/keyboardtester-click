@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-ko.php';
 
 $pageTitle = '웹캠 테스터 - 무료 온라인 웹캠 테스트';
-$pageDescription = '무료 온라인 웹캠 테스터로 웹캠 품질을 테스트하세요. 실시간 피드백과 스냅샷 기능을 제공합니다.';
+$pageDescription = '무료 온라인 웹캠 테스터로 웹캠의 화질, 해상도, 기능을 확인하세요. 실시간 피드백과 스냅샷 기능을 제공하며, 설치 없이 브라우저에서 바로 사용할 수 있습니다.';
 $pageKeywords = '웹캠 테스트, 웹캠 테스터, 카메라 테스트, 비디오 테스트, 온라인 웹캠';
 ?>
 <!DOCTYPE html>

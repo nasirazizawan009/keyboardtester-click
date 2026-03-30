@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 $pageTitle = 'About Us | KeyboardTester.click';
-$pageDescription = 'Learn about KeyboardTester.click and our mission to provide fast, free device testing tools.';
+$pageDescription = 'Learn about KeyboardTester.click — free browser-based tools to test keyboards, mice, screens, audio, webcams, and peripherals. No account or downloads required.';
 $pageKeywords = 'about keyboardtester, device testing tools, keyboard tester';
 $pageOgImage = 'images/shared/keyboard-and-mouse.png';
 ?>

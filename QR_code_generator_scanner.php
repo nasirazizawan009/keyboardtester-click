@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
 $pageTitle = 'Free QR Code Generator Online | KeyboardTester.click';
-$pageDescription = 'Create QR codes for URLs, text, phone numbers, and more with a live browser-based generator. Preview and download instantly.';
+$pageDescription = 'Create QR codes for URLs, text, phone numbers, emails, and more with a free browser-based generator. Customize, preview in real time, and download your QR code instantly.';
 $pageKeywords = 'free qr code generator, qr code creator, generate qr code online, qr code maker';
 $pageOgImage = 'images/qr-generator/hero.png';
 ?>
