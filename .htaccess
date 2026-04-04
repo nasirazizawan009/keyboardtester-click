@@ -9,7 +9,8 @@ AddType image/avif .avif
 RewriteEngine On
 RewriteBase /
 
-# Serve ads.txt directly (prevent WordPress/blog catch-all)
+# Serve robots.txt and ads.txt directly (bypass all rewrites)
+RewriteRule ^robots\.txt$ - [L]
 RewriteRule ^ads\.txt$ - [L]
 
 # ============================================
@@ -260,3 +261,16 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
 
 # Redirect /blog/ to /blogs/ (WordPress at /blog/ is unused)
 RewriteRule ^blog(/.*)?$ /blogs$1 [R=301,L]
+
+# Lucky Wheel canonical redirect (luckywheeltoolindex.php is the main entry point)
+RewriteRule ^lucky-wheel\.php$ /luckywheeltoolindex.php [R=301,L]
+RewriteRule ^lucky-wheel-tool\.php$ /luckywheeltoolindex.php [R=301,L]
+
+# Common legacy URL patterns that may cause 4xx in Bing crawl logs
+RewriteRule ^screen-test-online\.php$ /screentestindex.php [R=301,L]
+RewriteRule ^webcam-tester-online\.php$ /webcamtesterindex.php [R=301,L]
+RewriteRule ^free-keyboard-tester\.php$ / [R=301,L]
+RewriteRule ^keyboard-test\.php$ / [R=301,L]
+
+# Custom 404 page (prevents Apache default error page in Bing crawl)
+ErrorDocument 404 /404.html

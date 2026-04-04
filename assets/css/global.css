@@ -18,6 +18,8 @@
     --accent-color: #f59e0b;
     --surface: #ffffff;
     --border: #e2e8f0;
+    --heading-color: #1e293b;
+    --border-color: #e2e8f0;
     --accent-primary: #1d4ed8;
     --accent-secondary: #0369a1;
     
@@ -101,6 +103,8 @@ html.dark-theme,
     --accent-color: #f59e0b;
     --surface: #1e293b;
     --border: #334155;
+    --heading-color: #f1f5f9;
+    --border-color: #334155;
     --accent-primary: #93c5fd;
     --accent-secondary: #7dd3fc;
     
@@ -193,7 +197,7 @@ body {
 }
 
 .help-card {
-    background: var(--bg-color);
+    background: var(--surface);
     border: 1px solid var(--card-border);
     border-radius: 12px;
     padding: var(--spacing-lg);
@@ -204,7 +208,7 @@ body {
     border-radius: 10px;
     padding: var(--spacing-md);
     margin-bottom: var(--spacing-sm);
-    background: var(--bg-color);
+    background: var(--surface);
 }
 
 .help-accordion summary {

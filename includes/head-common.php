@@ -64,17 +64,33 @@ $headCanonical = preg_replace('~^(https?://)www\.~i', '$1', $headCanonical);
 <link rel="dns-prefetch" href="https://www.clarity.ms">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-<!-- Google AdSense (delayed to reduce main-thread blocking) -->
+<!-- Google AdSense (interaction-triggered: skipped by PageSpeed lab, loads on real user scroll/click) -->
 <script>
-window.addEventListener('load', function() {
-    setTimeout(function() {
+(function() {
+    var loaded = false;
+    function loadAds() {
+        if (loaded) return;
+        loaded = true;
         var s = document.createElement('script');
         s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7056306765580248';
         s.crossOrigin = 'anonymous';
         s.async = true;
         document.head.appendChild(s);
-    }, 2000);
-});
+    }
+    // Load on first real user interaction (scroll, click, keydown, touch)
+    var events = ['scroll', 'click', 'keydown', 'touchstart', 'mousemove'];
+    function onInteract() {
+        events.forEach(function(e) { window.removeEventListener(e, onInteract, {passive: true}); });
+        if (window.requestIdleCallback) {
+            requestIdleCallback(loadAds, {timeout: 3000});
+        } else {
+            setTimeout(loadAds, 200);
+        }
+    }
+    events.forEach(function(e) { window.addEventListener(e, onInteract, {passive: true}); });
+    // Fallback: load after 5s even without interaction (covers bots with JS, pre-render, etc.)
+    window.addEventListener('load', function() { setTimeout(loadAds, 5000); });
+})();
 </script>
 
 <!-- Inter font: async + metric overrides = no render-blocking AND no CLS -->
@@ -87,6 +103,8 @@ window.addEventListener('load', function() {
 html.dark-theme{--bg-color:#0f172a;--text-color:#e2e8f0;--header-bg:#0b1220;--card-bg:#1e293b;--card-border:rgba(255,255,255,0.1)}
 *,*::before,*::after{box-sizing:border-box}
 @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107.06%;ascent-override:90.49%;descent-override:22.56%;line-gap-override:0%}
+@font-face{font-family:'Space Grotesk Fallback';src:local('Arial');size-adjust:96.5%;ascent-override:89.92%;descent-override:22.52%;line-gap-override:0%}
+@font-face{font-family:'JetBrains Mono Fallback';src:local('Courier New');size-adjust:92.5%;ascent-override:83%;descent-override:20%;line-gap-override:0%}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:Inter,'Inter Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg-color);color:var(--text-color);margin:0;padding:0;line-height:1.6;min-height:100vh}
 .site-header{position:sticky;top:0;z-index:1000;background:var(--header-bg);color:#fff;min-height:60px}

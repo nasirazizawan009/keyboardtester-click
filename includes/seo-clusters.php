@@ -129,6 +129,11 @@ function getSeoIntentClusters() {
                     'path' => 'stuck-pixel-test.php',
                     'name' => 'Stuck Pixel Test',
                     'description' => 'Check for red, green, or blue pixels that stay lit on every screen.'
+                ],
+                [
+                    'path' => 'backlight-bleed-test.php',
+                    'name' => 'Backlight Bleed Test',
+                    'description' => 'Use a full-screen dark display with adjustable brightness to inspect for backlight bleed, IPS glow, and clouding.'
                 ]
             ]
         ],

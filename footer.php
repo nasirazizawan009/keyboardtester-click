@@ -71,13 +71,14 @@ if (!isset($baseUrl)) {
         <div class="footer-section">
             <h4 class="footer-heading">Testing Tools</h4>
             <ul class="footer-links">
-                <li><a href="<?php echo $pages['home']; ?>">⌨️ Keyboard Tester</a></li>
+                <li><a href="<?php echo $pages['home']; ?>">⌨️ Free Keyboard Tester</a></li>
                 <li><a href="<?php echo $pages['mouse_test']; ?>">🖱️ Mouse Tester</a></li>
                 <li><a href="<?php echo $pages['keyboard_typing']; ?>">⚡ Typing Speed Test</a></li>
-                <li><a href="<?php echo $pages['click_speed']; ?>">⚡ Click Speed Test</a></li>
-                <li><a href="<?php echo $pages['screen_test']; ?>">🖥️ Screen Tester</a></li>
-                <li><a href="<?php echo $pages['mic_test']; ?>">🎤 Mic Tester</a></li>
-                <li><a href="<?php echo $pages['webcam_test']; ?>">📹 Webcam Tester</a></li>
+                <li><a href="<?php echo $pages['click_speed']; ?>">⚡ Click Speed Test (CPS)</a></li>
+                <li><a href="<?php echo $pages['screen_test']; ?>">🖥️ Dead Pixel Test</a></li>
+                <li><a href="<?php echo url('backlight-bleed-test.php'); ?>">🌑 Backlight Bleed Test</a></li>
+                <li><a href="<?php echo $pages['mic_test']; ?>">🎤 Microphone Test Online</a></li>
+                <li><a href="<?php echo $pages['webcam_test']; ?>">📹 Webcam Test Online</a></li>
             </ul>
         </div>
 
@@ -88,9 +89,14 @@ if (!isset($baseUrl)) {
                 <li><a href="<?php echo $pages['qr_generator']; ?>">📱 QR Generator</a></li>
                 <li><a href="<?php echo $pages['ocr_tool']; ?>">📄 OCR Tool</a></li>
                 <li><a href="<?php echo $pages['password_gen']; ?>">🔐 Password Generator</a></li>
-                <li><a href="<?php echo $pages['ghost_click']; ?>">👻 Ghost Click Detector</a></li>
+                <li><a href="<?php echo $pages['ghost_click']; ?>">👻 Double Click Test</a></li>
                 <li><a href="<?php echo $pages['whatsapp_link']; ?>">💬 WhatsApp Link</a></li>
                 <li><a href="<?php echo $pages['lucky_wheel']; ?>">🎯 Lucky Wheel</a></li>
+                <li><a href="<?php echo url('polling-rate-test.php'); ?>">🖱️ Mouse Polling Rate Test</a></li>
+                <li><a href="<?php echo url('refresh-rate-test.php'); ?>">🖥️ Monitor Refresh Rate Test</a></li>
+                <li><a href="<?php echo url('color-test.php'); ?>">🎨 Monitor Color Test</a></li>
+                <li><a href="<?php echo url('touch-screen-test.php'); ?>">👆 Touch Screen Test</a></li>
+                <li><a href="<?php echo url('gamepad-test.php'); ?>">🎮 Gamepad Tester</a></li>
             </ul>
         </div>
 

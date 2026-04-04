@@ -46,7 +46,9 @@ function schemaOrganization() {
         'foundingDate' => '2024',
         'sameAs' => [
             'https://gitlab.com/nasirazizawan/keyboardtester.click',
-            'https://x.com/keyboardtester'
+            'https://github.com/nasirazizawan009/keyboardtester-click',
+            'https://www.youtube.com/@KeyboardTester-dot-click',
+            'https://www.facebook.com/keyboardtester.click'
         ],
         'contactPoint' => [
             '@type' => 'ContactPoint',
@@ -502,6 +504,19 @@ function getToolSchemaData($toolKey) {
                 'Editable text output'
             ]
         ],
+        'backlight_bleed_test' => [
+            'name' => 'Backlight Bleed Test',
+            'description' => 'Free online backlight bleed test to check LCD monitors for backlight bleeding, IPS glow, and clouding using a full-screen dark display.',
+            'url' => 'backlight-bleed-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Full-screen pure black display',
+                'Adjustable brightness filter',
+                'Four dark test shades (black, dark gray, dark blue, dark red)',
+                'Auto-hiding floating controls in fullscreen',
+                'Keyboard shortcuts for fast testing'
+            ]
+        ],
         'dead_pixel_test' => [
             'name' => 'Dead Pixel Test',
             'description' => 'Free online dead pixel test to inspect monitors, laptops, and displays for black pixels that never light up.',
@@ -825,6 +840,13 @@ function getToolFAQs($toolKey) {
             ['question' => 'What kinds of images work best with OCR?', 'answer' => 'Sharp screenshots, photos, and scans with clear text and good contrast usually produce the best results.'],
             ['question' => 'Can I extract text from a screenshot?', 'answer' => 'Yes. Upload the screenshot, run OCR, and review the extracted text in the result area.'],
             ['question' => 'Does OCR processing happen in the browser?', 'answer' => 'Yes. The OCR tool runs in your browser after you upload the image.']
+        ],
+        'backlight_bleed_test' => [
+            ['question' => 'What is backlight bleed?', 'answer' => 'Backlight bleed occurs when the backlight on an LCD monitor leaks through the edges or corners of the panel, creating bright patches on dark screens. It is a manufacturing tolerance issue present to some degree in nearly all LCD monitors.'],
+            ['question' => 'How do I test for backlight bleed?', 'answer' => 'Enter fullscreen mode to fill the entire panel with a pure black screen. Dim the room lights and look for bright or hazy patches near the edges and corners. Raise the brightness slider to reveal subtle bleed.'],
+            ['question' => 'What is the difference between backlight bleed and IPS glow?', 'answer' => 'Backlight bleed appears as fixed bright patches near the panel edges regardless of viewing angle. IPS glow is a silver-white shimmer that appears in the corners and shifts when you change your viewing angle. Backlight bleed affects all LCD types; IPS glow is specific to IPS panels.'],
+            ['question' => 'Is some backlight bleed normal?', 'answer' => 'Yes. Minor backlight bleed visible only in a dark room at maximum brightness is within normal manufacturing tolerances. Severe bleed visible at normal brightness with ambient lighting may be eligible for a replacement under the manufacturer warranty.'],
+            ['question' => 'Does the brightness slider change my monitor settings?', 'answer' => 'No. The brightness slider uses a CSS filter applied in your browser and does not change your monitor\'s hardware backlight level. It helps reveal subtle bleed by making the test screen appear brighter without touching your display settings.']
         ],
         'dead_pixel_test' => [
             ['question' => 'How do I test for dead pixels online?', 'answer' => 'Open the full-screen tester, switch through solid colors, and look for pixels that remain black on every screen.'],

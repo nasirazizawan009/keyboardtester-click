@@ -19,14 +19,21 @@
     --landing-grid: rgba(15, 23, 42, 0.05);
 }
 
-html.dark-theme .landing-page,
-[data-theme="dark"] .landing-page {
-    --landing-bg: #0b1220;
+/* Core landing variables update globally in dark mode so components like
+   .guidelines.landing-guide render correctly on any page, not just .landing-page */
+html.dark-theme,
+[data-theme="dark"] {
     --landing-surface: #0f172a;
     --landing-ink: #e5e7eb;
     --landing-text: #e5e7eb;
     --landing-muted: #94a3b8;
     --landing-border: rgba(148, 163, 184, 0.22);
+}
+
+/* Landing-page-specific dark overrides (page bg, grid lines, accent hover) */
+html.dark-theme .landing-page,
+[data-theme="dark"] .landing-page {
+    --landing-bg: #0b1220;
     --landing-accent-hover: #7dd3fc;
     --landing-grid: rgba(148, 163, 184, 0.1);
 }
@@ -37,7 +44,7 @@ html.dark-theme .landing-page,
 }
 
 .landing-main {
-    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    font-family: "Space Grotesk", "Space Grotesk Fallback", "Segoe UI", sans-serif;
     color: var(--landing-ink);
     contain: layout style;
     min-height: 100vh;
@@ -941,7 +948,7 @@ html.dark-theme .typing-test-container .test-text,
 
 html.dark-theme .guidelines.landing-guide .help-card,
 [data-theme="dark"] .guidelines.landing-guide .help-card {
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(148, 163, 184, 0.07);
 }
 
 .guidelines.landing-guide .help-accordion {
@@ -959,7 +966,7 @@ html.dark-theme .guidelines.landing-guide .help-card,
 
 html.dark-theme .guidelines.landing-guide .help-accordion details,
 [data-theme="dark"] .guidelines.landing-guide .help-accordion details {
-    background: rgba(15, 23, 42, 0.55);
+    background: rgba(148, 163, 184, 0.06);
 }
 
 .guidelines.landing-guide .help-accordion summary {
@@ -1530,7 +1537,7 @@ html.dark-theme .guidelines.landing-guide .help-accordion details,
 
 html.dark-theme .seo-article.seo-faq details,
 [data-theme="dark"] .seo-article.seo-faq details {
-    background: rgba(15, 23, 42, 0.55);
+    background: rgba(148, 163, 184, 0.06);
 }
 
 .seo-article.seo-faq summary {

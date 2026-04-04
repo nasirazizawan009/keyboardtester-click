@@ -122,6 +122,20 @@ $allTools = [
         'anchor' => 'generate strong passwords',
         'description' => 'Create strong passwords quickly with adjustable settings.',
         'category' => ['utility', 'security']
+    ],
+    'touch-screen' => [
+        'url' => 'touch-screen-test.php',
+        'name' => 'Touch Screen Test',
+        'anchor' => 'test touch screen online',
+        'description' => 'Check for dead zones, ghost touches, and multi-touch support on any touchscreen device.',
+        'category' => ['display', 'troubleshooting', 'input']
+    ],
+    'backlight-bleed' => [
+        'url' => 'backlight-bleed-test.php',
+        'name' => 'Backlight Bleed Test',
+        'anchor' => 'check monitor for backlight bleed',
+        'description' => 'Inspect your LCD monitor for backlight bleeding, IPS glow, and clouding using a full-screen dark display.',
+        'category' => ['display', 'troubleshooting']
     ]
 ];
 
@@ -138,7 +152,9 @@ $relatedToolsMap = [
     'typing' => ['keyboard', 'cps', 'latency', 'mouse'],
     'latency' => ['keyboard', 'mouse', 'ghost-click', 'cps', 'typing'],
     'webcam' => ['mic', 'headphone', 'screen', 'keyboard'],
-    'screen' => ['webcam', 'keyboard', 'mouse', 'headphone'],
+    'screen' => ['backlight-bleed', 'touch-screen', 'webcam', 'keyboard', 'mouse'],
+    'backlight-bleed' => ['screen', 'touch-screen', 'webcam', 'keyboard', 'headphone'],
+    'touch-screen' => ['screen', 'backlight-bleed', 'webcam', 'mouse', 'keyboard'],
     'qr-generator' => ['qr-reader', 'ocr', 'password', 'keyboard'],
     'qr-reader' => ['qr-generator', 'ocr', 'password', 'keyboard'],
     'ocr' => ['qr-reader', 'qr-generator', 'password', 'keyboard'],
@@ -185,7 +201,9 @@ $scriptToKey = [
     'double-click-test' => 'ghost-click',
     'scan-qr-from-image' => 'qr-reader',
     'screenshot-to-text' => 'ocr',
-    'photo-to-text' => 'ocr'
+    'photo-to-text' => 'ocr',
+    'touch-screen-test' => 'touch-screen',
+    'backlight-bleed-test' => 'backlight-bleed'
 ];
 
 if (isset($scriptToKey[$currentScript])) {

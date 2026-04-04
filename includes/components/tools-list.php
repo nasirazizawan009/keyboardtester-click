@@ -273,6 +273,81 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
                 <p>Create strong, secure passwords instantly</p>
                 <span class="tool-card-link">Generate password</span>
             </a>
+            <a href="<?php echo url('polling-rate-test.php'); ?>" class="tool-card">
+                <div class="tool-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M12 7v5l3 3"/>
+                        <path d="M4 12H2M22 12h-2M12 2V4M12 20v2"/>
+                    </svg>
+                </div>
+                <span class="tool-name">Mouse Polling Rate Test</span>
+                <p>Check if your gaming mouse runs at 125Hz, 500Hz, 1000Hz or higher</p>
+                <span class="tool-card-link">Test polling rate</span>
+            </a>
+            <a href="<?php echo url('refresh-rate-test.php'); ?>" class="tool-card">
+                <div class="tool-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2"/>
+                        <path d="M8 21h8M12 17v4"/>
+                        <path d="M9 10l2 2 4-4"/>
+                    </svg>
+                </div>
+                <span class="tool-name">Monitor Refresh Rate Test</span>
+                <p>Detect if your display runs at 60Hz, 144Hz, 240Hz or higher</p>
+                <span class="tool-card-link">Test refresh rate</span>
+            </a>
+            <a href="<?php echo url('color-test.php'); ?>" class="tool-card">
+                <div class="tool-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M12 3a9 9 0 0 1 0 18" fill="none"/>
+                        <path d="M3 12h9"/>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                    </svg>
+                </div>
+                <span class="tool-name">Monitor Color Test</span>
+                <p>Check color accuracy, gradient banding and backlight uniformity</p>
+                <span class="tool-card-link">Test colors</span>
+            </a>
+            <a href="<?php echo url('backlight-bleed-test.php'); ?>" class="tool-card">
+                <div class="tool-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="14" rx="2"/>
+                        <path d="M3 6c2 0 4 3 9 3s7-3 9-3"/>
+                        <path d="M3 16c2 0 4-3 9-3s7 3 9 3"/>
+                    </svg>
+                </div>
+                <span class="tool-name">Backlight Bleed Test</span>
+                <p>Check your LCD monitor for backlight bleed, IPS glow, and clouding</p>
+                <span class="tool-card-link">Test for bleed</span>
+            </a>
+            <a href="<?php echo url('touch-screen-test.php'); ?>" class="tool-card">
+                <div class="tool-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 11.5V6a2 2 0 1 1 4 0v5.5"/>
+                        <path d="M13 10.5a2 2 0 1 1 4 0V14"/>
+                        <path d="M17 12.5a2 2 0 1 1 4 0V15a7 7 0 0 1-7 7h-3a7 7 0 0 1-4.9-2"/>
+                        <path d="M3 13l3-3"/>
+                    </svg>
+                </div>
+                <span class="tool-name">Touch Screen Test</span>
+                <p>Test for dead zones, ghost touches and multi-touch on phone or tablet</p>
+                <span class="tool-card-link">Test touch screen</span>
+            </a>
+            <a href="<?php echo url('gamepad-test.php'); ?>" class="tool-card">
+                <div class="tool-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="7" width="20" height="12" rx="5"/>
+                        <path d="M7 12h4M9 10v4"/>
+                        <circle cx="15" cy="11" r="1"/>
+                        <circle cx="17" cy="13" r="1"/>
+                    </svg>
+                </div>
+                <span class="tool-name">Gamepad Tester</span>
+                <p>Test PS5, Xbox, Switch and PC controller buttons, stick drift and triggers</p>
+                <span class="tool-card-link">Test controller</span>
+            </a>
         </div>
     </div>
 </section>

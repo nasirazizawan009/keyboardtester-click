@@ -135,7 +135,7 @@ html.dark-theme .tool-card-icon,
 }
 
 .tool-card-link {
-    color: #0ea5e9;
+    color: #0369a1;
     font-weight: 600;
     margin-top: auto;
 }

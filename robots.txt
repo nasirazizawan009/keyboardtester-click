@@ -1,29 +1,22 @@
 # Robots.txt - Search Engine Crawling Instructions
 # Site: keyboardtester.click
-# Last Updated: 2026-02-15
+# Last Updated: 2026-04-04
 
 # Default rules for all robots
 User-agent: *
 Allow: /
-
-# Allow important tool directories (these contain public pages!)
 Allow: /tools/
 Allow: /help/
 Allow: /languages/
 Allow: /pages/
-
-# Disallow internal/admin directories only
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+Allow: /images/
 Disallow: /includes/
 Disallow: /admin/
 Disallow: /docs/
 Disallow: /api/
-
-# Allow assets (CSS, JS, images) for proper page rendering
-Allow: /assets/css/
-Allow: /assets/js/
-Allow: /assets/images/
-
-# Disallow utility and config files
 Disallow: /generate-sitemap.php
 Disallow: /config.php
 Disallow: /meta-config.php
@@ -31,8 +24,6 @@ Disallow: /seo-config.php
 Disallow: /modular-utils.php
 Disallow: /sitemap.php
 Disallow: /submit-indexnow.php
-
-# Disallow debug/test/temp files
 Disallow: /test-ftp
 Disallow: /test-upload
 Disallow: /test_db
@@ -44,14 +35,10 @@ Disallow: /ftp-
 Disallow: /tmp_
 Disallow: /temp/
 Disallow: /cache/
-
-# Disallow deployment scripts
-Disallow: /*.py$
 Disallow: /deploy-
-
-# Disallow backup files
 Disallow: /_old
 Disallow: /_backup
+Crawl-delay: 1
 
 # Specific rules for Googlebot
 User-agent: Googlebot
@@ -66,7 +53,6 @@ Disallow: /includes/
 Disallow: /admin/
 Disallow: /api/
 Disallow: /generate-sitemap.php
-Disallow: /*.py$
 
 # Specific rules for Bingbot
 User-agent: Bingbot
@@ -81,7 +67,6 @@ Disallow: /includes/
 Disallow: /admin/
 Disallow: /api/
 Disallow: /generate-sitemap.php
-Disallow: /*.py$
 
 # Block aggressive/unwanted bots
 User-agent: MJ12bot
@@ -101,9 +86,6 @@ Disallow: /
 
 User-agent: DataForSeoBot
 Disallow: /
-
-# Crawl-delay for polite crawling
-Crawl-delay: 1
 
 # Sitemap location
 Sitemap: https://keyboardtester.click/sitemap.xml

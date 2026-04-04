@@ -9,10 +9,10 @@ return [
     // CORE PAGES
     // ============================================
     'index.php' => [
-        'title' => 'Keyboard Tester Online - Free Key Test Tool | KBT',
-        // 51 chars - "Keyboard Tester" as primary keyword
-        'description' => 'Free online keyboard tester to check every key instantly. Test stuck keys, ghosting, and key response with no download. Works on all devices and browsers.',
-        // 157 chars - includes "Free", "online", "no download"
+        'title' => 'Free Online Keyboard Tester — Ghosting Check, Heatmap & Latency | KeyboardTester.click',
+        // 88 chars - targets feature keywords per SEO audit #01
+        'description' => 'Press any key and watch it highlight instantly. Free keyboard tester detects stuck keys, ghosting & N-key rollover. No download or sign-up. Works on Chrome, Firefox, and Edge.',
+        // 175 chars - action-first, technical specifics, addresses Bing CTR issue (pos 9, 0.07% CTR)
         'keywords' => 'keyboard tester, online keyboard test, test keyboard keys, free key tester, stuck key detector',
         'og_image' => 'images/keyboard/hero-keyboard-test-1400.png'
     ],
@@ -68,9 +68,8 @@ return [
         'og_image' => 'images/keyboard/typing-test-og.png'
     ],
     'latency-checker.php' => [
-        'title' => 'Keyboard Latency Checker - Test Input Delay | KBT',
-        // 51 chars
-        'description' => 'Free keyboard latency checker to measure input delay. Test response time for gaming and typing. Browser-based, no download. Get accurate latency readings.',
+        'title' => 'Keyboard Latency Checker — Test Input Lag Online Free | KeyboardTester.click',
+        'description' => 'Keyboard latency checker online. Measure input lag and response time for gaming keyboards. Free, browser-based, no download.',
         // 157 chars
         'keywords' => 'keyboard latency, input latency test, response time test, gaming latency checker',
         'og_image' => 'images/keyboard/latency-checker-og.png'
@@ -212,6 +211,12 @@ return [
         'keywords' => 'webcam tester, camera test online, test webcam, video quality test, webcam check',
         'og_image' => 'images/camera/webcam-test-og.png'
     ],
+    'backlight-bleed-test.php' => [
+        'title' => 'Backlight Bleed Test — Check Monitor for Light Leak Online Free | KeyboardTester.click',
+        'description' => 'Free backlight bleed test online. Check your LCD monitor for backlight bleeding, IPS glow, and clouding with a full-screen black display. Adjustable brightness and multiple dark shades — no download required.',
+        'keywords' => 'backlight bleed test, backlight bleed test online, IPS glow test, monitor bleed check, LCD backlight bleeding test',
+        'og_image' => 'images/screen-test/hero.webp'
+    ],
     'screentestindex.php' => [
         'title' => 'Screen Tester - Dead Pixel Test Online | KBT',
         // 46 chars
@@ -283,6 +288,40 @@ return [
         // 150 chars
         'keywords' => 'WhatsApp sentiment analyzer, chat analysis, message tone analyzer, conversation sentiment',
         'og_image' => 'images/whatsapp/wa-sentiment-og.png'
+    ],
+
+    // ============================================
+    // NEW TOOLS (April 2026)
+    // ============================================
+    'polling-rate-test.php' => [
+        'title' => 'Mouse Polling Rate Test — Check Mouse Hz Online Free | KeyboardTester.click',
+        'description' => 'Free mouse polling rate test online. Check if your gaming mouse runs at 125Hz, 500Hz, 1000Hz or higher. Move your mouse to see live Hz readings. No download needed.',
+        'keywords' => 'mouse polling rate test, mouse hz test, polling rate checker, check mouse hz online, 1000hz mouse test',
+        'og_image' => 'images/mouse/hero.webp'
+    ],
+    'refresh-rate-test.php' => [
+        'title' => 'Monitor Refresh Rate Test — Check Hz Online Free | KeyboardTester.click',
+        'description' => 'Free monitor refresh rate test. Check if your display runs at 60Hz, 144Hz, 240Hz or higher. Detects your real refresh rate automatically in seconds. No download needed.',
+        'keywords' => 'monitor refresh rate test online, check monitor hz online, refresh rate test, 144hz monitor test, display hz test',
+        'og_image' => 'images/screen-test/hero.webp'
+    ],
+    'touch-screen-test.php' => [
+        'title' => 'Touch Screen Test — Multi-Touch, Dead Zone & Ghost Touch Online Free | KeyboardTester.click',
+        'description' => 'Free touch screen test online. Check for dead zones, ghost touches and multi-touch support on phone, tablet or laptop. Draw fingers to paint the screen. No app needed.',
+        'keywords' => 'touch screen test online, touchscreen tester, test touch screen online, multi touch test, ghost touch test',
+        'og_image' => 'images/screen-test/hero.webp'
+    ],
+    'gamepad-test.php' => [
+        'title' => 'Gamepad Tester — Test Controller Buttons, Stick Drift & Triggers Online | KeyboardTester.click',
+        'description' => 'Free gamepad tester online. Test PS5, Xbox, Switch and PC controller buttons, analog stick drift, triggers and vibration. Works in browser. No download needed.',
+        'keywords' => 'gamepad tester online, controller test online, stick drift test online, ps5 controller test, xbox controller test online',
+        'og_image' => 'images/mouse/hero.webp'
+    ],
+    'color-test.php' => [
+        'title' => 'Monitor Color Test — Screen Color Calibration & Display Check Online Free | KeyboardTester.click',
+        'description' => 'Free monitor color test online. Check color accuracy, gradient banding, contrast and backlight uniformity on any screen. Fullscreen color panels. No download needed.',
+        'keywords' => 'monitor color test online, screen color test, display color calibration test, color banding test monitor, LCD color test',
+        'og_image' => 'images/screen-test/hero.webp'
     ],
 
     // ============================================
