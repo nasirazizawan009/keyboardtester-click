@@ -140,42 +140,91 @@ if (!isset($baseUrl)) {
         right: 0;
         top: 100%;
         background: var(--dropdown-bg);
-        border-top: 1px solid var(--header-border);
-        padding: 24px 20px;
-        box-shadow: 0 16px 30px rgba(15, 23, 42, 0.2);
+        border-top: 2px solid var(--header-border);
+        padding: 28px 20px 24px;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
         color: var(--text-color);
+        animation: megaFadeIn 0.2s ease;
+    }
+    @keyframes megaFadeIn {
+        from { opacity: 0; transform: translateY(-8px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
     .mega-panel.active { display: block; }
     .panel-inner {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
     }
+    .panel-inner > div:nth-child(1) { --col-accent: #3b82f6; --col-accent-bg: rgba(59,130,246,0.08); }
+    .panel-inner > div:nth-child(2) { --col-accent: #8b5cf6; --col-accent-bg: rgba(139,92,246,0.08); }
+    .panel-inner > div:nth-child(3) { --col-accent: #0ea5e9; --col-accent-bg: rgba(14,165,233,0.08); }
+    .panel-inner > div:nth-child(4) { --col-accent: #f59e0b; --col-accent-bg: rgba(245,158,11,0.08); }
+    .panel-inner > div:nth-child(5) { --col-accent: #10b981; --col-accent-bg: rgba(16,185,129,0.08); }
     .panel-inner > div {
-        background: rgba(15, 23, 42, 0.04);
+        background: var(--card-bg);
         border-radius: 14px;
-        padding: 12px 14px;
+        padding: 16px 14px 14px;
+        border-top: 3px solid var(--col-accent, #38bdf8);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.07);
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .panel-inner > div:hover {
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.13);
+        transform: translateY(-2px);
     }
     html.dark-theme .panel-inner > div,
-    [data-theme="dark"] .panel-inner > div { background: rgba(255, 255, 255, 0.04); }
-    .panel-title {
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: #7dd3fc;
-        margin-bottom: 8px;
-        font-weight: 700;
+    [data-theme="dark"] .panel-inner > div {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     }
+    html.dark-theme .panel-inner > div:hover,
+    [data-theme="dark"] .panel-inner > div:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); }
+    .panel-title {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--col-accent, #38bdf8);
+        margin-bottom: 10px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border-color, rgba(0,0,0,0.08));
+    }
+    .panel-title-icon { font-size: 1.05rem; line-height: 1; flex-shrink: 0; }
     .panel-links a {
-        display: block;
+        display: flex;
+        align-items: center;
         color: var(--text-color);
         text-decoration: none;
-        font-size: 0.95rem;
-        margin-bottom: 6px;
+        font-size: 0.87rem;
+        padding: 5px 7px;
+        border-radius: 7px;
+        margin-bottom: 1px;
+        transition: background 0.15s, color 0.15s, transform 0.15s;
     }
-    .panel-links a:hover { color: var(--link-color); }
+    .panel-links a::before {
+        content: '›';
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--col-accent, #38bdf8);
+        opacity: 0;
+        width: 0;
+        overflow: hidden;
+        flex-shrink: 0;
+        transition: opacity 0.15s, width 0.15s;
+        line-height: 1;
+    }
+    .panel-links a:hover {
+        background: var(--col-accent-bg, rgba(56,189,248,0.1));
+        color: var(--col-accent, #38bdf8);
+        transform: translateX(4px);
+    }
+    .panel-links a:hover::before { opacity: 1; width: 14px; }
     @media (max-width: 900px) {
         .menu-toggle { display: inline-flex; }
         .site-nav {
@@ -189,7 +238,7 @@ if (!isset($baseUrl)) {
         }
         .site-nav.open { transform: translateY(0); }
         .nav-actions { width: 100%; justify-content: center; margin-left: 0; }
-        .mega-panel { position: static; box-shadow: none; }
+        .mega-panel { position: static; box-shadow: none; animation: none; }
     }
 </style>
 
@@ -230,43 +279,63 @@ if (!isset($baseUrl)) {
     <div class="mega-panel" id="toolsPanel">
         <div class="panel-inner">
             <div>
-                <div class="panel-title">Клавиатура</div>
+                <div class="panel-title"><span class="panel-title-icon">⌨️</span> Клавиатура</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['home']; ?>">Тестер клавиатуры</a>
                     <a href="<?php echo $pages['keyboard_typing']; ?>">Тест скорости печати</a>
                     <a href="<?php echo $pages['latency_check']; ?>">Проверка задержки</a>
+                    <a href="<?php echo url('languages/russian/spacebar-test.php'); ?>">Тест пробела</a>
+                    <a href="<?php echo url('languages/russian/reaction-time-test.php'); ?>">Время реакции</a>
+                    <a href="<?php echo url('keyboard-ghosting-test.php'); ?>">Тест ghosting</a>
+                    <a href="<?php echo url('n-key-rollover-test.php'); ?>">N-Key Rollover</a>
+                    <a href="<?php echo url('stuck-key-test.php'); ?>">Застрявшая клавиша</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">Мышь</div>
+                <div class="panel-title"><span class="panel-title-icon">🖱️</span> Мышь</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['mouse_test']; ?>">Тестер мыши</a>
                     <a href="<?php echo $pages['click_speed']; ?>">Тест скорости клика</a>
                     <a href="<?php echo $pages['ghost_click']; ?>">Детектор призрачных кликов</a>
                     <a href="<?php echo $pages['dpi_tester']; ?>">Тест DPI</a>
+                    <a href="<?php echo url('languages/russian/mouse-trail.php'); ?>">След мыши</a>
+                    <a href="<?php echo url('languages/russian/polling-rate-test.php'); ?>">Частота опроса</a>
+                    <a href="<?php echo url('scroll-wheel-test.php'); ?>">Тест колеса</a>
+                    <a href="<?php echo url('double-click-test.php'); ?>">Двойной клик</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">Экран</div>
+                <div class="panel-title"><span class="panel-title-icon">🖥️</span> Экран</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['screen_test']; ?>">Тест экрана</a>
                     <a href="<?php echo $pages['webcam_test']; ?>">Тест веб-камеры</a>
+                    <a href="<?php echo url('languages/russian/dead-pixel-test.php'); ?>">Мёртвый пиксель</a>
+                    <a href="<?php echo url('stuck-pixel-test.php'); ?>">Застрявший пиксель</a>
+                    <a href="<?php echo url('black-screen-test.php'); ?>">Чёрный экран</a>
+                    <a href="<?php echo url('white-screen-test.php'); ?>">Белый экран</a>
+                    <a href="<?php echo url('languages/russian/refresh-rate-test.php'); ?>">Частота обновления</a>
+                    <a href="<?php echo url('languages/russian/color-test.php'); ?>">Тест цветов</a>
+                    <a href="<?php echo url('languages/russian/touch-screen-test.php'); ?>">Сенсорный экран</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">Аудио</div>
+                <div class="panel-title"><span class="panel-title-icon">🎧</span> Аудио</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['mic_test']; ?>">Тест микрофона</a>
                     <a href="<?php echo $pages['headphone_test']; ?>">Тест наушников</a>
+                    <a href="<?php echo url('microphone-volume-test.php'); ?>">Громкость микрофона</a>
+                    <a href="<?php echo url('left-right-speaker-test.php'); ?>">Динамик Л/П</a>
+                    <a href="<?php echo url('stereo-test.php'); ?>">Стерео-тест</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">Утилиты</div>
+                <div class="panel-title"><span class="panel-title-icon">🛠️</span> Утилиты</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['qr_generator']; ?>">Генератор QR</a>
                     <a href="<?php echo $pages['qr_reader']; ?>">Сканер QR</a>
                     <a href="<?php echo $pages['ocr_tool']; ?>">OCR инструмент</a>
                     <a href="<?php echo $pages['password_gen']; ?>">Генератор паролей</a>
+                    <a href="<?php echo url('languages/russian/gamepad-test.php'); ?>">Тест геймпада</a>
                 </div>
             </div>
         </div>

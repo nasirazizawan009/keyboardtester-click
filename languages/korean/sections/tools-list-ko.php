@@ -217,6 +217,76 @@ if (!function_exists('url')) {
                 <p>강력하고 안전한 비밀번호를 즉시 생성</p>
                 <span class="tool-card-link">도구 열기</span>
             </a>
+            <a href="<?php echo url('languages/korean/spacebar-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>스페이스바 테스트</h3>
+                <p>5·10·30초 동안 누른 횟수 카운트</p>
+                <span class="tool-card-link">도구 열기</span>
+            </a>
+            <a href="<?php echo url('languages/korean/reaction-time-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>반응 시간 테스트</h3>
+                <p>밀리초 단위로 반사 신경 측정</p>
+                <span class="tool-card-link">도구 열기</span>
+            </a>
+            <a href="<?php echo url('languages/korean/polling-rate-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>마우스 폴링 레이트 테스트</h3>
+                <p>마우스의 Hz 속도를 실시간 측정</p>
+                <span class="tool-card-link">도구 열기</span>
+            </a>
+            <a href="<?php echo url('languages/korean/refresh-rate-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>모니터 주사율 테스트</h3>
+                <p>모니터의 주사율을 rAF로 감지</p>
+                <span class="tool-card-link">도구 열기</span>
+            </a>
+            <a href="<?php echo url('languages/korean/touch-screen-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>터치스크린 테스트</h3>
+                <p>데드존 및 고스트 터치 확인</p>
+                <span class="tool-card-link">도구 열기</span>
+            </a>
+            <a href="<?php echo url('languages/korean/gamepad-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>게임패드 테스트</h3>
+                <p>버튼, 스틱, 진동 테스트</p>
+                <span class="tool-card-link">도구 열기</span>
+            </a>
+            <a href="<?php echo url('languages/korean/color-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>모니터 색상 테스트</h3>
+                <p>색상, 그라데이션, 불량 화소 확인</p>
+                <span class="tool-card-link">도구 열기</span>
+            </a>
         </div>
     </div>
 </section>

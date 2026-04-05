@@ -217,6 +217,76 @@ if (!function_exists('url')) {
                 <p>強力で安全なパスワードを即座に作成</p>
                 <span class="tool-card-link">ツールを開く</span>
             </a>
+            <a href="<?php echo url('languages/japanese/spacebar-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>スペースバーテスト</h3>
+                <p>5・10・30秒で押した回数を計測</p>
+                <span class="tool-card-link">ツールを開く</span>
+            </a>
+            <a href="<?php echo url('languages/japanese/reaction-time-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>反応時間テスト</h3>
+                <p>ミリ秒単位で反射神経を測定</p>
+                <span class="tool-card-link">ツールを開く</span>
+            </a>
+            <a href="<?php echo url('languages/japanese/polling-rate-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>マウスポーリングレートテスト</h3>
+                <p>マウスのHz率をリアルタイム計測</p>
+                <span class="tool-card-link">ツールを開く</span>
+            </a>
+            <a href="<?php echo url('languages/japanese/refresh-rate-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>モニターリフレッシュレートテスト</h3>
+                <p>モニターの周波数をrAFで検出</p>
+                <span class="tool-card-link">ツールを開く</span>
+            </a>
+            <a href="<?php echo url('languages/japanese/touch-screen-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>タッチスクリーンテスト</h3>
+                <p>デッドゾーンとゴーストタッチを確認</p>
+                <span class="tool-card-link">ツールを開く</span>
+            </a>
+            <a href="<?php echo url('languages/japanese/gamepad-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>ゲームパッドテスト</h3>
+                <p>ボタン・スティック・振動をテスト</p>
+                <span class="tool-card-link">ツールを開く</span>
+            </a>
+            <a href="<?php echo url('languages/japanese/color-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>モニターカラーテスト</h3>
+                <p>色、グラデーション、不良ピクセルを確認</p>
+                <span class="tool-card-link">ツールを開く</span>
+            </a>
         </div>
     </div>
 </section>

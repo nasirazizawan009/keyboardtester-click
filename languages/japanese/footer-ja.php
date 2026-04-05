@@ -13,7 +13,22 @@ if (!isset($baseUrl)) { include_once __DIR__ . '/../../config.php'; }
             </div>
             <p class="footer-description">キーボード、マウス、オーディオ、画面など、明確さ、精度、速度を重視した最新のテストツール。</p>
             <div class="social-links">
-                <a href="<?php echo $socialLinks['gitlab']; ?>" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"></path></svg>GitLab</a>
+                <a href="<?php echo $socialLinks['github']; ?>" target="_blank" rel="noopener noreferrer" aria-label="GitHubでダウンロード">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0f6fc"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="<?php echo $socialLinks['gitlab']; ?>" target="_blank" rel="noopener noreferrer" aria-label="GitLabで見る">
+                    <svg width="18" height="18" viewBox="0 0 24 24"><path d="M23.955 13.587l-1.342-4.135-2.664-8.189a.455.455 0 0 0-.867 0L16.418 9.45H7.582L4.918 1.263a.455.455 0 0 0-.867 0L1.387 9.452.045 13.587a.924.924 0 0 0 .331 1.023L12 22.816l11.624-8.206a.924.924 0 0 0 .331-1.023" fill="#e24329"/><path d="M12 22.816L16.418 9.45H7.582z" fill="#fc6d26"/><path d="M12 22.816l-4.418-13.366H1.387z" fill="#fca326"/><path d="M1.387 9.45L.045 13.587a.924.924 0 0 0 .331 1.023L12 22.816z" fill="#e24329"/><path d="M1.387 9.45h6.195L4.918 1.263a.455.455 0 0 0-.867 0z" fill="#fc6d26"/><path d="M12 22.816l4.418-13.366h6.195z" fill="#fca326"/><path d="M22.613 9.45l1.342 4.137a.924.924 0 0 1-.331 1.023L12 22.816z" fill="#e24329"/><path d="M22.613 9.45h-6.195l2.664-8.187a.455.455 0 0 1 .867 0z" fill="#fc6d26"/></svg>
+                    GitLab
+                </a>
+                <a href="<?php echo $socialLinks['youtube']; ?>" target="_blank" rel="noopener noreferrer" aria-label="YouTubeで視聴">
+                    <svg width="18" height="18" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" fill="#FF0000"/><path d="M9.545 15.568V8.432L15.818 12z" fill="#fff"/></svg>
+                    YouTube
+                </a>
+                <a href="<?php echo $socialLinks['facebook']; ?>" target="_blank" rel="noopener noreferrer" aria-label="Facebookでフォロー">
+                    <svg width="18" height="18" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/></svg>
+                    Facebook
+                </a>
             </div>
         </div>
         <div class="footer-section">
@@ -44,6 +59,11 @@ if (!isset($baseUrl)) { include_once __DIR__ . '/../../config.php'; }
                 <li><a href="<?php echo $pages['ocr_tool']; ?>">OCRツール</a></li>
                 <li><a href="<?php echo $pages['password_gen']; ?>">パスワード生成</a></li>
                 <li><a href="<?php echo $pages['ghost_click']; ?>">ゴーストクリック検出</a></li>
+                <li><a href="<?php echo url('languages/japanese/polling-rate-test.php'); ?>">🖱️ ポーリングレートテスト</a></li>
+                <li><a href="<?php echo url('languages/japanese/refresh-rate-test.php'); ?>">🖥️ リフレッシュレートテスト</a></li>
+                <li><a href="<?php echo url('languages/japanese/color-test.php'); ?>">🎨 モニターカラーテスト</a></li>
+                <li><a href="<?php echo url('languages/japanese/touch-screen-test.php'); ?>">👆 タッチスクリーンテスト</a></li>
+                <li><a href="<?php echo url('languages/japanese/gamepad-test.php'); ?>">🎮 ゲームパッドテスト</a></li>
             </ul>
         </div>
         <div class="footer-section contact-section">

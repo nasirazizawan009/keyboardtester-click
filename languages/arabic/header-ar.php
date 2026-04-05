@@ -186,57 +186,93 @@ if (!isset($baseUrl)) {
         right: 0;
         top: 100%;
         background: var(--dropdown-bg);
-        border-top: 1px solid var(--header-border);
-        padding: 24px 20px;
-        box-shadow: 0 16px 30px rgba(15, 23, 42, 0.2);
+        border-top: 2px solid var(--header-border);
+        padding: 28px 20px 24px;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
         color: var(--text-color);
+        animation: megaFadeIn 0.2s ease;
     }
-
-    .mega-panel.active {
-        display: block;
+    @keyframes megaFadeIn {
+        from { opacity: 0; transform: translateY(-8px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
-
+    .mega-panel.active { display: block; }
     .panel-inner {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
     }
-
+    .panel-inner > div:nth-child(1) { --col-accent: #3b82f6; --col-accent-bg: rgba(59,130,246,0.08); }
+    .panel-inner > div:nth-child(2) { --col-accent: #8b5cf6; --col-accent-bg: rgba(139,92,246,0.08); }
+    .panel-inner > div:nth-child(3) { --col-accent: #0ea5e9; --col-accent-bg: rgba(14,165,233,0.08); }
+    .panel-inner > div:nth-child(4) { --col-accent: #f59e0b; --col-accent-bg: rgba(245,158,11,0.08); }
+    .panel-inner > div:nth-child(5) { --col-accent: #10b981; --col-accent-bg: rgba(16,185,129,0.08); }
     .panel-inner > div {
-        background: rgba(15, 23, 42, 0.04);
+        background: var(--card-bg);
         border-radius: 14px;
-        padding: 12px 14px;
+        padding: 16px 14px 14px;
+        border-top: 3px solid var(--col-accent, #38bdf8);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.07);
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
-
+    .panel-inner > div:hover {
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.13);
+        transform: translateY(-2px);
+    }
     html.dark-theme .panel-inner > div,
     [data-theme="dark"] .panel-inner > div {
-        background: rgba(255, 255, 255, 0.04);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     }
-
+    html.dark-theme .panel-inner > div:hover,
+    [data-theme="dark"] .panel-inner > div:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); }
     .panel-title {
-        font-size: 0.8rem;
+        font-size: 0.72rem;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: #7dd3fc;
-        margin-bottom: 8px;
-        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: var(--col-accent, #38bdf8);
+        margin-bottom: 10px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border-color, rgba(0,0,0,0.08));
         font-family: 'Tajawal', 'Inter', sans-serif;
     }
-
+    .panel-title-icon { font-size: 1.05rem; line-height: 1; flex-shrink: 0; }
     .panel-links a {
-        display: block;
+        display: flex;
+        align-items: center;
         color: var(--text-color);
         text-decoration: none;
-        font-size: 0.95rem;
-        margin-bottom: 6px;
+        font-size: 0.87rem;
+        padding: 5px 7px;
+        border-radius: 7px;
+        margin-bottom: 1px;
+        transition: background 0.15s, color 0.15s, transform 0.15s;
         font-family: 'Tajawal', 'Inter', sans-serif;
     }
-
-    .panel-links a:hover {
-        color: var(--link-color);
+    .panel-links a::before {
+        content: '›';
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--col-accent, #38bdf8);
+        opacity: 0;
+        width: 0;
+        overflow: hidden;
+        flex-shrink: 0;
+        transition: opacity 0.15s, width 0.15s;
+        line-height: 1;
     }
+    .panel-links a:hover {
+        background: var(--col-accent-bg, rgba(56,189,248,0.1));
+        color: var(--col-accent, #38bdf8);
+        transform: translateX(4px);
+    }
+    .panel-links a:hover::before { opacity: 1; width: 14px; }
 
     @media (max-width: 900px) {
         .menu-toggle { display: inline-flex; }
@@ -254,7 +290,7 @@ if (!isset($baseUrl)) {
         .site-nav.open { transform: translateY(0); }
 
         .nav-actions { width: 100%; justify-content: center; margin-left: 0; }
-        .mega-panel { position: static; box-shadow: none; }
+        .mega-panel { position: static; box-shadow: none; animation: none; }
     }
 </style>
 
@@ -330,45 +366,65 @@ if (!isset($baseUrl)) {
     <div class="mega-panel" id="toolsPanel">
         <div class="panel-inner">
             <div>
-                <div class="panel-title">لوحة المفاتيح</div>
+                <div class="panel-title"><span class="panel-title-icon">⌨️</span> لوحة المفاتيح</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['home']; ?>">اختبار لوحة المفاتيح</a>
                     <a href="<?php echo $pages['keyboard_typing']; ?>">اختبار سرعة الكتابة</a>
                     <a href="<?php echo $pages['latency_check']; ?>">فاحص زمن الاستجابة</a>
+                    <a href="<?php echo url('languages/arabic/spacebar-test.php'); ?>">اختبار المسافة</a>
+                    <a href="<?php echo url('languages/arabic/reaction-time-test.php'); ?>">وقت الاستجابة</a>
+                    <a href="<?php echo url('keyboard-ghosting-test.php'); ?>">اختبار الغوستينغ</a>
+                    <a href="<?php echo url('n-key-rollover-test.php'); ?>">N-Key Rollover</a>
+                    <a href="<?php echo url('stuck-key-test.php'); ?>">المفتاح العالق</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">الماوس</div>
+                <div class="panel-title"><span class="panel-title-icon">🖱️</span> الماوس</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['mouse_test']; ?>">اختبار الماوس</a>
                     <a href="<?php echo $pages['click_speed']; ?>">اختبار سرعة النقر</a>
                     <a href="<?php echo $pages['ghost_click']; ?>">كاشف النقرات الشبحية</a>
                     <a href="<?php echo $pages['dpi_tester']; ?>">اختبار DPI</a>
+                    <a href="<?php echo url('languages/arabic/mouse-trail.php'); ?>">أثر الماوس</a>
+                    <a href="<?php echo url('languages/arabic/polling-rate-test.php'); ?>">معدل الاستطلاع</a>
+                    <a href="<?php echo url('scroll-wheel-test.php'); ?>">عجلة التمرير</a>
+                    <a href="<?php echo url('double-click-test.php'); ?>">النقر المزدوج</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">الشاشة</div>
+                <div class="panel-title"><span class="panel-title-icon">🖥️</span> الشاشة</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['screen_test']; ?>">اختبار الشاشة</a>
                     <a href="<?php echo $pages['webcam_test']; ?>">اختبار الكاميرا</a>
+                    <a href="<?php echo url('languages/arabic/dead-pixel-test.php'); ?>">بكسل ميت</a>
+                    <a href="<?php echo url('stuck-pixel-test.php'); ?>">بكسل عالق</a>
+                    <a href="<?php echo url('black-screen-test.php'); ?>">الشاشة السوداء</a>
+                    <a href="<?php echo url('white-screen-test.php'); ?>">الشاشة البيضاء</a>
+                    <a href="<?php echo url('languages/arabic/refresh-rate-test.php'); ?>">معدل التحديث</a>
+                    <a href="<?php echo url('languages/arabic/color-test.php'); ?>">اختبار الألوان</a>
+                    <a href="<?php echo url('languages/arabic/touch-screen-test.php'); ?>">الشاشة اللمسية</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">الصوت</div>
+                <div class="panel-title"><span class="panel-title-icon">🎧</span> الصوت</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['mic_test']; ?>">اختبار الميكروفون</a>
                     <a href="<?php echo $pages['headphone_test']; ?>">اختبار السماعات</a>
+                    <a href="<?php echo url('microphone-volume-test.php'); ?>">مستوى الميكروفون</a>
+                    <a href="<?php echo url('left-right-speaker-test.php'); ?>">مكبر يسار/يمين</a>
+                    <a href="<?php echo url('stereo-test.php'); ?>">اختبار الستيريو</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">أدوات مساعدة</div>
+                <div class="panel-title"><span class="panel-title-icon">🛠️</span> أدوات مساعدة</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['qr_generator']; ?>">مولد QR</a>
                     <a href="<?php echo $pages['qr_reader']; ?>">قارئ QR</a>
                     <a href="<?php echo $pages['ocr_tool']; ?>">أداة OCR</a>
                     <a href="<?php echo $pages['password_gen']; ?>">مولد كلمات المرور</a>
-                    <a href="<?php echo $pages['whatsapp_link']; ?>">رابط واتساب</a>
-                    <a href="<?php echo $pages['lucky_wheel']; ?>">عجلة الحظ</a>
+                    <a href="<?php echo url('whatsapp-link-generator.php'); ?>">رابط واتساب</a>
+                    <a href="<?php echo url('luckywheeltoolindex.php'); ?>">عجلة الحظ</a>
+                    <a href="<?php echo url('languages/arabic/gamepad-test.php'); ?>">اختبار وحدة التحكم</a>
                 </div>
             </div>
         </div>

@@ -217,6 +217,76 @@ if (!function_exists('url')) {
                 <p>Создайте надежные и безопасные пароли мгновенно</p>
                 <span class="tool-card-link">Открыть инструмент</span>
             </a>
+            <a href="<?php echo url('languages/russian/spacebar-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Тест пробела</h3>
+                <p>Считайте нажатия за 5, 10 или 30 секунд</p>
+                <span class="tool-card-link">Открыть инструмент</span>
+            </a>
+            <a href="<?php echo url('languages/russian/reaction-time-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Тест времени реакции</h3>
+                <p>Измерьте рефлексы в миллисекундах</p>
+                <span class="tool-card-link">Открыть инструмент</span>
+            </a>
+            <a href="<?php echo url('languages/russian/polling-rate-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Тест частоты опроса мыши</h3>
+                <p>Измерьте частоту опроса мыши в Гц</p>
+                <span class="tool-card-link">Открыть инструмент</span>
+            </a>
+            <a href="<?php echo url('languages/russian/refresh-rate-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Тест частоты обновления монитора</h3>
+                <p>Определите частоту обновления монитора</p>
+                <span class="tool-card-link">Открыть инструмент</span>
+            </a>
+            <a href="<?php echo url('languages/russian/touch-screen-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Тест сенсорного экрана</h3>
+                <p>Проверьте мёртвые зоны и ложные касания</p>
+                <span class="tool-card-link">Открыть инструмент</span>
+            </a>
+            <a href="<?php echo url('languages/russian/gamepad-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Тест геймпада</h3>
+                <p>Протестируйте кнопки, стики и вибрацию</p>
+                <span class="tool-card-link">Открыть инструмент</span>
+            </a>
+            <a href="<?php echo url('languages/russian/color-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Тест цветов монитора</h3>
+                <p>Проверьте цвета, градиенты и мёртвые пиксели</p>
+                <span class="tool-card-link">Открыть инструмент</span>
+            </a>
         </div>
     </div>
 </section>

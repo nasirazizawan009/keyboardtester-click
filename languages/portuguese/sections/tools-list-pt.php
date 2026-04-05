@@ -265,6 +265,76 @@ if (!function_exists('url')) {
                 <p>Crie senhas fortes e seguras instantaneamente</p>
                 <span class="tool-card-link">Abrir ferramenta</span>
             </a>
+            <a href="<?php echo url('languages/portuguese/spacebar-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Teste da Barra de Espaco</h3>
+                <p>Conte os toques em 5, 10 ou 30 segundos</p>
+                <span class="tool-card-link">Abrir ferramenta</span>
+            </a>
+            <a href="<?php echo url('languages/portuguese/reaction-time-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Teste de Tempo de Reacao</h3>
+                <p>Meca seus reflexos em milissegundos</p>
+                <span class="tool-card-link">Abrir ferramenta</span>
+            </a>
+            <a href="<?php echo url('languages/portuguese/polling-rate-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Teste de Taxa de Polling do Mouse</h3>
+                <p>Meca a taxa Hz do seu mouse em tempo real</p>
+                <span class="tool-card-link">Abrir ferramenta</span>
+            </a>
+            <a href="<?php echo url('languages/portuguese/refresh-rate-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Teste de Taxa de Atualizacao</h3>
+                <p>Detecte a frequencia de atualizacao do monitor</p>
+                <span class="tool-card-link">Abrir ferramenta</span>
+            </a>
+            <a href="<?php echo url('languages/portuguese/touch-screen-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Teste de Tela Sensivel ao Toque</h3>
+                <p>Verifique zonas mortas e toques fantasma</p>
+                <span class="tool-card-link">Abrir ferramenta</span>
+            </a>
+            <a href="<?php echo url('languages/portuguese/gamepad-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Teste de Gamepad</h3>
+                <p>Teste botoes, analogicos e vibracao</p>
+                <span class="tool-card-link">Abrir ferramenta</span>
+            </a>
+            <a href="<?php echo url('languages/portuguese/color-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>Teste de Cor do Monitor</h3>
+                <p>Verifique cores, gradientes e pixels mortos</p>
+                <span class="tool-card-link">Abrir ferramenta</span>
+            </a>
         </div>
     </div>
 </section>

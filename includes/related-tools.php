@@ -74,12 +74,33 @@ $allTools = [
         'description' => 'Test your words per minute, accuracy, and typing consistency.',
         'category' => ['keyboard', 'speed', 'productivity']
     ],
+    'spacebar' => [
+        'url' => 'spacebar-test.php',
+        'name' => 'Spacebar Test',
+        'anchor' => 'test spacebar speed online',
+        'description' => 'Count spacebar presses over timed rounds and see how fast your thumb can go.',
+        'category' => ['keyboard', 'speed', 'gaming']
+    ],
+    'reaction' => [
+        'url' => 'reaction-time-test.php',
+        'name' => 'Reaction Time Test',
+        'anchor' => 'measure reaction time online',
+        'description' => 'Check your reflex speed in milliseconds with a browser-based visual reaction test.',
+        'category' => ['gaming', 'speed', 'input']
+    ],
     'latency' => [
         'url' => 'latency-checker.php',
         'name' => 'Latency Checker',
         'anchor' => 'measure input latency',
         'description' => 'Test keyboard and mouse input delay to ensure responsive gaming performance.',
         'category' => ['gaming', 'performance', 'input']
+    ],
+    'polling-rate' => [
+        'url' => 'polling-rate-test.php',
+        'name' => 'Mouse Polling Rate Test',
+        'anchor' => 'check mouse polling rate',
+        'description' => 'Measure live mouse Hz and verify whether your mouse is really running at 125Hz, 500Hz, or 1000Hz.',
+        'category' => ['mouse', 'gaming', 'performance']
     ],
     'webcam' => [
         'url' => 'webcamtesterindex.php',
@@ -94,6 +115,20 @@ $allTools = [
         'anchor' => 'test monitor for dead pixels',
         'description' => 'Detect dead pixels, stuck pixels, and screen uniformity issues.',
         'category' => ['display', 'troubleshooting']
+    ],
+    'refresh-rate' => [
+        'url' => 'refresh-rate-test.php',
+        'name' => 'Monitor Refresh Rate Test',
+        'anchor' => 'check monitor refresh rate',
+        'description' => 'Detect whether your display is actually running at 60Hz, 144Hz, 240Hz, or higher.',
+        'category' => ['display', 'gaming', 'performance']
+    ],
+    'color-test' => [
+        'url' => 'color-test.php',
+        'name' => 'Monitor Color Test',
+        'anchor' => 'test monitor colors online',
+        'description' => 'Check color accuracy, gradients, contrast, and screen uniformity with full-screen test panels.',
+        'category' => ['display', 'visual', 'calibration']
     ],
     'qr-generator' => [
         'url' => 'QR_code_generator_scanner.php',
@@ -130,6 +165,13 @@ $allTools = [
         'description' => 'Check for dead zones, ghost touches, and multi-touch support on any touchscreen device.',
         'category' => ['display', 'troubleshooting', 'input']
     ],
+    'gamepad' => [
+        'url' => 'gamepad-test.php',
+        'name' => 'Gamepad Tester',
+        'anchor' => 'test controller buttons online',
+        'description' => 'Test controller buttons, analog sticks, triggers, and stick drift directly in your browser.',
+        'category' => ['gaming', 'input', 'controller']
+    ],
     'backlight-bleed' => [
         'url' => 'backlight-bleed-test.php',
         'name' => 'Backlight Bleed Test',
@@ -150,11 +192,17 @@ $relatedToolsMap = [
     'mic' => ['headphone', 'webcam', 'keyboard', 'latency', 'typing'],
     'headphone' => ['mic', 'webcam', 'screen', 'keyboard'],
     'typing' => ['keyboard', 'cps', 'latency', 'mouse'],
+    'spacebar' => ['typing', 'reaction', 'keyboard', 'latency', 'cps'],
+    'reaction' => ['spacebar', 'cps', 'latency', 'polling-rate', 'refresh-rate'],
     'latency' => ['keyboard', 'mouse', 'ghost-click', 'cps', 'typing'],
+    'polling-rate' => ['mouse', 'dpi', 'latency', 'reaction', 'cps'],
     'webcam' => ['mic', 'headphone', 'screen', 'keyboard'],
     'screen' => ['backlight-bleed', 'touch-screen', 'webcam', 'keyboard', 'mouse'],
+    'refresh-rate' => ['screen', 'color-test', 'backlight-bleed', 'touch-screen', 'reaction'],
+    'color-test' => ['screen', 'refresh-rate', 'backlight-bleed', 'touch-screen', 'webcam'],
     'backlight-bleed' => ['screen', 'touch-screen', 'webcam', 'keyboard', 'headphone'],
     'touch-screen' => ['screen', 'backlight-bleed', 'webcam', 'mouse', 'keyboard'],
+    'gamepad' => ['reaction', 'latency', 'polling-rate', 'mouse', 'keyboard'],
     'qr-generator' => ['qr-reader', 'ocr', 'password', 'keyboard'],
     'qr-reader' => ['qr-generator', 'ocr', 'password', 'keyboard'],
     'ocr' => ['qr-reader', 'qr-generator', 'password', 'keyboard'],
@@ -172,13 +220,19 @@ $scriptToKey = [
     'ghost-click-detector' => 'ghost-click',
     'mouse_sensitivity_DPI_tester' => 'dpi',
     'mouse_speed_tester' => 'cps',
+    'spacebar-test' => 'spacebar',
+    'reaction-time-test' => 'reaction',
     'mouse-trail' => 'mouse-trail',
     'mic-tester' => 'mic',
     'headphone_speaker_tester_index' => 'headphone',
     'keyboard_typing_test' => 'typing',
     'latency-checker' => 'latency',
+    'polling-rate-test' => 'polling-rate',
     'webcamtesterindex' => 'webcam',
     'screentestindex' => 'screen',
+    'refresh-rate-test' => 'refresh-rate',
+    'color-test' => 'color-test',
+    'gamepad-test' => 'gamepad',
     'QR_code_generator_scanner' => 'qr-generator',
     'qr-code-reader' => 'qr-reader',
     'ocr-tool' => 'ocr',

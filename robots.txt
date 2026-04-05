@@ -1,6 +1,6 @@
 # Robots.txt - Search Engine Crawling Instructions
 # Site: keyboardtester.click
-# Last Updated: 2026-04-04
+# Last Updated: 2026-04-05
 
 # Default rules for all robots
 User-agent: *
@@ -18,6 +18,8 @@ Disallow: /admin/
 Disallow: /docs/
 Disallow: /api/
 Disallow: /generate-sitemap.php
+Disallow: /activate-theme.php
+Disallow: /kbt-blog-style.php
 Disallow: /config.php
 Disallow: /meta-config.php
 Disallow: /seo-config.php

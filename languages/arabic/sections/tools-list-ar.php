@@ -217,6 +217,76 @@ if (!function_exists('url')) {
                 <p>أنشئ كلمات مرور قوية وآمنة فورًا</p>
                 <span class="tool-card-link">افتح الأداة</span>
             </a>
+            <a href="<?php echo url('languages/arabic/spacebar-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>اختبار مسطرة المسافة</h3>
+                <p>احسب الضغطات في 5 أو 10 أو 30 ثانية</p>
+                <span class="tool-card-link">فتح الأداة</span>
+            </a>
+            <a href="<?php echo url('languages/arabic/reaction-time-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>اختبار وقت الاستجابة</h3>
+                <p>قِس ردود أفعالك بالميلي ثانية</p>
+                <span class="tool-card-link">فتح الأداة</span>
+            </a>
+            <a href="<?php echo url('languages/arabic/polling-rate-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>اختبار معدل استطلاع الماوس</h3>
+                <p>قِس معدل Hz للماوس في الوقت الفعلي</p>
+                <span class="tool-card-link">فتح الأداة</span>
+            </a>
+            <a href="<?php echo url('languages/arabic/refresh-rate-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>اختبار معدل تحديث الشاشة</h3>
+                <p>اكتشف تردد تحديث شاشتك</p>
+                <span class="tool-card-link">فتح الأداة</span>
+            </a>
+            <a href="<?php echo url('languages/arabic/touch-screen-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>اختبار الشاشة اللمسية</h3>
+                <p>تحقق من المناطق الميتة واللمس الوهمي</p>
+                <span class="tool-card-link">فتح الأداة</span>
+            </a>
+            <a href="<?php echo url('languages/arabic/gamepad-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>اختبار وحدة التحكم</h3>
+                <p>اختبر الأزرار والعصا والاهتزاز</p>
+                <span class="tool-card-link">فتح الأداة</span>
+            </a>
+            <a href="<?php echo url('languages/arabic/color-test.php'); ?>" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                </svg>
+                            </div>
+                <h3>اختبار ألوان الشاشة</h3>
+                <p>تحقق من الألوان والتدرجات والبكسل الميت</p>
+                <span class="tool-card-link">فتح الأداة</span>
+            </a>
         </div>
     </div>
 </section>

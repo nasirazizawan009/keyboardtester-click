@@ -20,7 +20,7 @@ $currentTool = $currentTool ?? basename(dirname($_SERVER['SCRIPT_FILENAME']));
     <div class="container">
         <h2 id="tools-hub-title">More testing tools</h2>
         <p class="section-subtitle">Explore the full suite for keyboard, mouse, audio, and utilities.</p>
-        <p class="language-note">Language support: The Keyboard Tester is the only tool with translated interfaces (Arabic, Russian, Spanish, French, Portuguese, Japanese, German, Korean). All other tools are currently English-only.</p>
+        <p class="language-note">Language support: All major tools are available in 8 languages — Arabic, Russian, Spanish, French, Portuguese, Japanese, German, and Korean. Select your language from the header menu to switch.</p>
         
         <div class="tools-grid">
             <a href="<?php echo url('tools/keyboard-tester/'); ?>" class="tool-card">

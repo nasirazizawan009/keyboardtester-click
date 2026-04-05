@@ -140,42 +140,91 @@ if (!isset($baseUrl)) {
         right: 0;
         top: 100%;
         background: var(--dropdown-bg);
-        border-top: 1px solid var(--header-border);
-        padding: 24px 20px;
-        box-shadow: 0 16px 30px rgba(15, 23, 42, 0.2);
+        border-top: 2px solid var(--header-border);
+        padding: 28px 20px 24px;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
         color: var(--text-color);
+        animation: megaFadeIn 0.2s ease;
+    }
+    @keyframes megaFadeIn {
+        from { opacity: 0; transform: translateY(-8px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
     .mega-panel.active { display: block; }
     .panel-inner {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
     }
+    .panel-inner > div:nth-child(1) { --col-accent: #3b82f6; --col-accent-bg: rgba(59,130,246,0.08); }
+    .panel-inner > div:nth-child(2) { --col-accent: #8b5cf6; --col-accent-bg: rgba(139,92,246,0.08); }
+    .panel-inner > div:nth-child(3) { --col-accent: #0ea5e9; --col-accent-bg: rgba(14,165,233,0.08); }
+    .panel-inner > div:nth-child(4) { --col-accent: #f59e0b; --col-accent-bg: rgba(245,158,11,0.08); }
+    .panel-inner > div:nth-child(5) { --col-accent: #10b981; --col-accent-bg: rgba(16,185,129,0.08); }
     .panel-inner > div {
-        background: rgba(15, 23, 42, 0.04);
+        background: var(--card-bg);
         border-radius: 14px;
-        padding: 12px 14px;
+        padding: 16px 14px 14px;
+        border-top: 3px solid var(--col-accent, #38bdf8);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.07);
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .panel-inner > div:hover {
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.13);
+        transform: translateY(-2px);
     }
     html.dark-theme .panel-inner > div,
-    [data-theme="dark"] .panel-inner > div { background: rgba(255, 255, 255, 0.04); }
-    .panel-title {
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: #7dd3fc;
-        margin-bottom: 8px;
-        font-weight: 700;
+    [data-theme="dark"] .panel-inner > div {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     }
+    html.dark-theme .panel-inner > div:hover,
+    [data-theme="dark"] .panel-inner > div:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); }
+    .panel-title {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--col-accent, #38bdf8);
+        margin-bottom: 10px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border-color, rgba(0,0,0,0.08));
+    }
+    .panel-title-icon { font-size: 1.05rem; line-height: 1; flex-shrink: 0; }
     .panel-links a {
-        display: block;
+        display: flex;
+        align-items: center;
         color: var(--text-color);
         text-decoration: none;
-        font-size: 0.95rem;
-        margin-bottom: 6px;
+        font-size: 0.87rem;
+        padding: 5px 7px;
+        border-radius: 7px;
+        margin-bottom: 1px;
+        transition: background 0.15s, color 0.15s, transform 0.15s;
     }
-    .panel-links a:hover { color: var(--link-color); }
+    .panel-links a::before {
+        content: '›';
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--col-accent, #38bdf8);
+        opacity: 0;
+        width: 0;
+        overflow: hidden;
+        flex-shrink: 0;
+        transition: opacity 0.15s, width 0.15s;
+        line-height: 1;
+    }
+    .panel-links a:hover {
+        background: var(--col-accent-bg, rgba(56,189,248,0.1));
+        color: var(--col-accent, #38bdf8);
+        transform: translateX(4px);
+    }
+    .panel-links a:hover::before { opacity: 1; width: 14px; }
     @media (max-width: 900px) {
         .menu-toggle { display: inline-flex; }
         .site-nav {
@@ -189,7 +238,7 @@ if (!isset($baseUrl)) {
         }
         .site-nav.open { transform: translateY(0); }
         .nav-actions { width: 100%; justify-content: center; margin-left: 0; }
-        .mega-panel { position: static; box-shadow: none; }
+        .mega-panel { position: static; box-shadow: none; animation: none; }
     }
 </style>
 
@@ -230,43 +279,63 @@ if (!isset($baseUrl)) {
     <div class="mega-panel" id="toolsPanel">
         <div class="panel-inner">
             <div>
-                <div class="panel-title">Teclado</div>
+                <div class="panel-title"><span class="panel-title-icon">⌨️</span> Teclado</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['home']; ?>">Testador de Teclado</a>
                     <a href="<?php echo $pages['keyboard_typing']; ?>">Teste de Velocidade</a>
                     <a href="<?php echo $pages['latency_check']; ?>">Verificador de Latencia</a>
+                    <a href="<?php echo url('languages/portuguese/spacebar-test.php'); ?>">Teste da Barra de Espaço</a>
+                    <a href="<?php echo url('languages/portuguese/reaction-time-test.php'); ?>">Tempo de Reação</a>
+                    <a href="<?php echo url('keyboard-ghosting-test.php'); ?>">Teste de Ghosting</a>
+                    <a href="<?php echo url('n-key-rollover-test.php'); ?>">N-Key Rollover</a>
+                    <a href="<?php echo url('stuck-key-test.php'); ?>">Tecla Travada</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">Mouse</div>
+                <div class="panel-title"><span class="panel-title-icon">🖱️</span> Mouse</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['mouse_test']; ?>">Testador de Mouse</a>
                     <a href="<?php echo $pages['click_speed']; ?>">Teste de Velocidade de Clique</a>
                     <a href="<?php echo $pages['ghost_click']; ?>">Detector de Cliques Fantasma</a>
                     <a href="<?php echo $pages['dpi_tester']; ?>">Teste de DPI</a>
+                    <a href="<?php echo url('languages/portuguese/mouse-trail.php'); ?>">Trilha do Mouse</a>
+                    <a href="<?php echo url('languages/portuguese/polling-rate-test.php'); ?>">Taxa de Polling</a>
+                    <a href="<?php echo url('scroll-wheel-test.php'); ?>">Roda de Rolagem</a>
+                    <a href="<?php echo url('double-click-test.php'); ?>">Clique Duplo</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">Tela</div>
+                <div class="panel-title"><span class="panel-title-icon">🖥️</span> Tela</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['screen_test']; ?>">Teste de Tela</a>
                     <a href="<?php echo $pages['webcam_test']; ?>">Teste de Webcam</a>
+                    <a href="<?php echo url('languages/portuguese/dead-pixel-test.php'); ?>">Pixel Morto</a>
+                    <a href="<?php echo url('stuck-pixel-test.php'); ?>">Pixel Preso</a>
+                    <a href="<?php echo url('black-screen-test.php'); ?>">Tela Preta</a>
+                    <a href="<?php echo url('white-screen-test.php'); ?>">Tela Branca</a>
+                    <a href="<?php echo url('languages/portuguese/refresh-rate-test.php'); ?>">Taxa de Atualização</a>
+                    <a href="<?php echo url('languages/portuguese/color-test.php'); ?>">Teste de Cor</a>
+                    <a href="<?php echo url('languages/portuguese/touch-screen-test.php'); ?>">Tela Touch</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">Audio</div>
+                <div class="panel-title"><span class="panel-title-icon">🎧</span> Audio</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['mic_test']; ?>">Teste de Microfone</a>
                     <a href="<?php echo $pages['headphone_test']; ?>">Teste de Fones</a>
+                    <a href="<?php echo url('microphone-volume-test.php'); ?>">Volume do Microfone</a>
+                    <a href="<?php echo url('left-right-speaker-test.php'); ?>">Alto-falante E/D</a>
+                    <a href="<?php echo url('stereo-test.php'); ?>">Teste Estéreo</a>
                 </div>
             </div>
             <div>
-                <div class="panel-title">Utilitarios</div>
+                <div class="panel-title"><span class="panel-title-icon">🛠️</span> Utilitarios</div>
                 <div class="panel-links">
                     <a href="<?php echo $pages['qr_generator']; ?>">Gerador de QR</a>
                     <a href="<?php echo $pages['qr_reader']; ?>">Leitor de QR</a>
                     <a href="<?php echo $pages['ocr_tool']; ?>">Ferramenta OCR</a>
                     <a href="<?php echo $pages['password_gen']; ?>">Gerador de Senhas</a>
+                    <a href="<?php echo url('languages/portuguese/gamepad-test.php'); ?>">Teste de Gamepad</a>
                 </div>
             </div>
         </div>
