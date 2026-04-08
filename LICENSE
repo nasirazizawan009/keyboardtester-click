@@ -1,0 +1,59 @@
+MIT License
+
+Copyright (c) 2024–2026 KeyboardTester.click
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+────────────────────────────────────────────────────────────────────────────────
+TRADEMARK NOTICE
+────────────────────────────────────────────────────────────────────────────────
+The name "KeyboardTester.click" and the associated domain are trademarks of the
+project owner. The MIT license grants you the right to use, copy, and modify the
+code — but does NOT grant you the right to use the "KeyboardTester.click" name,
+logo, or domain to identify your own product or service.
+
+────────────────────────────────────────────────────────────────────────────────
+THIRD-PARTY COMPONENTS
+────────────────────────────────────────────────────────────────────────────────
+This project uses the following third-party components, each under their own
+license:
+
+• Bootstrap          — MIT License
+• Google Fonts       — SIL Open Font License 1.1
+  (Inter, JetBrains Mono, Space Grotesk)
+• Tesseract.js       — Apache License 2.0
+• jsQR               — Apache License 2.0
+• Pexels stock photos — Pexels License (free to use, not for redistribution
+  as a standalone asset pack; see https://www.pexels.com/license/)
+
+────────────────────────────────────────────────────────────────────────────────
+IMAGES NOTE
+────────────────────────────────────────────────────────────────────────────────
+Hero and step images in /images/ are sourced from Pexels.com under the Pexels
+License. They are included here for convenience but are NOT covered by the MIT
+License above. If you fork this project, you are responsible for complying with
+the Pexels License or replacing the images with your own.
+
+────────────────────────────────────────────────────────────────────────────────
+PRIVACY & GDPR
+────────────────────────────────────────────────────────────────────────────────
+If you deploy this code on your own server, you are solely responsible for your
+own privacy policy and GDPR/CCPA compliance. The privacy policy at
+keyboardtester.click/privacy-policy.php applies only to the live site operated
+by the project owner.

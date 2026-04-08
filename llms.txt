@@ -1,0 +1,43 @@
+# KeyboardTester.click
+
+> Free online hardware testing tools for keyboards, mice, screens, audio devices, webcams, and utilities. No downloads or signups required. Available in 9 languages.
+
+## Core Tools
+
+- [Keyboard Tester](https://keyboardtester.click/tools/keyboard-tester/): Test every key with real-time visual feedback, color-coded key states, N-key rollover detection, and a gamified progress tracker. Supports 103 testable keys.
+- [Mouse Tester](https://keyboardtester.click/mouse-test.php): Test left, right, middle click, and scroll wheel input with instant visual confirmation.
+- [Typing Speed Test](https://keyboardtester.click/keyboard_typing_test.php): Measure WPM, CPM, and accuracy with timed typing passages.
+- [Click Speed Test](https://keyboardtester.click/mouse_speed_tester.php): Measure clicks-per-second (CPS) with timed challenges.
+- [Ghost Click Detector](https://keyboardtester.click/ghost-click-detector.php): Detect unintended double clicks or phantom clicks from worn mouse switches.
+- [Mouse DPI Tester](https://keyboardtester.click/mouse_sensitivity_DPI_tester.php): Estimate mouse DPI by measuring cursor travel against a known physical distance.
+- [Mouse Trail Visualizer](https://keyboardtester.click/mouse-trail.php): Visualize mouse movement patterns with colorful trails.
+- [Input Latency Checker](https://keyboardtester.click/latency-checker.php): Measure keyboard and mouse input latency in milliseconds.
+- [Screen Tester](https://keyboardtester.click/screentestindex.php): Test for dead pixels, stuck pixels, and color accuracy with fullscreen solid color panels.
+- [Microphone Tester](https://keyboardtester.click/mic-tester.php): Test microphone with a real-time audio level meter and peak detection.
+- [Headphone & Speaker Tester](https://keyboardtester.click/headphone_speaker_tester_index.php): Test left and right audio channels independently to verify stereo separation.
+- [Webcam Tester](https://keyboardtester.click/webcamtesterindex.php): Test webcam with live preview, resolution detection, and device info.
+- [QR Code Generator](https://keyboardtester.click/QR_code_generator_scanner.php): Create QR codes from text or URLs. Download as PNG.
+- [QR Code Reader](https://keyboardtester.click/qr-code-reader.php): Upload an image containing a QR code and decode its content.
+- [OCR Tool](https://keyboardtester.click/ocr-tool.php): Extract text from images using Tesseract.js OCR in the browser.
+- [Password Generator](https://keyboardtester.click/auto-password-generator.php): Generate strong random passwords with customizable length and character sets.
+- [WhatsApp Link Generator](https://keyboardtester.click/whatsapp-link-generator.php): Create direct WhatsApp chat links with pre-filled messages.
+- [Lucky Wheel Spinner](https://keyboardtester.click/luckywheeltoolindex.php): Random selection spinner wheel for giveaways and decisions.
+
+## Languages
+
+English, Spanish, French, German, Portuguese, Russian, Arabic, Japanese, Korean.
+
+## Key Facts
+
+- All tools run entirely in the browser. No data leaves the user's device.
+- No downloads, installs, or account signups required.
+- Dark and light theme with automatic OS preference detection.
+- Mobile-responsive with dedicated mobile keyboard input support.
+
+## Contact
+
+- Website: https://keyboardtester.click
+- Email: support@keyboardtester.click
+- GitHub: https://github.com/nasirazizawan009/keyboardtester-click
+- YouTube: https://www.youtube.com/@KeyboardTester-dot-click
+- Facebook: https://www.facebook.com/keyboardtester.click

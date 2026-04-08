@@ -1,0 +1,79 @@
+# ── Credentials & Secrets (NEVER COMMIT) ─────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.json
+!package.json
+!package-lock.json
+*credential*
+*password*
+*secret*
+google-credentials.json
+google-indexing-setup.txt
+
+# ── Deploy & Indexing Scripts (contain or use secrets) ───────────────────────
+deploy*.py
+upload*.py
+*-upload.py
+submit-bing-indexing.py
+submit-google-indexing.py
+submit-google-indexing-log.txt
+submit-bing-indexing-log.txt
+setup-google-indexing.ps1
+ftp*.php
+test-ftp*.php
+
+# ── IndexNow (contains secret key) ───────────────────────────────────────────
+submit-indexnow.php
+3714fa0124eb471586614d7b875b96fe.txt
+
+# ── IDE / Editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-*
+
+# ── Local Development ─────────────────────────────────────────────────────────
+.venv/
+venv/
+__pycache__/
+*.pyc
+node_modules/
+
+# ── Temporary & Generated ─────────────────────────────────────────────────────
+*.tmp
+*.temp
+*.log
+tmp_*.txt
+cache-test.php
+clear-cache.php
+debug-*.php
+fix-*.php
+
+# ── WordPress Blog (managed separately) ──────────────────────────────────────
+blog/
+
+# ── OS Files ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Backup Files ──────────────────────────────────────────────────────────────
+*.bak
+*.backup
+*~
+
+# ── Claude/AI tooling ─────────────────────────────────────────────────────────
+.claude/
+
+# ── Junk / Review folder ──────────────────────────────────────────────────────
+junk-to-review-by-nasir/
+
+# ── Separate repo copies ──────────────────────────────────────────────────────
+github-repo/
+
+# ── Text files (mostly internal docs) ────────────────────────────────────────
+*.txt
+!robots.txt
+!LICENSE.txt
+!ads.txt
+!llms.txt
