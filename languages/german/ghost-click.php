@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
 $pageTitle = 'Geisterklick-Detektor - Erkennen Sie ungewollte Klicks';
-$pageDescription = 'Erkennen Sie Geisterklicks und unbeabsichtigte Klicks Ihrer Maus. Identifizieren Sie Maus-Hardware-Probleme.';
+$pageDescription = 'Ghost-Click-Detektor: Diagnostiziert unbeabsichtigte Doppelklicks und Switch-Bounce einer abgenutzten Maus. Live-Protokoll, ohne Installation, datenschutzfreundlich.';
 $pageKeywords = 'Geisterklicks, Klickdetektor, Mausprobleme, ungewollte Klicks, Ghost Click';
 ?>
 <!DOCTYPE html>

@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-pt.php';
 
 $pageTitle = 'Rastro do Mouse - Visualize o Movimento do Cursor';
-$pageDescription = 'Visualize o rastro de movimento do mouse. Analise a precisao e fluidez do cursor.';
+$pageDescription = 'Visualizador de rastro do mouse: observe padrões de movimento com trilhas coloridas em um canvas em tela cheia. Testa fluidez de rastreamento e comportamento do sensor.';
 $pageKeywords = 'rastro do mouse, mouse trail, movimento do cursor, visualizar mouse, precisao do mouse';
 ?>
 <!DOCTYPE html>

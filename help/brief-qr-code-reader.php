@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">QR Code Scanning</p>
-      <h1 class="hero-title">QR Code Reader Online From Image Uploads</h1>
+      <h1 class="hero-title">Free Open Source QR Code Reader Online From Image Uploads</h1>
       <p class="hero-lede">Upload a QR image and decode its content locally in your browser.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#qr-code-reader">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/qr-reader/hero.png'); ?>" alt="QR code scanner tool - scan and decode QR codes with camera or upload" loading="eager">
+        <img src="<?php echo url('images/qr-reader/hero.png'); ?>" alt="QR code scanner tool - scan and decode QR codes with camera or upload" loading="eager" width="800" height="571" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

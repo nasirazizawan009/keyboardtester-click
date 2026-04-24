@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Mouse Trail Test Online | KeyboardTester.click';
-$pageDescription = 'Visualize cursor movement with a free mouse trail test. Track pointer paths, smoothness, and motion behavior in the browser.';
-$pageKeywords = 'mouse trail test, cursor trail test, mouse movement test, pointer tracking tool';
+$pageTitle = 'Free Open Source Mouse Trail Test Online | KeyboardTester.click';
+$pageDescription = 'Free open source mouse trail test online. Visualize cursor movement, track pointer paths, smoothness, and motion behavior in the browser. No download needed.';
+$pageKeywords = 'mouse trail test, open source mouse test, cursor trail test, mouse movement test, pointer tracking tool';
 $pageOgImage = 'images/mouse-trail/hero.png';
 ?>
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ $pageOgImage = 'images/mouse-trail/hero.png';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-trail/step-1.png'); ?>" alt="Mouse trail test step 1 - start cursor tracking visualization" loading="lazy">
+              <img src="<?php echo url('images/mouse-trail/step-1.png'); ?>" alt="Mouse trail test step 1 - start cursor tracking visualization" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -120,7 +120,7 @@ $pageOgImage = 'images/mouse-trail/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-trail/step-2.png'); ?>" alt="Mouse trail test step 2 - trace cursor movement path" loading="lazy">
+              <img src="<?php echo url('images/mouse-trail/step-2.png'); ?>" alt="Mouse trail test step 2 - trace cursor movement path" loading="lazy" width="600" height="450" decoding="async">
             </div>
             <div class="step-number">02</div>
             <h3>Move the mouse</h3>
@@ -128,7 +128,7 @@ $pageOgImage = 'images/mouse-trail/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-trail/step-3.png'); ?>" alt="Mouse trail test results - cursor movement pattern display" loading="lazy">
+              <img src="<?php echo url('images/mouse-trail/step-3.png'); ?>" alt="Mouse trail test results - cursor movement pattern display" loading="lazy" width="600" height="423" decoding="async">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -140,6 +140,7 @@ $pageOgImage = 'images/mouse-trail/hero.png';
 
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/mouse-trail.php'; ?>
+  <?php $toolBlogSlug = 'mouse-trail-visualizer-movement-patterns.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
   </main>
 
   <?php include 'footer.php'; ?>

@@ -246,7 +246,7 @@ $screenTestPresetData = $screenTestPresetMap[$screenTestPreset] ?? $screenTestPr
     updateStats();
   }
 
-  // Start full screen test
+  // Start full screen test — uses real Fullscreen API so browser chrome + taskbar are hidden
   function startScreenTest() {
     const fsTest = document.getElementById('st-fullscreen-test');
     fsTest.classList.add('active');
@@ -254,8 +254,11 @@ $screenTestPresetData = $screenTestPresetMap[$screenTestPreset] ?? $screenTestPr
     testCount++;
     localStorage.setItem('st_test_count', testCount.toString());
     updateStats();
-    
-    // Set initial color
+
+    // Request TRUE OS-level fullscreen
+    const req = fsTest.requestFullscreen || fsTest.webkitRequestFullscreen || fsTest.mozRequestFullScreen || fsTest.msRequestFullscreen;
+    if (req) req.call(fsTest).catch(() => {});
+
     updateFullScreenColor();
 
     // Hide instructions after 3 seconds
@@ -270,7 +273,7 @@ $screenTestPresetData = $screenTestPresetMap[$screenTestPreset] ?? $screenTestPr
     const fsTest = document.getElementById('st-fullscreen-test');
     const color = colors[currentColorIndex];
     fsTest.style.background = color.hex;
-    
+
     colorsTested.add(color.hex);
     localStorage.setItem('st_colors_tested', JSON.stringify([...colorsTested]));
     updateStats();
@@ -290,15 +293,29 @@ $screenTestPresetData = $screenTestPresetMap[$screenTestPreset] ?? $screenTestPr
 
   // Exit full screen
   function exitFullScreen() {
+    const exit = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
+    if (exit) exit.call(document).catch(() => {});
     document.getElementById('st-fullscreen-test').classList.remove('active');
     document.getElementById('st-fs-instructions').style.display = 'block';
     isFullScreen = false;
   }
 
+  // Sync state when user exits fullscreen natively (browser ESC or swipe)
+  function onFsChange() {
+    if (!document.fullscreenElement && !document.webkitFullscreenElement && isFullScreen) {
+      document.getElementById('st-fullscreen-test').classList.remove('active');
+      const instr = document.getElementById('st-fs-instructions');
+      if (instr) instr.style.display = 'block';
+      isFullScreen = false;
+    }
+  }
+  document.addEventListener('fullscreenchange', onFsChange);
+  document.addEventListener('webkitfullscreenchange', onFsChange);
+
   // Keyboard controls
   document.addEventListener('keydown', (e) => {
     if (!isFullScreen) return;
-    
+
     if (e.key === 'Escape') {
       exitFullScreen();
     } else if (e.key === 'ArrowRight') {

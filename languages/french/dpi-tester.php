@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
 $pageTitle = 'Testeur de DPI - Mesurez la Sensibilite de la Souris';
-$pageDescription = 'Testez et mesurez le DPI de votre souris. Verifiez la precision du suivi et la sensibilite.';
+$pageDescription = 'Testeur de DPI et sensibilité de souris : vérifie la vraie résolution du capteur, la précision du suivi et la cohérence du curseur. Fonctionne dans le navigateur, sans pilote.';
 $pageKeywords = 'DPI souris, sensibilite mouse, test DPI, test sensibilite, calibrer souris';
 ?>
 <!DOCTYPE html>

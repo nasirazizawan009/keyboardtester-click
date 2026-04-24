@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
 $pageTitle = 'Mikrofon-Tester - Ueberpruefen Sie Ihr Mikrofon Kostenlos';
-$pageDescription = 'Testen Sie Ihr Mikrofon online. Ueberpruefen Sie die Audioeingabe, Lautstaerkepegel und Aufnahmequalitaet.';
+$pageDescription = 'Online-Mikrofontest: Prüfen Sie Mikrofon-Eingang, Pegel und Spitzenlautstärke vor Zoom, Teams oder Discord. Im Browser, ohne Anmeldung oder Aufnahme.';
 $pageKeywords = 'Mikrofon Test, Mic Test, Audio ueberpruefen, Mikrofon testen, Stimmtest';
 ?>
 <!DOCTYPE html>

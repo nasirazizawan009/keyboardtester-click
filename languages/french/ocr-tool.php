@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
 $pageTitle = 'Outil OCR - Extrayez du Texte des Images Gratuitement';
-$pageDescription = 'Extrayez du texte des images en utilisant l\'OCR. Convertissez des images en texte editable instantanement.';
+$pageDescription = 'Outil OCR gratuit : extrait le texte d\'images, captures d\'écran et photos localement dans le navigateur via Tesseract.js. Aucun upload vers un serveur, vie privée respectée.';
 $pageKeywords = 'OCR, extraire texte image, convertir image texte, reconnaissance caracteres, OCR en ligne';
 ?>
 <!DOCTYPE html>

@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const reader = new FileReader();
     reader.onload = function (event) {
       currentImage = event.target.result;
-      preview.innerHTML = `<img src="${currentImage}" alt="Apercu OCR">`;
+      preview.innerHTML = `<img src="${currentImage}" alt="Apercu OCR" loading="lazy" decoding="async">`;
       runBtn.disabled = false;
       statusEl.textContent = 'Etat: Pret pour l\'extraction';
     };

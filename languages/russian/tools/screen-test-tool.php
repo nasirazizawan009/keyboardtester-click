@@ -241,6 +241,10 @@
     localStorage.setItem('st_test_count', testCount.toString());
     updateStats();
 
+    // Request TRUE OS-level fullscreen (hides browser chrome + taskbar)
+    const req = fsTest.requestFullscreen || fsTest.webkitRequestFullscreen || fsTest.mozRequestFullScreen || fsTest.msRequestFullscreen;
+    if (req) req.call(fsTest).catch(() => {});
+
     updateFullScreenColor();
 
     setTimeout(() => {
@@ -270,10 +274,24 @@
   }
 
   function exitFullScreen() {
+    const exit = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
+    if (exit) exit.call(document).catch(() => {});
     document.getElementById('st-fullscreen-test').classList.remove('active');
     document.getElementById('st-fs-instructions').style.display = 'block';
     isFullScreen = false;
   }
+
+  // Sync state when user exits fullscreen natively (browser ESC or swipe)
+  function onFsChange() {
+    if (!document.fullscreenElement && !document.webkitFullscreenElement && isFullScreen) {
+      document.getElementById('st-fullscreen-test').classList.remove('active');
+      const instr = document.getElementById('st-fs-instructions');
+      if (instr) instr.style.display = 'block';
+      isFullScreen = false;
+    }
+  }
+  document.addEventListener('fullscreenchange', onFsChange);
+  document.addEventListener('webkitfullscreenchange', onFsChange);
 
   document.addEventListener('keydown', (e) => {
     if (!isFullScreen) return;

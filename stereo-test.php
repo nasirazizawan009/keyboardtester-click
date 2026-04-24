@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Stereo Test Online | Check Headphones and Speakers',
-        'description' => 'Run a stereo test online to verify both audio channels, left-right balance, and speaker or headphone output in the browser.',
+        'title' => 'Free Open Source Stereo Test Online | Check Headphones and Speakers',
+        'description' => 'Run a stereo test online to verify both audio channels, left-right balance and speaker or headphone output. Works on any browser — no install, no tracking, instant.',
         'keywords' => 'stereo test online, stereo sound test, speaker stereo test, headphone stereo test',
         'ogImage' => 'images/headphone-test/hero.png',
         'ogImageAlt' => 'Stereo test page for headphones and speakers'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Stereo playback diagnostics',
-        'title' => 'Stereo Test Online',
+        'title' => 'Free Open Source Stereo Test Online',
         'lede' => 'Run a fast stereo sound test in the browser to confirm both audio channels play correctly and your speakers or headphones sound balanced.',
         'primaryHref' => '#stereo-test-tool',
         'primaryLabel' => 'Start stereo test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'headphone',
     'seoContentInclude' => 'help/seo-content/stereo-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/headphone-speaker-tester.php'
+    'helpInclude' => 'help/headphone-speaker-tester.php',
+    'relatedBlog' => 'headphone-speaker-test-left-right-channels.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

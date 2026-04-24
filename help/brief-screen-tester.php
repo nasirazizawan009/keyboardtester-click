@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Dead Pixel Check</p>
-      <h1 class="hero-title">Screen Tester for Dead and Stuck Pixels</h1>
+      <h1 class="hero-title">Free Open Source Screen Tester for Dead and Stuck Pixels</h1>
       <p class="hero-lede">Cycle full-screen colors to spot dead pixels, stuck pixels, and uniformity issues.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#screentestindex">Start test</a>

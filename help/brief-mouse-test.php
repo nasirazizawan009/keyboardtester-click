@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Mouse diagnostics suite</p>
-      <h1 class="hero-title">Free Online Mouse Tester - Test Clicks and Scroll</h1>
+      <h1 class="hero-title">Free Open Source Online Mouse Tester - Test Clicks and Scroll</h1>
       <p class="hero-lede">Verify left, middle, and right clicks, check scroll direction, and reset instantly. No downloads. No signups.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#mouse-test">Start mouse test</a>

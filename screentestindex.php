@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Dead Pixel Test & Screen Tester Online — Free Monitor Check | KeyboardTester.click';
-$pageDescription = 'Dead pixel test online free. Check monitor, laptop or phone for dead and stuck pixels using fullscreen color cycling. No install.';
-$pageKeywords = 'screen tester, dead pixel test, stuck pixel test, monitor test';
+$pageTitle = 'Free Open Source Dead Pixel Test & Screen Tester Online | KeyboardTester.click';
+$pageDescription = 'Free open source dead pixel test online. Check monitor, laptop, or phone for dead and stuck pixels using fullscreen color cycling. No install or download needed.';
+$pageKeywords = 'screen tester, open source dead pixel test, dead pixel test, stuck pixel test, monitor test';
 $pageOgImage = 'images/screen-test/screen-tester-monitor-inspection-1400.png';
 $pageOgImageAlt = 'Person using an online screen tester to inspect a display for dead pixels and panel defects';
 ?>
@@ -140,7 +140,7 @@ $pageOgImageAlt = 'Person using an online screen tester to inspect a display for
               <picture>
                 <source type="image/webp" srcset="<?php echo url('images/screen-test/screen-tester-review-pixel-results-640.webp'); ?> 640w, <?php echo url('images/screen-test/screen-tester-review-pixel-results-960.webp'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
                 <source type="image/png" srcset="<?php echo url('images/screen-test/screen-tester-review-pixel-results-640.png'); ?> 640w, <?php echo url('images/screen-test/screen-tester-review-pixel-results-960.png'); ?> 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 360px">
-                <img src="<?php echo url('images/screen-test/screen-tester-review-pixel-results-640.png'); ?>" width="640" height="426" alt="Online screen tester review highlighting a suspicious pixel area on the display" loading="lazy" decoding="async">
+                <img src="<?php echo url('images/screen-test/screen-tester-review-pixel-results-640.png'); ?>" width="640" height="424" alt="Online screen tester review highlighting a suspicious pixel area on the display" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="step-number">03</div>

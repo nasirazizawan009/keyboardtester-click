@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
 $pageTitle = 'Test d\'Ecran - Detectez les Pixels Morts Gratuitement';
-$pageDescription = 'Detectez les pixels morts, coinces ou chauds sur votre moniteur. Test d\'ecran complet avec couleurs unies.';
+$pageDescription = 'Testeur d\'écran en ligne : détecte les pixels morts, bloqués, chauds et les problèmes d\'uniformité avec des panneaux plein écran de couleurs pures. Rapide, sans installation.';
 $pageKeywords = 'test ecran, pixels morts, test moniteur, detecter pixels, test LCD';
 ?>
 <!DOCTYPE html>
@@ -42,6 +42,11 @@ $pageKeywords = 'test ecran, pixels morts, test moniteur, detecter pixels, test 
             <a href="#guidelines" class="landing-btn landing-btn-ghost">Comment Utiliser</a>
           </div>
         </div>
+          <div class="hero-visual">
+            <div class="hero-shot">
+              <img src="<?php echo url('images/screen-test/screen-tester-monitor-inspection-1400.png'); ?>" width="1400" height="787" alt="Screen tester - monitor pixel and color inspection" loading="eager" decoding="async" fetchpriority="high">
+            </div>
+          </div>
       </div>
     </section>
 

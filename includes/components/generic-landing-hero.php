@@ -4,6 +4,7 @@ if (empty($heroData) || !is_array($heroData)) {
 }
 ?>
 <section class="landing-hero">
+    <?php $heroImageMeta = getLocalImageMeta($heroData['image'] ?? 'images/shared/keyboard-and-mouse.png'); ?>
     <div class="container landing-hero-grid">
         <div class="hero-copy">
             <p class="hero-kicker"><?php echo htmlspecialchars($heroData['kicker'] ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
@@ -37,7 +38,7 @@ if (empty($heroData) || !is_array($heroData)) {
         </div>
         <div class="hero-visual">
             <div class="hero-shot">
-                <img src="<?php echo url($heroData['image'] ?? 'images/shared/keyboard-and-mouse.png'); ?>" alt="<?php echo htmlspecialchars($heroData['imageAlt'] ?? '', ENT_QUOTES, 'UTF-8'); ?>" loading="eager">
+                <img src="<?php echo url($heroData['image'] ?? 'images/shared/keyboard-and-mouse.png'); ?>" alt="<?php echo htmlspecialchars($heroData['imageAlt'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"<?php if ($heroImageMeta !== null && !empty($heroImageMeta['width']) && !empty($heroImageMeta['height'])): ?> width="<?php echo (int) $heroImageMeta['width']; ?>" height="<?php echo (int) $heroImageMeta['height']; ?>"<?php endif; ?> loading="eager" decoding="async" fetchpriority="high">
             </div>
             <?php if (!empty($heroData['miniCards'])): ?>
                 <div class="hero-stack">
@@ -52,4 +53,3 @@ if (empty($heroData) || !is_array($heroData)) {
         </div>
     </div>
 </section>
-

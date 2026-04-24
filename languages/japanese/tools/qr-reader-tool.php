@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const reader = new FileReader();
     reader.onload = function (event) {
       imageDataUrl = event.target.result;
-      preview.innerHTML = `<img src="${imageDataUrl}" alt="QRプレビュー">`;
+      preview.innerHTML = `<img src="${imageDataUrl}" alt="QRプレビュー" loading="lazy" decoding="async">`;
       runBtn.disabled = false;
       statusEl.textContent = 'ステータス: デコード準備完了';
     };

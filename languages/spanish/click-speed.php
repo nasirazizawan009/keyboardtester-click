@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-es.php';
 
 $pageTitle = 'Prueba de Velocidad de Clic - Mide tu CPS Gratis';
-$pageDescription = 'Mide tu velocidad de clic (CPS - Clics Por Segundo). Prueba tu velocidad con diferentes duraciones de tiempo.';
+$pageDescription = 'Prueba de velocidad de clic (CPS) gratuita: mide cuántos clics por segundo puedes hacer con desafíos cronometrados de 5, 10 o 60 segundos. Sin instalación, 100% navegador.';
 $pageKeywords = 'velocidad clic, CPS test, clics por segundo, prueba velocidad mouse, click speed test';
 ?>
 <!DOCTYPE html>

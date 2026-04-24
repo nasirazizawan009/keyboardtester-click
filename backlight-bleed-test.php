@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Backlight Bleed Test — Check Monitor for Light Leak Online Free | KeyboardTester.click';
-$pageDescription = 'Free backlight bleed test online. Check your LCD monitor for backlight bleeding, IPS glow, and clouding with a full-screen black display. Adjustable brightness and multiple dark shades — no download required.';
-$pageKeywords = 'backlight bleed test, backlight bleed test online, IPS glow test, monitor bleed check, LCD backlight bleeding test';
+$pageTitle = 'Free Open Source Backlight Bleed Test — Monitor Light Leak Check Online | KeyboardTester.click';
+$pageDescription = 'Free open source backlight bleed test online. Check your LCD monitor for backlight bleeding, IPS glow, and clouding with a full-screen black display. Adjustable brightness and multiple dark shades — no download required.';
+$pageKeywords = 'backlight bleed test, open source monitor test, backlight bleed test online, IPS glow test, monitor bleed check, LCD backlight bleeding test';
 $pageOgImage = 'images/screen-test/hero.webp';
 ?>
 <!DOCTYPE html>
@@ -444,7 +444,7 @@ html.dark-theme .bleed-compare-table tr:nth-child(even) td {
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Monitor diagnostics</p>
-          <h1 id="tool-stage-title">Backlight Bleed Test</h1>
+          <h1 id="tool-stage-title">Free Open Source Backlight Bleed Test</h1>
           <p class="section-lede">Check your monitor for light leakage, IPS glow, and clouding using a full-screen dark display.</p>
         </div>
         <div class="tool-stage-actions">

@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'White Screen Test Online | Full White Screen Checker',
-        'description' => 'Use a white screen test online to inspect stuck pixels, dust, tint, and panel uniformity on monitors, laptops, and mobile displays.',
+        'title' => 'Free Open Source White Screen Test Online | Full White Screen Checker',
+        'description' => 'Use a white screen test online to inspect stuck pixels, dust, panel tint and uniformity on monitors, laptops and phones. Fullscreen pure-white with one click.',
         'keywords' => 'white screen test, full white screen, monitor white screen test, stuck pixel white screen',
         'ogImage' => 'images/screen-test/hero.png',
         'ogImageAlt' => 'White screen test tool for stuck pixel and monitor checks'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Bright-screen diagnostics',
-        'title' => 'White Screen Test Online',
+        'title' => 'Free Open Source White Screen Test Online',
         'lede' => 'Open a clean white screen, go full screen, and inspect your display for stuck pixels, tint, dust, and uneven brightness in the browser.',
         'primaryHref' => '#white-screen-tool',
         'primaryLabel' => 'Open white screen test',
@@ -75,7 +75,8 @@ $intentPage = [
     'currentTool' => 'screen',
     'seoContentInclude' => 'help/seo-content/white-screen-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/screen-tester.php'
+    'helpInclude' => 'help/screen-tester.php',
+    'relatedBlog' => 'dead-pixel-test-check-monitor.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

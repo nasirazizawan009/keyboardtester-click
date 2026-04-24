@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Image to Text OCR</p>
-      <h1 class="hero-title">Image to Text OCR Tool Online</h1>
+      <h1 class="hero-title">Free Open Source Image to Text OCR Tool Online</h1>
       <p class="hero-lede">Upload a screenshot or photo and extract text without installing desktop software.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#ocr-tool">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/ocr-tool/hero.png'); ?>" alt="OCR image to text converter - extract text from images online free" loading="eager">
+        <img src="<?php echo url('images/ocr-tool/hero.png'); ?>" alt="OCR image to text converter - extract text from images online free" loading="eager" width="800" height="531" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

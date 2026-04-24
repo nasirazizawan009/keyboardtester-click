@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Input Response Time</p>
-      <h1 class="hero-title">Input Latency Checker for Keyboard and Mouse</h1>
+      <h1 class="hero-title">Free Open Source Input Latency Checker for Keyboard and Mouse</h1>
       <p class="hero-lede">Press keys or click to capture live latency samples and compare response time instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#latency-checker">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/latency-checker/hero.png'); ?>" alt="Input latency checker tool interface - measure keyboard and mouse response time" loading="eager">
+        <img src="<?php echo url('images/latency-checker/hero.png'); ?>" alt="Input latency checker tool interface - measure keyboard and mouse response time" loading="eager" width="800" height="533" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

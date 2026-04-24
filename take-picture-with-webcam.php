@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Take Picture With Webcam Online | Free Camera Snapshots',
-        'description' => 'Take pictures with your webcam online, preview the live feed, capture snapshots, and download webcam images in the browser.',
+        'title' => 'Free Open Source Take Picture With Webcam Online | Camera Snapshots',
+        'description' => 'Take pictures with your webcam online, preview the live feed, capture snapshots and download images instantly. Works in any modern browser with no install required.',
         'keywords' => 'take picture with webcam online, webcam snapshot, webcam photo online, camera snapshot test',
         'ogImage' => 'images/webcam-test/hero.png',
         'ogImageAlt' => 'Take picture with webcam page for browser camera snapshots'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Webcam snapshot workflow',
-        'title' => 'Take Picture With Webcam Online',
+        'title' => 'Free Open Source Take Picture With Webcam Online',
         'lede' => 'Preview your camera in the browser, take webcam snapshots, and download them without installing extra software or opening a separate app.',
         'primaryHref' => '#webcam-picture-tool',
         'primaryLabel' => 'Start webcam snapshot test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'webcam',
     'seoContentInclude' => 'help/seo-content/take-picture-with-webcam.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/webcam-tester.php'
+    'helpInclude' => 'help/webcam-tester.php',
+    'relatedBlog' => 'webcam-test-check-camera-video-calls.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Headphone and Speaker Test Online | KeyboardTester.click';
-$pageDescription = 'Test speakers and headphones online with stereo audio playback, left-right channel checks, and quick browser-based sound tests.';
-$pageKeywords = 'headphone test, speaker test, audio test online, stereo sound test';
+$pageTitle = 'Free Open Source Headphone and Speaker Test Online | KeyboardTester.click';
+$pageDescription = 'Free open source headphone and speaker test online. Test stereo audio playback, left-right channel checks, and sound output quickly in your browser. No install needed.';
+$pageKeywords = 'headphone test, open source speaker test, audio test online, stereo sound test';
 $pageOgImage = 'images/headphone-test/speaker-headphone-test-stereo-preview-1400.png';
 $pageOgImageAlt = 'Person verifying stereo speaker and headphone output online with left and right channel controls';
 ?>
@@ -156,6 +156,7 @@ $pageOgImageAlt = 'Person verifying stereo speaker and headphone output online w
     <?php include 'includes/related-tools.php'; ?>
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/headphone-speaker-tester.php'; ?>
+  <?php $toolBlogSlug = 'headphone-speaker-test-left-right-channels.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
   </main>
 
   <?php include 'footer.php'; ?>

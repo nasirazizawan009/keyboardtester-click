@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
 $pageTitle = 'Mausspur - Visualisieren Sie die Cursorbewegung';
-$pageDescription = 'Visualisieren Sie die Mausbewegungsspur. Analysieren Sie Praezision und Fluessigkeit des Cursors.';
+$pageDescription = 'Maus-Spur-Visualisierer: Beobachte Bewegungsmuster mit farbigen Spuren auf einem Vollbild-Canvas. Testet Tracking-Flüssigkeit und Sensorverhalten, ohne Installation.';
 $pageKeywords = 'Mausspur, Mouse Trail, Cursorbewegung, Maus visualisieren, Mausprazision';
 ?>
 <!DOCTYPE html>

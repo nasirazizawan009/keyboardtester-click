@@ -22,6 +22,14 @@
 - [Password Generator](https://keyboardtester.click/auto-password-generator.php): Generate strong random passwords with customizable length and character sets.
 - [WhatsApp Link Generator](https://keyboardtester.click/whatsapp-link-generator.php): Create direct WhatsApp chat links with pre-filled messages.
 - [Lucky Wheel Spinner](https://keyboardtester.click/luckywheeltoolindex.php): Random selection spinner wheel for giveaways and decisions.
+- [AI Assistant](https://keyboardtester.click/ai-assistant.php): Free chat-based AI helper that picks the right hardware test based on your described symptom, explains results, and links to the correct tool. Supports 8 languages. No account, rate-limited at 12 messages/minute.
+
+## AI Features
+
+- Floating AI chat widget on every page (bottom-right robot icon) — ask about any tool in plain language.
+- Multilingual: English, Spanish, French, German, Japanese, Korean, Portuguese, Arabic.
+- Privacy-first: no chat log stored server-side, messages not used for training.
+- Built on Groq-hosted LLM inference for ~1-second responses.
 
 ## Languages
 

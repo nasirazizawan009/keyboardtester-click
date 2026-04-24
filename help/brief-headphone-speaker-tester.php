@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Audio Output Check</p>
-      <h1 class="hero-title">Headphone and Speaker Test Online</h1>
+      <h1 class="hero-title">Free Open Source Headphone and Speaker Test Online</h1>
       <p class="hero-lede">Play stereo test audio to verify speakers, headphones, and left-right channel balance.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#headphone-speaker-tester-index">Start test</a>

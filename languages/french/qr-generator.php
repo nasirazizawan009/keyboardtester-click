@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
 $pageTitle = 'Generateur de Codes QR - Creez des QR Gratuitement';
-$pageDescription = 'Generez des codes QR personnalises instantanement. Creez des QR pour URLs, texte, contacts et plus.';
+$pageDescription = 'Générateur de codes QR gratuit : créez des codes QR à partir d\'URL, texte, numéros ou liens WhatsApp. Téléchargez en PNG haute résolution, sans filigrane ni inscription.';
 $pageKeywords = 'generateur QR, creer code QR, QR gratuit, generer QR, code QR en ligne';
 ?>
 <!DOCTYPE html>

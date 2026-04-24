@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Cursor Path Visualizer</p>
-      <h1 class="hero-title">Free Mouse Trail Test and Cursor Path Visualizer</h1>
+      <h1 class="hero-title">Free Open Source Mouse Trail Test and Cursor Path Visualizer</h1>
       <p class="hero-lede">Move your cursor to draw a visible trail and review how smoothly your mouse tracks on screen.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#mouse-trail">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mouse-trail/hero.png'); ?>" alt="Mouse trail visualizer - track cursor movement path and precision" loading="eager">
+        <img src="<?php echo url('images/mouse-trail/hero.png'); ?>" alt="Mouse trail visualizer - track cursor movement path and precision" loading="eager" width="800" height="533" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

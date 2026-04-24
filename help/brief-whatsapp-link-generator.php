@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Click-to-Chat Links</p>
-      <h1 class="hero-title">WhatsApp Link Generator for Click-to-Chat URLs</h1>
+      <h1 class="hero-title">Free Open Source WhatsApp Link Generator for Click-to-Chat URLs</h1>
       <p class="hero-lede">Enter a phone number and optional message to build a shareable wa.me link instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#whatsapp-link-generator">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/whatsapp-link/hero.png'); ?>" alt="WhatsApp link generator - create wa.me click to chat links free" loading="eager">
+        <img src="<?php echo url('images/whatsapp-link/hero.png'); ?>" alt="WhatsApp link generator - create wa.me click to chat links free" loading="eager" width="800" height="533" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

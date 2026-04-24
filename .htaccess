@@ -27,12 +27,6 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.keyboardtester\.click$ [NC]
 RewriteRule ^ https://keyboardtester.click%{REQUEST_URI} [R=301,L]
 
-# Combined: Catch any remaining edge cases (http + www)
-RewriteCond %{HTTPS} !=on [OR]
-RewriteCond %{HTTP_HOST} ^www\. [NC]
-RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
-RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
-
 # ============================================
 
 # Canonical entry points and legacy aliases
@@ -42,6 +36,32 @@ RewriteRule ^about\.php$ /about-us.php [R=301,L]
 RewriteRule ^privacy\.php$ /privacy-policy.php [R=301,L]
 RewriteRule ^contact\.php$ /feedback.php [R=301,L]
 RewriteRule ^sitemap-index\.xml$ /sitemap.xml [R=301,L]
+
+# ─── Strip trailing slash from .php URLs (prevents GSC duplicate-content) ───
+RewriteCond %{REQUEST_METHOD} ^GET$
+RewriteRule ^(.+)\.php/$ /$1.php [R=301,L]
+
+# ─── Legacy ?lang=xx on /pages/all-tools.php → per-locale files ───
+# (split-URL pattern for SEO; clean 301 so bots consolidate to new URLs)
+RewriteCond %{QUERY_STRING} (^|&)lang=es(&|$)
+RewriteRule ^pages/all-tools\.php$ /pages/all-tools-es.php? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)lang=fr(&|$)
+RewriteRule ^pages/all-tools\.php$ /pages/all-tools-fr.php? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)lang=de(&|$)
+RewriteRule ^pages/all-tools\.php$ /pages/all-tools-de.php? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)lang=pt(&|$)
+RewriteRule ^pages/all-tools\.php$ /pages/all-tools-pt.php? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)lang=ar(&|$)
+RewriteRule ^pages/all-tools\.php$ /pages/all-tools-ar.php? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)lang=ru(&|$)
+RewriteRule ^pages/all-tools\.php$ /pages/all-tools-ru.php? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)lang=ja(&|$)
+RewriteRule ^pages/all-tools\.php$ /pages/all-tools-ja.php? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)lang=ko(&|$)
+RewriteRule ^pages/all-tools\.php$ /pages/all-tools-ko.php? [R=301,L]
+# ?lang=en → strip the param (en is the canonical URL with no suffix)
+RewriteCond %{QUERY_STRING} (^|&)lang=en(&|$)
+RewriteRule ^pages/all-tools\.php$ /pages/all-tools.php? [R=301,L]
 
 # Serve WebP when supported and available
 RewriteCond %{HTTP_ACCEPT} image/webp
@@ -161,7 +181,7 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
     # Default expiration: 1 week
     ExpiresDefault "access plus 1 week"
 
-    # HTML - short cache (content changes often)
+    # HTML - short browser cache only (private, never proxy/nginx cached)
     ExpiresByType text/html "access plus 1 hour"
 
     # CSS and JavaScript - 1 year (use versioning for updates)
@@ -213,31 +233,36 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
     # Content Security Policy (CSP) - Prevents XSS attacks
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://*.clarity.ms https://www.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://adservice.google.com https://www.googleadservices.com https://tpc.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; img-src 'self' data: https: blob:; connect-src 'self' https://cdn.jsdelivr.net https://*.clarity.ms https://www.clarity.ms https://www.google-analytics.com https://*.google-analytics.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://fundingchoicesmessages.google.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://*.clarity.ms https://www.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://adservice.google.com https://www.googleadservices.com https://tpc.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; img-src 'self' data: https: blob:; connect-src 'self' https://cdn.jsdelivr.net https://*.clarity.ms https://www.clarity.ms https://www.google-analytics.com https://*.google-analytics.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://fundingchoicesmessages.google.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
 
     # Vary headers for proper caching
     Header append Vary "Accept-Encoding"
     Header append Vary "Accept" env=WEBP
 
-    # Static assets - immutable, 1 year cache
+    # DEFAULT: all responses are private / uncacheable by nginx/proxies.
+    # X-Accel-Expires: 0 is the nginx-specific signal to never cache this response.
+    # This catches extensionless URLs like / (served via DirectoryIndex index.php)
+    # which FilesMatch "\.(php)$" would miss.
+    Header always set Cache-Control "private, max-age=3600, must-revalidate"
+    Header always set X-Accel-Expires "0"
+
+    # Static assets — override the default above with long public cache
     <FilesMatch "\.(css|js|mjs)$">
-        Header set Cache-Control "public, max-age=31536000, immutable"
+        Header always set Cache-Control "public, max-age=31536000, immutable"
+        Header always unset X-Accel-Expires
     </FilesMatch>
 
     # Images - immutable, 1 year cache
     <FilesMatch "\.(png|jpg|jpeg|gif|webp|avif|svg|ico)$">
-        Header set Cache-Control "public, max-age=31536000, immutable"
+        Header always set Cache-Control "public, max-age=31536000, immutable"
+        Header always unset X-Accel-Expires
     </FilesMatch>
 
     # Fonts - immutable, 1 year cache
     <FilesMatch "\.(woff2|woff|ttf|otf|eot)$">
-        Header set Cache-Control "public, max-age=31536000, immutable"
-        Header set Access-Control-Allow-Origin "*"
-    </FilesMatch>
-
-    # HTML/PHP - short cache, must revalidate
-    <FilesMatch "\.(html|htm|php)$">
-        Header set Cache-Control "public, max-age=3600, must-revalidate"
+        Header always set Cache-Control "public, max-age=31536000, immutable"
+        Header always set Access-Control-Allow-Origin "*"
+        Header always unset X-Accel-Expires
     </FilesMatch>
 
     # JSON - no cache (dynamic data)
@@ -273,8 +298,8 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
     </FilesMatch>
 </IfModule>
 
-# Redirect /blog/ to /blogs/ (WordPress at /blog/ is unused)
-RewriteRule ^blog(/.*)?$ /blogs$1 [R=301,L]
+# /blogs/ → /blog/ (WordPress removed, replaced with static blog)
+RewriteRule ^blogs(/.*)?$ /blog$1 [R=301,L]
 
 # Lucky Wheel canonical redirect (luckywheeltoolindex.php is the main entry point)
 RewriteRule ^lucky-wheel\.php$ /luckywheeltoolindex.php [R=301,L]
@@ -286,5 +311,8 @@ RewriteRule ^webcam-tester-online\.php$ /webcamtesterindex.php [R=301,L]
 RewriteRule ^free-keyboard-tester\.php$ / [R=301,L]
 RewriteRule ^keyboard-test\.php$ / [R=301,L]
 
-# Custom 404 page (prevents Apache default error page in Bing crawl)
-ErrorDocument 404 /404.html
+# Explicit HTML→PHP redirects for pages already indexed under .html URLs
+Redirect 301 /latency-checker.html /latency-checker.php
+
+# Custom 404 page
+ErrorDocument 404 /404.php

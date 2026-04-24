@@ -72,8 +72,8 @@ html.dark-theme .landing-page,
         radial-gradient(750px 380px at 92% 18%, rgba(249, 115, 22, 0.16), transparent 60%),
         repeating-linear-gradient(90deg, transparent 0 34px, var(--landing-grid) 34px 35px),
         var(--landing-bg);
-    max-height: 75vh;
 }
+/* max-height removed — was clipping hero content on short phones (e.g. iPhone SE) */
 
 .landing-hero::after {
     content: "";
@@ -204,6 +204,24 @@ html.dark-theme .hero-badge,
     background: rgba(148, 163, 184, 0.18);
 }
 
+.hero-badge--oss {
+    border: 1px solid rgba(34, 197, 94, 0.45);
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+    text-decoration: none;
+}
+
+.hero-badge--oss:hover {
+    background: rgba(34, 197, 94, 0.18);
+    border-color: rgba(34, 197, 94, 0.7);
+}
+
+html.dark-theme .hero-badge--oss,
+[data-theme="dark"] .hero-badge--oss {
+    color: #4ade80;
+    background: rgba(34, 197, 94, 0.12);
+}
+
 .hero-metrics {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -256,6 +274,26 @@ html.dark-theme .hero-badge,
     border-radius: 16px;
     display: block;
 }
+
+.hero-shot--video {
+    padding: 0;
+    overflow: hidden;
+}
+
+.hero-shot--video iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    border: none;
+}
+
+.hero-yt-facade { position: relative; cursor: pointer; aspect-ratio: 16 / 9; }
+.hero-yt-facade .hero-yt-thumb { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; display: block; }
+.hero-yt-facade .hero-yt-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 68px; border-radius: 50%; background: rgba(255,77,79,0.95); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 22px rgba(0,0,0,0.4); pointer-events: none; transition: transform 0.18s ease, background 0.18s ease; }
+.hero-yt-facade:hover .hero-yt-play { transform: translate(-50%, -50%) scale(1.08); background: #ff4d4f; }
+.hero-yt-facade:focus-visible { outline: 3px solid #38bdf8; outline-offset: 3px; }
+.hero-yt-facade iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 16px; }
 
 .hero-stack {
     display: grid;
@@ -446,10 +484,7 @@ html.dark-theme .step-number,
 
 .tool-stage {
     padding: 1.5rem 0 3rem;
-    background:
-        radial-gradient(720px 380px at 10% 20%, rgba(14, 165, 233, 0.16), transparent 60%),
-        radial-gradient(720px 380px at 90% 25%, rgba(22, 163, 74, 0.14), transparent 60%),
-        var(--landing-bg);
+    background: var(--bg-color, #ffffff);
     contain: layout style;
 }
 
@@ -1277,11 +1312,25 @@ html.dark-theme .guidelines.landing-guide .help-accordion details,
         font-size: 0.9rem;
     }
 
-    /* Results popup */
+    /* Results popup — scrollable on short phones / landscape */
     .results-popup {
         width: calc(100% - 2rem);
         max-width: 320px;
+        max-height: calc(100dvh - 2rem);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         padding: 1.25rem 1.5rem;
+    }
+
+    /* Prevent iOS auto-zoom on input focus (requires font-size >= 16px) */
+    .kbt-tool-input,
+    .kbt-tool-select,
+    .kbt-tool-textarea {
+        font-size: 16px;
+    }
+
+    .typing-test-container .typing-area {
+        font-size: 16px;
     }
 }
 

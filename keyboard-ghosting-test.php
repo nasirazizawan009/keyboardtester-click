@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Keyboard Ghosting Test — Anti-Ghosting & N-Key Rollover Check Online | KeyboardTester.click',
+        'title' => 'Free Open Source Keyboard Ghosting Test — Anti-Ghosting & N-Key Rollover Check Online | KeyboardTester.click',
         'description' => 'Free keyboard ghosting test online. Press multiple keys together to detect ghosting and check N-key rollover (NKRO). No download. Works in any browser. Instant results.',
         'keywords' => 'keyboard ghosting test, anti ghosting keyboard test, test keyboard ghosting, multiple key press test',
         'ogImage' => 'images/keyboard/hero-keyboard-test-1400.png',
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Gaming keyboard diagnostics',
-        'title' => 'Keyboard Ghosting Test',
+        'title' => 'Free Open Source Keyboard Ghosting Test',
         'lede' => 'Press several keys together and see whether every combo registers. Use this live tester to find blocked combinations, phantom inputs, and weak anti-ghosting zones.',
         'primaryHref' => '#keyboard-ghosting-tool',
         'primaryLabel' => 'Start ghosting test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'keyboard',
     'seoContentInclude' => 'help/seo-content/keyboard-ghosting-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/keyboard-tester.php'
+    'helpInclude' => 'help/keyboard-tester.php',
+    'relatedBlog' => 'what-is-keyboard-ghosting-anti-ghosting-fix-guide.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

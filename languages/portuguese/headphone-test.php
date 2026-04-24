@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-pt.php';
 
 $pageTitle = 'Testador de Fones - Verifique Audio Estereo Gratis';
-$pageDescription = 'Teste seus fones de ouvido e alto-falantes. Verifique os canais esquerdo e direito, balanco estereo e qualidade de audio.';
+$pageDescription = 'Testador de fones e alto-falantes: verifica canais esquerdo/direito, separação estéreo e saída de áudio. No navegador, sem instalação nem gravação, instantâneo.';
 $pageKeywords = 'teste de fones, teste de alto-falantes, verificar estereo, testar audio, headphone test';
 ?>
 <!DOCTYPE html>

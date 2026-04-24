@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 $pageTitle = 'Privacy Policy | KeyboardTester.click';
-$pageDescription = 'Learn how KeyboardTester.click handles data, cookies, and disclosures when you use our free online testing tools.';
+$pageDescription = 'How KeyboardTester.click handles cookies, analytics, and device data when you use our free browser-based hardware testing tools. GDPR and AdSense details.';
 $pageKeywords = 'privacy policy, data, cookies, keyboard tester';
 $pageOgImage = 'images/shared/keyboard-and-mouse.png';
 ?>

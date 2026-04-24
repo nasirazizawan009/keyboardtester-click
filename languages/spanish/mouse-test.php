@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-es.php';
 
 $pageTitle = 'Probador de Ratón - Prueba Clics y Desplazamiento Gratis';
-$pageDescription = 'Prueba todos los botones del ratón, rueda de desplazamiento y movimiento del cursor. Detecta problemas con tu ratón al instante.';
+$pageDescription = 'Probador de ratón online gratuito: verifica los clics izquierdo, derecho, medio y la rueda de desplazamiento. Funciona con cualquier ratón USB o inalámbrico, sin instalación.';
 $pageKeywords = 'probador ratón, test mouse, prueba clics, test desplazamiento, verificar botones ratón';
 ?>
 <!DOCTYPE html>

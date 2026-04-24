@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
 $pageTitle = 'Bildschirm-Tester - Erkennen Sie Tote Pixel Kostenlos';
-$pageDescription = 'Erkennen Sie tote, feststeckende oder heisse Pixel auf Ihrem Monitor. Vollstaendiger Bildschirmtest mit Vollfarben.';
+$pageDescription = 'Online-Bildschirmtester: Erkennt tote, festhängende, heiße Pixel und Gleichmäßigkeitsprobleme mit Vollbild-Panels in Vollfarben. Schnell, ohne Installation, im Browser.';
 $pageKeywords = 'Bildschirmtest, tote Pixel, Monitor Test, Pixel erkennen, LCD Test';
 ?>
 <!DOCTYPE html>
@@ -42,6 +42,11 @@ $pageKeywords = 'Bildschirmtest, tote Pixel, Monitor Test, Pixel erkennen, LCD T
             <a href="#guidelines" class="landing-btn landing-btn-ghost">Anleitung</a>
           </div>
         </div>
+          <div class="hero-visual">
+            <div class="hero-shot">
+              <img src="<?php echo url('images/screen-test/screen-tester-monitor-inspection-1400.png'); ?>" width="1400" height="787" alt="Screen tester - monitor pixel and color inspection" loading="eager" decoding="async" fetchpriority="high">
+            </div>
+          </div>
       </div>
     </section>
 

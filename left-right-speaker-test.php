@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Left Right Speaker Test Online | Check Stereo Channels',
-        'description' => 'Test left and right speakers or headphones online. Play isolated channel audio and confirm stereo output is mapped correctly in the browser.',
+        'title' => 'Free Open Source Left Right Speaker Test Online | Check Stereo Channels',
+        'description' => 'Test left and right speakers or headphones online. Play isolated channel audio to confirm stereo output is mapped correctly and both drivers are working.',
         'keywords' => 'left right speaker test, left right audio test, test left and right speakers, headphone left right test',
         'ogImage' => 'images/headphone-test/hero.png',
         'ogImageAlt' => 'Left right speaker test page for stereo channel mapping'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Stereo channel diagnostics',
-        'title' => 'Left Right Speaker Test Online',
+        'title' => 'Free Open Source Left Right Speaker Test Online',
         'lede' => 'Play isolated left and right channel audio to confirm your speakers or headphones are mapped correctly before calls, editing, or gaming.',
         'primaryHref' => '#left-right-speaker-tool',
         'primaryLabel' => 'Start left right test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'headphone',
     'seoContentInclude' => 'help/seo-content/left-right-speaker-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/headphone-speaker-tester.php'
+    'helpInclude' => 'help/headphone-speaker-tester.php',
+    'relatedBlog' => 'headphone-speaker-test-left-right-channels.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

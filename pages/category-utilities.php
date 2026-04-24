@@ -7,7 +7,7 @@ $breadcrumbs = [
 ];
 
 $pageTitle = 'Utility Tools - QR, OCR, Passwords, and More';
-$pageDescription = 'Handy online utilities for QR codes, OCR text extraction, password generation, WhatsApp tools, and more.';
+$pageDescription = 'Handy online utilities: QR code generator, QR reader, OCR text extraction, password generator, WhatsApp link tools, lucky wheel. All free, browser-based.';
 $pageKeywords = 'utility tools, QR code, OCR tool, password generator, WhatsApp tools';
 
 $tools = [

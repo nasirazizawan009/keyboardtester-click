@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-es.php';
 
 $pageTitle = 'Prueba de Auriculares - Verifica Audio Estéreo Gratis';
-$pageDescription = 'Prueba tus auriculares y altavoces. Verifica los canales izquierdo y derecho, balance estéreo y calidad de audio.';
+$pageDescription = 'Probador de auriculares y altavoces: verifica canales izquierdo/derecho, separación estéreo y salida de audio. En navegador, sin instalación ni grabación, al instante.';
 $pageKeywords = 'prueba auriculares, test altavoces, verificar estéreo, probar audio, headphone test';
 ?>
 <!DOCTYPE html>

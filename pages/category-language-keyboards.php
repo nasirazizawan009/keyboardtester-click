@@ -7,7 +7,7 @@ $breadcrumbs = [
 ];
 
 $pageTitle = 'Language Keyboard Tools';
-$pageDescription = 'Access keyboard testers for Arabic, Russian, Spanish, French, Portuguese, Japanese, German, and Korean layouts.';
+$pageDescription = 'Language-specific keyboard testers for Arabic, Russian, Spanish, French, Portuguese, Japanese, German and Korean layouts. Test every key in your native script.';
 $pageKeywords = 'language keyboard tester, arabic keyboard, russian keyboard, spanish keyboard, french keyboard';
 
 $tools = [

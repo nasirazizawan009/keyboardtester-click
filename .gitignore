@@ -77,3 +77,18 @@ github-repo/
 !LICENSE.txt
 !ads.txt
 !llms.txt
+
+# ── Internal ops docs (contain operational context) ─────────────────────────
+CLAUDE.md
+.claude/
+seo-audit-*/
+
+# ── AI chat backend config (contains Groq API key) ──────────────────────────
+ai-config.php
+
+# ── Ephemeral session scripts ───────────────────────────────────────────────
+__*.py
+__*.txt
+__*.php
+*.zip
+kbt.zip

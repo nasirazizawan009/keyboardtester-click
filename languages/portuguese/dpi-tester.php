@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-pt.php';
 
 $pageTitle = 'Testador de DPI - Meca a Sensibilidade do Mouse';
-$pageDescription = 'Teste e meca o DPI do seu mouse. Verifique a precisao de rastreamento e sensibilidade.';
+$pageDescription = 'Testador de DPI e sensibilidade do mouse: verifica a resolução real do sensor, a precisão de rastreamento e a consistência do cursor. No navegador, sem drivers.';
 $pageKeywords = 'DPI do mouse, sensibilidade do mouse, teste de DPI, teste de sensibilidade, calibrar mouse';
 ?>
 <!DOCTYPE html>

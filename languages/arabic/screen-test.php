@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-ar.php';
 
 $pageTitle = 'اختبار الشاشة - كشف البكسلات الميتة والمعطوبة';
-$pageDescription = 'اختبر شاشتك واكتشف البكسلات الميتة والمعطوبة والساخنة. أداة مجانية لفحص جودة الشاشة.';
+$pageDescription = 'أداة اختبار الشاشة عبر الإنترنت: تكتشف البكسلات الميتة والعالقة والساخنة ومشاكل التجانس عبر لوحات ملء الشاشة بالألوان الصلبة. سريع، بدون تثبيت.';
 $pageKeywords = 'اختبار الشاشة, بكسل ميت, فحص الشاشة, جودة العرض, اختبار البكسل';
 ?>
 <!DOCTYPE html>
@@ -49,6 +49,11 @@ $pageKeywords = 'اختبار الشاشة, بكسل ميت, فحص الشاشة
             <a href="#guidelines" class="landing-btn landing-btn-ghost">طريقة الاستخدام</a>
           </div>
         </div>
+          <div class="hero-visual">
+            <div class="hero-shot">
+              <img src="<?php echo url('images/screen-test/screen-tester-monitor-inspection-1400.png'); ?>" width="1400" height="787" alt="Screen tester - monitor pixel and color inspection" loading="eager" decoding="async" fetchpriority="high">
+            </div>
+          </div>
       </div>
     </section>
 

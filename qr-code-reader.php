@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'QR Code Reader Online | KeyboardTester.click';
-$pageDescription = 'Upload a QR code image and decode it instantly in your browser. Read URLs, text, contacts, Wi-Fi passwords, and other QR content — no app or install needed.';
-$pageKeywords = 'qr code reader online, qr scanner from image, decode qr code, read qr code online';
+$pageTitle = 'Free Open Source QR Code Reader Online | KeyboardTester.click';
+$pageDescription = 'Free open source QR code reader online. Upload a QR code image and decode it instantly in your browser. Read URLs, text, contacts, Wi-Fi passwords — no app or install needed.';
+$pageKeywords = 'qr code reader online, open source QR scanner, qr scanner from image, decode qr code, read qr code online';
 $pageOgImage = 'images/qr-reader/hero.png';
 ?>
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ $pageOgImage = 'images/qr-reader/hero.png';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-reader/step-1.png'); ?>" alt="QR code reader step 1 - open QR scanner tool" loading="lazy">
+              <img src="<?php echo url('images/qr-reader/step-1.png'); ?>" alt="QR code reader step 1 - open QR scanner tool" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -120,7 +120,7 @@ $pageOgImage = 'images/qr-reader/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-reader/step-2.png'); ?>" alt="QR code reader step 2 - upload QR image for decoding" loading="lazy">
+              <img src="<?php echo url('images/qr-reader/step-2.png'); ?>" alt="QR code reader step 2 - upload QR image for decoding" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">02</div>
             <h3>Upload the QR image</h3>
@@ -128,7 +128,7 @@ $pageOgImage = 'images/qr-reader/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-reader/step-3.png'); ?>" alt="QR scan results - decoded text and URL content" loading="lazy">
+              <img src="<?php echo url('images/qr-reader/step-3.png'); ?>" alt="QR scan results - decoded text and URL content" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

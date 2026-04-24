@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Test My Mic Online | Quick Microphone Check',
-        'description' => 'Test my mic online with a quick browser-based microphone check. Verify mic access, live voice input, and peak level before meetings or recordings.',
+        'title' => 'Free Open Source Test My Mic Online | Quick Microphone Check',
+        'description' => 'Test my mic online with a quick browser-based microphone check. Verify mic access, live voice input and peak level before Zoom, Teams, Discord or Meet calls.',
         'keywords' => 'test my mic, test my microphone, quick mic test, microphone check online',
         'ogImage' => 'images/mic-test/hero.png',
         'ogImageAlt' => 'Quick test my mic page with live browser microphone meter'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Quick mic check',
-        'title' => 'Test My Mic Online',
+        'title' => 'Free Open Source Test My Mic Online',
         'lede' => 'Need a fast answer before a call or interview? Start the live mic checker below, allow permission, and confirm your voice is reaching the browser.',
         'primaryHref' => '#test-my-mic-tool',
         'primaryLabel' => 'Test my mic now',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'mic',
     'seoContentInclude' => 'help/seo-content/test-my-mic.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/mic-tester.php'
+    'helpInclude' => 'help/mic-tester.php',
+    'relatedBlog' => 'how-to-test-microphone-online.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

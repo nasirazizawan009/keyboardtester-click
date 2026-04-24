@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Keyboard diagnostics suite</p>
-      <h1 class="hero-title">Free Online Keyboard Tester - Test All Keys Instantly</h1>
+      <h1 class="hero-title">Free Open Source Online Keyboard Tester - Test All Keys Instantly</h1>
       <p class="hero-lede">Test every key on your keyboard and get real-time feedback in just seconds. Instant highlights, layout switching, ghosting checks, and exportable reports. No installs. No signups.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#keyboard-tester">Start keyboard test</a>
@@ -12,6 +12,7 @@
         <span class="hero-badge">No installs</span>
         <span class="hero-badge">Multi layout</span>
         <span class="hero-badge">Privacy first</span>
+        <a class="hero-badge hero-badge--oss" href="https://github.com/nasirazizawan009/keyboardtester-click" target="_blank" rel="noopener noreferrer">Open Source</a>
       </div>
       <div class="hero-metrics">
         <div class="metric-card">
@@ -29,22 +30,11 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-shot">
-        <picture>
-          <source media="(max-width: 980px)" type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.webp'); ?>">
-          <source media="(min-width: 981px)" type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.webp'); ?> 560w, <?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.webp'); ?> 1400w" sizes="560px">
-          <source media="(max-width: 980px)" type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.png'); ?>">
-          <source media="(min-width: 981px)" type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.png'); ?> 560w, <?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w" sizes="560px">
-          <img src="<?php echo url('images/keyboard/hero-keyboard-test-560.png'); ?>"
-               srcset="<?php echo url('images/keyboard/hero-keyboard-test-560.png'); ?> 560w, <?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w"
-               sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
-               width="560"
-               height="373"
-               alt="KeyboardTester.click online keyboard tester interface preview"
-               loading="eager"
-               decoding="async"
-               fetchpriority="high">
-        </picture>
+      <div class="hero-shot hero-shot--video hero-yt-facade" data-yt-id="3d9SyUUlz1Y" data-yt-title="KeyboardTester.click — Free Open Source Testing Tools" role="button" tabindex="0" aria-label="Play video: KeyboardTester.click — Free Open Source Testing Tools">
+        <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/3d9SyUUlz1Y.jpg"); ?>" alt="KeyboardTester.click video preview" width="480" height="270" loading="lazy" decoding="async">
+        <span class="hero-yt-play" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+        </span>
       </div>
       <div class="hero-stack">
         <div class="mini-card">

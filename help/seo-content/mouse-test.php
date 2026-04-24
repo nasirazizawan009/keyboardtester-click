@@ -24,7 +24,7 @@
         <li>Scroll wheels that skip, reverse, or stop updating cleanly</li>
         <li>Buttons that appear to stay active longer than expected</li>
       </ul>
-      <p>For suspicious extra clicks from a single press, switch to the dedicated <a href="double-click-test.php">double click test</a>. For movement, sensor, or sensitivity work, use the <a href="mouse_sensitivity_DPI_tester.php">DPI tester</a> or <a href="mouse-trail.php">mouse trail test</a>.</p>
+      <p>For suspicious extra clicks from a single press, switch to the dedicated <a href="double-click-test.php">double click test</a>. For movement, sensor, or sensitivity work, use the <a href="mouse_sensitivity_DPI_tester.php">DPI tester</a> or <a href="mouse-trail.php">mouse trail test</a>. To benchmark your actual aim with hit percentage, pixel error, and reaction time, try the <a href="mouse-accuracy-test.php">mouse accuracy test (aim trainer)</a>.</p>
     </article>
 
     <article class="seo-article">

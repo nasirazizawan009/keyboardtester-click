@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-ar.php';
 
 $pageTitle = 'مولد رمز QR - إنشاء رموز QR مجاناً';
-$pageDescription = 'أنشئ رموز QR مخصصة للروابط والنصوص وبطاقات الاتصال. مجاني وسهل الاستخدام.';
+$pageDescription = 'مولد رموز QR مجاني: أنشئ رموز QR من عناوين URL أو نصوص أو أرقام هواتف أو روابط WhatsApp. تنزيل PNG عالي الدقة، بدون علامة مائية أو تسجيل.';
 $pageKeywords = 'مولد QR, إنشاء رمز QR, رمز الاستجابة السريعة, QR مجاني';
 ?>
 <!DOCTYPE html>

@@ -1,0 +1,77 @@
+<?php
+/**
+ * Spanish Mouse DPI Calculator
+ */
+include __DIR__ . '/../../config.php';
+$__c = __DIR__ . '/config-es.php'; if (file_exists($__c)) include $__c;
+
+$pageTitle = 'Calculadora de DPI del Ratón - Mide el DPI Real Online';
+$pageDescription = 'Calculadora de DPI del ratón online y gratis. Mide el DPI real arrastrando en la pista o introduciendo píxeles y pulgadas. Verifica el DPI anunciado frente al sensor real.';
+$pageKeywords = 'calculadora dpi raton, dpi real, medir dpi raton, true dpi calculator';
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?php echo $pageTitle; ?></title>
+  <meta name="description" content="<?php echo $pageDescription; ?>">
+  <meta name="keywords" content="<?php echo $pageKeywords; ?>">
+
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('mouse-dpi-calculator.php'); ?>">
+  <link rel="alternate" hreflang="es" href="<?php echo absoluteUrl('languages/spanish/mouse-dpi-calculator.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('mouse-dpi-calculator.php'); ?>">
+
+  <?php include __DIR__ . '/../../includes/head-common.php'; ?>
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+</head>
+<body class="landing-page">
+  <?php $__h = __DIR__ . '/header-es.php'; if (file_exists($__h)) include $__h; else include __DIR__ . '/../../header.php'; ?>
+
+  <main id="main-content" class="landing-main">
+    <section class="landing-hero">
+      <div class="container landing-hero-grid">
+        <div class="hero-copy">
+          <p class="hero-kicker">Calculadoras de sensibilidad</p>
+          <h1 class="hero-title">Calculadora de DPI del Ratón - Mide el DPI Real</h1>
+          <p class="hero-lede">Verifica el DPI real de tu ratón. Arrastra una distancia física conocida (o escribe los valores a mano) y calculamos el DPI real en píxeles por pulgada. Detecta la imprecisión del sensor y compáralo con el valor anunciado.</p>
+          <div class="hero-actions">
+            <a class="landing-btn landing-btn-primary" href="#mouse-dpi-calculator">Medir DPI</a>
+            <a class="landing-btn landing-btn-ghost" href="#guidelines">Cómo usar</a>
+          </div>
+          <div class="hero-badges">
+            <span class="hero-badge">Pista de arrastre</span>
+            <span class="hero-badge">Entrada píxeles + pulgadas</span>
+            <span class="hero-badge">DPI anunciado vs real</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-stage" id="mouse-dpi-calculator">
+      <div class="container tool-stage-header">
+        <div>
+          <p class="section-kicker">Herramienta principal</p>
+          <h2>Calculadora de DPI del Ratón</h2>
+          <p class="section-lede">Introduce píxeles y pulgadas, o arrastra en la pista para medir.</p>
+        </div>
+      </div>
+      <section class="tool-shell"><?php include __DIR__ . '/tools/mouse-dpi-calculator-tool.php'; ?></section>
+    </section>
+
+    <section id="guidelines" class="guidelines-section">
+      <div class="container">
+        <div class="section-head"><h2>Cómo calcular el DPI</h2></div>
+        <div class="guidelines-grid">
+          <div class="guideline-card"><h3>1. Desactiva la aceleración</h3><p>Apaga "Mejorar precisión del puntero" en Windows antes de medir.</p></div>
+          <div class="guideline-card"><h3>2. Coloca una regla</h3><p>Pon una regla junto a la alfombrilla.</p></div>
+          <div class="guideline-card"><h3>3. Arrastra 10 cm o 4 pulgadas</h3><p>Mantén el botón pulsado y mueve el ratón recto.</p></div>
+          <div class="guideline-card"><h3>4. Compara DPI</h3><p>Introduce el DPI anunciado y revisa la desviación.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <?php $__f = __DIR__ . '/footer-es.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
+</body>
+</html>

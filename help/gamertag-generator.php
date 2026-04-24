@@ -1,0 +1,10 @@
+<?php // Help ?>
+<section class="guidelines landing-guide" id="guidelines">
+  <div class="help-header"><h2>Gamertag Generator Guide</h2><p>How to pick a name that lasts and actually fits your platform.</p></div>
+  <div class="help-grid">
+    <div class="help-card"><h3>Step 1: pick a style</h3><ol><li><strong>Edgy / dark</strong>: Shadow, Venom, Reaper vibes &mdash; FPS, battle royale.</li><li><strong>Funny / meme</strong>: Sneaky Pickle, Chunky Waffle &mdash; party games.</li><li><strong>Cute / wholesome</strong>: Fluffy Bunny, Starry Koala &mdash; Animal Crossing, Stardew.</li><li><strong>Pro / esports</strong>: Clean, crisp, tournament-safe.</li><li><strong>Fantasy / RPG</strong>: Dragon, Mage, Rune &mdash; WoW, Elden Ring.</li><li><strong>Cyber / hacker</strong>: Neo, Null, Byte &mdash; Cyberpunk, Valorant.</li></ol></div>
+    <div class="help-card"><h3>Step 2: match platform length limits</h3><ul><li><strong>Xbox gamertag:</strong> 3-12 characters. Letters, numbers, spaces.</li><li><strong>PlayStation (PSN):</strong> 3-16 characters. Letters, numbers, underscore, hyphen.</li><li><strong>Steam persona:</strong> 2-32 characters. Most characters allowed.</li><li><strong>Discord:</strong> 2-32 characters, lowercase, period and underscore.</li><li>Set "Max length" before generating so names fit on first try.</li></ul></div>
+    <div class="help-card"><h3>Step 3: save the ones you like</h3><ol><li>Click the ☆ next to any name to star it. Favorites are saved in your browser (localStorage) &mdash; no account needed.</li><li>Click the name itself (or the 📋 icon) to copy it to your clipboard.</li><li>Check availability on the platform before committing &mdash; good names often get taken.</li></ol></div>
+    <div class="help-card"><h3>Things to avoid</h3><ul><li>Your real birth year (identity leak + dates you forever).</li><li>Profanity &mdash; Xbox and PSN will flag automatically.</li><li>Trademarked names (Nintendo, Blizzard, Valve ban them).</li><li>xXx_Prefix_xXx &mdash; it's 2026, let's move on.</li></ul></div>
+  </div>
+</section>

@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Mouse DPI and Sensitivity</p>
-      <h1 class="hero-title">Mouse DPI Tester Online</h1>
+      <h1 class="hero-title">Free Open Source Mouse DPI Tester Online</h1>
       <p class="hero-lede">Move the mouse across a measured distance to estimate DPI and sensitivity instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#mouse-sensitivity-dpi-tester">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mouse-dpi/hero.png'); ?>" alt="Mouse DPI and sensitivity tester - calibrate cursor speed online" loading="eager">
+        <img src="<?php echo url('images/mouse-dpi/hero.png'); ?>" alt="Mouse DPI and sensitivity tester - calibrate cursor speed online" loading="eager" width="800" height="533" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

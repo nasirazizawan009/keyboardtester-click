@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const reader = new FileReader();
     reader.onload = function (event) {
       imageDataUrl = event.target.result;
-      preview.innerHTML = `<img src="${imageDataUrl}" alt="QR 미리보기">`;
+      preview.innerHTML = `<img src="${imageDataUrl}" alt="QR 미리보기" loading="lazy" decoding="async">`;
       runBtn.disabled = false;
       statusEl.textContent = '상태: 디코딩 준비 완료';
     };

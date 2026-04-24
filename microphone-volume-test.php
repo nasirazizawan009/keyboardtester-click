@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Microphone Volume Test Online | Check Mic Input Level',
-        'description' => 'Test microphone volume online with a live browser meter. See current level and peak mic volume without recording audio.',
+        'title' => 'Free Open Source Microphone Volume Test Online | Check Mic Input Level',
+        'description' => 'Test microphone volume online with a live browser meter. See current level and peak mic volume in real time without recording audio or uploading to any server.',
         'keywords' => 'microphone volume test, mic volume test online, test mic input level, microphone level checker',
         'ogImage' => 'images/mic-test/hero.png',
         'ogImageAlt' => 'Microphone volume test page with live browser meter'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Mic level diagnostics',
-        'title' => 'Microphone Volume Test Online',
+        'title' => 'Free Open Source Microphone Volume Test Online',
         'lede' => 'Check how strong your microphone input is with a live browser meter that shows current level and peak volume without recording your voice.',
         'primaryHref' => '#mic-volume-tool',
         'primaryLabel' => 'Start mic volume test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'mic',
     'seoContentInclude' => 'help/seo-content/microphone-volume-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/mic-tester.php'
+    'helpInclude' => 'help/mic-tester.php',
+    'relatedBlog' => 'how-to-test-microphone-online.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

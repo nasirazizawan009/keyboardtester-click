@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Stuck Key Test — Check Jammed or Repeating Keyboard Keys | KeyboardTester.click',
+        'title' => 'Free Open Source Stuck Key Test — Check Jammed or Repeating Keyboard Keys | KeyboardTester.click',
         'description' => 'Use a free stuck key test online to check repeating, jammed, or unresponsive keyboard keys. Press the problem key and verify how it behaves in real time.',
         'keywords' => 'stuck key test, repeating key test, stuck keyboard key, jammed keyboard key test',
         'ogImage' => 'images/keyboard/hero-keyboard-test-1400.png',
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Keyboard troubleshooting',
-        'title' => 'Stuck Key Test',
+        'title' => 'Free Open Source Stuck Key Test',
         'lede' => 'Check whether a repeating, jammed, or unresponsive key is still registering correctly. Use the live keyboard tool below to inspect the exact problem key in real time.',
         'primaryHref' => '#stuck-key-tool',
         'primaryLabel' => 'Start stuck key test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'keyboard',
     'seoContentInclude' => 'help/seo-content/stuck-key-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/keyboard-tester.php'
+    'helpInclude' => 'help/keyboard-tester.php',
+    'relatedBlog' => 'keyboard-typing-double-letters-fix-key-chatter.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

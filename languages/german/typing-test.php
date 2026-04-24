@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
 $pageTitle = 'Tippgeschwindigkeitstest - Messen Sie WPM und Genauigkeit';
-$pageDescription = 'Messen Sie Ihre Tippgeschwindigkeit in Woertern pro Minute (WPM) und Genauigkeit. Verbessern Sie Ihre Schreibfaehigkeiten.';
+$pageDescription = 'Kostenloser Tippgeschwindigkeitstest: Messen Sie WPM (Wörter pro Minute), Genauigkeit und Konstanz in zeitlich begrenzten Sitzungen. Ohne Anmeldung, im Browser.';
 $pageKeywords = 'Tipptest, WPM, Schreibgeschwindigkeit, Tastaturtest, Woerter pro Minute';
 ?>
 <!DOCTYPE html>

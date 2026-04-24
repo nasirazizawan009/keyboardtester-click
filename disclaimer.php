@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 $pageTitle = 'Disclaimer | KeyboardTester.click';
-$pageDescription = 'Disclaimer for KeyboardTester.click covering terms of use, privacy, and limitations of liability.';
+$pageDescription = 'Disclaimer for KeyboardTester.click — covering terms of use, privacy scope, limitation of liability, and accuracy notes for all our free in-browser testing tools.';
 $pageKeywords = 'disclaimer, terms, liability, privacy, keyboard tester';
 $pageOgImage = 'images/shared/keyboard-and-mouse.png';
 ?>

@@ -8,7 +8,7 @@ $langData = [
     'es' => [
         'dir' => 'spanish', 'html_lang' => 'es',
         'title' => 'Test de Tiempo de Reacción — Mide Tus Reflejos Online | KeyboardTester.click',
-        'description' => 'Test gratuito de tiempo de reacción online. Haz clic cuando la pantalla se vuelva verde. Mide tu velocidad de reflejos en milisegundos. Sin descarga.',
+        'description' => 'Prueba de tiempo de reacción: mide tus reflejos en milisegundos cuando cambia el color en pantalla. Ideal para gamers y e-sports, compara con el promedio de tu edad.',
         'keywords' => 'test tiempo de reacción, test de reflejos, velocidad de reacción online',
         'h1' => 'Test de Tiempo de Reacción',
         'subtitle' => 'Haz clic cuando la pantalla se vuelva verde',
@@ -38,7 +38,7 @@ $langData = [
     'fr' => [
         'dir' => 'french', 'html_lang' => 'fr',
         'title' => 'Test de Temps de Réaction — Mesurez Vos Réflexes en Ligne | KeyboardTester.click',
-        'description' => 'Test gratuit de temps de réaction en ligne. Cliquez quand l\'écran devient vert. Mesurez votre vitesse de réflexe en millisecondes. Sans téléchargement.',
+        'description' => 'Test de temps de réaction : mesure vos réflexes en millisecondes quand la couleur change à l\'écran. Idéal pour les joueurs et l\'e-sport, comparez à la moyenne de votre âge.',
         'keywords' => 'test temps de réaction, test de réflexes, vitesse de réaction en ligne',
         'h1' => 'Test de Temps de Réaction',
         'subtitle' => 'Cliquez quand l\'écran devient vert',
@@ -68,7 +68,7 @@ $langData = [
     'de' => [
         'dir' => 'german', 'html_lang' => 'de',
         'title' => 'Reaktionszeit-Test — Reflexe Online Messen | KeyboardTester.click',
-        'description' => 'Kostenloser Reaktionszeit-Test online. Klicken wenn der Bildschirm grün wird. Messen Sie Ihre Reflexgeschwindigkeit in Millisekunden. Kein Download.',
+        'description' => 'Reaktionszeit-Test: Misst Reflexe in Millisekunden beim Farbwechsel am Bildschirm. Ideal für Gamer und E-Sportler, vergleichen Sie mit dem Durchschnitt Ihres Alters.',
         'keywords' => 'Reaktionszeit Test, Reflex Test online, Reaktionsgeschwindigkeit messen',
         'h1' => 'Reaktionszeit-Test',
         'subtitle' => 'Klicken wenn der Bildschirm grün wird',
@@ -158,7 +158,7 @@ $langData = [
     'pt' => [
         'dir' => 'portuguese', 'html_lang' => 'pt',
         'title' => 'Teste de Tempo de Reação — Meça Seus Reflexos Online | KeyboardTester.click',
-        'description' => 'Teste gratuito de tempo de reação online. Clique quando a tela ficar verde. Meça sua velocidade de reflexo em milissegundos. Sem download.',
+        'description' => 'Teste de tempo de reação: mede seus reflexos em milissegundos quando a cor muda na tela. Ideal para gamers e e-sports, compare com a média da sua idade.',
         'keywords' => 'teste tempo de reação, teste de reflexos, velocidade de reação online',
         'h1' => 'Teste de Tempo de Reação',
         'subtitle' => 'Clique quando a tela ficar verde',
@@ -188,7 +188,7 @@ $langData = [
     'ru' => [
         'dir' => 'russian', 'html_lang' => 'ru',
         'title' => 'Тест Времени Реакции — Проверь Рефлексы Онлайн | KeyboardTester.click',
-        'description' => 'Бесплатный тест времени реакции онлайн. Кликни когда экран станет зелёным. Измерь скорость рефлексов в миллисекундах. Без скачивания.',
+        'description' => 'Тест времени реакции: измеряет рефлексы в миллисекундах при смене цвета на экране. Идеально для геймеров и e-sport, сравните себя со средним по возрасту.',
         'keywords' => 'тест времени реакции, тест рефлексов, скорость реакции онлайн',
         'h1' => 'Тест Времени Реакции',
         'subtitle' => 'Кликни когда экран станет зелёным',
@@ -218,7 +218,7 @@ $langData = [
     'ar' => [
         'dir' => 'arabic', 'html_lang' => 'ar',
         'title' => 'اختبار وقت رد الفعل — قِس ردود أفعالك عبر الإنترنت | KeyboardTester.click',
-        'description' => 'اختبار مجاني لوقت رد الفعل. انقر عندما تتحول الشاشة إلى الأخضر. قِس سرعة ردود فعلك بالميلي ثانية. بدون تحميل.',
+        'description' => 'اختبار وقت الاستجابة: قِس ردود أفعالك بالميلي ثانية عند تغير اللون على الشاشة. مثالي للاعبين ورياضيي esports، قارن نفسك بمتوسط الفئة العمرية.',
         'keywords' => 'اختبار وقت رد الفعل, اختبار ردود الفعل, سرعة الاستجابة',
         'h1' => 'اختبار وقت رد الفعل',
         'subtitle' => 'انقر عندما تتحول الشاشة إلى اللون الأخضر',

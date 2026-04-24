@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-pt.php';
 
 $pageTitle = 'Testador de Tela - Detecte Pixels Mortos Gratis';
-$pageDescription = 'Detecte pixels mortos, travados ou quentes no seu monitor. Teste completo de tela com cores solidas.';
+$pageDescription = 'Testador de tela online: detecta pixels mortos, travados, quentes e problemas de uniformidade com painéis em tela cheia de cores sólidas. Rápido, sem instalação.';
 $pageKeywords = 'teste de tela, pixels mortos, teste monitor, detectar pixels, teste LCD';
 ?>
 <!DOCTYPE html>
@@ -42,6 +42,11 @@ $pageKeywords = 'teste de tela, pixels mortos, teste monitor, detectar pixels, t
             <a href="#guidelines" class="landing-btn landing-btn-ghost">Como Usar</a>
           </div>
         </div>
+          <div class="hero-visual">
+            <div class="hero-shot">
+              <img src="<?php echo url('images/screen-test/screen-tester-monitor-inspection-1400.png'); ?>" width="1400" height="787" alt="Screen tester - monitor pixel and color inspection" loading="eager" decoding="async" fetchpriority="high">
+            </div>
+          </div>
       </div>
     </section>
 

@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-pt.php';
 
 $pageTitle = 'Testador de Mouse - Teste Cliques e Rolagem Gratis';
-$pageDescription = 'Teste todos os botoes do mouse, roda de rolagem e movimento do cursor. Detecte problemas com seu mouse instantaneamente.';
+$pageDescription = 'Testador de mouse online gratuito: verifica cliques esquerdo, direito, do meio e a roda de rolagem. Funciona com qualquer mouse USB ou sem fio, sem instalação.';
 $pageKeywords = 'testador de mouse, teste de mouse, teste de cliques, teste de rolagem, verificar botoes do mouse';
 ?>
 <!DOCTYPE html>

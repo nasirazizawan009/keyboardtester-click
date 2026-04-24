@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Chat Tone Analysis</p>
-      <h1 class="hero-title">WhatsApp Sentiment Analyzer for Chat Tone</h1>
+      <h1 class="hero-title">Free Open Source WhatsApp Sentiment Analyzer for Chat Tone</h1>
       <p class="hero-lede">Paste chat text to estimate positive, neutral, and negative tone in seconds.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#whatsapp-sentiment-analyzer">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/whatsapp-sentiment/hero.png'); ?>" alt="WhatsApp chat sentiment analyzer - analyze message tone and emotion" loading="eager">
+        <img src="<?php echo url('images/whatsapp-sentiment/hero.png'); ?>" alt="WhatsApp chat sentiment analyzer - analyze message tone and emotion" loading="eager" width="800" height="533" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const reader = new FileReader();
     reader.onload = function (event) {
       imageDataUrl = event.target.result;
-      preview.innerHTML = `<img src="${imageDataUrl}" alt="Apercu QR">`;
+      preview.innerHTML = `<img src="${imageDataUrl}" alt="Apercu QR" loading="lazy" decoding="async">`;
       runBtn.disabled = false;
       statusEl.textContent = 'Etat: Pret a decoder';
     };

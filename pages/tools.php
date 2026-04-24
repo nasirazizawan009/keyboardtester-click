@@ -7,7 +7,7 @@
 include __DIR__ . '/../config.php';
 
 $pageTitle = 'Free Online Hardware Testing Tools | KeyboardTester.click';
-$pageDescription = 'Comprehensive suite of free online testing tools. Test keyboard, mouse, webcam, screen, and microphone without downloads or signup.';
+$pageDescription = 'Comprehensive suite of free online testing tools. Test keyboard, mouse, webcam, screen, microphone, audio and more without installing anything. Privacy-first.';
 ?>
 
 <!DOCTYPE html>
@@ -196,6 +196,7 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
         .category-card[data-category="mouse"] { --cat-color-1: #10b981; --cat-color-2: #34d399; }
         .category-card[data-category="display"] { --cat-color-1: #f59e0b; --cat-color-2: #fbbf24; }
         .category-card[data-category="audio"] { --cat-color-1: #ec4899; --cat-color-2: #f472b6; }
+        .category-card[data-category="gaming"] { --cat-color-1: #ea580c; --cat-color-2: #fb923c; }
         .category-card[data-category="utility"] { --cat-color-1: #8b5cf6; --cat-color-2: #a78bfa; }
 
         .category-icon {
@@ -599,16 +600,21 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
                     <a href="#keyboard-tools" class="category-card" data-category="keyboard">
                         <div class="category-icon">&#9000;</div>
                         <h3>Keyboard</h3>
-                        <span>3 tools</span>
+                        <span>6 tools</span>
                     </a>
                     <a href="#mouse-tools" class="category-card" data-category="mouse">
                         <div class="category-icon">&#128433;</div>
                         <h3>Mouse</h3>
-                        <span>5 tools</span>
+                        <span>7 tools</span>
                     </a>
                     <a href="#display-tools" class="category-card" data-category="display">
                         <div class="category-icon">&#128187;</div>
                         <h3>Display</h3>
+                        <span>7 tools</span>
+                    </a>
+                    <a href="#gaming-tools" class="category-card" data-category="gaming">
+                        <div class="category-icon">&#127918;</div>
+                        <h3>Gaming</h3>
                         <span>2 tools</span>
                     </a>
                     <a href="#audio-tools" class="category-card" data-category="audio">
@@ -619,7 +625,7 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
                     <a href="#utility-tools" class="category-card" data-category="utility">
                         <div class="category-icon">&#128736;</div>
                         <h3>Utilities</h3>
-                        <span>8+ tools</span>
+                        <span>7 tools</span>
                     </a>
                 </div>
             </div>
@@ -679,6 +685,70 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
                         <div class="tool-tags">
                             <span class="tool-tag">Response Time</span>
                             <span class="tool-tag">Milliseconds</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    <a href="<?php echo url('spacebar-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#9646;</div>
+                            <div>
+                                <h3>Spacebar Speed Test</h3>
+                                <p class="tool-desc">Count spacebar presses in 5, 10, or 30 seconds. Get your spacebar CPS rating.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">CPS</span>
+                            <span class="tool-tag">Speed</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    <a href="<?php echo url('key-repeat-rate-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#9000;</div>
+                            <div>
+                                <h3>Key Repeat Rate Tester</h3>
+                                <p class="tool-desc">Measure your keyboard key repeat rate (Hz) and initial delay (ms) in your browser.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Repeat Rate</span>
+                            <span class="tool-tag">Hz</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    <a href="<?php echo url('typing-rhythm-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#128200;</div>
+                            <div>
+                                <h3>Typing Rhythm Fingerprint</h3>
+                                <p class="tool-desc">Visualize keystroke dwell and flight times. Get a bigram heatmap and consistency score.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Bigram Heatmap</span>
+                            <span class="tool-tag">Consistency</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    <a href="<?php echo url('keyboard-sound-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#127908;</div>
+                            <div>
+                                <h3>Keyboard Switch Sound Analyzer</h3>
+                                <p class="tool-desc">Classify your mechanical switches as linear, tactile, or clicky using microphone FFT analysis.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">FFT Analysis</span>
+                            <span class="tool-tag">Switch Type</span>
                         </div>
                         <div class="tool-cta">
                             Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -776,6 +846,38 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
                             Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
+                    <a href="<?php echo url('polling-rate-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#9201;</div>
+                            <div>
+                                <h3>Mouse Polling Rate Test</h3>
+                                <p class="tool-desc">Check if your gaming mouse runs at 125Hz, 500Hz, 1000Hz or higher with a live Hz display.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Hz</span>
+                            <span class="tool-tag">Gaming</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    <a href="<?php echo url('mouse-lod-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#128433;</div>
+                            <div>
+                                <h3>Mouse LOD Tester</h3>
+                                <p class="tool-desc">Measure your gaming mouse lift-off distance to optimize sensor performance on your mousepad.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Lift-Off</span>
+                            <span class="tool-tag">Sensor</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -815,6 +917,130 @@ $pageDescription = 'Comprehensive suite of free online testing tools. Test keybo
                         <div class="tool-tags">
                             <span class="tool-tag">Video</span>
                             <span class="tool-tag">Resolution</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    <a href="<?php echo url('refresh-rate-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#128260;</div>
+                            <div>
+                                <h3>Monitor Refresh Rate Test</h3>
+                                <p class="tool-desc">Detect if your display runs at 60Hz, 144Hz, 240Hz or higher automatically in seconds.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Hz</span>
+                            <span class="tool-tag">144Hz</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    <a href="<?php echo url('touch-screen-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#128075;</div>
+                            <div>
+                                <h3>Touch Screen Test</h3>
+                                <p class="tool-desc">Test for dead zones, ghost touches, and multi-touch support on phone, tablet, or laptop.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Multi-Touch</span>
+                            <span class="tool-tag">Ghost Touch</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    <a href="<?php echo url('color-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#127752;</div>
+                            <div>
+                                <h3>Monitor Color Test</h3>
+                                <p class="tool-desc">Check color accuracy, gradient banding, contrast, and backlight uniformity on any screen.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Color Accuracy</span>
+                            <span class="tool-tag">Banding</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    <a href="<?php echo url('pwm-flicker-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#128294;</div>
+                            <div>
+                                <h3>PWM Flicker Test</h3>
+                                <p class="tool-desc">Check if your monitor uses PWM backlight dimming that can cause eye strain and headaches.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Eye Strain</span>
+                            <span class="tool-tag">Backlight</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    <a href="<?php echo url('backlight-bleed-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#127774;</div>
+                            <div>
+                                <h3>Backlight Bleed Test</h3>
+                                <p class="tool-desc">Check your LCD monitor for backlight bleed, IPS glow, and clouding with a dark background test.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">IPS Glow</span>
+                            <span class="tool-tag">LCD</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gaming Tools -->
+        <section class="tools-section" id="gaming-tools" style="--section-color-1: #ea580c; --section-color-2: #fb923c; background: var(--bg-secondary);">
+            <div class="container">
+                <div class="tools-section-header">
+                    <div class="tools-section-icon">&#127918;</div>
+                    <h2>Gaming Tools</h2>
+                </div>
+                <div class="tools-grid">
+                    <a href="<?php echo url('reaction-time-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#9889;</div>
+                            <div>
+                                <h3>Reaction Time Test</h3>
+                                <p class="tool-desc">Measure how fast you react with a browser-based millisecond reflex tester over 5 attempts.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Reflex</span>
+                            <span class="tool-tag">Milliseconds</span>
+                        </div>
+                        <div class="tool-cta">
+                            Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    <a href="<?php echo url('gamepad-test.php'); ?>" class="tool-card">
+                        <div class="tool-card-top">
+                            <div class="tool-icon">&#127918;</div>
+                            <div>
+                                <h3>Gamepad Tester</h3>
+                                <p class="tool-desc">Test PS5, Xbox, Switch, and PC controller buttons, analog stick drift, triggers, and vibration.</p>
+                            </div>
+                        </div>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Stick Drift</span>
+                            <span class="tool-tag">Vibration</span>
                         </div>
                         <div class="tool-cta">
                             Try Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

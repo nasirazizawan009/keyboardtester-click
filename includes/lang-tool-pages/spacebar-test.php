@@ -8,7 +8,7 @@ $langData = [
     'es' => [
         'dir' => 'spanish', 'html_lang' => 'es',
         'title' => 'Test de Barra Espaciadora — ¿Qué Tan Rápido Puedes Presionarla? | KeyboardTester.click',
-        'description' => 'Test gratis de barra espaciadora en línea. Cuenta cuántas veces puedes presionarla en 5, 10 o 30 segundos. Sin descarga.',
+        'description' => 'Test gratuito de barra espaciadora online: cuenta cuántas veces la puedes pulsar en 5, 10 o 30 segundos. Detecta teclas pegadas y mide velocidad en tiempo real, sin instalación.',
         'keywords' => 'test barra espaciadora, contador espaciadora, velocidad espaciadora',
         'h1' => 'Test de Barra Espaciadora',
         'subtitle' => 'Elige una duración y presiona la barra espaciadora para comenzar',
@@ -31,7 +31,7 @@ $langData = [
     'fr' => [
         'dir' => 'french', 'html_lang' => 'fr',
         'title' => 'Test de la Barre d\'Espace — Vitesse de Frappe Gratuit | KeyboardTester.click',
-        'description' => 'Test gratuit de la barre d\'espace en ligne. Comptez combien de fois vous pouvez appuyer en 5, 10 ou 30 secondes. Sans téléchargement.',
+        'description' => 'Test gratuit de barre espace en ligne : comptez combien de fois vous pouvez appuyer en 5, 10 ou 30 secondes. Détecte les touches collantes et mesure en temps réel, sans installation.',
         'keywords' => 'test barre espace, compteur barre espace, vitesse barre espace',
         'h1' => 'Test de la Barre d\'Espace',
         'subtitle' => 'Choisissez une durée et appuyez sur la barre d\'espace pour commencer',
@@ -54,7 +54,7 @@ $langData = [
     'de' => [
         'dir' => 'german', 'html_lang' => 'de',
         'title' => 'Leertasten-Test — Wie Schnell Kannst Du Drücken? | KeyboardTester.click',
-        'description' => 'Kostenloser Leertasten-Test online. Zähle wie oft du in 5, 10 oder 30 Sekunden drücken kannst. Kein Download.',
+        'description' => 'Kostenloser Leertasten-Test online: Zählt wie oft Sie in 5, 10 oder 30 Sekunden drücken können. Erkennt klemmende Tasten und misst in Echtzeit, ohne Installation oder Download.',
         'keywords' => 'Leertasten Test, Leertasten Zähler, Leertasten Geschwindigkeit',
         'h1' => 'Leertasten-Test',
         'subtitle' => 'Wähle eine Dauer und drücke die Leertaste, um zu beginnen',
@@ -123,7 +123,7 @@ $langData = [
     'pt' => [
         'dir' => 'portuguese', 'html_lang' => 'pt',
         'title' => 'Teste da Barra de Espaço — Velocidade de Digitação | KeyboardTester.click',
-        'description' => 'Teste gratuito da barra de espaço online. Conte quantas vezes consegue pressionar em 5, 10 ou 30 segundos. Sem download.',
+        'description' => 'Teste gratuito da barra de espaço online: conta quantas vezes você consegue pressionar em 5, 10 ou 30 segundos. Detecta teclas travadas e mede em tempo real, sem instalação.',
         'keywords' => 'teste barra espaço, contador barra espaço, velocidade teclado',
         'h1' => 'Teste da Barra de Espaço',
         'subtitle' => 'Escolha uma duração e pressione a barra de espaço para começar',
@@ -146,7 +146,7 @@ $langData = [
     'ru' => [
         'dir' => 'russian', 'html_lang' => 'ru',
         'title' => 'Тест Пробела — Как Быстро Ты Нажимаешь? | KeyboardTester.click',
-        'description' => 'Бесплатный онлайн-тест пробела. Считай, сколько раз нажмёшь за 5, 10 или 30 секунд. Без скачивания.',
+        'description' => 'Бесплатный онлайн-тест пробела: считает нажатия за 5, 10 или 30 секунд. Обнаруживает залипшие клавиши и измеряет скорость в реальном времени, без установки.',
         'keywords' => 'тест пробела, счётчик пробела, скорость нажатия',
         'h1' => 'Тест Пробела',
         'subtitle' => 'Выберите время и нажмите пробел для начала',
@@ -169,7 +169,7 @@ $langData = [
     'ar' => [
         'dir' => 'arabic', 'html_lang' => 'ar',
         'title' => 'اختبار مفتاح المسافة — كم مرة يمكنك الضغط؟ | KeyboardTester.click',
-        'description' => 'اختبار مجاني لمفتاح المسافة. اضغط لمدة 5 أو 10 أو 30 ثانية وشاهد نتيجتك. بدون تحميل.',
+        'description' => 'اختبار مجاني لمفتاح المسافة عبر الإنترنت: احسب عدد الضغطات في 5 أو 10 أو 30 ثانية. يكتشف المفاتيح العالقة ويقيس السرعة مباشرة، بدون تحميل أو تثبيت.',
         'keywords' => 'اختبار مفتاح المسافة, عداد المسافة, سرعة الكتابة',
         'h1' => 'اختبار مفتاح المسافة',
         'subtitle' => 'اختر المدة واضغط مفتاح المسافة للبدء',

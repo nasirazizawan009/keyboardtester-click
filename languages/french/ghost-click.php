@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
 $pageTitle = 'Detecteur de Clics Fantomes - Detectez les Clics Non Desires';
-$pageDescription = 'Detectez les clics fantomes et les clics non intentionnels de votre souris. Identifiez les problemes materiel de la souris.';
+$pageDescription = 'Détecteur de clics fantômes : diagnostique les doubles clics involontaires et les rebonds d\'interrupteur de souris usée. Journal en direct, sans installation, privé.';
 $pageKeywords = 'clics fantomes, detecteur clics, problemes souris, clics involontaires, ghost click';
 ?>
 <!DOCTYPE html>

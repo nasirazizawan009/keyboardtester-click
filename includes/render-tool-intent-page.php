@@ -106,9 +106,10 @@ $pageCanonical = $intentPage['meta']['canonical'] ?? null;
                 </div>
                 <div class="process-grid">
                     <?php foreach ($intentPage['processSection']['steps'] as $index => $step): ?>
+                        <?php $stepImageMeta = getLocalImageMeta($step['image']); ?>
                         <article class="process-card">
                             <div class="process-media">
-                                <img src="<?php echo url($step['image']); ?>" alt="<?php echo htmlspecialchars($step['alt'], ENT_QUOTES, 'UTF-8'); ?>" loading="lazy">
+                                <img src="<?php echo url($step['image']); ?>" alt="<?php echo htmlspecialchars($step['alt'], ENT_QUOTES, 'UTF-8'); ?>"<?php if ($stepImageMeta !== null && !empty($stepImageMeta['width']) && !empty($stepImageMeta['height'])): ?> width="<?php echo (int) $stepImageMeta['width']; ?>" height="<?php echo (int) $stepImageMeta['height']; ?>"<?php endif; ?> loading="lazy" decoding="async">
                             </div>
                             <div class="process-body">
                                 <div class="step-number"><?php echo str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT); ?></div>
@@ -130,6 +131,7 @@ $pageCanonical = $intentPage['meta']['canonical'] ?? null;
 
     <?php include __DIR__ . '/components/tools-list.php'; ?>
     <?php if (!empty($intentPage['seoContentInclude'])) include __DIR__ . '/../' . ltrim($intentPage['seoContentInclude'], '/'); ?>
+    <?php if (!empty($intentPage['relatedBlog'])) { $toolBlogSlug = $intentPage['relatedBlog']; include __DIR__ . '/components/tool-blog-cta.php'; unset($toolBlogSlug); } ?>
     <?php if (!empty($intentPage['currentTool'])) include __DIR__ . '/related-tools.php'; ?>
     <?php if (!empty($intentPage['helpInclude'])) include __DIR__ . '/../' . ltrim($intentPage['helpInclude'], '/'); ?>
 </main>

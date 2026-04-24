@@ -53,6 +53,66 @@ $headCanonical = preg_replace('~^(https?://)www\.~i', '$1', $headCanonical);
 <meta name="robots" content="<?php echo htmlspecialchars($headRobots, ENT_QUOTES, 'UTF-8'); ?>">
 <link rel="canonical" href="<?php echo htmlspecialchars($headCanonical, ENT_QUOTES, 'UTF-8'); ?>">
 <?php endif; ?>
+<?php
+/* --- Auto hreflang cluster ---------------------------------------------
+   Emits <link rel="alternate" hreflang="..."> for every language version of
+   this page that actually exists on disk. Works for both EN root pages and
+   /languages/<lang>/<slug>.php localized pages. Skips silently when the
+   current script isn't a recognized landing-page pattern.                */
+if (empty($hreflangEmitted) && !empty($_SERVER['SCRIPT_FILENAME'])) {
+    $__hreflang_projectRoot = realpath(__DIR__ . '/..');
+    $__hreflang_script      = realpath($_SERVER['SCRIPT_FILENAME']);
+    if ($__hreflang_projectRoot && $__hreflang_script
+        && strpos($__hreflang_script, $__hreflang_projectRoot) === 0) {
+        $__hreflang_rel = str_replace('\\', '/', substr($__hreflang_script, strlen($__hreflang_projectRoot)));
+        $__hreflang_rel = ltrim($__hreflang_rel, '/');
+        // Slug aliases: EN root filename => localized filename.
+        // Covers cases where the EN page and locale pages do NOT share a filename,
+        // so the auto-hreflang can still link them as alternates.
+        $__hreflang_en_aliases = [
+            'keyboard_typing_test.php' => 'typing-test.php',
+        ];
+        $__hreflang_loc_to_en = array_flip($__hreflang_en_aliases);
+
+        $__hreflang_en_slug = null;  // EN root filename (lives at project root)
+        $__hreflang_loc_slug = null; // locale filename (lives under languages/<dir>/)
+        if (preg_match('~^languages/[^/]+/([^/]+\.php)$~', $__hreflang_rel, $__hm)) {
+            $__hreflang_loc_slug = $__hm[1];
+            $__hreflang_en_slug = $__hreflang_loc_to_en[$__hreflang_loc_slug] ?? $__hreflang_loc_slug;
+        } elseif (preg_match('~^([^/]+\.php)$~', $__hreflang_rel, $__hm)) {
+            $__hreflang_en_slug = $__hm[1];
+            $__hreflang_loc_slug = $__hreflang_en_aliases[$__hreflang_en_slug] ?? $__hreflang_en_slug;
+        }
+        if ($__hreflang_en_slug) {
+            $__hreflang_dirs = [
+                'es' => 'spanish', 'fr' => 'french', 'de' => 'german',
+                'pt' => 'portuguese', 'ar' => 'arabic', 'ru' => 'russian',
+                'ja' => 'japanese', 'ko' => 'korean',
+            ];
+            $__hreflang_links = [];
+            if (file_exists($__hreflang_projectRoot . '/' . $__hreflang_en_slug)) {
+                $__hreflang_links['en'] = absoluteUrl($__hreflang_en_slug);
+            }
+            foreach ($__hreflang_dirs as $__code => $__dir) {
+                $__p = $__hreflang_projectRoot . '/languages/' . $__dir . '/' . $__hreflang_loc_slug;
+                if (file_exists($__p)) {
+                    $__hreflang_links[$__code] = absoluteUrl('languages/' . $__dir . '/' . $__hreflang_loc_slug);
+                }
+            }
+            // Emit only if we found at least one alternate (so we skip pages with no localized versions)
+            if (count($__hreflang_links) > 1) {
+                foreach ($__hreflang_links as $__code => $__href) {
+                    echo "\n<link rel=\"alternate\" hreflang=\"" . htmlspecialchars($__code, ENT_QUOTES, 'UTF-8') . '" href="' . htmlspecialchars($__href, ENT_QUOTES, 'UTF-8') . '">';
+                }
+                if (!empty($__hreflang_links['en'])) {
+                    echo "\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"" . htmlspecialchars($__hreflang_links['en'], ENT_QUOTES, 'UTF-8') . '">';
+                }
+                $hreflangEmitted = true;
+            }
+        }
+    }
+}
+?>
 
 <!-- Preconnect to critical font domains (preconnect beats dns-prefetch for CLS) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -99,8 +159,8 @@ $headCanonical = preg_replace('~^(https?://)www\.~i', '$1', $headCanonical);
 
 <!-- Critical CSS Inline - Above the fold styles -->
 <style>
-:root{--bg-color:#f5f7fa;--text-color:#1e293b;--header-bg:#0b1220;--header-text:#fff;--card-bg:#fff;--card-border:rgba(0,0,0,0.08);--accent-color:#4b5eAA}
-html.dark-theme{--bg-color:#0f172a;--text-color:#e2e8f0;--header-bg:#0b1220;--card-bg:#1e293b;--card-border:rgba(255,255,255,0.1)}
+:root{--bg-color:#f5f7fa;--text-color:#1e293b;--text-muted:#475569;--primary-color:#1e40af;--surface:#ffffff;--border-color:#e2e8f0;--header-bg:#0b1220;--header-text:#fff;--card-bg:#fff;--card-border:rgba(0,0,0,0.08);--accent-color:#4b5eAA}
+html.dark-theme,html[data-theme="dark"]{--bg-color:#0f172a;--text-color:#f1f5f9;--text-muted:#cbd5e1;--primary-color:#93c5fd;--surface:#1e293b;--border-color:#334155;--header-bg:#0b1220;--card-bg:#1e293b;--card-border:rgba(255,255,255,0.1)}
 *,*::before,*::after{box-sizing:border-box}
 @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107.06%;ascent-override:90.49%;descent-override:22.56%;line-gap-override:0%}
 @font-face{font-family:'Space Grotesk Fallback';src:local('Arial');size-adjust:96.5%;ascent-override:89.92%;descent-override:22.52%;line-gap-override:0%}
@@ -122,11 +182,13 @@ a{color:inherit;text-decoration:none}
 
 <!-- Load core site styles early without blocking first paint -->
 <?php if ($loadGlobalCss): ?>
-<link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/global.min.css" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/global.min.css"></noscript>
+<link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/global.min.css?v=2.7" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/global.min.css?v=2.7"></noscript>
 <?php endif; ?>
 <link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/tools-list.min.css" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/tools-list.min.css"></noscript>
+<link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/ai-chat.css?v=2.3" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/ai-chat.css?v=2.3"></noscript>
 <?php if ($loadMobileToolAdapters): ?>
 <link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/mobile-tool-adapters.min.css?v=1" onload="this.onload=null;this.rel='stylesheet'">
 <?php endif; ?>
@@ -154,3 +216,18 @@ a{color:inherit;text-decoration:none}
 <!-- Mobile Theme Color -->
 <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+
+<!-- PWA manifest + service worker (installable + offline fallback) -->
+<link rel="manifest" href="<?php echo $basePath; ?>manifest.webmanifest">
+<meta name="application-name" content="KeyboardTester.click">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="KeyboardTester">
+<link rel="apple-touch-icon" href="<?php echo $basePath; ?>navigation.png">
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function(){
+        navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function(){});
+    });
+}
+</script>

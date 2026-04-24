@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'WhatsApp Brand Links - Branded Links | KeyboardTester.click';
-$pageDescription = 'Use this free online whatsapp brand links to test branded links with live feedback and quick resets.';
-$pageKeywords = 'branded links, whatsapp brand links, online test, free tool';
+$pageTitle = 'Free Open Source WhatsApp Brand QR Generator — Business Chat Links | KeyboardTester.click';
+$pageDescription = 'Free open source WhatsApp brand link and QR code generator. Create branded WhatsApp chat links with live feedback and quick resets. No download needed.';
+$pageKeywords = 'whatsapp brand links, open source WhatsApp tool, branded links, whatsapp qr generator, online test, free tool';
 $pageOgImage = 'images/whatsapp-brand/hero.png';
 ?>
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ $pageOgImage = 'images/whatsapp-brand/hero.png';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-brand/step-1.png'); ?>" alt="WhatsApp brand link step 1 - open business link generator" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-brand/step-1.png'); ?>" alt="WhatsApp brand link step 1 - open business link generator" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -120,7 +120,7 @@ $pageOgImage = 'images/whatsapp-brand/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-brand/step-2.png'); ?>" alt="WhatsApp brand link step 2 - enter business details" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-brand/step-2.png'); ?>" alt="WhatsApp brand link step 2 - enter business details" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">02</div>
             <h3>Enter brand info</h3>
@@ -128,7 +128,7 @@ $pageOgImage = 'images/whatsapp-brand/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-brand/step-3.png'); ?>" alt="Generated branded WhatsApp link with QR code" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-brand/step-3.png'); ?>" alt="Generated branded WhatsApp link with QR code" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>

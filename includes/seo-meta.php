@@ -62,12 +62,18 @@ $canonical = preg_replace('~^http://~i', 'https://', $canonical);
 $canonical = preg_replace('~^(https?://)www\.~i', '$1', $canonical);
 
 $ogImage = $pageOgImage ?? $meta['og_image'] ?? ($toolMeta['og_image'] ?? 'images/shared/keyboard-and-mouse.png');
+$ogImageMeta = null;
 if ($ogImage && !preg_match('~^https?://~i', $ogImage)) {
-    $localPath = __DIR__ . '/../' . ltrim($ogImage, '/');
-    if (!file_exists($localPath)) {
+    $ogImageMeta = getLocalImageMeta($ogImage);
+    if ($ogImageMeta === null) {
         $ogImage = 'images/shared/keyboard-and-mouse.png';
+        $ogImageMeta = getLocalImageMeta($ogImage);
     }
-    $ogImage = absoluteUrl(ltrim($ogImage, '/'));
+    if ($ogImageMeta !== null) {
+        $ogImage = $ogImageMeta['url'];
+    } else {
+        $ogImage = absoluteUrl(ltrim($ogImage, '/'));
+    }
 }
 
 $ogTitle = $pageOgTitle ?? $title;
@@ -95,12 +101,23 @@ $twitterCard = $pageTwitterCard ?? 'summary_large_image';
     <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle, ENT_QUOTES, 'UTF-8'); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription, ENT_QUOTES, 'UTF-8'); ?>">
     <meta property="og:image" content="<?php echo htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:image:secure_url" content="<?php echo htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8'); ?>">
     <meta property="og:image:alt" content="<?php echo htmlspecialchars($ogImageAlt, ENT_QUOTES, 'UTF-8'); ?>">
+<?php if (!empty($ogImageMeta['width'])): ?>
+    <meta property="og:image:width" content="<?php echo (int) $ogImageMeta['width']; ?>">
+<?php endif; ?>
+<?php if (!empty($ogImageMeta['height'])): ?>
+    <meta property="og:image:height" content="<?php echo (int) $ogImageMeta['height']; ?>">
+<?php endif; ?>
+<?php if (!empty($ogImageMeta['mime'])): ?>
+    <meta property="og:image:type" content="<?php echo htmlspecialchars($ogImageMeta['mime'], ENT_QUOTES, 'UTF-8'); ?>">
+<?php endif; ?>
     <meta property="og:site_name" content="<?php echo htmlspecialchars($siteName, ENT_QUOTES, 'UTF-8'); ?>">
 <?php if (!empty($pageOgLocale)): ?>
     <meta property="og:locale" content="<?php echo htmlspecialchars($pageOgLocale, ENT_QUOTES, 'UTF-8'); ?>">
 <?php endif; ?>
 
+    <link rel="image_src" href="<?php echo htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8'); ?>">
     <meta name="twitter:card" content="<?php echo htmlspecialchars($twitterCard, ENT_QUOTES, 'UTF-8'); ?>">
     <meta name="twitter:url" content="<?php echo htmlspecialchars($ogUrl, ENT_QUOTES, 'UTF-8'); ?>">
     <meta name="twitter:title" content="<?php echo htmlspecialchars($ogTitle, ENT_QUOTES, 'UTF-8'); ?>">

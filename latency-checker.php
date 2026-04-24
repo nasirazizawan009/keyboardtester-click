@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Keyboard Latency Checker — Test Input Lag Online Free | KeyboardTester.click';
-$pageDescription = 'Keyboard latency checker online. Measure input lag and response time for gaming keyboards. Free, browser-based, no download.';
-$pageKeywords = 'input latency checker, keyboard latency test, mouse latency test, response time tool';
+$pageTitle = 'Free Keyboard & Mouse Latency Checker Online | KeyboardTester.click';
+$pageDescription = 'Free open source keyboard & mouse latency checker. Measure input lag, key-press delay, and response time for gaming hardware — in-browser, no install.';
+$pageKeywords = 'input latency checker, open source latency test, keyboard latency test, mouse latency test, response time tool';
 $pageOgImage = 'images/latency-checker/hero.png';
 ?>
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ $pageOgImage = 'images/latency-checker/hero.png';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/latency-checker/step-1.png'); ?>" alt="Input latency checker step 1 - open response time tester" loading="lazy">
+              <img src="<?php echo url('images/latency-checker/step-1.png'); ?>" alt="Input latency checker step 1 - open response time tester" loading="lazy" width="600" height="399" decoding="async">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -120,7 +120,7 @@ $pageOgImage = 'images/latency-checker/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/latency-checker/step-2.png'); ?>" alt="Latency test step 2 - press keys to measure response time" loading="lazy">
+              <img src="<?php echo url('images/latency-checker/step-2.png'); ?>" alt="Latency test step 2 - press keys to measure response time" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">02</div>
             <h3>Press keys or click</h3>
@@ -128,7 +128,7 @@ $pageOgImage = 'images/latency-checker/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/latency-checker/step-3.png'); ?>" alt="Input latency results - millisecond response time display" loading="lazy">
+              <img src="<?php echo url('images/latency-checker/step-3.png'); ?>" alt="Input latency results - millisecond response time display" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -140,6 +140,7 @@ $pageOgImage = 'images/latency-checker/hero.png';
 
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/latency-checker.php'; ?>
+  <?php $toolBlogSlug = 'input-latency-checker-keyboard-mouse-delay.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
   </main>
 
   <?php include 'footer.php'; ?>

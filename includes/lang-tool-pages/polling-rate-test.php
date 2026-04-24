@@ -8,7 +8,7 @@ $langData = [
     'es' => [
         'dir' => 'spanish', 'html_lang' => 'es',
         'title' => 'Test de Tasa de Sondeo del Ratón — Mide el Hz Online | KeyboardTester.click',
-        'description' => 'Test gratuito de tasa de sondeo del ratón. Mueve el ratón y mide la frecuencia en Hz en tiempo real. Sin descarga.',
+        'description' => 'Prueba de frecuencia de sondeo del ratón (Hz): mide la tasa real de reporte de posición. Detecta 125, 500, 1000 Hz y superiores en vivo, sin instalación ni drivers.',
         'keywords' => 'tasa de sondeo ratón, polling rate test, Hz ratón',
         'h1' => 'Test de Tasa de Sondeo del Ratón',
         'subtitle' => 'Mueve tu ratón para ver la frecuencia en Hz',
@@ -29,7 +29,7 @@ $langData = [
     'fr' => [
         'dir' => 'french', 'html_lang' => 'fr',
         'title' => 'Test de Taux de Sondage de la Souris — Mesurez le Hz | KeyboardTester.click',
-        'description' => 'Test gratuit du taux de sondage de la souris. Déplacez la souris et mesurez la fréquence en Hz en temps réel. Sans téléchargement.',
+        'description' => 'Test de fréquence de sondage souris (Hz) : mesure le taux réel de rapport de position. Détecte 125, 500, 1000 Hz et plus, en direct, sans installation ni pilote.',
         'keywords' => 'taux de sondage souris, polling rate test, Hz souris',
         'h1' => 'Test de Taux de Sondage de la Souris',
         'subtitle' => 'Déplacez votre souris pour voir le Hz',
@@ -50,7 +50,7 @@ $langData = [
     'de' => [
         'dir' => 'german', 'html_lang' => 'de',
         'title' => 'Maus-Abfragerate-Test — Hz Online Messen | KeyboardTester.click',
-        'description' => 'Kostenloser Maus-Abfragerate-Test. Bewege die Maus und messe die Hz-Rate in Echtzeit. Kein Download.',
+        'description' => 'Maus-Polling-Rate-Test (Hz): Misst die tatsächliche Positions-Reporting-Rate. Erkennt 125, 500, 1000 Hz und höher, live, ohne Installation oder Treiber, direkt im Browser.',
         'keywords' => 'Maus Abfragerate Test, Polling Rate Test, Hz Maus',
         'h1' => 'Maus-Abfragerate-Test',
         'subtitle' => 'Bewege die Maus, um die Hz-Rate zu sehen',
@@ -113,7 +113,7 @@ $langData = [
     'pt' => [
         'dir' => 'portuguese', 'html_lang' => 'pt',
         'title' => 'Teste de Taxa de Polling do Mouse — Medir Hz Online | KeyboardTester.click',
-        'description' => 'Teste gratuito da taxa de polling do mouse. Mova o mouse e meça a frequência em Hz em tempo real. Sem download.',
+        'description' => 'Teste de taxa de polling do mouse (Hz): mede a taxa real de relatório de posição. Detecta 125, 500, 1000 Hz e superiores em tempo real, sem instalação nem drivers.',
         'keywords' => 'taxa de polling mouse, polling rate test, Hz mouse',
         'h1' => 'Teste de Taxa de Polling do Mouse',
         'subtitle' => 'Mova o mouse para ver a frequência em Hz',
@@ -134,7 +134,7 @@ $langData = [
     'ru' => [
         'dir' => 'russian', 'html_lang' => 'ru',
         'title' => 'Тест Частоты Опроса Мыши — Измерь Гц Онлайн | KeyboardTester.click',
-        'description' => 'Бесплатный тест частоты опроса мыши. Двигайте мышь и измеряйте частоту в Гц в реальном времени. Без скачивания.',
+        'description' => 'Тест частоты опроса мыши (Hz): измеряет реальную частоту передачи позиции. Определяет 125, 500, 1000 Гц и выше в реальном времени, без установки и драйверов.',
         'keywords' => 'тест частоты опроса мыши, polling rate тест, Гц мышь',
         'h1' => 'Тест Частоты Опроса Мыши',
         'subtitle' => 'Двигайте мышь чтобы увидеть частоту в Гц',
@@ -155,7 +155,7 @@ $langData = [
     'ar' => [
         'dir' => 'arabic', 'html_lang' => 'ar',
         'title' => 'اختبار معدل استطلاع الماوس — قِس الهرتز أونلاين | KeyboardTester.click',
-        'description' => 'اختبار مجاني لمعدل استطلاع الماوس. حرك الماوس وقِس التردد بالهرتز في الوقت الفعلي. بدون تحميل.',
+        'description' => 'اختبار معدل استطلاع الماوس (هرتز): يقيس المعدل الفعلي للإبلاغ عن الموقع. يكتشف 125 و500 و1000 هرتز وأعلى مباشرة، بدون تثبيت أو تعريفات.',
         'keywords' => 'اختبار معدل استطلاع الماوس, polling rate, هرتز ماوس',
         'h1' => 'اختبار معدل استطلاع الماوس',
         'subtitle' => 'حرك الماوس لمعرفة تردده بالهرتز',

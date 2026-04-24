@@ -7,9 +7,9 @@
 include 'config.php';
 
 // Page-specific SEO
-$pageTitle = "Mouse and Keyboard Tester Tools - Free Online Testing Suite 2026";
-$pageDescription = "Complete collection of free mouse and keyboard testing tools. Test clicks, keys, DPI, latency, typing speed, and more. Works on all devices with instant results.";
-$pageKeywords = "mouse tester, keyboard tester, keyboard test online, mouse test online, click speed test, DPI tester, typing speed test, latency checker, ghost click detector";
+$pageTitle = "Free Open Source Mouse and Keyboard Tester Tools Online 2026";
+$pageDescription = "Complete collection of free open source mouse and keyboard testing tools. Test clicks, keys, DPI, latency, typing speed, and more. Works on all devices with instant results.";
+$pageKeywords = "mouse tester, open source keyboard tester, keyboard test online, mouse test online, click speed test, DPI tester, typing speed test, latency checker, ghost click detector";
 $canonicalUrl = absoluteUrl('mouse-and-keyboard-test-tools.php');
 ?>
 <!DOCTYPE html>

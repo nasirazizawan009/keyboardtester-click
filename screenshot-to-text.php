@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Screenshot to Text Online | Extract Text From Screenshots',
-        'description' => 'Convert a screenshot to text online with a browser-based OCR tool. Upload screen captures, chat screenshots, and saved app images to extract text.',
+        'title' => 'Free Open Source Screenshot to Text Online | Extract Text From Screenshots',
+        'description' => 'Convert a screenshot to text online with a browser-based OCR tool. Upload screen captures or chat screenshots and extract readable text locally — no upload needed.',
         'keywords' => 'screenshot to text, extract text from screenshot, screenshot ocr online, copy text from screenshot',
         'ogImage' => 'images/ocr-tool/hero.png',
         'ogImageAlt' => 'Screenshot to text OCR tool in the browser'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Screenshot OCR',
-        'title' => 'Screenshot to Text Online',
+        'title' => 'Free Open Source Screenshot to Text Online',
         'lede' => 'Upload a screenshot and convert visible text into editable text directly in your browser. Great for software UI, chats, receipts, and saved images.',
         'primaryHref' => '#screenshot-ocr-tool',
         'primaryLabel' => 'Upload screenshot',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'ocr',
     'seoContentInclude' => 'help/seo-content/screenshot-to-text.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/ocr-tool.php'
+    'helpInclude' => 'help/ocr-tool.php',
+    'relatedBlog' => 'free-ocr-tool-extract-text-from-images.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

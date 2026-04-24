@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-es.php';
 
 $pageTitle = 'Prueba de Velocidad de Escritura - Mide WPM y Precisión';
-$pageDescription = 'Mide tu velocidad de escritura en palabras por minuto (WPM) y precisión. Mejora tus habilidades de mecanografía.';
+$pageDescription = 'Prueba de velocidad de escritura gratuita: mide tus PPM (palabras por minuto), precisión y consistencia en sesiones cronometradas. Sin registro, basado en navegador.';
 $pageKeywords = 'prueba escritura, WPM, velocidad mecanografía, test teclado, palabras por minuto';
 ?>
 <!DOCTYPE html>

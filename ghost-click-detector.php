@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Double Click Test — Mouse Ghost Click Detector Online Free | KeyboardTester.click';
-$pageDescription = 'Free double click test — check if your mouse is ghost clicking or double-clicking on a single press. Test left, right and middle buttons. No install needed. Instant results.';
-$pageKeywords = 'ghost click detector, double click test, mouse switch test, ghost click test';
+$pageTitle = 'Free Open Source Double Click Test — Mouse Ghost Click Detector Online | KeyboardTester.click';
+$pageDescription = 'Free open source double click test — check if your mouse is ghost clicking or double-clicking on a single press. Test left, right and middle buttons. No install needed. Instant results.';
+$pageKeywords = 'ghost click detector, open source mouse test, double click test, mouse switch test, ghost click test';
 $pageOgImage = 'images/ghost-click/hero.png';
 ?>
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ $pageOgImage = 'images/ghost-click/hero.png';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-1.png'); ?>" alt="Ghost click detector step 1 - start the mouse double click test" loading="lazy">
+              <img src="<?php echo url('images/ghost-click/step-1.png'); ?>" alt="Ghost click detector step 1 - start the mouse double click test" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -120,7 +120,7 @@ $pageOgImage = 'images/ghost-click/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-2.png'); ?>" alt="Ghost click test step 2 - click normally to detect phantom double clicks" loading="lazy">
+              <img src="<?php echo url('images/ghost-click/step-2.png'); ?>" alt="Ghost click test step 2 - click normally to detect phantom double clicks" loading="lazy" width="600" height="407" decoding="async">
             </div>
             <div class="step-number">02</div>
             <h3>Click normally</h3>
@@ -128,7 +128,7 @@ $pageOgImage = 'images/ghost-click/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-3.png'); ?>" alt="Ghost click test results - view detected double click issues" loading="lazy">
+              <img src="<?php echo url('images/ghost-click/step-3.png'); ?>" alt="Ghost click test results - view detected double click issues" loading="lazy" width="600" height="399" decoding="async">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -143,6 +143,7 @@ $pageOgImage = 'images/ghost-click/hero.png';
     <?php include 'help/seo-content/ghost-click.php'; ?>
     <?php $currentTool = 'ghost-click'; include 'includes/related-tools.php'; ?>
     <?php include 'help/ghost-click-detector.php'; ?>
+  <?php $toolBlogSlug = 'ghost-click-detector-fix-double-clicking.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
   </main>
 
   <?php include 'footer.php'; ?>

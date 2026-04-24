@@ -7,7 +7,7 @@ $breadcrumbs = [
 ];
 
 $pageTitle = 'Mouse Tools - Click, Speed, and DPI Testing';
-$pageDescription = 'Test mouse buttons, scroll wheel, speed, sensitivity, and cursor tracking with free online tools.';
+$pageDescription = 'Mouse diagnostics hub: test buttons, scroll wheel, DPI, sensitivity, click speed, double-click, drift and cursor tracking with free browser-based tools.';
 $pageKeywords = 'mouse tools, mouse test, click speed, dpi test, mouse trail';
 
 $tools = [

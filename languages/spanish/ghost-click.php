@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-es.php';
 
 $pageTitle = 'Detector de Clics Fantasma - Detecta Clics No Deseados';
-$pageDescription = 'Detecta clics fantasma y clics no intencionados de tu ratón. Identifica problemas de hardware del ratón.';
+$pageDescription = 'Detector de ghost click: diagnostica dobles clics involuntarios y rebote de switch en ratones desgastados. Registro en vivo, sin instalación, privacidad garantizada.';
 $pageKeywords = 'clics fantasma, detector clics, problemas ratón, clics involuntarios, ghost click';
 ?>
 <!DOCTYPE html>

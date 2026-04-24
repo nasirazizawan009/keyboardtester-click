@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Touch Screen Test — Multi-Touch, Dead Zone & Ghost Touch Online Free | KeyboardTester.click';
-$pageDescription = 'Free touch screen test online. Check for dead zones, ghost touches and multi-touch support on phone, tablet or laptop. Draw fingers to paint the screen. No app needed.';
-$pageKeywords = 'touch screen test online, touchscreen tester, test touch screen online, multi touch test online, ghost touch test';
+$pageTitle = 'Free Open Source Touch Screen Test — Multi-Touch & Ghost Touch Online | KeyboardTester.click';
+$pageDescription = 'Free open source touch screen test online. Check for dead zones, ghost touches, and multi-touch support on phone, tablet, or laptop. Draw fingers to paint the screen. No app needed.';
+$pageKeywords = 'touch screen test online, open source touch test, touchscreen tester, test touch screen online, multi touch test online, ghost touch test';
 $pageOgImage = 'images/screen-test/hero.webp';
 ?>
 <!DOCTYPE html>
@@ -208,7 +208,7 @@ $pageOgImage = 'images/screen-test/hero.webp';
 
       <section id="touch-tester" class="tool-shell" aria-label="Touch screen test tool">
         <div class="touch-tool">
-          <h1>Touch Screen Test</h1>
+          <h1>Free Open Source Touch Screen Test</h1>
           <p class="tool-subtitle">Draw with your fingers to test for dead zones. Works on phone, tablet and touch laptops.</p>
 
           <!-- Stat bar -->

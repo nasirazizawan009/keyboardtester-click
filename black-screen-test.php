@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Black Screen Test Online | Full Screen Monitor Check',
-        'description' => 'Use a black screen test online to inspect backlight bleed, IPS glow, bright defects, and display issues on monitors, laptops, and TVs.',
+        'title' => 'Free Open Source Black Screen Test Online | Full Screen Monitor Check',
+        'description' => 'Use a black screen test online to inspect backlight bleed, IPS glow, bright defects and display uniformity on monitors, laptops, tablets and phones. Fullscreen.',
         'keywords' => 'black screen test, full black screen, monitor black screen test, backlight bleed test',
         'ogImage' => 'images/screen-test/hero.png',
         'ogImageAlt' => 'Black screen test tool for monitor and laptop inspection'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Dark-screen diagnostics',
-        'title' => 'Black Screen Test Online',
+        'title' => 'Free Open Source Black Screen Test Online',
         'lede' => 'Open a clean black screen, go full screen, and inspect your display for edge glow, backlight bleed, and bright defects without installing anything.',
         'primaryHref' => '#black-screen-tool',
         'primaryLabel' => 'Open black screen test',
@@ -75,7 +75,8 @@ $intentPage = [
     'currentTool' => 'screen',
     'seoContentInclude' => 'help/seo-content/black-screen-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/screen-tester.php'
+    'helpInclude' => 'help/screen-tester.php',
+    'relatedBlog' => 'dead-pixel-test-check-monitor.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

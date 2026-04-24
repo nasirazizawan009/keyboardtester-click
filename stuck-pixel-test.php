@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Stuck Pixel Test Online | Check Red, Green, and Blue Pixels',
-        'description' => 'Use a free stuck pixel test online to find red, green, blue, or white pixels that stay lit on every screen color.',
+        'title' => 'Free Open Source Stuck Pixel Test Online | Check Red, Green, and Blue Pixels',
+        'description' => 'Use a free stuck pixel test online to find red, green, blue or white pixels that stay lit. Runs fullscreen colour cycles on any monitor, laptop or phone screen.',
         'keywords' => 'stuck pixel test, stuck pixel checker, red pixel test, blue pixel stuck monitor',
         'ogImage' => 'images/screen-test/hero.png',
         'ogImageAlt' => 'Stuck pixel test tool for monitor and laptop screens'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Monitor diagnostics',
-        'title' => 'Stuck Pixel Test Online',
+        'title' => 'Free Open Source Stuck Pixel Test Online',
         'lede' => 'Check for pixels that stay red, green, blue, or white even when the whole screen changes color. This browser test works on monitors, laptops, and phones.',
         'primaryHref' => '#stuck-pixel-tool',
         'primaryLabel' => 'Start stuck pixel test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'screen',
     'seoContentInclude' => 'help/seo-content/stuck-pixel-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/screen-tester.php'
+    'helpInclude' => 'help/screen-tester.php',
+    'relatedBlog' => 'dead-pixel-test-check-monitor.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

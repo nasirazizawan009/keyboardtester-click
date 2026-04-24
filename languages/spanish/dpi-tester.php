@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-es.php';
 
 $pageTitle = 'Probador de DPI - Mide la Sensibilidad del Ratón';
-$pageDescription = 'Prueba y mide el DPI de tu ratón. Verifica la precisión de seguimiento y sensibilidad.';
+$pageDescription = 'Probador de DPI y sensibilidad del ratón: verifica la resolución real del sensor, precisión de tracking y consistencia del cursor. En el navegador, sin drivers.';
 $pageKeywords = 'DPI ratón, sensibilidad mouse, test DPI, prueba sensibilidad, calibrar ratón';
 ?>
 <!DOCTYPE html>

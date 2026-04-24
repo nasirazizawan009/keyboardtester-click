@@ -26,7 +26,7 @@ if ($isLocalhost) {
     // Live site - Canonical: https://keyboardtester.click (non-www)
     $baseUrl = '/';
     $siteUrl = 'https://keyboardtester.click/';
-    $blogUrl = 'https://keyboardtester.click/blogs/';
+    $blogUrl = 'https://keyboardtester.click/blog/';
 }
 
 // Site information
@@ -40,7 +40,8 @@ $socialLinks = [
     'github' => 'https://github.com/nasirazizawan009/keyboardtester-click',
     'gitlab' => 'https://gitlab.com/nasirazizawan/keyboardtester.click',
     'youtube' => 'https://www.youtube.com/@KeyboardTester-dot-click',
-    'facebook' => 'https://www.facebook.com/keyboardtester.click'
+    'facebook' => 'https://www.facebook.com/keyboardtester.click',
+    'instagram' => 'https://www.instagram.com/keyboardtester.click'
 ];
 
 // Amazon affiliate links (by region)
@@ -214,6 +215,41 @@ function canonicalizeRequestPath($requestUri = '') {
 function canonicalUrl($requestUri = '') {
     $canonicalPath = canonicalizeRequestPath($requestUri);
     return $canonicalPath === '' ? absoluteUrl('') : absoluteUrl($canonicalPath);
+}
+
+/**
+ * Resolve metadata for a local site image.
+ *
+ * @param string $path Relative site path such as "images/foo.png" or "blog/images/bar.webp"
+ * @return array|null
+ */
+function getLocalImageMeta($path = '') {
+    $path = normalizeSitePath((string) $path);
+    if ($path === '' || preg_match('~^(?:https?:)?//~i', $path) || strpos($path, 'data:') === 0) {
+        return null;
+    }
+
+    $cleanPath = parse_url($path, PHP_URL_PATH);
+    if (!is_string($cleanPath) || $cleanPath === '') {
+        return null;
+    }
+
+    $cleanPath = ltrim(rawurldecode($cleanPath), '/');
+    $fullPath = __DIR__ . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $cleanPath);
+    if (!is_file($fullPath)) {
+        return null;
+    }
+
+    $size = @getimagesize($fullPath);
+
+    return [
+        'path' => $cleanPath,
+        'file' => $fullPath,
+        'url' => absoluteUrl($cleanPath),
+        'width' => isset($size[0]) ? (int) $size[0] : null,
+        'height' => isset($size[1]) ? (int) $size[1] : null,
+        'mime' => $size['mime'] ?? null,
+    ];
 }
 
 /**

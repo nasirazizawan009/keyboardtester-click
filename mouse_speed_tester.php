@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Click Speed Test Online | KeyboardTester.click';
-$pageDescription = 'Test your click speed and measure clicks per second (CPS) with free timed online challenges. Track your score, compare runs, and improve your clicking performance.';
-$pageKeywords = 'click speed test, cps test, mouse speed test, clicks per second';
+$pageTitle = 'Free Open Source Click Speed Test Online — CPS Test | KeyboardTester.click';
+$pageDescription = 'Free open source click speed test online. Measure clicks per second (CPS) with timed challenges. Track your score, compare runs, and improve your clicking performance.';
+$pageKeywords = 'click speed test, open source CPS test, cps test, mouse speed test, clicks per second';
 $pageOgImage = 'images/mouse-speed/hero.png';
 ?>
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ $pageOgImage = 'images/mouse-speed/hero.png';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-speed/step-1.png'); ?>" alt="Mouse click speed test step 1 - prepare to measure CPS" loading="lazy">
+              <img src="<?php echo url('images/mouse-speed/step-1.png'); ?>" alt="Mouse click speed test step 1 - prepare to measure CPS" loading="lazy" width="600" height="399" decoding="async">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -120,7 +120,7 @@ $pageOgImage = 'images/mouse-speed/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-speed/step-2.png'); ?>" alt="Mouse speed test step 2 - click as fast as possible" loading="lazy">
+              <img src="<?php echo url('images/mouse-speed/step-2.png'); ?>" alt="Mouse speed test step 2 - click as fast as possible" loading="lazy" width="600" height="450" decoding="async">
             </div>
             <div class="step-number">02</div>
             <h3>Click</h3>
@@ -128,7 +128,7 @@ $pageOgImage = 'images/mouse-speed/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse-speed/step-3.png'); ?>" alt="Mouse speed test results - clicks per second CPS score" loading="lazy">
+              <img src="<?php echo url('images/mouse-speed/step-3.png'); ?>" alt="Mouse speed test results - clicks per second CPS score" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -142,6 +142,7 @@ $pageOgImage = 'images/mouse-speed/hero.png';
     <?php include 'help/seo-content/click-speed.php'; ?>
     <?php $currentTool = 'cps'; include 'includes/related-tools.php'; ?>
     <?php include 'help/mouse-speed-tester.php'; ?>
+  <?php $toolBlogSlug = 'click-speed-test-measure-cps.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
   </main>
 
   <?php include 'footer.php'; ?>

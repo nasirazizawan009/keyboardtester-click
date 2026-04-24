@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const reader = new FileReader();
     reader.onload = function (event) {
       imageDataUrl = event.target.result;
-      preview.innerHTML = `<img src="${imageDataUrl}" alt="QR preview">`;
+      preview.innerHTML = `<img src="${imageDataUrl}" alt="QR preview" loading="lazy" decoding="async">`;
       runBtn.disabled = false;
       statusEl.textContent = 'Status: Ready to decode';
     };

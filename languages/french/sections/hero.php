@@ -35,12 +35,11 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="hero-shot">
-                <picture>
-                    <source type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.webp'); ?> 1400w" sizes="(max-width: 980px) 92vw, 520px">
-                    <source type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w" sizes="(max-width: 980px) 92vw, 520px">
-                    <img src="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?>" width="900" height="600" alt="Interface du testeur de clavier francais" loading="eager" decoding="async" fetchpriority="high">
-                </picture>
+            <div class="hero-shot hero-shot--video hero-yt-facade" data-yt-id="wVyAj-nrtnI" data-yt-title="KeyboardTester.click — Testeur de clavier" role="button" tabindex="0" aria-label="Lire la vidéo">
+                <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.jpg"); ?>" alt="Aperçu vidéo du testeur de clavier" width="480" height="270" loading="lazy" decoding="async">
+                <span class="hero-yt-play" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+                </span>
             </div>
             <div class="hero-stack">
                 <div class="mini-card">
@@ -140,7 +139,7 @@
                     <picture>
                         <source type="image/webp" srcset="<?php echo url('images/keyboard/Press-any-key-512.webp'); ?> 512w, <?php echo url('images/keyboard/Press-any-key-768.webp'); ?> 768w" sizes="(max-width: 900px) 90vw, 320px">
                         <source type="image/png" srcset="<?php echo url('images/keyboard/Press-any-key-512.png'); ?> 512w, <?php echo url('images/keyboard/Press-any-key-768.png'); ?> 768w" sizes="(max-width: 900px) 90vw, 320px">
-                        <img src="<?php echo url('images/keyboard/Press-any-key-512.png'); ?>" width="512" height="768" alt="Appuyez sur n'importe quelle touche pour demarrer le test" loading="lazy">
+                    <img src="<?php echo url('images/keyboard/Press-any-key-512.png'); ?>" width="512" height="768" alt="Appuyez sur n'importe quelle touche pour demarrer le test" loading="lazy" decoding="async">
                     </picture>
                 </div>
                 <div class="process-body">
@@ -154,7 +153,7 @@
                     <picture>
                         <source type="image/webp" srcset="<?php echo url('images/keyboard/special-keys-layout-640.webp'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
                         <source type="image/png" srcset="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
-                        <img src="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?>" width="640" height="426" alt="Touches speciales et disposition du clavier" loading="lazy">
+                    <img src="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?>" width="640" height="426" alt="Touches speciales et disposition du clavier" loading="lazy" decoding="async">
                     </picture>
                 </div>
                 <div class="process-body">
@@ -168,7 +167,7 @@
                     <picture>
                         <source type="image/webp" srcset="<?php echo url('images/keyboard/color-system-guide-640.webp'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
                         <source type="image/png" srcset="<?php echo url('images/keyboard/color-system-guide-640.png'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
-                        <img src="<?php echo url('images/keyboard/color-system-guide-640.png'); ?>" width="640" height="426" alt="Systeme de couleurs et resultats exportables" loading="lazy">
+                    <img src="<?php echo url('images/keyboard/color-system-guide-640.png'); ?>" width="640" height="426" alt="Systeme de couleurs et resultats exportables" loading="lazy" decoding="async">
                     </picture>
                 </div>
                 <div class="process-body">

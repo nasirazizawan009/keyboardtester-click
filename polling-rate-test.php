@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Mouse Polling Rate Test — Check Mouse Hz Online Free | KeyboardTester.click';
-$pageDescription = 'Free mouse polling rate test online. Check if your gaming mouse runs at 125Hz, 500Hz, 1000Hz or higher. Move your mouse to see live Hz readings. No download needed.';
-$pageKeywords = 'mouse polling rate test, mouse hz test, polling rate checker, check mouse hz online';
+$pageTitle = 'Free Open Source Mouse Polling Rate Test — Check Mouse Hz Online | KeyboardTester.click';
+$pageDescription = 'Free open source mouse polling rate test online. Check if your gaming mouse runs at 125Hz, 500Hz, 1000Hz or higher. Move your mouse to see live Hz readings. No download needed.';
+$pageKeywords = 'mouse polling rate test, open source mouse tester, mouse hz test, polling rate checker, check mouse hz online';
 $pageOgImage = 'images/mouse/hero.webp';
 ?>
 <!DOCTYPE html>
@@ -291,7 +291,7 @@ $pageOgImage = 'images/mouse/hero.webp';
 
       <section id="polling-tester" class="tool-shell">
         <div class="polling-tool">
-          <h1>Mouse Polling Rate Test</h1>
+          <h1>Free Open Source Mouse Polling Rate Test</h1>
           <p class="tool-subtitle">Click Start, then move your mouse in circles inside the test zone</p>
 
           <!-- Stat cards -->

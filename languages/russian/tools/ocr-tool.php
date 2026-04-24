@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const reader = new FileReader();
     reader.onload = function (event) {
       currentImage = event.target.result;
-      preview.innerHTML = `<img src="${currentImage}" alt="Предпросмотр OCR">`;
+      preview.innerHTML = `<img src="${currentImage}" alt="Предпросмотр OCR" loading="lazy" decoding="async">`;
       runBtn.disabled = false;
       statusEl.textContent = 'Статус: Готов к извлечению';
     };

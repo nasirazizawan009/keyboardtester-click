@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-es.php';
 
 $pageTitle = 'Prueba de Micrófono - Verifica tu Micrófono Gratis';
-$pageDescription = 'Prueba tu micrófono en línea. Verifica la entrada de audio, niveles de volumen y calidad de grabación.';
+$pageDescription = 'Probador de micrófono online: verifica la entrada del mic, niveles y volumen pico antes de Zoom, Teams o Discord. En el navegador, sin registro ni grabación.';
 $pageKeywords = 'prueba micrófono, test mic, verificar audio, probar micrófono, test de voz';
 ?>
 <!DOCTYPE html>

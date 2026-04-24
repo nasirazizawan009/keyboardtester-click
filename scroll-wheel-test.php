@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Scroll Wheel Test Online | Check Mouse Wheel Direction',
-        'description' => 'Test your mouse scroll wheel online. Verify up/down wheel input, middle click, and inconsistent scrolling in a browser-based checker.',
+        'title' => 'Free Open Source Scroll Wheel Test Online | Check Mouse Wheel Direction',
+        'description' => 'Test your mouse scroll wheel online. Verify up and down wheel input, middle click, and spot inconsistent scrolling or reverse-direction faults in seconds.',
         'keywords' => 'scroll wheel test, mouse wheel test, test mouse scroll wheel, middle click test',
         'ogImage' => 'images/mouse/hero.png',
         'ogImageAlt' => 'Scroll wheel test page for checking mouse wheel direction and count'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Mouse wheel diagnostics',
-        'title' => 'Scroll Wheel Test Online',
+        'title' => 'Free Open Source Scroll Wheel Test Online',
         'lede' => 'Roll the wheel up and down inside the live tester to check direction, count, and middle-click behavior without installing any software.',
         'primaryHref' => '#scroll-wheel-tool',
         'primaryLabel' => 'Start scroll wheel test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'mouse',
     'seoContentInclude' => 'help/seo-content/scroll-wheel-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/mouse-click-test.php'
+    'helpInclude' => 'help/mouse-click-test.php',
+    'relatedBlog' => 'how-to-test-mouse-buttons-scroll-wheel.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

@@ -2424,10 +2424,13 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
                 rafId = 0;
                 measureLayout();
 
+                // Batch all reads before any writes to avoid interleaved forced reflows
                 const availableWidth = container.clientWidth - horizontalPadding;
                 if (availableWidth <= 0) {
                     return;
                 }
+                const currentTransform = wrapper.style.transform;
+                const currentHeight = container.style.height;
 
                 let scale = 1;
                 if (naturalLayoutWidth > availableWidth) {
@@ -2437,11 +2440,12 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
                 const nextTransform = scale < 1 ? `scale(${scale})` : 'none';
                 const nextHeight = Math.ceil((naturalLayoutHeight * scale) + verticalPadding) + 'px';
 
-                if (wrapper.style.transform !== nextTransform) {
+                // All writes after all reads
+                if (currentTransform !== nextTransform) {
                     wrapper.style.transform = nextTransform;
                 }
 
-                if (container.style.height !== nextHeight) {
+                if (currentHeight !== nextHeight) {
                     container.style.height = nextHeight;
                 }
             });

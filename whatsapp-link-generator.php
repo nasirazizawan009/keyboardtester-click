@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'WhatsApp Link Generator Online | KeyboardTester.click';
-$pageDescription = 'Create WhatsApp click-to-chat links online with phone numbers and prefilled messages. Generate shareable wa.me links instantly.';
-$pageKeywords = 'whatsapp link generator, wa.me link generator, click to chat link, whatsapp chat link';
+$pageTitle = 'Free Open Source WhatsApp Link Generator Online | KeyboardTester.click';
+$pageDescription = 'Free open source WhatsApp link generator. Create click-to-chat links online with phone numbers and prefilled messages. Generate shareable wa.me links instantly.';
+$pageKeywords = 'whatsapp link generator, open source WhatsApp tool, wa.me link generator, click to chat link, whatsapp chat link';
 $pageOgImage = 'images/whatsapp-link/hero.png';
 ?>
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ $pageOgImage = 'images/whatsapp-link/hero.png';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-link/step-1.png'); ?>" alt="WhatsApp link generator step 1 - open wa.me link creator" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-link/step-1.png'); ?>" alt="WhatsApp link generator step 1 - open wa.me link creator" loading="lazy" width="600" height="441" decoding="async">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -120,7 +120,7 @@ $pageOgImage = 'images/whatsapp-link/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-link/step-2.png'); ?>" alt="WhatsApp link step 2 - enter phone number and message" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-link/step-2.png'); ?>" alt="WhatsApp link step 2 - enter phone number and message" loading="lazy" width="600" height="435" decoding="async">
             </div>
             <div class="step-number">02</div>
             <h3>Enter phone and message</h3>
@@ -128,7 +128,7 @@ $pageOgImage = 'images/whatsapp-link/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/whatsapp-link/step-3.png'); ?>" alt="Generated WhatsApp link ready to copy and share" loading="lazy">
+              <img src="<?php echo url('images/whatsapp-link/step-3.png'); ?>" alt="Generated WhatsApp link ready to copy and share" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -140,6 +140,7 @@ $pageOgImage = 'images/whatsapp-link/hero.png';
 
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/whatsapp-link-generator.php'; ?>
+  <?php $toolBlogSlug = 'whatsapp-link-generator-direct-chat.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
   </main>
 
   <?php include 'footer.php'; ?>

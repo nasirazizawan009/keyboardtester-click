@@ -159,6 +159,22 @@ $pageConfig = [
     'keyboard_tester_different_languages.php' => ['priority' => '0.7', 'changefreq' => 'monthly'],
     'tools.php' => ['priority' => '0.8', 'changefreq' => 'weekly'],
 
+    // New tools — Wave 2 (April 2026)
+    'key-repeat-rate-test.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
+    'typing-rhythm-test.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
+    'keyboard-sound-test.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
+    'pwm-flicker-test.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
+    'mouse-lod-test.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
+    'bass-test.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
+
+    // New tools — Wave 3 (April 23, 2026)
+    'frequency-response-test.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
+    'accelerometer-test.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
+    'gyroscope-test.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
+    'vibration-test.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
+    'gamertag-generator.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
+    'ai-assistant.php' => ['priority' => '0.85', 'changefreq' => 'weekly'],
+
     // Info pages
     'about-us.php' => ['priority' => '0.6', 'changefreq' => 'monthly'],
     'privacy-policy.php' => ['priority' => '0.5', 'changefreq' => 'yearly'],
@@ -205,11 +221,26 @@ $localizedPageConfig = [
     'touch-screen-test.php' => ['priority' => '0.72', 'changefreq' => 'weekly'],
     'typing-test.php' => ['priority' => '0.74', 'changefreq' => 'weekly'],
     'webcam-test.php' => ['priority' => '0.74', 'changefreq' => 'weekly'],
+    'key-repeat-rate-test.php' => ['priority' => '0.72', 'changefreq' => 'monthly'],
+    'typing-rhythm-test.php' => ['priority' => '0.72', 'changefreq' => 'monthly'],
+    'keyboard-sound-test.php' => ['priority' => '0.72', 'changefreq' => 'monthly'],
+    'pwm-flicker-test.php' => ['priority' => '0.72', 'changefreq' => 'monthly'],
+    'mouse-lod-test.php' => ['priority' => '0.72', 'changefreq' => 'monthly'],
+    'bass-test.php' => ['priority' => '0.72', 'changefreq' => 'monthly'],
 ];
 
 // Category pages
 $categoryPages = [
     'pages/tools.php' => ['priority' => '0.8', 'changefreq' => 'weekly'],
+    'pages/all-tools.php' => ['priority' => '0.8', 'changefreq' => 'weekly'],
+    'pages/all-tools-es.php' => ['priority' => '0.7', 'changefreq' => 'weekly'],
+    'pages/all-tools-fr.php' => ['priority' => '0.7', 'changefreq' => 'weekly'],
+    'pages/all-tools-de.php' => ['priority' => '0.7', 'changefreq' => 'weekly'],
+    'pages/all-tools-pt.php' => ['priority' => '0.7', 'changefreq' => 'weekly'],
+    'pages/all-tools-ar.php' => ['priority' => '0.7', 'changefreq' => 'weekly'],
+    'pages/all-tools-ru.php' => ['priority' => '0.7', 'changefreq' => 'weekly'],
+    'pages/all-tools-ja.php' => ['priority' => '0.7', 'changefreq' => 'weekly'],
+    'pages/all-tools-ko.php' => ['priority' => '0.7', 'changefreq' => 'weekly'],
     'pages/category-keyboard.php' => ['priority' => '0.7', 'changefreq' => 'monthly'],
     'pages/category-mouse.php' => ['priority' => '0.7', 'changefreq' => 'monthly'],
     'pages/category-audio-video.php' => ['priority' => '0.7', 'changefreq' => 'monthly'],
@@ -254,12 +285,37 @@ function sitemap_getLastMod($filepath) {
  * Generate URL entry
  */
 function sitemap_generateUrlEntry($loc, $lastmod, $changefreq, $priority) {
-    return "  <url>\n" .
-           "    <loc>{$loc}</loc>\n" .
-           "    <lastmod>{$lastmod}</lastmod>\n" .
-           "    <changefreq>{$changefreq}</changefreq>\n" .
-           "    <priority>{$priority}</priority>\n" .
-           "  </url>\n";
+    return sitemap_generateUrlEntryWithImages($loc, $lastmod, $changefreq, $priority, []);
+}
+
+function sitemap_escapeXml($value) {
+    return htmlspecialchars((string) $value, ENT_QUOTES | ENT_XML1, 'UTF-8');
+}
+
+function sitemap_generateUrlEntryWithImages($loc, $lastmod, $changefreq, $priority, $images = []) {
+    $entry = "  <url>\n" .
+             "    <loc>" . sitemap_escapeXml($loc) . "</loc>\n" .
+             "    <lastmod>{$lastmod}</lastmod>\n" .
+             "    <changefreq>{$changefreq}</changefreq>\n" .
+             "    <priority>{$priority}</priority>\n";
+
+    foreach ($images as $image) {
+        if (empty($image['loc'])) {
+            continue;
+        }
+
+        $entry .= "    <image:image>\n";
+        $entry .= "      <image:loc>" . sitemap_escapeXml($image['loc']) . "</image:loc>\n";
+
+        if (!empty($image['title'])) {
+            $entry .= "      <image:title>" . sitemap_escapeXml($image['title']) . "</image:title>\n";
+        }
+
+        $entry .= "    </image:image>\n";
+    }
+
+    $entry .= "  </url>\n";
+    return $entry;
 }
 
 function sitemap_normalizeLoc($loc, $baseUrl) {
@@ -275,6 +331,30 @@ function sitemap_normalizeLoc($loc, $baseUrl) {
     }
 
     return $baseUrl . '/' . ltrim($loc, '/');
+}
+
+function sitemap_extractImageEntriesFromFile($filePath, $baseUrl) {
+    $content = @file_get_contents($filePath);
+    if ($content === false || strpos($content, '<img') === false) {
+        return [];
+    }
+
+    $images = [];
+    if (preg_match_all('/<img\b[\s\S]*?src="<\?php echo url\(\'([^\']+)\'\); \?>"[\s\S]*?alt="([^"]*)"[\s\S]*?>/i', $content, $matches, PREG_SET_ORDER)) {
+        foreach ($matches as $match) {
+            $imageLoc = sitemap_normalizeLoc($match[1], $baseUrl);
+            if (isset($images[$imageLoc])) {
+                continue;
+            }
+
+            $images[$imageLoc] = [
+                'loc' => $imageLoc,
+                'title' => html_entity_decode(trim($match[2]), ENT_QUOTES | ENT_HTML5, 'UTF-8'),
+            ];
+        }
+    }
+
+    return array_values($images);
 }
 
 // Start building sitemap
@@ -345,14 +425,31 @@ if (file_exists($keyboardTesterDir)) {
     ];
 }
 
-// Add blog landing page using the public /blogs/ URL.
+// Add blog landing page and static blog posts.
 $blogIndex = $rootDir . '/blog/index.php';
 if (file_exists($blogIndex)) {
     $urls[] = [
-        'loc' => $sitemapBaseUrl . '/blogs/',
+        'loc' => $sitemapBaseUrl . '/blog/',
         'lastmod' => sitemap_getLastMod($blogIndex),
         'changefreq' => 'weekly',
-        'priority' => '0.7'
+        'priority' => '0.7',
+        'images' => sitemap_extractImageEntriesFromFile($blogIndex, $sitemapBaseUrl),
+    ];
+}
+
+$blogExcludedFiles = ['index.php', 'generate-blog.php', 'hub.php'];
+foreach (glob($rootDir . '/blog/*.php') as $blogFile) {
+    $blogFilename = basename($blogFile);
+    if (in_array($blogFilename, $blogExcludedFiles, true)) {
+        continue;
+    }
+
+    $urls[] = [
+        'loc' => $sitemapBaseUrl . '/blog/' . $blogFilename,
+        'lastmod' => sitemap_getLastMod($blogFile),
+        'changefreq' => 'monthly',
+        'priority' => '0.6',
+        'images' => sitemap_extractImageEntriesFromFile($blogFile, $sitemapBaseUrl),
     ];
 }
 
@@ -405,15 +502,28 @@ foreach ($urls as $url) {
 $urls = array_values($dedupedUrls);
 
 // Generate XML
+$hasImageEntries = false;
+foreach ($urls as $url) {
+    if (!empty($url['images'])) {
+        $hasImageEntries = true;
+        break;
+    }
+}
+
 $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-$xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+$xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"';
+if ($hasImageEntries) {
+    $xml .= ' xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"';
+}
+$xml .= '>' . "\n";
 
 foreach ($urls as $url) {
-    $xml .= sitemap_generateUrlEntry(
-        htmlspecialchars($url['loc']),
+    $xml .= sitemap_generateUrlEntryWithImages(
+        $url['loc'],
         $url['lastmod'],
         $url['changefreq'],
-        $url['priority']
+        $url['priority'],
+        $url['images'] ?? []
     );
 }
 

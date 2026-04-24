@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Lucky Wheel</p>
-      <h1 class="hero-title">Spin a quick lucky wheel in seconds</h1>
+      <h1 class="hero-title">Free Open Source Lucky Wheel Spinner - Random Picker</h1>
       <p class="hero-lede">Add names, spin the wheel, and share the winner instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#lucky-wheel">Start spinning</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/lucky-wheel/hero.png'); ?>" alt="Random name picker wheel - spin to choose winner online free" loading="eager">
+        <img src="<?php echo url('images/lucky-wheel/hero.png'); ?>" alt="Random name picker wheel - spin to choose winner online free" loading="eager" width="800" height="563" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

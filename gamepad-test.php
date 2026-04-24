@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Gamepad Tester — Test Controller Buttons, Stick Drift & Triggers Online | KeyboardTester.click';
-$pageDescription = 'Free gamepad tester online. Test PS5, Xbox, Switch and PC controller buttons, analog stick drift, triggers and vibration. Works in browser. No download needed.';
-$pageKeywords = 'gamepad tester online, controller test online, stick drift test online, ps5 controller test, xbox controller test online';
+$pageTitle = 'Free Open Source Gamepad Tester — Controller Buttons, Stick Drift & Triggers Online | KeyboardTester.click';
+$pageDescription = 'Free open source gamepad tester online. Test PS5, Xbox, Switch and PC controller buttons, analog stick drift, triggers and vibration. Works in browser. No download needed.';
+$pageKeywords = 'gamepad tester online, open source controller test, stick drift test online, ps5 controller test, xbox controller test online';
 $pageOgImage = 'images/mouse/hero.webp';
 ?>
 <!DOCTYPE html>
@@ -345,7 +345,7 @@ $pageOgImage = 'images/mouse/hero.webp';
       <div class="container landing-hero-grid">
         <div class="hero-copy">
           <p class="hero-kicker">Controller Diagnostics</p>
-          <h1 class="hero-title">Gamepad Tester</h1>
+          <h1 class="hero-title">Free Open Source Gamepad Tester</h1>
           <p class="hero-lede">Connect your controller and press any button to start. Tests all buttons, analog sticks, triggers, and vibration motors. Works with PS5, Xbox, Switch, and generic gamepads — no download needed.</p>
           <div class="hero-actions">
             <a class="landing-btn landing-btn-primary" href="#gamepad-tool">Start gamepad test</a>
@@ -373,7 +373,7 @@ $pageOgImage = 'images/mouse/hero.webp';
         </div>
         <div class="hero-visual">
           <div class="hero-shot">
-            <img src="<?php echo url('images/mouse/hero.webp'); ?>" alt="Gamepad tester — test controller buttons and stick drift online" loading="eager">
+            <img src="<?php echo url('images/mouse/hero.webp'); ?>" alt="Gamepad tester — test controller buttons and stick drift online" loading="eager" width="640" height="426" decoding="async" fetchpriority="high">
           </div>
           <div class="hero-stack">
             <div class="mini-card">

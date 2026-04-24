@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
 $pageTitle = 'Test de Casque - Verifiez l\'Audio Stereo Gratuitement';
-$pageDescription = 'Testez votre casque et vos haut-parleurs. Verifiez les canaux gauche et droit, l\'equilibre stereo et la qualite audio.';
+$pageDescription = 'Testeur casque et haut-parleurs : vérifie les canaux gauche/droit, la séparation stéréo et la sortie audio. Dans le navigateur, sans installation ni enregistrement.';
 $pageKeywords = 'test casque, test haut-parleurs, verifier stereo, tester audio, headphone test';
 ?>
 <!DOCTYPE html>

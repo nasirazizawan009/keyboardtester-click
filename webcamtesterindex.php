@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Webcam Test Online | KeyboardTester.click';
-$pageDescription = 'Test your webcam online, preview the camera feed, and verify video quality without installing any software.';
-$pageKeywords = 'webcam test, webcam tester online, camera test, webcam quality check';
+$pageTitle = 'Free Open Source Webcam Test Online | KeyboardTester.click';
+$pageDescription = 'Free open source webcam test online. Preview the camera feed and verify video quality without installing any software. Works in all browsers instantly.';
+$pageKeywords = 'webcam test, open source webcam tester, webcam tester online, camera test, webcam quality check';
 $pageOgImage = 'images/webcam-test/webcam-test-camera-preview-1400.png';
 $pageOgImageAlt = 'Person previewing webcam quality online with a live camera framing and resolution card';
 ?>

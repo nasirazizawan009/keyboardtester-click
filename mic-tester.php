@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Microphone Test Online Free — Test Your Mic Before Calls | KeyboardTester.click';
-$pageDescription = 'Microphone test online free. Test your mic before Zoom, Teams or Discord calls. Browser-based, no install, fully private.';
-$pageKeywords = 'microphone test online, mic test, test microphone, microphone checker';
+$pageTitle = 'Free Open Source Microphone Test Online — Test Your Mic Before Calls | KeyboardTester.click';
+$pageDescription = 'Free open source microphone test online. Check mic input, levels and peak volume before Zoom, Teams or Discord calls. Browser-based, no install, no recording.';
+$pageKeywords = 'microphone test online, open source mic test, mic test, test microphone, microphone checker';
 $pageOgImage = 'images/mic-test/microphone-test-live-input-check-1400.png';
 $pageOgImageAlt = 'Person checking microphone input online with a live waveform and audio level meter';
 ?>

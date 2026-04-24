@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">QR Code Creation</p>
-      <h1 class="hero-title">Free QR Code Generator Online</h1>
+      <h1 class="hero-title">Free Open Source QR Code Generator Online</h1>
       <p class="hero-lede">Create QR codes for URLs, text, and other content with an instant browser preview.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#qr-code-generator-scanner">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/qr-generator/hero.png'); ?>" alt="Free QR code generator - create custom QR codes for URLs and text" loading="eager">
+        <img src="<?php echo url('images/qr-generator/hero.png'); ?>" alt="Free QR code generator - create custom QR codes for URLs and text" loading="eager" width="800" height="426" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

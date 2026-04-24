@@ -4,6 +4,8 @@ if (!isset($baseUrl)) {
 }
 
 require_once __DIR__ . '/includes/components/site-chrome.php';
+require_once __DIR__ . '/includes/components/site-sidebar.php';
 
 $siteChromeLocale = $siteChromeLocale ?? 'en';
 kbtRenderSiteHeader($siteChromeLocale);
+kbtRenderSiteSidebar();

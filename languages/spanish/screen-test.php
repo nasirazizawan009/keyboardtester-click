@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-es.php';
 
 $pageTitle = 'Prueba de Pantalla - Detecta Píxeles Muertos Gratis';
-$pageDescription = 'Detecta píxeles muertos, atascados o calientes en tu monitor. Prueba completa de pantalla con colores sólidos.';
+$pageDescription = 'Probador de pantalla online: detecta píxeles muertos, pegados, calientes y problemas de uniformidad con paneles a pantalla completa de colores sólidos. Rápido, sin instalación.';
 $pageKeywords = 'prueba pantalla, píxeles muertos, test monitor, detectar píxeles, prueba LCD';
 ?>
 <!DOCTYPE html>
@@ -42,6 +42,11 @@ $pageKeywords = 'prueba pantalla, píxeles muertos, test monitor, detectar píxe
             <a href="#guidelines" class="landing-btn landing-btn-ghost">Cómo Usar</a>
           </div>
         </div>
+          <div class="hero-visual">
+            <div class="hero-shot">
+              <img src="<?php echo url('images/screen-test/screen-tester-monitor-inspection-1400.png'); ?>" width="1400" height="787" alt="Screen tester - monitor pixel and color inspection" loading="eager" decoding="async" fetchpriority="high">
+            </div>
+          </div>
       </div>
     </section>
 

@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-pt.php';
 
 $pageTitle = 'Teste de Velocidade de Digitacao - Meca PPM e Precisao';
-$pageDescription = 'Meca sua velocidade de digitacao em palavras por minuto (PPM) e precisao. Melhore suas habilidades de digitacao.';
+$pageDescription = 'Teste de velocidade de digitação gratuito: meça suas PPM (palavras por minuto), precisão e consistência em sessões cronometradas. Sem cadastro, no navegador.';
 $pageKeywords = 'teste de digitacao, PPM, velocidade de digitacao, teste de teclado, palavras por minuto';
 ?>
 <!DOCTYPE html>

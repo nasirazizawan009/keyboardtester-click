@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailHeaderSafe = str_replace(["\r", "\n"], ' ', $email);
 
     // Recipient email
-    $to = "nasirazizawan@gmail.com";
+    $to = "support@keyboardtester.click";
     $subject = "New Feedback from KeyboardTester.click";
     $body = "Name: $nameSafe\nEmail: $emailSafe\n\nMessage:\n$messageSafe";
     $headers = "From: no-reply@keyboardtester.click\r\n" .

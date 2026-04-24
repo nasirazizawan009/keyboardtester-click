@@ -1,286 +1,252 @@
-<?php
-// Start output buffering to capture all output
-ob_start();
-?>
+<?php ob_start(); ?>
 
 <div class="click-tester-section">
     <div class="click-tester">
         <div class="duration-select">
-            <label for="duration">Selectionnez la duree du test: </label>
+            <label for="duration">Sélectionner la durée : </label>
             <select id="duration">
                 <option value="1">1 Seconde</option>
+                <option value="5" selected>5 Secondes</option>
                 <option value="10">10 Secondes</option>
                 <option value="30">30 Secondes</option>
                 <option value="60">60 Secondes</option>
             </select>
         </div>
+
         <div class="info-area">
-            <div class="info-box" id="duration-box">Duree: <span id="selected-duration">1s</span></div>
-            <div class="info-box" id="clicks-box">Clics: <span id="current-clicks">0</span></div>
-            <div class="info-box" id="time-left-box">Temps restant: <span id="time-left">0s</span></div>
+            <div class="info-box">Durée <span id="sel-dur">5s</span></div>
+            <div class="info-box">Clics <span id="cur-clicks">—</span></div>
+            <div class="info-box">Temps <span id="time-left">5s</span></div>
         </div>
-        <div class="click-area" id="click-area">Cliquez ici pour commencer!</div>
-        <button class="reset-button" id="reset-button">Reinitialiser</button>
-        <div class="result-popup" id="result-popup">
-            <h2>Votre resultat</h2>
-            <p id="cpm-result"></p>
-            <p id="funny-remark"></p>
-            <button id="close-result">Reessayer</button>
+
+        <!-- Click target -->
+        <div class="click-area" id="click-area">Cliquez ici pour commencer !</div>
+
+        <!-- Inline result — shown after test, hidden during/before -->
+        <div class="result-strip" id="result-strip" style="display:none">
+            <div class="result-row">
+                <span class="result-label">CPS</span>
+                <span class="result-val" id="res-cps">—</span>
+            </div>
+            <div class="result-row">
+                <span class="result-label">Clics</span>
+                <span class="result-val" id="res-clicks">—</span>
+            </div>
+            <p class="result-remark" id="res-remark"></p>
+            <button class="new-test-btn" id="new-test-btn">Nouveau test</button>
+        </div>
+
+        <!-- Session history -->
+        <div class="test-history" id="test-history" style="display:none">
+            <div class="history-header">
+                <span>Historique</span>
+                <button id="clear-history">Effacer</button>
+            </div>
+            <table class="history-table">
+                <thead><tr><th>#</th><th>Durée</th><th>Clics</th><th>CPS</th></tr></thead>
+                <tbody id="history-body"></tbody>
+            </table>
         </div>
     </div>
 </div>
 
 <script>
-    const clickArea = document.getElementById('click-area');
-    const durationSelect = document.getElementById('duration');
-    const resetButton = document.getElementById('reset-button');
-    const resultPopup = document.getElementById('result-popup');
-    const cpmResult = document.getElementById('cpm-result');
-    const funnyRemark = document.getElementById('funny-remark');
-    const closeResult = document.getElementById('close-result');
-    const selectedDuration = document.getElementById('selected-duration');
-    const currentClicks = document.getElementById('current-clicks');
-    const timeLeft = document.getElementById('time-left');
+(function () {
+    const clickArea    = document.getElementById('click-area');
+    const durSel       = document.getElementById('duration');
+    const selDur       = document.getElementById('sel-dur');
+    const curClicks    = document.getElementById('cur-clicks');
+    const timeLeftEl   = document.getElementById('time-left');
+    const resultStrip  = document.getElementById('result-strip');
+    const resCps       = document.getElementById('res-cps');
+    const resClicks    = document.getElementById('res-clicks');
+    const resRemark    = document.getElementById('res-remark');
+    const newTestBtn   = document.getElementById('new-test-btn');
+    const testHistory  = document.getElementById('test-history');
+    const historyBody  = document.getElementById('history-body');
+    const clearHistory = document.getElementById('clear-history');
 
-    let clickCount = 0;
-    let testActive = false;
-    let timer;
-    let timeRemaining;
+    let state         = 'idle';
+    let clickCount    = 0;
+    let timer         = null;
+    let timeRemaining = 0;
+    let testLog       = [];
+    let runNumber     = 0;
 
-    durationSelect.addEventListener('change', () => {
-        selectedDuration.textContent = durationSelect.value + 's';
+    durSel.addEventListener('change', () => {
+        if (state !== 'running') {
+            selDur.textContent    = durSel.value + 's';
+            timeLeftEl.textContent = durSel.value + 's';
+        }
     });
 
     clickArea.addEventListener('click', () => {
-        if (!testActive) {
-            startTest();
-        } else {
-            clickCount++;
-            currentClicks.textContent = clickCount;
-        }
+        if (state === 'idle')         startTest();
+        else if (state === 'running') { clickCount++; curClicks.textContent = clickCount; }
     });
 
-    resetButton.addEventListener('click', resetTest);
-
-    closeResult.addEventListener('click', () => {
-        resultPopup.style.display = 'none';
-        resetTest();
+    newTestBtn.addEventListener('click', resetToIdle);
+    clearHistory.addEventListener('click', () => {
+        testLog = []; runNumber = 0;
+        historyBody.innerHTML = '';
+        testHistory.style.display = 'none';
     });
 
     function startTest() {
-        testActive = true;
-        clickCount = 0;
-        const duration = parseInt(durationSelect.value);
-        timeRemaining = duration;
-        selectedDuration.textContent = duration + 's';
-        currentClicks.textContent = clickCount;
-        timeLeft.textContent = timeRemaining + 's';
-        clickArea.classList.add('active');
-        clickArea.textContent = 'Continuez a cliquer!';
+        state         = 'running';
+        clickCount    = 0;
+        const dur      = parseInt(durSel.value);
+        timeRemaining  = dur;
 
-        timer = setInterval(updateTimer, 1000);
-        setTimeout(endTest, duration * 1000);
-    }
+        selDur.textContent    = dur + 's';
+        curClicks.textContent = '0';
+        timeLeftEl.textContent = dur + 's';
 
-    function updateTimer() {
-        timeRemaining--;
-        timeLeft.textContent = timeRemaining + 's';
-        if (timeRemaining <= 0) {
-            clearInterval(timer);
-        }
+        resultStrip.style.display = 'none';
+        clickArea.className       = 'click-area active';
+        clickArea.textContent     = 'Continuez à cliquer !';
+        durSel.disabled           = true;
+
+        timer = setInterval(() => {
+            timeRemaining--;
+            timeLeftEl.textContent = timeRemaining + 's';
+            if (timeRemaining <= 0) clearInterval(timer);
+        }, 1000);
+
+        setTimeout(endTest, dur * 1000);
     }
 
     function endTest() {
-        testActive = false;
+        state = 'done';
         clearInterval(timer);
-        clickArea.classList.remove('active');
-        const durationInMinutes = parseInt(durationSelect.value) / 60;
-        const cpm = Math.round(clickCount / durationInMinutes);
-        clickArea.textContent = 'Cliquez ici pour commencer!';
+        durSel.disabled = false;
 
-        cpmResult.textContent = `Votre CPM: ${cpm}`;
-        funnyRemark.textContent = getFunnyRemark(cpm);
-        resultPopup.style.display = 'block';
+        const dur = parseInt(durSel.value);
+        const cps = (clickCount / dur).toFixed(2);
+
+        clickArea.className   = 'click-area done';
+        clickArea.textContent = 'Test terminé';
+
+        resCps.textContent    = cps;
+        resClicks.textContent = `${clickCount} en ${dur}s`;
+        resRemark.textContent = getRemark(parseFloat(cps));
+        resultStrip.style.display = 'block';
+
+        runNumber++;
+        testLog.unshift({ n: runNumber, duration: dur, clicks: clickCount, cps: parseFloat(cps) });
+        if (testLog.length > 10) testLog.pop();
+        renderHistory();
     }
 
-    function resetTest() {
-        testActive = false;
-        clearInterval(timer);
+    function resetToIdle() {
+        state = 'idle';
         clickCount = 0;
-        clickArea.classList.remove('active');
-        clickArea.textContent = 'Cliquez ici pour commencer!';
-        currentClicks.textContent = '0';
-        timeLeft.textContent = '0s';
-        selectedDuration.textContent = durationSelect.value + 's';
+        clickArea.className   = 'click-area';
+        clickArea.textContent = 'Cliquez ici pour commencer !';
+        curClicks.textContent = '—';
+        timeLeftEl.textContent = durSel.value + 's';
+        resultStrip.style.display = 'none';
     }
 
-    function getFunnyRemark(cpm) {
-        if (cpm > 300) return "Wow, vous etes un Guepard sous steroides!";
-        if (cpm > 200) return "Rapide comme un Faucon, bon clic!";
-        if (cpm > 100) return "Vous etes un Lapin rapide, continuez!";
-        if (cpm > 50) return "Vitesse de Tortue, mais la constance gagne!";
-        return "Rythme d'Escargot! Meme un Paresseux rirait!";
+    function renderHistory() {
+        testHistory.style.display = 'block';
+        const bestCps = Math.max(...testLog.map(r => r.cps));
+        historyBody.innerHTML = testLog.map(r => {
+            const best = r.cps === bestCps && testLog.length > 1;
+            return `<tr class="${best ? 'best-row' : ''}">
+                <td>${r.n}</td><td>${r.duration}s</td>
+                <td>${r.clicks}</td>
+                <td>${r.cps.toFixed(2)}${best ? ' 🏆' : ''}</td>
+            </tr>`;
+        }).join('');
     }
 
-    // Initialize duration display
-    selectedDuration.textContent = durationSelect.value + 's';
+    function getRemark(cps) {
+        if (cps > 14) return "Maître du clic papillon. Êtes-vous humain ?";
+        if (cps > 10) return "Clic vibratoire ! Votre avant-bras n'est pas d'accord.";
+        if (cps > 7)  return "Au-dessus de la moyenne — bon rythme de jeu !";
+        if (cps > 4)  return "Dans la moyenne. Encore des progrès à faire !";
+        return "Doucement — réchauffez ces doigts !";
+    }
+
+    selDur.textContent    = durSel.value + 's';
+    timeLeftEl.textContent = durSel.value + 's';
+})();
 </script>
 
 <style>
-    .click-tester-section {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
-    }
+.click-tester-section { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+.click-tester {
+    text-align: center; background: #1f2937; border-radius: 14px;
+    padding: 2rem; box-shadow: 0 6px 12px rgba(0,0,0,.4);
+}
+.duration-select { margin-bottom: 1.5rem; }
+.duration-select label { font-size: 1rem; color: #d1d5db; margin-right: .5rem; }
+.duration-select select {
+    padding: .6rem .9rem; font-size: 1rem; border-radius: 6px;
+    background: #111827; color: #f3f4f6; border: 1px solid #4b5563; cursor: pointer;
+}
+.duration-select select:disabled { opacity: .5; cursor: not-allowed; }
 
-    .click-tester {
-        text-align: center;
-        background: #1f2937;
-        border-radius: 14px;
-        padding: 2rem;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    }
+.info-area { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.info-box {
+    min-width: 110px; padding: .75rem 1rem; background: #111827;
+    border-radius: 8px; font-size: 1rem; color: #9ca3af; text-align: center;
+}
+.info-box span { display: block; font-size: 1.4rem; font-weight: 700; color: #f3f4f6; margin-top: .2rem; }
 
-    .duration-select {
-        margin-bottom: 1.5rem;
-    }
+.click-area {
+    width: 400px; height: 240px; margin: 0 auto;
+    background: #111827; border: 2px solid #22c55e; border-radius: 12px;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 1.5rem; color: #d1d5db; cursor: pointer; user-select: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,.4); transition: background .2s, border-color .2s, color .2s;
+}
+.click-area.active  { background: #22c55e; color: #1f2937; border-color: #16a34a; }
+.click-area.done    { background: #1e3a5f; color: #93c5fd;  border-color: #3b82f6; cursor: default; }
 
-    .duration-select label {
-        font-size: 1rem;
-        color: #d1d5db;
-        margin-right: 0.5rem;
-    }
+.result-strip {
+    margin-top: 1.25rem; background: #111827; border-radius: 10px;
+    padding: 1.25rem 1.5rem; display: flex; flex-direction: column; align-items: center; gap: .5rem;
+}
+.result-row { display: flex; gap: 1.5rem; align-items: baseline; }
+.result-label { font-size: .85rem; color: #6b7280; text-transform: uppercase; letter-spacing: .05em; }
+.result-val   { font-size: 2rem; font-weight: 700; color: #22c55e; }
+.result-remark { font-size: .95rem; color: #9ca3af; margin: .25rem 0 .5rem; }
+.new-test-btn {
+    margin-top: .5rem; padding: .7rem 1.75rem; background: #22c55e;
+    color: #111827; border: none; border-radius: 8px; font-weight: 700;
+    font-size: 1rem; cursor: pointer; transition: background .2s;
+}
+.new-test-btn:hover { background: #4ade80; }
 
-    .duration-select select {
-        padding: 0.8rem;
-        font-size: 1rem;
-        border-radius: 6px;
-        background: #111827;
-        color: #f3f4f6;
-        border: 1px solid #4b5563;
-        cursor: pointer;
-    }
+.test-history { margin-top: 1.5rem; border-top: 1px solid #374151; padding-top: 1rem; text-align: left; }
+.history-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: .6rem; color: #9ca3af; font-size: .85rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .05em;
+}
+.history-header button {
+    padding: .25rem .65rem; font-size: .8rem; background: #374151;
+    color: #9ca3af; border: none; border-radius: 6px; cursor: pointer;
+}
+.history-header button:hover { background: #4b5563; color: #f3f4f6; }
+.history-table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.history-table th {
+    padding: .4rem .6rem; text-align: left; color: #6b7280;
+    font-size: .78rem; text-transform: uppercase; letter-spacing: .04em;
+    border-bottom: 1px solid #374151;
+}
+.history-table td { padding: .4rem .6rem; color: #d1d5db; border-bottom: 1px solid #1a2535; }
+.history-table .best-row td { color: #22c55e; font-weight: 600; }
+.history-table tr:hover td { background: rgba(255,255,255,.03); }
 
-    .info-area {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .info-box {
-        width: 150px;
-        padding: 1rem;
-        background: #111827;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        font-size: 1.1rem;
-        color: #d1d5db;
-        text-align: center;
-    }
-
-    .click-area {
-        width: 400px;
-        height: 300px;
-        margin: 0 auto;
-        background: #111827;
-        border: 2px solid #22c55e;
-        border-radius: 12px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-        color: #d1d5db;
-        cursor: pointer;
-        user-select: none;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-        transition: background 0.3s ease;
-    }
-
-    .click-area.active {
-        background: #22c55e;
-        color: #1f2937;
-    }
-
-    .reset-button {
-        margin-top: 1.5rem;
-        padding: 0.8rem 1.5rem;
-        background: #ef4444;
-        color: #f3f4f6;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    .reset-button:hover {
-        background: #dc2626;
-        transform: translateY(-2px);
-    }
-
-    .result-popup {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #1f2937;
-        padding: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        text-align: center;
-        display: none;
-        color: #d1d5db;
-    }
-
-    .result-popup h2 {
-        font-size: 1.8rem;
-        color: #f3f4f6;
-        margin-bottom: 1rem;
-    }
-
-    .result-popup p {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-    }
-
-    .result-popup button {
-        padding: 0.8rem 1.5rem;
-        background: #22c55e;
-        color: #1f2937;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    }
-
-    .result-popup button:hover {
-        background: #4ade80;
-    }
-
-    @media (max-width: 768px) {
-        .click-tester-section {
-            padding: 1rem;
-        }
-
-        .click-tester {
-            padding: 1.5rem;
-        }
-
-        .click-area {
-            width: 100%;
-            height: 250px;
-        }
-
-        .info-box {
-            width: 120px;
-            font-size: 1rem;
-        }
-    }
+@media (max-width: 768px) {
+    .click-tester-section { padding: 1rem; }
+    .click-tester { padding: 1.25rem; }
+    .click-area { width: 100%; height: 200px; }
+    .info-box { min-width: 90px; }
+}
 </style>
 
-<?php
-// Output the buffered content and clean the buffer
-echo ob_get_clean();
-?>
+<?php echo ob_get_clean(); ?>

@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Spacebar Test — How Fast Can You Press the Spacebar? | KeyboardTester.click';
-$pageDescription = 'Free spacebar test online. Count how many times you can press the spacebar in 5, 10 or 30 seconds. Spacebar counter with instant results. No download needed.';
-$pageKeywords = 'spacebar test, spacebar counter, spacebar speed test, how fast can you press spacebar';
+$pageTitle = 'Free Open Source Spacebar Test — How Fast Can You Press the Spacebar? | KeyboardTester.click';
+$pageDescription = 'Free open source spacebar test online. Count how many times you can press the spacebar in 5, 10 or 30 seconds. Spacebar counter with instant results. No download needed.';
+$pageKeywords = 'spacebar test, open source spacebar counter, spacebar counter, spacebar speed test, how fast can you press spacebar';
 $pageOgImage = 'images/mouse/hero.png';
 ?>
 <!DOCTYPE html>
@@ -51,7 +51,8 @@ $pageOgImage = 'images/mouse/hero.png';
     }
 
     .dur-btn {
-      padding: 0.45rem 1.2rem;
+      padding: 0.55rem 1.2rem;
+      min-height: 44px;
       border: 2px solid var(--border-color, #e2e8f0);
       border-radius: 6px;
       background: transparent;
@@ -276,7 +277,7 @@ $pageOgImage = 'images/mouse/hero.png';
 
       <section id="spacebar-tester" class="tool-shell">
         <div class="spacebar-tool">
-          <h1>Spacebar Test</h1>
+          <h1>Free Open Source Spacebar Test</h1>
           <p class="tool-subtitle">Choose a duration, then press <kbd>Space</kbd> to start</p>
 
           <!-- Duration selector -->

@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Lucky Wheel - Random Picker | KeyboardTester.click';
-$pageDescription = 'Spin a lucky wheel to randomly pick a winner. Add entries, spin, and share results instantly.';
-$pageKeywords = 'lucky wheel, random picker, spin wheel, name picker, online wheel';
+$pageTitle = 'Free Open Source Lucky Wheel Spinner — Random Picker | KeyboardTester.click';
+$pageDescription = 'Free open source lucky wheel spinner. Randomly pick a winner by spinning the wheel. Add entries, customize colors, and share results instantly. No download needed.';
+$pageKeywords = 'lucky wheel, open source wheel spinner, random picker, spin wheel, name picker, online wheel';
 $pageOgImage = 'images/lucky-wheel/hero.png';
 ?>
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ $pageOgImage = 'images/lucky-wheel/hero.png';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/lucky-wheel/step-1.png'); ?>" alt="Lucky wheel spinner step 1 - add names or options to the random picker" loading="lazy">
+              <img src="<?php echo url('images/lucky-wheel/step-1.png'); ?>" alt="Lucky wheel spinner step 1 - add names or options to the random picker" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">01</div>
             <h3>Add entries</h3>
@@ -120,7 +120,7 @@ $pageOgImage = 'images/lucky-wheel/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/lucky-wheel/step-2.png'); ?>" alt="Lucky wheel spinner step 2 - spin to randomly pick a winner online" loading="lazy">
+              <img src="<?php echo url('images/lucky-wheel/step-2.png'); ?>" alt="Lucky wheel spinner step 2 - spin to randomly pick a winner online" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">02</div>
             <h3>Spin the wheel</h3>
@@ -128,7 +128,7 @@ $pageOgImage = 'images/lucky-wheel/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/lucky-wheel/step-3.png'); ?>" alt="Lucky wheel results - share the randomly selected winner" loading="lazy">
+              <img src="<?php echo url('images/lucky-wheel/step-3.png'); ?>" alt="Lucky wheel results - share the randomly selected winner" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">03</div>
             <h3>Share winner</h3>

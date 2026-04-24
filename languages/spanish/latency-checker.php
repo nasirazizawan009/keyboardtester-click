@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-es.php';
 
 $pageTitle = 'Verificador de Latencia - Mide Tiempo de Respuesta';
-$pageDescription = 'Mide el tiempo de respuesta de tus dispositivos de entrada. Prueba de latencia precisa en milisegundos.';
+$pageDescription = 'Verificador de latencia gratuito: mide la latencia de entrada del teclado y ratón en milisegundos. Ideal para gaming competitivo, en el navegador, sin instalación.';
 $pageKeywords = 'latencia, tiempo respuesta, input lag, prueba latencia, medir retraso';
 ?>
 <!DOCTYPE html>

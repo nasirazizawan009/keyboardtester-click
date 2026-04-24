@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Branded Links</p>
-      <h1 class="hero-title">Run a branded links check in seconds</h1>
+      <h1 class="hero-title">Free Open Source WhatsApp Brand QR Generator</h1>
       <p class="hero-lede">Use this free online whatsapp brand links to enter brand info and review results instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#whatsapp-brand-link-generator">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/whatsapp-brand/hero.png'); ?>" alt="WhatsApp business link generator - create branded chat links with QR code" loading="eager">
+        <img src="<?php echo url('images/whatsapp-brand/hero.png'); ?>" alt="WhatsApp business link generator - create branded chat links with QR code" loading="eager" width="800" height="533" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Camera Resolution Test Online | Check Webcam Size and Quality',
-        'description' => 'Run a camera resolution test online to check your webcam at 480p, 720p, 1080p, or higher. Verify the actual video size your browser receives.',
+        'title' => 'Free Open Source Camera Resolution Test Online | Check Webcam Size and Quality',
+        'description' => 'Run a camera resolution test online to check your webcam at 480p, 720p, 1080p and higher. Verify the actual video resolution your camera delivers — instant, in-browser.',
         'keywords' => 'camera resolution test, webcam resolution test, test webcam quality online, test camera 1080p',
         'ogImage' => 'images/webcam-test/hero.png',
         'ogImageAlt' => 'Camera resolution test tool with live webcam preview'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Webcam diagnostics',
-        'title' => 'Camera Resolution Test Online',
+        'title' => 'Free Open Source Camera Resolution Test Online',
         'lede' => 'Check whether your webcam really delivers the resolution you expect. Switch resolution targets, preview the live feed, and compare what the browser reports.',
         'primaryHref' => '#camera-resolution-tool',
         'primaryLabel' => 'Start camera test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'webcam',
     'seoContentInclude' => 'help/seo-content/camera-resolution-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/webcam-tester.php'
+    'helpInclude' => 'help/webcam-tester.php',
+    'relatedBlog' => 'webcam-test-check-camera-video-calls.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

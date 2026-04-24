@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Dead Pixel Test Online | Free Monitor Checker',
-        'description' => 'Run a free dead pixel test online with full-screen solid colors. Check your monitor, laptop, or phone screen for black pixels that never light up.',
+        'title' => 'Free Open Source Dead Pixel Test Online | Monitor Checker',
+        'description' => 'Run a free dead pixel test online with full-screen solid colours. Check monitor, laptop or phone screens for dead, stuck or hot pixels in red, green, blue and more.',
         'keywords' => 'dead pixel test, dead pixel checker, monitor dead pixel test, screen dead pixel test',
         'ogImage' => 'images/screen-test/hero.png',
         'ogImageAlt' => 'Dead pixel test tool with full-screen monitor color checks'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Monitor diagnostics',
-        'title' => 'Dead Pixel Test Online',
+        'title' => 'Free Open Source Dead Pixel Test Online',
         'lede' => 'Use solid full-screen colors to find pixels that stay black on every test screen. The live checker runs entirely in your browser.',
         'primaryHref' => '#dead-pixel-tool',
         'primaryLabel' => 'Start dead pixel test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'screen',
     'seoContentInclude' => 'help/seo-content/dead-pixel-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/screen-tester.php'
+    'helpInclude' => 'help/screen-tester.php',
+    'relatedBlog' => 'dead-pixel-test-check-monitor.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

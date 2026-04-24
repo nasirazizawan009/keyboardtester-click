@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
 $pageTitle = 'Traceur de Souris - Visualisez le Mouvement du Curseur';
-$pageDescription = 'Visualisez la trace de mouvement de la souris. Analysez la precision et la fluidite du curseur.';
+$pageDescription = 'Visualiseur de traînée de souris : observe les motifs de mouvement avec des traces colorées sur un canevas plein écran. Teste la fluidité de suivi et du capteur, sans installation.';
 $pageKeywords = 'trace souris, mouse trail, mouvement curseur, visualiser souris, precision mouse';
 ?>
 <!DOCTYPE html>

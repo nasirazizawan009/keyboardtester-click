@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free QR Code Generator Online | KeyboardTester.click';
-$pageDescription = 'Create QR codes for URLs, text, phone numbers, emails, and more with a free browser-based generator. Customize, preview in real time, and download your QR code instantly.';
-$pageKeywords = 'free qr code generator, qr code creator, generate qr code online, qr code maker';
+$pageTitle = 'Free Open Source QR Code Generator Online | KeyboardTester.click';
+$pageDescription = 'Free open source QR code generator online. Create QR codes for URLs, text, phone numbers, emails, and more. Customize, preview in real time, and download your QR code instantly. No sign-up needed.';
+$pageKeywords = 'free open source qr code generator, qr code creator, generate qr code online, qr code maker';
 $pageOgImage = 'images/qr-generator/hero.png';
 ?>
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ $pageOgImage = 'images/qr-generator/hero.png';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-generator/step-1.png'); ?>" alt="QR code generator step 1 - open free QR creator" loading="lazy">
+              <img src="<?php echo url('images/qr-generator/step-1.png'); ?>" alt="QR code generator step 1 - open free QR creator" loading="lazy" width="600" height="435" decoding="async">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -120,7 +120,7 @@ $pageOgImage = 'images/qr-generator/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-generator/step-2.png'); ?>" alt="QR code generator step 2 - enter URL or text data" loading="lazy">
+              <img src="<?php echo url('images/qr-generator/step-2.png'); ?>" alt="QR code generator step 2 - enter URL or text data" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">02</div>
             <h3>Enter your data</h3>
@@ -128,7 +128,7 @@ $pageOgImage = 'images/qr-generator/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/qr-generator/step-3.png'); ?>" alt="Generated QR code ready to download" loading="lazy">
+              <img src="<?php echo url('images/qr-generator/step-3.png'); ?>" alt="Generated QR code ready to download" loading="lazy" width="600" height="441" decoding="async">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -140,6 +140,7 @@ $pageOgImage = 'images/qr-generator/hero.png';
 
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/qr-code-generator.php'; ?>
+  <?php $toolBlogSlug = 'free-qr-code-generator-create-online.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
   </main>
 
   <?php include 'footer.php'; ?>

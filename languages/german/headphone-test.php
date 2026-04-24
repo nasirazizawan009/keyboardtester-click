@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
 $pageTitle = 'Kopfhoerer-Tester - Ueberpruefen Sie Stereo-Audio Kostenlos';
-$pageDescription = 'Testen Sie Ihre Kopfhoerer und Lautsprecher. Ueberpruefen Sie linken und rechten Kanal, Stereo-Balance und Audioqualitaet.';
+$pageDescription = 'Kopfhörer- und Lautsprechertester: Prüft linken/rechten Kanal, Stereotrennung und Audio-Ausgabe. Im Browser, ohne Installation oder Aufnahme, sofort einsatzbereit.';
 $pageKeywords = 'Kopfhoerer Test, Lautsprecher Test, Stereo ueberpruefen, Audio testen, Headphone Test';
 ?>
 <!DOCTYPE html>

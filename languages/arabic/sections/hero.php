@@ -36,12 +36,11 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="hero-shot">
-                <picture>
-                    <source type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.webp'); ?> 1400w" sizes="(max-width: 980px) 92vw, 520px">
-                    <source type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w" sizes="(max-width: 980px) 92vw, 520px">
-                    <img src="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?>" width="900" height="600" alt="واجهة اختبار لوحة المفاتيح العربية" loading="eager" decoding="async" fetchpriority="high">
-                </picture>
+            <div class="hero-shot hero-shot--video hero-yt-facade" data-yt-id="wVyAj-nrtnI" data-yt-title="KeyboardTester.click — أداة فحص لوحة المفاتيح" role="button" tabindex="0" aria-label="تشغيل الفيديو">
+                <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.jpg"); ?>" alt="معاينة فيديو فاحص لوحة المفاتيح" width="480" height="270" loading="lazy" decoding="async">
+                <span class="hero-yt-play" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+                </span>
             </div>
             <div class="hero-stack">
                 <div class="mini-card">

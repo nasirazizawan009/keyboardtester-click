@@ -8,7 +8,7 @@
 <section class="seo-hero keyboard-tester-hero">
     <div class="container">
         <!-- Main Heading (H1) -->
-        <h1 class="hero-title">Free Online Keyboard Tester - Test Your Keyboard Keys</h1>
+        <h1 class="hero-title">Free Open Source Online Keyboard Tester - Test Your Keyboard Keys</h1>
         
         <!-- Hero Description -->
         <p class="hero-description">

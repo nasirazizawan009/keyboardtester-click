@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Monitor Color Test — Screen Color Calibration & Display Check Online Free | KeyboardTester.click';
-$pageDescription = 'Free monitor color test online. Check color accuracy, gradient banding, contrast and backlight uniformity on any screen. Fullscreen color panels. No download needed.';
-$pageKeywords = 'monitor color test online, screen color test, display color calibration test, color banding test monitor';
+$pageTitle = 'Free Open Source Monitor Color Test — Screen Color & Display Check Online | KeyboardTester.click';
+$pageDescription = 'Free open source monitor color test online. Check color accuracy, gradient banding, contrast and backlight uniformity on any screen. Fullscreen color panels. No download needed.';
+$pageKeywords = 'monitor color test online, open source screen test, screen color test, display color calibration test, color banding test monitor';
 $pageOgImage = 'images/screen-test/hero.webp';
 $pageOgImageAlt = 'Monitor color test tool showing fullscreen color panels for display calibration';
 $currentTool = 'color-test';
@@ -195,7 +195,7 @@ $currentTool = 'color-test';
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Screen diagnostics</p>
-          <h1 id="color-tool-title">Monitor Color Test</h1>
+          <h1 id="color-tool-title">Free Open Source Monitor Color Test</h1>
           <p class="section-lede">Cycle through 14 color panels to check color accuracy, gradient banding, backlight uniformity, and contrast.</p>
         </div>
         <div class="tool-stage-actions">

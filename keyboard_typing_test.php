@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Typing Speed Test Online | KeyboardTester.click';
-$pageDescription = 'Measure your typing speed (WPM), accuracy, and consistency with a free browser-based typing test. Start instantly and track your improvement across multiple timed sessions.';
-$pageKeywords = 'typing speed test, wpm test, online typing test, typing accuracy';
+$pageTitle = 'Free Open Source Typing Speed Test Online — WPM Test | KeyboardTester.click';
+$pageDescription = 'Free open source typing speed test online. Measure your WPM, accuracy, and consistency. Start instantly and track improvement across multiple timed sessions. No download needed.';
+$pageKeywords = 'typing speed test, open source typing test, wpm test, online typing test, typing accuracy';
 $pageOgImage = 'images/typing-test/hero.png';
 ?>
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ $pageOgImage = 'images/typing-test/hero.png';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/typing-test/step-1.png'); ?>" alt="Typing speed test step 1 - start WPM measurement" loading="lazy">
+              <img src="<?php echo url('images/typing-test/step-1.png'); ?>" alt="Typing speed test step 1 - start WPM measurement" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">01</div>
             <h3>Start the test</h3>
@@ -120,7 +120,7 @@ $pageOgImage = 'images/typing-test/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/typing-test/step-2.png'); ?>" alt="Typing test step 2 - type the text to measure speed" loading="lazy">
+              <img src="<?php echo url('images/typing-test/step-2.png'); ?>" alt="Typing test step 2 - type the text to measure speed" loading="lazy" width="600" height="423" decoding="async">
             </div>
             <div class="step-number">02</div>
             <h3>Type the prompt</h3>
@@ -128,7 +128,7 @@ $pageOgImage = 'images/typing-test/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/typing-test/step-3.png'); ?>" alt="Typing speed results - WPM score and accuracy display" loading="lazy">
+              <img src="<?php echo url('images/typing-test/step-3.png'); ?>" alt="Typing speed results - WPM score and accuracy display" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">03</div>
             <h3>Review results</h3>
@@ -140,6 +140,7 @@ $pageOgImage = 'images/typing-test/hero.png';
 
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/keyboard-typing-test.php'; ?>
+    <?php $toolBlogSlug = 'keyboard-shortcuts-windows-mac-linux-complete-cheat-sheet.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
   </main>
 
   <?php include 'footer.php'; ?>

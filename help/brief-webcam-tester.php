@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Camera Preview</p>
-      <h1 class="hero-title">Webcam Test Online</h1>
+      <h1 class="hero-title">Free Open Source Webcam Test Online</h1>
       <p class="hero-lede">Allow camera access to preview your webcam feed and verify video quality instantly.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#webcamtesterindex">Start test</a>

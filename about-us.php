@@ -1,8 +1,8 @@
 <?php
 include 'config.php';
-$pageTitle = 'About Us | KeyboardTester.click';
-$pageDescription = 'Learn about KeyboardTester.click — free browser-based tools to test keyboards, mice, screens, audio, webcams, and peripherals. No account or downloads required.';
-$pageKeywords = 'about keyboardtester, device testing tools, keyboard tester';
+$pageTitle = 'About Us — Free Open Source Testing Tools | KeyboardTester.click';
+$pageDescription = 'Learn about KeyboardTester.click — free open source, browser-based tools to test keyboards, mice, screens, audio, webcams, and peripherals. No account or downloads required.';
+$pageKeywords = 'about keyboardtester, free open source testing tools, device testing tools, keyboard tester';
 $pageOgImage = 'images/shared/keyboard-and-mouse.png';
 ?>
 <!DOCTYPE html>

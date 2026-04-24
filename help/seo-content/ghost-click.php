@@ -198,6 +198,7 @@
       <h2>What Causes Mouse Double Clicking?</h2>
       <p>This tool also works as a double click test. If your mouse is registering double clicks when you only press once, that is called a ghost click or mouse chatter problem. Use this detector to confirm whether your mouse is double-clicking before you try cleaning or replacing the mouse switches.</p>
       <p>Mouse double clicking is usually caused by worn Omron or Huano micro-switches inside your mouse. When the mechanical contact degrades, a single physical press can register as two clicks. This double click test measures the time between consecutive clicks — anything under 80ms is flagged as an unintended double click.</p>
+      <p><strong>Getting the same kind of problem on your keyboard?</strong> Keys disappearing when you press combos is called <em>keyboard ghosting</em>, not mouse ghost clicking — read <a href="<?php echo url('blog/what-is-keyboard-ghosting-anti-ghosting-fix-guide.php'); ?>">What Is Keyboard Ghosting? Anti-Ghosting &amp; NKRO Explained</a> to see why it happens and how to fix it on laptop and gaming keyboards.</p>
     </article>
   </div>
 </section>

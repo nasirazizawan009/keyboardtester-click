@@ -7,7 +7,7 @@ $breadcrumbs = [
 ];
 
 $pageTitle = 'Keyboard Tools - Online Keyboard Testing Suite';
-$pageDescription = 'Explore keyboard testing tools: keyboard tester, typing speed test, and latency checker.';
+$pageDescription = 'Keyboard diagnostics hub: keyboard tester, typing speed test, latency checker, ghosting and N-key rollover tests. Browser-based, free, no install needed.';
 $pageKeywords = 'keyboard tools, keyboard tester, typing test, latency checker';
 
 $tools = [

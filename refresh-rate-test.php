@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Monitor Refresh Rate Test — Check Hz Online Free | KeyboardTester.click';
-$pageDescription = 'Free monitor refresh rate test. Check if your display runs at 60Hz, 144Hz, 240Hz or higher. Detects your real Hz automatically in seconds. No download needed.';
-$pageKeywords = 'monitor refresh rate test online, check monitor hz online, refresh rate test, 144hz monitor test';
+$pageTitle = 'Free Open Source Monitor Refresh Rate Test — Check Hz Online | KeyboardTester.click';
+$pageDescription = 'Free open source monitor refresh rate test. Check if your display runs at 60Hz, 144Hz, 240Hz or higher. Detects your real Hz automatically in seconds. No download needed.';
+$pageKeywords = 'monitor refresh rate test online, open source monitor test, check monitor hz online, refresh rate test, 144hz monitor test';
 $pageOgImage = 'images/screen-test/hero.webp';
 ?>
 <!DOCTYPE html>
@@ -182,7 +182,7 @@ $pageOgImage = 'images/screen-test/hero.webp';
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Display diagnostics</p>
-          <h1 id="refresh-rate-h1">Monitor Refresh Rate Test</h1>
+          <h1 id="refresh-rate-h1">Free Open Source Monitor Refresh Rate Test</h1>
           <p class="section-lede">Find out if your monitor is actually running at 60Hz, 144Hz, 240Hz, or higher — in 3 seconds.</p>
         </div>
       </div>

@@ -156,6 +156,7 @@ $pageOgImageAlt = 'Person using the online mouse tester to verify click and scro
     <?php include 'help/seo-content/mouse-test.php'; ?>
     <?php $currentTool = 'mouse'; include 'includes/related-tools.php'; ?>
     <?php include 'help/mouse-click-test.php'; ?>
+  <?php $toolBlogSlug = 'how-to-test-mouse-buttons-scroll-wheel.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
   </main>
 
   <?php include 'footer.php'; ?>

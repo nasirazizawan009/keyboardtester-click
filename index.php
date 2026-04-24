@@ -8,19 +8,7 @@
 
     <?php include __DIR__ . '/includes/seo-meta.php'; ?>
 
-    <!-- Preload Hero Image (LCP element) with viewport-specific candidates -->
-    <link rel="preload" as="image"
-          href="<?php echo url('images/keyboard/hero-keyboard-test-560.webp'); ?>"
-          media="(max-width: 980px)"
-          type="image/webp"
-          fetchpriority="high">
-    <link rel="preload" as="image"
-          href="<?php echo url('images/keyboard/hero-keyboard-test-560.webp'); ?>"
-          media="(min-width: 981px)"
-          type="image/webp"
-          fetchpriority="high">
-
-    <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl(''); ?>">
+<link rel="alternate" hreflang="en" href="<?php echo absoluteUrl(''); ?>">
     <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl(''); ?>">
 
     <!-- Minimal critical CSS: keep above-the-fold structure stable before full CSS arrives -->
@@ -28,9 +16,11 @@
     .landing-main{min-height:100vh}
     .landing-hero-grid{min-height:320px}
     .hero-copy{min-height:200px}
-    .tool-stage{min-height:680px}
+    .hero-visual{min-height:300px}
+    .hero-yt-facade{aspect-ratio:16/9;position:relative;background:#0f172a;border-radius:16px;overflow:hidden}
+    .tool-stage{min-height:680px;background:radial-gradient(720px 380px at 10% 20%,rgba(14,165,233,.16),transparent 60%),radial-gradient(720px 380px at 90% 25%,rgba(22,163,74,.14),transparent 60%),var(--landing-bg)}
     .tool-shell{min-height:580px}
-    @media(max-width:980px){.landing-hero-grid{min-height:auto}}
+    @media(max-width:980px){.landing-hero-grid{min-height:auto}.hero-visual{min-height:240px}}
     @media(max-width:768px){.tool-stage{min-height:500px}.tool-shell{min-height:420px}.keyboard-tester{min-height:380px}}
     </style>
 
@@ -59,8 +49,9 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=optional"></noscript>
 
     <!-- Load landing stylesheet before first paint to avoid hero/main CLS -->
-    <link rel="preload" as="style" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
-    <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
+    <?php $imv = filemtime(__DIR__ . '/assets/css/index-modern.min.css'); ?>
+    <link rel="preload" as="style" href="<?php echo url('assets/css/index-modern.min.css') . '?v=' . $imv; ?>">
+    <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css') . '?v=' . $imv; ?>">
 
     <!-- Clarity Analytics (delayed 4s to avoid forced reflow on initial render) -->
     <script>
@@ -119,6 +110,10 @@
       <div class="trust-item">
         <div class="trust-title">Privacy first</div>
         <div class="trust-desc">No data leaves your device</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-title">Free &amp; Open Source</div>
+        <div class="trust-desc"><a href="https://github.com/nasirazizawan009/keyboardtester-click" target="_blank" rel="noopener noreferrer" style="color:var(--primary-color,#4b5eaa);text-decoration:none;font-weight:600;">View on GitHub</a></div>
       </div>
     </div>
   </section>
@@ -212,6 +207,7 @@
   <?php include 'help/seo-content/keyboard-tester.php'; ?>
   <?php $currentTool = 'keyboard'; include 'includes/related-tools.php'; ?>
   <?php include 'help/keyboard-tester.php'; ?>
+  <?php $toolBlogSlug = 'keyboard-not-typing-lagging-sticky-fix-clean-guide.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
 </main>
 
 <?php include 'footer.php'; ?>

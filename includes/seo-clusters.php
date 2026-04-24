@@ -30,6 +30,16 @@ function getSeoIntentClusters() {
                     'path' => 'stereo-test.php',
                     'name' => 'Stereo Test',
                     'description' => 'Check stereo playback, channel balance, and general speaker or headphone output.'
+                ],
+                [
+                    'path' => 'bass-test.php',
+                    'name' => 'Bass Test',
+                    'description' => 'Sweep 20 Hz to 200 Hz or hold a single low-frequency tone to check subwoofers and bass-capable speakers.'
+                ],
+                [
+                    'path' => 'sound-test.php',
+                    'name' => 'Sound Test',
+                    'description' => 'Full-range sine sweep 100 Hz to 10 kHz plus channel and ping-pong verification.'
                 ]
             ]
         ],

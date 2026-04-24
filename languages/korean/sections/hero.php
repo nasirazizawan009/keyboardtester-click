@@ -35,12 +35,11 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="hero-shot">
-                <picture>
-                    <source type="image/webp" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.webp'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.webp'); ?> 1400w" sizes="(max-width: 980px) 92vw, 520px">
-                    <source type="image/png" srcset="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?> 900w, <?php echo url('images/keyboard/hero-keyboard-test-1400.png'); ?> 1400w" sizes="(max-width: 980px) 92vw, 520px">
-                    <img src="<?php echo url('images/keyboard/hero-keyboard-test-900.png'); ?>" width="900" height="600" alt="한국어 키보드 테스터 인터페이스" loading="eager" decoding="async" fetchpriority="high">
-                </picture>
+            <div class="hero-shot hero-shot--video hero-yt-facade" data-yt-id="wVyAj-nrtnI" data-yt-title="KeyboardTester.click — 키보드 테스터" role="button" tabindex="0" aria-label="비디오 재생">
+                <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.jpg"); ?>" alt="키보드 테스터 비디오 미리보기" width="480" height="270" loading="lazy" decoding="async">
+                <span class="hero-yt-play" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+                </span>
             </div>
             <div class="hero-stack">
                 <div class="mini-card">
@@ -140,7 +139,7 @@
                     <picture>
                         <source type="image/webp" srcset="<?php echo url('images/keyboard/Press-any-key-512.webp'); ?> 512w, <?php echo url('images/keyboard/Press-any-key-768.webp'); ?> 768w" sizes="(max-width: 900px) 90vw, 320px">
                         <source type="image/png" srcset="<?php echo url('images/keyboard/Press-any-key-512.png'); ?> 512w, <?php echo url('images/keyboard/Press-any-key-768.png'); ?> 768w" sizes="(max-width: 900px) 90vw, 320px">
-                        <img src="<?php echo url('images/keyboard/Press-any-key-512.png'); ?>" width="512" height="768" alt="아무 키나 눌러 테스트 시작" loading="lazy">
+                    <img src="<?php echo url('images/keyboard/Press-any-key-512.png'); ?>" width="512" height="768" alt="아무 키나 눌러 테스트 시작" loading="lazy" decoding="async">
                     </picture>
                 </div>
                 <div class="process-body">
@@ -154,7 +153,7 @@
                     <picture>
                         <source type="image/webp" srcset="<?php echo url('images/keyboard/special-keys-layout-640.webp'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
                         <source type="image/png" srcset="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?> 640w, <?php echo url('images/keyboard/special-keys-layout-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
-                        <img src="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?>" width="640" height="426" alt="특수 키 및 키보드 레이아웃" loading="lazy">
+                    <img src="<?php echo url('images/keyboard/special-keys-layout-640.png'); ?>" width="640" height="426" alt="특수 키 및 키보드 레이아웃" loading="lazy" decoding="async">
                     </picture>
                 </div>
                 <div class="process-body">
@@ -168,7 +167,7 @@
                     <picture>
                         <source type="image/webp" srcset="<?php echo url('images/keyboard/color-system-guide-640.webp'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.webp'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
                         <source type="image/png" srcset="<?php echo url('images/keyboard/color-system-guide-640.png'); ?> 640w, <?php echo url('images/keyboard/color-system-guide-960.png'); ?> 960w" sizes="(max-width: 900px) 90vw, 320px">
-                        <img src="<?php echo url('images/keyboard/color-system-guide-640.png'); ?>" width="640" height="426" alt="색상 시스템 및 내보내기 가능한 결과" loading="lazy">
+                    <img src="<?php echo url('images/keyboard/color-system-guide-640.png'); ?>" width="640" height="426" alt="색상 시스템 및 내보내기 가능한 결과" loading="lazy" decoding="async">
                     </picture>
                 </div>
                 <div class="process-body">

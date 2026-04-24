@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Typing Speed and Accuracy</p>
-      <h1 class="hero-title">Typing Speed Test Online</h1>
+      <h1 class="hero-title">Free Open Source Typing Speed Test Online</h1>
       <p class="hero-lede">Type the prompt to measure WPM, accuracy, and typing consistency in real time.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#keyboard-typing-test">Start test</a>
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/typing-test/hero.png'); ?>" alt="Typing speed test interface - measure WPM and typing accuracy online" loading="eager">
+        <img src="<?php echo url('images/typing-test/hero.png'); ?>" alt="Typing speed test interface - measure WPM and typing accuracy online" loading="eager" width="800" height="533" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-stack">
         <div class="mini-card">

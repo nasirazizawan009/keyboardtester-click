@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
 $pageTitle = 'Maus-DPI-Tester - Messen Sie die Mausempfindlichkeit';
-$pageDescription = 'Testen und messen Sie die DPI Ihrer Maus. Ueberpruefen Sie die Tracking-Genauigkeit und Empfindlichkeit.';
+$pageDescription = 'DPI- und Empfindlichkeitstester für Mäuse: Prüft die tatsächliche Sensorauflösung, Tracking-Präzision und Cursor-Konsistenz. Im Browser, ohne Treiber oder Installation.';
 $pageKeywords = 'DPI Maus, Mausempfindlichkeit, DPI Test, Empfindlichkeitstest, Maus kalibrieren';
 ?>
 <!DOCTYPE html>

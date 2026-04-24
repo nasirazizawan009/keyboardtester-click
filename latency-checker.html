@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test your keyboard's input latency with our online tool. Measure the delay between key presses and screen updates, view logs, and optimize for gaming or real-time applications.">
+    <meta name="keywords" content="keyboard latency checker, test keyboard latency, input delay test, keyboard responsiveness, latency test online, key press log">
+    <meta name="author" content="Online Keyboard Tester">
+    <title>Keyboard Latency Checker - Test Your Keyboard Responsiveness</title>
+    <link rel="icon" type="image/x-icon" href="navigation.png">
+    <style>
+        /* Theme Variables (Matching Index) */
+        :root {
+            --bg-color: #f0f0f0;
+            --text-color: #333333;
+            --primary-color: #1abc9c;
+            --secondary-color: #34495e;
+            --keyboard-bg: #ffffff;
+            --key-bg: #e0e0e0;
+            --key-text: #333333;
+            --key-active-1: #1abc9c;
+            --text-box-bg: #e0e0e0;
+            --text-box-text: #333333;
+            --key-border: #cccccc;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #2c3e50;
+            --text-color: #ecf0f1;
+            --primary-color: #1abc9c;
+            --secondary-color: #34495e;
+            --keyboard-bg: #34495e;
+            --key-bg: #4a627a;
+            --key-text: #ecf0f1;
+            --key-active-1: #1abc9c;
+            --text-box-bg: #4a627a;
+            --text-box-text: #ecf0f1;
+            --key-border: #666666;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            width: 60px;
+            height: 30px;
+            background-color: var(--primary-color);
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background-color: var(--bg-color);
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+
+        [data-theme="dark"] .theme-toggle::before {
+            transform: translateX(30px);
+        }
+
+        .help-button, .blog-button {
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .help-button {
+            background-color: #3498db;
+        }
+
+        .help-button:hover {
+            background-color: #2980b9;
+        }
+
+        .blog-button {
+            background-color: #8e44ad;
+        }
+
+        .blog-button:hover {
+            background-color: #7d3c98;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            color: Black;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons a.home,
+        .nav-buttons a.mouse-test,
+        .nav-buttons a.privacy-policy,
+        .nav-buttons a.disclaimer,
+        .nav-buttons a.about-us {
+            background-color: #f39c12;
+        }
+
+        .nav-buttons a.buy-keyboard,
+        .nav-buttons a.buy-mouse {
+            background-color: #f1c40f;
+        }
+
+        .nav-buttons a:hover {
+            opacity: 0.9;
+        }
+
+        /* Tools Section (Matching Index Color Scheme) */
+        .tools-section {
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 25px;
+            background: linear-gradient(135deg, #2a2a72, #009ffd);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .tools-section h2 {
+            color: #ffffff;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .tools-section p {
+            font-size: 1.1rem;
+            text-align: center;
+            color: #e0e0ff;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .tools-section div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .tools-section a {
+            text-decoration: none;
+        }
+
+        .tools-section span {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #fff;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .tools-section a:hover span {
+            transform: scale(1.05);
+            background: #ffffff;
+            color: #2a2a72;
+        }
+
+        .tools-section div:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
+
+        .tools-section:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Latency Section */
+        .latency-section {
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 25px;
+            background: linear-gradient(135deg, #1e1e2f, #2a2a3d);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+        }
+
+        .latency-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .latency-display {
+            background: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            margin: 0 auto 20px;
+        }
+
+        .latency-display p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .latency-display p:nth-child(2) {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        .reset-button {
+            background-color: #e74c3c;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .reset-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Log Section */
+        .log-container {
+            background: var(--secondary-color);
+            padding: 15px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .log-container h3 {
+            color: var(--primary-color);
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .log-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #ecf0f1;
+            font-size: 1rem;
+        }
+
+        .log-container li {
+            padding: 5px 0;
+            border-bottom: 1px solid #666666;
+        }
+
+        /* Help Section */
+        .help-section {
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 25px;
+            background: linear-gradient(135deg, #1e1e2f, #2a2a3d);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+        }
+
+        .help-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .help-section h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        .help-section p, .help-section ul {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .help-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .help-section li {
+            margin-bottom: 10px;
+        }
+
+        .help-section li span {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            text-align: center;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        footer a {
+            color: var(--key-active-1);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Keyboard Latency Checker</h1>
+        <nav>
+            <button class="help-button" id="help-button">Help</button>
+            <button class="blog-button" onclick="window.location.href='https://keyboardtester.click/blog/'">Blog</button>
+            <div class="theme-toggle" id="theme-toggle"></div>
+        </nav>
+    </header>
+
+    <!-- Navigation Buttons (Same as Index) -->
+    <div class="nav-buttons">
+        <a href="https://www.keyboardtester.click/" class="home">Home</a>
+        <a href="https://www.keyboardtester.click/mouse-test.html" class="mouse-test">Mouse Test</a>
+        <a href="https://www.keyboardtester.click/privacy-policy.html" class="privacy-policy">Privacy Policy</a>
+        <a href="https://www.keyboardtester.click/disclaimer.html" class="disclaimer">Disclaimer</a>
+        <a href="https://www.keyboardtester.click/about-us.html" class="about-us">About Us</a>
+        <a href="https://www.amazon.com/s?k=keyboard" class="buy-keyboard" target="_blank">Buy New Keyboard on Amazon</a>
+        <a href="https://www.amazon.com/s?k=mouse" class="buy-mouse" target="_blank">Buy New Mouse on Amazon</a>
+    </div>
+
+    <!-- Latency Checker Section -->
+    <div class="latency-section" id="latency-section">
+        <h2>⏱️ Keyboard Latency Checker</h2>
+        <p>Test your keyboard's responsiveness! Press any key to measure the time between press and screen update.</p>
+        
+        <div class="latency-display" id="latency-display">
+            <p>Last Latency: <span id="latency-value" style="color: #1abc9c; font-weight: bold;">--</span> ms</p>
+            <p>Average Latency: <span id="average-latency" style="color: #f1c40f; font-weight: bold;">--</span> ms</p>
+        </div>
+
+        <!-- Key Press Log -->
+        <div class="log-container">
+            <h3>Key Press Log</h3>
+            <ul id="key-log"></ul>
+        </div>
+        
+        <button id="reset-latency" class="reset-button">Reset Latency</button>
+        
+        <p style="font-size: 0.9rem; color: #ecf0f1;">
+            Note: Results may vary based on browser, system performance, and hardware. Ideal for gamers and real-time applications.
+        </p>
+    </div>
+
+    <!-- Tools Section (Moved After Latency Section) -->
+    <div class="tools-section">
+        <h2>✨ Explore Our Awesome Tools ✨</h2>
+        <p>Supercharge your setup with our online tools! Test your keys, clicks, and speed—check them out now!</p>
+        <div>
+            <a href="https://www.keyboardtester.click/">
+                <span style="background: #1abc9c;">Keyboard Tester ⌨️</span>
+            </a>
+            <span style="color: #d1d1ff; font-size: 0.95rem;">Test your <strong>keyboard keys</strong> with ease!</span>
+        </div>
+        <div>
+            <a href="https://www.keyboardtester.click/mouse-test.html">
+                <span style="background: #00ddeb;">Mouse Tester 🖱️</span>
+            </a>
+            <span style="color: #d1d1ff; font-size: 0.95rem;">Test your <strong>mouse buttons</strong> and scroll!</span>
+        </div>
+        <div>
+            <a href="https://www.keyboardtester.click/mouse_speed_tester.html">
+                <span style="background: #ff6f61;">Mouse Speed Tester ⚡</span>
+            </a>
+            <span style="color: #d1d1ff; font-size: 0.95rem;">Measure your <strong>click speed</strong>!</span>
+        </div>
+        <div>
+            <a href="https://www.keyboardtester.click/keyboard_typing_test.html">
+                <span style="background: #2ecc71;">Typing Speed Test ⌨️</span>
+            </a>
+            <span style="color: #d1d1ff; font-size: 0.95rem;">Boost your <strong>typing speed</strong>!</span>
+        </div>
+        <div>
+            <a href="https://www.keyboardtester.click/ghost-click-detector.html">
+                <span style="background: #e74c3c;">Ghost Click Detector 👻</span>
+            </a>
+            <span style="color: #d1d1ff; font-size: 0.95rem;">Detect <strong>phantom clicks</strong>!</span>
+        </div>
+        <div>
+            <a href="https://www.keyboardtester.click/mouse_sensitivity_DPI_tester.html">
+                <span style="background: #9b59b6;">Sensitivity/DPI Tester 🎯</span>
+            </a>
+            <span style="color: #d1d1ff; font-size: 0.95rem;">Check your <strong>mouse sensitivity</strong>!</span>
+        </div>
+        <div>
+            <a href="latency-checker.html">
+                <span style="background: #16a085;">Latency Checker ⏱️</span>
+            </a>
+            <span style="color: #d1d1ff; font-size: 0.95rem;">Measure your <strong>keyboard latency</strong>!</span>
+        </div>
+    </div>
+
+    <!-- Help Section -->
+    <div class="help-section" id="help-section">
+        <h2>📜 Help & Guidelines</h2>
+        <p>Welcome to the Keyboard Latency Checker! Here's how to use this tool effectively:</p>
+
+        <h3>🛠️ How to Use</h3>
+        <ul>
+            <li><span>✦ Start Testing:</span> Press any key to begin. The first press sets the timer, and the second records the latency.</li>
+            <li><span>✦ View Results:</span> Check "Last Latency" for the most recent measurement and "Average Latency" for the overall average.</li>
+            <li><span>✦ Log Review:</span> See the "Key Press Log" for a history of keys pressed and their latencies.</li>
+            <li><span>✦ Reset:</span> Click "Reset Latency" to clear all data and start fresh.</li>
+            <li><span>✦ Theme:</span> Toggle between light and dark modes using the switch in the header.</li>
+        </ul>
+
+        <h3>🔍 Understanding Latency</h3>
+        <p>Latency is the time (in milliseconds) between when you press a key and when it's registered on-screen. Lower latency is better for responsiveness, especially in gaming or real-time tasks.</p>
+        <ul>
+            <li><span>✦ Ideal Latency:</span> Below 10ms is excellent for most applications.</li>
+            <li><span>✦ Acceptable:</span> 10-20ms is typical for standard keyboards.</li>
+            <li><span>✦ High Latency:</span> Above 20ms may indicate delays or hardware issues.</li>
+        </ul>
+
+        <h3>❓ FAQs</h3>
+        <ul>
+            <li><strong>What does this tool measure?</strong><br>It measures the time between consecutive key presses in your browser.</li>
+            <li><strong>Why do results vary?</strong><br>Browser performance, system load, and keyboard hardware can affect readings.</li>
+            <li><strong>How accurate is it?</strong><br>It’s a browser-based estimate, not hardware-level precision, but useful for comparison.</li>
+        </ul>
+
+        <h3>🔧 Tips for Better Results</h3>
+        <ul>
+            <li><span>✦ Close Apps:</span> Minimize background processes for consistent results.</li>
+            <li><span>✦ Test Multiple Times:</span> Average multiple tests for accuracy.</li>
+            <li><span>✦ Check Hardware:</span> Ensure your keyboard is in good condition.</li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 <a href="https://www.keyboardtester.click/">Online Keyboard Tester</a>. All rights reserved. Check out our <a href="https://keyboardtester.click/blog/">Blog</a> for more tips!</p>
+    </footer>
+
+    <script>
+        // Latency Checker Functionality
+        const latencyValue = document.getElementById('latency-value');
+        const averageLatency = document.getElementById('average-latency');
+        const keyLog = document.getElementById('key-log');
+        const resetLatencyButton = document.getElementById('reset-latency');
+        const helpButton = document.getElementById('help-button');
+        
+        let latencyMeasurements = [];
+        let keyPressTime = null;
+        let lastKey = null;
+
+        document.addEventListener('keydown', (event) => {
+            const currentKey = event.key === ' ' ? 'Space' : event.key;
+            
+            if (!keyPressTime) {
+                keyPressTime = performance.now();
+                lastKey = currentKey;
+                return;
+            }
+
+            const currentTime = performance.now();
+            const latency = currentTime - keyPressTime;
+            latencyMeasurements.push(latency);
+
+            // Update last latency
+            latencyValue.textContent = latency.toFixed(2);
+
+            // Update average latency
+            const avg = latencyMeasurements.reduce((a, b) => a + b, 0) / latencyMeasurements.length;
+            averageLatency.textContent = avg.toFixed(2);
+
+            // Add to log
+            const logEntry = document.createElement('li');
+            logEntry.textContent = `Key: ${lastKey} → ${currentKey} - Latency: ${latency.toFixed(2)} ms`;
+            keyLog.insertBefore(logEntry, keyLog.firstChild); // Newest entries at top
+
+            keyPressTime = performance.now(); // Reset for next press
+            lastKey = currentKey;
+        });
+
+        // Reset Functionality
+        resetLatencyButton.addEventListener('click', () => {
+            latencyMeasurements = [];
+            latencyValue.textContent = '--';
+            averageLatency.textContent = '--';
+            keyLog.innerHTML = '';
+            keyPressTime = null;
+            lastKey = null;
+        });
+
+        // Help Button Functionality
+        helpButton.addEventListener('click', () => {
+            document.getElementById('help-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        });
+    </script>
+    <script defer src="https://shown.io/metrics/V10GoOgv04" type="text/javascript"></script>
+</body>
+</html>

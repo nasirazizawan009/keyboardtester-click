@@ -38,7 +38,7 @@ if (!function_exists('kbtGetSiteChromeConfig')) {
             'locales' => [
                 'en' => [
                     'dir' => 'ltr', 'language_code' => 'EN',
-                    'menu' => ['home' => 'Home', 'tools' => 'Tools', 'privacy' => 'Privacy', 'about' => 'About', 'try_tools' => 'Try Tools'],
+                    'menu' => ['home' => 'Home', 'tools' => 'Tools', 'blog' => 'Blog', 'privacy' => 'Privacy', 'about' => 'About', 'try_tools' => 'Try Tools'],
                     'footer' => ['about' => 'Modern testing tools for keyboards, mice, audio, screens, and more, built for clarity, accuracy, and speed.', 'quick_links' => 'Quick Links', 'testing_tools' => 'Testing Tools', 'more_tools' => 'More Tools', 'help_resources' => 'Help & Resources', 'stay_connected' => 'Stay Connected', 'newsletter' => 'Get updates on new tools and features', 'placeholder' => 'Your email address', 'subscribe' => 'Subscribe', 'rights' => 'All rights reserved.', 'tagline' => 'Built for tech enthusiasts worldwide'],
                     'quick' => ['home' => 'Home', 'blog' => 'Blog', 'about' => 'About Us', 'privacy' => 'Privacy Policy', 'disclaimer' => 'Disclaimer'],
                     'help' => ['feedback' => 'Feedback', 'privacy' => 'Privacy & Security', 'disclaimer' => 'Terms & Disclaimer', 'blog' => 'Guides & Tips'],
@@ -46,7 +46,7 @@ if (!function_exists('kbtGetSiteChromeConfig')) {
                 ],
                 'ar' => [
                     'dir' => 'rtl', 'language_code' => 'AR',
-                    'menu' => ['home' => 'الرئيسية', 'tools' => 'الأدوات', 'privacy' => 'الخصوصية', 'about' => 'حول', 'try_tools' => 'جرّب الأدوات'],
+                    'menu' => ['home' => 'الرئيسية', 'tools' => 'الأدوات', 'blog' => 'المدونة', 'privacy' => 'الخصوصية', 'about' => 'حول', 'try_tools' => 'جرّب الأدوات'],
                     'footer' => ['about' => 'أدوات اختبار حديثة للوحة المفاتيح والماوس والصوت والشاشات والمزيد، مصممة للوضوح والدقة والسرعة.', 'quick_links' => 'روابط سريعة', 'testing_tools' => 'أدوات الاختبار', 'more_tools' => 'المزيد من الأدوات', 'help_resources' => 'المساعدة والموارد', 'stay_connected' => 'ابقَ على تواصل', 'newsletter' => 'احصل على تحديثات حول الأدوات والميزات الجديدة', 'placeholder' => 'بريدك الإلكتروني', 'subscribe' => 'اشترك', 'rights' => 'جميع الحقوق محفوظة.', 'tagline' => 'صُمم لعشاق التقنية حول العالم'],
                     'quick' => ['home' => 'الرئيسية', 'blog' => 'المدونة', 'about' => 'من نحن', 'privacy' => 'سياسة الخصوصية', 'disclaimer' => 'إخلاء المسؤولية'],
                     'help' => ['feedback' => 'الملاحظات', 'privacy' => 'الخصوصية والأمان', 'disclaimer' => 'الشروط وإخلاء المسؤولية', 'blog' => 'أدلة ونصائح'],
@@ -54,7 +54,7 @@ if (!function_exists('kbtGetSiteChromeConfig')) {
                 ],
                 'fr' => [
                     'dir' => 'ltr', 'language_code' => 'FR',
-                    'menu' => ['home' => 'Accueil', 'tools' => 'Outils', 'privacy' => 'Confidentialité', 'about' => 'À propos', 'try_tools' => 'Tester'],
+                    'menu' => ['home' => 'Accueil', 'tools' => 'Outils', 'blog' => 'Blog', 'privacy' => 'Confidentialité', 'about' => 'À propos', 'try_tools' => 'Tester'],
                     'footer' => ['about' => 'Outils de test modernes pour claviers, souris, audio, écrans et plus, conçus pour la clarté, la précision et la rapidité.', 'quick_links' => 'Liens rapides', 'testing_tools' => 'Outils de test', 'more_tools' => 'Plus d’outils', 'help_resources' => 'Aide et ressources', 'stay_connected' => 'Restez connecté', 'newsletter' => 'Recevez les nouveautés et mises à jour', 'placeholder' => 'Votre e-mail', 'subscribe' => 'S’abonner', 'rights' => 'Tous droits réservés.', 'tagline' => 'Conçu pour les passionnés de technologie du monde entier'],
                     'quick' => ['home' => 'Accueil', 'blog' => 'Blog', 'about' => 'À propos', 'privacy' => 'Politique de confidentialité', 'disclaimer' => 'Avertissement'],
                     'help' => ['feedback' => 'Retour', 'privacy' => 'Confidentialité et sécurité', 'disclaimer' => 'Conditions et avertissement', 'blog' => 'Guides et conseils'],
@@ -62,7 +62,7 @@ if (!function_exists('kbtGetSiteChromeConfig')) {
                 ],
                 'de' => [
                     'dir' => 'ltr', 'language_code' => 'DE',
-                    'menu' => ['home' => 'Start', 'tools' => 'Tools', 'privacy' => 'Datenschutz', 'about' => 'Über uns', 'try_tools' => 'Tools testen'],
+                    'menu' => ['home' => 'Start', 'tools' => 'Tools', 'blog' => 'Blog', 'privacy' => 'Datenschutz', 'about' => 'Über uns', 'try_tools' => 'Tools testen'],
                     'footer' => ['about' => 'Moderne Testwerkzeuge für Tastaturen, Mäuse, Audio, Bildschirme und mehr, entwickelt für Klarheit, Genauigkeit und Geschwindigkeit.', 'quick_links' => 'Schnellzugriff', 'testing_tools' => 'Test-Tools', 'more_tools' => 'Weitere Tools', 'help_resources' => 'Hilfe & Ressourcen', 'stay_connected' => 'In Verbindung bleiben', 'newsletter' => 'Updates zu neuen Tools und Funktionen erhalten', 'placeholder' => 'Ihre E-Mail-Adresse', 'subscribe' => 'Abonnieren', 'rights' => 'Alle Rechte vorbehalten.', 'tagline' => 'Entwickelt für Technikbegeisterte weltweit'],
                     'quick' => ['home' => 'Start', 'blog' => 'Blog', 'about' => 'Über uns', 'privacy' => 'Datenschutz', 'disclaimer' => 'Haftungsausschluss'],
                     'help' => ['feedback' => 'Feedback', 'privacy' => 'Datenschutz & Sicherheit', 'disclaimer' => 'Bedingungen & Haftungsausschluss', 'blog' => 'Anleitungen & Tipps'],
@@ -70,7 +70,7 @@ if (!function_exists('kbtGetSiteChromeConfig')) {
                 ],
                 'es' => [
                     'dir' => 'ltr', 'language_code' => 'ES',
-                    'menu' => ['home' => 'Inicio', 'tools' => 'Herramientas', 'privacy' => 'Privacidad', 'about' => 'Acerca de', 'try_tools' => 'Probar herramientas'],
+                    'menu' => ['home' => 'Inicio', 'tools' => 'Herramientas', 'blog' => 'Blog', 'privacy' => 'Privacidad', 'about' => 'Acerca de', 'try_tools' => 'Probar herramientas'],
                     'footer' => ['about' => 'Herramientas modernas de prueba para teclados, ratones, audio, pantallas y más, diseñadas para claridad, precisión y velocidad.', 'quick_links' => 'Enlaces rápidos', 'testing_tools' => 'Herramientas de prueba', 'more_tools' => 'Más herramientas', 'help_resources' => 'Ayuda y recursos', 'stay_connected' => 'Mantente conectado', 'newsletter' => 'Recibe novedades sobre nuevas herramientas y funciones', 'placeholder' => 'Tu correo electrónico', 'subscribe' => 'Suscribirse', 'rights' => 'Todos los derechos reservados.', 'tagline' => 'Diseñado para entusiastas de la tecnología de todo el mundo'],
                     'quick' => ['home' => 'Inicio', 'blog' => 'Blog', 'about' => 'Sobre nosotros', 'privacy' => 'Política de privacidad', 'disclaimer' => 'Descargo de responsabilidad'],
                     'help' => ['feedback' => 'Comentarios', 'privacy' => 'Privacidad y seguridad', 'disclaimer' => 'Términos y descargo', 'blog' => 'Guías y consejos'],
@@ -78,7 +78,7 @@ if (!function_exists('kbtGetSiteChromeConfig')) {
                 ],
                 'pt' => [
                     'dir' => 'ltr', 'language_code' => 'PT',
-                    'menu' => ['home' => 'Início', 'tools' => 'Ferramentas', 'privacy' => 'Privacidade', 'about' => 'Sobre', 'try_tools' => 'Testar ferramentas'],
+                    'menu' => ['home' => 'Início', 'tools' => 'Ferramentas', 'blog' => 'Blog', 'privacy' => 'Privacidade', 'about' => 'Sobre', 'try_tools' => 'Testar ferramentas'],
                     'footer' => ['about' => 'Ferramentas modernas de teste para teclados, mouses, áudio, telas e mais, criadas para clareza, precisão e velocidade.', 'quick_links' => 'Links rápidos', 'testing_tools' => 'Ferramentas de teste', 'more_tools' => 'Mais ferramentas', 'help_resources' => 'Ajuda e recursos', 'stay_connected' => 'Fique conectado', 'newsletter' => 'Receba atualizações sobre novas ferramentas e recursos', 'placeholder' => 'Seu e-mail', 'subscribe' => 'Inscrever-se', 'rights' => 'Todos os direitos reservados.', 'tagline' => 'Feito para entusiastas de tecnologia em todo o mundo'],
                     'quick' => ['home' => 'Início', 'blog' => 'Blog', 'about' => 'Sobre nós', 'privacy' => 'Política de privacidade', 'disclaimer' => 'Aviso legal'],
                     'help' => ['feedback' => 'Feedback', 'privacy' => 'Privacidade e segurança', 'disclaimer' => 'Termos e aviso legal', 'blog' => 'Guias e dicas'],
@@ -86,7 +86,7 @@ if (!function_exists('kbtGetSiteChromeConfig')) {
                 ],
                 'ru' => [
                     'dir' => 'ltr', 'language_code' => 'RU',
-                    'menu' => ['home' => 'Главная', 'tools' => 'Инструменты', 'privacy' => 'Конфиденциальность', 'about' => 'О сайте', 'try_tools' => 'Попробовать инструменты'],
+                    'menu' => ['home' => 'Главная', 'tools' => 'Инструменты', 'blog' => 'Блог', 'privacy' => 'Конфиденциальность', 'about' => 'О сайте', 'try_tools' => 'Попробовать инструменты'],
                     'footer' => ['about' => 'Современные инструменты тестирования для клавиатур, мышей, аудио, экранов и многого другого, созданные для точности, ясности и скорости.', 'quick_links' => 'Быстрые ссылки', 'testing_tools' => 'Инструменты тестирования', 'more_tools' => 'Больше инструментов', 'help_resources' => 'Помощь и ресурсы', 'stay_connected' => 'Оставайтесь на связи', 'newsletter' => 'Получайте обновления о новых инструментах и функциях', 'placeholder' => 'Ваш e-mail', 'subscribe' => 'Подписаться', 'rights' => 'Все права защищены.', 'tagline' => 'Создано для энтузиастов технологий по всему миру'],
                     'quick' => ['home' => 'Главная', 'blog' => 'Блог', 'about' => 'О нас', 'privacy' => 'Политика конфиденциальности', 'disclaimer' => 'Отказ от ответственности'],
                     'help' => ['feedback' => 'Обратная связь', 'privacy' => 'Конфиденциальность и безопасность', 'disclaimer' => 'Условия и отказ от ответственности', 'blog' => 'Руководства и советы'],
@@ -94,7 +94,7 @@ if (!function_exists('kbtGetSiteChromeConfig')) {
                 ],
                 'ja' => [
                     'dir' => 'ltr', 'language_code' => 'JP',
-                    'menu' => ['home' => 'ホーム', 'tools' => 'ツール', 'privacy' => 'プライバシー', 'about' => '概要', 'try_tools' => 'ツールを試す'],
+                    'menu' => ['home' => 'ホーム', 'tools' => 'ツール', 'blog' => 'ブログ', 'privacy' => 'プライバシー', 'about' => '概要', 'try_tools' => 'ツールを試す'],
                     'footer' => ['about' => 'キーボード、マウス、オーディオ、ディスプレイなどを明確さ、精度、スピード重視でテストできる最新ツールです。', 'quick_links' => 'クイックリンク', 'testing_tools' => 'テストツール', 'more_tools' => 'その他のツール', 'help_resources' => 'ヘルプと情報', 'stay_connected' => 'つながる', 'newsletter' => '新しいツールや機能の更新情報を受け取る', 'placeholder' => 'メールアドレス', 'subscribe' => '購読する', 'rights' => 'すべての権利を保有します。', 'tagline' => '世界中のテック愛好家のために作られました'],
                     'quick' => ['home' => 'ホーム', 'blog' => 'ブログ', 'about' => '私たちについて', 'privacy' => 'プライバシーポリシー', 'disclaimer' => '免責事項'],
                     'help' => ['feedback' => 'フィードバック', 'privacy' => 'プライバシーと安全性', 'disclaimer' => '利用条件と免責事項', 'blog' => 'ガイドとヒント'],
@@ -102,7 +102,7 @@ if (!function_exists('kbtGetSiteChromeConfig')) {
                 ],
                 'ko' => [
                     'dir' => 'ltr', 'language_code' => 'KO',
-                    'menu' => ['home' => '홈', 'tools' => '도구', 'privacy' => '개인정보', 'about' => '소개', 'try_tools' => '도구 체험'],
+                    'menu' => ['home' => '홈', 'tools' => '도구', 'blog' => '블로그', 'privacy' => '개인정보', 'about' => '소개', 'try_tools' => '도구 체험'],
                     'footer' => ['about' => '키보드, 마우스, 오디오, 화면 등을 위한 현대적인 테스트 도구. 명확성, 정확성, 속도를 위해 설계되었습니다.', 'quick_links' => '빠른 링크', 'testing_tools' => '테스트 도구', 'more_tools' => '더 많은 도구', 'help_resources' => '도움말 및 리소스', 'stay_connected' => '새 소식 받기', 'newsletter' => '새로운 도구와 기능 업데이트를 받아보세요', 'placeholder' => '이메일 주소', 'subscribe' => '구독', 'rights' => '모든 권리 보유.', 'tagline' => '전 세계 기술 애호가들을 위해 제작되었습니다'],
                     'quick' => ['home' => '홈', 'blog' => '블로그', 'about' => '소개', 'privacy' => '개인정보 처리방침', 'disclaimer' => '면책조항'],
                     'help' => ['feedback' => '피드백', 'privacy' => '개인정보 및 보안', 'disclaimer' => '이용약관 및 면책조항', 'blog' => '가이드 및 팁'],
@@ -323,6 +323,7 @@ if (!function_exists('kbtRenderSiteChromeMiniIcon')) {
             'gitlab' => '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.96 13.59 22.61 9.45l-2.66-8.19a.46.46 0 0 0-.87 0L16.42 9.45H7.58L4.92 1.26a.46.46 0 0 0-.87 0L1.39 9.45.04 13.59a.92.92 0 0 0 .33 1.02L12 22.82l11.63-8.21a.92.92 0 0 0 .33-1.02Z"/></svg>',
             'youtube' => '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg>',
             'facebook' => '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.45 18.63.07 12 .07S0 5.45 0 12.07c0 5.99 4.39 10.95 10.12 11.86v-8.39H7.08v-3.47h3.04V9.43c0-3.01 1.8-4.67 4.54-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87v2.25h3.32l-.53 3.47h-2.79v8.39C19.61 23.03 24 18.06 24 12.07Z"/></svg>',
+            'instagram' => '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>',
             'mail' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg>',
             'home' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5"></path><path d="M6.5 9.5V20h11V9.5"></path></svg>',
             'blog' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h8l4 4v12H7z"></path><path d="M15 4v4h4"></path><path d="M10 12h6M10 16h4"></path></svg>',
@@ -430,6 +431,8 @@ if (!function_exists('kbtRenderSiteHeader')) {
     .site-header__brand { display: inline-flex; align-items: center; gap: 10px; font-size: 1.08rem; font-weight: 700; color: var(--header-text, #e2e8f0); text-decoration: none; flex-shrink: 0; }
     .site-header__brand img { width: 32px; height: 32px; flex-shrink: 0; }
     .site-header__brand-accent { color: #38bdf8; }
+    .site-header__oss-pill { display: inline-block; padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(34,197,94,0.45); background: rgba(34,197,94,0.12); color: #4ade80; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.6; white-space: nowrap; }
+    @media (max-width: 480px) { .site-header__oss-pill { display: none; } }
     .site-header__menu-toggle, .site-header__theme-toggle, .site-header__lang-toggle, .site-header__nav-link, .site-header__cta { font: inherit; }
     .site-header__menu-toggle { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid rgba(148, 163, 184, 0.22); background: rgba(148, 163, 184, 0.08); border-radius: 12px; cursor: pointer; flex-shrink: 0; color: inherit; }
     .site-header__menu-toggle span { display: block; width: 20px; height: 2px; margin: 3px 0; background: currentColor; transition: transform 0.2s ease, opacity 0.2s ease; }
@@ -467,7 +470,8 @@ if (!function_exists('kbtRenderSiteHeader')) {
     .site-header__panel-title { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(148, 163, 184, 0.14); color: #38bdf8; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
     .site-header__panel-links { display: flex; flex-direction: column; gap: 4px; }
     .site-header__panel-links a, .site-header__mobile-tools a { display: block; padding: 7px 9px; color: var(--text-color, #e2e8f0); text-decoration: none; border-radius: 10px; transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease; }
-    .site-header__panel-links a:hover, .site-header__mobile-tools a:hover { background: rgba(56, 189, 248, 0.12); color: #e0f2fe; }
+    .site-header__panel-links a:hover, .site-header__mobile-tools a:hover { background: rgba(14, 165, 233, 0.12); color: #0369a1; }
+    html.dark-theme .site-header__panel-links a:hover, html.dark-theme .site-header__mobile-tools a:hover { color: #e0f2fe; }
     .site-header__panel-links a:hover { transform: translateX(4px); }
     .site-header__mobile-tools { display: none; }
     .site-header[dir="rtl"] .site-header__container, .site-header[dir="rtl"] .site-header__nav, .site-header[dir="rtl"] .site-header__actions { direction: rtl; }
@@ -481,13 +485,20 @@ if (!function_exists('kbtRenderSiteHeader')) {
         .site-header__nav { position: absolute; top: calc(100% + 1px); left: 0; right: 0; margin: 0; padding: 20px 16px 24px; flex-direction: column; align-items: stretch; background: var(--dropdown-bg, rgba(15, 23, 42, 0.98)); border-top: 1px solid rgba(148, 163, 184, 0.14); box-shadow: 0 24px 44px rgba(2, 6, 23, 0.24); max-height: calc(100dvh - 64px); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; gap: 10px; z-index: 1002; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-10px); transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease; }
         .site-header__nav.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
         .site-header__nav-link, .site-header__cta, .site-header__theme-toggle, .site-header__lang-toggle { width: 100%; justify-content: flex-start; }
-        .site-header__nav-link { min-height: 48px; padding: 0 14px; border-radius: 12px; background: rgba(148, 163, 184, 0.08); }
-        .site-header__actions { width: 100%; flex-direction: column; align-items: stretch; gap: 10px; margin: 12px 0 0; padding-top: 16px; border-top: 1px solid rgba(148, 163, 184, 0.18); }
+        /* Mobile panel uses --dropdown-bg which is WHITE in light mode, so text must be dark, not --header-text */
+        .site-header__nav-link { min-height: 48px; padding: 0 14px; border-radius: 12px; background: rgba(148, 163, 184, 0.12); color: var(--text-color, #1e293b); font-weight: 600; border: 1px solid rgba(148, 163, 184, 0.2); }
+        .site-header__nav-link:hover, .site-header__nav-link:focus-visible { background: rgba(56, 189, 248, 0.14); color: var(--primary-color, #1e40af); border-color: rgba(56, 189, 248, 0.4); }
+        .site-header__theme-toggle, .site-header__lang-toggle { color: var(--text-color, #1e293b); background: rgba(148, 163, 184, 0.12); border-color: rgba(148, 163, 184, 0.25); }
+        .site-header__actions { width: 100%; flex-direction: column; align-items: stretch; gap: 10px; margin: 12px 0 0; padding-top: 16px; border-top: 1px solid rgba(148, 163, 184, 0.25); }
         .site-header__lang { width: 100%; }
         .site-header__lang-dropdown { position: static; margin-top: 8px; width: 100%; min-width: 0; }
         .site-header__panel { display: none !important; }
-        .site-header__mobile-tools { display: none; padding: 8px; border-radius: 16px; background: rgba(148, 163, 184, 0.08); }
+        .site-header__mobile-tools { display: none; padding: 8px; border-radius: 16px; background: rgba(148, 163, 184, 0.12); }
         .site-header__mobile-tools.is-open { display: block; }
+        /* Dark theme: text stays bright, panel bg is dark slate */
+        html.dark-theme .site-header__nav-link, [data-theme="dark"] .site-header__nav-link { color: #f1f5f9; background: rgba(148, 163, 184, 0.12); border-color: rgba(148, 163, 184, 0.22); }
+        html.dark-theme .site-header__nav-link:hover, [data-theme="dark"] .site-header__nav-link:hover, html.dark-theme .site-header__nav-link:focus-visible, [data-theme="dark"] .site-header__nav-link:focus-visible { color: #93c5fd; background: rgba(56, 189, 248, 0.2); border-color: rgba(125, 211, 252, 0.4); }
+        html.dark-theme .site-header__theme-toggle, [data-theme="dark"] .site-header__theme-toggle, html.dark-theme .site-header__lang-toggle, [data-theme="dark"] .site-header__lang-toggle { color: #f1f5f9; background: rgba(148, 163, 184, 0.12); }
     }
     @media (max-width: 520px) {
         .site-header__brand { font-size: 0.97rem; }
@@ -502,6 +513,7 @@ if (!function_exists('kbtRenderSiteHeader')) {
         <a href="<?php echo htmlspecialchars($pages['home'] ?? url(''), ENT_QUOTES, 'UTF-8'); ?>" class="site-header__brand">
             <img src="<?php echo htmlspecialchars(url('images/shared/logo.svg'), ENT_QUOTES, 'UTF-8'); ?>" alt="KeyboardTester logo" width="32" height="32" loading="eager" decoding="async" fetchpriority="high">
             <span>KeyboardTester<span class="site-header__brand-accent">.click</span></span>
+            <span class="site-header__oss-pill">Free Open Source</span>
         </a>
 
         <button class="site-header__menu-toggle" id="siteHeaderMenuToggle" type="button" aria-label="<?php echo htmlspecialchars($copy['aria']['menu'], ENT_QUOTES, 'UTF-8'); ?>" aria-expanded="false" aria-controls="siteHeaderNav">
@@ -510,17 +522,9 @@ if (!function_exists('kbtRenderSiteHeader')) {
 
         <nav class="site-header__nav" id="siteHeaderNav">
             <a class="site-header__nav-link" href="<?php echo htmlspecialchars($pages['home'] ?? url(''), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['home'], ENT_QUOTES, 'UTF-8'); ?></a>
-            <button class="site-header__nav-link" id="siteHeaderToolsToggle" type="button" aria-expanded="false" aria-controls="siteHeaderToolsPanel"><?php echo htmlspecialchars($copy['menu']['tools'], ENT_QUOTES, 'UTF-8'); ?></button>
+            <a class="site-header__nav-link" href="<?php echo htmlspecialchars(url('pages/all-tools.php'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['tools'], ENT_QUOTES, 'UTF-8'); ?></a>
 
-            <div class="site-header__mobile-tools" id="siteHeaderMobileTools" aria-label="<?php echo htmlspecialchars($copy['aria']['tools_panel'], ENT_QUOTES, 'UTF-8'); ?>">
-                <?php foreach ($config['headerSections'] as $section): ?>
-                    <?php foreach ($section['tool_ids'] as $toolId): ?>
-                        <?php if (!isset($resolvedTools[$toolId])) { continue; } ?>
-                        <a href="<?php echo htmlspecialchars($resolvedTools[$toolId]['href'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($resolvedTools[$toolId]['name'], ENT_QUOTES, 'UTF-8'); ?></a>
-                    <?php endforeach; ?>
-                <?php endforeach; ?>
-            </div>
-
+            <a class="site-header__nav-link" href="<?php echo htmlspecialchars($pages['blog'] ?? blogUrl(), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['blog'], ENT_QUOTES, 'UTF-8'); ?></a>
             <a class="site-header__nav-link" href="<?php echo htmlspecialchars($pages['privacy'] ?? url('privacy-policy.php'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['privacy'], ENT_QUOTES, 'UTF-8'); ?></a>
             <a class="site-header__nav-link" href="<?php echo htmlspecialchars($pages['about'] ?? url('about-us.php'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['about'], ENT_QUOTES, 'UTF-8'); ?></a>
 
@@ -528,7 +532,7 @@ if (!function_exists('kbtRenderSiteHeader')) {
                 <div class="site-header__lang" id="siteHeaderLang">
                     <button class="site-header__lang-toggle" id="siteHeaderLangToggle" type="button" aria-label="<?php echo htmlspecialchars($copy['aria']['language'], ENT_QUOTES, 'UTF-8'); ?>" aria-expanded="false" aria-controls="siteHeaderLangDropdown">
                         <?php if (!empty($currentLanguage['flag'])): ?>
-                            <img src="<?php echo htmlspecialchars(url($currentLanguage['flag']), ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($currentLanguage['name'] ?? $copy['language_code'], ENT_QUOTES, 'UTF-8'); ?>" loading="eager" width="18" height="18">
+                <img src="<?php echo htmlspecialchars(url($currentLanguage['flag']), ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($currentLanguage['name'] ?? $copy['language_code'], ENT_QUOTES, 'UTF-8'); ?>" loading="eager" width="18" height="18" decoding="async">
                         <?php else: ?>
                             <span>🌐</span>
                         <?php endif; ?>
@@ -539,12 +543,31 @@ if (!function_exists('kbtRenderSiteHeader')) {
                         // Detect the current tool so we can link directly to the
                         // equivalent tool page instead of the language home page.
                         $currentToolId = kbtDetectCurrentToolId($locale);
+
+                        // Detect the all-tools hub (now uses split URLs per locale
+                        // instead of ?lang=xx). Match both legacy and new paths.
+                        $currentPath = strtok($_SERVER['REQUEST_URI'] ?? '', '?');
+                        $isAllToolsPage = preg_match('~/pages/all-tools(?:-[a-z]{2})?\.php$~', $currentPath) === 1;
+                        $ALL_TOOLS_LOCALE_PATHS = [
+                            'en' => '/pages/all-tools.php',
+                            'es' => '/pages/all-tools-es.php',
+                            'fr' => '/pages/all-tools-fr.php',
+                            'de' => '/pages/all-tools-de.php',
+                            'ja' => '/pages/all-tools-ja.php',
+                            'ko' => '/pages/all-tools-ko.php',
+                            'pt' => '/pages/all-tools-pt.php',
+                            'ar' => '/pages/all-tools-ar.php',
+                            'ru' => '/pages/all-tools-ru.php',
+                        ];
                         ?>
                         <?php foreach (($keyboardLanguages ?? []) as $langKey => $langMeta): ?>
                         <?php
                             // Default: language home page
                             $switchUrl = $langMeta['url'];
-                            if ($currentToolId !== null) {
+                            if ($isAllToolsPage && isset($ALL_TOOLS_LOCALE_PATHS[$langKey])) {
+                                // Jump to the locale-specific all-tools file
+                                $switchUrl = $ALL_TOOLS_LOCALE_PATHS[$langKey];
+                            } elseif ($currentToolId !== null) {
                                 $langToolIndex = kbtGetSiteChromeToolLabelIndex($langKey);
                                 if (isset($langToolIndex[$currentToolId])) {
                                     // Use kbtBuildLangSwitchUrl — bypasses $pages so the
@@ -557,7 +580,7 @@ if (!function_exists('kbtRenderSiteHeader')) {
                             }
                         ?>
                             <a class="site-header__lang-option<?php echo $langKey === $locale ? ' is-active' : ''; ?>" href="<?php echo htmlspecialchars($switchUrl, ENT_QUOTES, 'UTF-8'); ?>">
-                                <img src="<?php echo htmlspecialchars(url($langMeta['flag']), ENT_QUOTES, 'UTF-8'); ?>" alt="" loading="lazy" width="18" height="18">
+                    <img src="<?php echo htmlspecialchars(url($langMeta['flag']), ENT_QUOTES, 'UTF-8'); ?>" alt="" loading="lazy" width="18" height="18" decoding="async">
                                 <span class="site-header__lang-meta">
                                     <span><?php echo htmlspecialchars($langMeta['name'], ENT_QUOTES, 'UTF-8'); ?></span>
                                     <span class="site-header__lang-native"><?php echo htmlspecialchars($langMeta['native'], ENT_QUOTES, 'UTF-8'); ?></span>
@@ -568,35 +591,11 @@ if (!function_exists('kbtRenderSiteHeader')) {
                 </div>
 
                 <button class="site-header__theme-toggle" id="siteHeaderThemeToggle" type="button" data-theme-toggle aria-label="<?php echo htmlspecialchars($copy['aria']['theme'], ENT_QUOTES, 'UTF-8'); ?>">🌙</button>
-                <a class="site-header__cta" href="<?php echo htmlspecialchars(($pages['home'] ?? url('')) . '#tools', ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['try_tools'], ENT_QUOTES, 'UTF-8'); ?></a>
+                <a class="site-header__cta" id="siteHeaderTryCta" href="<?php echo htmlspecialchars(($pages['home'] ?? url('')) . '#tools', ENT_QUOTES, 'UTF-8'); ?>" data-home-tools="<?php echo htmlspecialchars(($pages['home'] ?? url('')) . '#tools', ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['try_tools'], ENT_QUOTES, 'UTF-8'); ?></a>
             </div>
         </nav>
     </div>
 
-    <div class="site-header__panel" id="siteHeaderToolsPanel">
-        <div class="site-header__panel-inner" aria-label="<?php echo htmlspecialchars($copy['aria']['tools_panel'], ENT_QUOTES, 'UTF-8'); ?>">
-            <?php foreach ($config['headerSections'] as $section): ?>
-                <?php
-                $panelLinks = [];
-                foreach ($section['tool_ids'] as $toolId) {
-                    if (isset($resolvedTools[$toolId])) {
-                        $panelLinks[] = $resolvedTools[$toolId];
-                    }
-                }
-                if ($panelLinks === []) { continue; }
-                $title = $categoryLabels[$section['category']] ?? ucfirst($section['category']);
-                ?>
-                <div class="site-header__panel-card">
-                    <p class="site-header__panel-title"><span><?php echo $section['icon']; ?></span><span><?php echo htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); ?></span></p>
-                    <div class="site-header__panel-links">
-                        <?php foreach ($panelLinks as $panelLink): ?>
-                            <a href="<?php echo htmlspecialchars($panelLink['href'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($panelLink['name'], ENT_QUOTES, 'UTF-8'); ?></a>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
 </header>
 
 <script>
@@ -632,6 +631,7 @@ document.addEventListener('DOMContentLoaded', function () {
         menuToggle.classList.remove('is-active');
         menuToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+        if (langWrap) { langWrap.classList.remove('is-open'); }
     }
 
     syncThemeIcon();
@@ -702,6 +702,22 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    /* "Try Tools" CTA — scroll to in-page #tools if it exists, else navigate home */
+    var tryCta = document.getElementById('siteHeaderTryCta');
+    if (tryCta) {
+        tryCta.addEventListener('click', function (e) {
+            var toolsSection = document.getElementById('tools');
+            if (toolsSection) {
+                e.preventDefault();
+                closeDesktopTools();
+                closeMobileTools();
+                closeNav();
+                toolsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            /* else: let the default href (home#tools) navigate normally */
+        });
+    }
 });
 </script>
         <?php
@@ -756,7 +772,7 @@ if (!function_exists('kbtRenderSiteFooter')) {
         ?><style>
     .site-footer { --footer-bg: #0b1220; --footer-surface: rgba(15, 23, 42, 0.78); --footer-border: rgba(148, 163, 184, 0.18); --footer-accent: #38bdf8; --footer-text: #e2e8f0; --footer-muted: #94a3b8; margin-top: 90px; padding: 80px 20px 28px; color: var(--footer-text); background: radial-gradient(900px 320px at 10% 0%, rgba(56, 189, 248, 0.16), transparent 60%), radial-gradient(700px 280px at 90% 20%, rgba(14, 165, 233, 0.14), transparent 60%), var(--footer-bg); border-top: 1px solid var(--footer-border); }
     .site-footer, .site-footer * { box-sizing: border-box; }
-    .footer-container { max-width: 1200px; margin: 0 auto 36px; display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: stretch; }
+    .footer-container { max-width: 1200px; margin: 0 auto 36px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; align-items: stretch; }
     .footer-section { display: flex; flex-direction: column; height: 100%; padding: 22px; border-radius: 20px; background: var(--footer-surface); border: 1px solid var(--footer-border); box-shadow: 0 20px 44px rgba(2, 6, 23, 0.34); backdrop-filter: blur(12px); }
     .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
     .footer-logo h3 { margin: 0; color: var(--footer-accent); font-size: 1.45rem; font-weight: 700; }
@@ -790,6 +806,7 @@ if (!function_exists('kbtRenderSiteFooter')) {
     .social-link-icon--gitlab { color: #fc6d26; }
     .social-link-icon--youtube { color: #ff4d4f; }
     .social-link-icon--facebook { color: #60a5fa; }
+    .social-link-icon--instagram { color: #e1306c; }
     .newsletter { margin-top: auto; }
     .newsletter p { margin: 0 0 12px; color: var(--footer-muted); line-height: 1.6; }
     .newsletter-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: stretch; }
@@ -803,19 +820,42 @@ if (!function_exists('kbtRenderSiteFooter')) {
     .copyright, .tagline { margin: 0; color: var(--footer-muted); line-height: 1.7; }
     .copyright { margin-bottom: 6px; font-size: 0.9rem; }
     .copyright a { color: var(--footer-accent); text-decoration: none; font-weight: 700; }
+    .oss-badge { margin: 10px 0 0; }
+    .oss-badge a { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 999px; border: 1px solid rgba(34,197,94,0.35); background: rgba(34,197,94,0.08); color: #4ade80; font-size: 0.8rem; font-weight: 600; text-decoration: none; letter-spacing: 0.02em; transition: background 0.2s, border-color 0.2s; }
+    .oss-badge a:hover { background: rgba(34,197,94,0.16); border-color: rgba(34,197,94,0.6); }
     .back-to-top { position: fixed; right: 20px; bottom: 24px; width: 46px; height: 46px; border: none; border-radius: 999px; background: linear-gradient(135deg, #38bdf8, #0ea5e9); color: #0f172a; font-weight: 700; box-shadow: 0 12px 28px rgba(2, 6, 23, 0.26); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; z-index: 999; }
     .back-to-top.show { opacity: 1; pointer-events: auto; }
     .site-footer[dir="rtl"] { text-align: right; }
     .site-footer[dir="rtl"] .footer-heading::after { left: auto; right: 0; }
     .site-footer[dir="rtl"] .footer-links a:hover { transform: translateX(-4px); }
+    .footer-help-section { grid-column: span 2; }
+    .contact-section { grid-column: span 2; }
+    .footer-yt-section { grid-column: 1 / -1; }
+    .footer-yt-inner { display: flex; align-items: center; gap: 48px; }
+    .footer-yt-info { flex: 1; min-width: 0; }
+    .footer-yt-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 999px; background: rgba(255,77,79,0.12); border: 1px solid rgba(255,77,79,0.25); color: #ff6b6b; font-size: 0.8rem; font-weight: 700; margin-bottom: 14px; letter-spacing: 0.02em; }
+    .footer-yt-desc { color: var(--footer-muted); line-height: 1.75; margin: 0 0 22px; font-size: 0.95rem; max-width: 480px; }
+    .footer-yt-cta { display: inline-flex; align-items: center; gap: 8px; padding: 11px 24px; border-radius: 12px; background: linear-gradient(135deg, #ff4d4f, #c53030); color: #fff; font-weight: 700; text-decoration: none; font-size: 0.9rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .footer-yt-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(255,77,79,0.35); color: #fff; }
+    .footer-yt-video { flex-shrink: 0; display: flex; gap: 14px; }
+    .footer-yt-wrap { width: 185px; height: 329px; border-radius: 18px; overflow: hidden; background: #0f172a; position: relative; border: 1px solid rgba(148,163,184,0.12); box-shadow: 0 20px 44px rgba(2,6,23,0.5); cursor: pointer; }
+    .footer-yt-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .footer-yt-thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .footer-yt-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #fff; font-size: 0.82rem; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%); pointer-events: none; }
+    .footer-yt-play-btn { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,77,79,0.95); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0,0,0,0.45); transition: transform 0.18s ease, background 0.18s ease; }
+    .footer-yt-wrap:hover .footer-yt-play-btn { transform: scale(1.08); background: #ff4d4f; }
+    .footer-yt-wrap:focus-visible { outline: 3px solid #38bdf8; outline-offset: 3px; }
     @media (max-width: 1100px) {
         .footer-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .about-section { grid-column: 1 / -1; }
+        .footer-help-section { grid-column: auto; }
+        .contact-section { grid-column: auto; }
+        .footer-yt-section { grid-column: 1 / -1; }
     }
     @media (max-width: 768px) {
         .site-footer { margin-top: 64px; padding: 52px 16px 22px; }
         .footer-container { grid-template-columns: 1fr; }
-        .about-section { grid-column: auto; }
+        .about-section, .footer-help-section, .contact-section, .footer-yt-section { grid-column: auto; }
         .footer-section { padding: 20px; }
         .social-links { justify-content: center; }
         .footer-heading::after { left: 50%; transform: translateX(-50%); }
@@ -827,6 +867,19 @@ if (!function_exists('kbtRenderSiteFooter')) {
         .newsletter { margin-top: 16px; }
         .newsletter-form { grid-template-columns: 1fr; }
         .newsletter-form button { width: 100%; }
+        .footer-yt-inner { flex-direction: column; gap: 24px; align-items: stretch; }
+        .footer-yt-info { text-align: center; }
+        .footer-yt-desc { margin-left: auto; margin-right: auto; max-width: 100%; }
+        .footer-yt-video { width: 100%; gap: 12px; justify-content: center; flex-wrap: nowrap; }
+        .footer-yt-wrap { flex: 1 1 0; min-width: 0; max-width: 160px; width: auto; height: auto; aspect-ratio: 9 / 16; }
+    }
+    @media (max-width: 520px) {
+        .footer-yt-video { gap: 10px; }
+        .footer-yt-wrap:nth-child(3) { display: none; }
+        .footer-yt-wrap { max-width: 150px; }
+    }
+    @media (max-width: 380px) {
+        .footer-yt-wrap { max-width: 140px; }
     }
 </style>
 <footer class="site-footer" dir="<?php echo htmlspecialchars($direction, ENT_QUOTES, 'UTF-8'); ?>">
@@ -845,6 +898,7 @@ if (!function_exists('kbtRenderSiteFooter')) {
                 <a href="<?php echo htmlspecialchars($socialLinks['gitlab'], ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer"><?php echo kbtRenderSiteChromeMiniIcon('gitlab', 'social-link-icon'); ?><span>GitLab</span></a>
                 <a href="<?php echo htmlspecialchars($socialLinks['youtube'], ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer"><?php echo kbtRenderSiteChromeMiniIcon('youtube', 'social-link-icon'); ?><span>YouTube</span></a>
                 <a href="<?php echo htmlspecialchars($socialLinks['facebook'], ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer"><?php echo kbtRenderSiteChromeMiniIcon('facebook', 'social-link-icon'); ?><span>Facebook</span></a>
+                <a href="<?php echo htmlspecialchars($socialLinks['instagram'], ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer"><?php echo kbtRenderSiteChromeMiniIcon('instagram', 'social-link-icon'); ?><span>Instagram</span></a>
             </div>
         </section>
 
@@ -881,7 +935,44 @@ if (!function_exists('kbtRenderSiteFooter')) {
             </ul>
         </section>
 
-        <section class="footer-section">
+        <section class="footer-section footer-yt-section">
+            <div class="footer-yt-inner">
+                <div class="footer-yt-info">
+                    <div class="footer-yt-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.6 12 3.6 12 3.6s-7.54 0-9.38.48A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.4 12 20.4 12 20.4s7.54 0 9.38-.48a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>
+                        YouTube Shorts
+                    </div>
+                    <h4 class="footer-heading" style="margin-top:4px;">Watch KeyboardTester in Action</h4>
+                    <p class="footer-yt-desc">See our tools in action — keyboard tests, mouse clicks, screen checks, and more. Subscribe for new testing guides and tool tips.</p>
+                    <a href="https://www.youtube.com/@KeyboardTester-dot-click" class="footer-yt-cta" target="_blank" rel="noopener noreferrer">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.6 12 3.6 12 3.6s-7.54 0-9.38.48A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.4 12 20.4 12 20.4s7.54 0 9.38-.48a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>
+                        Subscribe to our Channel
+                    </a>
+                </div>
+                <div class="footer-yt-video">
+                    <?php
+                    $footerYtVideos = [
+                        ['id' => 'WuC30coavMw', 'title' => 'KeyboardTester YouTube Short'],
+                        ['id' => 'Vkv1aw4ukaA', 'title' => 'KeyboardTester YouTube Short 2'],
+                        ['id' => 'seta_6hkvYk', 'title' => 'KeyboardTester YouTube Short 3'],
+                    ];
+                    foreach ($footerYtVideos as $ytI => $yt):
+                        $ytId = $yt['id']; $ytTitle = $yt['title'];
+                    ?>
+                    <div class="footer-yt-wrap" data-yt-id="<?php echo htmlspecialchars($ytId, ENT_QUOTES, 'UTF-8'); ?>" data-yt-title="<?php echo htmlspecialchars($ytTitle, ENT_QUOTES, 'UTF-8'); ?>" role="button" tabindex="0" aria-label="Play <?php echo htmlspecialchars($ytTitle, ENT_QUOTES, 'UTF-8'); ?>">
+                        <img class="footer-yt-thumb" src="<?php echo htmlspecialchars(url('images/yt-thumbs/' . $ytId . '.jpg'), ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($ytTitle, ENT_QUOTES, 'UTF-8'); ?> thumbnail" loading="lazy" width="185" height="329" decoding="async">
+                        <div class="footer-yt-placeholder">
+                            <div class="footer-yt-play-btn" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-section footer-help-section">
             <h4 class="footer-heading"><?php echo htmlspecialchars($copy['footer']['help_resources'], ENT_QUOTES, 'UTF-8'); ?></h4>
             <ul class="footer-links"><?php kbtRenderSiteChromeLinkList($helpLinks); ?></ul>
         </section>
@@ -904,6 +995,7 @@ if (!function_exists('kbtRenderSiteFooter')) {
     <div class="footer-bottom">
         <p class="copyright">&copy; <?php echo htmlspecialchars((string) $siteYear, ENT_QUOTES, 'UTF-8'); ?> <a href="<?php echo htmlspecialchars($pages['home'] ?? url(''), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($siteName, ENT_QUOTES, 'UTF-8'); ?></a>. <?php echo htmlspecialchars($copy['footer']['rights'], ENT_QUOTES, 'UTF-8'); ?></p>
         <p class="tagline"><?php echo htmlspecialchars($copy['footer']['tagline'], ENT_QUOTES, 'UTF-8'); ?></p>
+        <p class="oss-badge"><a href="https://github.com/nasirazizawan009/keyboardtester-click" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Free &amp; Open Source</a></p>
     </div>
 </footer>
 
@@ -915,12 +1007,40 @@ document.addEventListener('DOMContentLoaded', function () {
     if (backToTop) {
         var onScroll = function () { backToTop.classList.toggle('show', window.scrollY > 320); };
         window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
+        // Defer initial visibility check to avoid forced reflow during DOMContentLoaded
+        requestAnimationFrame(onScroll);
         backToTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     }
 
     document.querySelectorAll('.newsletter-form[data-noop="true"]').forEach(function (form) {
         form.addEventListener('submit', function (event) { event.preventDefault(); });
+    });
+
+    // Footer YouTube shorts — click-to-play facade (saves ~700KB JS from autoload)
+    document.querySelectorAll('.footer-yt-wrap[data-yt-id]').forEach(function (wrap) {
+        function loadYt() {
+            if (wrap.dataset.loaded === '1') return;
+            wrap.dataset.loaded = '1';
+            var id = wrap.dataset.ytId;
+            var title = wrap.dataset.ytTitle || 'YouTube video';
+            var iframe = document.createElement('iframe');
+            iframe.src = 'https://www.youtube-nocookie.com/embed/' + id
+                + '?autoplay=1&mute=1&loop=1&playlist=' + id + '&rel=0&playsinline=1&controls=1';
+            iframe.title = title;
+            iframe.setAttribute('allow', 'autoplay; encrypted-media');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.loading = 'lazy';
+            wrap.appendChild(iframe);
+            var thumb = wrap.querySelector('.footer-yt-thumb');
+            var ph = wrap.querySelector('.footer-yt-placeholder');
+            if (thumb) thumb.style.display = 'none';
+            if (ph) ph.style.display = 'none';
+            wrap.style.cursor = 'default';
+        }
+        wrap.addEventListener('click', loadYt);
+        wrap.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadYt(); }
+        });
     });
 });
 </script>

@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Scan QR From Image Online | Decode QR From Screenshot or Photo',
-        'description' => 'Scan a QR code from an image online. Upload a screenshot, saved QR picture, or camera photo and decode it locally in your browser.',
+        'title' => 'Free Open Source Scan QR From Image Online | Decode QR From Screenshot or Photo',
+        'description' => 'Scan a QR code from an image online. Upload a screenshot, saved picture or camera photo and decode it locally in your browser — no upload to any external server.',
         'keywords' => 'scan qr from image, qr from screenshot, decode qr from photo, read qr code from image',
         'ogImage' => 'images/qr-reader/hero.png',
         'ogImageAlt' => 'Scan QR from image online using uploaded screenshots and photos'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'QR image decoding',
-        'title' => 'Scan QR From Image Online',
+        'title' => 'Free Open Source Scan QR From Image Online',
         'lede' => 'Upload a QR screenshot, saved image, or phone photo and decode it instantly in your browser. No camera access is required for this workflow.',
         'primaryHref' => '#scan-qr-image-tool',
         'primaryLabel' => 'Upload QR image',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'qr-reader',
     'seoContentInclude' => 'help/seo-content/scan-qr-from-image.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/qr-code-reader.php'
+    'helpInclude' => 'help/qr-code-reader.php',
+    'relatedBlog' => 'qr-code-reader-scan-decode-images.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

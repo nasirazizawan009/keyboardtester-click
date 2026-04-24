@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const reader = new FileReader();
     reader.onload = function (event) {
       currentImage = event.target.result;
-      preview.innerHTML = `<img src="${currentImage}" alt="OCR 미리보기">`;
+      preview.innerHTML = `<img src="${currentImage}" alt="OCR 미리보기" loading="lazy" decoding="async">`;
       runBtn.disabled = false;
       statusEl.textContent = '상태: 추출 준비 완료';
     };

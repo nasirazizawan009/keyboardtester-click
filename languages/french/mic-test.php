@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
 $pageTitle = 'Test de Microphone - Verifiez Votre Micro Gratuitement';
-$pageDescription = 'Testez votre microphone en ligne. Verifiez l\'entree audio, les niveaux de volume et la qualite d\'enregistrement.';
+$pageDescription = 'Testeur de microphone en ligne : vérifiez l\'entrée du micro, les niveaux et le pic de volume avant Zoom, Teams ou Discord. Dans le navigateur, sans enregistrement.';
 $pageKeywords = 'test microphone, test mic, verifier audio, tester micro, test de voix';
 ?>
 <!DOCTYPE html>

@@ -5,7 +5,7 @@
       <h2>What Is a Mouse DPI Test?</h2>
       <p>A mouse DPI test measures how sensitive your mouse actually is compared to its settings. DPI (Dots Per Inch) determines how far your cursor moves on screen relative to physical mouse movement. Our free online DPI tester helps you verify your mouse's true sensitivity.</p>
       <p>The test works by tracking pixel movement as you drag your mouse a measured distance. You input your expected DPI, move your mouse exactly one inch (or another distance), and the tool calculates your actual DPI based on cursor travel.</p>
-      <p>This matters because not all mice report DPI accurately. Budget mice may claim 1600 DPI but actually perform at 1400 DPI. Gaming mice sometimes have sensor inconsistencies. Knowing your real DPI helps you configure games and applications correctly. For complete mouse diagnostics, also use our <a href="mouse-test.php">mouse button tester</a> to verify all inputs work.</p>
+      <p>This matters because not all mice report DPI accurately. Budget mice may claim 1600 DPI but actually perform at 1400 DPI. Gaming mice sometimes have sensor inconsistencies. Knowing your real DPI helps you configure games and applications correctly. For complete mouse diagnostics, also use our <a href="mouse-test.php">mouse button tester</a> to verify all inputs work. Once you know your real DPI, confirm it actually works for you with the <a href="mouse-accuracy-test.php">mouse accuracy test</a> — the only way to know whether your DPI + sensitivity combination is improving or hurting your aim.</p>
     </article>
 
     <article class="seo-article">

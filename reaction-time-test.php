@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Reaction Time Test — Check Your Reflexes Online Free | KeyboardTester.click';
-$pageDescription = 'Free reaction time test online. Click when the color changes. Measure your reflex speed in milliseconds. Useful for gaming performance. No download needed.';
-$pageKeywords = 'reaction time test, reflex test online, reaction speed test, gaming reaction time';
+$pageTitle = 'Free Open Source Reaction Time Test — Check Your Reflexes Online | KeyboardTester.click';
+$pageDescription = 'Free open source reaction time test online. Click when the color changes and measure your reflex speed in milliseconds. Useful for gaming performance. No download needed.';
+$pageKeywords = 'reaction time test, open source reaction test, reflex test online, reaction speed test, gaming reaction time';
 $pageOgImage = 'images/mouse/hero.png';
 ?>
 <!DOCTYPE html>
@@ -202,7 +202,7 @@ $pageOgImage = 'images/mouse/hero.png';
       <div class="container landing-hero-grid">
         <div class="hero-copy">
           <p class="hero-kicker">Reflex Speed</p>
-          <h1 class="hero-title">Reaction Time Test</h1>
+          <h1 class="hero-title">Free Open Source Reaction Time Test</h1>
           <p class="hero-lede">Click the moment the box turns green. Measure your reflex speed in milliseconds — free and instant, no download needed.</p>
           <div class="hero-actions">
             <a class="landing-btn landing-btn-primary" href="#reaction-tool">Start test</a>
@@ -230,7 +230,7 @@ $pageOgImage = 'images/mouse/hero.png';
         </div>
         <div class="hero-visual">
           <div class="hero-shot">
-            <img src="<?php echo url('images/mouse/hero.png'); ?>" alt="Reaction time test — measure your reflex speed in milliseconds online" loading="eager">
+            <img src="<?php echo url('images/mouse/hero.png'); ?>" alt="Reaction time test — measure your reflex speed in milliseconds online" loading="eager" width="640" height="426" decoding="async" fetchpriority="high">
           </div>
           <div class="hero-stack">
             <div class="mini-card">
@@ -361,7 +361,7 @@ $pageOgImage = 'images/mouse/hero.png';
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse/step-1.png'); ?>" alt="Reaction time test step 1 - click the grey box to begin" loading="lazy">
+              <img src="<?php echo url('images/mouse/step-1.png'); ?>" alt="Reaction time test step 1 - click the grey box to begin" loading="lazy" width="640" height="426" decoding="async">
             </div>
             <div class="step-number">01</div>
             <h3>Click to start</h3>
@@ -369,7 +369,7 @@ $pageOgImage = 'images/mouse/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse/step-2.png'); ?>" alt="Reaction time test step 2 - wait for the green signal" loading="lazy">
+              <img src="<?php echo url('images/mouse/step-2.png'); ?>" alt="Reaction time test step 2 - wait for the green signal" loading="lazy" width="640" height="348" decoding="async">
             </div>
             <div class="step-number">02</div>
             <h3>Wait for green</h3>
@@ -377,7 +377,7 @@ $pageOgImage = 'images/mouse/hero.png';
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/mouse/step-3.png'); ?>" alt="Reaction time test step 3 - review your millisecond result" loading="lazy">
+              <img src="<?php echo url('images/mouse/step-3.png'); ?>" alt="Reaction time test step 3 - review your millisecond result" loading="lazy" width="640" height="439" decoding="async">
             </div>
             <div class="step-number">03</div>
             <h3>See your time</h3>

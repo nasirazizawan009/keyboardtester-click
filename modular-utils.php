@@ -193,6 +193,12 @@ function outputSeoPageEnd() {
  * Usage: <?php seoImage('path/to/image.jpg', 'Descriptive alt text', ['class' => 'css-class']); ?>
  */
 function seoImage($src, $alt, $attributes = []) {
+    if (!isset($attributes['loading'])) {
+        $attributes['loading'] = 'lazy';
+    }
+    if (!isset($attributes['decoding'])) {
+        $attributes['decoding'] = 'async';
+    }
     $attr_string = '';
     foreach ($attributes as $key => $value) {
         $attr_string .= " {$key}=\"" . htmlspecialchars($value) . "\"";

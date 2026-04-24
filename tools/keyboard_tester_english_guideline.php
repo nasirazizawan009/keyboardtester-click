@@ -40,7 +40,7 @@ if (!isset($baseUrl)) {
         
         <!-- Testing in Action Image -->
         <div class="guide-image">
-            <img src="<?php echo url('images/keyboard/testing-in-action2.png'); ?>" alt="Real-time keyboard testing demonstration showing key presses and latency measurements" loading="lazy">
+            <img src="<?php echo url('images/keyboard/testing-in-action2.png'); ?>" alt="Real-time keyboard testing demonstration showing key presses and latency measurements" loading="lazy" width="1000" height="600" decoding="async">
             <div class="image-label">Keyboard testing in action</div>
         </div>
     </section>
@@ -110,7 +110,7 @@ if (!isset($baseUrl)) {
         
         <!-- Ghost Click Detection Image -->
         <div class="guide-image">
-            <img src="<?php echo url('images/keyboard/testing-in-action2.png'); ?>" alt="Ghost click detection interface showing automatic detection of phantom key presses and stuck keys" loading="lazy">
+            <img src="<?php echo url('images/keyboard/testing-in-action2.png'); ?>" alt="Ghost click detection interface showing automatic detection of phantom key presses and stuck keys" loading="lazy" width="1000" height="600" decoding="async">
             <div class="image-label">Ghosting detection view</div>
         </div>
 
@@ -209,7 +209,7 @@ if (!isset($baseUrl)) {
 
         <!-- Advanced Features Image -->
         <div class="guide-image">
-            <img src="<?php echo url('images/keyboard/tools-ecosystem.png'); ?>" alt="Advanced keyboard testing features including statistics, heatmap, sound, and comprehensive diagnostics" loading="lazy">
+            <img src="<?php echo url('images/keyboard/tools-ecosystem.png'); ?>" alt="Advanced keyboard testing features including statistics, heatmap, sound, and comprehensive diagnostics" loading="lazy" width="1000" height="700" decoding="async">
             <div class="image-label">Advanced diagnostics overview</div>
         </div>
         
@@ -335,7 +335,7 @@ if (!isset($baseUrl)) {
         
         <!-- FAQ Helper Image -->
         <div class="guide-image">
-            <img src="<?php echo url('images/keyboard/faq-helper.png'); ?>" alt="Helpful FAQ section with common keyboard testing questions and expert answers" loading="lazy">
+            <img src="<?php echo url('images/keyboard/faq-helper.png'); ?>" alt="Helpful FAQ section with common keyboard testing questions and expert answers" loading="lazy" width="700" height="600" decoding="async">
             <div class="image-label">FAQ guidance</div>
         </div>
         
@@ -402,7 +402,7 @@ if (!isset($baseUrl)) {
         
         <!-- Troubleshooting Image -->
         <div class="guide-image">
-            <img src="<?php echo url('images/keyboard/maintenance-tips.png'); ?>" alt="Step-by-step keyboard troubleshooting flowchart for common issues" loading="lazy">
+            <img src="<?php echo url('images/keyboard/maintenance-tips.png'); ?>" alt="Step-by-step keyboard troubleshooting flowchart for common issues" loading="lazy" width="900" height="600" decoding="async">
         </div>
 
         <h3>Common Keyboard Problems & Solutions:</h3>
@@ -469,7 +469,7 @@ if (!isset($baseUrl)) {
         
         <!-- Tools Ecosystem Image -->
         <div class="guide-image">
-            <img src="<?php echo url('images/keyboard/tools-ecosystem.png'); ?>" alt="Complete ecosystem of free online testing tools for keyboard, mouse, screen, microphone, webcam, and audio" loading="lazy">
+            <img src="<?php echo url('images/keyboard/tools-ecosystem.png'); ?>" alt="Complete ecosystem of free online testing tools for keyboard, mouse, screen, microphone, webcam, and audio" loading="lazy" width="1000" height="700" decoding="async">
             <div class="image-label">Full testing toolkit</div>
         </div>
         
@@ -532,7 +532,7 @@ if (!isset($baseUrl)) {
         
         <!-- Privacy Security Image -->
         <div class="guide-image">
-            <img src="<?php echo url('images/keyboard/privacy-security.png'); ?>" alt="Privacy shield with lock icon representing 100% browser-based security and zero data collection" loading="lazy">
+            <img src="<?php echo url('images/keyboard/privacy-security.png'); ?>" alt="Privacy shield with lock icon representing 100% browser-based security and zero data collection" loading="lazy" width="800" height="600" decoding="async">
             <div class="image-label">Privacy and security</div>
         </div>
         

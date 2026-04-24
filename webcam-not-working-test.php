@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Webcam Not Working? Run This Online Camera Test',
-        'description' => 'If your webcam is not working, run this browser-based camera test to check permission, device detection, live preview, and basic webcam status.',
+        'title' => 'Free Open Source Webcam Not Working? Run This Online Camera Test',
+        'description' => 'If your webcam is not working, run this browser-based camera test to check permission, device detection, live preview and resolution. Diagnose issues in seconds.',
         'keywords' => 'webcam not working test, camera not working online test, webcam troubleshooting, test webcam not working',
         'ogImage' => 'images/webcam-test/hero.png',
         'ogImageAlt' => 'Webcam not working troubleshooting page with live browser camera test'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Camera troubleshooting',
-        'title' => 'Webcam Not Working? Run This Online Test',
+        'title' => 'Free Open Source Webcam Not Working? Run This Online Test',
         'lede' => 'If your webcam is blank, blocked, or missing in a call app, use the live browser test below to check camera access, device detection, and preview output.',
         'primaryHref' => '#webcam-not-working-tool',
         'primaryLabel' => 'Start webcam check',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'webcam',
     'seoContentInclude' => 'help/seo-content/webcam-not-working-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/webcam-tester.php'
+    'helpInclude' => 'help/webcam-tester.php',
+    'relatedBlog' => 'webcam-test-check-camera-video-calls.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

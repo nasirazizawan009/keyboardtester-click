@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
 $pageTitle = 'Testeur de Souris - Test des Clics et du Defilement Gratuit';
-$pageDescription = 'Testez tous les boutons de votre souris, la molette de defilement et le mouvement du curseur. Detectez les problemes de votre souris instantanement.';
+$pageDescription = 'Testeur de souris en ligne gratuit : vérifie les clics gauche, droit, du milieu et la molette de défilement. Fonctionne avec toute souris USB ou sans fil, sans installation.';
 $pageKeywords = 'testeur souris, test mouse, test clics, test defilement, verifier boutons souris';
 ?>
 <!DOCTYPE html>

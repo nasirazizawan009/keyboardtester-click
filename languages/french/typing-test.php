@@ -6,7 +6,7 @@ include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
 $pageTitle = 'Test de Vitesse de Frappe - Mesurez MPM et Precision';
-$pageDescription = 'Mesurez votre vitesse de frappe en mots par minute (MPM) et precision. Ameliorez vos competences en dactylographie.';
+$pageDescription = 'Test de vitesse de frappe gratuit : mesurez vos MPM (mots par minute), précision et régularité lors de sessions chronométrées. Sans inscription, dans le navigateur.';
 $pageKeywords = 'test frappe, MPM, vitesse dactylographie, test clavier, mots par minute';
 ?>
 <!DOCTYPE html>

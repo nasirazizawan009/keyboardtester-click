@@ -1,13 +1,41 @@
-# KeyboardTester.click
+# KeyboardTester.click — Free Online Hardware Testing Tools
 
-**The most comprehensive free online hardware testing platform.** Test your keyboard, mouse, screen, microphone, webcam, headphones, and more -- entirely in your browser, no downloads required. Available in 9 languages with 200+ pages of tools and resources.
+> **Test your keyboard, mouse, monitor, microphone, webcam, and gaming peripherals — 100% in the browser, no install, no signup.** A free, open-source suite of **70+ diagnostic tools** for keyboards, mice, displays, audio devices, cameras, and gaming hardware, available in **9 languages**. Detect dead pixels, measure click speed, check mouse DPI, test keyboard ghosting, calibrate monitors, and more — all privacy-first and running entirely on your device.
+
+**Live site:** 🔗 **[https://keyboardtester.click](https://keyboardtester.click)**
 
 [![Live Site](https://img.shields.io/badge/Live_Site-keyboardtester.click-1abc9c?style=for-the-badge)](https://keyboardtester.click)
 [![Languages](https://img.shields.io/badge/Languages-9-3498db?style=for-the-badge)](#-multilingual-support--9-languages)
-[![Tools](https://img.shields.io/badge/Tools-25+-e74c3c?style=for-the-badge)](#-core-tools)
-[![Intent Pages](https://img.shields.io/badge/Intent_Pages-15+-9b59b6?style=for-the-badge)](#-specialized-test-pages)
+[![Tools](https://img.shields.io/badge/Tools-70+-e74c3c?style=for-the-badge)](#-core-tools)
+[![Intent Pages](https://img.shields.io/badge/Intent_Pages-20+-9b59b6?style=for-the-badge)](#-specialized-test-pages)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge)](CONTRIBUTING.md)
+
+## What makes this stack different
+
+- ✅ **Browser-first, zero install** — every test runs on-device via Web APIs (Keyboard, Pointer, Gamepad, WebAudio, MediaDevices, DeviceMotion, DeviceOrientation, Vibration). No binaries, no telemetry.
+- 🌍 **9 languages** — English, Spanish, French, German, Portuguese, Arabic (RTL), Russian, Japanese, Korean. Full hreflang cluster for international SEO.
+- 🔒 **Privacy-first** — No accounts, no uploads. Mic/camera feeds stay local. Chat-log free AI assistant. GDPR + AdSense compliant.
+- ⚡ **Performance-tuned** — Async font loading with metric overrides, containment-based CLS prevention, debounced reflow, scoped transitions. Typical LCP < 1.8s.
+- 🧩 **Modular architecture** — Tool-list-data drives sidebar, all-tools grid, desktop-app manifest from a single source of truth.
+- 📊 **SEO complete** — Organization + WebApplication + BreadcrumbList + FAQPage schema, IndexNow submission, sitemap auto-generation, llms.txt for AI crawlers.
+
+## Quick-start: 10 most-used tools
+
+| Tool | What it does | Try it |
+|------|-------------|--------|
+| ⌨️ **Keyboard Tester** | Test every key, detect ghosting, N-key rollover | [keyboardtester.click](https://keyboardtester.click/) |
+| 🖱️ **Mouse Tester** | Check left/right/middle click, scroll wheel | [mouse-test.php](https://keyboardtester.click/mouse-test.php) |
+| ⏱️ **Click Speed Test (CPS)** | Measure clicks per second for gaming | [mouse_speed_tester.php](https://keyboardtester.click/mouse_speed_tester.php) |
+| 🎯 **Mouse DPI Calculator** | Compute eDPI + cm/360 for CS2, Valorant, Apex | [mouse-dpi-calculator.php](https://keyboardtester.click/mouse-dpi-calculator.php) |
+| 🖥️ **Dead Pixel Test** | Fullscreen solid colors for monitors/phones | [dead-pixel-test.php](https://keyboardtester.click/dead-pixel-test.php) |
+| 🎙️ **Microphone Test** | Live mic level meter, peak tracking | [mic-tester.php](https://keyboardtester.click/mic-tester.php) |
+| 🎧 **Headphone Test** | Left/right channel stereo verification | [headphone_speaker_tester_index.php](https://keyboardtester.click/headphone_speaker_tester_index.php) |
+| 📷 **Webcam Test** | Preview, resolution detection, snapshot | [webcamtesterindex.php](https://keyboardtester.click/webcamtesterindex.php) |
+| ✍️ **Typing Speed Test** | WPM + accuracy in timed sessions | [keyboard_typing_test.php](https://keyboardtester.click/keyboard_typing_test.php) |
+| 🤖 **AI Hardware Assistant** | Chat helper that picks the right test (8 langs) | [ai-assistant.php](https://keyboardtester.click/ai-assistant.php) |
+
+**[→ Browse all 70+ tools](https://keyboardtester.click/pages/all-tools.php)**
 
 ---
 
@@ -590,6 +618,46 @@ This project is open source under the **MIT License** — see [LICENSE](LICENSE)
 
 ---
 
+## Frequently Asked Questions (FAQ)
+
+**Is KeyboardTester.click really free?**
+Yes. Every tool is 100% free with no signup, no paywall, and no trial. MIT-licensed source code, MIT-licensed tools.
+
+**Does it require installation or a browser extension?**
+No. Every diagnostic runs in the browser using standard Web APIs. Works on Chrome, Firefox, Edge, Safari, and Brave — desktop and mobile.
+
+**Can I test my keyboard for ghosting or N-key rollover?**
+Yes — the [Keyboard Tester](https://keyboardtester.click/) highlights each key as you press it, detects rollover limits, and logs simultaneous key presses. See also the dedicated [keyboard-ghosting test](https://keyboardtester.click/keyboard-ghosting-test.php) and [N-key rollover test](https://keyboardtester.click/n-key-rollover-test.php).
+
+**How do I test mouse DPI without installing software?**
+Use the [Mouse DPI Tester](https://keyboardtester.click/mouse_sensitivity_DPI_tester.php) — drag over a known physical distance and the browser computes your effective DPI. For gaming-sensitivity conversions between titles, use the [eDPI Calculator](https://keyboardtester.click/edpi-calculator.php).
+
+**Can this detect dead pixels on my phone or laptop?**
+Yes. The [Dead Pixel Test](https://keyboardtester.click/dead-pixel-test.php) cycles full-screen solid colors (red/green/blue/white/black) to reveal dead, stuck, or hot pixels on any LCD, OLED, or IPS display.
+
+**Does the mic test record my voice?**
+No. The [Microphone Tester](https://keyboardtester.click/mic-tester.php) only displays a live input-level meter. Audio never leaves your device and is never recorded or uploaded.
+
+**What languages are supported?**
+English, Spanish, French, German, Portuguese, Arabic (right-to-left), Russian, Japanese, and Korean. Each language has its own localized URL cluster with proper `hreflang` tags.
+
+**Is the source code open?**
+Yes — MIT licensed. Clone the repo, run it locally with XAMPP/MAMP, or deploy to any PHP-capable host. Pull requests welcome.
+
+**Is there an AI assistant?**
+Yes — the [AI Assistant](https://keyboardtester.click/ai-assistant.php) is a multilingual chat helper that picks the right test for your symptom and explains results. Free, no account, rate-limited to 12 messages/minute.
+
+**Can I embed or integrate these tools?**
+The MIT license lets you self-host or fork. For embedding within another site, fork the repo and customize the tool templates under `/tools/`.
+
+---
+
+## Keywords (for search discovery)
+
+`keyboard tester online` · `free keyboard test` · `mouse tester` · `click speed test` · `CPS test` · `mouse DPI calculator` · `dead pixel test` · `stuck pixel checker` · `monitor gamma test` · `screen tester online` · `webcam test` · `microphone test online` · `headphone stereo test` · `typing speed test` · `WPM test` · `reaction time test` · `gamepad tester` · `input latency checker` · `ghost click detector` · `keyboard ghosting test` · `N-key rollover test` · `polling rate test` · `mouse acceleration test` · `mouse drag test` · `eDPI calculator` · `FoV calculator` · `crosshair generator` · `QR code generator` · `OCR tool online` · `password generator` · `AI hardware assistant` · `browser based diagnostics`
+
+---
+
 ## Contact & Links
 
 | | |
@@ -607,5 +675,5 @@ This project is open source under the **MIT License** — see [LICENSE](LICENSE)
 <p align="center">
   <b>Free online hardware testing tools for everyone</b><br>
   <a href="https://keyboardtester.click">keyboardtester.click</a><br><br>
-  <i>25+ tools | 9 languages | 270+ pages | Zero downloads required</i>
+  <i>70+ tools | 9 languages | 670+ pages | Zero downloads required</i>
 </p>

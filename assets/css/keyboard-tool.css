@@ -699,9 +699,7 @@
     }
 
     .key-count {
-        font-size: 7px;
-        bottom: 1px;
-        right: 2px;
+        display: none; /* 7px unreadable on small screens; hidden to avoid clutter */
     }
 
     .key.space { width: 130px; }

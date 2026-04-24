@@ -65,11 +65,14 @@
             });
         }
 
-        // Update theme toggle button icon
-        const buttons = document.querySelectorAll('.theme-toggle, #themeToggle, [data-theme-toggle]');
-        buttons.forEach(btn => {
-            btn.textContent = isDark ? '☀️' : '🌙';
-            log('Updated button icon to:', btn.textContent);
+        // Update theme toggle button icon — deferred to avoid forced style recalc after classList writes
+        const themeIcon = isDark ? '☀️' : '🌙';
+        requestAnimationFrame(function() {
+            const buttons = document.querySelectorAll('.theme-toggle, #themeToggle, [data-theme-toggle]');
+            buttons.forEach(btn => {
+                btn.textContent = themeIcon;
+                log('Updated button icon to:', btn.textContent);
+            });
         });
 
         // Dispatch event for other scripts

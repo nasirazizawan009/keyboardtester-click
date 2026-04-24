@@ -7,7 +7,7 @@ $breadcrumbs = [
 ];
 
 $pageTitle = 'Audio and Video Testing Tools';
-$pageDescription = 'Check screens, webcams, microphones, and speakers with fast online diagnostics.';
+$pageDescription = 'Audio and video diagnostics: test screens, webcams, microphones, speakers, and headphones with fast browser-based checks. No install, no signup, privacy-first.';
 $pageKeywords = 'audio tools, video tools, screen test, webcam test, mic test, speaker test';
 
 $tools = [

@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Photo to Text Online | Extract Text From Photos',
-        'description' => 'Convert a photo to text online with browser-based OCR. Upload phone photos, receipts, labels, and printed documents to extract editable text.',
+        'title' => 'Free Open Source Photo to Text Online | Extract Text From Photos',
+        'description' => 'Convert a photo to text online with browser-based OCR. Upload phone photos, receipts, labels and printed documents — text extraction happens locally, no uploads.',
         'keywords' => 'photo to text, text from photo, OCR photo to text, extract text from photo',
         'ogImage' => 'images/ocr-tool/hero.png',
         'ogImageAlt' => 'Photo to text OCR tool for phone photos and document images'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Photo OCR',
-        'title' => 'Photo to Text Online',
+        'title' => 'Free Open Source Photo to Text Online',
         'lede' => 'Upload a phone photo, receipt, sign, label, or printed page and extract the visible text directly in your browser with OCR.',
         'primaryHref' => '#photo-to-text-tool',
         'primaryLabel' => 'Upload photo',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'ocr',
     'seoContentInclude' => 'help/seo-content/photo-to-text.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/ocr-tool.php'
+    'helpInclude' => 'help/ocr-tool.php',
+    'relatedBlog' => 'free-ocr-tool-extract-text-from-images.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

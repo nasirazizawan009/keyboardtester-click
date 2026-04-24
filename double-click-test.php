@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Double Click Test Online | Check Mouse Switch Bounce',
-        'description' => 'Run a double click test online to inspect suspicious rapid clicks, switch bounce, and possible ghost-click behavior in your mouse.',
+        'title' => 'Free Open Source Double Click Test Online | Check Mouse Switch Bounce',
+        'description' => 'Run a double click test online to inspect suspicious rapid clicks, switch bounce and possible ghost-click behaviour. Great for diagnosing worn gaming mouse switches.',
         'keywords' => 'double click test, mouse double click test, switch bounce test, ghost click test',
         'ogImage' => 'images/ghost-click/hero.png',
         'ogImageAlt' => 'Double click test page for checking mouse switch bounce'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Mouse switch diagnostics',
-        'title' => 'Double Click Test Online',
+        'title' => 'Free Open Source Double Click Test Online',
         'lede' => 'Use the live click interval detector below to check whether single presses create suspicious rapid double-click behavior in the browser.',
         'primaryHref' => '#double-click-tool',
         'primaryLabel' => 'Start double click test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'ghost-click',
     'seoContentInclude' => 'help/seo-content/double-click-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/ghost-click-detector.php'
+    'helpInclude' => 'help/ghost-click-detector.php',
+    'relatedBlog' => 'double-click-test-check-mouse-switch-bounce.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

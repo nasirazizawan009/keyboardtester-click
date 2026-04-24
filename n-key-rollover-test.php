@@ -1,8 +1,8 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'N-Key Rollover Test Online | Check NKRO and 6KRO',
-        'description' => 'N-key rollover test online. Check keyboard NKRO and 6KRO limits. Detect ghosting in multi-key combinations. Free, browser-based, instant results.',
+        'title' => 'Free Open Source N-Key Rollover Test Online | Check NKRO and 6KRO',
+        'description' => 'N-key rollover test online. Check your keyboard NKRO and 6KRO limits by holding multiple keys simultaneously. Detect ghosting in combos. Free, browser-based, no download needed.',
         'keywords' => 'n key rollover test, nkro test, 6 key rollover test, simultaneous key press test',
         'ogImage' => 'images/keyboard/hero-keyboard-test-1400.png',
         'ogImageAlt' => 'N-key rollover test on an online keyboard tester'
@@ -14,7 +14,7 @@ $intentPage = [
     ],
     'hero' => [
         'kicker' => 'Keyboard rollover diagnostics',
-        'title' => 'N-Key Rollover Test Online',
+        'title' => 'Free Open Source N-Key Rollover Test Online',
         'lede' => 'Measure how many simultaneous key presses your keyboard can handle. Check whether your board behaves like 2KRO, 6KRO, or full NKRO using the live tester below.',
         'primaryHref' => '#rollover-tool',
         'primaryLabel' => 'Start NKRO test',
@@ -72,7 +72,8 @@ $intentPage = [
     'currentTool' => 'keyboard',
     'seoContentInclude' => 'help/seo-content/n-key-rollover-test.php',
     'showToolsList' => true,
-    'helpInclude' => 'help/keyboard-tester.php'
+    'helpInclude' => 'help/keyboard-tester.php',
+    'relatedBlog' => 'what-is-keyboard-ghosting-anti-ghosting-fix-guide.php'
 ];
 
 include __DIR__ . '/includes/render-tool-intent-page.php';

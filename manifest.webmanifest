@@ -1,0 +1,50 @@
+{
+    "name": "KeyboardTester.click — Hardware Testing Suite",
+    "short_name": "KeyboardTester",
+    "description": "Free online testing tools for keyboards, mice, screens, audio, camera, QR, OCR and more. Works offline after first load.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+    "orientation": "any",
+    "lang": "en",
+    "dir": "ltr",
+    "background_color": "#0b1628",
+    "theme_color": "#0ea5e9",
+    "categories": ["utilities", "productivity", "developer"],
+    "icons": [
+        { "src": "/navigation.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+        { "src": "/navigation.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    ],
+    "shortcuts": [
+        {
+            "name": "Keyboard Tester",
+            "short_name": "Keyboard",
+            "description": "Test every key on your keyboard",
+            "url": "/",
+            "icons": [{ "src": "/navigation.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "Mouse Tester",
+            "short_name": "Mouse",
+            "description": "Test all mouse buttons and scroll",
+            "url": "/mouse-test.php",
+            "icons": [{ "src": "/navigation.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "All Tools",
+            "short_name": "Tools",
+            "description": "Browse every tool on the site",
+            "url": "/pages/all-tools.php",
+            "icons": [{ "src": "/navigation.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "Download Desktop App",
+            "short_name": "Desktop",
+            "description": "Get the installable desktop version",
+            "url": "/pages/download.php",
+            "icons": [{ "src": "/navigation.png", "sizes": "192x192" }]
+        }
+    ],
+    "prefer_related_applications": false
+}
