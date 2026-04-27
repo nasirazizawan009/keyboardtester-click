@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-28 (Claude Code)
+**Last updated:** 2026-04-28 (Claude Code, post-Codex audit fixes)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -8,9 +8,13 @@ This file is the **single source of truth** when handing off work between AI age
 
 ## 🧭 Current state of the project
 
-**Site version:** v17.2.40 (April 25, 2026)
+**Site version:** v17.2.47 (April 28, 2026 — last commit `79de12c` + Codex audit cleanup)
 **Roadmap:** 50/50 tools built, no pending tools
-**Last major work:** Pro Diagnostics panel deployed to all 9 language keyboard testers (Apr 28)
+**Last major work:** Pro Diagnostics panel deployed to all 9 language keyboard testers; Codex audit cleanup (4 control-char fixes + AGENTS.md sync)
+
+**Note on commit prefixes:** This file previously suggested `[claude]` / `[codex]` prefixes. The first joint commit (`79de12c`) predates the convention. Going forward, both agents should add the prefix.
+
+**Note on DEV.to API key:** `DEVTO_API_KEY` is now in `.env` (gitignored). Verified no token value in commit history. Token can be rotated at https://dev.to/settings/extensions if ever exposed.
 
 ## 👥 Active agents
 

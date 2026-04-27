@@ -1,0 +1,235 @@
+{
+  "best-mechanical-keyboards-for-gaming-2026.php": [
+    {
+      "tool": "auditory-reaction-time-test",
+      "anchor": "Auditory Reaction Time Test",
+      "context": "measure your reaction speed to a sound cue"
+    },
+    {
+      "tool": "frame-skipping-test",
+      "anchor": "Frame Skipping Test",
+      "context": "check for dropped frames at high refresh rates"
+    }
+  ],
+  "best-recent-gaming-keyboard-launches-2026.php": [
+    {
+      "tool": "auditory-reaction-time-test",
+      "anchor": "Auditory Reaction Time Test",
+      "context": "measure reflex with a sound cue"
+    },
+    {
+      "tool": "frame-skipping-test",
+      "anchor": "Frame Skipping Test",
+      "context": "verify your monitor handles high-Hz gaming"
+    }
+  ],
+  "best-recent-wireless-keyboard-launches-2026.php": [
+    {
+      "tool": "auditory-reaction-time-test",
+      "anchor": "Auditory Reaction Time Test",
+      "context": "reaction-speed benchmark"
+    }
+  ],
+  "best-recent-gaming-mouse-launches-2026.php": [
+    {
+      "tool": "frame-skipping-test",
+      "anchor": "Frame Skipping Test",
+      "context": "pair with high-poll-rate mice on a high-Hz monitor"
+    },
+    {
+      "tool": "ttk-calculator",
+      "anchor": "TTK Calculator",
+      "context": "calculate time-to-kill for the games where mouse precision matters"
+    }
+  ],
+  "best-recent-gaming-headphone-launches-2026.php": [
+    {
+      "tool": "hearing-age-test",
+      "anchor": "Hearing Age Test",
+      "context": "check what frequencies your ears can still pick up"
+    },
+    {
+      "tool": "pitch-detector",
+      "anchor": "Pitch Detector",
+      "context": "verify your headphone reproduces tone accurately"
+    },
+    {
+      "tool": "surround-sound-test",
+      "anchor": "Surround Sound Test",
+      "context": "walk channels for 5.1/7.1 headsets"
+    },
+    {
+      "tool": "frequency-response-test",
+      "anchor": "Frequency Response Test",
+      "context": "sweep 20 Hz to 20 kHz on your new headphones"
+    }
+  ],
+  "click-speed-test-measure-cps.php": [
+    {
+      "tool": "ttk-calculator",
+      "anchor": "TTK Calculator",
+      "context": "compute time-to-kill given your CPS"
+    }
+  ],
+  "dead-pixel-test-check-monitor.php": [
+    {
+      "tool": "frame-skipping-test",
+      "anchor": "Frame Skipping Test",
+      "context": "detect dropped frames at your refresh rate"
+    }
+  ],
+  "double-click-test-check-mouse-switch-bounce.php": [
+    {
+      "tool": "frame-skipping-test",
+      "anchor": "Frame Skipping Test",
+      "context": "related diagnostic for click registration timing"
+    }
+  ],
+  "ghost-click-detector-fix-double-clicking.php": [
+    {
+      "tool": "frame-skipping-test",
+      "anchor": "Frame Skipping Test",
+      "context": "related display diagnostic"
+    }
+  ],
+  "headphone-speaker-test-left-right-channels.php": [
+    {
+      "tool": "surround-sound-test",
+      "anchor": "Surround Sound Test",
+      "context": "5.1/7.1 channel walk-around for surround setups"
+    },
+    {
+      "tool": "frequency-response-test",
+      "anchor": "Frequency Response Test",
+      "context": "full sweep 20 Hz - 20 kHz"
+    }
+  ],
+  "how-to-test-keyboard-online.php": [
+    {
+      "tool": "auditory-reaction-time-test",
+      "anchor": "Auditory Reaction Time Test",
+      "context": "companion reflex test"
+    }
+  ],
+  "how-to-test-microphone-online.php": [
+    {
+      "tool": "frequency-response-test",
+      "anchor": "Frequency Response Test",
+      "context": "sweep audio frequencies through speakers/headphones"
+    }
+  ],
+  "how-to-test-mouse-buttons-scroll-wheel.php": [
+    {
+      "tool": "ttk-calculator",
+      "anchor": "TTK Calculator",
+      "context": "calculate FPS time-to-kill for click-heavy games"
+    }
+  ],
+  "how-to-measure-typing-speed-wpm.php": [
+    {
+      "tool": "auditory-reaction-time-test",
+      "anchor": "Auditory Reaction Time Test",
+      "context": "related cognitive-speed test"
+    }
+  ],
+  "input-latency-checker-keyboard-mouse-delay.php": [
+    {
+      "tool": "auditory-reaction-time-test",
+      "anchor": "Auditory Reaction Time Test",
+      "context": "react to sound, similar millisecond resolution"
+    },
+    {
+      "tool": "frame-skipping-test",
+      "anchor": "Frame Skipping Test",
+      "context": "the visual side of input-to-pixel chain"
+    },
+    {
+      "tool": "cpu-stress-test",
+      "anchor": "CPU Stress Test",
+      "context": "rule out system load as a latency cause"
+    }
+  ],
+  "webcam-test-check-camera-video-calls.php": [
+    {
+      "tool": "online-ruler",
+      "anchor": "Online Ruler",
+      "context": "measure on-screen webcam framing"
+    }
+  ],
+  "what-is-keyboard-ghosting-anti-ghosting-fix-guide.php": [
+    {
+      "tool": "frame-skipping-test",
+      "anchor": "Frame Skipping Test",
+      "context": "companion display test"
+    }
+  ],
+  "mouse-trail-visualizer-movement-patterns.php": [
+    {
+      "tool": "frame-skipping-test",
+      "anchor": "Frame Skipping Test",
+      "context": "detects when smooth motion is being interrupted"
+    }
+  ],
+  "mouse-dpi-tester-measure-sensitivity.php": [
+    {
+      "tool": "online-ruler",
+      "anchor": "Online Ruler",
+      "context": "measure on-screen distances accurately for DPI tests"
+    }
+  ],
+  "free-qr-code-generator-create-online.php": [
+    {
+      "tool": "online-ruler",
+      "anchor": "Online Ruler",
+      "context": "measure printed QR code size for scanning"
+    }
+  ],
+  "qr-code-reader-scan-decode-images.php": [
+    {
+      "tool": "online-ruler",
+      "anchor": "Online Ruler",
+      "context": "measure QR code size on printed materials"
+    }
+  ],
+  "lucky-wheel-spinner-random-selection.php": [
+    {
+      "tool": "gamertag-generator",
+      "anchor": "Gamertag Generator",
+      "context": "random username generator"
+    },
+    {
+      "tool": "guild-name-generator",
+      "anchor": "Guild Name Generator",
+      "context": "random MMO and clan names"
+    },
+    {
+      "tool": "minecraft-circle-generator",
+      "anchor": "Minecraft Circle Generator",
+      "context": "pixel-circle plotter for builders"
+    }
+  ],
+  "how-to-copy-pro-crosshair-cs2-valorant-generator-guide.php": [
+    {
+      "tool": "ttk-calculator",
+      "anchor": "TTK Calculator",
+      "context": "time-to-kill math for FPS like CS2 and Valorant"
+    },
+    {
+      "tool": "gamertag-generator",
+      "anchor": "Gamertag Generator",
+      "context": "pick a random pro-style gamer name"
+    },
+    {
+      "tool": "frame-skipping-test",
+      "anchor": "Frame Skipping Test",
+      "context": "verify your monitor handles competitive frame pacing"
+    }
+  ],
+  "v4n4g0n-keyboard-45-percent-custom-mechanical-guide.php": [
+    {
+      "tool": "auditory-reaction-time-test",
+      "anchor": "Auditory Reaction Time Test",
+      "context": "reflex benchmark for your new mechanical board"
+    }
+  ]
+}

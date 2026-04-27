@@ -5,6 +5,10 @@
 *.json
 !package.json
 !package-lock.json
+!composer.json
+!composer.lock
+!scripts/*.json
+!includes/components/*.json
 *credential*
 *password*
 *secret*

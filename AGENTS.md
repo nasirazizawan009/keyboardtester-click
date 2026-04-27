@@ -4,20 +4,21 @@
 > **BEFORE STARTING ANY WORK**, read [AI-COORDINATION.md](AI-COORDINATION.md) to see what other agents have done recently and what's currently in flight.
 > **BEFORE ENDING SESSION**, update AI-COORDINATION.md with your changes so the next agent can pick up.
 
-**Version:** 17.2.39 (April 2026)
+**Version:** 17.2.47 (April 2026 — see commit log for details on later increments)
 
 ## Project Overview
-A comprehensive suite of free online testing tools for keyboards, mice, screens, audio, and utilities. The site is multilingual with support for 8 languages.
+A comprehensive suite of free online testing tools for keyboards, mice, screens, audio, and utilities. The site is multilingual with support for **9 languages** (en + 8 locales: ar, fr, de, ja, ko, pt, ru, es).
 
 **Live Site:** https://keyboardtester.click
-**GitHub:** https://github.com/nasirazizawan009/keyboardtester-click
+**GitHub:** https://github.com/nasirazizawan009/keyboardtester-click (public repo)
 **Domain:** keyboardtester.click (non-www canonical)
+**Hosting:** HostArmada StartDock Shared (cPanel + CloudLinux)
 
 ## Tech Stack
-- **Backend:** PHP (no framework)
+- **Backend:** PHP 7.4 (no framework)
 - **Frontend:** HTML, CSS, JavaScript (vanilla)
-- **Blog:** WordPress (in `/blog/`)
-- **Hosting:** cPanel with FTP deployment
+- **Blog:** Static (WordPress was removed; see `.htaccess` rules that 410 legacy WP paths)
+- **Hosting:** cPanel with **SFTP/paramiko deployment** (FTPS hangs on host's 226 ack — do NOT use FTPS)
 - **Local Dev:** XAMPP on Windows
 
 ## Directory Structure
@@ -26,7 +27,7 @@ kbt/
 ├── assets/
 │   ├── css/           # Stylesheets (global.css, index-modern.css)
 │   └── js/            # JavaScript files (theme.js)
-├── blog/              # WordPress blog (manage separately)
+├── blog/              # Static blog (WordPress removed; legacy /blog/wp-* and /blog/feed/ paths return 410 via .htaccess)
 ├── flags/             # Country flag SVGs
 ├── help/              # Brief help pages for each tool
 ├── images/            # Tool images organized by category
@@ -79,15 +80,30 @@ kbt/
 
 ## Deployment
 
-### Deploy Scripts
-- `deploy-latest.py` - Deploy recent changes
-- `deploy-to-cpanel.py` - Full deployment
-- `deploy-indexnow.py` - Deploy IndexNow files only
-- `deploy-languages.py` - Deploy language pages
+**Method:** SFTP via paramiko + SSH key (FTPS is broken on this host — host's TLS data channel hangs the 226 ack)
 
-### Quick Deploy Command
-```bash
-python deploy-latest.py
+### Connection details
+- Host: `keyboardtester.click` port `19199`
+- User: `keyboar1` (cPanel main account, NOT the FTP user `nasir@keyboardtester.click`)
+- Auth: publickey only — key at `.ssh-deploy/kbt_deploy` (gitignored)
+- Remote root: `/home2/keyboar1/public_html`
+
+### Active deploy scripts (gitignored — local only)
+- `deploy-indexing-fixes.py` — generic SFTP deploy, modify `FILES = [...]` list and run
+- `deploy-wave6-sftp.py` — wave-6 deploy template (kept for reference)
+- `deploy-wave3.py`, `deploy-wave4.py`, `deploy-wave5.py` — older waves (FTPS, fallback only)
+
+### Quick deploy snippet (inline paramiko)
+```python
+import paramiko
+client = paramiko.SSHClient()
+client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+client.connect('keyboardtester.click', port=19199, username='keyboar1',
+               key_filename='.ssh-deploy/kbt_deploy', timeout=20,
+               allow_agent=False, look_for_keys=False)
+sftp = client.open_sftp()
+sftp.put('local-file.php', '/home2/keyboar1/public_html/path/file.php')
+sftp.close(); client.close()
 ```
 
 ## SEO & Indexing
