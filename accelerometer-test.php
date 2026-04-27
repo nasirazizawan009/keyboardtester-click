@@ -3,7 +3,7 @@
 $pageTitle = 'Free Accelerometer Test - Phone & Tablet Motion Sensor Check | KeyboardTester.click';
 $pageDescription = 'Free online accelerometer test for phones and tablets. Live X/Y/Z acceleration readout in m/s2, shake counter, and tilt visualizer using the DeviceMotion API. Browser-based, no app install.';
 $pageKeywords = 'accelerometer test, phone accelerometer check, tablet motion sensor test, devicemotion api, m/s2 readout, shake test';
-$pageOgImage = 'images/mouse/hero.png';
+$pageOgImage = 'images/accelerometer-test/hero.jpg';
 $pageOgImageAlt = 'Accelerometer test - live X Y Z acceleration readout';
 ?>
 <!DOCTYPE html>

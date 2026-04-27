@@ -152,6 +152,23 @@ $pageOgImageAlt = 'Person using the online mouse tester to verify click and scro
     </section>
 
     <?php $intentClusterTool = 'mouse'; $currentTool = 'mouse'; include 'includes/components/intent-cluster-links.php'; ?>
+
+    <!-- Cross-link block — diverse anchor text for related tools (helps Google rank related pages) -->
+    <section class="related-keyboard-tests" style="padding:48px 20px;background:var(--bg-secondary);">
+      <div class="container" style="max-width:1000px;margin:0 auto;">
+        <h2 style="font-size:1.5rem;margin-bottom:16px;">Test your keyboard too</h2>
+        <p style="color:var(--text-secondary);margin-bottom:24px;">Mouse working fine? Make sure your keyboard is too. These tests cover everything from basic key checks to advanced gaming diagnostics:</p>
+        <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+          <li><a href="<?php echo url('tools/keyboard-tester/'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Keyboard tester online</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— test all keys, layouts, themes</span></li>
+          <li><a href="<?php echo url('keyboard-ghosting-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Keyboard ghosting test</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— check anti-ghosting on key combos</span></li>
+          <li><a href="<?php echo url('n-key-rollover-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">N-key rollover (NKRO) checker</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— measure simultaneous key registration</span></li>
+          <li><a href="<?php echo url('latency-checker.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Keyboard latency test</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— measure input lag in milliseconds</span></li>
+          <li><a href="<?php echo url('stuck-key-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Stuck key checker</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— diagnose repeating or jammed keys</span></li>
+          <li><a href="<?php echo url('keyboard_typing_test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Typing speed test</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— measure WPM and accuracy</span></li>
+        </ul>
+      </div>
+    </section>
+
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/seo-content/mouse-test.php'; ?>
     <?php $currentTool = 'mouse'; include 'includes/related-tools.php'; ?>

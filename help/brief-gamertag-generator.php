@@ -16,7 +16,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/lucky-wheel/hero.png'); ?>" width="800" height="563" alt="Gamertag generator - random gamer usernames in 6 styles" loading="eager" decoding="async" fetchpriority="high">
+        <imgsrc="<?php echo url('images/gamertag-generator/hero.jpg'); ?>" width="800" height="563" alt="Gamertag generator - random gamer usernames in 6 styles" loading="eager" decoding="async" fetchpriority="high">
       </div>
     </div>
   </div>

@@ -816,6 +816,226 @@ function getToolSchemaData($toolKey) {
                 'Favorites saved in browser'
             ]
         ],
+        'guild_name_generator' => [
+            'name' => 'Guild Name Generator',
+            'description' => 'Free guild name generator for MMO clans, WoW guilds, FFXIV Free Companies, Destiny clans, and Discord servers. 6 themes across 5 naming templates.',
+            'url' => 'guild-name-generator.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                '6 themes (fantasy, sci-fi, dark, noble, rogue, mythic)',
+                '5 templates (Order of, House of, The Xs, etc.)',
+                'Length limits for WoW/FFXIV/Destiny/Discord',
+                'Favorites saved in browser'
+            ]
+        ],
+        'auditory_reaction_time' => [
+            'name' => 'Auditory Reaction Time Test',
+            'description' => 'Free auditory reaction time test. Measure response to a sound cue in milliseconds using Web Audio API. 5-round average, best/worst tracking, false-start detection.',
+            'url' => 'auditory-reaction-time-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Web Audio precise timing',
+                '5-round average, best, worst',
+                'Random 1.5-4 second delay',
+                'False-start detection'
+            ]
+        ],
+        'frame_skipping_test' => [
+            'name' => 'Frame Skipping Test',
+            'description' => 'Free frame skipping test. Detects dropped frames using requestAnimationFrame timestamp analysis. Auto-calibrates to your refresh rate, logs each stutter event.',
+            'url' => 'frame-skipping-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Auto-calibrates refresh rate',
+                'Per-frame delta logging',
+                'Jitter (stddev) metric',
+                'Moving bar visual reference'
+            ]
+        ],
+        'surround_sound_test' => [
+            'name' => 'Surround Sound Test',
+            'description' => 'Free surround sound test. 5.1 and 7.1 channel walk-around to verify speaker wiring and placement. Graceful stereo-panning fallback for headphones.',
+            'url' => 'surround-sound-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                '5.1 and 7.1 channel support',
+                'Walk-around or per-channel test',
+                'Web Audio channel merger',
+                'Stereo panning fallback'
+            ]
+        ],
+        'cpu_stress_test' => [
+            'name' => 'CPU Stress Test',
+            'description' => 'Free CPU stress test. Multi-threaded WebWorker SHA-256 busy loop to load every logical core and report ops/sec. Configurable thread count and duration.',
+            'url' => 'cpu-stress-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Multi-threaded WebWorkers',
+                'SHA-256 benchmark loop',
+                'Per-thread ops/sec',
+                'Thermal throttle detection'
+            ]
+        ],
+        'gpu_stress_test' => [
+            'name' => 'GPU Stress Test',
+            'description' => 'Free GPU stress test using a heavy WebGL2 Mandelbrot fragment shader. Reports FPS, stability, GPU vendor/renderer, and detects software rendering fallback.',
+            'url' => 'gpu-stress-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'WebGL2 Mandelbrot shader',
+                'Live FPS and 1s rolling average',
+                'Minimum FPS tracking',
+                'GPU vendor / renderer detection'
+            ]
+        ],
+        'memory_test' => [
+            'name' => 'Memory Test',
+            'description' => 'Free browser memory test. Live heap stats via performance.memory on Chrome/Edge, allocation stressor in configurable chunks, safe abort before OOM.',
+            'url' => 'memory-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Live performance.memory readout',
+                'Allocation stress in 10 MB chunks',
+                'Auto-abort at 85% of heap limit',
+                'Heap growth graph'
+            ]
+        ],
+        'ram_latency_calc' => [
+            'name' => 'RAM Latency Calculator',
+            'description' => 'Free RAM latency calculator. Convert CAS latency (CL) and memory speed (MT/s) to nanoseconds. Compare DDR4 vs DDR5 kits, presets for DDR4-3200 CL16, DDR5-6000 CL30 and more.',
+            'url' => 'ram-latency-calculator.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'CAS latency to nanoseconds',
+                'Side-by-side kit compare',
+                'DDR4 and DDR5 presets',
+                'Reverse solve for target CL'
+            ]
+        ],
+        'bandwidth_calc' => [
+            'name' => 'Bandwidth Calculator',
+            'description' => 'Free bandwidth calculator. Convert file size and connection speed to transfer time, or reverse-solve for required speed. Handles bits-vs-bytes math automatically.',
+            'url' => 'bandwidth-calculator.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                '3-way solver (time/size/speed)',
+                'KB/MB/GB/TB unit toggles',
+                'Kbps/Mbps/Gbps unit toggles',
+                'Common link presets'
+            ]
+        ],
+        'download_time_calc' => [
+            'name' => 'Download Time Calculator',
+            'description' => 'Free download time calculator. Estimate how long games, movies, and backups take at your connection speed. 15+ file presets, realistic overhead (85%), slow-path and theoretical estimates.',
+            'url' => 'download-time-calculator.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                '15+ file-size presets',
+                'Theoretical + realistic + slow estimates',
+                'Hh Mm Ss output',
+                'Common link presets'
+            ]
+        ],
+        'raid_calc' => [
+            'name' => 'RAID Calculator',
+            'description' => 'Free RAID calculator for RAID 0, 1, 5, 6, 10, 50, and 60. Usable capacity, fault tolerance, read/write speed multipliers, and side-by-side level comparison.',
+            'url' => 'raid-calculator.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                '7 RAID levels (0, 1, 5, 6, 10, 50, 60)',
+                'Usable capacity + parity overhead',
+                'Fault tolerance (drives that can fail)',
+                'Read + write speed multipliers'
+            ]
+        ],
+        'ttk_calc' => [
+            'name' => 'TTK Calculator',
+            'description' => 'Free time-to-kill calculator for FPS games. Bullets to kill, TTK in milliseconds, body vs head comparison, armor handling, and presets for CS2, Valorant, Apex, and Call of Duty.',
+            'url' => 'ttk-calculator.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'TTK in milliseconds',
+                'Body vs headshot side by side',
+                'Armor and damage drop-off',
+                'Weapon presets for major FPS games'
+            ]
+        ],
+        'minecraft_circle' => [
+            'name' => 'Minecraft Circle Generator',
+            'description' => 'Free Minecraft circle generator. Plot pixel circles, filled discs, thick rings, and 3D sphere layers from radius 1 to 256. PNG export for second-screen reference.',
+            'url' => 'minecraft-circle-generator.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Outline / filled / thick / sphere modes',
+                'Radius 1-256 blocks',
+                'Block count per layer + sphere total',
+                'PNG download for in-game reference'
+            ]
+        ],
+        'monitor_sharpness_test' => [
+            'name' => 'Monitor Sharpness Test',
+            'description' => 'Free monitor sharpness test. Lagom-style 1px pixel grid, multi-size text samples in serif/sans/mono, color-fringing blocks, and an RGB sub-pixel ruler. Browser-based, no install.',
+            'url' => 'monitor-sharpness-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                '1px Lagom-style pixel grid',
+                'Text clarity at 8 sizes x 3 fonts',
+                'Color fringing detection',
+                'Sub-pixel layout ruler'
+            ]
+        ],
+        'pitch_detector' => [
+            'name' => 'Pitch Detector',
+            'description' => 'Free online pitch detector. Sing or play into your microphone to see live frequency in Hz, the nearest musical note (C0-C8), octave, and cents sharp or flat. Real-time autocorrelation, scrolling pitch graph, peak hold, noise threshold.',
+            'url' => 'pitch-detector.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'Live frequency detection (Hz)',
+                'Nearest note across full piano range C0-C8',
+                'Cents accuracy (-50 to +50)',
+                '10-second scrolling pitch graph',
+                'Peak hold (last 2 seconds)',
+                'Adjustable noise threshold'
+            ]
+        ],
+        'webcam_mirror' => [
+            'name' => 'Webcam Mirror',
+            'description' => 'Free online webcam mirror. Use your camera as a virtual mirror in the browser with horizontal flip, brightness/contrast sliders, rule-of-thirds grid, snapshot download, and fullscreen mode. Nothing uploaded.',
+            'url' => 'webcam-mirror.php',
+            'category' => 'MultimediaApplication',
+            'features' => [
+                'Live camera preview with horizontal mirror flip',
+                'Brightness and contrast sliders (0-200%)',
+                'Rule-of-thirds grid overlay',
+                'PNG snapshot download and fullscreen mode'
+            ]
+        ],
+        'hearing_age_test' => [
+            'name' => 'Hearing Age Test (Mosquito Tone)',
+            'description' => 'Free hearing age test. 12-step high-frequency hearing screening from 8 kHz to 22 kHz including the 17.4 kHz mosquito tone, with a manual fine-tune slider and safety-capped volume.',
+            'url' => 'hearing-age-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                '12 frequencies from 8 kHz to 22 kHz',
+                'Includes 17.4 kHz mosquito tone',
+                'Manual fine-tune slider',
+                'Volume safety cap (-20 dBFS)'
+            ]
+        ],
+        'online_ruler' => [
+            'name' => 'Online Ruler',
+            'description' => 'Free online ruler in actual size on screen. Measure objects in centimeters, millimeters, and inches. Calibrate with a credit card (ISO ID-1, 85.6 x 54 mm) or by entering monitor DPI. Calibration persists in localStorage.',
+            'url' => 'online-ruler.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'SVG ruler in true cm and inches',
+                'Credit-card drag calibration (ISO ID-1)',
+                'Direct DPI input + common presets (96, 109, 119, 120, 144, 163, 216, 264)',
+                'Vertical / horizontal orientation toggle',
+                'cm only / inch only / both views',
+                'Calibration saved per browser'
+            ]
+        ],
         'ai_assistant' => [
             'name' => 'KBT AI Assistant',
             'description' => 'Free AI chat assistant that helps you pick the right hardware diagnostic tool, explains test results, and walks through keyboard, mouse, screen, and audio diagnostics in 8 languages.',
@@ -1627,6 +1847,114 @@ function getToolFAQs($toolKey) {
             ['question' => 'What is the Xbox gamertag character limit?', 'answer' => 'Xbox Live caps gamertags at 12 characters, allowing letters, numbers, and spaces. PSN allows 3-16 characters with letters, numbers, underscore, and hyphen. Steam allows 2-32 characters. Discord allows 2-32 lowercase characters, period, and underscore.'],
             ['question' => 'Where are my favorites stored?', 'answer' => 'In your browser\'s localStorage. They are not sent to any server and will stay on this device until you clear site data or press Clear favorites. They will not sync between devices or browsers.']
         ],
+        'guild_name_generator' => [
+            ['question' => 'What character limits do MMO guilds use?', 'answer' => 'World of Warcraft guilds allow 2-24 characters (letters, apostrophes, spaces). FFXIV Free Companies are 4-20 characters (letters, digits only). Destiny 2 clans allow up to 32 characters. Discord servers allow up to 100 characters with full Unicode.'],
+            ['question' => 'Will the generator produce trademarked names?', 'answer' => 'The word pools are hand-curated to avoid major trademarked IP, but a random combination could still resemble something official. Always run the generated name past your platform\'s name checker before setting up the guild.'],
+            ['question' => 'Can I generate names for non-MMO games?', 'answer' => 'Yes. The same templates work for Destiny 2 clans, Rainbow Six tactics teams, Division 2 clans, Call of Duty clans, and Discord servers. Pick the theme that matches your game\'s tone and adjust max length to fit the platform.'],
+            ['question' => 'How are the templates different?', 'answer' => '"Order of the X" and "House of X" lean formal and fantasy. "The Xs" is short and modern. "Adjective + Noun" is the generic two-word standard. "X of Y" is evocative and works well for raid guilds. Pick "Mix it up" to roll across all of them.']
+        ],
+        'auditory_reaction_time' => [
+            ['question' => 'Why is my auditory reaction time faster than my visual?', 'answer' => 'Sound processing takes fewer neural steps than vision. The brainstem handles basic auditory detection before the signal even reaches the cortex, and the auditory cortex is just 2-3 synapses deep. Vision goes retina -> optic nerve -> LGN -> V1 cortex, which is why healthy adults typically test 20-40 ms faster on auditory than visual.'],
+            ['question' => 'Why are my times all around 250 ms on Bluetooth headphones?', 'answer' => 'Bluetooth SBC / AAC codecs add 150-250 ms of latency between the browser and your ears. Your actual reaction time is whatever you measure minus that latency. For fair results, use wired headphones or a wired 3.5 mm speaker connection.'],
+            ['question' => 'What is a good score on this test?', 'answer' => '140-180 ms is very fast (e-sports pro range). 180-220 ms is above-average. 220-280 ms is the typical adult range. 300+ ms suggests fatigue, sleep deprivation, wireless audio latency, or hearing loss in the test-tone frequency range.'],
+            ['question' => 'Why does the test require clicking first?', 'answer' => 'Browsers gate audio playback behind a user gesture to prevent pages from auto-playing sound. The first click arms the Web Audio context so subsequent beeps fire instantly.']
+        ],
+        'frame_skipping_test' => [
+            ['question' => 'How does the test detect a skipped frame?', 'answer' => 'It measures the timestamp delta between each requestAnimationFrame callback. After a 1-second calibration to learn your refresh rate, any frame whose delta exceeds 1.5 times the expected interval is counted as a skip. The number of skipped frames equals round(delta / expected) - 1.'],
+            ['question' => 'What counts as "normal" skipping?', 'answer' => '0-3 skips in a 15-second run is normal. Browser garbage collection, background tasks, and compositor events can occasionally steal a frame. 10+ skips suggests a real issue: a background CPU task, a browser extension hooking into every frame, or thermal throttling.'],
+            ['question' => 'Why does Firefox show huge jitter?', 'answer' => 'Firefox rounds performance.now() timestamps to 1 ms by default under privacy.resistFingerprinting, which introduces artificial jitter. Check about:config and disable resistFingerprinting for accurate measurement, or use Chrome / Edge which do not round.'],
+            ['question' => 'Do I need to run the test full-screen?', 'answer' => 'No, but keep the browser tab focused and visible. Browsers throttle requestAnimationFrame in hidden or minimized tabs, which will show as severe "skipping" that is just the throttle, not a real display issue.']
+        ],
+        'surround_sound_test' => [
+            ['question' => 'Why does only front L/R play on my 5.1 setup?', 'answer' => 'Most browsers only expose 2-channel output via Web Audio, even if your sound card supports 8. When the test detects max 2 channels, it falls back to stereo panning to simulate positioning. For real discrete-channel testing, use the OS sound control panel (Windows Sound -> Configure Speakers -> Test) or your AV receiver\'s built-in tone generator.'],
+            ['question' => 'What is the LFE / subwoofer channel?', 'answer' => 'LFE stands for Low-Frequency Effects. It is the .1 of 5.1 or 7.1 and is typically routed to a subwoofer with a crossover around 80 Hz. The test plays a 60 Hz tone through the LFE channel. If your sub is miswired or muted, this is where you catch it.'],
+            ['question' => 'How do I tell if my rears are wired correctly?', 'answer' => 'Use the walk-around mode and watch which physical speaker lights up for each channel. FL, FR, C, SUB should move through the front of the room; RL, RR should move to the rears. If rear L/R are reversed, Dolby upmix rotations will feel backwards in movies. Fix by swapping cables at the receiver or remapping in your audio control panel.'],
+            ['question' => 'Should I use this with Windows Sonic or Dolby Atmos for Headphones enabled?', 'answer' => 'No. Turn off virtual surround features when testing raw channels. Windows Sonic / Dolby Atmos / DTS Headphone:X are post-processing layers that re-mix multichannel audio into stereo HRTF, which will confuse a channel-identification test.']
+        ],
+        'cpu_stress_test' => [
+            ['question' => 'Is it safe to run a browser CPU stress test?', 'answer' => 'Yes on stock hardware. Modern CPUs throttle their clock speed before temperature damage, and the OS will kill the browser tab before the system freezes. If your laptop gets uncomfortably hot, stop the test. Never disable thermal protection in BIOS/UEFI for a browser benchmark.'],
+            ['question' => 'Why does my per-thread rate vary?', 'answer' => 'On hybrid CPUs (Intel 12th-gen+, Apple Silicon, mobile SoCs) not all cores run at the same clock speed. Performance cores hit 3-5 GHz; efficiency cores run at 2-3 GHz. Spawning one worker per logical core will show performance cores at roughly 2x the ops/sec of efficiency cores, by design.'],
+            ['question' => 'How does this compare to Cinebench or Geekbench?', 'answer' => 'It does not compare directly. Native benchmarks use hand-tuned SIMD and compiler-optimized loops that are much faster than JavaScript SubtleCrypto. The numbers here are only meaningful across runs on the same machine and browser, which is exactly what you need to spot thermal throttling or a regression.'],
+            ['question' => 'Why does the test use SHA-256?', 'answer' => 'SHA-256 is hardware-accelerated on every modern CPU via SHA-NI (Intel) or dedicated instructions on ARM/Apple Silicon. It saturates the execution units without being bottlenecked by memory bandwidth, and it produces output that cannot be cached or optimized away, giving a predictable compute-bound load.']
+        ],
+        'gpu_stress_test' => [
+            ['question' => 'Why is my GPU vendor shown as "hidden"?', 'answer' => 'Chrome redacts WEBGL_debug_renderer_info by default as an anti-fingerprinting measure. Firefox does the same under privacy.resistFingerprinting. To see the real vendor/renderer, visit chrome://gpu in Chrome or look up your GPU in the OS hardware panel.'],
+            ['question' => 'What does "SwiftShader" or "llvmpipe" mean?', 'answer' => 'Those are software WebGL renderers that run on the CPU when hardware acceleration is unavailable. If you see them in the renderer string, your browser is not actually using your GPU. Re-enable hardware acceleration in browser settings and update your GPU driver to restore real performance.'],
+            ['question' => 'Can I damage my GPU with this test?', 'answer' => 'On stock hardware, no. GPUs throttle their clock and voltage well before thermal damage, and modern drivers monitor junction temperature. On manually overclocked GPUs, sustained load (10+ minutes) can expose an unstable clock that was fine on short benchmarks. Stop if you see artifacts, crashes, or driver resets.'],
+            ['question' => 'Why do my FPS drop 30-50% after 30 seconds?', 'answer' => 'Thermal throttling. The GPU is hitting its thermal envelope and dropping clock speed to stay cool. Laptops show this dramatically; desktops with good cooling usually hold steady. If you want steady numbers, improve airflow, re-paste the GPU if it is 3+ years old, or run shorter bursts.']
+        ],
+        'memory_test' => [
+            ['question' => 'Why is "heap limit" different from my system RAM?', 'answer' => 'The heap limit is per-browser-tab, not per-system. Chrome desktop typically caps tabs at 4 GB regardless of whether you have 16 GB or 128 GB of system RAM, to prevent one tab from consuming the entire machine. Mobile browsers cap much lower (256-512 MB).'],
+            ['question' => 'Is this a replacement for MemTest86?', 'answer' => 'No. This tool measures browser heap behavior, not hardware RAM stability. No JavaScript can access memory directly or test DIMM integrity. For real RAM testing (bad modules, XMP stability, overclock validation) use MemTest86 as a bootable USB, which runs outside any OS.'],
+            ['question' => 'Why doesn\'t Firefox / Safari show heap stats?', 'answer' => 'performance.memory is a non-standard Chrome API. Firefox and Safari do not expose it to protect against memory-based fingerprinting. The tool falls back to tracking only what it has allocated itself, capped at 300 MB as a safety.'],
+            ['question' => 'What does "Release & GC" actually do?', 'answer' => 'It drops all references to the allocated chunks, making them eligible for garbage collection. The browser\'s GC runs on its own schedule, usually within a few seconds. You should see Used heap drop without doing anything else. If it does not drop, the chunks were tenured into old-generation memory and the GC will reclaim them later.']
+        ],
+        'ram_latency_calc' => [
+            ['question' => 'Why do DDR5 kits have such high CL numbers?', 'answer' => 'CL is in clock cycles, and DDR5 runs cycles much faster than DDR4. DDR5-6000 cycles at 6000 MT/s = 0.333 ns per cycle, so CL30 x 0.333 = 10 ns - the same access time as DDR4-3200 CL16. The cycle count is misleading in isolation; always convert to ns.'],
+            ['question' => 'Is lower ns always better?', 'answer' => 'Usually yes for gaming and latency-sensitive workloads. For bandwidth-heavy workloads (rendering, compilation, video encode), higher MT/s with slightly higher ns can win because peak throughput matters more than single-access time. DDR5-7200 CL36 (10 ns) beats DDR5-6000 CL30 (10 ns) in multi-threaded benchmarks despite the tied latency.'],
+            ['question' => 'What is the sweet spot for Ryzen 7000 / 9000?', 'answer' => 'DDR5-6000 CL30 with EXPO. It lands at 10 ns, runs Infinity Fabric at a 1:1 ratio (UCLK = MEMCLK), and is well-supported by most motherboards. Pushing beyond 6200 MT/s on AM5 often forces a half-speed IF mode that kills the gains.'],
+            ['question' => 'What does the reverse-solve mode do?', 'answer' => 'Given a target access latency (say, 9 ns) and a memory speed (say, 7200 MT/s), it calculates the CL you would need (27). Useful when tuning manual timings: if you can hit CL 27 at 7200, you have beaten the classic 10 ns mark.']
+        ],
+        'bandwidth_calc' => [
+            ['question' => 'Why does my 100 MB file take 8 seconds on 100 Mbps?', 'answer' => 'MB is megabytes; Mbps is megabits per second. 1 byte = 8 bits. 100 MB = 800 megabits. 800 megabits / 100 Mbps = 8 seconds. The bits-vs-bytes confusion is the #1 source of "my Internet is slow" complaints that are actually correct math.'],
+            ['question' => 'Why is the real download slower than the calculator says?', 'answer' => 'Real transfers lose 5-15% to TCP/IP overhead, more for high-latency or lossy links. The calculator reports 100% efficient transfer. For realistic estimates, multiply by 1.15 for HTTPS, 1.3-1.5 for VPN, and 2x+ for cellular or congested Wi-Fi.'],
+            ['question' => 'Does this handle KB vs KiB correctly?', 'answer' => 'The calculator uses binary KB (1 KB = 1024 bytes) because that is what Windows and most file managers display. If you need strict decimal (1 KB = 1000), the number will be off by ~2.4% per power of 1000 - noticeable only at TB scale.'],
+            ['question' => 'Why don\'t LAN transfers match the calculator on gigabit?', 'answer' => 'They often do, actually. Modern NICs and SMB drivers routinely hit 95-98% of gigabit line rate on a wired local network. If you are seeing much less, the bottleneck is disk speed (a slow 5400-rpm HDD cannot feed gigabit) or a cheap switch dropping to 100 Mbps on one port.']
+        ],
+        'download_time_calc' => [
+            ['question' => 'Which of the three numbers should I trust?', 'answer' => 'The realistic estimate (85% of theoretical). That matches what HTTPS downloads from a good CDN typically deliver. The theoretical is best-case and rarely matches reality; the slow-path is a pessimistic bound for congested evenings or distant servers.'],
+            ['question' => 'Why do modern AAA games take 200 GB?', 'answer' => 'Uncompressed 4K textures, multiple language audio tracks installed by default, pre-rendered cutscenes at high bitrate, and multiplayer assets. Games trade disk space for load-time performance - decompressing on load would use too much CPU/GPU time.'],
+            ['question' => 'Is Wi-Fi a bottleneck on gigabit Internet?', 'answer' => 'Often yes. Wi-Fi 5 tops out around 400-600 Mbps in good conditions. Wi-Fi 6 can deliver 600-900 Mbps to a single client. A wired Ethernet connection avoids the uncertainty. If you are on gigabit and downloads stall at 400 Mbps, blame the Wi-Fi before blaming your ISP.'],
+            ['question' => 'How can I speed up an actual download?', 'answer' => 'Use wired Ethernet, pause other devices streaming, switch Steam/Epic download region to a less-congested server, use 1.1.1.1 or 8.8.8.8 DNS, and turn off VPN. For game clients specifically, check for a client-side download speed cap (Steam has one in Settings > Downloads).']
+        ],
+        'raid_calc' => [
+            ['question' => 'Is RAID 5 still safe with large drives?', 'answer' => 'For drives 8 TB or larger, most storage engineers now recommend RAID 6 over RAID 5. The reason is rebuild time: reconstructing a failed drive from parity can take 24-48 hours on a large array, during which a second drive failure would be catastrophic. RAID 6 tolerates a second failure mid-rebuild.'],
+            ['question' => 'What is the difference between RAID 10 and RAID 5?', 'answer' => 'RAID 10 mirrors data across pairs, then stripes those pairs, delivering excellent random I/O performance but consuming 50% of raw capacity. RAID 5 stripes with a single parity drive, giving better capacity efficiency (~83% on 6 drives) but slower writes due to the parity write penalty. RAID 10 for database and VM workloads; RAID 5 for bulk storage.'],
+            ['question' => 'Does RAID replace backups?', 'answer' => 'No. RAID protects against physical drive failure within its parity budget. It does not protect against ransomware, accidental deletion, filesystem corruption, fire, flood, or theft - all of which can affect every drive in the array at once. Always maintain separate backups on top of RAID, following the 3-2-1 rule.'],
+            ['question' => 'What is the minimum number of drives for each RAID level?', 'answer' => 'RAID 0 and RAID 1 need 2 drives. RAID 5 needs 3. RAID 6 needs 4. RAID 10 needs 4 (and always an even number). RAID 50 needs at least 6 (two groups of 3). RAID 60 needs at least 8 (two groups of 4). More drives give you more capacity and often better performance, but also more opportunities for a drive to fail.']
+        ],
+        'ttk_calc' => [
+            ['question' => 'How is TTK calculated exactly?', 'answer' => 'Bullets to kill = ceiling of target HP divided by effective per-bullet damage. TTK = (bullets-to-kill minus one) times milliseconds between shots. The first bullet has a TTK of zero because it lands immediately; we only add travel time for subsequent bullets. A one-shot-kill weapon has TTK = 0 ms.'],
+            ['question' => 'Why are the CS2 AK-47 numbers different with and without armor?', 'answer' => 'CS2 Kevlar reduces damage taken by about 22% on bullets to the chest. The AK-47 deals 36 damage unarmored but only around 27 damage against a Kevlar-helmet target, changing a 3-shot kill into a 4-shot kill. Our calculator models this with the armor percentage field.'],
+            ['question' => 'What headshot multiplier should I enter for my game?', 'answer' => 'CS2 and most Source-engine games use 4x for rifles. Valorant uses 3.5x on most weapons. Apex Legends uses 2x on most weapons. Call of Duty modern titles are around 1.3-1.5x. Overwatch hero multipliers vary from 1x (no headshot) to 2x. Check your game\'s wiki for the exact number per weapon.'],
+            ['question' => 'Does TTK matter more than DPS?', 'answer' => 'For competitive duels, TTK matters more because it determines who wins a same-time trade. DPS matters for sustained engagement across multiple targets. The calculator shows both so you can compare weapons that have similar DPS but very different TTK, which is a common balance pattern.']
+        ],
+        'minecraft_circle' => [
+            ['question' => 'Why do small Minecraft circles look jagged?', 'answer' => 'A circle in a grid is always an approximation. Small circles (radius under 8) have so few blocks that every step of the approximation is visually obvious. Above radius 10 the shape reads as round; above radius 30 the stair-stepping is barely noticeable at normal gameplay distance.'],
+            ['question' => 'How do I build a perfect sphere?', 'answer' => 'Use sphere layer mode. Set offset to -R (bottom of the sphere) and build that disc. Increment offset by 1, move up one block in game, and build the next layer. Continue until offset = +R. The generator shows the "Sphere total" block count so you know how many you need to mine before starting.'],
+            ['question' => 'Can I make a half sphere (dome)?', 'answer' => 'Yes. Use sphere layer mode starting at offset 0 (equator) and increment up to +R. That gives you the top half of a sphere, which is a dome. For a bowl shape, run offsets -R to 0. Our tool plays only one slice at a time so you can verify each layer before placing blocks.'],
+            ['question' => 'What is the maximum radius the tool supports?', 'answer' => 'Radius 256 blocks. That produces a 513 x 513 disc with up to ~206,000 blocks in filled mode, or a 71 million block solid sphere. The algorithm is fast enough to render instantly at any radius in that range; your in-game build time will be the real limit.']
+        ],
+        'monitor_sharpness_test' => [
+            ['question' => 'Why does the 1px pixel grid look like wavy bands instead of solid grey?', 'answer' => 'You are not running at the panel native resolution, your OS scaling is set to a fractional value (125% or 150%), or your browser zoom is not 100%. Each of those breaks the 1:1 mapping between drawn pixels and physical pixels, which is why the grid moires. Set browser zoom to 100% (Ctrl+0), use a round OS scaling value (100% or 200%), and confirm you are at native resolution.'],
+            ['question' => 'What is the correct "Sharpness" setting on my monitor?', 'answer' => 'Neutral. Most monitors have a 0-100 sharpness slider where 0 or 5 is the neutral pass-through value and anything higher applies edge enhancement that creates halos around text. Use this test to find the value where the 1px checker patterns look uniform mid-grey at arm length and text edges have no halo - that is neutral.'],
+            ['question' => 'Why do I see red and blue halos around text on my OLED monitor?', 'answer' => 'OLEDs often use a non-standard sub-pixel layout (PenTile, RWBG, or QD-OLED triangular) instead of the RGB stripe LCDs use. Sub-pixel font anti-aliasing (ClearType on Windows, sub-pixel rendering on Linux) is tuned for RGB stripe and produces visible color fringing on these panels. The fix is to disable sub-pixel rendering and use grayscale anti-aliasing only - macOS does this automatically on Retina, Windows requires re-tuning ClearType.'],
+            ['question' => 'Does this replace the Lagom LCD sharpness test?', 'answer' => 'It serves the same purpose. Lagom is a static image with a single sharpness pattern; this tool draws the patterns dynamically at your device pixel ratio so they remain pixel-perfect on HiDPI displays where a static image would be upscaled. It also adds multi-size text samples, color fringing blocks, and a sub-pixel ruler that the original Lagom page does not include.']
+        ],
+        'pitch_detector' => [
+            ['question' => 'How accurate is browser-based pitch detection?', 'answer' => 'Plus or minus 1-3 cents on a clean sustained note, which beats the resolution of human hearing. Accuracy degrades on breathy, very low (under 80 Hz), or very high (over 2 kHz) sources because the autocorrelation window has fewer cycles to lock onto. For sung vowels in the 100-1000 Hz range, the detector is solidly tuner-grade.'],
+            ['question' => 'Why does the note jump up an octave when I sing low?', 'answer' => 'Low voices and bass instruments often have a stronger second harmonic than fundamental, and autocorrelation can briefly latch onto the harmonic instead. Sing slightly louder, move 15-30 cm closer to the mic, and use sustained vowels like "ah" or "oo" to strengthen the fundamental.'],
+            ['question' => 'What is the difference between Hz and cents?', 'answer' => 'Hz is the absolute frequency (vibrations per second). Cents is a relative measure of how far you are from the nearest semitone, on a scale where 100 cents equals one semitone. The detector reports both: Hz tells you what frequency you are producing; cents tells you whether that frequency lines up with standard tuning (A4 = 440 Hz).'],
+            ['question' => 'Is my voice uploaded anywhere?', 'answer' => 'No. All audio processing happens in your browser via the Web Audio API. The mic stream feeds directly into a local AnalyserNode and the autocorrelation runs on your CPU. Nothing is sent to our servers and nothing is recorded.']
+        ],
+        'webcam_mirror' => [
+            ['question' => 'Is this webcam mirror really free, and does it upload my video?', 'answer' => 'Yes. The tool is free, runs entirely in your browser via getUserMedia, and never sends the video to a server. The MediaStream stays local and is destroyed when you close the tab or click Stop.'],
+            ['question' => 'Why is the mirror flip on by default?', 'answer' => 'A raw camera feed shows you not-mirrored, which feels wrong for grooming, makeup, and posture work because raising your right hand looks like raising your left on screen. Mirror mode flips the preview horizontally so it behaves exactly like a wall mirror. You can toggle it off any time.'],
+            ['question' => 'Can I use this on a phone or tablet?', 'answer' => 'Yes. Any modern mobile browser (Chrome, Safari, Edge, Firefox) on an HTTPS page supports getUserMedia. Tap Start mirror, allow camera access, and prop the device on a stand to use it as a vanity or fitting mirror.'],
+            ['question' => 'Does the snapshot include the mirror flip and the brightness/contrast adjustments?', 'answer' => 'Yes. The snapshot is rendered through a canvas with the same horizontal flip and the same CSS-style brightness and contrast filter, so the saved PNG matches what you saw on screen.']
+        ],
+        'hearing_age_test' => [
+            ['question' => 'Is this hearing age test medically accurate?', 'answer' => 'No. This is a screening tool, not a clinical audiogram. A real audiogram is conducted in a sound-treated booth with calibrated equipment at speech frequencies (250 Hz to 8 kHz). This online test focuses on extended-high frequencies (8 kHz to 22 kHz) on uncalibrated consumer hardware, so the result is approximate. Use it as a fun curiosity check; if you suspect real hearing loss, see an audiologist.'],
+            ['question' => 'Why do headphones matter so much for this test?', 'answer' => 'Most laptop speakers, phone speakers, and cheap earbuds roll off sharply above 14-16 kHz - the driver simply cannot reproduce frequencies that high. If you fail to hear 17 kHz on a laptop speaker, that is the speaker, not your ears. Wired over-ear or in-ear headphones with a known frequency response give the most honest result.'],
+            ['question' => 'What is the mosquito tone?', 'answer' => 'The mosquito tone is a 17,400 Hz sine wave. It got its name from the Mosquito anti-loitering device, deployed in UK shops from 2005 onward because the tone was painful to teenagers but inaudible to most adults over 25. It is the classic informal age test: if you can clearly hear 17.4 kHz through quality headphones at moderate volume, your high-frequency hearing is younger than the average 25-year-old\'s.'],
+            ['question' => 'Will Bluetooth or wireless headphones affect my result?', 'answer' => 'Yes, often dramatically. SBC and AAC Bluetooth codecs apply a low-pass filter above 16-20 kHz to save bandwidth, so your wireless headphones may be silently cutting the very frequencies the test depends on. For accurate hearing-age results use wired 3.5mm or wired USB-C headphones. If you only have Bluetooth, expect your result to skew older than reality.']
+        ],
+        'online_ruler' => [
+            ['question' => 'Why does the online ruler look smaller or bigger than my real ruler?', 'answer' => 'Pixel size varies by display. A 96 DPI office monitor has pixels roughly three times wider than an iPad Retina display, so a fixed-pixel ruler will look correct on one screen and wrong on another. Calibrate using the credit-card overlay: drag the right-hand handle until the dark card matches a real ISO ID-1 card (85.6 x 54 mm) sitting on your screen, then click Save. The ruler will be accurate for that browser and zoom level until you change them.'],
+            ['question' => 'How accurate is credit-card calibration?', 'answer' => 'Very accurate. Credit cards, debit cards, and government IDs are manufactured to ISO/IEC 7810 ID-1 with a tolerance under 0.1 mm, so any card from any wallet is the same size. After calibration the ruler holds within roughly 0.5 mm, which is sufficient for sewing, woodworking layout, model-making, school assignments, and verifying that printable PDFs are rendering at 1:1 scale.'],
+            ['question' => 'Does browser zoom affect the online ruler?', 'answer' => 'Yes. Browser zoom of anything other than 100% multiplies every rendered pixel and breaks the calibration. Press Ctrl+0 (Windows) or Cmd+0 (Mac) to reset to 100%, then recalibrate. The same applies to Windows display scaling and macOS "More Space" mode -- if you change either, recalibrate. The tool stores your pixelsPerMm in localStorage so it stays accurate between sessions as long as nothing below the page changes.'],
+            ['question' => 'Can I use the online ruler on a phone or tablet?', 'answer' => 'Yes, and credit-card calibration is even more important on mobile. Phone DPIs vary widely (300-500+ depending on model) and the DPI presets in the dropdown are mostly desktop values, so they will not be correct for your specific phone. Use a real card to calibrate once and the setting will be remembered. The drag handle works with touch, and the vertical orientation toggle is useful for phones held in portrait.']
+        ],
         'view_dist_calc' => [
             ['question' => 'How far should I sit from a 55-inch 4K TV?', 'answer' => 'THX recommends about 6 feet (for 36 degree FoV), SMPTE recommends about 7 feet (30 degree FoV). Beyond 7 feet you stop benefiting from 4K resolution at that size.'],
             ['question' => 'Does 4K matter at my couch distance?', 'answer' => 'Only if you sit within roughly 1.5 screen heights. For an 8 foot viewing distance, 4K shows visible benefit on 65 inch and larger panels. On smaller screens from that distance, 4K is indistinguishable from 1080p.'],
@@ -1638,6 +1966,30 @@ function getToolFAQs($toolKey) {
             ['question' => 'What is a good eDPI for CS2 or Valorant?', 'answer' => 'Most CS2 and Valorant pros play between 200 and 400 eDPI. Apex Legends pros use 800-1600 eDPI because of the faster look speed.'],
             ['question' => 'What is cm/360?', 'answer' => 'cm/360 is the physical mouse distance needed for a full 360-degree in-game turn. It is derived from eDPI and the game yaw multiplier.'],
             ['question' => 'Can I compare eDPI across games?', 'answer' => 'Yes, but only if you also match yaw multipliers. Valorant uses 0.07 while Source engine games use 0.022, which changes cm/360 for the same eDPI.']
+        ],
+        'dpi_tester' => [
+            ['question' => 'How do I test my mouse DPI online?', 'answer' => 'Place a real ruler under your mouse, set the known distance in the tool, then drag the mouse exactly that distance in a straight line. The tool measures the cursor pixel travel and divides by your physical distance to calculate true DPI. Repeat 3 times and average the results for best accuracy.'],
+            ['question' => 'What is a good DPI for gaming?', 'answer' => 'Most competitive FPS pros use 400 to 800 DPI for precision. MOBA and RTS players use 800 to 1200 DPI. Casual gamers and productivity users do well at 800 to 1600 DPI. Higher-resolution displays (1440p, 4K) often need 1600 to 2400 DPI to traverse the screen comfortably.'],
+            ['question' => 'Why does my measured DPI differ from my mouse advertised DPI?', 'answer' => 'Three common causes: (1) Windows pointer speed multiplier — set it to the 6th notch (no enhancement) for accurate measurement; (2) "Enhance pointer precision" enabled — turn this OFF; (3) software-stepped DPI in your gaming mouse driver — set the mouse to native sensor DPI (typically 400, 800, 1600 step values).'],
+            ['question' => 'What is DPI vs CPI in mouse specifications?', 'answer' => 'DPI (Dots Per Inch) and CPI (Counts Per Inch) measure the same thing — how many pixel movements the cursor reports per inch of physical mouse travel. "CPI" is technically more accurate (mice count, they do not draw dots), but "DPI" is the industry-standard term used by virtually all manufacturers.'],
+            ['question' => 'Can I check DPI without a ruler?', 'answer' => 'You need some known reference distance. A credit card (85.6mm wide), a US dollar bill (155.96mm long), or any object with documented dimensions works. The tool uses your physical reference to calibrate. Without any physical reference, browser-based DPI measurement is impossible because pixels do not have a fixed real-world size.'],
+            ['question' => 'Does this DPI test work on a laptop touchpad?', 'answer' => 'Touchpads do not have a meaningful DPI in the same sense as mice — they use absolute positioning with acceleration curves applied by the OS. The tool will produce a number, but it will not match anything published by the laptop manufacturer. Use the tool with an external mouse for meaningful results.']
+        ],
+        'qr_generator' => [
+            ['question' => 'How do I generate a QR code online for free?', 'answer' => 'Type or paste your text, URL, phone number, or email into the QR generator. The QR code is created instantly in your browser. Right-click the generated image and choose Save Image As, or use the download button to save as PNG. No signup or watermark.'],
+            ['question' => 'What can I encode in a QR code?', 'answer' => 'Anything that fits in text: website URLs, plain text, phone numbers (tel:), email addresses (mailto:), Wi-Fi credentials, vCards, calendar events, app store links, and more. Maximum capacity depends on data type — typically 2,953 bytes (alphanumeric) or 7,089 numeric digits.'],
+            ['question' => 'Are QR codes generated by this tool free to use commercially?', 'answer' => 'Yes. QR codes themselves are an open ISO standard (ISO/IEC 18004) and free to use commercially. The QR codes you generate here have no licensing or attribution requirement and can be printed on products, business cards, packaging, or marketing materials.'],
+            ['question' => 'Do generated QR codes ever expire?', 'answer' => 'No. The QR code itself is just a visual encoding of the data — it never expires. However, if the QR code points to a URL, that URL may go offline. For long-term use, point QR codes at stable URLs or your own domain rather than third-party shorteners.'],
+            ['question' => 'Is my data sent anywhere when I generate a QR code?', 'answer' => 'No. The QR code is generated entirely in your browser using client-side JavaScript. The text you enter is never sent to any server. You can verify this by opening browser dev tools and watching the network tab while you type.'],
+            ['question' => 'Can I customize colors or add a logo to the QR code?', 'answer' => 'The basic generator produces standard black-on-white QR codes that scan reliably with any reader. For colored or logo-overlaid QR codes, ensure high contrast (avoid light colors on white backgrounds) and keep the logo small (under 20% of code area) to avoid breaking scan reliability.']
+        ],
+        'password_generator' => [
+            ['question' => 'How do I generate a strong password?', 'answer' => 'Use this tool to generate a password of at least 16 characters mixing uppercase, lowercase, numbers, and symbols. Longer is always better — a 20-character random password takes trillions of years to brute force, while an 8-character password can fall in hours. Click the regenerate button until you get one you can save.'],
+            ['question' => 'What makes a password strong?', 'answer' => 'Length matters more than complexity. A 16-character random password is exponentially stronger than an 8-character one with symbols. Avoid dictionary words, names, dates, and reused patterns from other sites. The strongest passwords look random because they are random — generated, not invented.'],
+            ['question' => 'Is this password generator safe?', 'answer' => 'Yes. The password is generated entirely in your browser using JavaScript with the Web Crypto API for true randomness. Nothing is sent to any server. We cannot see, log, or recover your generated password — and neither can anyone else. Always copy the password into a password manager before closing the tab.'],
+            ['question' => 'Should I use a different password for every site?', 'answer' => 'Yes — and it is the single most important security habit. If one site is breached and your password leaks, attackers will try the same email-and-password combo on every other major service (this is called credential stuffing). Use a password manager to make this practical: one strong master password, unique generated passwords for everything else.'],
+            ['question' => 'How long should my password be?', 'answer' => 'Minimum 12 characters for low-stakes accounts, 16 for important accounts (email, banking, password manager), and 20+ for your password manager master password. Most modern password generators default to 16-20 characters, which is a good balance between security and the rare cases you need to type it manually.'],
+            ['question' => 'Can I generate passwords without symbols?', 'answer' => 'Yes — use the symbol toggle to exclude special characters. Some legacy systems do not accept symbols (e.g. older banking sites or Wi-Fi WPA networks). For these cases, generate a longer alphanumeric-only password (24+ characters) to compensate for the smaller character set.']
         ]
     ];
 

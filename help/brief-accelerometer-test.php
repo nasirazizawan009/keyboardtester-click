@@ -16,7 +16,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mouse/hero.png'); ?>" width="640" height="426" alt="Accelerometer test - live X Y Z acceleration readout with tilt visualizer" loading="eager" decoding="async" fetchpriority="high">
+        <imgsrc="<?php echo url('images/accelerometer-test/hero.jpg'); ?>" width="640" height="426" alt="Accelerometer test - live X Y Z acceleration readout with tilt visualizer" loading="eager" decoding="async" fetchpriority="high">
       </div>
     </div>
   </div>

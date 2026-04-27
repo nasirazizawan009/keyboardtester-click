@@ -3,7 +3,7 @@
 $pageTitle = 'Free Gamertag Generator - Random Usernames for Xbox, PSN, Steam | KeyboardTester.click';
 $pageDescription = 'Free gamertag generator. Create random gamer names across 6 styles (edgy, funny, cute, pro, fantasy, cyber), copy with one click, save favorites, and respect Xbox/PSN/Steam length rules. Browser-based, no install.';
 $pageKeywords = 'gamertag generator, gamer name generator, xbox gamertag ideas, random username generator, psn id generator, cool gaming names';
-$pageOgImage = 'images/lucky-wheel/hero.png';
+$pageOgImage = 'images/gamertag-generator/hero.jpg';
 $pageOgImageAlt = 'Gamertag generator - random gamer usernames in 6 styles';
 ?>
 <!DOCTYPE html>

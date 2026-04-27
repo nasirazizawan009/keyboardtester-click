@@ -5,9 +5,9 @@
 include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-ar.php';
 
-$pageTitle = 'اختبار سرعة النقر - قياس CPS و CPM مجاناً';
-$pageDescription = 'اختبار سرعة النقر (CPS) مجاني: قِس عدد النقرات في الثانية عبر تحديات زمنية من 5 أو 10 أو 60 ثانية. بدون تثبيت، يعمل بالكامل في المتصفح.';
-$pageKeywords = 'اختبار سرعة النقر, CPS, CPM, اختبار النقر السريع, سرعة الماوس';
+$pageTitle = 'اختبار سرعة النقر — عدد النقرات في الثانية CPS مجاناً | KeyboardTester.click';
+$pageDescription = 'اختبار سرعة النقر مجاني: قِس عدد النقرات في الثانية (CPS) وعدد نقرات الماوس عبر تحديات من 5 أو 10 أو 60 ثانية. مقارنة سرعة النقر للاعبين والمستخدمين العاديين. بدون تثبيت.';
+$pageKeywords = 'اختبار سرعة النقر, عدد النقرات, عدد نقرات الماوس, CPS, CPM, اختبار النقر السريع, سرعة الماوس, اختبار سرعة الماوس, قياس سرعة النقر';
 ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -37,15 +37,47 @@ $pageKeywords = 'اختبار سرعة النقر, CPS, CPM, اختبار الن
         "name": "ما هو اختبار سرعة النقر؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "اختبار سرعة النقر يقيس عدد النقرات التي يمكنك إجراؤها في الثانية (CPS) أو في الدقيقة (CPM)."
+          "text": "اختبار سرعة النقر يقيس عدد النقرات التي يمكنك إجراؤها في الثانية (CPS) أو في الدقيقة (CPM). يُستخدم لقياس أداء الماوس ومهاراتك في النقر السريع للألعاب التنافسية مثل Minecraft PvP وغيرها."
         }
       },
       {
         "@type": "Question",
-        "name": "ما هو متوسط سرعة النقر؟",
+        "name": "كم عدد النقرات في الثانية للمستخدم العادي؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "متوسط سرعة النقر للمستخدم العادي هو 6-7 CPS. اللاعبون المحترفون يمكنهم الوصول إلى 10-14 CPS."
+          "text": "متوسط عدد النقرات للمستخدم العادي هو 5-7 نقرات في الثانية. اللاعبون المتوسطون يصلون إلى 8-10 CPS، واللاعبون المحترفون يحققون 10-14 CPS، أما الأبطال العالميون فيمكنهم الوصول إلى 15+ نقرة في الثانية."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كيف أحسّن سرعة النقر بالماوس؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "تقنيات تحسين سرعة النقر تشمل: Jitter Click (الاهتزاز السريع للإصبع)، Butterfly Click (التناوب بين إصبعين)، Drag Click (السحب لتحفيز نقرات متتابعة). تدرّب يومياً 5-10 دقائق وستلاحظ تحسناً خلال أسابيع. استخدم ماوس بمفاتيح خفيفة لنتائج أفضل."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل اختبار النقر السريع مجاني وآمن؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، الاختبار مجاني تماماً ولا يتطلب تسجيل دخول أو تنزيل. يعمل بالكامل في المتصفح ولا تُرسل أي بيانات إلى أي خادم. يمكنك إجراء الاختبار بقدر ما تريد دون أي قيود."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما الفرق بين CPS و CPM؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CPS (Clicks Per Second) هو عدد النقرات في الثانية الواحدة، يُستخدم في اختبارات قصيرة (5-10 ثوان). أما CPM (Clicks Per Minute) فهو عدد النقرات في الدقيقة، أكثر دقة في الاختبارات الطويلة (60 ثانية) لأنه يقيس قدرتك على الاستمرار."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل يعمل الاختبار على الهاتف المحمول؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، الاختبار يعمل على جميع الأجهزة بما فيها الهاتف المحمول والتابلت. على الشاشات اللمسية يقيس عدد اللمسات في الثانية بدلاً من نقرات الماوس. النتائج قابلة للمقارنة بين الأجهزة."
         }
       }
     ]
@@ -138,6 +170,38 @@ $pageKeywords = 'اختبار سرعة النقر, CPS, CPM, اختبار الن
             <h3>فترات مختلفة</h3>
             <p>اختر من 5 إلى 60 ثانية.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cps-reference" aria-labelledby="cps-reference-title" style="padding:60px 20px;background:var(--bg-secondary);">
+      <div class="container" style="max-width:1000px;margin:0 auto;direction:rtl;text-align:right;">
+        <div class="section-head">
+          <p class="section-kicker">جدول المقارنة</p>
+          <h2 id="cps-reference-title">ما هو متوسط عدد النقرات في الثانية؟</h2>
+          <p class="section-lede">قارن نتيجتك في اختبار سرعة النقر بهذا الجدول لتعرف مستواك. كلما زاد العدد كلما كان أفضل لألعاب PvP والقتال السريع.</p>
+        </div>
+        <div class="cps-table-wrap" style="overflow-x:auto;margin-top:24px;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+            <thead>
+              <tr style="background:var(--surface);border-bottom:2px solid var(--accent-primary);">
+                <th style="text-align:right;padding:12px 16px;">المستوى</th>
+                <th style="text-align:right;padding:12px 16px;">عدد النقرات (CPS)</th>
+                <th style="text-align:right;padding:12px 16px;">الوصف</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>المبتدئ</strong></td><td style="padding:12px 16px;">1 – 4 CPS</td><td style="padding:12px 16px;">سرعة النقر العادية للاستخدام اليومي والتصفح.</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>المستخدم العادي</strong></td><td style="padding:12px 16px;">5 – 7 CPS</td><td style="padding:12px 16px;">متوسط عدد النقرات لمعظم المستخدمين بدون تدريب خاص.</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>اللاعب المتوسط</strong></td><td style="padding:12px 16px;">8 – 10 CPS</td><td style="padding:12px 16px;">سرعة جيدة للألعاب التنافسية الخفيفة.</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>اللاعب المحترف</strong></td><td style="padding:12px 16px;">10 – 14 CPS</td><td style="padding:12px 16px;">سرعة عالية تتطلب تدريباً منتظماً وتقنيات النقر المتقدمة.</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>الخبير</strong></td><td style="padding:12px 16px;">14 – 18 CPS</td><td style="padding:12px 16px;">مستوى Jitter Click و Butterfly Click المتقن.</td></tr>
+              <tr><td style="padding:12px 16px;"><strong>البطل العالمي</strong></td><td style="padding:12px 16px;">+18 CPS</td><td style="padding:12px 16px;">مستوى استثنائي يستخدم تقنيات Drag Click وأجهزة متخصصة.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:32px;padding:16px 20px;background:var(--surface);border-left:4px solid var(--accent-primary);border-right:4px solid var(--accent-primary);border-radius:6px;">
+          <strong>نصيحة:</strong> أفضل طريقة لقياس سرعة النقر الحقيقية هي إعادة الاختبار 3-5 مرات وحساب المتوسط. تجنب الإعادة المتكررة عندما تكون متعباً، لأن النتائج تتأثر بالتركيز ومستوى الطاقة. درّب تقنيات النقر المختلفة (Jitter, Butterfly) على فترات قصيرة لتجنب إجهاد الأصابع.
         </div>
       </div>
     </section>

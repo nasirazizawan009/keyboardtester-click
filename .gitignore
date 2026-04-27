@@ -10,6 +10,12 @@
 *secret*
 google-credentials.json
 google-indexing-setup.txt
+.ssh-deploy/
+.ssh/
+*.key
+*.pem
+id_rsa*
+id_ed25519*
 
 # ── Deploy & Indexing Scripts (contain or use secrets) ───────────────────────
 deploy*.py
@@ -92,3 +98,23 @@ __*.txt
 __*.php
 *.zip
 kbt.zip
+
+# ── AI helper / diagnostic scripts (one-off debugging from session work) ────
+diagnose-*.py
+check-after-fix*.py
+deep-diagnose.py
+fpm-restart*.py
+quick-check.py
+last-try.py
+status-check.py
+uapi-probe.py
+fix-pr-62.py
+rebuild-*.py
+inject-pro-locales.py
+gsc-country-queries.py
+gsc-localized-analysis.py
+gsc-anchor-audit.py
+gsc-coverage-audit.py
+gsc-traffic.py
+test-gsc-api.py
+dev-to-publish.py

@@ -138,6 +138,22 @@ $pageOgImage = 'images/typing-test/hero.png';
       </div>
     </section>
 
+    <!-- Cross-link block — diverse anchor text for related keyboard tests -->
+    <section class="related-keyboard-tests-tt" style="padding:48px 20px;background:var(--bg-secondary);">
+      <div class="container" style="max-width:1000px;margin:0 auto;">
+        <h2 style="font-size:1.5rem;margin-bottom:16px;">More keyboard diagnostics</h2>
+        <p style="color:var(--text-secondary);margin-bottom:24px;">Already checked your typing speed? Test the underlying hardware too — keys that drop, lag, or ghost will silently lower your WPM:</p>
+        <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+          <li><a href="<?php echo url('tools/keyboard-tester/'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Online keyboard tester</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— check every key registers correctly</span></li>
+          <li><a href="<?php echo url('keyboard-ghosting-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Anti-ghosting test</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— verify multi-key combos work</span></li>
+          <li><a href="<?php echo url('n-key-rollover-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">NKRO checker</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— max simultaneous keys</span></li>
+          <li><a href="<?php echo url('latency-checker.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Key press delay test</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— input lag in milliseconds</span></li>
+          <li><a href="<?php echo url('stuck-key-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Repeating key diagnostic</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— find stuck or jammed keys</span></li>
+          <li><a href="<?php echo url('typing-rhythm-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Typing rhythm fingerprint</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— bigram heatmap and consistency</span></li>
+        </ul>
+      </div>
+    </section>
+
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/keyboard-typing-test.php'; ?>
     <?php $toolBlogSlug = 'keyboard-shortcuts-windows-mac-linux-complete-cheat-sheet.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>

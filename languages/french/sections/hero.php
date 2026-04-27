@@ -36,7 +36,10 @@
         </div>
         <div class="hero-visual">
             <div class="hero-shot hero-shot--video hero-yt-facade" data-yt-id="wVyAj-nrtnI" data-yt-title="KeyboardTester.click — Testeur de clavier" role="button" tabindex="0" aria-label="Lire la vidéo">
-                <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.jpg"); ?>" alt="Aperçu vidéo du testeur de clavier" width="480" height="270" loading="lazy" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.webp"); ?>">
+                    <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.jpg"); ?>" alt="Aperçu vidéo du testeur de clavier" width="480" height="270" loading="eager" fetchpriority="high" decoding="async">
+                </picture>
                 <span class="hero-yt-play" aria-hidden="true">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
                 </span>
@@ -184,12 +187,61 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Testeur de Clavier Francais",
-  "description": "Outil gratuit pour tester le clavier francais en ligne",
+  "name": "Test Clavier en Ligne",
+  "description": "Outil gratuit pour tester un clavier en ligne. Test de toutes les touches, ghosting, latence et rollover N-keys.",
   "url": "<?php echo url('languages/french/'); ?>",
   "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "inLanguage": "fr"
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "inLanguage": "fr",
+  "featureList": [
+    "Test de toutes les touches",
+    "Detection du ghosting",
+    "Test N-key rollover (NKRO)",
+    "Mesure de latence en millisecondes",
+    "Layouts AZERTY et QWERTY"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment tester son clavier en ligne ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Appuyez sur chaque touche de votre clavier une par une. Chaque touche s'illumine sur le clavier virtuel quand elle est detectee. Les touches qui restent eteintes ne sont pas reconnues. Le code couleur indique la rapidite de reponse : vert = rapide (moins de 10 ms), jaune = normal, rouge = lent ou defaillant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que le ghosting du clavier ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le ghosting se produit quand un clavier ne parvient pas a enregistrer toutes les touches pressees simultanement. Pour tester, appuyez sur 3-4 touches en meme temps (par exemple W+A+D+Espace). Si certaines touches ne s'allument pas, votre clavier souffre de ghosting sur cette combinaison."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment mesurer la latence d'un clavier ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La latence mesure le delai entre la frappe et l'affichage en millisecondes. Valeurs typiques : claviers gaming 1-5 ms, claviers de bureau 5-15 ms, sans-fil/Bluetooth 8-25 ms. Cet outil mesure le delai navigateur-rendu (sans inclure le polling USB ni le rebond mecanique)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le test fonctionne-t-il avec un clavier AZERTY ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, l'outil supporte AZERTY (francais), QWERTY (anglais) et tous les layouts standards. Vous pouvez basculer entre eux dans les options. Le test detecte la touche physique pressee independamment du layout choisi par votre systeme d'exploitation."
+      }
+    }
+  ]
 }
 </script>

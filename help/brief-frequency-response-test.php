@@ -16,7 +16,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/headphone-test/speaker-headphone-test-stereo-preview-1400.png'); ?>" width="1400" height="787" alt="Frequency response test - full-range sine sweep from 20 Hz to 20 kHz" loading="eager" decoding="async" fetchpriority="high">
+        <img src="<?php echo url('images/frequency-response-test/hero.jpg'); ?>" width="1200" height="800" alt="Frequency response test - audio equalizer mixing console, full-range sine sweep 20 Hz to 20 kHz" loading="eager" decoding="async" fetchpriority="high">
       </div>
     </div>
   </div>

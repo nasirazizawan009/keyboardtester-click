@@ -14,9 +14,9 @@ $breadcrumbs = [
 ];
 
 // Meta tags
-$pageTitle = 'Probador de Teclado Español - Prueba tu Teclado Gratis';
-$pageDescription = 'Prueba tu teclado español gratis en línea. Detecta ghosting, mide latencia e identifica teclas atascadas.';
-$pageKeywords = 'probador teclado, test teclado español, detector ghosting, medidor latencia';
+$pageTitle = 'Test de Teclado Online — Probador de Teclado Gratis, Ghosting y Latencia | KeyboardTester.click';
+$pageDescription = 'Test de teclado online gratis. Prueba todas las teclas, detecta ghosting, mide la latencia en milisegundos y verifica el N-key rollover. Compatible con teclados mecánicos, de membrana y portátiles. Sin instalación.';
+$pageKeywords = 'test teclado, prueba teclado, probador teclado, test teclado online, comprobar teclado, prueba de teclado, test de teclas, teclado mecánico test, test latencia teclado, test ghosting teclado, comprobar teclas teclado';
 ?>
 
 <!DOCTYPE html>

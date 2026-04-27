@@ -8,11 +8,11 @@
 <section class="seo-hero keyboard-tester-hero">
     <div class="container">
         <!-- Main Heading (H1) -->
-        <h1 class="hero-title">Free Open Source Online Keyboard Tester - Test Your Keyboard Keys</h1>
-        
+        <h1 class="hero-title">Keyboard Tester — Test All Keys, N-Key Rollover & Ghosting Online</h1>
+
         <!-- Hero Description -->
         <p class="hero-description">
-            Test your keyboard instantly with our free online keyboard tester. Detect ghosting keys, measure keyboard latency, identify stuck keys, and verify response time—all without any downloads or signup required.
+            Free online keyboard tester for every key on your keyboard. Detect ghosting, check N-key rollover, measure key latency in milliseconds, and identify stuck or repeating keys. Works with mechanical, membrane, and laptop keyboards in all languages — no install, no signup, fully open source.
         </p>
         
         <!-- Key Features List (for SEO) -->
@@ -67,6 +67,18 @@
                 ⌨️ Start Testing Your Keyboard
             </button>
         </div>
+
+        <!-- Specialized tests cross-link block (helps Google discover sibling tools) -->
+        <div class="related-tests" style="margin-top:48px;padding:24px;background:var(--surface);border-radius:8px;border-left:4px solid var(--accent-primary);">
+            <h2 style="margin:0 0 12px 0;font-size:1.15rem;">Specialized keyboard tests</h2>
+            <p style="margin:0 0 16px 0;color:var(--text-secondary);font-size:0.95rem;">Looking for a specific issue? Use one of these focused testers instead:</p>
+            <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+                <li><a href="<?php echo url('keyboard-ghosting-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Keyboard ghosting test</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— check anti-ghosting and key combo support</span></li>
+                <li><a href="<?php echo url('n-key-rollover-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">N-key rollover (NKRO) test</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— measure simultaneous key registration</span></li>
+                <li><a href="<?php echo url('stuck-key-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Stuck key test</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— diagnose repeating or jammed keys</span></li>
+                <li><a href="<?php echo url('latency-checker.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Keyboard latency test</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— measure key press delay in milliseconds</span></li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -78,37 +90,91 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I test my keyboard online?",
+      "name": "How do I test all keys on my keyboard online?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Simply press any key on your keyboard and watch it light up in the tester. The tool will show the key name, response time, and color-coded feedback indicating response speed."
+        "text": "Press every key on your keyboard one at a time. Each key lights up in the on-screen layout when registered. Keys that stay dim are not being detected. Color codes show response time: green for fast (<10ms), yellow for normal, orange for slow, red/purple for very slow keys that may be failing."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this keyboard tester free?",
+      "name": "What is keyboard ghosting and how do I test for it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes! Our keyboard tester is completely free to use. No signup, no downloads, no ads. Just visit the page and start testing."
+        "text": "Ghosting is when a keyboard fails to register all keys pressed simultaneously. To test, press 3-4 keys at the same time (e.g. W+A+D+Space, common in gaming). If any keys do not light up, your keyboard has ghosting on that combination. Our tool also detects 'phantom' key presses where a key registers without being pressed, which indicates a failing switch."
       }
     },
     {
       "@type": "Question",
-      "name": "What does ghosting mean in keyboards?",
+      "name": "What is N-key rollover (NKRO) and how do I check it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ghosting occurs when a keyboard fails to register all keys pressed simultaneously. Our tool detects these phantom key presses automatically."
+        "text": "N-key rollover means the keyboard can register N simultaneous key presses correctly. Most membrane keyboards support 2-3KRO, decent gaming keyboards support 6KRO, and high-end mechanical keyboards support full NKRO (every key independent). To test: hold down keys one by one without releasing — the maximum number that all stay lit at once is your keyboard's rollover capability."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I test different keyboard layouts?",
+      "name": "How is keyboard latency measured?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, our tester supports QWERTY, Dvorak, Colemak, AZERTY, and QWERTZ layouts. You can switch layouts in the controls."
+        "text": "Latency is the delay between pressing a key and the computer registering the press, measured in milliseconds. Our tool measures the time from JavaScript keydown event to render. Note: this measures browser-to-render latency, not switch actuation; for full hardware latency you also need to account for USB polling rate and switch debounce. Typical values: gaming keyboards 1-5ms, office keyboards 5-15ms, wireless keyboards 8-25ms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are some of my keyboard keys not working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most often: dirt or debris under the keycap (clean with compressed air), worn switch contacts (test by pressing harder), broken solder joint (visible damage on PCB), or driver issue (try a different USB port or computer). Our tester helps you isolate the cause: if the key registers in our tool but not in your software, it is a software issue; if it does not register here either, it is hardware."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I test wireless and Bluetooth keyboards online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our keyboard tester works with any keyboard that registers as a standard HID device — wired USB, USB-C, Bluetooth, 2.4GHz wireless, and laptop integrated keyboards all work. Wireless keyboards typically show 5-15ms higher latency than wired due to radio handshake overhead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this keyboard tester free and safe to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — completely free, no signup, no downloads. The tester runs entirely in your browser using JavaScript keydown events. No keystrokes are sent to any server. The full source code is open source on GitHub for verification."
       }
     }
   ]
+}
+</script>
+
+<!-- Schema Markup for WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Keyboard Tester",
+  "url": "https://keyboardtester.click/tools/keyboard-tester/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "description": "Free online keyboard tester. Test every key, check N-key rollover, detect ghosting, measure key latency in milliseconds. Works with mechanical, membrane, and laptop keyboards.",
+  "featureList": [
+    "Test every key on the keyboard",
+    "N-key rollover detection",
+    "Ghosting and phantom key detection",
+    "Per-key latency measurement",
+    "Multiple layouts: QWERTY, Dvorak, Colemak, AZERTY, QWERTZ",
+    "Multiple themes including dark mode",
+    "Heatmap of key press frequency",
+    "Open source"
+  ],
+  "creator": {
+    "@type": "Organization",
+    "name": "KeyboardTester.click",
+    "url": "https://keyboardtester.click/"
+  }
 }
 </script>
 

@@ -13,9 +13,9 @@ $breadcrumbs = [
 ];
 
 // Set meta tags
-$pageTitle = 'Free Online Keyboard Tester - Test Your Keyboard';
-$pageDescription = 'Test your keyboard instantly with our free online keyboard tester. Detect ghosting keys, measure latency, check response time, and identify stuck keys.';
-$pageKeywords = 'keyboard tester, online keyboard test, keyboard ghosting detection, latency test, keyboard response time, stuck keys';
+$pageTitle = 'Keyboard Tester — Test All Keys, N-Key Rollover & Ghosting Online | KeyboardTester.click';
+$pageDescription = 'Free online keyboard tester — test every key, detect ghosting, check N-key rollover, measure key latency in milliseconds. Works with mechanical, membrane, and laptop keyboards. No install, open source.';
+$pageKeywords = 'keyboard tester, keyboard test, online keyboard test, keyboard checker, test all keys, keyboard ghosting test, n-key rollover test, keyboard latency test, mechanical keyboard tester, keyboard response time';
 ?>
 
 <!DOCTYPE html>

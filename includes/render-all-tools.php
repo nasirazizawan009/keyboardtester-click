@@ -272,6 +272,35 @@ $hreflangEmitted = true;
     .at-card-title { font-weight: 700; font-size: 1.02rem; line-height: 1.3; color: var(--text-color); }
     .at-card-desc { font-size: 0.88rem; line-height: 1.55; color: var(--text-muted, #475569); flex: 1; margin: 0; }
 
+    /* ── Dark theme overrides ──
+       --surface-2 is not declared in :root or .dark-theme, so the light fallback
+       leaks through. Same for the cat-count pill. Override both explicitly. */
+    html.dark-theme .at-section,
+    [data-theme="dark"] .at-section {
+        background: rgba(30, 41, 59, 0.6);
+        border-color: rgba(148, 163, 184, 0.18);
+    }
+    html.dark-theme .at-cat-head,
+    [data-theme="dark"] .at-cat-head {
+        border-bottom-color: rgba(148, 163, 184, 0.22);
+    }
+    html.dark-theme .at-cat-count,
+    [data-theme="dark"] .at-cat-count {
+        background: rgba(148, 163, 184, 0.14);
+        border-color: rgba(148, 163, 184, 0.24);
+        color: #cbd5e1;
+    }
+    html.dark-theme .at-card,
+    [data-theme="dark"] .at-card {
+        background: rgba(15, 23, 42, 0.5);
+        border-color: rgba(148, 163, 184, 0.18);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.32), 0 2px 6px rgba(0,0,0,0.18);
+    }
+    html.dark-theme .at-card-title,
+    [data-theme="dark"] .at-card-title { color: #f1f5f9; }
+    html.dark-theme .at-card-desc,
+    [data-theme="dark"] .at-card-desc { color: #94a3b8; }
+
     @media (max-width: 600px) {
         .at-hero { padding: 26px 22px; }
         .at-title { font-size: 1.45rem; }

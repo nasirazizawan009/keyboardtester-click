@@ -691,3 +691,11 @@ function handleKeyDown(e) {
 })();
 </script>
 
+<?php
+// Advanced Pro Features (NKRO, combos, polling, debounce, actuation)
+if (!isset($GLOBALS['__kbt_adv_loaded'])) {
+    $GLOBALS['__kbt_adv_loaded'] = true;
+    echo "<script>window.KBT_LOCALE = 'fr';</script>";
+    include __DIR__ . '/../../../tools/keyboard-tester-advanced.php';
+}
+?>

@@ -298,6 +298,12 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
     </FilesMatch>
 </IfModule>
 
+# Return 410 Gone for stale WordPress feed/tag/category URLs from when blog
+# was at /blogs/. These never resolve in the current static blog and Google
+# was reporting them as "Crawled - currently not indexed". 410 = strong drop signal.
+RewriteRule ^blog(s)?/(tag|category|feed|comments|wp-content|wp-admin|wp-login|wp-includes|author|page)(/.*)?$ - [R=410,L]
+RewriteRule ^blog(s)?/.+/feed/?$ - [R=410,L]
+
 # /blogs/ → /blog/ (WordPress removed, replaced with static blog)
 RewriteRule ^blogs(/.*)?$ /blog$1 [R=301,L]
 
@@ -313,6 +319,19 @@ RewriteRule ^keyboard-test\.php$ / [R=301,L]
 
 # Explicit HTML→PHP redirects for pages already indexed under .html URLs
 Redirect 301 /latency-checker.html /latency-checker.php
+
+# Block direct indexing of tool partials (HTML fragments without <html> shell)
+# These are included by parent pages; if Google finds them via accident, noindex.
+# FilesMatch matches direct URL requests only — PHP includes are unaffected.
+<IfModule mod_headers.c>
+    <FilesMatch "^(screentesttool|webcamtestertool|headphone_speaker_tester_tool|luckywheeltool)\.php$">
+        Header set X-Robots-Tag "noindex, nofollow"
+    </FilesMatch>
+</IfModule>
+
+# Legacy duplicate redirect: mouse-trail-index.php → mouse-trail.php
+# (PHP file does the 301; this is a belt-and-suspenders fallback)
+RewriteRule ^mouse-trail-index\.php$ /mouse-trail.php [R=301,L]
 
 # Custom 404 page
 ErrorDocument 404 /404.php

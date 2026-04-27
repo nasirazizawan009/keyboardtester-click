@@ -6,12 +6,35 @@
  */
 
 if (!function_exists('kbtRenderSiteSidebar')) {
-    function kbtRenderSiteSidebar()
+    function kbtRenderSiteSidebar($locale = 'en')
     {
         include_once __DIR__ . '/tool-list-data.php';
         include_once __DIR__ . '/../tool-icons.php';
         if (!function_exists('getSharedToolListData')) { return; }
         $data = getSharedToolListData();
+
+        // Locale-aware URL resolver: prefers localized route when available, falls back to EN
+        $localeConfig = $data['locales'][$locale] ?? $data['locales']['en'];
+        $localeDir = trim((string)($localeConfig['directory'] ?? ''), '/');
+        $rootPath = dirname(__DIR__, 2);
+        $resolveToolUrl = function ($toolMeta) use ($locale, $localeDir, $rootPath) {
+            $enPath = $toolMeta['routes']['en'] ?? '';
+            if ($locale === 'en' || $localeDir === '') {
+                return $enPath !== '' ? (function_exists('url') ? url(ltrim($enPath, '/')) : '/' . ltrim($enPath, '/')) : '';
+            }
+            $localized = $toolMeta['routes']['localized'] ?? null;
+            if ($localized === null) {
+                return $enPath !== '' ? (function_exists('url') ? url(ltrim($enPath, '/')) : '/' . ltrim($enPath, '/')) : '';
+            }
+            if ($localized === '') {
+                return function_exists('url') ? url('languages/' . $localeDir . '/') : '/languages/' . $localeDir . '/';
+            }
+            $abs = $rootPath . DIRECTORY_SEPARATOR . 'languages' . DIRECTORY_SEPARATOR . $localeDir . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $localized);
+            if (!is_file($abs)) {
+                return $enPath !== '' ? (function_exists('url') ? url(ltrim($enPath, '/')) : '/' . ltrim($enPath, '/')) : '';
+            }
+            return function_exists('url') ? url('languages/' . $localeDir . '/' . $localized) : '/languages/' . $localeDir . '/' . $localized;
+        };
 
         // Inline SVG icons per category — take currentColor so we can tint via CSS
         $CATEGORY_LABELS = [
@@ -68,6 +91,8 @@ if (!function_exists('kbtRenderSiteSidebar')) {
             if (!isset($buckets[$cat])) continue;
             $route = $tool['routes']['en'] ?? '';
             if ($route === '') continue;
+            $resolvedUrl = $resolveToolUrl($tool);
+            if ($resolvedUrl === '') continue;
             $isNew = false;
             if (!empty($tool['added'])) {
                 $addedTs = strtotime($tool['added']);
@@ -79,7 +104,7 @@ if (!function_exists('kbtRenderSiteSidebar')) {
                 'id'    => $id,
                 'name'  => $tool['name'] ?? $id,
                 'desc'  => $tool['description'] ?? '',
-                'url'   => function_exists('url') ? url(ltrim($route, '/')) : '/' . ltrim($route, '/'),
+                'url'   => $resolvedUrl,
                 'is_new' => $isNew,
                 'icon'  => $tool['icon'] ?? '',
             ];
@@ -87,8 +112,13 @@ if (!function_exists('kbtRenderSiteSidebar')) {
         usort($buckets, function ($a, $b) { return $a['order'] <=> $b['order']; });
         $buckets = array_values(array_filter($buckets, function ($c) { return !empty($c['tools']); }));
 
-        $homeUrl     = function_exists('url') ? url('') : '/';
-        $allToolsUrl = function_exists('url') ? url('pages/all-tools.php') : '/pages/all-tools.php';
+        if ($locale !== 'en' && $localeDir !== '') {
+            $homeUrl     = function_exists('url') ? url('languages/' . $localeDir . '/') : '/languages/' . $localeDir . '/';
+            $allToolsUrl = function_exists('url') ? url('pages/all-tools-' . $locale . '.php') : '/pages/all-tools-' . $locale . '.php';
+        } else {
+            $homeUrl     = function_exists('url') ? url('') : '/';
+            $allToolsUrl = function_exists('url') ? url('pages/all-tools.php') : '/pages/all-tools.php';
+        }
         $blogUrl     = function_exists('blogUrl') ? blogUrl() : (function_exists('url') ? url('blog/') : '/blog/');
         $aboutUrl    = function_exists('url') ? url('about-us.php') : '/about-us.php';
         $downloadUrl = function_exists('url') ? url('pages/download.php') : '/pages/download.php';

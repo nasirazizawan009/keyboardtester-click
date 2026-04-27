@@ -16,7 +16,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mouse/hero.png'); ?>" width="640" height="426" alt="Gyroscope test - 3D cube following device orientation with alpha beta gamma readout" loading="eager" decoding="async" fetchpriority="high">
+        <imgsrc="<?php echo url('images/gyroscope-test/hero.jpg'); ?>" width="640" height="426" alt="Gyroscope test - 3D cube following device orientation with alpha beta gamma readout" loading="eager" decoding="async" fetchpriority="high">
       </div>
     </div>
   </div>

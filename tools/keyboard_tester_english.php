@@ -287,6 +287,17 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
     include __DIR__ . '/../includes/components/keyboard-cat-progress.php';
     ?>
 
+    <?php
+    // Advanced Pro Features: NKRO counter, combo presets, polling estimate, debounce detection, per-key actuation
+    if (!isset($GLOBALS['__kbt_adv_loaded'])) {
+        $GLOBALS['__kbt_adv_loaded'] = true;
+        // Make locale available to the component's JS i18n
+        $advLocale = $advLocale ?? ($pageLocale ?? ($lang ?? 'en'));
+        echo "<script>window.KBT_LOCALE = " . json_encode($advLocale) . ";</script>";
+        include __DIR__ . '/keyboard-tester-advanced.php';
+    }
+    ?>
+
     <!-- Mobile Keyboard Tester -->
     <div class="mobile-keyboard-section" id="mobile-keyboard-section">
         <div class="mobile-notice">
@@ -1072,6 +1083,18 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
     align-items: center;
     gap: 10px;
     margin-bottom: 8px;
+    color: var(--text-primary, #e2e8f0);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.status-indicator span {
+    color: var(--text-primary, #e2e8f0);
+}
+html:not(.dark-theme) .status-indicator,
+html:not(.dark-theme) .status-indicator span,
+[data-theme="light"] .status-indicator,
+[data-theme="light"] .status-indicator span {
+    color: #1e293b;
 }
 
 .status-dot {
@@ -1103,10 +1126,14 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
 }
 
 .info-text {
-    color: var(--text-muted);
+    color: var(--text-secondary, #cbd5e1);
     font-size: 13px;
     line-height: 1.6;
     margin: 0;
+}
+html:not(.dark-theme) .info-text,
+[data-theme="light"] .info-text {
+    color: #334155;
 }
 
 .info-text strong { color: var(--accent-primary); }

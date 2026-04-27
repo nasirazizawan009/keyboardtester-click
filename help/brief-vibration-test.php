@@ -16,7 +16,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-shot">
-        <img src="<?php echo url('images/mouse/hero.png'); ?>" width="640" height="426" alt="Vibration test - phone haptics and gamepad rumble check" loading="eager" decoding="async" fetchpriority="high">
+        <imgsrc="<?php echo url('images/vibration-test/hero.jpg'); ?>" width="640" height="426" alt="Vibration test - phone haptics and gamepad rumble check" loading="eager" decoding="async" fetchpriority="high">
       </div>
     </div>
   </div>

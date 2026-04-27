@@ -62,6 +62,11 @@ $amazonLinks = [
     ]
 ];
 
+// Guard all function declarations against double-include fatal errors.
+// (Some pages include config.php twice via different code paths; without
+// these guards, PHP throws a fatal "Cannot redeclare X" → 503.)
+if (!function_exists('url')) {
+
 /**
  * Generate a URL that works on both localhost and live site
  * @param string $path - The path relative to site root (e.g., 'mouse-test.html', 'about-us.html')
@@ -285,6 +290,8 @@ function amazonLink($category, $lang = 'en') {
     global $amazonLinks;
     return $amazonLinks[$category][$lang] ?? $amazonLinks[$category]['en'];
 }
+
+} // end if (!function_exists('url'))
 
 // Define common page links (use direct .php paths for reliable localhost + live)
 $pages = [

@@ -3,7 +3,7 @@
 $pageTitle = 'Free Vibration Test - Phone Haptics & Gamepad Rumble Check | KeyboardTester.click';
 $pageDescription = 'Free online vibration test. Test phone Vibration API with pattern presets (pulse, SOS, heartbeat) and gamepad rumble with per-motor intensity sliders. Browser-based, no install.';
 $pageKeywords = 'vibration test, phone vibration check, navigator vibrate, gamepad rumble test, controller vibration, haptics test';
-$pageOgImage = 'images/mouse/hero.png';
+$pageOgImage = 'images/vibration-test/hero.jpg';
 $pageOgImageAlt = 'Vibration test - phone haptics and gamepad rumble check';
 ?>
 <!DOCTYPE html>

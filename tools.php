@@ -138,7 +138,7 @@ $tools = [
         "name" => "Emoji Trail Game",
         "description" => "Fun interactive game where your mouse creates colorful emoji trails. Collect points and enjoy a creative break.",
         "category" => "game",
-        "link" => url('mouse-trail-index.php'),
+        "link" => url('mouse-trail.php'),
         "icon" => "🎮"
     ],
     [

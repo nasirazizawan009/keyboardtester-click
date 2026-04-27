@@ -40,6 +40,16 @@ Disallow: /cache/
 Disallow: /deploy-
 Disallow: /_old
 Disallow: /_backup
+# Stale WordPress feed/tag/category URLs from old /blogs/ setup (return 410 now)
+Disallow: /blogs/tag/
+Disallow: /blogs/category/
+Disallow: /blogs/feed/
+Disallow: /blogs/wp-
+Disallow: /blog/tag/
+Disallow: /blog/category/
+Disallow: /blog/feed/
+Disallow: /blog/wp-
+Disallow: /*/feed/
 Crawl-delay: 1
 
 # Specific rules for Googlebot

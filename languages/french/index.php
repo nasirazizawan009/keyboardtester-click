@@ -14,9 +14,9 @@ $breadcrumbs = [
 ];
 
 // Meta tags
-$pageTitle = 'Testeur de Clavier Francais - Testez Votre Clavier Gratuitement';
-$pageDescription = 'Testez votre clavier francais gratuitement en ligne. Detectez le ghosting, mesurez la latence et identifiez les touches bloquees.';
-$pageKeywords = 'testeur clavier, test clavier francais, detecteur ghosting, mesure latence, clavier AZERTY';
+$pageTitle = 'Test Clavier en Ligne — Testeur de Clavier Gratuit, Ghosting & Latence | KeyboardTester.click';
+$pageDescription = 'Test clavier en ligne gratuit. Testez toutes les touches, détectez le ghosting, mesurez la latence en millisecondes et vérifiez le N-key rollover. Compatible avec les claviers AZERTY, mécaniques, membranes et portables. Sans installation.';
+$pageKeywords = 'test clavier, test clavier en ligne, testeur de clavier, testeur clavier, test clavier gratuit, vérifier clavier, test touches clavier, clavier AZERTY, test latence clavier, test ghosting clavier, testeur clavier mécanique';
 ?>
 
 <!DOCTYPE html>

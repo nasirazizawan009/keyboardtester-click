@@ -36,7 +36,10 @@
         </div>
         <div class="hero-visual">
             <div class="hero-shot hero-shot--video hero-yt-facade" data-yt-id="wVyAj-nrtnI" data-yt-title="KeyboardTester.click — Тестер клавиатуры" role="button" tabindex="0" aria-label="Воспроизвести видео">
-                <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.jpg"); ?>" alt="Предпросмотр видео тестера клавиатуры" width="480" height="270" loading="lazy" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.webp"); ?>">
+                    <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.jpg"); ?>" alt="Предпросмотр видео тестера клавиатуры" width="480" height="270" loading="eager" fetchpriority="high" decoding="async">
+                </picture>
                 <span class="hero-yt-play" aria-hidden="true">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
                 </span>
@@ -180,16 +183,113 @@
     </div>
 </section>
 
+<section class="latency-reference-ru" aria-labelledby="latency-reference-ru-title" style="padding:60px 20px;background:var(--bg-secondary);">
+  <div class="container" style="max-width:1000px;margin:0 auto;">
+    <div class="section-head">
+      <p class="section-kicker">Справочник</p>
+      <h2 id="latency-reference-ru-title">Какая задержка клавиатуры считается хорошей?</h2>
+      <p class="section-lede">Сравните результаты теста задержки клавиатуры с этой таблицей. Чем ниже значение, тем лучше — но «хороший» порог зависит от того, как вы используете клавиатуру.</p>
+    </div>
+    <div style="overflow-x:auto;margin-top:24px;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+        <thead>
+          <tr style="background:var(--surface);border-bottom:2px solid var(--accent-primary);">
+            <th style="text-align:left;padding:12px 16px;">Использование</th>
+            <th style="text-align:left;padding:12px 16px;">Целевая задержка</th>
+            <th style="text-align:left;padding:12px 16px;">Типичное оборудование</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Киберспорт (FPS, файтинги)</strong></td><td style="padding:12px 16px;">&lt; 5 мс</td><td style="padding:12px 16px;">Проводная механическая (красные/серебряные переключатели)</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Обычные игры</strong></td><td style="padding:12px 16px;">5–10 мс</td><td style="padding:12px 16px;">Большинство проводных механических или качественных мембранных клавиатур</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Офисная работа и набор текста</strong></td><td style="padding:12px 16px;">10–20 мс</td><td style="padding:12px 16px;">Проводные или 2.4 ГГц беспроводные клавиатуры</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Bluetooth / беспроводные</strong></td><td style="padding:12px 16px;">15–30 мс</td><td style="padding:12px 16px;">Bluetooth-клавиатуры (слотовый опрос увеличивает задержку)</td></tr>
+          <tr><td style="padding:12px 16px;"><strong>Тревожный уровень</strong></td><td style="padding:12px 16px;">&gt; 40 мс постоянно</td><td style="padding:12px 16px;">Изношенные переключатели, загруженный USB-хаб, проблема с драйверами</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:32px;padding:16px 20px;background:var(--surface);border-left:4px solid var(--accent-primary);border-radius:6px;">
+      <strong>Примечание:</strong> данный инструмент измеряет время от события <code>keydown</code> в JavaScript до его обработки. Задержка опроса USB (1 мс при 1000 Гц, 8 мс при 125 Гц) и задержка обновления монитора не учитываются. Для сравнения клавиатуры А и B на одном компьютере браузерный замер надёжен, но для абсолютных аппаратных характеристик нужны специализированные инструменты вроде NVIDIA LDAT.
+    </div>
+  </div>
+</section>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Тестер русской клавиатуры",
-  "description": "Бесплатный онлайн инструмент для тестирования русской клавиатуры",
+  "name": "Проверка клавиатуры онлайн",
+  "description": "Бесплатный онлайн инструмент для проверки клавиатуры. Тест задержки, ghosting, N-key rollover, проверка залипающих клавиш.",
   "url": "<?php echo url('languages/russian/'); ?>",
   "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "inLanguage": "ru"
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "inLanguage": "ru",
+  "featureList": [
+    "Проверка всех клавиш",
+    "Обнаружение ghosting",
+    "Тест N-key rollover (NKRO)",
+    "Измерение задержки в миллисекундах",
+    "Поддержка ЙЦУКЕН и QWERTY",
+    "Тёмная тема"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как проверить клавиатуру онлайн?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нажимайте каждую клавишу клавиатуры по очереди. Каждая клавиша подсвечивается на виртуальной клавиатуре при нажатии — те, что не загораются, не распознаются. Цветовая индикация показывает скорость отклика: зелёный — быстро (менее 10 мс), жёлтый — нормально, красный — медленно или возможный отказ клавиши."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что такое ghosting клавиатуры и как его проверить?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ghosting — это когда клавиатура не регистрирует все клавиши при одновременном нажатии. Тест: одновременно нажмите 3-4 игровые клавиши (например, W+A+D+Пробел). Если какая-то клавиша не подсвечивается, эта комбинация подвержена ghosting. Клавиатуры с N-key rollover (NKRO) корректно распознают любые комбинации клавиш."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как измеряется задержка клавиатуры?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Время от нажатия клавиши до отображения результата измеряется в миллисекундах. Типичные значения: игровые клавиатуры 1-5 мс, обычные офисные 5-15 мс, беспроводные/Bluetooth 8-25 мс. Этот инструмент измеряет задержку браузер-рендер (без учёта USB-опроса и дребезга переключателя)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Поддерживаются ли русская и английская раскладки?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, поддерживаются раскладки ЙЦУКЕН и QWERTY с переключением между ними. При активной русской раскладке вы можете проверить русские буквы; при английской — латинские. Тест работает независимо от текущей раскладки операционной системы."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Почему некоторые клавиши клавиатуры не работают?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Самые частые причины: (1) грязь под клавишей (продувка сжатым воздухом), (2) износ контактов переключателя, (3) повреждение пайки PCB, (4) проблема с драйвером (попробуйте другой USB-порт). Если клавиша регистрируется в этом тесте, но не работает в другой программе — проблема программная; если не регистрируется здесь — аппаратная."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Бесплатна ли эта проверка клавиатуры и безопасна ли?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Полностью бесплатно, без регистрации и без загрузки. Все тесты выполняются только в вашем браузере с помощью JavaScript, информация о нажатиях клавиш не передаётся на серверы. Конфиденциальность гарантируется."
+      }
+    }
+  ]
 }
 </script>

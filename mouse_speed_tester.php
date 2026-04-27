@@ -138,6 +138,22 @@ $pageOgImage = 'images/mouse-speed/hero.png';
       </div>
     </section>
 
+    <!-- Cross-link block — diverse anchor text for related tools -->
+    <section class="related-mouse-tests" style="padding:48px 20px;background:var(--bg-secondary);">
+      <div class="container" style="max-width:1000px;margin:0 auto;">
+        <h2 style="font-size:1.5rem;margin-bottom:16px;">Test more about your mouse</h2>
+        <p style="color:var(--text-secondary);margin-bottom:24px;">Click speed is one signal — these tools cover the full picture of mouse health and gaming performance:</p>
+        <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+          <li><a href="<?php echo url('mouse_sensitivity_DPI_tester.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">DPI test online</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— measure your mouse's true sensitivity</span></li>
+          <li><a href="<?php echo url('ghost-click-detector.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Ghost click detector</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— catch failing switches and double-firing</span></li>
+          <li><a href="<?php echo url('mouse-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Mouse button checker</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— left, right, middle, scroll wheel</span></li>
+          <li><a href="<?php echo url('double-click-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Double click test</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— diagnose unintended double-firing</span></li>
+          <li><a href="<?php echo url('scroll-wheel-test.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Scroll wheel test</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— check scroll precision and direction</span></li>
+          <li><a href="<?php echo url('latency-checker.php'); ?>" style="color:var(--accent-primary);text-decoration:none;font-weight:500;">Mouse latency checker</a> <span style="color:var(--text-secondary);font-size:0.9rem;">— measure input lag for FPS gaming</span></li>
+        </ul>
+      </div>
+    </section>
+
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/seo-content/click-speed.php'; ?>
     <?php $currentTool = 'cps'; include 'includes/related-tools.php'; ?>

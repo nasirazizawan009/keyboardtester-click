@@ -36,7 +36,10 @@
         </div>
         <div class="hero-visual">
             <div class="hero-shot hero-shot--video hero-yt-facade" data-yt-id="wVyAj-nrtnI" data-yt-title="KeyboardTester.click — Tastatur-Tester" role="button" tabindex="0" aria-label="Video abspielen">
-                <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.jpg"); ?>" alt="Vorschau des Tastatur-Tester-Videos" width="480" height="270" loading="lazy" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.webp"); ?>">
+                    <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.jpg"); ?>" alt="Vorschau des Tastatur-Tester-Videos" width="480" height="270" loading="eager" fetchpriority="high" decoding="async">
+                </picture>
                 <span class="hero-yt-play" aria-hidden="true">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
                 </span>
@@ -184,12 +187,61 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Deutscher Tastatur-Tester",
-  "description": "Kostenloses Online-Werkzeug zum Testen deutscher Tastaturen",
+  "name": "Tastatur Test Online",
+  "description": "Kostenloses Online-Tool zum Testen einer Tastatur. Alle Tasten testen, Ghosting erkennen, Latenz und N-Key Rollover messen.",
   "url": "<?php echo url('languages/german/'); ?>",
   "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-  "inLanguage": "de"
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "inLanguage": "de",
+  "featureList": [
+    "Alle Tasten testen",
+    "Ghosting-Erkennung",
+    "N-Key Rollover (NKRO) Test",
+    "Latenzmessung in Millisekunden",
+    "QWERTZ und QWERTY Layouts"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie kann ich meine Tastatur online testen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Druecken Sie jede Taste einzeln auf Ihrer Tastatur. Jede Taste leuchtet auf der virtuellen Tastatur auf, sobald sie erkannt wird. Tasten, die dunkel bleiben, werden nicht registriert. Die Farbcodierung zeigt die Reaktionsgeschwindigkeit: gruen = schnell (unter 10 ms), gelb = normal, rot = langsam oder fehlerhaft."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bedeutet Tastatur-Ghosting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ghosting tritt auf, wenn eine Tastatur nicht alle gleichzeitig gedrueckten Tasten erkennt. Zum Testen druecken Sie 3-4 Tasten gleichzeitig (z.B. W+A+D+Leertaste). Wenn einige Tasten nicht aufleuchten, hat Ihre Tastatur Ghosting bei dieser Kombination. Tastaturen mit N-Key Rollover (NKRO) erkennen alle Tastenkombinationen korrekt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie wird die Tastatur-Latenz gemessen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Latenz misst die Verzoegerung zwischen Tastendruck und Anzeige in Millisekunden. Typische Werte: Gaming-Tastaturen 1-5 ms, normale Bueroatastaturen 5-15 ms, Wireless/Bluetooth 8-25 ms. Dieses Tool misst Browser-Render-Latenz (ohne USB-Polling und Switch-Debounce)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Funktioniert der Test mit QWERTZ-Tastaturen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, das Tool unterstuetzt QWERTZ (deutsch), QWERTY (englisch) und alle Standard-Layouts. Sie koennen zwischen ihnen in den Einstellungen wechseln. Der Test erkennt die physisch gedrueckte Taste unabhaengig vom System-Layout."
+      }
+    }
+  ]
 }
 </script>

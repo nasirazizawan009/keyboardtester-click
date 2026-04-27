@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Mouse DPI Tester Online | KeyboardTester.click';
-$pageDescription = 'Free open source mouse DPI and sensitivity tester online. Estimate DPI by measuring cursor movement against a known physical distance. No download needed.';
-$pageKeywords = 'mouse dpi tester, open source DPI tester, mouse sensitivity test, dpi calculator, mouse dpi check';
+$pageTitle = 'Mouse DPI Test — Check Your DPI Online with the Ruler Method | KeyboardTester.click';
+$pageDescription = 'Free mouse DPI test online. Check your true mouse DPI by measuring cursor movement against a known physical distance. Recommended DPI for gaming, FPS, MOBA, and design work. No install.';
+$pageKeywords = 'mouse dpi test, dpi test, dpi checker, mouse dpi checker, dpi analyzer, check my mouse dpi, mouse sensitivity test, dpi finder, dpi tester online, mouse dpi calculator, test mouse dpi online';
 $pageOgImage = 'images/mouse-dpi/hero.png';
 ?>
 <!DOCTYPE html>
@@ -134,6 +134,38 @@ $pageOgImage = 'images/mouse-dpi/hero.png';
             <h3>Review results</h3>
             <p>Check your DPI and sensitivity stats and retest if needed.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dpi-reference" aria-labelledby="dpi-reference-title" style="padding:60px 20px;background:var(--bg-secondary);">
+      <div class="container" style="max-width:1000px;margin:0 auto;">
+        <div class="section-head">
+          <p class="section-kicker">Reference</p>
+          <h2 id="dpi-reference-title">Recommended DPI by use case</h2>
+          <p class="section-lede">Run the DPI test above to see your current setting, then compare to what works best for your activity. Lower DPI = more precise small movements; higher DPI = faster cursor traversal.</p>
+        </div>
+        <div class="dpi-table-wrap" style="overflow-x:auto;margin-top:24px;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+            <thead>
+              <tr style="background:var(--surface);border-bottom:2px solid var(--accent-primary);">
+                <th style="text-align:left;padding:12px 16px;">Use case</th>
+                <th style="text-align:left;padding:12px 16px;">Recommended DPI</th>
+                <th style="text-align:left;padding:12px 16px;">Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Competitive FPS (CS, Valorant)</strong></td><td style="padding:12px 16px;">400 – 800</td><td style="padding:12px 16px;">Pro players favor low DPI for precise micro-adjustments and consistent muscle memory. Most pros use 400 or 800.</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>MOBA / RTS</strong></td><td style="padding:12px 16px;">800 – 1200</td><td style="padding:12px 16px;">Balanced — fast enough for map travel, precise enough for unit selection.</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Casual gaming &amp; productivity</strong></td><td style="padding:12px 16px;">800 – 1600</td><td style="padding:12px 16px;">Comfortable for everyday use on a typical desktop monitor.</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>4K monitor / multi-monitor</strong></td><td style="padding:12px 16px;">1600 – 2400</td><td style="padding:12px 16px;">Higher pixel count means you need more DPI to traverse the screen without dragging the mouse repeatedly.</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Graphic design &amp; CAD</strong></td><td style="padding:12px 16px;">1200 – 2400</td><td style="padding:12px 16px;">Mid-to-high DPI gives precision for fine work; many designers also use a tablet.</td></tr>
+              <tr><td style="padding:12px 16px;"><strong>Gaming on a 27"+ 4K display</strong></td><td style="padding:12px 16px;">1600 – 3200</td><td style="padding:12px 16px;">Modern gaming mice support up to 26000 DPI but most players never exceed 3200 even on big screens.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:32px;padding:16px 20px;background:var(--surface);border-left:4px solid var(--accent-primary);border-radius:6px;">
+          <strong>How to read your DPI test result:</strong> if the DPI shown by this tool differs significantly from your mouse's advertised DPI, the cause is usually (a) Windows pointer speed multiplier (set to "6th notch" / no enhancement for accurate measurement), (b) "Enhance pointer precision" enabled (turn it OFF for consistent DPI), or (c) the mouse is reporting a software-stepped DPI rather than its native sensor DPI.
         </div>
       </div>
     </section>

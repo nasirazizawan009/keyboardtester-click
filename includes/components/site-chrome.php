@@ -522,7 +522,7 @@ if (!function_exists('kbtRenderSiteHeader')) {
 
         <nav class="site-header__nav" id="siteHeaderNav">
             <a class="site-header__nav-link" href="<?php echo htmlspecialchars($pages['home'] ?? url(''), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['home'], ENT_QUOTES, 'UTF-8'); ?></a>
-            <a class="site-header__nav-link" href="<?php echo htmlspecialchars(url('pages/all-tools.php'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['tools'], ENT_QUOTES, 'UTF-8'); ?></a>
+            <a class="site-header__nav-link" href="<?php echo htmlspecialchars(url($locale === 'en' ? 'pages/all-tools.php' : ('pages/all-tools-' . $locale . '.php')), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['tools'], ENT_QUOTES, 'UTF-8'); ?></a>
 
             <a class="site-header__nav-link" href="<?php echo htmlspecialchars($pages['blog'] ?? blogUrl(), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['blog'], ENT_QUOTES, 'UTF-8'); ?></a>
             <a class="site-header__nav-link" href="<?php echo htmlspecialchars($pages['privacy'] ?? url('privacy-policy.php'), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($copy['menu']['privacy'], ENT_QUOTES, 'UTF-8'); ?></a>

@@ -14,9 +14,9 @@ $breadcrumbs = [
 ];
 
 // Meta tags
-$pageTitle = 'Testador de Teclado Portugues - Teste seu Teclado Gratis';
-$pageDescription = 'Teste seu teclado portugues gratis online. Detecte ghosting, meca latencia e identifique teclas presas.';
-$pageKeywords = 'testador teclado, teste teclado portugues, detector ghosting, medidor latencia';
+$pageTitle = 'Teste de Teclado Online — Testador de Teclado Grátis, Ghosting e Latência | KeyboardTester.click';
+$pageDescription = 'Teste de teclado online grátis. Teste todas as teclas, detecte ghosting, meça a latência em milissegundos e verifique o N-key rollover. Compatível com teclados mecânicos, de membrana e portáteis. Sem instalação.';
+$pageKeywords = 'teste de teclado, teste teclado, testador de teclado, teste teclado online, testar teclado, verificar teclado, teste de teclas, teclado mecânico teste, teste latência teclado, teste ghosting teclado, testar teclas teclado';
 ?>
 
 <!DOCTYPE html>

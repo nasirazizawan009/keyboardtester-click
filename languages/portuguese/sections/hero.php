@@ -36,7 +36,10 @@
         </div>
         <div class="hero-visual">
             <div class="hero-shot hero-shot--video hero-yt-facade" data-yt-id="wVyAj-nrtnI" data-yt-title="KeyboardTester.click — Testador de teclado" role="button" tabindex="0" aria-label="Reproduzir vídeo">
-                <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.jpg"); ?>" alt="Prévia do vídeo do testador de teclado" width="480" height="270" loading="lazy" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.webp"); ?>">
+                    <img class="hero-yt-thumb" src="<?php echo url("images/yt-thumbs/wVyAj-nrtnI.jpg"); ?>" alt="Prévia do vídeo do testador de teclado" width="480" height="270" loading="eager" fetchpriority="high" decoding="async">
+                </picture>
                 <span class="hero-yt-play" aria-hidden="true">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
                 </span>

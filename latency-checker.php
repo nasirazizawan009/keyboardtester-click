@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Keyboard & Mouse Latency Checker Online | KeyboardTester.click';
-$pageDescription = 'Free open source keyboard & mouse latency checker. Measure input lag, key-press delay, and response time for gaming hardware — in-browser, no install.';
-$pageKeywords = 'input latency checker, open source latency test, keyboard latency test, mouse latency test, response time tool';
+$pageTitle = 'Keyboard Latency Test — Measure Input Lag in Milliseconds | KeyboardTester.click';
+$pageDescription = 'Free keyboard latency test online. Measure key-press delay, input lag, and response time in milliseconds. Compare gaming, office, mechanical, and wireless keyboards. No install, browser-based.';
+$pageKeywords = 'keyboard latency test, keyboard latency checker, input lag test, input latency test, key press delay test, keyboard response time test, keyboard delay test, keyboard test latency, mouse latency test, online latency test';
 $pageOgImage = 'images/latency-checker/hero.png';
 ?>
 <!DOCTYPE html>
@@ -134,6 +134,37 @@ $pageOgImage = 'images/latency-checker/hero.png';
             <h3>Review results</h3>
             <p>Check your input latency stats and retest if needed.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="latency-reference" aria-labelledby="latency-reference-title" style="padding:60px 20px;background:var(--bg-secondary);">
+      <div class="container" style="max-width:1000px;margin:0 auto;">
+        <div class="section-head">
+          <p class="section-kicker">Reference</p>
+          <h2 id="latency-reference-title">What is a good keyboard latency?</h2>
+          <p class="section-lede">Use this table to interpret your latency reading. Lower is better — but the threshold for "good" depends on what you use the keyboard for.</p>
+        </div>
+        <div class="latency-table-wrap" style="overflow-x:auto;margin-top:24px;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+            <thead>
+              <tr style="background:var(--surface);border-bottom:2px solid var(--accent-primary);">
+                <th style="text-align:left;padding:12px 16px;">Use case</th>
+                <th style="text-align:left;padding:12px 16px;">Target latency</th>
+                <th style="text-align:left;padding:12px 16px;">Typical hardware</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Competitive esports (FPS, fighting games)</strong></td><td style="padding:12px 16px;">&lt; 5 ms</td><td style="padding:12px 16px;">Wired mechanical with fast switches (red/silver linear)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Casual gaming</strong></td><td style="padding:12px 16px;">5–10 ms</td><td style="padding:12px 16px;">Most wired mechanical or quality membrane keyboards</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Office typing &amp; productivity</strong></td><td style="padding:12px 16px;">10–20 ms</td><td style="padding:12px 16px;">Wired or 2.4 GHz wireless keyboards</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Bluetooth / casual wireless</strong></td><td style="padding:12px 16px;">15–30 ms</td><td style="padding:12px 16px;">Bluetooth keyboards (slotted polling adds delay)</td></tr>
+              <tr><td style="padding:12px 16px;"><strong>Concerning / failing hardware</strong></td><td style="padding:12px 16px;">&gt; 40 ms consistent</td><td style="padding:12px 16px;">Worn switches, USB hub bottleneck, or driver issue</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:32px;padding:16px 20px;background:var(--surface);border-left:4px solid var(--accent-primary);border-radius:6px;">
+          <strong>Note on browser-based latency measurement:</strong> this tool measures the time from JavaScript <code>keydown</code> event to processing — a subset of the full input chain. It does NOT include USB polling delay (typically 1ms at 1000Hz, 8ms at 125Hz), monitor refresh delay, or switch debounce. For absolute hardware specs, dedicated tools like NVIDIA LDAT measure photon-to-event timing. For comparing keyboards on the same machine, browser timing is reliable and repeatable.
         </div>
       </div>
     </section>

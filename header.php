@@ -8,4 +8,4 @@ require_once __DIR__ . '/includes/components/site-sidebar.php';
 
 $siteChromeLocale = $siteChromeLocale ?? 'en';
 kbtRenderSiteHeader($siteChromeLocale);
-kbtRenderSiteSidebar();
+kbtRenderSiteSidebar($siteChromeLocale);

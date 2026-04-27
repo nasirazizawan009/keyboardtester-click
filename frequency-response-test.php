@@ -3,7 +3,7 @@
 $pageTitle = 'Free Frequency Response & Hearing Test 20 Hz–20 kHz | KeyboardTester.click';
 $pageDescription = 'Free online frequency response and hearing test. Sweep 20 Hz to 20 kHz to find your personal audible range, test speaker and headphone response, and map hearing roll-off. Browser-based, no install.';
 $pageKeywords = 'frequency response test, hearing test online, 20 hz to 20 khz sweep, audible frequency range, hearing range test, headphone frequency test';
-$pageOgImage = 'images/headphone-test/speaker-headphone-test-stereo-preview-1400.png';
+$pageOgImage = 'images/frequency-response-test/hero.jpg';
 $pageOgImageAlt = 'Frequency response test - full-range 20 Hz to 20 kHz sine sweep';
 ?>
 <!DOCTYPE html>

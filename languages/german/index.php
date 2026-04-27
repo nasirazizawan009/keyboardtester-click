@@ -14,9 +14,9 @@ $breadcrumbs = [
 ];
 
 // Meta tags
-$pageTitle = 'Deutscher Tastatur-Tester - Testen Sie Ihre Tastatur Kostenlos';
-$pageDescription = 'Testen Sie Ihre deutsche Tastatur kostenlos online. Erkennen Sie Ghosting, messen Sie Latenz und identifizieren Sie klemmende Tasten.';
-$pageKeywords = 'tastatur tester, tastatur test deutsch, ghosting erkennung, latenz messung';
+$pageTitle = 'Tastatur Test Online — Tastatur testen, Ghosting & Latenz prüfen kostenlos | KeyboardTester.click';
+$pageDescription = 'Tastatur Test online gratis. Alle Tasten prüfen, Ghosting erkennen, Tastatur-Latenz in Millisekunden messen und N-Key Rollover testen. Funktioniert mit mechanischen, Membran- und Laptop-Tastaturen. Ohne Installation.';
+$pageKeywords = 'tastatur test, tastatur testen, tastatur test online, tastatur tester, tastatur prüfen, tastentest, tastatur funktion testen, tastatur latenz test, ghosting test, anti ghosting tastatur, mechanische tastatur testen';
 ?>
 
 <!DOCTYPE html>

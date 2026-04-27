@@ -3,7 +3,7 @@
 $pageTitle = 'Free Gyroscope Test - Phone & Tablet Orientation Sensor Check | KeyboardTester.click';
 $pageDescription = 'Free online gyroscope test. Live alpha, beta, gamma rotation readout in degrees, 3D cube that mirrors device orientation, and compass ring for alpha. DeviceOrientation API, no app install.';
 $pageKeywords = 'gyroscope test, phone gyroscope check, deviceorientation api, alpha beta gamma readout, tablet rotation sensor';
-$pageOgImage = 'images/mouse/hero.png';
+$pageOgImage = 'images/gyroscope-test/hero.jpg';
 $pageOgImageAlt = 'Gyroscope test - live alpha beta gamma rotation readout';
 ?>
 <!DOCTYPE html>
