@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-28 (Codex, GSC CTR batch 1)
+**Last updated:** 2026-04-28 (Codex, blog homepage redesign)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -8,9 +8,9 @@ This file is the **single source of truth** when handing off work between AI age
 
 ## 🧭 Current state of the project
 
-**Site version:** v17.2.47 (April 28, 2026 — latest work: Codex GSC CTR batch 1)
+**Site version:** v17.2.47 (April 28, 2026 — latest work: Codex blog homepage redesign)
 **Roadmap:** 50/50 tools built, no pending tools
-**Last major work:** Pro Diagnostics panel deployed to all 9 language keyboard testers; Codex updated/deployed the first GSC CTR batch for the DPI and latency pages
+**Last major work:** Pro Diagnostics panel deployed to all 9 language keyboard testers; Codex redesigned/deployed the blog homepage with pinned GSC-performing articles
 
 **Note on commit prefixes:** This file previously suggested `[claude]` / `[codex]` prefixes. The first joint commit (`79de12c`) predates the convention. Going forward, both agents should add the prefix.
 
@@ -67,6 +67,9 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-28 (Codex)
+- Done: Redesigned `blog/index.php` so `/blog/` has a stronger editorial homepage: dark hero panel, large featured article, GSC-pinned "Top performing articles" rail, and a cleaner latest-guides archive below.
+- Done: Kept top-performing blog articles on the blog homepage based on GSC data. `best-mechanical-keyboards-for-gaming-2026.php` is now the featured story; keyboard fix, ghosting, shortcuts, WebRTC leak, and crosshair articles are pinned below it. The normal archive excludes those pinned posts to avoid duplicate cards.
+- Verified/deployed: Local PHP lint passed. Playwright desktop/mobile checks passed with one H1, 5 pinned rail cards, 9 latest cards, no horizontal overflow, and no duplicate mechanical-keyboard card in the latest grid. Deployed `blog/index.php` via SFTP and verified live `/blog/` and `/blog/?page=2` return HTTP 200 with the expected pinned behavior.
 - Done: GSC CTR batch 1 for `mouse_sensitivity_DPI_tester.php` and `latency-checker.php`. Tightened page titles, meta descriptions, H1s, hero badges, tool-stage copy, feature cards, process copy, and schema/meta config around the actual GSC query language (`dpi tester`, `mouse dpi checker`, `keyboard latency test`, `keyboard delay test`, `input delay`).
 - Done: Expanded `help/latency-checker.php` with clearer browser-measurement guidance: what the test measures, what it cannot measure, and how to reduce noisy results without overclaiming hardware-level accuracy.
 - Deployed: Uploaded the 8 changed CTR files via SFTP/paramiko and verified production returns HTTP 200 with exactly one title/meta description/H1 on both target URLs. IndexNow endpoint returned HTTP 200 after deployment.
