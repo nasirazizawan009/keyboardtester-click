@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-28 (Codex, blog homepage redesign)
+**Last updated:** 2026-04-28 (Codex, keyword-led polling-rate blog article deployed)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,9 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-28 (Codex)
+- Done: Researched a low-competition keyboard timing content cluster from GSC + live SERP checks. Selected `keyboard polling rate test`, `keyboard Hz checker`, `keyboard polling rate checker`, and `how to check keyboard polling rate` because GSC already shows impressions around page-one positions but no clicks, and the SERP is mostly niche tools/explainers rather than high-authority publishers.
+- Done: Published `blog/keyboard-polling-rate-test-check-keyboard-hz.php` with stock keyboard images, a related YouTube embed, Article + FAQ schema, internal links to the keyboard polling rate test, latency checker, key repeat rate tester, NKRO/ghosting tools, and relevant blog guides.
+- Deployed: Uploaded the new article, `blog/posts-data.php`, two optimized WebP images, and updated `sitemap.xml` via SFTP/paramiko. Live verification passed: article HTTP 200, exactly one H1, images HTTP 200, video embed present, `/blog/` shows the new post, live sitemap contains the new URL, and IndexNow returned HTTP 200 with 862 URLs including the new post.
 - Done: Redesigned `blog/index.php` so `/blog/` has a stronger editorial homepage: dark hero panel, large featured article, GSC-pinned "Top performing articles" rail, and a cleaner latest-guides archive below.
 - Done: Kept top-performing blog articles on the blog homepage based on GSC data. `best-mechanical-keyboards-for-gaming-2026.php` is now the featured story; keyboard fix, ghosting, shortcuts, WebRTC leak, and crosshair articles are pinned below it. The normal archive excludes those pinned posts to avoid duplicate cards.
 - Verified/deployed: Local PHP lint passed. Playwright desktop/mobile checks passed with one H1, 5 pinned rail cards, 9 latest cards, no horizontal overflow, and no duplicate mechanical-keyboard card in the latest grid. Deployed `blog/index.php` via SFTP and verified live `/blog/` and `/blog/?page=2` return HTTP 200 with the expected pinned behavior.

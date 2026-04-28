@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/latency-checker.php</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/mouse_sensitivity_DPI_tester.php</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -5382,6 +5382,20 @@
     <image:image>
       <image:loc>https://keyboardtester.click/blog/images/keyboard-online-test-layout-guide.webp</image:loc>
       <image:title>Keyboard cleaning — compressed air and isopropyl alcohol</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://keyboardtester.click/blog/keyboard-polling-rate-test-check-keyboard-hz.php</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/keyboard-polling-rate-test-hero.webp</image:loc>
+      <image:title>Mechanical keyboards used for an online keyboard polling rate test</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/keyboard-polling-rate-keyboard-display.webp</image:loc>
+      <image:title>Close-up of a modern mechanical keyboard display used while checking keyboard Hz</image:title>
     </image:image>
   </url>
   <url>
