@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-28 (Codex, blog dark-mode contrast fix deployed)
+**Last updated:** 2026-04-28 (Codex, YouTube Short package generated)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,8 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-28 (Codex)
+- Done: Created a 23.5s vertical YouTube Short package for KeyboardTester.click at `seo-audit-2026-04-28/youtube-short-keyboard-test/`. Files include `keyboardtester-keyboard-test-short.mp4` (1080x1920 H.264/AAC with narration/captions), `keyboardtester-short-thumbnail.jpg`, `upload-title-description.txt`, and `upload-metadata.json`.
+- Note: YouTube upload was not completed because the project has no YouTube OAuth/API credentials or upload script. `.env` only contains Bing/DEV.to/FTP/IndexNow keys. The MP4 is ready for manual upload or OAuth-based upload once channel access is provided.
 - Done: Fixed `/blog/` dark-mode contrast issue where global dark-mode `!important` text rules made blog card titles/excerpts nearly invisible on white card backgrounds. Added explicit dark-mode blog card/page backgrounds plus high-contrast title, excerpt, date, CTA, placeholder, section, and pagination colors in `blog/index.php`.
 - Verified/deployed: PHP lint passed. Local and live Playwright computed-style checks in forced dark mode passed with card background `rgb(17, 24, 39)`, title contrast `16.96:1`, excerpt contrast `11.95:1`, date contrast `6.96:1`, and no horizontal overflow. Uploaded `blog/index.php` via SFTP and verified live `/blog/` HTTP 200 contains the dark-mode CSS.
 - Done: Researched a low-competition keyboard timing content cluster from GSC + live SERP checks. Selected `keyboard polling rate test`, `keyboard Hz checker`, `keyboard polling rate checker`, and `how to check keyboard polling rate` because GSC already shows impressions around page-one positions but no clicks, and the SERP is mostly niche tools/explainers rather than high-authority publishers.
