@@ -56,6 +56,7 @@ $excludePatterns = [
     '/^tmp_/',
     '/^deploy-/',
     '/^activate-theme\.php$/',
+    '/^404\.php$/',
     '/^generate-sitemap\.php$/',
     '/^config\.php$/',
     '/^config\.example\.php$/',
@@ -70,8 +71,13 @@ $excludePatterns = [
     '/^favicon\.php$/',
     '/^header\.php$/',
     '/^footer\.php$/',
+    '/^ai-chat\.php$/',
+    '/^ai-config\.php$/',
+    '/^desktop-manifest\.php$/',
     '/^submit-indexnow\.php$/',
     '/^submit-indexnow\.example\.php$/',
+    '/^testpage\.php$/',
+    '/^mouse-trail-index\.php$/',
     '/^tools\.php$/',
     '/\.py$/',
     '/_tool\.php$/',  // Tool implementation files
@@ -428,16 +434,22 @@ if (file_exists($keyboardTesterDir)) {
 // Add blog landing page and static blog posts.
 $blogIndex = $rootDir . '/blog/index.php';
 if (file_exists($blogIndex)) {
+    $blogPostsData = $rootDir . '/blog/posts-data.php';
+    $blogLastmodSource = $blogIndex;
+    if (file_exists($blogPostsData) && filemtime($blogPostsData) > filemtime($blogIndex)) {
+        $blogLastmodSource = $blogPostsData;
+    }
+
     $urls[] = [
         'loc' => $sitemapBaseUrl . '/blog/',
-        'lastmod' => sitemap_getLastMod($blogIndex),
+        'lastmod' => sitemap_getLastMod($blogLastmodSource),
         'changefreq' => 'weekly',
         'priority' => '0.7',
         'images' => sitemap_extractImageEntriesFromFile($blogIndex, $sitemapBaseUrl),
     ];
 }
 
-$blogExcludedFiles = ['index.php', 'generate-blog.php', 'hub.php'];
+$blogExcludedFiles = ['index.php', 'generate-blog.php', 'hub.php', 'posts-data.php'];
 foreach (glob($rootDir . '/blog/*.php') as $blogFile) {
     $blogFilename = basename($blogFile);
     if (in_array($blogFilename, $blogExcludedFiles, true)) {

@@ -12,6 +12,7 @@
  */
 
 header('Content-Type: application/json; charset=utf-8');
+header('X-Robots-Tag: noindex');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, OPTIONS');
 header('Cache-Control: public, max-age=300'); // 5-minute cache

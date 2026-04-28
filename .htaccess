@@ -13,6 +13,10 @@ RewriteBase /
 RewriteRule ^robots\.txt$ - [L]
 RewriteRule ^ads\.txt$ - [L]
 
+# Local-only/API endpoints that should never be indexed directly
+RewriteRule ^ai-config\.php$ - [F,L]
+RewriteRule ^testpage\.php$ - [R=410,L]
+
 # ============================================
 # CANONICAL URL ENFORCEMENT
 # Force: HTTPS + non-www (keyboardtester.click)
