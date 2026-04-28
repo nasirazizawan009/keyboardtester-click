@@ -757,7 +757,7 @@ $pageCanonical = $currentPage > 1
                     <p class="section-kicker"><?php echo $isBlogHome ? 'Latest without repeats' : 'More from the archive'; ?></p>
                     <h2 class="blog-section-title" id="latest-guides-title"><?php echo $isBlogHome ? 'Latest guides' : 'Article archive'; ?></h2>
                 </div>
-                <p class="blog-section-note"><?php echo $isBlogHome ? 'Fresh posts continue below the pinned performers, so page one stays useful for both readers and SEO.' : 'Browse the remaining posts in chronological order.'; ?></p>
+                <p class="blog-section-note"><?php echo $isBlogHome ? 'Fresh posts continue below the pinned performers, so readers can find both proven guides and new articles quickly.' : 'Browse the remaining posts in chronological order.'; ?></p>
             </div>
         <div class="post-grid">
 <?php foreach ($visiblePosts as $post): ?>
