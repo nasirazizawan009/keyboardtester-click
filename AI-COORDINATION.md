@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-28 (Codex, keyword-led polling-rate blog article deployed)
+**Last updated:** 2026-04-28 (Codex, blog dark-mode contrast fix deployed)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,8 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-28 (Codex)
+- Done: Fixed `/blog/` dark-mode contrast issue where global dark-mode `!important` text rules made blog card titles/excerpts nearly invisible on white card backgrounds. Added explicit dark-mode blog card/page backgrounds plus high-contrast title, excerpt, date, CTA, placeholder, section, and pagination colors in `blog/index.php`.
+- Verified/deployed: PHP lint passed. Local and live Playwright computed-style checks in forced dark mode passed with card background `rgb(17, 24, 39)`, title contrast `16.96:1`, excerpt contrast `11.95:1`, date contrast `6.96:1`, and no horizontal overflow. Uploaded `blog/index.php` via SFTP and verified live `/blog/` HTTP 200 contains the dark-mode CSS.
 - Done: Researched a low-competition keyboard timing content cluster from GSC + live SERP checks. Selected `keyboard polling rate test`, `keyboard Hz checker`, `keyboard polling rate checker`, and `how to check keyboard polling rate` because GSC already shows impressions around page-one positions but no clicks, and the SERP is mostly niche tools/explainers rather than high-authority publishers.
 - Done: Published `blog/keyboard-polling-rate-test-check-keyboard-hz.php` with stock keyboard images, a related YouTube embed, Article + FAQ schema, internal links to the keyboard polling rate test, latency checker, key repeat rate tester, NKRO/ghosting tools, and relevant blog guides.
 - Deployed: Uploaded the new article, `blog/posts-data.php`, two optimized WebP images, and updated `sitemap.xml` via SFTP/paramiko. Live verification passed: article HTTP 200, exactly one H1, images HTTP 200, video embed present, `/blog/` shows the new post, live sitemap contains the new URL, and IndexNow returned HTTP 200 with 862 URLs including the new post.
