@@ -59,10 +59,10 @@ return [
         'og_image' => 'images/keyboard/typing-test-og.png'
     ],
     'latency-checker.php' => [
-        'title' => 'Free Open Source Keyboard Latency Checker — Test Input Lag Online',
-        // 66 chars
-        'description' => 'Free open source keyboard latency checker. Measure input lag and response time for gaming keyboards. Press any key and see millisecond readings instantly. Browser-based, no download needed.',
-        'keywords' => 'keyboard latency, open source latency checker, input latency test, response time test, gaming latency checker',
+        'title' => 'Keyboard Latency Test - Check Input Delay Online',
+        // 51 chars
+        'description' => 'Use this free keyboard latency test to check input delay, key response time, and browser event lag in milliseconds. Compare wired, wireless, and gaming keyboards.',
+        'keywords' => 'keyboard latency test, keyboard delay test, input delay test, keyboard response time test, keyboard input lag test',
         'og_image' => 'images/keyboard/latency-checker-og.png'
     ],
 
@@ -140,10 +140,10 @@ return [
         'og_image' => 'images/mouse/click-speed-test-og.png'
     ],
     'mouse_sensitivity_DPI_tester.php' => [
-        'title' => 'Free Open Source Mouse DPI Tester — Sensitivity Test Online',
-        // 60 chars
-        'description' => 'Free open source mouse DPI and sensitivity tester. Measure your mouse sensitivity, calculate effective DPI, and optimize your settings for gaming. Works in browser, no download needed.',
-        'keywords' => 'mouse DPI tester, open source DPI tester, mouse sensitivity test, DPI calculator, gaming mouse test',
+        'title' => 'Mouse DPI Tester & Checker - Measure DPI Online',
+        // 49 chars
+        'description' => 'Use this free mouse DPI tester to check actual DPI with a ruler-distance test. Compare runs, calculate eDPI, and tune mouse sensitivity for gaming.',
+        'keywords' => 'mouse dpi tester, mouse dpi checker, dpi test, dpi checker, dpi analyzer online, edpi calculator',
         'og_image' => 'images/mouse/dpi-tester-og.png'
     ],
     'mouse-trail.php' => [

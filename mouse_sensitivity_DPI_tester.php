@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Mouse DPI Test — Check Your DPI Online with the Ruler Method | KeyboardTester.click';
-$pageDescription = 'Free mouse DPI test online. Check your true mouse DPI by measuring cursor movement against a known physical distance. Recommended DPI for gaming, FPS, MOBA, and design work. No install.';
+$pageTitle = 'Mouse DPI Tester & Checker - Measure DPI Online | KeyboardTester.click';
+$pageDescription = 'Use this free mouse DPI tester to check actual DPI with a ruler-distance test. Compare runs, calculate eDPI, and tune mouse sensitivity for gaming.';
 $pageKeywords = 'mouse dpi test, dpi test, dpi checker, mouse dpi checker, dpi analyzer, check my mouse dpi, mouse sensitivity test, dpi finder, dpi tester online, mouse dpi calculator, test mouse dpi online';
 $pageOgImage = 'images/mouse-dpi/hero.png';
 ?>
@@ -25,7 +25,7 @@ $pageOgImage = 'images/mouse-dpi/hero.png';
   include_once __DIR__ . '/includes/schema.php';
   echo generateToolPageSchema('dpi_tester', [
       ['name' => 'Home', 'url' => '/'],
-      ['name' => 'Mouse DPI Tester', 'url' => '']
+      ['name' => 'Mouse DPI Tester & Checker', 'url' => '']
   ]);
   ?>
 </head>
@@ -39,8 +39,8 @@ $pageOgImage = 'images/mouse-dpi/hero.png';
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tool</p>
-          <h2 id="tool-stage-title">Mouse DPI Tester</h2>
-          <p class="section-lede">Use the live tool below to complete your test.</p>
+          <h2 id="tool-stage-title">Mouse DPI Tester & eDPI Calculator</h2>
+          <p class="section-lede">Enter a known distance, move the mouse through the track area, and compare measured DPI across repeated runs.</p>
         </div>
         <div class="tool-stage-actions">
           <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
@@ -54,12 +54,12 @@ $pageOgImage = 'images/mouse-dpi/hero.png';
     <section class="trust-strip" aria-label="Key benefits">
       <div class="container trust-grid">
         <div class="trust-item">
-          <div class="trust-title">Live feedback</div>
-          <div class="trust-desc">See results instantly</div>
+          <div class="trust-title">DPI checker</div>
+          <div class="trust-desc">Measure actual DPI online</div>
         </div>
         <div class="trust-item">
-          <div class="trust-title">Quick reset</div>
-          <div class="trust-desc">Run another test fast</div>
+          <div class="trust-title">eDPI calculator</div>
+          <div class="trust-desc">Match mouse and game sensitivity</div>
         </div>
         <div class="trust-item">
           <div class="trust-title">Browser based</div>
@@ -76,25 +76,25 @@ $pageOgImage = 'images/mouse-dpi/hero.png';
       <div class="container">
         <div class="section-head">
           <p class="section-kicker">DPI and Sensitivity</p>
-          <h2 id="feature-title">Estimate Mouse DPI From Real Movement</h2>
-          <p class="section-lede">Measure cursor travel against a known physical distance to estimate DPI and compare sensitivity changes.</p>
+          <h2 id="feature-title">Measure Actual Mouse DPI From Real Movement</h2>
+          <p class="section-lede">Check whether your configured DPI matches real cursor movement, then use the result for gaming sensitivity and eDPI tuning.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
-            <h3>Focused insights</h3>
-            <p>Track DPI and sensitivity with live updates.</p>
+            <h3>Ruler-distance test</h3>
+            <p>Use a known physical distance instead of guessing from software settings.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Instant results</h3>
-            <p>See changes as you test in real time.</p>
+            <h3>Run comparison</h3>
+            <p>Repeat the movement and compare results to reduce one-off measurement errors.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Simple controls</h3>
-            <p>Start, stop, and reset in seconds.</p>
+            <h3>Gaming sensitivity</h3>
+            <p>Use measured DPI with in-game sensitivity to calculate a consistent eDPI.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Repeatable tests</h3>
-            <p>Compare multiple runs quickly.</p>
+            <h3>Private browser test</h3>
+            <p>Mouse movement is measured locally in your browser with no signup.</p>
           </article>
         </div>
       </div>
@@ -105,9 +105,9 @@ $pageOgImage = 'images/mouse-dpi/hero.png';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">How to Estimate Mouse DPI Online</h2>
+            <h2 id="process-title">How to Check Mouse DPI Online</h2>
           </div>
-          <p class="section-lede">Enter the real-world distance, drag through the track area, and review the estimated DPI.</p>
+          <p class="section-lede">Disable pointer acceleration, enter a real distance, move the mouse in a straight line, then repeat the test and average the result.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">
@@ -115,24 +115,24 @@ $pageOgImage = 'images/mouse-dpi/hero.png';
               <img src="<?php echo url('images/mouse-dpi/step-1.png'); ?>" alt="Mouse DPI sensitivity test step 1 - start calibration" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">01</div>
-            <h3>Start the test</h3>
-            <p>Open the tool and prepare to begin.</p>
+            <h3>Set the distance</h3>
+            <p>Use a ruler, credit card, or another object with a known width.</p>
           </article>
           <article class="process-card">
             <div class="process-media">
               <img src="<?php echo url('images/mouse-dpi/step-2.png'); ?>" alt="Mouse DPI test step 2 - move cursor to calibrate sensitivity" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">02</div>
-            <h3>Move the mouse</h3>
-            <p>along the guide to calibrate.</p>
+            <h3>Move in a straight line</h3>
+            <p>Drag the mouse exactly that distance across the test area.</p>
           </article>
           <article class="process-card">
             <div class="process-media">
               <img src="<?php echo url('images/mouse-dpi/step-3.png'); ?>" alt="Mouse DPI test results - sensitivity measurement display" loading="lazy" width="600" height="461" decoding="async">
             </div>
             <div class="step-number">03</div>
-            <h3>Review results</h3>
-            <p>Check your DPI and sensitivity stats and retest if needed.</p>
+            <h3>Average the result</h3>
+            <p>Run three or more tests and use the average as your real DPI.</p>
           </article>
         </div>
       </div>

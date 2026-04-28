@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Keyboard Latency Test — Measure Input Lag in Milliseconds | KeyboardTester.click';
-$pageDescription = 'Free keyboard latency test online. Measure key-press delay, input lag, and response time in milliseconds. Compare gaming, office, mechanical, and wireless keyboards. No install, browser-based.';
+$pageTitle = 'Keyboard Latency Test - Check Input Delay Online | KeyboardTester.click';
+$pageDescription = 'Use this free keyboard latency test to check input delay, key response time, and browser event lag in milliseconds. Compare wired, wireless, and gaming keyboards.';
 $pageKeywords = 'keyboard latency test, keyboard latency checker, input lag test, input latency test, key press delay test, keyboard response time test, keyboard delay test, keyboard test latency, mouse latency test, online latency test';
 $pageOgImage = 'images/latency-checker/hero.png';
 ?>
@@ -25,7 +25,7 @@ $pageOgImage = 'images/latency-checker/hero.png';
   include_once __DIR__ . '/includes/schema.php';
   echo generateToolPageSchema('latency_checker', [
       ['name' => 'Home', 'url' => '/'],
-      ['name' => 'Latency Checker', 'url' => '']
+      ['name' => 'Keyboard Latency Test', 'url' => '']
   ]);
   ?>
 </head>
@@ -39,8 +39,8 @@ $pageOgImage = 'images/latency-checker/hero.png';
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tool</p>
-          <h2 id="tool-stage-title">Keyboard Latency Checker</h2>
-          <p class="section-lede">Use the live tool below to complete your test.</p>
+          <h2 id="tool-stage-title">Keyboard Latency Test</h2>
+          <p class="section-lede">Start the test, press keys, and compare current, average, best, and worst event-delay samples.</p>
         </div>
         <div class="tool-stage-actions">
           <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
@@ -54,20 +54,20 @@ $pageOgImage = 'images/latency-checker/hero.png';
     <section class="trust-strip" aria-label="Key benefits">
       <div class="container trust-grid">
         <div class="trust-item">
-          <div class="trust-title">Live feedback</div>
-          <div class="trust-desc">See results instantly</div>
+          <div class="trust-title">Input delay test</div>
+          <div class="trust-desc">Measure millisecond samples</div>
         </div>
         <div class="trust-item">
-          <div class="trust-title">Quick reset</div>
-          <div class="trust-desc">Run another test fast</div>
+          <div class="trust-title">Response time</div>
+          <div class="trust-desc">Compare best and average delay</div>
         </div>
         <div class="trust-item">
           <div class="trust-title">Browser based</div>
           <div class="trust-desc">No installs or signups</div>
         </div>
         <div class="trust-item">
-          <div class="trust-title">Focused checks</div>
-          <div class="trust-desc">Built for input latency</div>
+          <div class="trust-title">Honest limits</div>
+          <div class="trust-desc">Browser timing, clearly explained</div>
         </div>
       </div>
     </section>
@@ -76,25 +76,25 @@ $pageOgImage = 'images/latency-checker/hero.png';
       <div class="container">
         <div class="section-head">
           <p class="section-kicker">Input Response Time</p>
-          <h2 id="feature-title">Measure Keyboard and Mouse Latency</h2>
-          <p class="section-lede">Capture live input samples, compare average delay, and spot inconsistent response times.</p>
+          <h2 id="feature-title">Check Keyboard Input Delay in Milliseconds</h2>
+          <p class="section-lede">Capture browser key-event samples, compare average delay, and spot inconsistent response times on the same machine.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
-            <h3>Focused insights</h3>
-            <p>Track input latency with live updates.</p>
+            <h3>Key delay samples</h3>
+            <p>Press keys repeatedly to collect current, average, best, and worst delay values.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Instant results</h3>
-            <p>See changes as you test in real time.</p>
+            <h3>Comparison ready</h3>
+            <p>Use the same browser and device to compare wired, 2.4 GHz, or Bluetooth keyboards.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Simple controls</h3>
-            <p>Start, stop, and reset in seconds.</p>
+            <h3>Input lag context</h3>
+            <p>Learn which parts of the full keyboard-to-screen chain are included.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Repeatable tests</h3>
-            <p>Compare multiple runs quickly.</p>
+            <h3>Private browser test</h3>
+            <p>Timing runs locally in your browser and does not upload your input data.</p>
           </article>
         </div>
       </div>
@@ -105,9 +105,9 @@ $pageOgImage = 'images/latency-checker/hero.png';
         <div class="section-head split">
           <div>
             <p class="section-kicker">Simple workflow</p>
-            <h2 id="process-title">How to Test Input Latency Online</h2>
+            <h2 id="process-title">How to Test Keyboard Latency Online</h2>
           </div>
-          <p class="section-lede">Start the test, press keys or click, and compare the live millisecond results.</p>
+          <p class="section-lede">Start the test, press the same key several times, and compare millisecond samples for consistency.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">
@@ -115,24 +115,24 @@ $pageOgImage = 'images/latency-checker/hero.png';
               <img src="<?php echo url('images/latency-checker/step-1.png'); ?>" alt="Input latency checker step 1 - open response time tester" loading="lazy" width="600" height="399" decoding="async">
             </div>
             <div class="step-number">01</div>
-            <h3>Start the test</h3>
-            <p>Open the tool and prepare to begin.</p>
+            <h3>Start the latency test</h3>
+            <p>Focus the page and begin from the live tool panel.</p>
           </article>
           <article class="process-card">
             <div class="process-media">
               <img src="<?php echo url('images/latency-checker/step-2.png'); ?>" alt="Latency test step 2 - press keys to measure response time" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">02</div>
-            <h3>Press keys or click</h3>
-            <p>to measure response time.</p>
+            <h3>Press keys repeatedly</h3>
+            <p>Use consistent key presses to collect enough samples.</p>
           </article>
           <article class="process-card">
             <div class="process-media">
               <img src="<?php echo url('images/latency-checker/step-3.png'); ?>" alt="Input latency results - millisecond response time display" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">03</div>
-            <h3>Review results</h3>
-            <p>Check your input latency stats and retest if needed.</p>
+            <h3>Compare the numbers</h3>
+            <p>Watch the average, best, worst, and sample count before retesting.</p>
           </article>
         </div>
       </div>

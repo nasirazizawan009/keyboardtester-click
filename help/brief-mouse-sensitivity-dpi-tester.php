@@ -2,16 +2,16 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Mouse DPI and Sensitivity</p>
-      <h1 class="hero-title">Free Open Source Mouse DPI Tester Online</h1>
-      <p class="hero-lede">Move the mouse across a measured distance to estimate DPI and sensitivity instantly.</p>
+      <h1 class="hero-title">Mouse DPI Tester & Checker Online</h1>
+      <p class="hero-lede">Measure your actual mouse DPI with a ruler-distance test, compare repeated runs, and calculate eDPI for gaming or work.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#mouse-sensitivity-dpi-tester">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>
       </div>
       <div class="hero-badges">
-        <span class="hero-badge">Live feedback</span>
-        <span class="hero-badge">Quick reset</span>
-        <span class="hero-badge">Browser based</span>
+        <span class="hero-badge">DPI checker</span>
+        <span class="hero-badge">eDPI calculator</span>
+        <span class="hero-badge">No install</span>
       </div>
       <div class="hero-metrics">
         <div class="metric-card">
@@ -34,12 +34,12 @@
       </div>
       <div class="hero-stack">
         <div class="mini-card">
-          <div class="mini-title">Focused testing</div>
-          <p>Run quick checks tailored for DPI and sensitivity.</p>
+          <div class="mini-title">Ruler-distance test</div>
+          <p>Measure real movement instead of trusting advertised DPI.</p>
         </div>
         <div class="mini-card">
-          <div class="mini-title">Instant results</div>
-          <p>See updates as you test in real time.</p>
+          <div class="mini-title">Sensitivity tuning</div>
+          <p>Use the result for eDPI and repeatable game settings.</p>
         </div>
       </div>
     </div>

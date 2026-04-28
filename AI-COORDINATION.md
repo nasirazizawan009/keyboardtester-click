@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-28 (Codex, Semrush audit counter-check)
+**Last updated:** 2026-04-28 (Codex, GSC CTR batch 1)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -8,9 +8,9 @@ This file is the **single source of truth** when handing off work between AI age
 
 ## 🧭 Current state of the project
 
-**Site version:** v17.2.47 (April 28, 2026 — last commit `79de12c` + Codex audit cleanup)
+**Site version:** v17.2.47 (April 28, 2026 — latest work: Codex GSC CTR batch 1)
 **Roadmap:** 50/50 tools built, no pending tools
-**Last major work:** Pro Diagnostics panel deployed to all 9 language keyboard testers; Codex updated/deployed the mechanical keyboard 2026 blog CTR package
+**Last major work:** Pro Diagnostics panel deployed to all 9 language keyboard testers; Codex updated/deployed the first GSC CTR batch for the DPI and latency pages
 
 **Note on commit prefixes:** This file previously suggested `[claude]` / `[codex]` prefixes. The first joint commit (`79de12c`) predates the convention. Going forward, both agents should add the prefix.
 
@@ -67,6 +67,9 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-28 (Codex)
+- Done: GSC CTR batch 1 for `mouse_sensitivity_DPI_tester.php` and `latency-checker.php`. Tightened page titles, meta descriptions, H1s, hero badges, tool-stage copy, feature cards, process copy, and schema/meta config around the actual GSC query language (`dpi tester`, `mouse dpi checker`, `keyboard latency test`, `keyboard delay test`, `input delay`).
+- Done: Expanded `help/latency-checker.php` with clearer browser-measurement guidance: what the test measures, what it cannot measure, and how to reduce noisy results without overclaiming hardware-level accuracy.
+- Deployed: Uploaded the 8 changed CTR files via SFTP/paramiko and verified production returns HTTP 200 with exactly one title/meta description/H1 on both target URLs. IndexNow endpoint returned HTTP 200 after deployment.
 - Done: Counter-checked the Semrush Site Audit PDF from Apr 28 before acting. Live verification showed the reported hreflang, blocked CSS/JS/image resources, and broken image issues are stale/false positives.
 - Done: Cleaned real sitemap/indexing problems: excluded non-indexable endpoints (`ai-chat.php`, `ai-config.php`, `desktop-manifest.php`), the old `testpage.php`, `404.php`, and `mouse-trail-index.php` from future sitemap generation.
 - Done: Deployed `.htaccess`, `desktop-manifest.php`, `generate-sitemap.php`, and `sitemap.xml`. Production now returns 403 for direct `ai-config.php`, 410 for `testpage.php`, and `X-Robots-Tag: noindex` for `desktop-manifest.php`.

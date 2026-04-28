@@ -99,15 +99,15 @@ $toolsConfig = [
         ]
     ],
     'dpi_tester' => [
-        'name' => 'Mouse DPI Tester',
+        'name' => 'Mouse DPI Tester & Checker',
         'path' => 'mouse_sensitivity_DPI_tester.php',
         'category' => 'mouse',
         'icon' => '🎯',
-        'title' => 'Mouse DPI Tester - Test Sensitivity Online | KBT',
-        'description' => 'Free mouse DPI and sensitivity tester. Measure your mouse sensitivity, calculate DPI, and optimize settings for gaming. No download needed.',
-        'keywords' => 'mouse DPI tester, mouse sensitivity test, DPI calculator, gaming mouse test, cursor speed test',
+        'title' => 'Mouse DPI Tester & Checker - Measure DPI Online | KBT',
+        'description' => 'Use this free mouse DPI tester to check actual DPI with a ruler-distance test. Compare runs, calculate eDPI, and tune mouse sensitivity for gaming.',
+        'keywords' => 'mouse dpi tester, mouse dpi checker, dpi test, dpi checker, dpi analyzer online, edpi calculator',
         'og_image' => 'images/mouse/dpi-tester-og.png',
-        'og_description' => 'Test and optimize your mouse DPI and sensitivity for gaming, design work, or general use.',
+        'og_description' => 'Measure actual mouse DPI online, compare repeated runs, and tune eDPI or sensitivity for gaming and work.',
         'features' => [
             'DPI sensitivity testing',
             'Mouse movement tracking',
@@ -297,15 +297,15 @@ $toolsConfig = [
         ]
     ],
     'latency_check' => [
-        'name' => 'Keyboard Latency Checker',
+        'name' => 'Keyboard Latency Test',
         'path' => 'latency-checker.php',
         'category' => 'keyboard',
         'icon' => '⏱️',
-        'title' => 'Keyboard Latency Checker - Test Input Delay | KBT',
-        'description' => 'Free keyboard latency checker to measure input delay. Test response time for gaming and typing. Browser-based, no download. Get accurate latency readings.',
-        'keywords' => 'keyboard latency, input latency test, response time test, gaming latency checker, input delay',
+        'title' => 'Keyboard Latency Test - Check Input Delay Online | KBT',
+        'description' => 'Use this free keyboard latency test to check input delay, key response time, and browser event lag in milliseconds. Compare wired, wireless, and gaming keyboards.',
+        'keywords' => 'keyboard latency test, keyboard delay test, input delay test, keyboard response time test, keyboard input lag test',
         'og_image' => 'images/keyboard/latency-checker-og.png',
-        'og_description' => 'Measure keyboard input latency and response time for gaming optimization.',
+        'og_description' => 'Check keyboard input delay and browser event response time in milliseconds for wired, wireless, and gaming keyboards.',
         'features' => [
             'Real-time latency measurement',
             'Key press timing analysis',

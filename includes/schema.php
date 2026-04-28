@@ -1122,8 +1122,8 @@ function getToolSchemaData($toolKey) {
             ]
         ],
         'dpi_tester' => [
-            'name' => 'Mouse DPI Tester',
-            'description' => 'Free mouse DPI and sensitivity tester. Measure and optimize your mouse settings for gaming or work.',
+            'name' => 'Mouse DPI Tester & Checker',
+            'description' => 'Free mouse DPI tester and checker to measure actual DPI online, compare repeated runs, calculate eDPI, and tune sensitivity.',
             'url' => 'mouse_sensitivity_DPI_tester.php',
             'category' => 'UtilityApplication',
             'features' => [
@@ -1474,8 +1474,8 @@ function getToolSchemaData($toolKey) {
             ]
         ],
         'latency_checker' => [
-            'name' => 'Keyboard Latency Checker',
-            'description' => 'Free keyboard latency checker to measure input delay and response time.',
+            'name' => 'Keyboard Latency Test',
+            'description' => 'Free keyboard latency test to check input delay, key response time, and browser event lag in milliseconds.',
             'url' => 'latency-checker.php',
             'category' => 'UtilityApplication',
             'features' => [
