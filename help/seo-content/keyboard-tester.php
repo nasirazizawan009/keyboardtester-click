@@ -9,6 +9,13 @@
     </article>
 
     <article class="seo-article">
+      <h2>Works With Laptop, 60%, Windows, Mac, and Gaming Keyboards</h2>
+      <p>You do not need a keyboard tester download to check whether your keys work. The test runs in your browser and works with built-in laptop keyboards, compact 60 percent keyboards, full-size office keyboards, wireless keyboards, and gaming keyboards.</p>
+      <p>On Windows, Mac, Linux, and Chromebook, the tester listens for standard browser key events and highlights the matching key when your system sends it. For Mac keyboards, switch the OS selector to Mac labels so Command and Option are easier to verify. For Windows keyboard tester checks, use the Windows labels and test Ctrl, Alt, the Windows key, shortcuts, and function keys.</p>
+      <p>Compact boards such as 60 percent keyboards may hide arrows, function keys, or navigation keys behind Fn layers. The browser usually cannot detect the Fn key itself because keyboard firmware handles it before the operating system sees it. To test a 60 percent keyboard completely, press the real key combinations that send arrows, F1-F12, Delete, Home, End, Page Up, and Page Down, then confirm the output appears in the tester.</p>
+    </article>
+
+    <article class="seo-article">
       <h2>Why Keyboard Testing Matters</h2>
       <p>A faulty keyboard affects everything you do on a computer.</p>
 
@@ -228,6 +235,26 @@
         <details>
           <summary>Can I test mechanical keyboard switches?</summary>
           <p>Yes. Our tester detects any key press regardless of switch type. It helps identify which specific switch is failing on mechanical keyboards, making targeted repairs possible rather than replacing the whole keyboard.</p>
+        </details>
+        <details>
+          <summary>Do I need a keyboard tester download?</summary>
+          <p>No. This keyboard tester runs in your browser, so there is no app, extension, or installer to download. Open the page, focus the tester, and press each key to confirm it registers.</p>
+        </details>
+        <details>
+          <summary>Can I use this as a laptop keyboard tester?</summary>
+          <p>Yes. It works with built-in laptop keyboards as long as the browser receives the key event. Some laptop Fn shortcuts are handled by the keyboard firmware or operating system, so test those by checking whether brightness, volume, function keys, or navigation outputs behave as expected.</p>
+        </details>
+        <details>
+          <summary>Does this work as a Windows keyboard tester or Mac keyboard tester?</summary>
+          <p>Yes. The tester works on Windows, macOS, Linux, and Chromebook in modern browsers. Use the OS selector to switch labels between Windows and Mac so Ctrl, Command, Option, Alt, and system keys are easier to identify.</p>
+        </details>
+        <details>
+          <summary>Can I use this keyboard tester for 60 percent keyboards?</summary>
+          <p>Yes. Press the normal keys first, then test your 60 percent keyboard's Fn-layer combinations for arrows, function keys, Delete, Home, End, Page Up, and Page Down. The Fn key itself may not appear because most compact keyboards process it internally.</p>
+        </details>
+        <details>
+          <summary>Can I test a gaming keyboard online?</summary>
+          <p>Yes. Use it as a gaming keyboard tester by checking WASD, Shift, Ctrl, Space, number keys, and the key combinations you use in-game. For deeper checks, use the ghosting and latency tools linked from the tester.</p>
         </details>
         <details>
           <summary>Why does a key keep repeating or stay highlighted?</summary>

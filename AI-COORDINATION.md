@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-28 (Codex, YouTube Short package generated)
+**Last updated:** 2026-04-29 (Codex, homepage keyboard PASF copy deployed)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -65,6 +65,11 @@ This file is the **single source of truth** when handing off work between AI age
 ---
 
 ## 📜 Completed today (rolling 24-48h log)
+
+### 2026-04-29 (Codex)
+- Done: Added supporting homepage copy for Google "People also search for" keyboard tester variants without changing the primary homepage title/meta/H1. New visible coverage includes no-download keyboard tester, laptop keyboard tester, Windows/Mac compatibility, 60 percent keyboard testing, and gaming keyboard tester use cases.
+- Done: Updated homepage FAQ schema in `includes/schema.php` to match the new visible FAQ entries.
+- Verified/deployed: PHP lint passed with `C:\xampp\php\php.exe`, live homepage returns HTTP 200, existing title/meta stayed unchanged, new visible copy and JSON-LD FAQ entries are present on production. IndexNow returned HTTP 200 after deployment.
 
 ### 2026-04-28 (Codex)
 - Done: Created a 23.5s vertical YouTube Short package for KeyboardTester.click at `seo-audit-2026-04-28/youtube-short-keyboard-test/`. Files include `keyboardtester-keyboard-test-short.mp4` (1080x1920 H.264/AAC with narration/captions), `keyboardtester-short-thumbnail.jpg`, `upload-title-description.txt`, and `upload-metadata.json`.
