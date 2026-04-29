@@ -721,34 +721,42 @@ html:not(.dark-theme) #adv-pro-panel,
 .adv-btn:hover { opacity: 0.9; }
 
 /* === Floating "currently held" pill (kept, restyled) === */
-.adv-floating-held {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: var(--pn-text);
-    color: var(--pn-bg);
-    padding: 10px 16px;
-    border-radius: 999px;
+.keyboard-tester .adv-floating-held {
+    position: relative;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    margin: 0 auto 14px;
+    background: rgba(15, 23, 42, 0.9);
+    color: #f8fafc;
+    padding: 9px 14px;
+    border: 1px solid rgba(148, 163, 184, 0.32);
+    border-radius: 12px;
     font-size: 0.82rem;
     font-family: 'JetBrains Mono', monospace;
-    z-index: 9999;
+    z-index: 3;
     display: flex;
     gap: 10px;
     align-items: center;
     pointer-events: none;
-    box-shadow: var(--pn-shadow);
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.2);
 }
-.adv-floating-label {
-    color: rgba(255,255,255,0.6);
+.keyboard-tester #adv-floating-list {
+    max-width: 34ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.keyboard-tester .adv-floating-label {
+    color: rgba(248, 250, 252, 0.72);
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-weight: 600;
 }
-html:not(.dark-theme) .adv-floating-label,
-[data-theme="light"] .adv-floating-label { color: rgba(255,255,255,0.7); }
-.adv-floating-count {
-    background: var(--pn-accent);
+html:not(.dark-theme) .keyboard-tester .adv-floating-label,
+[data-theme="light"] .keyboard-tester .adv-floating-label { color: rgba(248, 250, 252, 0.72); }
+.keyboard-tester .adv-floating-count {
+    background: #00bcd4;
     color: white;
     border-radius: 999px;
     padding: 2px 9px;
