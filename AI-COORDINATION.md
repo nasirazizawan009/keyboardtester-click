@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-29 (Codex, submit-tool resource page live)
+**Last updated:** 2026-04-29 (Codex, awesome list competitor cleanup)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,9 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-29 (Codex)
+- Done: Cleaned up the published `awesome-device-testing-tools` README to reduce direct keyboard-tester clone competitors. Removed `KeyboardTester.com`, `Key-Test`, `Keyboard Test Space`, `Hardware Tester Keyboard Test`, `Hardware Tester Mouse Test`, `Hardware Tester Gamepad Test`, and `WebCamMicTest`.
+- Done: Added more adjacent authority resources instead: QMK Documentation, QMK Configurator, VIA, Vial, Keyboard Layout Editor, MouseTester, DisplayCAL, MDN WebHID API, W3C Gamepad Standard, and Web Audio API.
+- Verified/pushed: `npx.cmd awesome-lint README.md` passes. Pushed commit `b5f5013` directly to `https://github.com/nasirazizawan009/awesome-device-testing-tools`; raw GitHub README confirms removed competitor entries are gone and new authority entries are present.
 - Done: Added and deployed `resources.php` as a public "Submit a Device Testing Tool" page that points users to the `awesome-device-testing-tools` GitHub issue form, repo, and pull request flow. Added neutral review standards so it is not framed as a backlink exchange.
 - Done: Added a sitewide footer "Submit a Tool" link to `resources.php`, added SEO metadata/config links, regenerated `sitemap.xml`, and included the page in IndexNow submissions.
 - Verified/deployed: PHP lint passed for changed PHP files, local/live page has exactly one H1, live `resources.php` returns HTTP 200, live homepage footer links to `/resources.php`, live sitemap includes the page, and IndexNow returned HTTP 200 with the new URL included.
