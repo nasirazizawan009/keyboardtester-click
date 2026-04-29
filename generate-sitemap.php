@@ -186,6 +186,7 @@ $pageConfig = [
     'privacy-policy.php' => ['priority' => '0.5', 'changefreq' => 'yearly'],
     'disclaimer.php' => ['priority' => '0.5', 'changefreq' => 'yearly'],
     'feedback.php' => ['priority' => '0.5', 'changefreq' => 'yearly'],
+    'resources.php' => ['priority' => '0.6', 'changefreq' => 'monthly'],
 ];
 
 // Language pages configuration

@@ -41,7 +41,7 @@ if (!function_exists('kbtGetSiteChromeConfig')) {
                     'menu' => ['home' => 'Home', 'tools' => 'Tools', 'blog' => 'Blog', 'privacy' => 'Privacy', 'about' => 'About', 'try_tools' => 'Try Tools'],
                     'footer' => ['about' => 'Modern testing tools for keyboards, mice, audio, screens, and more, built for clarity, accuracy, and speed.', 'quick_links' => 'Quick Links', 'testing_tools' => 'Testing Tools', 'more_tools' => 'More Tools', 'help_resources' => 'Help & Resources', 'stay_connected' => 'Stay Connected', 'newsletter' => 'Get updates on new tools and features', 'placeholder' => 'Your email address', 'subscribe' => 'Subscribe', 'rights' => 'All rights reserved.', 'tagline' => 'Built for tech enthusiasts worldwide'],
                     'quick' => ['home' => 'Home', 'blog' => 'Blog', 'about' => 'About Us', 'privacy' => 'Privacy Policy', 'disclaimer' => 'Disclaimer'],
-                    'help' => ['feedback' => 'Feedback', 'privacy' => 'Privacy & Security', 'disclaimer' => 'Terms & Disclaimer', 'blog' => 'Guides & Tips'],
+                    'help' => ['feedback' => 'Feedback', 'submit_tool' => 'Submit a Tool', 'privacy' => 'Privacy & Security', 'disclaimer' => 'Terms & Disclaimer', 'blog' => 'Guides & Tips'],
                     'aria' => ['menu' => 'Toggle menu', 'theme' => 'Toggle theme', 'language' => 'Choose language', 'tools_panel' => 'Browse testing tools', 'back_to_top' => 'Scroll to top'],
                 ],
                 'ar' => [
@@ -763,6 +763,7 @@ if (!function_exists('kbtRenderSiteFooter')) {
 
         $helpLinks = [
             ['href' => $pages['feedback'] ?? url('feedback.php'), 'label' => $copy['help']['feedback'], 'icon' => 'feedback'],
+            ['href' => $pages['resources'] ?? url('resources.php'), 'label' => $copy['help']['submit_tool'] ?? 'Submit a Tool', 'icon' => 'github'],
             ['href' => $pages['privacy'] ?? url('privacy-policy.php'), 'label' => $copy['help']['privacy'], 'icon' => 'privacy'],
             ['href' => $pages['disclaimer'] ?? url('disclaimer.php'), 'label' => $copy['help']['disclaimer'], 'icon' => 'disclaimer'],
             ['href' => $pages['blog'] ?? blogUrl(), 'label' => $copy['help']['blog'], 'icon' => 'blog'],

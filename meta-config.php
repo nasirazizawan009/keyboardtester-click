@@ -41,6 +41,12 @@ return [
         'keywords' => 'feedback, contact us, keyboard tester feedback, report bugs, feature requests',
         'og_image' => 'images/shared/keyboard-and-mouse.png'
     ],
+    'resources.php' => [
+        'title' => 'Submit Device Testing Tools | KeyboardTester.Click',
+        'description' => 'Submit useful keyboard, mouse, monitor, webcam, microphone, audio, and gamepad testing tools to our curated device testing directory.',
+        'keywords' => 'submit device testing tool, awesome device testing tools, keyboard tester directory, hardware testing tools',
+        'og_image' => 'images/shared/keyboard-and-mouse.png'
+    ],
     'tools.php' => [
         'title' => 'All Free Open Source Testing Tools — KeyboardTester.Click',
         // 58 chars

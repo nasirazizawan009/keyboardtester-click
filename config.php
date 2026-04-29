@@ -337,6 +337,7 @@ $pages = [
     'privacy' => url('privacy-policy.php'),
     'disclaimer' => url('disclaimer.php'),
     'feedback' => url('feedback.php'),
+    'resources' => url('resources.php'),
     'blog' => blogUrl(),
 ];
 

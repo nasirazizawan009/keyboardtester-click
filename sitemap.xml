@@ -4987,6 +4987,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://keyboardtester.click/resources.php</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://keyboardtester.click/right-click-cps-test.php</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>

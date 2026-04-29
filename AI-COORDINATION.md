@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-29 (Codex, awesome-device-testing-tools published)
+**Last updated:** 2026-04-29 (Codex, submit-tool resource page live)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,9 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-29 (Codex)
+- Done: Added and deployed `resources.php` as a public "Submit a Device Testing Tool" page that points users to the `awesome-device-testing-tools` GitHub issue form, repo, and pull request flow. Added neutral review standards so it is not framed as a backlink exchange.
+- Done: Added a sitewide footer "Submit a Tool" link to `resources.php`, added SEO metadata/config links, regenerated `sitemap.xml`, and included the page in IndexNow submissions.
+- Verified/deployed: PHP lint passed for changed PHP files, local/live page has exactly one H1, live `resources.php` returns HTTP 200, live homepage footer links to `/resources.php`, live sitemap includes the page, and IndexNow returned HTTP 200 with the new URL included.
 - Done: Installed GitHub CLI via winget. Binary is at `C:\Program Files\GitHub CLI\gh.exe`, version `2.92.0`. It is not authenticated yet; run `gh auth login --web --hostname github.com --git-protocol https` before publishing new repos from CLI.
 - Done: Created local starter repo package for `awesome-device-testing-tools` at `github-repo/awesome-device-testing-tools/` with README, contribution rules, CC0 license, PR template, issue form, awesome-lint GitHub Action, and maintainer notes. Local repo initialized on `main` with commit `22bcd0f`.
 - Done: Published public GitHub repo at `https://github.com/nasirazizawan009/awesome-device-testing-tools` and kept the URL unchanged per user request. Added repo topics (`awesome`, `awesome-list`, `device-testing`, etc.), homepage URL, and submission review labels. Verified `npx awesome-lint README.md` passes.
