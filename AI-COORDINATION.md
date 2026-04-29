@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-29 (Codex, homepage keyboard PASF copy deployed)
+**Last updated:** 2026-04-29 (Codex, awesome-device-testing-tools starter prepared)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,9 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-29 (Codex)
+- Done: Installed GitHub CLI via winget. Binary is at `C:\Program Files\GitHub CLI\gh.exe`, version `2.92.0`. It is not authenticated yet; run `gh auth login --web --hostname github.com --git-protocol https` before publishing new repos from CLI.
+- Done: Created local starter repo package for `awesome-device-testing-tools` at `github-repo/awesome-device-testing-tools/` with README, contribution rules, CC0 license, PR template, issue form, awesome-lint GitHub Action, and maintainer notes. Local repo initialized on `main` with commit `22bcd0f`.
+- Verified: `npx awesome-lint README.md` now only reports missing GitHub topics `awesome` and `awesome-list`, which must be added after the repo exists on GitHub.
 - Done: Added supporting homepage copy for Google "People also search for" keyboard tester variants without changing the primary homepage title/meta/H1. New visible coverage includes no-download keyboard tester, laptop keyboard tester, Windows/Mac compatibility, 60 percent keyboard testing, and gaming keyboard tester use cases.
 - Done: Updated homepage FAQ schema in `includes/schema.php` to match the new visible FAQ entries.
 - Verified/deployed: PHP lint passed with `C:\xampp\php\php.exe`, live homepage returns HTTP 200, existing title/meta stayed unchanged, new visible copy and JSON-LD FAQ entries are present on production. IndexNow returned HTTP 200 after deployment.
