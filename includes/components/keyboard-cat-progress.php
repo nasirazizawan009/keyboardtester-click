@@ -32,7 +32,20 @@ if ($catProgressTotalKeys < 1) {
             <div class="treat pasture-step step-final" data-treat="100" data-keys="<?php echo $catProgressTotalKeys; ?>" title="<?php echo $catProgressTotalKeys; ?> keys - Pasture complete"><span class="pasture-tree"></span><span class="grass-clump"><i></i><i></i><i></i></span></div>
 
             <div class="progress-cat" data-cat-avatar>
-                <div class="cat-body">&#x1F40E;</div>
+                <div class="cat-body" aria-label="Horse">
+                    <span class="horse-figure" aria-hidden="true">
+                        <span class="horse-tail"></span>
+                        <span class="horse-body"></span>
+                        <span class="horse-neck"></span>
+                        <span class="horse-head"></span>
+                        <span class="horse-ear"></span>
+                        <span class="horse-mane"></span>
+                        <span class="horse-leg horse-leg-back"></span>
+                        <span class="horse-leg horse-leg-mid-back"></span>
+                        <span class="horse-leg horse-leg-mid-front"></span>
+                        <span class="horse-leg horse-leg-front"></span>
+                    </span>
+                </div>
                 <div class="cat-message" data-cat-message>Press keys to help me graze!</div>
             </div>
         </div>

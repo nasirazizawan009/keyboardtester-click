@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, local horse pasture progress game)
+**Last updated:** 2026-04-30 (Codex, local horse pasture visual refinement)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -77,6 +77,7 @@ This file is the **single source of truth** when handing off work between AI age
 - Done: Reserved layout space for the Pro Diagnostics "Held" pill and changed it from `display` toggling to opacity/visibility toggling so physical key presses no longer shift/flicker the keyboard deck.
 - Done: Shifted the English keyboard "Held" status pill under the desktop keyboard while keeping the shared Pro Diagnostics component compatible with localized keyboard pages.
 - Done: Replaced the visible cat progress game locally with a horse pasture progress scene: a small horse moves along the ground, eats grass at 10 milestones, and passes different tree shapes at each step.
+- Done: Refined the horse pasture visual after review: replaced the browser-dependent horse emoji with a right-facing CSS horse and added continuous grass across the full track, not only at tree milestones.
 - Verified locally only: PHP lint passed, homepage and `/tools/keyboard-tester/` render without horizontal overflow, desktop keypress/click interactions light keys and update history/horse pasture progress, and the mobile keyboard view remains active under mobile viewport. No live deploy was run.
 
 - Done: Fixed failing GitHub Actions `awesome-lint.yml` check on `nasirazizawan009/awesome-device-testing-tools` after commit `02a607f` rewrote `README.md`.
