@@ -190,7 +190,7 @@
 </div>
 
 <!-- Floating "currently held" indicator (always visible when keys are held) -->
-<div id="adv-floating-held" class="adv-floating-held" style="display:none">
+<div id="adv-floating-held" class="adv-floating-held" aria-hidden="true">
     <span class="adv-floating-label" data-i18n="adv.floating.label">Held:</span>
     <span id="adv-floating-list"></span>
     <span class="adv-floating-count" id="adv-floating-count">0</span>
@@ -724,6 +724,8 @@ html:not(.dark-theme) #adv-pro-panel,
 .keyboard-tester .adv-floating-held {
     position: relative;
     width: fit-content;
+    min-width: 144px;
+    min-height: 42px;
     max-width: calc(100% - 24px);
     margin: 0 auto 14px;
     background: rgba(15, 23, 42, 0.9);
@@ -737,8 +739,18 @@ html:not(.dark-theme) #adv-pro-panel,
     display: flex;
     gap: 10px;
     align-items: center;
+    justify-content: center;
     pointer-events: none;
     box-shadow: 0 14px 28px rgba(15, 23, 42, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(2px);
+    transition: opacity 0.12s ease, visibility 0.12s ease, transform 0.12s ease;
+}
+.keyboard-tester .adv-floating-held.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 .keyboard-tester #adv-floating-list {
     max-width: 34ch;
@@ -1413,13 +1425,15 @@ html:not(.dark-theme) .keyboard-tester .adv-floating-label,
         const floatingList = document.getElementById('adv-floating-list');
         const floatingCount = document.getElementById('adv-floating-count');
         if (floating && floatingList && floatingCount) {
+            floating.classList.toggle('is-visible', heldCount > 0);
+            floating.setAttribute('aria-hidden', heldCount > 0 ? 'false' : 'true');
             if (heldCount > 0) {
-                floating.style.display = 'flex';
                 floatingList.textContent = Array.from(state.currentlyHeld).map(prettyKeyName).slice(0, 6).join(' ');
                 if (heldCount > 6) floatingList.textContent += '…';
                 floatingCount.textContent = heldCount;
             } else {
-                floating.style.display = 'none';
+                floatingList.textContent = '';
+                floatingCount.textContent = '0';
             }
         }
     }

@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, local English keyboard visual refresh)
+**Last updated:** 2026-04-30 (Codex, local English keyboard held-key pill stability)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -74,6 +74,7 @@ This file is the **single source of truth** when handing off work between AI age
 - Done: Improved Mac/Windows switcher visibility: Mac mode now reorders the bottom modifier row into Mac-style order while Windows mode restores the Windows order.
 - Done: Moved the Pro Diagnostics floating "Held" indicator out of the lower-right viewport corner so it no longer overlaps the numpad/keyboard; it now appears as a centered pill above the keyboard while keys are held.
 - Done: Stabilized visual key clicks so clicking on-screen keys no longer causes whole-keyboard flicker: keys no longer take pointer focus, counter badges are pre-rendered, active classes are updated with `classList`, and the click sound reuses one audio context.
+- Done: Reserved layout space for the Pro Diagnostics "Held" pill and changed it from `display` toggling to opacity/visibility toggling so physical key presses no longer shift/flicker the keyboard deck.
 - Verified locally only: PHP lint passed, homepage and `/tools/keyboard-tester/` render without horizontal overflow, desktop keypress/click interactions light keys and update history/cat progress, and the mobile keyboard view remains active under mobile viewport. No live deploy was run.
 
 - Done: Fixed failing GitHub Actions `awesome-lint.yml` check on `nasirazizawan009/awesome-device-testing-tools` after commit `02a607f` rewrote `README.md`.
