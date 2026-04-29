@@ -71,6 +71,7 @@ This file is the **single source of truth** when handing off work between AI age
 - Done: Kept existing key `data-key` wiring and added visual-key click handling so mouse/touch clicks on desktop keys record history/counters/cat progress the same way as physical key presses. PrintScreen remains disabled because browsers cannot capture it.
 - Done: Follow-up alignment pass: F12 now ends on the same right edge as Backspace, and the desktop keyboard shows visible Caps/Num/Scroll indicator lights above the numpad.
 - Done: Fixed local English keyboard OS switching reliability and changed the keyboard sound control to start ON by default on page load.
+- Done: Improved Mac/Windows switcher visibility: Mac mode now reorders the bottom modifier row into Mac-style order while Windows mode restores the Windows order.
 - Done: Moved the Pro Diagnostics floating "Held" indicator out of the lower-right viewport corner so it no longer overlaps the numpad/keyboard; it now appears as a centered pill above the keyboard while keys are held.
 - Verified locally only: PHP lint passed, homepage and `/tools/keyboard-tester/` render without horizontal overflow, desktop keypress/click interactions light keys and update history/cat progress, and the mobile keyboard view remains active under mobile viewport. No live deploy was run.
 

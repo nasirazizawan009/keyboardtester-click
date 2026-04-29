@@ -1502,6 +1502,15 @@ html:not(.dark-theme) .info-text,
 .key-shift-right { width: 180px; }
 .key-space { width: 420px; }
 
+.keyboard-tester[data-os="mac"] [data-key="ControlLeft"] { order: 1; }
+.keyboard-tester[data-os="mac"] [data-key="AltLeft"] { order: 2; }
+.keyboard-tester[data-os="mac"] [data-key="MetaLeft"] { order: 3; }
+.keyboard-tester[data-os="mac"] [data-key="Space"] { order: 4; }
+.keyboard-tester[data-os="mac"] [data-key="MetaRight"] { order: 5; }
+.keyboard-tester[data-os="mac"] [data-key="AltRight"] { order: 6; }
+.keyboard-tester[data-os="mac"] [data-key="ContextMenu"] { order: 7; }
+.keyboard-tester[data-os="mac"] [data-key="ControlRight"] { order: 8; }
+
 .numpad-grid {
     display: grid;
     grid-template-columns: repeat(4, 60px);
