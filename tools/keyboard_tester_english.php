@@ -101,12 +101,12 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
             </svg>
             Heatmap
         </button>
-        <button class="feature-button" id="sound-button">
+        <button class="feature-button active" id="sound-button">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
                 <path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/>
             </svg>
-            <span class="sound-label">Sound: OFF</span>
+            <span class="sound-label">Sound: ON</span>
         </button>
         <button class="feature-button" id="test-mode-button">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2027,7 +2027,7 @@ html:not(.dark-theme) .info-text,
     let sessionStartTime = Date.now();
     let totalKeyPresses = 0;
     let heatmapMode = false;
-    let soundEnabled = false;
+    let soundEnabled = true;
     let testMode = false;
     let sessionTimerInterval = null;
     let ghostTestActive = false;
@@ -2054,6 +2054,18 @@ html:not(.dark-theme) .info-text,
         windows: { ControlLeft: 'Ctrl', ControlRight: 'Ctrl', MetaLeft: 'Win', MetaRight: 'Win', AltLeft: 'Alt', AltRight: 'Alt', ContextMenu: 'Menu' },
         mac: { ControlLeft: 'Control', ControlRight: 'Control', MetaLeft: '⌘ Cmd', MetaRight: '⌘ Cmd', AltLeft: '⌥ Opt', AltRight: '⌥ Opt', ContextMenu: 'Fn' }
     };
+
+    function getKeyLabelElement(keyElement) {
+        if (!keyElement) return null;
+        return keyElement.querySelector(':scope > span') || keyElement.querySelector('span');
+    }
+
+    function setSoundButtonState() {
+        if (!soundButton) return;
+        soundButton.classList.toggle('active', soundEnabled);
+        const soundLabel = soundButton.querySelector('.sound-label');
+        if (soundLabel) soundLabel.textContent = soundEnabled ? 'Sound: ON' : 'Sound: OFF';
+    }
 
     function playClickSound() {
         if (!soundEnabled) return;
@@ -2225,31 +2237,37 @@ html:not(.dark-theme) .info-text,
         const layoutMap = keyboardLayouts[layout];
         Object.keys(layoutMap).forEach(keyCode => {
             const keyElement = document.querySelector(`[data-key="${keyCode}"]`);
-            if (keyElement) keyElement.querySelector('span').innerHTML = layoutMap[keyCode];
+            const labelElement = getKeyLabelElement(keyElement);
+            if (labelElement) labelElement.innerHTML = layoutMap[keyCode];
         });
     }
 
     function updateOSKeys(os) {
-        const modifiers = osModifiers[os];
+        const normalizedOS = osModifiers[os] ? os : 'windows';
+        const modifiers = osModifiers[normalizedOS];
+        keyboardTester.dataset.os = normalizedOS;
+        if (osSelector.value !== normalizedOS) osSelector.value = normalizedOS;
         Object.keys(modifiers).forEach(keyCode => {
             const keyElement = document.querySelector(`[data-key="${keyCode}"]`);
-            if (keyElement) keyElement.querySelector('span').textContent = modifiers[keyCode];
+            const labelElement = getKeyLabelElement(keyElement);
+            if (labelElement) labelElement.textContent = modifiers[keyCode];
         });
     }
 
     const savedTheme = localStorage.getItem('keyboardTheme') || 'dark';
     const savedLayout = localStorage.getItem('keyboardLayout') || 'qwerty';
-    const savedOS = localStorage.getItem('keyboardOS') || 'windows';
+    const savedOS = osModifiers[localStorage.getItem('keyboardOS')] ? localStorage.getItem('keyboardOS') : 'windows';
     keyboardTester.setAttribute('data-theme', savedTheme);
     themeSelector.value = savedTheme;
     layoutSelector.value = savedLayout;
     osSelector.value = savedOS;
     updateKeyboardLayout(savedLayout);
     updateOSKeys(savedOS);
+    setSoundButtonState();
     sessionTimerInterval = setInterval(updateSessionTimer, 1000);
 
     themeSelector.addEventListener('change', (e) => { keyboardTester.setAttribute('data-theme', e.target.value); localStorage.setItem('keyboardTheme', e.target.value); });
-    layoutSelector.addEventListener('change', (e) => { updateKeyboardLayout(e.target.value); localStorage.setItem('keyboardLayout', e.target.value); });
+    layoutSelector.addEventListener('change', (e) => { updateKeyboardLayout(e.target.value); updateOSKeys(osSelector.value); localStorage.setItem('keyboardLayout', e.target.value); });
     osSelector.addEventListener('change', (e) => { updateOSKeys(e.target.value); localStorage.setItem('keyboardOS', e.target.value); });
 
     advancedToggle.addEventListener('click', () => {
@@ -2269,7 +2287,7 @@ html:not(.dark-theme) .info-text,
     statsButton.addEventListener('click', () => { statsPanel.style.display = statsPanel.style.display === 'none' ? 'block' : 'none'; statsButton.classList.toggle('active'); updateStatistics(); });
     closeStats.addEventListener('click', () => { statsPanel.style.display = 'none'; statsButton.classList.remove('active'); });
     heatmapButton.addEventListener('click', () => { heatmapMode = !heatmapMode; heatmapButton.classList.toggle('active'); applyHeatmap(); });
-    soundButton.addEventListener('click', () => { soundEnabled = !soundEnabled; soundButton.classList.toggle('active'); soundButton.querySelector('.sound-label').textContent = soundEnabled ? 'Sound: ON' : 'Sound: OFF'; });
+    soundButton.addEventListener('click', () => { soundEnabled = !soundEnabled; setSoundButtonState(); });
     testModeButton.addEventListener('click', () => { testMode = !testMode; testModeButton.classList.toggle('active'); updateTestMode(); });
     exportButton.addEventListener('click', exportResults);
 
