@@ -388,7 +388,7 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
             <!-- Main Keyboard -->
             <div class="keyboard-section main-keyboard">
                 <!-- Function Keys -->
-                <div class="key-row">
+                <div class="key-row function-row">
                     <button class="key" data-key="Escape"><span>Esc</span></button>
                     <div class="gap"></div>
                     <button class="key" data-key="F1"><span>F1</span></button>
@@ -1391,6 +1391,7 @@ html:not(.dark-theme) .info-text,
     gap: 8px;
 }
 .gap { width: 36px; }
+.function-row .gap { width: 19.6667px; }
 .key {
     position: relative;
     height: 60px;
@@ -1608,46 +1609,63 @@ html:not(.dark-theme) .info-text,
 }
 .indicator-panel {
     display: flex;
-    gap: 20px;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     position: absolute;
-    width: 1px;
-    height: 1px;
+    top: -68px;
+    left: 0;
+    width: 264px;
+    height: 52px;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    opacity: 0;
+    padding: 9px 12px;
+    background: rgba(248, 248, 246, 0.72);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        0 8px 14px -12px rgba(21, 18, 49, 0.45);
+    opacity: 1;
     pointer-events: none;
+    z-index: 2;
 }
 
 .indicator {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 6px;
+    min-width: 0;
+    flex: 1;
 }
 
 .led {
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
-    background: #333;
-    border: 1px solid var(--key-border);
+    background: #2f2f2f;
+    border: 1px solid #151515;
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    flex: 0 0 auto;
 }
 
 .led.active {
-    background: var(--accent-success);
-    box-shadow: 0 0 10px var(--accent-success), 0 0 20px var(--accent-success);
-    border-color: var(--accent-success);
+    background: #37ff77;
+    box-shadow: 0 0 8px rgba(55, 255, 119, 0.85), 0 0 18px rgba(55, 255, 119, 0.45);
+    border-color: #18b64f;
 }
 
 .indicator span {
-    font-size: 9px;
-    color: var(--text-muted);
-    font-weight: 600;
+    font-size: 10px;
+    color: #2c2c2c;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.3px;
+    letter-spacing: 0;
+    white-space: nowrap;
 }
 
 .arrow-top { justify-content: center; margin-bottom: 8px; }
