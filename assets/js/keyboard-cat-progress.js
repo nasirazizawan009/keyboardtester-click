@@ -4,33 +4,33 @@
     const CAT_TEXT = {
         en: {
             messages: [
-                'Press keys to feed me!',
-                'Yummy fish!',
-                'Refreshing!',
-                'Mouse toy caught!',
-                'Yarn time!',
-                'Can treat!',
-                'Chicken snack!',
-                'Candy time!',
-                'Star unlocked!',
-                'Almost there!',
-                'Trophy unlocked!'
+                'Press keys to help me graze!',
+                'Fresh grass!',
+                'Round tree reached!',
+                'Pine shade ahead!',
+                'Wide tree passed!',
+                'Tall tree reached!',
+                'More grass eaten!',
+                'Bloom tree reached!',
+                'Cypress stop!',
+                'Apple tree ahead!',
+                'Pasture complete!'
             ],
             moods: [
-                'Hungry',
-                'Happy',
-                'Loving it!',
-                'Excited!',
-                'Playful',
-                'Energetic',
-                'Thriving',
-                'Focused',
-                'Shining',
-                'Super Cat',
-                'Champion'
+                'Grazing',
+                'Nibbling',
+                'Trotting',
+                'Calm',
+                'Steady',
+                'Happy Horse',
+                'Pasture Ready',
+                'Still Grazing',
+                'Almost Fed',
+                'Final Stretch',
+                'Pasture Champion'
             ],
-            treatsLabel: 'Treats',
-            completeMessage: 'Trophy unlocked!'
+            treatsLabel: 'Grass',
+            completeMessage: 'Pasture complete!'
         },
         es: {
             messages: [
@@ -317,17 +317,17 @@
             this.mobileTotalKeys = Math.max(Number(options.mobileTotalKeys) || 42, 1);
             this.desktopMilestones = options.desktopMilestones || [10, 20, 30, 40, 50, 60, 70, 80, 90, 103];
             this.mobileMilestones = options.mobileMilestones || [4, 8, 13, 17, 21, 25, 29, 34, 38, 42];
-            this.sparkles = ['*', '+', 'x', 'o', '.'];
+            this.sparkles = ['.', '+', '*', 'o', '.'];
             this.locale = resolveLocale(options.locale);
-            const localeText = CAT_TEXT[this.locale] || CAT_TEXT.en;
-            this.messages = normalizeTextArray(options.messages, localeText.messages);
-            this.moods = normalizeTextArray(options.moods, localeText.moods);
+            const pastureText = CAT_TEXT.en;
+            this.messages = normalizeTextArray(options.messages, pastureText.messages);
+            this.moods = normalizeTextArray(options.moods, pastureText.moods);
             this.treatsLabel = (typeof options.treatsLabel === 'string' && options.treatsLabel.trim() !== '')
                 ? options.treatsLabel
-                : localeText.treatsLabel;
+                : pastureText.treatsLabel;
             this.completeMessage = (typeof options.completeMessage === 'string' && options.completeMessage.trim() !== '')
                 ? options.completeMessage
-                : (this.messages[10] || localeText.completeMessage);
+                : (this.messages[10] || pastureText.completeMessage);
 
             this.lastLevels = { desktop: 0, mobile: 0 };
             this.completed = false;

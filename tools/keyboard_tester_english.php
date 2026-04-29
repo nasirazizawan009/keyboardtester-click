@@ -2052,7 +2052,7 @@ html:not(.dark-theme) .info-text,
     const featureControls = document.getElementById('feature-controls');
     const progressSection = document.getElementById('progress-section');
 
-    // Cat progress component
+    // Horse pasture progress component
     const catProgressRoot = document.getElementById('cat-progress-section');
     const MOBILE_TOTAL_KEYS = 42; // Total keys on mobile keyboard display
     
@@ -2728,7 +2728,7 @@ html:not(.dark-theme) .info-text,
         });
     }
 
-    // Update cat progress component display state
+    // Update pasture progress component display state
     let lastMobileDisplayMode = null;
     function updateMobileDisplay(force = false) {
         const isMobile = window.matchMedia('(max-width: 768px)').matches;
