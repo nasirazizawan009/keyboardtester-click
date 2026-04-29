@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-29 (Codex, awesome list competitor cleanup)
+**Last updated:** 2026-04-30 (Codex, awesome list CI fixed)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -65,6 +65,11 @@ This file is the **single source of truth** when handing off work between AI age
 ---
 
 ## 📜 Completed today (rolling 24-48h log)
+
+### 2026-04-30 (Codex)
+- Done: Fixed failing GitHub Actions `awesome-lint.yml` check on `nasirazizawan009/awesome-device-testing-tools` after commit `02a607f` rewrote `README.md`.
+- Root cause: `README.md` removed the required Awesome badge and added a forbidden `## License` section; `awesome-lint` requires the badge and does not allow a README license section when a `LICENSE` file exists.
+- Verified/pushed: Local `npx.cmd awesome-lint README.md` passes. Pushed commit `bfdc9f0` (`Fix awesome lint errors`) to `main`; GitHub Actions run #4 completed successfully.
 
 ### 2026-04-29 (Codex)
 - Done: Cleaned up the published `awesome-device-testing-tools` README to reduce direct keyboard-tester clone competitors. Removed `KeyboardTester.com`, `Key-Test`, `Keyboard Test Space`, `Hardware Tester Keyboard Test`, `Hardware Tester Mouse Test`, `Hardware Tester Gamepad Test`, and `WebCamMicTest`.
