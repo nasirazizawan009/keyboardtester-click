@@ -294,6 +294,7 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
         // Make locale available to the component's JS i18n
         $advLocale = $advLocale ?? ($pageLocale ?? ($lang ?? 'en'));
         echo "<script>window.KBT_LOCALE = " . json_encode($advLocale) . ";</script>";
+        $advFloatingHeldManualPlacement = true;
         include __DIR__ . '/keyboard-tester-advanced.php';
     }
     ?>
@@ -569,6 +570,11 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
         </div>
         </div><!-- /keyboard-scale-wrapper -->
     </div>
+    <?php
+    if (isset($advFloatingHeldMarkup)) {
+        echo $advFloatingHeldMarkup;
+    }
+    ?>
 
     <!-- Hidden progress section for advanced options -->
     <div class="progress-section" id="progress-section" style="display: none;"></div>

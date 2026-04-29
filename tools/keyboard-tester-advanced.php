@@ -189,12 +189,17 @@
     </div>
 </div>
 
-<!-- Floating "currently held" indicator (always visible when keys are held) -->
-<div id="adv-floating-held" class="adv-floating-held" aria-hidden="true">
-    <span class="adv-floating-label" data-i18n="adv.floating.label">Held:</span>
-    <span id="adv-floating-list"></span>
-    <span class="adv-floating-count" id="adv-floating-count">0</span>
-</div>
+<?php
+$advFloatingHeldClass = !empty($advFloatingHeldManualPlacement) ? ' adv-floating-held-below' : '';
+$advFloatingHeldMarkup = '<div id="adv-floating-held" class="adv-floating-held' . $advFloatingHeldClass . '" aria-hidden="true">'
+    . '<span class="adv-floating-label" data-i18n="adv.floating.label">Held:</span>'
+    . '<span id="adv-floating-list"></span>'
+    . '<span class="adv-floating-count" id="adv-floating-count">0</span>'
+    . '</div>';
+if (empty($advFloatingHeldManualPlacement)) {
+    echo $advFloatingHeldMarkup;
+}
+?>
 
 <style>
 /* ===== Pro Diagnostics — Linear/Notion-inspired Clean Design ===== */
@@ -752,6 +757,9 @@ html:not(.dark-theme) #adv-pro-panel,
     visibility: visible;
     transform: translateY(0);
 }
+.keyboard-tester .adv-floating-held.adv-floating-held-below {
+    margin: 14px auto 0;
+}
 .keyboard-tester #adv-floating-list {
     max-width: 34ch;
     overflow: hidden;
@@ -774,6 +782,11 @@ html:not(.dark-theme) .keyboard-tester .adv-floating-label,
     padding: 2px 9px;
     font-weight: 700;
     font-size: 0.74rem;
+}
+@media (max-width: 768px) {
+    .keyboard-tester .adv-floating-held.adv-floating-held-below {
+        display: none;
+    }
 }
 </style>
 
