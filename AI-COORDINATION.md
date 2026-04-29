@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, awesome list CI fixed)
+**Last updated:** 2026-04-30 (Codex, local English keyboard visual refresh)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,10 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-30 (Codex)
+- Done: Refreshed the local-only English desktop keyboard tester visual in `tools/keyboard_tester_english.php` to match the dark-key/light-deck full keyboard reference more closely.
+- Done: Kept existing key `data-key` wiring and added visual-key click handling so mouse/touch clicks on desktop keys record history/counters/cat progress the same way as physical key presses. PrintScreen remains disabled because browsers cannot capture it.
+- Verified locally only: PHP lint passed, homepage and `/tools/keyboard-tester/` render without horizontal overflow, desktop keypress/click interactions light keys and update history/cat progress, and the mobile keyboard view remains active under mobile viewport. No live deploy was run.
+
 - Done: Fixed failing GitHub Actions `awesome-lint.yml` check on `nasirazizawan009/awesome-device-testing-tools` after commit `02a607f` rewrote `README.md`.
 - Root cause: `README.md` removed the required Awesome badge and added a forbidden `## License` section; `awesome-lint` requires the badge and does not allow a README license section when a `LICENSE` file exists.
 - Verified/pushed: Local `npx.cmd awesome-lint README.md` passes. Pushed commit `bfdc9f0` (`Fix awesome lint errors`) to `main`; GitHub Actions run #4 completed successfully.

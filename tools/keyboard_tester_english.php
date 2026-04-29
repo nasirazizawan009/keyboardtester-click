@@ -15,12 +15,12 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
 /* Critical pre-render CSS — layout dimensions so the keyboard renders at the correct size.
    Uses CSS variables from head-common.php so it respects light/dark theme. */
 .keyboard-tester{contain:layout;padding:10px 12px 6px;position:relative;overflow:hidden;border-radius:24px}
-.keyboard-container{padding:24px;position:relative;overflow:hidden;
-    height:clamp(150px,calc(48px + 340px * (100vw - 96px) / 920px),388px)}
+.keyboard-container{padding:20px;position:relative;overflow:hidden;
+    height:clamp(190px,calc(102px + 338px * (100vw - 360px) / 1280px),440px)}
 .keyboard-scale-wrapper{transform-origin:top center;display:flex;justify-content:center}
-.keyboard-layout{display:flex;gap:8px;flex-wrap:nowrap}
-.key-row{display:flex;gap:5px}
-.key{display:flex;justify-content:center;align-items:center;padding:8px;min-width:36px;height:36px;border-radius:6px;font-size:13px}
+.keyboard-layout{display:flex;gap:36px;flex-wrap:nowrap}
+.key-row{display:flex;gap:8px}
+.key{display:flex;justify-content:flex-start;align-items:flex-start;padding:9px 8px;min-width:46px;height:46px;border-radius:7px;font-size:13px}
 .desktop-only{display:block}
 .mobile-keyboard-section{display:none}
 @media (max-width:768px){
@@ -409,19 +409,19 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
 
                 <!-- Number Row -->
                 <div class="key-row">
-                    <button class="key" data-key="Backquote"><span>~<br>`</span></button>
-                    <button class="key" data-key="Digit1"><span>!<br>1</span></button>
-                    <button class="key" data-key="Digit2"><span>@<br>2</span></button>
-                    <button class="key" data-key="Digit3"><span>#<br>3</span></button>
-                    <button class="key" data-key="Digit4"><span>$<br>4</span></button>
-                    <button class="key" data-key="Digit5"><span>%<br>5</span></button>
-                    <button class="key" data-key="Digit6"><span>^<br>6</span></button>
-                    <button class="key" data-key="Digit7"><span>&amp;<br>7</span></button>
-                    <button class="key" data-key="Digit8"><span>*<br>8</span></button>
-                    <button class="key" data-key="Digit9"><span>(<br>9</span></button>
-                    <button class="key" data-key="Digit0"><span>)<br>0</span></button>
-                    <button class="key" data-key="Minus"><span>_<br>-</span></button>
-                    <button class="key" data-key="Equal"><span>+<br>=</span></button>
+                    <button class="key" data-key="Backquote"><span>`</span></button>
+                    <button class="key" data-key="Digit1"><span>1</span></button>
+                    <button class="key" data-key="Digit2"><span>2</span></button>
+                    <button class="key" data-key="Digit3"><span>3</span></button>
+                    <button class="key" data-key="Digit4"><span>4</span></button>
+                    <button class="key" data-key="Digit5"><span>5</span></button>
+                    <button class="key" data-key="Digit6"><span>6</span></button>
+                    <button class="key" data-key="Digit7"><span>7</span></button>
+                    <button class="key" data-key="Digit8"><span>8</span></button>
+                    <button class="key" data-key="Digit9"><span>9</span></button>
+                    <button class="key" data-key="Digit0"><span>0</span></button>
+                    <button class="key" data-key="Minus"><span>-</span></button>
+                    <button class="key" data-key="Equal"><span>=</span></button>
                     <button class="key key-2x" data-key="Backspace"><span>Backspace</span></button>
                 </div>
 
@@ -438,9 +438,9 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
                     <button class="key" data-key="KeyI"><span>I</span></button>
                     <button class="key" data-key="KeyO"><span>O</span></button>
                     <button class="key" data-key="KeyP"><span>P</span></button>
-                    <button class="key" data-key="BracketLeft"><span>{<br>[</span></button>
-                    <button class="key" data-key="BracketRight"><span>}<br>]</span></button>
-                    <button class="key key-1-5x" data-key="Backslash"><span>|<br>\</span></button>
+                    <button class="key" data-key="BracketLeft"><span>[</span></button>
+                    <button class="key" data-key="BracketRight"><span>]</span></button>
+                    <button class="key key-1-5x" data-key="Backslash"><span>\</span></button>
                 </div>
 
                 <!-- ASDF Row -->
@@ -455,8 +455,8 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
                     <button class="key" data-key="KeyJ"><span>J</span></button>
                     <button class="key" data-key="KeyK"><span>K</span></button>
                     <button class="key" data-key="KeyL"><span>L</span></button>
-                    <button class="key" data-key="Semicolon"><span>:<br>;</span></button>
-                    <button class="key" data-key="Quote"><span>"<br>'</span></button>
+                    <button class="key" data-key="Semicolon"><span>;</span></button>
+                    <button class="key" data-key="Quote"><span>'</span></button>
                     <button class="key key-enter" data-key="Enter"><span>Enter</span></button>
                 </div>
 
@@ -470,9 +470,9 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
                     <button class="key" data-key="KeyB"><span>B</span></button>
                     <button class="key" data-key="KeyN"><span>N</span></button>
                     <button class="key" data-key="KeyM"><span>M</span></button>
-                    <button class="key" data-key="Comma"><span>&lt;<br>,</span></button>
-                    <button class="key" data-key="Period"><span>&gt;<br>.</span></button>
-                    <button class="key" data-key="Slash"><span>?<br>/</span></button>
+                    <button class="key" data-key="Comma"><span>,</span></button>
+                    <button class="key" data-key="Period"><span>.</span></button>
+                    <button class="key" data-key="Slash"><span>/</span></button>
                     <button class="key key-shift-right" data-key="ShiftRight"><span>Shift</span></button>
                 </div>
 
@@ -493,29 +493,29 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
             <div class="keyboard-section nav-section">
                 <div class="nav-top">
                     <div class="key-row">
-                        <button class="key key-disabled" data-key="PrintScreen" title="PrintScreen cannot be tested (system key)"><span>PrtSc</span><span class="key-disabled-badge">N/A</span></button>
-                        <button class="key" data-key="ScrollLock"><span>ScrLk</span></button>
+                        <button class="key key-disabled" data-key="PrintScreen" title="PrintScreen cannot be tested (system key)"><span>Print<br>Screen</span><span class="key-disabled-badge">N/A</span></button>
+                        <button class="key" data-key="ScrollLock"><span>Scroll<br>Lock</span></button>
                         <button class="key" data-key="Pause"><span>Pause</span></button>
                     </div>
                     <div class="key-row">
                         <button class="key" data-key="Insert"><span>Insert</span></button>
                         <button class="key" data-key="Home"><span>Home</span></button>
-                        <button class="key" data-key="PageUp"><span>PgUp</span></button>
+                        <button class="key" data-key="PageUp"><span>Page<br>Up</span></button>
                     </div>
                     <div class="key-row">
                         <button class="key" data-key="Delete"><span>Delete</span></button>
                         <button class="key" data-key="End"><span>End</span></button>
-                        <button class="key" data-key="PageDown"><span>PgDn</span></button>
+                        <button class="key" data-key="PageDown"><span>Page<br>Down</span></button>
                     </div>
                 </div>
                 <div class="arrow-cluster">
                     <div class="key-row arrow-top">
-                        <button class="key" data-key="ArrowUp"><span>↑</span></button>
+                        <button class="key" data-key="ArrowUp"><span>&uarr;</span></button>
                     </div>
                     <div class="key-row arrow-bottom">
-                        <button class="key" data-key="ArrowLeft"><span>←</span></button>
-                        <button class="key" data-key="ArrowDown"><span>↓</span></button>
-                        <button class="key" data-key="ArrowRight"><span>→</span></button>
+                        <button class="key" data-key="ArrowLeft"><span>&larr;</span></button>
+                        <button class="key" data-key="ArrowDown"><span>&darr;</span></button>
+                        <button class="key" data-key="ArrowRight"><span>&rarr;</span></button>
                     </div>
                 </div>
             </div>
@@ -538,9 +538,9 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
                 </div>
                 <div class="numpad-grid">
                     <div class="key-row">
-                        <button class="key" data-key="NumLock"><span>Num</span></button>
-                        <button class="key" data-key="NumpadDivide"><span>/</span></button>
-                        <button class="key" data-key="NumpadMultiply"><span>*</span></button>
+                        <button class="key" data-key="NumLock"><span>Num<br>Lock</span></button>
+                        <button class="key" data-key="NumpadDivide"><span>&divide;</span></button>
+                        <button class="key" data-key="NumpadMultiply"><span>&times;</span></button>
                         <button class="key" data-key="NumpadSubtract"><span>-</span></button>
                     </div>
                     <div class="key-row">
@@ -1306,29 +1306,26 @@ html:not(.dark-theme) .info-text,
 .log-container::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
 
 .keyboard-container {
-    max-width: 1400px;
+    max-width: 1640px;
     margin: 0 auto;
-    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-    border-radius: 24px;
-    padding: 24px;
+    background: #e6e6e4;
+    border-radius: 18px;
+    padding: 20px;
     box-shadow:
-        0 18px 36px -22px var(--key-shadow),
-        0 8px 18px -12px var(--key-shadow),
-        inset 0 1px 0 rgba(255, 255, 255, 0.12),
-        inset 0 -18px 28px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--border-subtle);
+        0 24px 28px -22px rgba(28, 24, 63, 0.9),
+        0 12px 18px -16px rgba(18, 16, 42, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+    border: 1px solid #d9d9d7;
     position: relative;
     overflow: hidden;
     isolation: isolate;
 }
-
 .keyboard-container::before {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(ellipse at 18% 6%, rgba(255, 255, 255, 0.1) 0%, transparent 48%),
-        radial-gradient(ellipse at 84% 10%, rgba(255, 255, 255, 0.08) 0%, transparent 42%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 26%);
     pointer-events: none;
     z-index: 0;
 }
@@ -1338,11 +1335,11 @@ html:not(.dark-theme) .info-text,
     position: absolute;
     left: 12px;
     right: 12px;
-    bottom: 10px;
-    height: 18px;
+    bottom: 8px;
+    height: 14px;
     border-radius: 999px;
-    background: rgba(0, 0, 0, 0.22);
-    filter: blur(12px);
+    background: rgba(25, 21, 54, 0.28);
+    filter: blur(10px);
     pointer-events: none;
     z-index: 0;
 }
@@ -1359,29 +1356,26 @@ html:not(.dark-theme) .info-text,
 
 .keyboard-layout {
     display: flex;
-    gap: 24px;
+    gap: 36px;
     justify-content: center;
     align-items: flex-end;
     transform: translateZ(0);
 }
-
 .keyboard-section {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
 }
-
 .nav-section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 318px; /* Match main keyboard height: 6 rows × 48px + 5 gaps × 6px */
+    height: 400px;
 }
-
 .nav-top {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
 }
 
 .arrow-cluster {
@@ -1389,40 +1383,40 @@ html:not(.dark-theme) .info-text,
     flex-direction: column;
 }
 
-.numpad-section { /* Aligns at bottom with keyboard-layout flex-end */ }
-
+.numpad-section {
+    position: relative;
+}
 .key-row {
     display: flex;
-    gap: 6px;
+    gap: 8px;
 }
-
-.gap { width: 14px; }
-
+.gap { width: 36px; }
 .key {
     position: relative;
-    height: 48px;
-    width: 48px;
+    height: 60px;
+    width: 60px;
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 34%, rgba(0, 0, 0, 0.12) 100%),
-        var(--key-bg);
-    border: 1px solid var(--key-border);
-    border-radius: 10px;
-    color: var(--key-text);
-    font-size: 12px;
-    font-weight: 600;
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 34%),
+        linear-gradient(180deg, #343434 0%, #2e2e2e 100%);
+    border: 1px solid #111;
+    border-radius: 7px;
+    color: #f4f4f4;
+    font-size: 16px;
+    font-weight: 500;
     font-family: 'Plus Jakarta Sans', sans-serif;
     cursor: pointer;
-    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease, background 0.1s ease;
     box-shadow:
-        0 5px 0 var(--key-shadow),
-        0 10px 16px -8px var(--key-shadow),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        inset 0 -2px 3px rgba(0, 0, 0, 0.22);
+        0 4px 0 #161616,
+        0 8px 10px -5px rgba(21, 18, 49, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.35);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 8px;
     overflow: hidden;
+    text-align: left;
 }
 
 .key::before {
@@ -1431,18 +1425,18 @@ html:not(.dark-theme) .info-text,
     top: 2px;
     left: 4px;
     right: 4px;
-    height: 38%;
-    border-radius: 8px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    height: 34%;
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0) 100%);
     pointer-events: none;
 }
 
 .key::after {
     content: '';
     position: absolute;
-    left: 8px;
-    right: 8px;
-    bottom: 3px;
+    left: 7px;
+    right: 7px;
+    bottom: 4px;
     height: 2px;
     border-radius: 999px;
     background: rgba(0, 0, 0, 0.24);
@@ -1451,9 +1445,9 @@ html:not(.dark-theme) .info-text,
 }
 
 .key span {
-    text-align: center;
+    text-align: left;
     line-height: 1.2;
-    font-size: 11px;
+    font-size: inherit;
     pointer-events: none;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
     position: relative;
@@ -1461,24 +1455,24 @@ html:not(.dark-theme) .info-text,
 }
 
 .keyboard-tester[data-theme="light"] .key span {
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
 }
 
 .key:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     box-shadow:
-        0 6px 0 var(--key-shadow),
-        0 13px 20px -10px var(--key-shadow),
-        inset 0 1px 0 rgba(255, 255, 255, 0.26),
-        inset 0 -2px 3px rgba(0, 0, 0, 0.22);
-    filter: brightness(1.03);
+        0 6px 0 #161616,
+        0 14px 16px -8px rgba(21, 18, 49, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+    filter: brightness(1.08);
 }
 
 .key:active {
     transform: translateY(3px);
     box-shadow:
-        0 1px 0 var(--key-shadow),
-        0 4px 8px -6px var(--key-shadow),
+        0 1px 0 #161616,
+        0 4px 8px -6px rgba(21, 18, 49, 0.55),
         inset 0 2px 5px rgba(0, 0, 0, 0.34);
 }
 
@@ -1498,20 +1492,20 @@ html:not(.dark-theme) .info-text,
     50% { opacity: 0.6; border-color: transparent; }
 }
 
-.key-1-25x { width: 60px; }
-.key-1-5x { width: 72px; }
-.key-1-75x { width: 84px; }
-.key-2x { width: 96px; }
-.key-2-25x { width: 108px; }
-.key-enter { width: 114px; }
-.key-shift-right { width: 144px; }
-.key-space { width: 336px; }
+.key-1-25x { width: 75px; }
+.key-1-5x { width: 90px; }
+.key-1-75x { width: 105px; }
+.key-2x { width: 120px; }
+.key-2-25x { width: 135px; }
+.key-enter { width: 143px; }
+.key-shift-right { width: 180px; }
+.key-space { width: 420px; }
 
 .numpad-grid {
     display: grid;
-    grid-template-columns: repeat(4, 48px);
-    grid-template-rows: repeat(5, 48px);
-    gap: 6px;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(5, 60px);
+    gap: 8px;
     position: relative;
 }
 
@@ -1520,13 +1514,13 @@ html:not(.dark-theme) .info-text,
 .numpad-grid .key-row:nth-child(2) .key:nth-child(1) { grid-row: 2; grid-column: 1; }
 .numpad-grid .key-row:nth-child(2) .key:nth-child(2) { grid-row: 2; grid-column: 2; }
 .numpad-grid .key-row:nth-child(2) .key:nth-child(3) { grid-row: 2; grid-column: 3; }
-.numpad-grid .key-row:nth-child(2) .key-tall { grid-row: 2 / 4; grid-column: 4; height: 102px; }
+.numpad-grid .key-row:nth-child(2) .key-tall { grid-row: 2 / 4; grid-column: 4; height: 128px; }
 .numpad-grid .key-row:nth-child(3) .key { grid-row: 3; }
 .numpad-grid .key-row:nth-child(4) .key:nth-child(1) { grid-row: 4; grid-column: 1; }
 .numpad-grid .key-row:nth-child(4) .key:nth-child(2) { grid-row: 4; grid-column: 2; }
 .numpad-grid .key-row:nth-child(4) .key:nth-child(3) { grid-row: 4; grid-column: 3; }
-.numpad-grid .key-row:nth-child(4) .key-enter-tall { grid-row: 4 / 6; grid-column: 4; height: 102px; }
-.numpad-grid .key-row:nth-child(5) .key-2x { grid-row: 5; grid-column: 1 / 3; width: 102px; }
+.numpad-grid .key-row:nth-child(4) .key-enter-tall { grid-row: 4 / 6; grid-column: 4; height: 128px; }
+.numpad-grid .key-row:nth-child(5) .key-2x { grid-row: 5; grid-column: 1 / 3; width: 128px; }
 .numpad-grid .key-row:nth-child(5) .key:nth-child(2) { grid-row: 5; grid-column: 3; }
 
 .key.active-1 {
@@ -1587,10 +1581,11 @@ html:not(.dark-theme) .info-text,
 
 /* Disabled key styling (for system keys like PrintScreen) */
 .key.key-disabled {
-    opacity: 0.5;
+    opacity: 1;
     cursor: not-allowed;
-    background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 100%) !important;
-    border-color: #444 !important;
+    background: linear-gradient(180deg, #333 0%, #2c2c2c 100%) !important;
+    border-color: #151515 !important;
+    color: #777 !important;
     position: relative;
 }
 
@@ -1601,31 +1596,28 @@ html:not(.dark-theme) .info-text,
 
 .key.key-disabled:hover {
     transform: none;
-    box-shadow: none;
+    box-shadow:
+        0 4px 0 #161616,
+        0 8px 10px -5px rgba(21, 18, 49, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.35);
 }
 
 .key-disabled-badge {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    background: #ff6b6b;
-    color: #fff;
-    font-size: 7px;
-    padding: 1px 4px;
-    border-radius: 4px;
-    font-weight: 700;
-    text-transform: uppercase;
+    display: none;
 }
-
 .indicator-panel {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-bottom: 12px;
-    padding: 10px 16px;
-    background: transparent;
-    border-radius: 8px;
-    border: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .indicator {
@@ -1658,7 +1650,7 @@ html:not(.dark-theme) .info-text,
     letter-spacing: 0.3px;
 }
 
-.arrow-top { justify-content: center; margin-bottom: 6px; }
+.arrow-top { justify-content: center; margin-bottom: 8px; }
 .arrow-bottom { justify-content: center; }
 
 .progress-section {
@@ -2033,7 +2025,7 @@ html:not(.dark-theme) .info-text,
         : null;
 
     const keyboardLayouts = {
-        qwerty: { KeyQ: 'Q', KeyW: 'W', KeyE: 'E', KeyR: 'R', KeyT: 'T', KeyY: 'Y', KeyU: 'U', KeyI: 'I', KeyO: 'O', KeyP: 'P', KeyA: 'A', KeyS: 'S', KeyD: 'D', KeyF: 'F', KeyG: 'G', KeyH: 'H', KeyJ: 'J', KeyK: 'K', KeyL: 'L', KeyZ: 'Z', KeyX: 'X', KeyC: 'C', KeyV: 'V', KeyB: 'B', KeyN: 'N', KeyM: 'M', Semicolon: ':<br>;', Quote: '"<br>\'', Comma: '&lt;<br>,', Period: '&gt;<br>.', Slash: '?<br>/', BracketLeft: '{<br>[', BracketRight: '}<br>]' },
+        qwerty: { KeyQ: 'Q', KeyW: 'W', KeyE: 'E', KeyR: 'R', KeyT: 'T', KeyY: 'Y', KeyU: 'U', KeyI: 'I', KeyO: 'O', KeyP: 'P', KeyA: 'A', KeyS: 'S', KeyD: 'D', KeyF: 'F', KeyG: 'G', KeyH: 'H', KeyJ: 'J', KeyK: 'K', KeyL: 'L', KeyZ: 'Z', KeyX: 'X', KeyC: 'C', KeyV: 'V', KeyB: 'B', KeyN: 'N', KeyM: 'M', Semicolon: ';', Quote: '\'', Comma: ',', Period: '.', Slash: '/', BracketLeft: '[', BracketRight: ']' },
         dvorak: { KeyQ: '\'<br>"', KeyW: ',<br>&lt;', KeyE: '.<br>&gt;', KeyR: 'P', KeyT: 'Y', KeyY: 'F', KeyU: 'G', KeyI: 'C', KeyO: 'R', KeyP: 'L', KeyA: 'A', KeyS: 'O', KeyD: 'E', KeyF: 'U', KeyG: 'I', KeyH: 'D', KeyJ: 'H', KeyK: 'T', KeyL: 'N', KeyZ: ':<br>;', KeyX: 'Q', KeyC: 'J', KeyV: 'K', KeyB: 'X', KeyN: 'B', KeyM: 'M', Semicolon: 'S', Quote: '-<br>_', Comma: 'W', Period: 'V', Slash: 'Z', BracketLeft: '/<br>?', BracketRight: '=<br>+' },
         colemak: { KeyQ: 'Q', KeyW: 'W', KeyE: 'F', KeyR: 'P', KeyT: 'G', KeyY: 'J', KeyU: 'L', KeyI: 'U', KeyO: 'Y', KeyP: ':<br>;', KeyA: 'A', KeyS: 'R', KeyD: 'S', KeyF: 'T', KeyG: 'D', KeyH: 'H', KeyJ: 'N', KeyK: 'E', KeyL: 'I', KeyZ: 'Z', KeyX: 'X', KeyC: 'C', KeyV: 'V', KeyB: 'B', KeyN: 'K', KeyM: 'M', Semicolon: 'O', Quote: '"<br>\'', Comma: '&lt;<br>,', Period: '&gt;<br>.', Slash: '?<br>/', BracketLeft: '{<br>[', BracketRight: '}<br>]' },
         azerty: { KeyQ: 'A', KeyW: 'Z', KeyE: 'E', KeyR: 'R', KeyT: 'T', KeyY: 'Y', KeyU: 'U', KeyI: 'I', KeyO: 'O', KeyP: 'P', KeyA: 'Q', KeyS: 'S', KeyD: 'D', KeyF: 'F', KeyG: 'G', KeyH: 'H', KeyJ: 'J', KeyK: 'K', KeyL: 'L', KeyZ: 'W', KeyX: 'X', KeyC: 'C', KeyV: 'V', KeyB: 'B', KeyN: 'N', KeyM: 'M', Semicolon: 'M', Quote: '%<br>ù', Comma: '?<br>,', Period: '.<br>;', Slash: '/<br>:', BracketLeft: '^<br>¨', BracketRight: '$<br>£' },
@@ -2156,6 +2148,37 @@ html:not(.dark-theme) .info-text,
         });
     }
 
+    function recordKeyPress(code, displayKey, sourceEvent = null) {
+        const keyElement = document.querySelector(`[data-key="${code}"]`);
+
+        if (!keyElement || keyElement.classList.contains('key-disabled')) {
+            return false;
+        }
+
+        if (sourceEvent && typeof sourceEvent.preventDefault === 'function') {
+            sourceEvent.preventDefault();
+        }
+
+        playClickSound();
+        keyPressCount[code] = (keyPressCount[code] || 0) + 1;
+        totalKeyPresses++;
+        const activeLevel = ((keyPressCount[code] - 1) % 5) + 1;
+        keyElement.className = keyElement.className.replace(/active-\d+/g, '').trim();
+        if (heatmapMode) applyHeatmap(); else keyElement.classList.add(`active-${activeLevel}`);
+        let counter = keyElement.querySelector('.key-counter');
+        if (!counter) { counter = document.createElement('div'); counter.className = 'key-counter'; keyElement.appendChild(counter); }
+        counter.textContent = keyPressCount[code];
+        keyHistory.value += displayKey + ' ';
+        requestAnimationFrame(() => { keyHistory.scrollTop = keyHistory.scrollHeight; });
+        if (code === 'CapsLock') capsLed.classList.toggle('active');
+        if (code === 'NumLock') numLed.classList.toggle('active');
+        if (code === 'ScrollLock') scrollLed.classList.toggle('active');
+        updateProgressBar();
+        if (testMode) updateTestMode();
+        if (statsPanel.style.display !== 'none') updateStatistics();
+        return true;
+    }
+
     function exportResults() {
         const elapsed = Math.floor((Date.now() - sessionStartTime) / 1000);
         const minutes = Math.floor(elapsed / 60);
@@ -2253,26 +2276,18 @@ html:not(.dark-theme) .info-text,
             return;
         }
         if (keyElement) {
-            event.preventDefault();
-            playClickSound();
-            keyPressCount[event.code] = (keyPressCount[event.code] || 0) + 1;
-            totalKeyPresses++;
-            const activeLevel = ((keyPressCount[event.code] - 1) % 5) + 1;
-            keyElement.className = keyElement.className.replace(/active-\d+/g, '').trim();
-            if (heatmapMode) applyHeatmap(); else keyElement.classList.add(`active-${activeLevel}`);
-            let counter = keyElement.querySelector('.key-counter');
-            if (!counter) { counter = document.createElement('div'); counter.className = 'key-counter'; keyElement.appendChild(counter); }
-            counter.textContent = keyPressCount[event.code];
-            const displayKey = event.key === ' ' ? '␣' : event.key.length > 1 ? `[${event.code}]` : event.key;
-            keyHistory.value += displayKey + ' ';
-            requestAnimationFrame(() => { keyHistory.scrollTop = keyHistory.scrollHeight; });
-            if (event.code === 'CapsLock') capsLed.classList.toggle('active');
-            if (event.code === 'NumLock') numLed.classList.toggle('active');
-            if (event.code === 'ScrollLock') scrollLed.classList.toggle('active');
-            updateProgressBar();
-            if (testMode) updateTestMode();
-            if (statsPanel.style.display !== 'none') updateStatistics();
+            const displayKey = event.code === 'Space' ? '[Space]' : event.key.length > 1 ? `[${event.code}]` : event.key;
+            recordKeyPress(event.code, displayKey, event);
         }
+    });
+
+    document.querySelectorAll('.keyboard-container .key').forEach(keyElement => {
+        keyElement.type = 'button';
+        keyElement.addEventListener('click', () => {
+            const code = keyElement.getAttribute('data-key');
+            const label = (keyElement.querySelector('span')?.textContent || code).replace(/\s+/g, ' ').trim();
+            recordKeyPress(code, `[${label || code}]`);
+        });
     });
 
     resetButton.addEventListener('click', () => {
@@ -2429,8 +2444,8 @@ html:not(.dark-theme) .info-text,
         const wrapper = document.getElementById('keyboard-scale-wrapper');
         const container = document.querySelector('.keyboard-container');
         const layout = document.querySelector('.keyboard-layout');
-        const horizontalPadding = 48; // keyboard-container uses 24px left + 24px right padding
-        const verticalPadding = 48;   // keyboard-container uses 24px top + 24px bottom padding
+        const horizontalPadding = 40; // keyboard-container uses 20px left + 20px right padding
+        const verticalPadding = 40;   // keyboard-container uses 20px top + 20px bottom padding
         let rafId = 0;
         let naturalLayoutWidth = 0;
         let naturalLayoutHeight = 0;
