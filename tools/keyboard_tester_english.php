@@ -1418,6 +1418,16 @@ html:not(.dark-theme) .info-text,
     padding: 10px 8px;
     overflow: hidden;
     text-align: left;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    backface-visibility: hidden;
+    contain: paint;
+    will-change: transform;
+}
+
+.key:focus,
+.key:focus-visible {
+    outline: none;
 }
 
 .key::before {
@@ -1587,6 +1597,14 @@ html:not(.dark-theme) .info-text,
     font-weight: 700;
     font-family: 'JetBrains Mono', monospace;
     backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateZ(0);
+}
+
+.key.has-counter .key-counter {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Disabled key styling (for system keys like PrintScreen) */
@@ -2039,6 +2057,7 @@ html:not(.dark-theme) .info-text,
     let soundEnabled = true;
     let testMode = false;
     let sessionTimerInterval = null;
+    let clickAudioContext = null;
     let ghostTestActive = false;
     let ghostTestStartTime = 0;
     let ghostTestInterval = null;
@@ -2078,7 +2097,13 @@ html:not(.dark-theme) .info-text,
 
     function playClickSound() {
         if (!soundEnabled) return;
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const AudioContextCtor = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextCtor) return;
+        if (!clickAudioContext) clickAudioContext = new AudioContextCtor();
+        if (clickAudioContext.state === 'suspended') {
+            clickAudioContext.resume().catch(function() {});
+        }
+        const audioContext = clickAudioContext;
         const oscillator = audioContext.createOscillator();
         const gainNode = audioContext.createGain();
         oscillator.connect(gainNode);
@@ -2202,11 +2227,12 @@ html:not(.dark-theme) .info-text,
         keyPressCount[code] = (keyPressCount[code] || 0) + 1;
         totalKeyPresses++;
         const activeLevel = ((keyPressCount[code] - 1) % 5) + 1;
-        keyElement.className = keyElement.className.replace(/active-\d+/g, '').trim();
+        keyElement.classList.remove('active-1', 'active-2', 'active-3', 'active-4', 'active-5');
         if (heatmapMode) applyHeatmap(); else keyElement.classList.add(`active-${activeLevel}`);
-        let counter = keyElement.querySelector('.key-counter');
+        let counter = keyElement.querySelector(':scope > .key-counter');
         if (!counter) { counter = document.createElement('div'); counter.className = 'key-counter'; keyElement.appendChild(counter); }
         counter.textContent = keyPressCount[code];
+        keyElement.classList.add('has-counter');
         keyHistory.value += displayKey + ' ';
         requestAnimationFrame(() => { keyHistory.scrollTop = keyHistory.scrollHeight; });
         if (code === 'CapsLock') capsLed.classList.toggle('active');
@@ -2328,15 +2354,30 @@ html:not(.dark-theme) .info-text,
 
     document.querySelectorAll('.keyboard-container .key').forEach(keyElement => {
         keyElement.type = 'button';
-        keyElement.addEventListener('click', () => {
+        keyElement.tabIndex = -1;
+        if (!keyElement.querySelector(':scope > .key-counter')) {
+            const counter = document.createElement('div');
+            counter.className = 'key-counter';
+            keyElement.appendChild(counter);
+        }
+        keyElement.addEventListener('pointerdown', (event) => {
+            event.preventDefault();
+        });
+        keyElement.addEventListener('pointerup', (event) => {
+            if (event.pointerType === 'mouse' && event.button !== 0) return;
+            event.preventDefault();
             const code = keyElement.getAttribute('data-key');
-            const label = (keyElement.querySelector('span')?.textContent || code).replace(/\s+/g, ' ').trim();
+            const label = (getKeyLabelElement(keyElement)?.textContent || code).replace(/\s+/g, ' ').trim();
             recordKeyPress(code, `[${label || code}]`);
         });
     });
 
     resetButton.addEventListener('click', () => {
-        document.querySelectorAll('.key').forEach(key => { key.className = key.className.replace(/active-\d+/g, '').replace(/heat-\d+/g, '').replace('untested', '').trim(); const counter = key.querySelector('.key-counter'); if (counter) counter.remove(); });
+        document.querySelectorAll('.key').forEach(key => {
+            key.classList.remove('active-1', 'active-2', 'active-3', 'active-4', 'active-5', 'heat-1', 'heat-2', 'heat-3', 'heat-4', 'heat-5', 'untested', 'has-counter');
+            const counter = key.querySelector(':scope > .key-counter');
+            if (counter) counter.textContent = '';
+        });
         keyHistory.value = '';
         capsLed.classList.remove('active');
         numLed.classList.remove('active');

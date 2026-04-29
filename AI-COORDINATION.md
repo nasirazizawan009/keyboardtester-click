@@ -73,6 +73,7 @@ This file is the **single source of truth** when handing off work between AI age
 - Done: Fixed local English keyboard OS switching reliability and changed the keyboard sound control to start ON by default on page load.
 - Done: Improved Mac/Windows switcher visibility: Mac mode now reorders the bottom modifier row into Mac-style order while Windows mode restores the Windows order.
 - Done: Moved the Pro Diagnostics floating "Held" indicator out of the lower-right viewport corner so it no longer overlaps the numpad/keyboard; it now appears as a centered pill above the keyboard while keys are held.
+- Done: Stabilized visual key clicks so clicking on-screen keys no longer causes whole-keyboard flicker: keys no longer take pointer focus, counter badges are pre-rendered, active classes are updated with `classList`, and the click sound reuses one audio context.
 - Verified locally only: PHP lint passed, homepage and `/tools/keyboard-tester/` render without horizontal overflow, desktop keypress/click interactions light keys and update history/cat progress, and the mobile keyboard view remains active under mobile viewport. No live deploy was run.
 
 - Done: Fixed failing GitHub Actions `awesome-lint.yml` check on `nasirazizawan009/awesome-device-testing-tools` after commit `02a607f` rewrote `README.md`.
