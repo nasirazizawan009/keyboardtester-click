@@ -1,8 +1,9 @@
 .cat-progress-section {
     --dino-bg: #000;
-    --dino-ink: #f1f3f4;
+    --dino-ground: #d2c65f;
+    --dino-score: #ff7e53;
+    --dino-status: #00d4ff;
     --dino-muted: #9aa0a6;
-    --dino-dim: #6f7377;
     background: transparent;
     border: none;
     border-radius: 0;
@@ -23,9 +24,9 @@
 
 .cat-progress-track {
     position: relative;
-    height: 78px;
+    height: 86px;
     background: var(--dino-bg);
-    border: 1px solid rgba(241, 243, 244, 0.18);
+    border: 1px solid rgba(210, 198, 95, 0.34);
     border-radius: 3px;
     overflow: hidden;
     image-rendering: pixelated;
@@ -38,21 +39,21 @@
     right: 0;
     bottom: 13px;
     height: 1px;
-    background: var(--dino-muted);
+    background: var(--dino-ground);
     z-index: 2;
 }
 
 .cat-progress-track::after {
     content: "";
     position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: 7px;
-    height: 6px;
+    left: 14px;
+    right: 14px;
+    bottom: 6px;
+    height: 7px;
     background:
-        repeating-linear-gradient(90deg, transparent 0 26px, var(--dino-muted) 26px 28px, transparent 28px 82px),
-        repeating-linear-gradient(90deg, transparent 0 116px, var(--dino-dim) 116px 118px, transparent 118px 154px);
-    opacity: 0.75;
+        repeating-linear-gradient(90deg, transparent 0 22px, var(--dino-ground) 22px 24px, transparent 24px 74px),
+        repeating-linear-gradient(90deg, transparent 0 98px, var(--dino-ground) 98px 101px, transparent 101px 136px);
+    opacity: 0.85;
     z-index: 1;
     pointer-events: none;
 }
@@ -60,22 +61,51 @@
 .dino-score {
     position: absolute;
     top: 8px;
-    right: 14px;
-    z-index: 4;
-    color: var(--dino-muted);
+    right: 13px;
+    z-index: 6;
+    color: var(--dino-score);
     font-family: "Courier New", monospace;
     font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: 1px;
     line-height: 1;
+    text-shadow: 0 0 1px rgba(255, 126, 83, 0.6);
+}
+
+.runner-cloud {
+    position: absolute;
+    width: 52px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
+    opacity: 0.92;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.cloud-one {
+    left: 9%;
+    top: 30px;
+    background-image: url("../../images/keyboard/dino-game/cloud-left.png");
+}
+
+.cloud-two {
+    right: 10%;
+    top: 21px;
+    background-image: url("../../images/keyboard/dino-game/cloud-right.png");
 }
 
 .treat {
     position: absolute;
-    bottom: 14px;
-    width: 34px;
-    height: 38px;
+    bottom: 13px;
+    width: 42px;
+    height: 48px;
     z-index: 5;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    image-rendering: pixelated;
     transition: opacity 0.18s steps(2, end), transform 0.18s steps(2, end);
     pointer-events: none;
 }
@@ -91,144 +121,29 @@
 .treat[data-treat="90"] { left: 83%; }
 .treat[data-treat="100"] { left: 90%; }
 
-.runner-step::before,
-.runner-step::after,
-.runner-step span {
-    content: "";
-    position: absolute;
-    display: block;
-    background: var(--dino-ink);
+.sprite-cactus-single {
+    background-image: url("../../images/keyboard/dino-game/cactus-center.png");
 }
 
-.step-cactus-small::before {
-    left: 14px;
-    bottom: 0;
-    width: 5px;
+.sprite-cactus-triple {
+    width: 50px;
+    background-image: url("../../images/keyboard/dino-game/cactus-triple.png");
+}
+
+.sprite-pterodactyl {
+    width: 46px;
     height: 24px;
+    background-image: url("../../images/keyboard/dino-game/ptero-frame-a.png");
+    background-position: center center;
+    background-size: contain;
 }
 
-.step-cactus-small::after {
-    left: 8px;
-    bottom: 9px;
-    width: 18px;
-    height: 5px;
+.bird-high {
+    bottom: 48px;
 }
 
-.step-cactus-tall::before {
-    left: 14px;
-    bottom: 0;
-    width: 5px;
-    height: 34px;
-}
-
-.step-cactus-tall::after {
-    left: 6px;
-    bottom: 15px;
-    width: 24px;
-    height: 5px;
-}
-
-.step-cactus-double::before {
-    left: 8px;
-    bottom: 0;
-    width: 5px;
-    height: 26px;
-    box-shadow: 15px -7px 0 0 var(--dino-ink);
-}
-
-.step-cactus-double::after {
-    left: 3px;
-    bottom: 11px;
-    width: 27px;
-    height: 5px;
-}
-
-.step-cactus-triple::before {
-    left: 4px;
-    bottom: 0;
-    width: 5px;
-    height: 23px;
-    box-shadow: 11px -9px 0 0 var(--dino-ink), 22px -3px 0 0 var(--dino-ink);
-}
-
-.step-cactus-triple::after {
-    left: 0;
-    bottom: 10px;
-    width: 32px;
-    height: 5px;
-}
-
-.step-cactus-wide::before {
-    left: 5px;
-    bottom: 0;
-    width: 5px;
-    height: 29px;
-    box-shadow: 12px 0 0 0 var(--dino-ink), 24px -6px 0 0 var(--dino-ink);
-}
-
-.step-cactus-wide::after {
-    left: 1px;
-    bottom: 13px;
-    width: 32px;
-    height: 5px;
-}
-
-.step-bird-high,
-.step-bird-low {
-    bottom: 37px;
-}
-
-.step-bird-low {
-    bottom: 25px;
-}
-
-.step-bird-high::before,
-.step-bird-low::before {
-    display: none;
-    left: 9px;
-    bottom: 11px;
-    width: 18px;
-    height: 5px;
-}
-
-.step-bird-high::after,
-.step-bird-low::after {
-    display: none;
-    left: 3px;
-    bottom: 8px;
-    width: 30px;
-    height: 18px;
-    clip-path: polygon(0 50%, 27% 34%, 43% 0, 58% 36%, 100% 50%, 58% 66%, 43% 100%, 27% 66%);
-}
-
-.bird-body {
-    left: 9px;
-    bottom: 13px;
-    width: 19px;
-    height: 5px;
-}
-
-.bird-head {
-    left: 27px;
-    bottom: 15px;
-    width: 6px;
-    height: 5px;
-}
-
-.bird-wing {
-    left: 6px;
-    width: 22px;
-    height: 13px;
-}
-
-.bird-wing-up {
-    bottom: 17px;
-    clip-path: polygon(0 100%, 47% 0, 100% 100%, 58% 76%, 46% 54%, 34% 76%);
-}
-
-.bird-wing-down {
-    bottom: 2px;
-    clip-path: polygon(0 0, 100% 0, 48% 100%, 36% 24%, 58% 24%);
+.bird-low {
+    bottom: 36px;
 }
 
 .treat.eating {
@@ -236,16 +151,16 @@
 }
 
 .treat.eaten {
-    opacity: 0.18;
-    transform: translateY(4px) scale(0.9);
+    opacity: 0.2;
+    transform: translateY(4px) scale(0.92);
 }
 
 .progress-cat {
     position: absolute;
     left: 0%;
     bottom: 13px;
-    width: 60px;
-    height: 42px;
+    width: 72px;
+    height: 40px;
     z-index: 10;
     transition: left 0.34s steps(5, end);
     display: flex;
@@ -255,8 +170,8 @@
 
 .cat-body {
     position: relative;
-    width: 60px;
-    height: 42px;
+    width: 72px;
+    height: 40px;
     font-size: 0;
     line-height: 0;
 }
@@ -265,12 +180,12 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 60px;
-    height: 42px;
-    background-image: url("../../images/keyboard/chrome-dino-runner.png");
+    width: 72px;
+    height: 40px;
+    background-image: url("../../images/keyboard/dino-game/dino-orange.png");
     background-repeat: no-repeat;
-    background-size: 600px 150px;
-    background-position: 0 -93px;
+    background-size: contain;
+    background-position: left bottom;
     image-rendering: pixelated;
 }
 
@@ -325,7 +240,7 @@
 .cat-mood {
     font-size: 13px;
     font-weight: 800;
-    color: var(--accent-primary, #00d4ff);
+    color: var(--dino-status);
 }
 
 .treats-eaten {
@@ -337,8 +252,8 @@
 
 .cat-progress-section .progress-percentage {
     background: #050505;
-    color: var(--dino-muted);
-    border: 1px solid rgba(241, 243, 244, 0.28);
+    color: var(--dino-score);
+    border: 1px solid rgba(255, 126, 83, 0.3);
     padding: 3px 9px;
     border-radius: 2px;
     font-family: "Courier New", monospace;
@@ -351,7 +266,7 @@
     position: absolute;
     width: 3px;
     height: 3px;
-    background: var(--dino-ink);
+    background: var(--dino-ground);
     font-size: 0;
     pointer-events: none;
     animation: dinoDust 0.32s steps(3, end) forwards;
@@ -378,12 +293,11 @@
     }
 
     .cat-progress-track {
-        height: 68px;
+        height: 76px;
     }
 
     .dino-score {
         font-size: 11px;
-        letter-spacing: 1px;
     }
 
     .progress-cat {
@@ -406,7 +320,12 @@
 
 @media (max-width: 480px) {
     .cat-progress-track {
-        height: 62px;
+        height: 68px;
+    }
+
+    .runner-cloud {
+        transform: scale(0.78);
+        transform-origin: top center;
     }
 
     .progress-cat {
