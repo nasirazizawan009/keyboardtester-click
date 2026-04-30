@@ -5,9 +5,9 @@
 include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
-$pageTitle = 'Testeur de Souris - Test des Clics et du Defilement Gratuit';
-$pageDescription = 'Testeur de souris en ligne gratuit : vérifie les clics gauche, droit, du milieu et la molette de défilement. Fonctionne avec toute souris USB ou sans fil, sans installation.';
-$pageKeywords = 'testeur souris, test mouse, test clics, test defilement, verifier boutons souris';
+$pageTitle = 'Test Souris en Ligne - Boutons, Molette et Clics';
+$pageDescription = 'Test souris gratuit : vérifiez clic gauche, clic droit, bouton milieu, molette et réponse du pointeur. Fonctionne avec souris USB, Bluetooth ou sans fil.';
+$pageKeywords = 'test souris, testeur souris, test clic souris, tester molette souris, clic gauche droit, mouse test';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -38,15 +38,39 @@ $pageKeywords = 'testeur souris, test mouse, test clics, test defilement, verifi
         "name": "Comment tester les boutons de ma souris ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cliquez dans la zone de test avec chaque bouton de la souris. L'outil detectera et affichera quel bouton a ete presse."
+          "text": "Cliquez dans la zone de test avec le bouton gauche, le bouton droit et le bouton du milieu. L'outil affiche chaque entrée détectée pour confirmer que le signal arrive bien au navigateur."
         }
       },
       {
         "@type": "Question",
-        "name": "Puis-je tester la molette de defilement ?",
+        "name": "Puis-je tester la molette de défilement ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui, faites defiler vers le haut et vers le bas sur la zone de test pour verifier le fonctionnement de la molette."
+          "text": "Oui. Faites défiler vers le haut et vers le bas dans la zone de test. Si la direction est inversée ou si des pas manquent, vérifiez les paramètres système ou la molette."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le test fonctionne-t-il avec une souris sans fil ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Les souris USB, Bluetooth et 2,4 GHz fonctionnent. Si les clics manquent, testez avec une batterie chargée et un récepteur USB branché directement à l'ordinateur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment repérer un double clic involontaire ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cliquez lentement plusieurs fois. Si le compteur avance deux fois pour une seule pression, le switch peut être usé ou le délai de double-clic trop court."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Que faire si un bouton ne répond pas ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Essayez un autre port USB, nettoyez la souris, désactivez les logiciels de macros et retestez sur un autre navigateur. Si le même bouton échoue partout, le problème est probablement matériel."
         }
       }
     ]
@@ -112,24 +136,24 @@ $pageKeywords = 'testeur souris, test mouse, test clics, test defilement, verifi
         <div class="section-head">
           <p class="section-kicker">Diagnostic Complet</p>
           <h2 id="feature-title">Verifiez Chaque Fonction de la Souris</h2>
-          <p class="section-lede">Outils professionnels pour tester votre souris.</p>
+          <p class="section-lede">Outils pratiques pour confirmer si le problème vient du bouton, de la molette, du port USB ou d’un réglage logiciel.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
-            <h3>Test des Boutons</h3>
-            <p>Verifiez les boutons gauche, droit et du milieu.</p>
+            <h3>Boutons principaux</h3>
+            <p>Vérifiez clic gauche, clic droit et bouton central sans installer de logiciel.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Molette de Defilement</h3>
-            <p>Testez le defilement fluide.</p>
+            <h3>Molette de défilement</h3>
+            <p>Contrôlez les pas de scroll vers le haut et vers le bas pour repérer les ratés.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Compteur de Clics</h3>
-            <p>Suivez le nombre de clics.</p>
+            <h3>Compteur de clics</h3>
+            <p>Repérez les doubles clics involontaires ou les clics qui ne s’enregistrent pas.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Statut en Direct</h3>
-            <p>Retour visuel instantane.</p>
+            <h3>Contrôle rapide</h3>
+            <p>Comparez la même souris avec un autre port ou un autre ordinateur si le défaut persiste.</p>
           </article>
         </div>
       </div>

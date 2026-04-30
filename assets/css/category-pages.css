@@ -90,6 +90,66 @@
     color: var(--link-color);
 }
 
+.category-section--support {
+    padding-top: 20px;
+}
+
+.category-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    margin-bottom: 34px;
+}
+
+.category-info-card,
+.category-faq {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    box-shadow: var(--card-shadow);
+}
+
+.category-info-card {
+    padding: 24px;
+}
+
+.category-info-card h2,
+.category-faq h2 {
+    margin: 0 0 12px;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.category-info-card p,
+.category-faq p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+
+.category-faq {
+    padding: 24px;
+}
+
+.category-faq details {
+    border-top: 1px solid var(--card-border);
+    padding: 16px 0;
+}
+
+.category-faq details:last-child {
+    padding-bottom: 0;
+}
+
+.category-faq summary {
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.category-faq summary + p {
+    margin-top: 10px;
+}
+
 .category-actions {
     margin-top: 28px;
     display: flex;

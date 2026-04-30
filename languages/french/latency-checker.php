@@ -5,9 +5,9 @@
 include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
-$pageTitle = 'Verificateur de Latence - Mesurez le Temps de Reponse';
-$pageDescription = 'Vérificateur de latence gratuit : mesurez la latence d\'entrée du clavier et de la souris en millisecondes. Idéal pour le gaming compétitif, dans le navigateur, sans installation.';
-$pageKeywords = 'latence, temps reponse, input lag, test latence, mesurer delai';
+$pageTitle = 'Test de Latence Clavier et Souris - Input Lag en ms';
+$pageDescription = 'Test de latence gratuit : mesurez votre temps de réaction, l’input lag clavier/souris et comparez vos résultats en millisecondes. Sans installation.';
+$pageKeywords = 'test latence, input lag, latence clavier, latence souris, temps de réponse, test réaction';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,6 +27,47 @@ $pageKeywords = 'latence, temps reponse, input lag, test latence, mesurer delai'
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
   <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Que mesure ce test de latence ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le test mesure le délai visible entre le signal affiché et votre clic ou pression de touche. Il sert à comparer la réactivité d’un clavier, d’une souris et de votre propre temps de réaction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle latence clavier est bonne pour jouer ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour le jeu compétitif, un résultat régulier sous 20 ms dans ce test est généralement bon. Des résultats beaucoup plus élevés peuvent venir d’un clavier sans fil, d’un hub USB, du navigateur ou de la fatigue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le test mesure-t-il la latence matérielle pure ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. Un navigateur mesure la réaction complète perçue, pas uniquement l’électronique du périphérique. Pour comparer deux claviers sur le même ordinateur, le test reste utile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment réduire l’input lag clavier ou souris ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Utilisez une connexion filaire ou 2,4 GHz stable, évitez les hubs USB lents, fermez les onglets lourds et testez avec le même écran pour garder une comparaison propre."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="landing-page">
   <?php include __DIR__ . '/header-fr.php'; ?>
@@ -75,6 +116,34 @@ $pageKeywords = 'latence, temps reponse, input lag, test latence, mesurer delai'
         <div class="trust-item">
           <div class="trust-title">Instantane</div>
           <div class="trust-desc">Resultats immediats</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-band" aria-labelledby="latency-reference-title-fr">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Interprétation</p>
+          <h2 id="latency-reference-title-fr">Lire un Résultat de Latence en Millisecondes</h2>
+          <p class="section-lede">Ce test est utile pour comparer votre configuration dans le même navigateur. Répétez 5 à 10 essais et regardez la moyenne plutôt qu’un seul meilleur score.</p>
+        </div>
+        <div class="landing-feature-grid">
+          <article class="landing-feature-card">
+            <h3>Moins de 20 ms</h3>
+            <p>Très réactif pour le jeu, surtout si les résultats restent stables.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>20 à 40 ms</h3>
+            <p>Normal pour de nombreux claviers et souris sans fil ou écrans standards.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>40 ms et plus</h3>
+            <p>À vérifier : hub USB, batterie faible, navigateur chargé ou périphérique lent.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>Comparer proprement</h3>
+            <p>Gardez le même ordinateur, écran et navigateur pour comparer deux appareils.</p>
+          </article>
         </div>
       </div>
     </section>

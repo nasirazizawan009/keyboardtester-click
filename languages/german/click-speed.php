@@ -5,9 +5,9 @@
 include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
-$pageTitle = 'Klickgeschwindigkeitstest - Messen Sie Ihre CPS Kostenlos';
-$pageDescription = 'Kostenloser Klickgeschwindigkeitstest (CPS): Messen Sie Klicks pro Sekunde in zeitlich begrenzten 5-, 10- oder 60-Sekunden-Herausforderungen. Ohne Installation, im Browser.';
-$pageKeywords = 'Klickgeschwindigkeit, CPS Test, Klicks pro Sekunde, Mausgeschwindigkeit, Click Speed Test';
+$pageTitle = 'CPS Test Online - Klickgeschwindigkeit Kostenlos Messen';
+$pageDescription = 'Kostenloser CPS Test im Browser: messen Sie Klicks pro Sekunde, vergleichen Sie Ihre Klickgeschwindigkeit und trainieren Sie 5, 10, 30 oder 60 Sekunden.';
+$pageKeywords = 'CPS Test, Klickgeschwindigkeit testen, Klicks pro Sekunde, Maus Klick Test, Click Speed Test, Klick Test';
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -18,9 +18,9 @@ $pageKeywords = 'Klickgeschwindigkeit, CPS Test, Klicks pro Sekunde, Mausgeschwi
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('click-speed-test.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('mouse_speed_tester.php'); ?>">
   <link rel="alternate" hreflang="de" href="<?php echo absoluteUrl('languages/german/click-speed.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('click-speed-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('mouse_speed_tester.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 
@@ -38,7 +38,7 @@ $pageKeywords = 'Klickgeschwindigkeit, CPS Test, Klicks pro Sekunde, Mausgeschwi
         "name": "Was ist CPS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "CPS bedeutet Klicks pro Sekunde. Es misst, wie oft Sie in einer Sekunde klicken koennen."
+          "text": "CPS bedeutet Klicks pro Sekunde. Der Test zählt alle gültigen Mausklicks in einer gewählten Zeit und teilt das Ergebnis durch die Anzahl der Sekunden."
         }
       },
       {
@@ -46,7 +46,31 @@ $pageKeywords = 'Klickgeschwindigkeit, CPS Test, Klicks pro Sekunde, Mausgeschwi
         "name": "Was ist eine gute CPS-Geschwindigkeit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Der Durchschnitt liegt bei 6-8 CPS. Professionelle Spieler koennen 10-14 CPS erreichen."
+          "text": "Viele Nutzer liegen bei 5 bis 7 CPS. Trainierte Spieler erreichen 8 bis 10 CPS, sehr schnelle Ergebnisse liegen stabil über 10 CPS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Testdauer ist am besten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "5 oder 10 Sekunden zeigen die maximale Kurzzeitgeschwindigkeit. 30 oder 60 Sekunden sind besser, wenn Sie Ausdauer und konstante Klicks messen möchten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Funktioniert der CPS Test mit kabellosen Mäusen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Der Test funktioniert mit USB-, Bluetooth- und 2,4-GHz-Mäusen. Stark schwankende Ergebnisse können auf Batterie, Funkverbindung oder Polling-Rate hinweisen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie verbessere ich meine Klickgeschwindigkeit sicher?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trainieren Sie in kurzen Serien, halten Sie Hand und Handgelenk locker und brechen Sie ab, wenn Schmerzen entstehen. Konstanz ist wichtiger als ein einzelner Spitzenwert."
         }
       }
     ]
@@ -100,6 +124,34 @@ $pageKeywords = 'Klickgeschwindigkeit, CPS Test, Klicks pro Sekunde, Mausgeschwi
         <div class="trust-item">
           <div class="trust-title">Sofort</div>
           <div class="trust-desc">Live-Ergebnisse</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-band" aria-labelledby="cps-reference-title-de">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">CPS Orientierung</p>
+          <h2 id="cps-reference-title-de">Klickgeschwindigkeit Richtig Einordnen</h2>
+          <p class="section-lede">Ein kurzer CPS Test misst Spitzenleistung. Ein längerer Test zeigt, ob Sie die Geschwindigkeit auch sauber halten können.</p>
+        </div>
+        <div class="landing-feature-grid">
+          <article class="landing-feature-card">
+            <h3>5 bis 7 CPS</h3>
+            <p>Normaler Bereich für Alltag, Browsing und Gelegenheitsspiele.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>8 bis 10 CPS</h3>
+            <p>Guter Gaming-Bereich für schnelle, aber noch kontrollierte Klicks.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>10+ CPS</h3>
+            <p>Fortgeschrittenes Niveau. Achten Sie auf Technik und Handbelastung.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>60 Sekunden</h3>
+            <p>Beste Dauer, um Ausdauer und echte durchschnittliche Klickrate zu prüfen.</p>
+          </article>
         </div>
       </div>
     </section>

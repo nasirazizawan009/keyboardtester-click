@@ -5,9 +5,9 @@
 include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-fr.php';
 
-$pageTitle = 'Test de Vitesse de Frappe - Mesurez MPM et Precision';
-$pageDescription = 'Test de vitesse de frappe gratuit : mesurez vos MPM (mots par minute), précision et régularité lors de sessions chronométrées. Sans inscription, dans le navigateur.';
-$pageKeywords = 'test frappe, MPM, vitesse dactylographie, test clavier, mots par minute';
+$pageTitle = 'Test de Frappe en Ligne - Vitesse MPM et Précision';
+$pageDescription = 'Test de frappe gratuit : mesurez vos mots par minute, votre précision et votre régularité avec un exercice chronométré en français, sans inscription.';
+$pageKeywords = 'test de frappe, vitesse de frappe, mots par minute, MPM, test dactylographie, précision clavier';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -35,18 +35,42 @@ $pageKeywords = 'test frappe, MPM, vitesse dactylographie, test clavier, mots pa
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Quelle est la vitesse de frappe moyenne?",
+        "name": "Quelle est la vitesse de frappe moyenne ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La moyenne est de 40 MPM. Les dactylographes professionnels atteignent 65-75 MPM."
+          "text": "La moyenne se situe souvent autour de 35 à 45 mots par minute. Un bon niveau de bureau est autour de 50 à 65 MPM avec une précision supérieure à 95 %."
         }
       },
       {
         "@type": "Question",
-        "name": "Comment ameliorer la vitesse de frappe?",
+        "name": "Comment améliorer la vitesse de frappe ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pratiquez regulierement, utilisez tous les doigts et concentrez-vous sur la precision avant la vitesse."
+          "text": "Pratiquez régulièrement, gardez les poignets détendus, utilisez tous les doigts et travaillez d’abord la précision. La vitesse augmente mieux quand les erreurs diminuent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "MPM et WPM signifient-ils la même chose ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. MPM signifie mots par minute en français, tandis que WPM signifie words per minute en anglais. Les deux mesurent la même chose."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "La précision est-elle plus importante que la vitesse ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Un score rapide avec beaucoup d’erreurs est moins utile qu’un score légèrement plus lent mais précis. Visez d’abord 95 % de précision ou plus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de temps faut-il s’entraîner ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Des sessions courtes de 5 à 10 minutes sont suffisantes. Répétez le test plusieurs fois par semaine pour suivre votre progression sans fatigue."
         }
       }
     ]
@@ -108,25 +132,25 @@ $pageKeywords = 'test frappe, MPM, vitesse dactylographie, test clavier, mots pa
       <div class="container">
         <div class="section-head">
           <p class="section-kicker">Vitesse et Precision de Frappe</p>
-          <h2 id="feature-title-fr">Mesurer MPM, Precision et Rythme de Frappe</h2>
-          <p class="section-lede">Pratiquez avec un test de frappe dans le navigateur et voyez la vitesse et la precision se mettre a jour en temps reel.</p>
+          <h2 id="feature-title-fr">Mesurer MPM, Précision et Rythme de Frappe</h2>
+          <p class="section-lede">Pratiquez avec un test de frappe dans le navigateur et voyez la vitesse, la précision et les erreurs se mettre à jour en temps réel.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
-            <h3>Resultats instantanes</h3>
-            <p>Suivez la vitesse de frappe avec des mises a jour en direct.</p>
+            <h3>35 à 45 MPM</h3>
+            <p>Vitesse courante pour une frappe quotidienne avec une précision correcte.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Precis et fiable</h3>
-            <p>Voyez les changements pendant le test en temps reel.</p>
+            <h3>50 à 65 MPM</h3>
+            <p>Bon niveau de bureau si la précision reste proche de 95 % ou plus.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Controles simples</h3>
-            <p>Demarrez, arretez et reinitilisez en quelques secondes.</p>
+            <h3>70+ MPM</h3>
+            <p>Niveau avancé. Travaillez surtout la régularité et les fautes restantes.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Tests repetables</h3>
-            <p>Comparez plusieurs series rapidement.</p>
+            <h3>Précision</h3>
+            <p>Un résultat utile combine vitesse stable et peu d’erreurs corrigées.</p>
           </article>
         </div>
       </div>

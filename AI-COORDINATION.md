@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, live Pac-Man collision fix)
+**Last updated:** 2026-05-01 (Codex, live GSC crawled-not-indexed cleanup)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -65,6 +65,19 @@ This file is the **single source of truth** when handing off work between AI age
 ---
 
 ## 📜 Completed today (rolling 24-48h log)
+
+### 2026-05-01 (Codex)
+- Ran a fresh Search Console URL Inspection API audit against the current sitemap URL set: 877 URLs inspected, 167 submitted/indexed, 701 unknown to Google, and 9 confirmed `Crawled - currently not indexed`.
+- Evidence for the 9 affected URLs: all were `ALLOWED`, `INDEXING_ALLOWED`, fetch `SUCCESSFUL`, and canonicalized to themselves. Root cause was not robots/noindex/canonical/fetch; fixes targeted weak page value and inconsistent alternate signals.
+- Fixed all discovered redirecting/wrong localized `hreflang` English/x-default targets for click-speed and headphone pages. `click-speed-test.php`, `headphone-test.php`, and `tools/headphone_speaker_tester.php` no longer appear as localized alternate targets; Japanese click-speed no longer points alternates at `mouse-test.php`.
+- Strengthened the 7 affected localized tool pages with more specific titles/descriptions, expanded FAQ schema, and visible result-interpretation/help content: French mouse, French click-speed, French latency, French typing, German click-speed, Portuguese click-speed, German headphone.
+- Strengthened `pages/category-utilities.php` with fuller utility selection content, visible FAQ, ItemList schema, FAQPage schema, and supporting CSS in `assets/css/category-pages.css`.
+- Updated the ignored/static blog article `blog/what-is-keyboard-ghosting-anti-ghosting-fix-guide.php` directly because `blog/` is gitignored: shorter anti-ghosting-led title/meta/schema, May 1 modified date, quick-answer block, and a dedicated "anti-ghosting keyboard meaning" section with links to the ghosting and NKRO tests.
+- Saved local audit evidence at `seo-audit-2026-05-01/crawled-not-indexed-fix-report.md` plus the API exports under `seo-audit-2026-05-01/` (ignored by git).
+- Verified locally: PHP lint passed for modified tracked PHP files, local target pages returned HTTP 200, JSON-LD parsed on all 9 target pages, bad redirecting hreflang scan returned 0, and targeted `git diff --check` passed.
+- Deployed live via SFTP/paramiko only. Live verification passed for all 9 target URLs: HTTP 200, updated titles/descriptions present, JSON-LD valid, and corrected alternates visible.
+- Submitted the 9 affected URLs to Google Indexing API: 9 OK, 0 failed. Submitted the live IndexNow endpoint: HTTP 200 with "URLs submitted successfully".
+- Note: unrelated local changes already existed in `blog/posts-data.php`, `sitemap.xml`, and untracked `scripts/submit-targeted-awesome-prs.py`; they were not deployed as part of this cleanup.
 
 ### 2026-04-30 (Codex)
 - Fixed and deployed live: Pac-Man/ghost contact now uses swept collision detection instead of only end-of-frame overlap. This fixes cases where a ghost visually crossed Pac-Man but no collision/eat event fired.

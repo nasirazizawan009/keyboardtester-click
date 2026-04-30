@@ -5,9 +5,9 @@
 include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-de.php';
 
-$pageTitle = 'Kopfhoerer-Tester - Ueberpruefen Sie Stereo-Audio Kostenlos';
-$pageDescription = 'Kopfhörer- und Lautsprechertester: Prüft linken/rechten Kanal, Stereotrennung und Audio-Ausgabe. Im Browser, ohne Installation oder Aufnahme, sofort einsatzbereit.';
-$pageKeywords = 'Kopfhoerer Test, Lautsprecher Test, Stereo ueberpruefen, Audio testen, Headphone Test';
+$pageTitle = 'Kopfhörer Test Online - Links Rechts Stereo Prüfen';
+$pageDescription = 'Kostenloser Kopfhörer- und Lautsprecher-Test: prüfen Sie linken/rechten Kanal, Stereo-Balance und Audio-Ausgabe direkt im Browser.';
+$pageKeywords = 'Kopfhörer Test, Lautsprecher Test, Stereo Test, links rechts Audio Test, Headphone Test, Sound Test';
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -18,15 +18,56 @@ $pageKeywords = 'Kopfhoerer Test, Lautsprecher Test, Stereo ueberpruefen, Audio 
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('headphone-test.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('headphone_speaker_tester_index.php'); ?>">
   <link rel="alternate" hreflang="de" href="<?php echo absoluteUrl('languages/german/headphone-test.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('headphone-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('headphone_speaker_tester_index.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
   <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was prüft der Kopfhörer Test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Test spielt getrennte Signale für linken und rechten Kanal ab. Damit erkennen Sie vertauschte Kanäle, einseitige Ausfälle, schwache Balance und grundlegende Stereo-Probleme."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Funktioniert der Test mit Lautsprechern?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Der Test funktioniert mit Kopfhörern, Headsets, Monitorlautsprechern, Bluetooth-Lautsprechern und externen Audio-Interfaces, solange der Browser Audio ausgeben darf."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Warum ist links und rechts vertauscht?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Häufige Ursachen sind falsch eingesetzte Ohrhörer, ein vertauschtes Kabel, eine falsche Windows- oder macOS-Ausgabe, Adapterprobleme oder ein Balance-Regler in der Treibersoftware."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was tun, wenn nur ein Kanal Ton hat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prüfen Sie Stecker, Bluetooth-Verbindung, System-Balance und ein anderes Gerät. Wenn derselbe Kanal überall fehlt, ist wahrscheinlich Kabel, Treiber oder Lautsprecher defekt."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="landing-page">
   <?php include __DIR__ . '/header-de.php'; ?>
@@ -75,6 +116,34 @@ $pageKeywords = 'Kopfhoerer Test, Lautsprecher Test, Stereo ueberpruefen, Audio 
         <div class="trust-item">
           <div class="trust-title">Balance</div>
           <div class="trust-desc">Gleichgewicht pruefen</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-band" aria-labelledby="audio-reference-title-de">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Audio-Diagnose</p>
+          <h2 id="audio-reference-title-de">So Bewerten Sie den Stereo-Test</h2>
+          <p class="section-lede">Testen Sie zuerst jeden Kanal einzeln, danach beide zusammen. So trennen Sie Balance-Probleme von defekten Kabeln, Buchsen oder Bluetooth-Verbindungen.</p>
+        </div>
+        <div class="landing-feature-grid">
+          <article class="landing-feature-card">
+            <h3>Nur links</h3>
+            <p>Der Ton sollte ausschließlich im linken Hörer oder Lautsprecher hörbar sein.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>Nur rechts</h3>
+            <p>Der rechte Kanal sollte klar und ohne Übersprechen vom linken Kanal kommen.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>Beide Kanäle</h3>
+            <p>Die Lautstärke sollte mittig wirken und auf beiden Seiten ähnlich stark sein.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>Fehler eingrenzen</h3>
+            <p>Vergleichen Sie Headset, Browser und System-Ausgabe, bevor Sie Hardware austauschen.</p>
+          </article>
         </div>
       </div>
     </section>

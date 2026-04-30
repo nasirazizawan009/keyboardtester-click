@@ -5,9 +5,9 @@
 include __DIR__ . '/../../config.php';
 include __DIR__ . '/config-pt.php';
 
-$pageTitle = 'Teste de Velocidade de Clique - Meca seu CPS Gratis';
-$pageDescription = 'Teste de velocidade de clique (CPS) gratuito: meça quantos cliques por segundo você consegue em desafios cronometrados de 5, 10 ou 60 segundos. Sem instalação, no navegador.';
-$pageKeywords = 'velocidade de clique, teste CPS, cliques por segundo, teste de velocidade do mouse, click speed test';
+$pageTitle = 'Teste CPS Online - Meça sua Velocidade de Clique Grátis';
+$pageDescription = 'Teste CPS gratuito no navegador: meça cliques por segundo, compare sua velocidade de clique no mouse e treine por 5, 10, 30 ou 60 segundos.';
+$pageKeywords = 'teste CPS, velocidade de clique, cliques por segundo, teste de clique do mouse, click speed test, teste de CPS';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -18,9 +18,9 @@ $pageKeywords = 'velocidade de clique, teste CPS, cliques por segundo, teste de 
   <meta name="description" content="<?php echo $pageDescription; ?>">
   <meta name="keywords" content="<?php echo $pageKeywords; ?>">
 
-  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('click-speed-test.php'); ?>">
+  <link rel="alternate" hreflang="en" href="<?php echo absoluteUrl('mouse_speed_tester.php'); ?>">
   <link rel="alternate" hreflang="pt" href="<?php echo absoluteUrl('languages/portuguese/click-speed.php'); ?>">
-  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('click-speed-test.php'); ?>">
+  <link rel="alternate" hreflang="x-default" href="<?php echo absoluteUrl('mouse_speed_tester.php'); ?>">
 
   <?php include __DIR__ . '/../../includes/head-common.php'; ?>
 
@@ -35,18 +35,42 @@ $pageKeywords = 'velocidade de clique, teste CPS, cliques por segundo, teste de 
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "O que e CPS?",
+        "name": "O que é CPS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "CPS significa Cliques Por Segundo. Mede quantas vezes voce pode clicar em um segundo."
+          "text": "CPS significa cliques por segundo. O teste conta todos os cliques válidos durante o tempo escolhido e divide o total pela quantidade de segundos."
         }
       },
       {
         "@type": "Question",
-        "name": "Qual e uma boa velocidade de CPS?",
+        "name": "Qual é uma boa velocidade de CPS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A media e 6-8 CPS. Jogadores profissionais podem alcancar 10-14 CPS."
+          "text": "Uma velocidade comum fica entre 5 e 7 CPS. Jogadores treinados chegam a 8-10 CPS, e resultados acima de 10 CPS já são avançados se forem consistentes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual duração devo escolher no teste CPS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use 5 ou 10 segundos para medir velocidade máxima. Use 30 ou 60 segundos para medir resistência, ritmo e queda de desempenho com o tempo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O teste funciona com mouse sem fio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O teste funciona com mouse USB, Bluetooth e 2,4 GHz. Se o resultado oscilar muito, confira bateria, receptor USB e taxa de polling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como melhorar o CPS com segurança?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Treine em sessões curtas, mantenha a mão relaxada e pare se sentir dor. Melhorar ritmo e consistência é mais útil do que forçar um pico único."
         }
       }
     ]
@@ -100,6 +124,34 @@ $pageKeywords = 'velocidade de clique, teste CPS, cliques por segundo, teste de 
         <div class="trust-item">
           <div class="trust-title">Instantaneo</div>
           <div class="trust-desc">Resultados ao vivo</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-band" aria-labelledby="cps-reference-title-pt">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Referência CPS</p>
+          <h2 id="cps-reference-title-pt">Como Interpretar sua Velocidade de Clique</h2>
+          <p class="section-lede">O melhor resultado depende da duração do teste. Testes curtos mostram pico de velocidade; testes longos mostram controle e resistência.</p>
+        </div>
+        <div class="landing-feature-grid">
+          <article class="landing-feature-card">
+            <h3>5 a 7 CPS</h3>
+            <p>Faixa normal para navegação, uso diário e jogos casuais.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>8 a 10 CPS</h3>
+            <p>Boa velocidade para jogos que exigem cliques rápidos e constantes.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>10+ CPS</h3>
+            <p>Nível avançado. Mantenha a técnica confortável para evitar esforço.</p>
+          </article>
+          <article class="landing-feature-card">
+            <h3>60 segundos</h3>
+            <p>Melhor opção para medir resistência e média real de cliques.</p>
+          </article>
         </div>
       </div>
     </section>
