@@ -1088,6 +1088,7 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
 </style>
 <link rel="stylesheet" href="<?php echo htmlspecialchars($localizedKeyboardVisualCssHref, ENT_QUOTES, 'UTF-8'); ?>">
 <script src="<?php echo htmlspecialchars($catProgressScriptHref, ENT_QUOTES, 'UTF-8'); ?>"></script>
+<script src="<?php echo htmlspecialchars((function_exists('url') ? url('assets/js/localized-keyboard-history.js') : '/assets/js/localized-keyboard-history.js') . '?v=' . rawurlencode((string) (is_file(__DIR__ . '/../../../assets/js/localized-keyboard-history.js') ? filemtime(__DIR__ . '/../../../assets/js/localized-keyboard-history.js') : '1')), ENT_QUOTES, 'UTF-8'); ?>"></script>
 
 <script>
 (function() {
@@ -1284,12 +1285,10 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
             counter.textContent = pressCount;
         }
 
-        // Update key history - prefer Arabic character from key element
-        let keyName = e.key.length === 1 ? e.key : e.code;
-        if (keyEl) {
-            const arChar = keyEl.querySelector('.ar')?.textContent;
-            if (arChar) keyName = arChar;
-        }
+        // Update key history using the Arabic physical-layout legend.
+        const keyName = window.KbtLocalizedKeyboardHistory
+            ? window.KbtLocalizedKeyboardHistory.getEntry(e, keyEl)
+            : (e.key.length === 1 ? e.key : e.code);
         const history = $('key-history');
         if (history) {
             history.value = keyName + (history.value ? ' ' + history.value : '');

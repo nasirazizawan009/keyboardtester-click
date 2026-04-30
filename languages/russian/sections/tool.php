@@ -599,6 +599,7 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
 <link rel="stylesheet" href="<?php echo htmlspecialchars($localizedKeyboardVisualCssHref, ENT_QUOTES, 'UTF-8'); ?>">
 
 <script src="<?php echo htmlspecialchars($catProgressScriptHref, ENT_QUOTES, 'UTF-8'); ?>"></script>
+<script src="<?php echo htmlspecialchars((function_exists('url') ? url('assets/js/localized-keyboard-history.js') : '/assets/js/localized-keyboard-history.js') . '?v=' . rawurlencode((string) (is_file(__DIR__ . '/../../../assets/js/localized-keyboard-history.js') ? filemtime(__DIR__ . '/../../../assets/js/localized-keyboard-history.js') : '1')), ENT_QUOTES, 'UTF-8'); ?>"></script>
 
 <script>
 (function() {
@@ -663,8 +664,10 @@ function handleKeyDown(e) {
         if (latency > 0) { state.latencyData.push(latency); if ($('current-latency')) $('current-latency').textContent = latency + ' мс'; }
         const keyEl = document.querySelector(`[data-key="${e.code}"]`);
         if (keyEl) { keyEl.classList.remove('pressed', 'active-1', 'active-2', 'active-3', 'active-4', 'active-5'); keyEl.classList.add('pressed', `active-${activeLevel}`); let counter = keyEl.querySelector('.key-counter'); if (!counter) { counter = document.createElement('div'); counter.className = 'key-counter'; keyEl.appendChild(counter); } counter.textContent = pressCount; }
-        // Display Russian character if available, otherwise use the key
-        let keyName = russianKeyMap[e.code] || (e.key.length === 1 ? e.key : e.code);
+        // Display Russian physical-layout characters in the history field.
+        const keyName = window.KbtLocalizedKeyboardHistory
+            ? window.KbtLocalizedKeyboardHistory.getEntry(e, keyEl)
+            : (russianKeyMap[e.code] || (e.key.length === 1 ? e.key : e.code));
         const history = $('key-history');
         if (history) history.value = keyName + (history.value ? ' ' + history.value : '');
         updateStats(); playSound(); updateCatProgress();
