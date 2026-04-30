@@ -4,33 +4,33 @@
     const CAT_TEXT = {
         en: {
             messages: [
-                'Press keys to help me graze!',
-                'Fresh grass!',
-                'Round tree reached!',
-                'Pine shade ahead!',
-                'Wide tree passed!',
-                'Tall tree reached!',
-                'More grass eaten!',
-                'Bloom tree reached!',
-                'Cypress stop!',
-                'Apple tree ahead!',
-                'Pasture complete!'
+                'Press keys to start the run!',
+                'Checkpoint cleared!',
+                'Keep running!',
+                'Grass patch cleared!',
+                'Nice pace!',
+                'Halfway marker!',
+                'Clean stride!',
+                'Still moving!',
+                'Almost there!',
+                'Final stretch!',
+                'Run complete!'
             ],
             moods: [
-                'Grazing',
-                'Nibbling',
-                'Trotting',
-                'Calm',
+                'Ready',
+                'Running',
                 'Steady',
-                'Happy Horse',
-                'Pasture Ready',
-                'Still Grazing',
-                'Almost Fed',
+                'Focused',
+                'Fast',
+                'Halfway',
+                'Clean',
+                'Sharp',
+                'Almost Done',
                 'Final Stretch',
-                'Pasture Champion'
+                'Complete'
             ],
-            treatsLabel: 'Grass',
-            completeMessage: 'Pasture complete!'
+            treatsLabel: 'Checkpoints',
+            completeMessage: 'Run complete!'
         },
         es: {
             messages: [
@@ -319,15 +319,15 @@
             this.mobileMilestones = options.mobileMilestones || [4, 8, 13, 17, 21, 25, 29, 34, 38, 42];
             this.sparkles = ['.', '+', '*', 'o', '.'];
             this.locale = resolveLocale(options.locale);
-            const pastureText = CAT_TEXT.en;
-            this.messages = normalizeTextArray(options.messages, pastureText.messages);
-            this.moods = normalizeTextArray(options.moods, pastureText.moods);
+            const runnerText = CAT_TEXT.en;
+            this.messages = normalizeTextArray(options.messages, runnerText.messages);
+            this.moods = normalizeTextArray(options.moods, runnerText.moods);
             this.treatsLabel = (typeof options.treatsLabel === 'string' && options.treatsLabel.trim() !== '')
                 ? options.treatsLabel
-                : pastureText.treatsLabel;
+                : runnerText.treatsLabel;
             this.completeMessage = (typeof options.completeMessage === 'string' && options.completeMessage.trim() !== '')
                 ? options.completeMessage
-                : (this.messages[10] || pastureText.completeMessage);
+                : (this.messages[10] || runnerText.completeMessage);
 
             this.lastLevels = { desktop: 0, mobile: 0 };
             this.completed = false;
@@ -383,7 +383,7 @@
             if (this.countEl) this.countEl.textContent = String(keysPressed);
             if (this.percentageEl) this.percentageEl.textContent = `${percentage}%`;
 
-            const catPosition = Math.min(percentage * 0.92, 92);
+            const catPosition = Math.min(percentage * 0.88, 88);
             this.catEl.style.left = `${catPosition}%`;
             this.catEl.classList.add('walking');
             window.setTimeout(() => this.catEl && this.catEl.classList.remove('walking'), 600);

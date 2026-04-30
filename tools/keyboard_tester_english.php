@@ -2052,7 +2052,7 @@ html:not(.dark-theme) .info-text,
     const featureControls = document.getElementById('feature-controls');
     const progressSection = document.getElementById('progress-section');
 
-    // Horse pasture progress component
+    // Runner progress component
     const catProgressRoot = document.getElementById('cat-progress-section');
     const MOBILE_TOTAL_KEYS = 42; // Total keys on mobile keyboard display
     
@@ -2685,7 +2685,7 @@ html:not(.dark-theme) .info-text,
                     }, 150);
                 }
 
-                // Update progress for cat animation (based on mobile keys)
+                // Update runner progress animation (based on mobile keys)
                 updateMobileCatProgress(uniqueCount);
             }
         });
@@ -2723,12 +2723,12 @@ html:not(.dark-theme) .info-text,
                 key.classList.remove('pressed', 'pressed-multi');
             });
 
-            // Reset cat progress
+            // Reset runner progress
             resetCatProgress(MOBILE_TOTAL_KEYS);
         });
     }
 
-    // Update pasture progress component display state
+    // Update runner progress component display state
     let lastMobileDisplayMode = null;
     function updateMobileDisplay(force = false) {
         const isMobile = window.matchMedia('(max-width: 768px)').matches;

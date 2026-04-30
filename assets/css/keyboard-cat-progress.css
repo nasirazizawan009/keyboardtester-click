@@ -1,18 +1,11 @@
 .cat-progress-section {
-    --pasture-sky: rgba(14, 35, 47, 0.92);
-    --pasture-sky-soft: rgba(31, 72, 76, 0.62);
-    --pasture-ground: #214d2b;
-    --pasture-ground-dark: #14331d;
-    --pasture-line: rgba(165, 214, 171, 0.36);
-    --pasture-grass: #62d36f;
-    --pasture-grass-dark: #2f9f47;
-    --pasture-tree: #4ca45a;
-    --pasture-tree-dark: #26723d;
-    --pasture-trunk: #8a5a31;
-    --pasture-badge-text: #041017;
-    --pasture-message-bg: var(--bg-secondary, rgba(6, 12, 26, 0.94));
-    --pasture-message-border: var(--key-border, rgba(96, 161, 255, 0.45));
-    --pasture-message-text: var(--key-text, #e9f4ff);
+    --runner-bg: #f8fafc;
+    --runner-ink: #25272b;
+    --runner-muted: #6b7280;
+    --runner-line: #2f3338;
+    --runner-soft: rgba(37, 39, 43, 0.12);
+    --runner-badge-bg: #111827;
+    --runner-badge-text: #f9fafb;
     background: transparent;
     border: none;
     border-radius: 16px;
@@ -22,12 +15,13 @@
 }
 
 .cat-progress-section .progress-percentage {
-    background: linear-gradient(135deg, var(--accent-primary, #23d4ff) 0%, var(--accent-secondary, #56f8ca) 100%);
-    color: var(--pasture-badge-text);
-    padding: 3px 8px;
+    background: var(--runner-badge-bg);
+    color: var(--runner-badge-text);
+    padding: 3px 9px;
     border-radius: 999px;
     font-weight: 800;
     font-size: 10px;
+    letter-spacing: 0;
 }
 
 .cat-progress-container {
@@ -42,14 +36,12 @@
 
 .cat-progress-track {
     position: relative;
-    height: 72px;
-    background:
-        radial-gradient(circle at 14% 22%, rgba(111, 225, 255, 0.16) 0%, transparent 28%),
-        linear-gradient(180deg, var(--pasture-sky) 0%, var(--pasture-sky-soft) 58%, var(--pasture-ground) 59%, var(--pasture-ground-dark) 100%);
-    border-radius: 22px;
-    border: none;
-    box-shadow: inset 0 0 0 1px var(--pasture-line), inset 0 3px 8px rgba(0, 0, 0, 0.26);
-    overflow: visible;
+    height: 76px;
+    background: var(--runner-bg);
+    border-radius: 18px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.82), 0 10px 24px rgba(15, 23, 42, 0.12);
+    overflow: hidden;
 }
 
 .cat-progress-track::before {
@@ -57,322 +49,342 @@
     position: absolute;
     left: 18px;
     right: 18px;
-    bottom: 19px;
+    bottom: 20px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(218, 244, 206, 0.78), transparent);
-    opacity: 0.55;
+    background: var(--runner-line);
     z-index: 2;
 }
 
 .cat-progress-track::after {
     content: "";
     position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 4px;
-    height: 26px;
+    left: 18px;
+    right: 18px;
+    bottom: 14px;
+    height: 9px;
     background:
-        repeating-linear-gradient(80deg, transparent 0 6px, rgba(116, 232, 105, 0.88) 7px 9px, transparent 10px 14px),
-        repeating-linear-gradient(104deg, transparent 0 8px, rgba(48, 161, 70, 0.84) 9px 11px, transparent 12px 18px),
-        linear-gradient(180deg, rgba(98, 211, 111, 0.48), rgba(37, 118, 52, 0.28));
-    border-radius: 0 0 22px 22px;
+        repeating-linear-gradient(90deg, transparent 0 18px, var(--runner-line) 18px 28px, transparent 28px 54px),
+        repeating-linear-gradient(90deg, transparent 0 74px, var(--runner-line) 74px 77px, transparent 77px 112px);
+    opacity: 0.55;
     z-index: 1;
     pointer-events: none;
 }
 
+.runner-cloud {
+    position: absolute;
+    top: 15px;
+    width: 38px;
+    height: 13px;
+    border: 2px solid var(--runner-muted);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 999px;
+    opacity: 0.55;
+    z-index: 1;
+}
+
+.runner-cloud::before,
+.runner-cloud::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 8px;
+    border-top: 2px solid var(--runner-muted);
+    border-radius: 999px 999px 0 0;
+}
+
+.runner-cloud::before { left: 7px; }
+.runner-cloud::after { right: 7px; }
+.cloud-one { left: 13%; top: 13px; transform: scale(0.75); }
+.cloud-two { left: 48%; top: 10px; transform: scale(0.95); }
+.cloud-three { left: 78%; top: 17px; transform: scale(0.65); }
+
 .treat {
     position: absolute;
-    bottom: 9px;
-    width: 44px;
-    height: 52px;
+    bottom: 20px;
+    width: 34px;
+    height: 28px;
     z-index: 5;
-    transition: transform 0.35s ease, opacity 0.35s ease;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.26));
+    transition: transform 0.28s ease, opacity 0.28s ease;
     pointer-events: none;
 }
 
 .treat[data-treat="10"] { left: 8%; }
-.treat[data-treat="20"] { left: 18%; }
-.treat[data-treat="30"] { left: 28%; }
-.treat[data-treat="40"] { left: 38%; }
-.treat[data-treat="50"] { left: 48%; }
-.treat[data-treat="60"] { left: 58%; }
-.treat[data-treat="70"] { left: 68%; }
-.treat[data-treat="80"] { left: 78%; }
-.treat[data-treat="90"] { left: 88%; }
-.treat[data-treat="100"] { left: 95%; }
+.treat[data-treat="20"] { left: 17%; }
+.treat[data-treat="30"] { left: 26%; }
+.treat[data-treat="40"] { left: 35%; }
+.treat[data-treat="50"] { left: 44%; }
+.treat[data-treat="60"] { left: 53%; }
+.treat[data-treat="70"] { left: 62%; }
+.treat[data-treat="80"] { left: 71%; }
+.treat[data-treat="90"] { left: 80%; }
+.treat[data-treat="100"] { left: 89%; }
 
-.pasture-tree {
-    position: absolute;
-    left: 50%;
-    bottom: 14px;
-    width: 28px;
-    height: 34px;
-    transform: translateX(-50%);
-}
-
-.pasture-tree::before {
+.runner-step::before,
+.runner-step::after {
     content: "";
     position: absolute;
-    left: 50%;
     bottom: 0;
-    width: 5px;
+    background: var(--runner-ink);
+}
+
+.runner-grass {
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    width: 28px;
     height: 18px;
     transform: translateX(-50%);
-    background: linear-gradient(180deg, #a27240, var(--pasture-trunk));
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.runner-grass i {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 3px;
+    background: var(--runner-ink);
+    border-radius: 3px 3px 0 0;
+}
+
+.runner-grass i:nth-child(1) { left: 6px; height: 11px; transform: rotate(-18deg); }
+.runner-grass i:nth-child(2) { left: 13px; height: 17px; }
+.runner-grass i:nth-child(3) { left: 20px; height: 12px; transform: rotate(18deg); }
+
+.step-bush::before {
+    left: 6px;
+    width: 24px;
+    height: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.step-twig::before {
+    left: 15px;
+    width: 4px;
+    height: 23px;
+}
+
+.step-twig::after {
+    left: 18px;
+    width: 4px;
+    height: 13px;
+    transform: rotate(35deg);
+    transform-origin: bottom left;
+}
+
+.step-cactus::before {
+    left: 15px;
+    width: 6px;
+    height: 26px;
+    border-radius: 4px 4px 0 0;
+}
+
+.step-cactus::after {
+    left: 7px;
+    width: 22px;
+    height: 5px;
+    bottom: 12px;
+    border-radius: 5px;
+}
+
+.step-double::before {
+    left: 7px;
+    width: 7px;
+    height: 18px;
+    border-radius: 5px 5px 0 0;
+}
+
+.step-double::after {
+    left: 21px;
+    width: 7px;
+    height: 24px;
+    border-radius: 5px 5px 0 0;
+}
+
+.step-stump::before {
+    left: 8px;
+    width: 20px;
+    height: 9px;
     border-radius: 2px;
 }
 
-.pasture-tree::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 12px;
-    width: 24px;
-    height: 24px;
-    transform: translateX(-50%);
-    background: linear-gradient(180deg, var(--pasture-tree), var(--pasture-tree-dark));
-    border-radius: 50%;
+.step-bush-tall::before {
+    left: 8px;
+    width: 20px;
+    height: 22px;
+    border-radius: 12px 12px 0 0;
 }
 
-.step-sapling .pasture-tree::before { height: 13px; }
-.step-sapling .pasture-tree::after {
-    width: 15px;
-    height: 18px;
-    border-radius: 70% 30% 70% 30%;
+.step-cactus-small::before {
+    left: 14px;
+    width: 6px;
+    height: 17px;
+    border-radius: 5px 5px 0 0;
 }
 
-.step-round .pasture-tree::after {
-    width: 28px;
-    height: 25px;
+.step-cactus-small::after {
+    left: 19px;
+    width: 10px;
+    height: 4px;
+    bottom: 8px;
+    border-radius: 4px;
 }
 
-.step-pine .pasture-tree::after {
-    width: 30px;
-    height: 30px;
-    border-radius: 0;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
-}
-
-.step-wide .pasture-tree::after {
-    width: 34px;
-    height: 20px;
-    border-radius: 50% 50% 42% 42%;
-}
-
-.step-tall .pasture-tree::after {
-    width: 18px;
-    height: 32px;
-    border-radius: 999px 999px 40% 40%;
-}
-
-.step-bent .pasture-tree::before {
-    transform: translateX(-50%) skewX(-12deg);
-}
-
-.step-bent .pasture-tree::after {
-    left: 43%;
-    width: 27px;
-    height: 24px;
-    border-radius: 58% 42% 55% 45%;
-}
-
-.step-bloom .pasture-tree::after {
-    width: 28px;
-    height: 28px;
-    background:
-        radial-gradient(circle at 33% 32%, #ffd1dc 0 12%, transparent 13%),
-        radial-gradient(circle at 66% 44%, #ffd1dc 0 10%, transparent 11%),
-        linear-gradient(180deg, #6ecb6d, #347e42);
-}
-
-.step-cypress .pasture-tree::after {
-    width: 18px;
-    height: 34px;
-    border-radius: 999px;
-    background: linear-gradient(180deg, #3ea864, #1f6734);
-}
-
-.step-apple .pasture-tree::after {
-    width: 29px;
-    height: 25px;
-    background:
-        radial-gradient(circle at 35% 35%, #ff5c5c 0 9%, transparent 10%),
-        radial-gradient(circle at 67% 55%, #ffcd4d 0 8%, transparent 9%),
-        linear-gradient(180deg, #63bd59, #2f773d);
-}
-
-.step-final .pasture-tree::after {
-    width: 32px;
-    height: 30px;
-    background:
-        radial-gradient(circle at 50% 35%, rgba(255, 236, 138, 0.9) 0 15%, transparent 16%),
-        linear-gradient(180deg, #7ee07c, #2f8b43);
-    box-shadow: 0 0 18px rgba(126, 224, 124, 0.55);
-}
-
-.grass-clump {
-    position: absolute;
-    left: 50%;
-    bottom: 2px;
-    display: flex;
-    align-items: flex-end;
-    gap: 3px;
-    transform: translateX(-50%);
-    transform-origin: center bottom;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.grass-clump i {
-    display: block;
+.step-tree::before {
+    left: 15px;
     width: 5px;
-    height: 14px;
-    background: linear-gradient(180deg, var(--pasture-grass), var(--pasture-grass-dark));
-    border-radius: 8px 8px 2px 2px;
+    height: 24px;
 }
 
-.grass-clump i:nth-child(1) {
-    height: 11px;
-    transform: rotate(-14deg);
+.step-tree::after {
+    left: 7px;
+    width: 21px;
+    height: 17px;
+    bottom: 15px;
+    border-radius: 50% 50% 45% 45%;
 }
 
-.grass-clump i:nth-child(2) {
-    height: 16px;
-}
-
-.grass-clump i:nth-child(3) {
+.step-rock::before {
+    left: 9px;
+    width: 20px;
     height: 12px;
-    transform: rotate(14deg);
+    border-radius: 70% 50% 0 0;
 }
 
-.treat.eating .grass-clump {
-    animation: grassNibble 0.5s ease;
+.step-flag::before {
+    left: 13px;
+    width: 4px;
+    height: 30px;
 }
 
-.treat.eaten .grass-clump {
-    opacity: 0.2;
+.step-flag::after {
+    left: 17px;
+    bottom: 17px;
+    width: 16px;
+    height: 10px;
+    clip-path: polygon(0 0, 100% 30%, 0 100%);
+}
+
+.treat.eating {
+    transform: translateY(-4px);
+}
+
+.treat.eaten {
+    opacity: 0.24;
+    transform: translateY(4px) scale(0.92);
+}
+
+.treat.eaten .runner-grass {
     transform: translateX(-50%) scaleY(0.35);
-}
-
-@keyframes grassNibble {
-    0%, 100% { transform: translateX(-50%) scaleY(1); }
-    45% { transform: translateX(-50%) scaleY(0.55) translateY(4px); }
 }
 
 .progress-cat {
     position: absolute;
     left: 0%;
-    bottom: 10px;
-    width: 58px;
-    height: 44px;
+    bottom: 20px;
+    width: 54px;
+    height: 38px;
     z-index: 10;
-    transition: left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: left 0.48s steps(7, end);
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateX(-4px);
+    transform: translateX(0);
 }
 
 .cat-body {
     position: relative;
-    width: 58px;
-    height: 40px;
+    width: 54px;
+    height: 38px;
     font-size: 0;
     line-height: 0;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.26));
-    transition: transform 0.3s ease;
-    animation: horseIdle 2s ease-in-out infinite;
+    transition: transform 0.18s ease;
 }
 
-.horse-figure,
-.horse-figure span {
+.runner-horse,
+.runner-horse span {
     position: absolute;
     display: block;
+    background: var(--runner-ink);
 }
 
-.horse-figure {
+.runner-horse {
     inset: 0;
+    background: transparent;
 }
 
 .horse-body {
     left: 12px;
-    top: 16px;
-    width: 31px;
-    height: 16px;
-    background: linear-gradient(180deg, #b87841 0%, #875124 100%);
-    border-radius: 16px 18px 12px 12px;
-    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.16);
+    top: 15px;
+    width: 28px;
+    height: 13px;
+    border-radius: 4px 9px 7px 5px;
 }
 
 .horse-neck {
-    left: 37px;
+    left: 36px;
     top: 9px;
-    width: 10px;
-    height: 18px;
-    background: linear-gradient(180deg, #a96532 0%, #7e481f 100%);
-    border-radius: 8px 8px 5px 5px;
-    transform: rotate(-23deg);
+    width: 7px;
+    height: 15px;
+    border-radius: 5px 5px 2px 2px;
+    transform: rotate(-25deg);
     transform-origin: bottom center;
 }
 
 .horse-head {
-    left: 44px;
-    top: 5px;
-    width: 15px;
-    height: 12px;
-    background: linear-gradient(180deg, #b97942 0%, #8d5226 100%);
-    border-radius: 10px 12px 12px 7px;
-    transform: rotate(4deg);
+    left: 42px;
+    top: 6px;
+    width: 13px;
+    height: 9px;
+    border-radius: 7px 8px 7px 3px;
 }
 
 .horse-head::after {
     content: "";
     position: absolute;
     right: 2px;
-    top: 4px;
+    top: 3px;
     width: 2px;
     height: 2px;
-    background: #111827;
+    background: var(--runner-bg);
     border-radius: 50%;
 }
 
 .horse-ear {
-    left: 48px;
-    top: 0;
-    width: 6px;
-    height: 9px;
-    background: #9c5d2d;
+    left: 46px;
+    top: 1px;
+    width: 5px;
+    height: 7px;
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    transform: rotate(11deg);
+    transform: rotate(12deg);
 }
 
 .horse-mane {
-    left: 36px;
+    left: 35px;
     top: 8px;
-    width: 5px;
-    height: 16px;
-    background: linear-gradient(180deg, #4d2f1d, #2f1b10);
-    border-radius: 6px;
-    transform: rotate(-23deg);
+    width: 4px;
+    height: 14px;
+    border-radius: 4px;
+    transform: rotate(-25deg);
 }
 
 .horse-tail {
     left: 4px;
-    top: 17px;
-    width: 15px;
-    height: 7px;
-    background: linear-gradient(180deg, #3f2617, #24150d);
-    border-radius: 12px 2px 12px 12px;
-    transform: rotate(-24deg);
+    top: 16px;
+    width: 13px;
+    height: 5px;
+    border-radius: 10px 1px 10px 10px;
+    transform: rotate(-25deg);
     transform-origin: right center;
 }
 
 .horse-leg {
-    top: 29px;
+    top: 26px;
     width: 4px;
-    height: 13px;
-    background: linear-gradient(180deg, #7a451f, #4a2814);
-    border-radius: 3px;
+    height: 12px;
+    border-radius: 2px;
     transform-origin: top center;
 }
 
@@ -383,112 +395,68 @@
     bottom: -1px;
     width: 7px;
     height: 3px;
-    background: #1f1510;
+    background: var(--runner-ink);
     border-radius: 5px;
 }
 
-.horse-leg-back { left: 15px; transform: rotate(8deg); }
-.horse-leg-mid-back { left: 22px; transform: rotate(-6deg); opacity: 0.82; }
-.horse-leg-mid-front { left: 33px; transform: rotate(7deg); opacity: 0.82; }
-.horse-leg-front { left: 39px; transform: rotate(-7deg); }
+.horse-leg-back { left: 15px; transform: rotate(11deg); }
+.horse-leg-mid-back { left: 22px; transform: rotate(-8deg); opacity: 0.75; }
+.horse-leg-mid-front { left: 32px; transform: rotate(9deg); opacity: 0.75; }
+.horse-leg-front { left: 38px; transform: rotate(-10deg); }
+
+.progress-cat.walking .cat-body {
+    animation: runnerHorseBob 0.24s steps(2, end) infinite;
+}
 
 .progress-cat.walking .horse-leg-back,
 .progress-cat.walking .horse-leg-mid-front {
-    animation: horseLegBack 0.34s ease-in-out infinite;
+    animation: runnerLegA 0.24s steps(2, end) infinite;
 }
 
 .progress-cat.walking .horse-leg-front,
 .progress-cat.walking .horse-leg-mid-back {
-    animation: horseLegFront 0.34s ease-in-out infinite;
-}
-
-.progress-cat.eating .horse-neck,
-.progress-cat.eating .horse-mane {
-    transform: rotate(38deg) translate(4px, 6px);
-}
-
-.progress-cat.eating .horse-head {
-    transform: rotate(26deg) translate(6px, 13px);
-}
-
-.progress-cat.eating .horse-ear {
-    transform: rotate(32deg) translate(5px, 13px);
-}
-
-@keyframes horseLegBack {
-    0%, 100% { transform: rotate(10deg); }
-    50% { transform: rotate(-13deg); }
-}
-
-@keyframes horseLegFront {
-    0%, 100% { transform: rotate(-10deg); }
-    50% { transform: rotate(13deg); }
-}
-
-.progress-cat.walking .cat-body {
-    animation: horseWalk 0.34s ease-in-out infinite;
+    animation: runnerLegB 0.24s steps(2, end) infinite;
 }
 
 .progress-cat.eating .cat-body {
-    animation: horseGraze 0.5s ease-in-out;
+    animation: runnerHop 0.32s steps(2, end);
 }
 
-@keyframes horseIdle {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-2px); }
-}
-
-@keyframes horseWalk {
-    0%, 100% { transform: translateY(0) rotate(-3deg); }
-    50% { transform: translateY(-4px) rotate(3deg); }
-}
-
-@keyframes horseGraze {
-    0% { transform: translateY(0) rotate(0); }
-    45% { transform: translateY(8px) rotate(10deg); }
-    100% { transform: translateY(0) rotate(0); }
-}
-
-.progress-cat[data-level="1"] .cat-body { filter: drop-shadow(0 0 8px rgba(98, 211, 111, 0.35)); }
-.progress-cat[data-level="2"] .cat-body { filter: drop-shadow(0 0 9px rgba(98, 211, 111, 0.38)); }
-.progress-cat[data-level="3"] .cat-body { filter: drop-shadow(0 0 10px rgba(98, 211, 111, 0.42)); }
-.progress-cat[data-level="4"] .cat-body { filter: drop-shadow(0 0 11px rgba(98, 211, 111, 0.46)); }
-.progress-cat[data-level="5"] .cat-body { filter: drop-shadow(0 0 12px rgba(98, 211, 111, 0.5)); }
-.progress-cat[data-level="6"] .cat-body { filter: drop-shadow(0 0 13px rgba(98, 211, 111, 0.54)); }
-.progress-cat[data-level="7"] .cat-body { filter: drop-shadow(0 0 14px rgba(98, 211, 111, 0.58)); }
-.progress-cat[data-level="8"] .cat-body { filter: drop-shadow(0 0 15px rgba(98, 211, 111, 0.62)); }
-.progress-cat[data-level="9"] .cat-body { filter: drop-shadow(0 0 16px rgba(98, 211, 111, 0.7)); }
 .progress-cat[data-level="10"] .cat-body {
-    filter: drop-shadow(0 0 20px rgba(126, 224, 124, 0.95));
-    animation: horseVictory 0.5s ease-in-out infinite;
+    animation: runnerVictory 0.45s steps(2, end) infinite;
 }
 
-@keyframes horseVictory {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-8px) scale(1.06); }
+@keyframes runnerHorseBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes runnerLegA {
+    0%, 100% { transform: rotate(14deg); }
+    50% { transform: rotate(-14deg); }
+}
+
+@keyframes runnerLegB {
+    0%, 100% { transform: rotate(-14deg); }
+    50% { transform: rotate(14deg); }
+}
+
+@keyframes runnerHop {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes runnerVictory {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
 }
 
 .cat-message {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--pasture-message-bg);
-    color: var(--pasture-message-text);
-    border: 1px solid var(--pasture-message-border);
-    padding: 5px 9px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 20;
+    display: none;
 }
 
 .progress-cat.show-message .cat-message {
-    opacity: 1;
+    display: none;
 }
 
 .cat-status {
@@ -510,41 +478,42 @@
 
 .cat-mood {
     font-size: 13px;
-    font-weight: 700;
-    color: var(--accent-primary, #6de3ff);
+    font-weight: 800;
+    color: var(--accent-primary, #00d4ff);
 }
 
 .treats-eaten {
     font-size: 12px;
     color: var(--key-text, #b4c3de);
-    font-weight: 600;
+    font-weight: 700;
     white-space: nowrap;
 }
 
 .sparkle {
     position: absolute;
-    font-size: 16px;
-    color: var(--pasture-grass);
+    width: 4px;
+    height: 4px;
+    background: var(--runner-ink);
+    font-size: 0;
     pointer-events: none;
-    animation: sparkle 0.6s ease-out forwards;
+    animation: runnerDust 0.45s ease-out forwards;
+    z-index: 8;
 }
 
-@keyframes sparkle {
-    0% { transform: scale(0) rotate(0deg); opacity: 1; }
-    100% { transform: scale(2) rotate(180deg); opacity: 0; }
+@keyframes runnerDust {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.85; }
+    100% { transform: translate(-10px, -12px) scale(0.2); opacity: 0; }
 }
 
 @media (hover: none) and (pointer: coarse), (prefers-reduced-motion: reduce) {
-    .treat,
-    .cat-body,
-    .progress-cat[data-level] .cat-body {
-        filter: none;
-    }
-
     .cat-body,
     .progress-cat.walking .cat-body,
     .progress-cat.eating .cat-body,
-    .progress-cat[data-level="10"] .cat-body {
+    .progress-cat[data-level="10"] .cat-body,
+    .progress-cat.walking .horse-leg-back,
+    .progress-cat.walking .horse-leg-mid-front,
+    .progress-cat.walking .horse-leg-front,
+    .progress-cat.walking .horse-leg-mid-back {
         animation: none;
     }
 }
@@ -556,26 +525,18 @@
     }
 
     .cat-progress-track {
-        height: 62px;
+        height: 64px;
+        border-radius: 15px;
     }
 
     .progress-cat {
-        transform: translateX(-2px) scale(0.86);
+        transform: translateX(0) scale(0.86);
         transform-origin: bottom center;
     }
 
-    .cat-body {
-        width: 58px;
-        height: 40px;
-    }
-
     .treat {
-        width: 34px;
-        height: 46px;
-    }
-
-    .pasture-tree {
-        transform: translateX(-50%) scale(0.82);
+        transform: scale(0.85);
+        transform-origin: bottom center;
     }
 
     .cat-message {
@@ -593,19 +554,18 @@
 
 @media (max-width: 480px) {
     .cat-progress-track {
-        height: 54px;
+        height: 58px;
     }
 
     .progress-cat {
-        transform: translateX(-2px) scale(0.72);
+        transform: translateX(0) scale(0.74);
     }
 
     .treat {
-        width: 26px;
-        height: 40px;
+        transform: scale(0.68);
     }
 
-    .pasture-tree {
-        transform: translateX(-50%) scale(0.64);
+    .runner-cloud {
+        display: none;
     }
 }
