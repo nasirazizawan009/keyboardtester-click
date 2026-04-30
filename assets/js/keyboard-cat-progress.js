@@ -429,6 +429,44 @@
             state.el.style.top = `${state.y.toFixed(2)}px`;
         }
 
+        getRelativeRect(element) {
+            if (!this.track || !element) return null;
+
+            const trackRect = this.track.getBoundingClientRect();
+            const rect = element.getBoundingClientRect();
+            return {
+                left: rect.left - trackRect.left,
+                right: rect.right - trackRect.left,
+                top: rect.top - trackRect.top,
+                bottom: rect.bottom - trackRect.top,
+                width: rect.width,
+                height: rect.height
+            };
+        }
+
+        mergeRects(a, b) {
+            if (!a) return b;
+            if (!b) return a;
+            return {
+                left: Math.min(a.left, b.left),
+                right: Math.max(a.right, b.right),
+                top: Math.min(a.top, b.top),
+                bottom: Math.max(a.bottom, b.bottom),
+                width: Math.max(a.right, b.right) - Math.min(a.left, b.left),
+                height: Math.max(a.bottom, b.bottom) - Math.min(a.top, b.top)
+            };
+        }
+
+        rectsOverlap(a, b, inset = 0) {
+            if (!a || !b) return false;
+            return !(
+                a.right - inset < b.left + inset ||
+                a.left + inset > b.right - inset ||
+                a.bottom - inset < b.top + inset ||
+                a.top + inset > b.bottom - inset
+            );
+        }
+
         startEnemyMotion() {
             if (!this.track || !this.enemyEls.length || this.enemyReducedMotion || this.enemyFrame) return;
 
@@ -481,34 +519,49 @@
                     state.nextTurn = time + this.randomBetween(700, 2600);
                 }
 
+                const previousX = state.x;
+                let wrapped = false;
                 state.x += state.direction * state.speed * delta;
 
                 if (state.direction < 0 && state.x < -ghostWidth - 12) {
                     state.x = width + this.randomBetween(10, 70);
+                    wrapped = true;
                 } else if (state.direction > 0 && state.x > width + ghostWidth + 12) {
                     state.x = -ghostWidth - this.randomBetween(10, 70);
+                    wrapped = true;
                 }
 
                 this.applyEnemyState(state);
-                if (this.isTouchingPacman(state)) {
+                if (this.isTouchingPacman(state, wrapped ? state.x : previousX)) {
                     this.eatEnemy(state);
                 }
             });
         }
 
-        isTouchingPacman(state) {
+        isTouchingPacman(state, previousEnemyX = state.x, previousPacmanRect = null) {
             if (!this.catEl || state.status !== 'active') return false;
 
-            const pacmanRect = this.catEl.getBoundingClientRect();
-            const enemyRect = state.el.getBoundingClientRect();
-            const inset = 6;
+            const pacmanRect = this.getRelativeRect(this.catEl);
+            const enemyRect = this.getRelativeRect(state.el);
+            if (!pacmanRect || !enemyRect) return false;
 
-            return !(
-                enemyRect.right - inset < pacmanRect.left + inset ||
-                enemyRect.left + inset > pacmanRect.right - inset ||
-                enemyRect.bottom - inset < pacmanRect.top + inset ||
-                enemyRect.top + inset > pacmanRect.bottom - inset
-            );
+            const previousEnemyRect = {
+                ...enemyRect,
+                left: previousEnemyX,
+                right: previousEnemyX + enemyRect.width
+            };
+            const sweptEnemyRect = this.mergeRects(enemyRect, previousEnemyRect);
+            const sweptPacmanRect = previousPacmanRect ? this.mergeRects(pacmanRect, previousPacmanRect) : pacmanRect;
+
+            return this.rectsOverlap(sweptEnemyRect, sweptPacmanRect, 6);
+        }
+
+        checkEnemyContacts(previousPacmanRect = null) {
+            this.enemyStates.forEach((state) => {
+                if (this.isTouchingPacman(state, state.x, previousPacmanRect)) {
+                    this.eatEnemy(state);
+                }
+            });
         }
 
         eatEnemy(state) {
@@ -592,6 +645,7 @@
             const cycleState = this.getCycleState(options && options.keysPressed, totalKeys);
             const keysPressed = cycleState.cyclePresses;
             const percentage = Math.round((Math.min(keysPressed, totalKeys) / totalKeys) * 100);
+            const previousPacmanRect = this.getRelativeRect(this.catEl);
 
             if (cycleState.cycle !== this.lastCycles[mode]) {
                 this.resetCycleVisuals(mode);
@@ -605,6 +659,7 @@
 
             const catPosition = Math.min(this.getStartPosition() + percentage * (this.getTravelRange() / 100), 88);
             this.catEl.style.left = `${catPosition}%`;
+            this.checkEnemyContacts(previousPacmanRect);
             this.catEl.classList.add('walking');
             window.setTimeout(() => this.catEl && this.catEl.classList.remove('walking'), 600);
 

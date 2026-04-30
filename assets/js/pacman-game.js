@@ -127,6 +127,84 @@
         return Math.hypot(a.x - b.x, a.y - b.y);
     }
 
+    function rememberPosition(entity) {
+        if (!entity) return;
+        entity.prevX = entity.x;
+        entity.prevY = entity.y;
+    }
+
+    function previousPoint(entity) {
+        return {
+            x: Number.isFinite(entity.prevX) ? entity.prevX : entity.x,
+            y: Number.isFinite(entity.prevY) ? entity.prevY : entity.y
+        };
+    }
+
+    function unwrapSegmentEnd(start, end) {
+        const point = { x: end.x, y: end.y };
+        if (Math.abs(point.x - start.x) > COLS / 2) {
+            point.x += point.x > start.x ? -COLS : COLS;
+        }
+        return point;
+    }
+
+    function pointSegmentDistance(point, start, end) {
+        const vx = end.x - start.x;
+        const vy = end.y - start.y;
+        const lengthSq = vx * vx + vy * vy;
+        if (lengthSq <= 0.000001) return Math.hypot(point.x - start.x, point.y - start.y);
+
+        const t = clamp(((point.x - start.x) * vx + (point.y - start.y) * vy) / lengthSq, 0, 1);
+        const closest = {
+            x: start.x + vx * t,
+            y: start.y + vy * t
+        };
+        return Math.hypot(point.x - closest.x, point.y - closest.y);
+    }
+
+    function segmentsIntersect(a, b, c, d) {
+        const r = { x: b.x - a.x, y: b.y - a.y };
+        const s = { x: d.x - c.x, y: d.y - c.y };
+        const denominator = r.x * s.y - r.y * s.x;
+        if (Math.abs(denominator) <= 0.000001) return false;
+
+        const cx = c.x - a.x;
+        const cy = c.y - a.y;
+        const t = (cx * s.y - cy * s.x) / denominator;
+        const u = (cx * r.y - cy * r.x) / denominator;
+        return t >= 0 && t <= 1 && u >= 0 && u <= 1;
+    }
+
+    function segmentDistance(a, b, c, d) {
+        if (segmentsIntersect(a, b, c, d)) return 0;
+        return Math.min(
+            pointSegmentDistance(a, c, d),
+            pointSegmentDistance(b, c, d),
+            pointSegmentDistance(c, a, b),
+            pointSegmentDistance(d, a, b)
+        );
+    }
+
+    function movementPathDistance(aEntity, bEntity) {
+        const a0 = previousPoint(aEntity);
+        const a1 = unwrapSegmentEnd(a0, { x: aEntity.x, y: aEntity.y });
+        const b0Base = previousPoint(bEntity);
+        const b1Base = unwrapSegmentEnd(b0Base, { x: bEntity.x, y: bEntity.y });
+        let closest = Infinity;
+
+        [-COLS, 0, COLS].forEach((shift) => {
+            const b0 = { x: b0Base.x + shift, y: b0Base.y };
+            const b1 = { x: b1Base.x + shift, y: b1Base.y };
+            closest = Math.min(closest, segmentDistance(a0, a1, b0, b1));
+        });
+
+        return closest;
+    }
+
+    function entitiesTouch(aEntity, bEntity) {
+        return movementPathDistance(aEntity, bEntity) < 0.64;
+    }
+
     function isWall(x, y) {
         const tx = ((Math.round(x) % COLS) + COLS) % COLS;
         const ty = Math.round(y);
@@ -188,6 +266,8 @@
         return {
             x: 10,
             y: 15,
+            prevX: 10,
+            prevY: 15,
             dir: 'left',
             nextDir: 'left',
             speed: 6.15,
@@ -203,6 +283,8 @@
             scatter: { x: def.scatter.x, y: def.scatter.y },
             x: def.start.x,
             y: def.start.y,
+            prevX: def.start.x,
+            prevY: def.start.y,
             dir: def.dir,
             speed: 5.35 + index * 0.08,
             status: 'normal',
@@ -628,7 +710,7 @@
 
     function checkCollisions() {
         game.ghosts.forEach((ghost) => {
-            if (distance(game.player, ghost) >= 0.58) return;
+            if (!entitiesTouch(game.player, ghost)) return;
             if (ghost.status === 'frightened') {
                 game.ghostCombo += 1;
                 const points = 100 * Math.pow(2, game.ghostCombo);
@@ -659,6 +741,8 @@
             return;
         }
         if (game.mode !== 'playing') return;
+        rememberPosition(game.player);
+        game.ghosts.forEach(rememberPosition);
         updatePlayer(delta);
         updateGhosts(delta);
         updateFruit(delta);

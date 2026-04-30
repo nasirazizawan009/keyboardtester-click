@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, live keyboard/game/GSC deploy)
+**Last updated:** 2026-04-30 (Codex, live Pac-Man collision fix)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,9 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-30 (Codex)
+- Fixed and deployed live: Pac-Man/ghost contact now uses swept collision detection instead of only end-of-frame overlap. This fixes cases where a ghost visually crossed Pac-Man but no collision/eat event fired.
+- Scope: `assets/js/pacman-game.js` now checks movement path distance between Pac-Man and ghosts, including tunnel wrapping; `assets/js/keyboard-cat-progress.js` now sweeps ghost movement and Pac-Man keypress jumps in the keyboard progress strip; regenerated `assets/js/keyboard-cat-progress.min.js`.
+- Verified: `node --check` passed for `pacman-game.js`, `keyboard-cat-progress.js`, and `keyboard-cat-progress.min.js`; local `pacman-game.php` and homepage returned HTTP 200; live JS/page verification returned HTTP 200 and confirmed the collision-fix markers are being served.
 - Deployed live via SFTP/paramiko, not FTPS: GSC indexing cleanup content, English keyboard tester, shared keyboard progress/Pac-Man strip assets, all 8 localized keyboard sections, localized keyboard visual/history assets, shared head component, `tools/keyboard-tester-advanced.php`, and the standalone `pacman-game.php` page/assets.
 - Verified live: `pacman-game.php`, `assets/js/pacman-game.js`, `assets/css/pacman-game.css`, `assets/js/keyboard-cat-progress.min.js`, `includes/components/keyboard-cat-progress.php`, `assets/js/localized-keyboard-history.js`, Japanese localized keyboard page, homepage keyboard page, and `keyboard-ghosting-test.php` all returned HTTP 200 and contained the expected deployed markers.
 - Submitted the updated URL set through the live IndexNow endpoint. Response was HTTP 200 with "URLs submitted successfully" for 863 URLs. Google/GSC does not accept IndexNow; this submission covers Bing, Yandex, Seznam, and Naver-compatible discovery.
