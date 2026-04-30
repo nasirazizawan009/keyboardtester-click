@@ -24,6 +24,20 @@ if ($catProgressTotalKeys < 1) {
             <div class="maze-rail maze-rail-top" aria-hidden="true"></div>
             <div class="maze-rail maze-rail-bottom" aria-hidden="true"></div>
             <div class="maze-dots" aria-hidden="true"></div>
+            <div class="arcade-enemies" aria-hidden="true">
+                <span class="enemy-ghost enemy-pink" data-arcade-enemy>
+                    <span class="enemy-eye enemy-eye-left"><span class="enemy-pupil"></span></span>
+                    <span class="enemy-eye enemy-eye-right"><span class="enemy-pupil"></span></span>
+                </span>
+                <span class="enemy-ghost enemy-cyan" data-arcade-enemy>
+                    <span class="enemy-eye enemy-eye-left"><span class="enemy-pupil"></span></span>
+                    <span class="enemy-eye enemy-eye-right"><span class="enemy-pupil"></span></span>
+                </span>
+                <span class="enemy-ghost enemy-orange" data-arcade-enemy>
+                    <span class="enemy-eye enemy-eye-left"><span class="enemy-pupil"></span></span>
+                    <span class="enemy-eye enemy-eye-right"><span class="enemy-pupil"></span></span>
+                </span>
+            </div>
             <div class="treat runner-step pellet pellet-small" data-treat="10" data-keys="10" title="10 keys - Dot cleared"></div>
             <div class="treat runner-step pellet pellet-power" data-treat="20" data-keys="20" title="20 keys - Power pellet"></div>
             <div class="treat runner-step pellet ghost ghost-pink" data-treat="30" data-keys="30" title="30 keys - Pink ghost"></div>

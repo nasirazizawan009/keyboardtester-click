@@ -357,6 +357,14 @@
             return level;
         }
 
+        getStartPosition() {
+            return window.innerWidth <= 768 ? 14 : 3;
+        }
+
+        getTravelRange() {
+            return window.innerWidth <= 768 ? 80 : 85;
+        }
+
         createSparkles(element) {
             if (!this.track || !element) return;
 
@@ -387,7 +395,7 @@
             if (this.scoreEl) this.scoreEl.textContent = `SCORE ${String(Math.min(keysPressed * 10, 99999)).padStart(5, '0')}`;
             this.root.style.setProperty('--maze-eaten', `${Math.min(percentage, 100)}%`);
 
-            const catPosition = Math.min(percentage * 0.88, 88);
+            const catPosition = Math.min(this.getStartPosition() + percentage * (this.getTravelRange() / 100), 88);
             this.catEl.style.left = `${catPosition}%`;
             this.catEl.classList.add('walking');
             window.setTimeout(() => this.catEl && this.catEl.classList.remove('walking'), 600);
@@ -451,7 +459,7 @@
             this.root.style.setProperty('--maze-eaten', '0%');
 
             if (this.catEl) {
-                this.catEl.style.left = '0%';
+                this.catEl.style.left = `${this.getStartPosition()}%`;
                 this.catEl.setAttribute('data-level', '0');
                 this.catEl.classList.remove('walking', 'eating', 'show-message');
             }
