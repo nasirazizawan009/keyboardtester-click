@@ -110,6 +110,10 @@
         return Math.max(min, Math.min(max, value));
     }
 
+    function normalizeTileX(x) {
+        return ((x % COLS) + COLS) % COLS;
+    }
+
     function wrapX(x) {
         if (x < -0.5) return COLS - 0.5;
         if (x > COLS - 0.5) return -0.5;
@@ -131,18 +135,34 @@
     }
 
     function atCenter(entity) {
-        return Math.abs(entity.x - Math.round(entity.x)) < 0.045 && Math.abs(entity.y - Math.round(entity.y)) < 0.045;
+        return Math.abs(entity.x - Math.round(entity.x)) < 0.001 && Math.abs(entity.y - Math.round(entity.y)) < 0.001;
     }
 
     function snap(entity) {
-        entity.x = Math.round(entity.x);
+        entity.x = normalizeTileX(Math.round(entity.x));
         entity.y = Math.round(entity.y);
     }
 
     function canMove(entity, dirName) {
         const dir = DIRS[dirName];
         if (!dir) return false;
-        return isOpen(Math.round(entity.x) + dir.x, Math.round(entity.y) + dir.y);
+        return isOpen(normalizeTileX(Math.round(entity.x) + dir.x), Math.round(entity.y) + dir.y);
+    }
+
+    function nextCenter(entity, dir) {
+        if (dir.x > 0) return { x: Math.floor(entity.x) + 1, y: Math.round(entity.y) };
+        if (dir.x < 0) return { x: Math.ceil(entity.x) - 1, y: Math.round(entity.y) };
+        if (dir.y > 0) return { x: Math.round(entity.x), y: Math.floor(entity.y) + 1 };
+        return { x: Math.round(entity.x), y: Math.ceil(entity.y) - 1 };
+    }
+
+    function distanceToCenter(entity, target) {
+        return Math.hypot(target.x - entity.x, target.y - entity.y);
+    }
+
+    function setCenter(entity, target) {
+        entity.x = normalizeTileX(target.x);
+        entity.y = target.y;
     }
 
     function buildPellets() {
@@ -449,30 +469,59 @@
         return best;
     }
 
-    function moveEntity(entity, delta, speed) {
-        if (atCenter(entity)) {
-            snap(entity);
-            if (entity === game.player && canMove(entity, entity.nextDir)) {
-                entity.dir = entity.nextDir;
-            } else if (entity !== game.player) {
-                entity.dir = chooseGhostDir(entity);
-            }
-            if (!canMove(entity, entity.dir)) return;
+    function selectDirectionAtCenter(entity) {
+        if (entity === game.player && canMove(entity, entity.nextDir)) {
+            entity.dir = entity.nextDir;
+        } else if (entity !== game.player) {
+            entity.dir = chooseGhostDir(entity);
         }
-        const dir = DIRS[entity.dir];
-        if (!dir) return;
-        entity.x = wrapX(entity.x + dir.x * speed * delta);
-        entity.y += dir.y * speed * delta;
+        return canMove(entity, entity.dir);
+    }
+
+    function moveEntity(entity, delta, speed, onCenter) {
+        let remaining = speed * delta;
+        let guard = 0;
+
+        while (remaining > 0.0001 && guard < 6) {
+            guard += 1;
+
+            if (atCenter(entity)) {
+                snap(entity);
+                if (onCenter) onCenter();
+                if (!selectDirectionAtCenter(entity)) return;
+            }
+
+            const dir = DIRS[entity.dir];
+            if (!dir) return;
+
+            const target = nextCenter(entity, dir);
+            const dist = distanceToCenter(entity, target);
+            if (dist <= 0.0001) {
+                setCenter(entity, target);
+                if (onCenter) onCenter();
+                continue;
+            }
+
+            const step = Math.min(remaining, dist);
+            entity.x += dir.x * step;
+            entity.y += dir.y * step;
+            remaining -= step;
+
+            if (step >= dist - 0.0001) {
+                setCenter(entity, target);
+                if (onCenter) onCenter();
+                continue;
+            }
+
+            entity.x = wrapX(entity.x);
+            break;
+        }
     }
 
     function updatePlayer(delta) {
         const speed = (game.player.speed + Math.min(game.level - 1, 5) * 0.18) * SPEEDS[game.speedIndex].factor;
-        moveEntity(game.player, delta, speed);
+        moveEntity(game.player, delta, speed, eatAtPlayerTile);
         game.player.mouth += delta * 6.5;
-        if (atCenter(game.player)) {
-            snap(game.player);
-            eatAtPlayerTile();
-        }
     }
 
     function updateGhosts(delta) {
