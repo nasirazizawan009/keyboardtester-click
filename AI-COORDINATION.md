@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, local T-Rex runner progress visual)
+**Last updated:** 2026-04-30 (Codex, local Chrome dino progress visual)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -85,6 +85,8 @@ This file is the **single source of truth** when handing off work between AI age
 - Verified locally only: PHP lint passed for `includes/components/keyboard-cat-progress.php` and `tools/keyboard_tester_english.php`; `node --check` passed for `assets/js/keyboard-cat-progress.js`; desktop and mobile Playwright checks against `https://localhost/kbt/` showed no horizontal overflow, the checkpoint counter advances, and the runner strip renders correctly. No live deploy was run.
 - Done: Follow-up local visual pass replaced the remaining CSS horse silhouette with a compact CSS T-Rex and simplified the progress trail further toward the Chrome offline-game look: plain ground line, sparse dashes, cactus/grass/rock checkpoints, and no cloud decoration.
 - Verified locally only: PHP lint, JS syntax check, regenerated `keyboard-cat-progress.min.js`, desktop/mobile Playwright checks, and no horizontal overflow. No live deploy was run.
+- Done: Follow-up local visual pass used the user's supplied Chrome Dino screenshot as the dinosaur sprite source (`images/keyboard/chrome-dino-runner.png`) and removed all tree/grass/rock/flag objects from the progress strip. The strip is now black with a pixel ground line, score text, cactus obstacles, and pterodactyl-style obstacles only.
+- Verified locally only: PHP lint, JS syntax check, regenerated `keyboard-cat-progress.min.js`, desktop Playwright render check, sprite image loaded, no grass/tree/rock/flag selectors in the active progress component/CSS/JS, no horizontal overflow. No live deploy was run.
 
 - Done: Fixed failing GitHub Actions `awesome-lint.yml` check on `nasirazizawan009/awesome-device-testing-tools` after commit `02a607f` rewrote `README.md`.
 - Root cause: `README.md` removed the required Awesome badge and added a forbidden `## License` section; `awesome-lint` requires the badge and does not allow a README license section when a `LICENSE` file exists.

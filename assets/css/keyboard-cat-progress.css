@@ -1,31 +1,20 @@
 .cat-progress-section {
-    --runner-bg: #f7f7f7;
-    --runner-ink: #2f3135;
-    --runner-muted: #6f7378;
-    --runner-badge-bg: #111827;
-    --runner-badge-text: #f9fafb;
+    --dino-bg: #000;
+    --dino-ink: #f1f3f4;
+    --dino-muted: #9aa0a6;
+    --dino-dim: #6f7377;
     background: transparent;
     border: none;
-    border-radius: 16px;
+    border-radius: 0;
     padding: 4px 0 3px;
     margin-bottom: 6px;
     box-shadow: none;
 }
 
-.cat-progress-section .progress-percentage {
-    background: var(--runner-badge-bg);
-    color: var(--runner-badge-text);
-    padding: 3px 9px;
-    border-radius: 999px;
-    font-weight: 800;
-    font-size: 10px;
-    letter-spacing: 0;
-}
-
 .cat-progress-container {
     background: transparent;
     border: none;
-    border-radius: 14px;
+    border-radius: 0;
     padding: 0;
     margin-bottom: 0;
     position: relative;
@@ -34,161 +23,212 @@
 
 .cat-progress-track {
     position: relative;
-    height: 64px;
-    background: var(--runner-bg);
-    border-radius: 14px;
-    border: 1px solid rgba(15, 23, 42, 0.1);
-    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    height: 78px;
+    background: var(--dino-bg);
+    border: 1px solid rgba(241, 243, 244, 0.18);
+    border-radius: 3px;
     overflow: hidden;
+    image-rendering: pixelated;
 }
 
 .cat-progress-track::before {
     content: "";
     position: absolute;
-    left: 18px;
-    right: 18px;
-    bottom: 18px;
-    height: 2px;
-    background: var(--runner-ink);
+    left: 0;
+    right: 0;
+    bottom: 13px;
+    height: 1px;
+    background: var(--dino-muted);
     z-index: 2;
 }
 
 .cat-progress-track::after {
     content: "";
     position: absolute;
-    left: 24px;
-    right: 24px;
-    bottom: 11px;
-    height: 7px;
+    left: 12px;
+    right: 12px;
+    bottom: 7px;
+    height: 6px;
     background:
-        repeating-linear-gradient(90deg, var(--runner-ink) 0 9px, transparent 9px 58px),
-        repeating-linear-gradient(90deg, transparent 0 96px, var(--runner-ink) 96px 99px, transparent 99px 130px);
-    opacity: 0.55;
+        repeating-linear-gradient(90deg, transparent 0 26px, var(--dino-muted) 26px 28px, transparent 28px 82px),
+        repeating-linear-gradient(90deg, transparent 0 116px, var(--dino-dim) 116px 118px, transparent 118px 154px);
+    opacity: 0.75;
     z-index: 1;
     pointer-events: none;
 }
 
+.dino-score {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    z-index: 4;
+    color: var(--dino-muted);
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
 .treat {
     position: absolute;
-    bottom: 18px;
-    width: 32px;
-    height: 26px;
+    bottom: 14px;
+    width: 34px;
+    height: 38px;
     z-index: 5;
-    transition: opacity 0.22s ease, transform 0.22s ease;
+    transition: opacity 0.18s steps(2, end), transform 0.18s steps(2, end);
     pointer-events: none;
 }
 
-.treat[data-treat="10"] { left: 10%; }
-.treat[data-treat="20"] { left: 19%; }
-.treat[data-treat="30"] { left: 28%; }
-.treat[data-treat="40"] { left: 37%; }
-.treat[data-treat="50"] { left: 46%; }
-.treat[data-treat="60"] { left: 55%; }
-.treat[data-treat="70"] { left: 64%; }
-.treat[data-treat="80"] { left: 73%; }
-.treat[data-treat="90"] { left: 82%; }
-.treat[data-treat="100"] { left: 89%; }
+.treat[data-treat="10"] { left: 11%; }
+.treat[data-treat="20"] { left: 20%; }
+.treat[data-treat="30"] { left: 29%; }
+.treat[data-treat="40"] { left: 38%; }
+.treat[data-treat="50"] { left: 47%; }
+.treat[data-treat="60"] { left: 56%; }
+.treat[data-treat="70"] { left: 65%; }
+.treat[data-treat="80"] { left: 74%; }
+.treat[data-treat="90"] { left: 83%; }
+.treat[data-treat="100"] { left: 90%; }
 
 .runner-step::before,
 .runner-step::after,
-.runner-grass i {
+.runner-step span {
     content: "";
     position: absolute;
-    bottom: 0;
     display: block;
-    background: var(--runner-ink);
+    background: var(--dino-ink);
 }
 
-.runner-grass {
-    position: absolute;
-    left: 50%;
-    bottom: -1px;
-    width: 22px;
-    height: 15px;
-    transform: translateX(-50%);
-    transition: opacity 0.22s ease, transform 0.22s ease;
+.step-cactus-small::before {
+    left: 14px;
+    bottom: 0;
+    width: 5px;
+    height: 24px;
 }
 
-.runner-grass i {
-    width: 3px;
-    border-radius: 3px 3px 0 0;
+.step-cactus-small::after {
+    left: 8px;
+    bottom: 9px;
+    width: 18px;
+    height: 5px;
 }
 
-.runner-grass i:nth-child(1) { left: 6px; height: 10px; transform: rotate(-16deg); }
-.runner-grass i:nth-child(2) { left: 14px; height: 13px; transform: rotate(13deg); }
-
-.step-grass::before {
-    left: 10px;
-    width: 3px;
-    height: 12px;
-    transform: rotate(-14deg);
-}
-
-.step-grass::after {
-    left: 17px;
-    width: 3px;
-    height: 15px;
-    transform: rotate(12deg);
-}
-
-.step-cactus-small::before,
-.step-cactus::before,
 .step-cactus-tall::before {
     left: 14px;
-    width: 6px;
-    border-radius: 4px 4px 0 0;
+    bottom: 0;
+    width: 5px;
+    height: 34px;
 }
 
-.step-cactus-small::before { height: 15px; }
-.step-cactus::before { height: 22px; }
-.step-cactus-tall::before { height: 27px; }
-
-.step-cactus-small::after,
-.step-cactus::after,
 .step-cactus-tall::after {
-    left: 7px;
-    width: 21px;
+    left: 6px;
+    bottom: 15px;
+    width: 24px;
     height: 5px;
-    border-radius: 5px;
 }
-
-.step-cactus-small::after { bottom: 7px; }
-.step-cactus::after { bottom: 11px; }
-.step-cactus-tall::after { bottom: 14px; }
 
 .step-cactus-double::before {
     left: 8px;
-    width: 6px;
-    height: 20px;
-    border-radius: 4px 4px 0 0;
+    bottom: 0;
+    width: 5px;
+    height: 26px;
+    box-shadow: 15px -7px 0 0 var(--dino-ink);
 }
 
 .step-cactus-double::after {
-    left: 20px;
+    left: 3px;
+    bottom: 11px;
+    width: 27px;
+    height: 5px;
+}
+
+.step-cactus-triple::before {
+    left: 4px;
+    bottom: 0;
+    width: 5px;
+    height: 23px;
+    box-shadow: 11px -9px 0 0 var(--dino-ink), 22px -3px 0 0 var(--dino-ink);
+}
+
+.step-cactus-triple::after {
+    left: 0;
+    bottom: 10px;
+    width: 32px;
+    height: 5px;
+}
+
+.step-cactus-wide::before {
+    left: 5px;
+    bottom: 0;
+    width: 5px;
+    height: 29px;
+    box-shadow: 12px 0 0 0 var(--dino-ink), 24px -6px 0 0 var(--dino-ink);
+}
+
+.step-cactus-wide::after {
+    left: 1px;
+    bottom: 13px;
+    width: 32px;
+    height: 5px;
+}
+
+.step-bird-high,
+.step-bird-low {
+    bottom: 37px;
+}
+
+.step-bird-low {
+    bottom: 25px;
+}
+
+.step-bird-high::before,
+.step-bird-low::before {
+    display: none;
+    left: 9px;
+    bottom: 11px;
+    width: 18px;
+    height: 5px;
+}
+
+.step-bird-high::after,
+.step-bird-low::after {
+    display: none;
+    left: 3px;
+    bottom: 8px;
+    width: 30px;
+    height: 18px;
+    clip-path: polygon(0 50%, 27% 34%, 43% 0, 58% 36%, 100% 50%, 58% 66%, 43% 100%, 27% 66%);
+}
+
+.bird-body {
+    left: 9px;
+    bottom: 13px;
+    width: 19px;
+    height: 5px;
+}
+
+.bird-head {
+    left: 27px;
+    bottom: 15px;
     width: 6px;
-    height: 25px;
-    border-radius: 4px 4px 0 0;
+    height: 5px;
 }
 
-.step-rock::before {
-    left: 8px;
-    width: 20px;
-    height: 10px;
-    border-radius: 70% 55% 0 0;
+.bird-wing {
+    left: 6px;
+    width: 22px;
+    height: 13px;
 }
 
-.step-flag::before {
-    left: 12px;
-    width: 4px;
-    height: 28px;
+.bird-wing-up {
+    bottom: 17px;
+    clip-path: polygon(0 100%, 47% 0, 100% 100%, 58% 76%, 46% 54%, 34% 76%);
 }
 
-.step-flag::after {
-    left: 16px;
-    bottom: 16px;
-    width: 15px;
-    height: 9px;
-    clip-path: polygon(0 0, 100% 30%, 0 100%);
+.bird-wing-down {
+    bottom: 2px;
+    clip-path: polygon(0 0, 100% 0, 48% 100%, 36% 24%, 58% 24%);
 }
 
 .treat.eating {
@@ -196,22 +236,18 @@
 }
 
 .treat.eaten {
-    opacity: 0.23;
-    transform: translateY(3px) scale(0.92);
-}
-
-.treat.eaten .runner-grass {
-    transform: translateX(-50%) scaleY(0.35);
+    opacity: 0.18;
+    transform: translateY(4px) scale(0.9);
 }
 
 .progress-cat {
     position: absolute;
     left: 0%;
-    bottom: 17px;
-    width: 52px;
+    bottom: 13px;
+    width: 60px;
     height: 42px;
     z-index: 10;
-    transition: left 0.42s steps(6, end);
+    transition: left 0.34s steps(5, end);
     display: flex;
     align-items: flex-end;
     transform: translateX(0);
@@ -219,147 +255,53 @@
 
 .cat-body {
     position: relative;
-    width: 52px;
+    width: 60px;
     height: 42px;
     font-size: 0;
     line-height: 0;
 }
 
-.runner-trex,
-.runner-trex span {
-    position: absolute;
-    display: block;
-    background: var(--runner-ink);
-}
-
 .runner-trex {
-    inset: 0;
-    background: transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 42px;
+    background-image: url("../../images/keyboard/chrome-dino-runner.png");
+    background-repeat: no-repeat;
+    background-size: 600px 150px;
+    background-position: 0 -93px;
+    image-rendering: pixelated;
 }
 
-.trex-body {
-    left: 15px;
-    top: 17px;
-    width: 24px;
-    height: 17px;
-    border-radius: 7px 8px 5px 5px;
+.progress-cat.walking .runner-trex {
+    animation: dinoStep 0.22s steps(2, end) infinite;
 }
 
-.trex-head {
-    left: 32px;
-    top: 5px;
-    width: 18px;
-    height: 14px;
-    border-radius: 4px 7px 4px 2px;
+.progress-cat.eating .runner-trex {
+    animation: dinoHop 0.24s steps(2, end);
 }
 
-.trex-jaw {
-    left: 37px;
-    top: 16px;
-    width: 13px;
-    height: 6px;
-    border-radius: 0 0 5px 2px;
+.progress-cat[data-level="10"] .runner-trex {
+    animation: dinoVictory 0.34s steps(2, end) infinite;
 }
 
-.trex-eye {
-    left: 43px;
-    top: 8px;
-    width: 2px;
-    height: 2px;
-    background: var(--runner-bg);
-    border-radius: 50%;
-}
-
-.trex-tail {
-    left: 1px;
-    top: 21px;
-    width: 20px;
-    height: 7px;
-    border-radius: 8px 0 0 8px;
-    transform: rotate(-24deg);
-    transform-origin: right center;
-}
-
-.trex-arm {
-    left: 34px;
-    top: 23px;
-    width: 10px;
-    height: 3px;
-    border-radius: 3px;
-}
-
-.trex-leg {
-    top: 31px;
-    width: 5px;
-    height: 11px;
-    border-radius: 2px;
-    transform-origin: top center;
-}
-
-.trex-leg-back { left: 20px; transform: rotate(9deg); }
-.trex-leg-front { left: 31px; transform: rotate(-8deg); }
-
-.trex-foot {
-    top: 39px;
-    width: 12px;
-    height: 4px;
-    border-radius: 1px;
-}
-
-.trex-foot-back { left: 15px; }
-.trex-foot-front { left: 29px; }
-
-.progress-cat.walking .cat-body {
-    animation: trexBob 0.24s steps(2, end) infinite;
-}
-
-.progress-cat.walking .trex-leg-back,
-.progress-cat.walking .trex-foot-back {
-    animation: trexLegA 0.24s steps(2, end) infinite;
-}
-
-.progress-cat.walking .trex-leg-front,
-.progress-cat.walking .trex-foot-front {
-    animation: trexLegB 0.24s steps(2, end) infinite;
-}
-
-.progress-cat.eating .cat-body {
-    animation: trexHop 0.28s steps(2, end);
-}
-
-.progress-cat[data-level="10"] .cat-body {
-    animation: trexVictory 0.42s steps(2, end) infinite;
-}
-
-@keyframes trexBob {
+@keyframes dinoStep {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
+    50% { transform: translateY(-2px); }
 }
 
-@keyframes trexLegA {
-    0%, 100% { transform: rotate(13deg); }
-    50% { transform: rotate(-13deg); }
-}
-
-@keyframes trexLegB {
-    0%, 100% { transform: rotate(-13deg); }
-    50% { transform: rotate(13deg); }
-}
-
-@keyframes trexHop {
+@keyframes dinoHop {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-10px); }
 }
 
-@keyframes trexVictory {
+@keyframes dinoVictory {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-7px); }
 }
 
-.cat-message {
-    display: none;
-}
-
+.cat-message,
 .progress-cat.show-message .cat-message {
     display: none;
 }
@@ -371,7 +313,6 @@
     margin-top: 4px;
     padding: 1px 2px 0;
     background: transparent;
-    border-radius: 12px;
     border: none;
 }
 
@@ -394,31 +335,38 @@
     white-space: nowrap;
 }
 
+.cat-progress-section .progress-percentage {
+    background: #050505;
+    color: var(--dino-muted);
+    border: 1px solid rgba(241, 243, 244, 0.28);
+    padding: 3px 9px;
+    border-radius: 2px;
+    font-family: "Courier New", monospace;
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
 .sparkle {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: var(--runner-ink);
+    width: 3px;
+    height: 3px;
+    background: var(--dino-ink);
     font-size: 0;
     pointer-events: none;
-    animation: trexDust 0.42s ease-out forwards;
+    animation: dinoDust 0.32s steps(3, end) forwards;
     z-index: 8;
 }
 
-@keyframes trexDust {
-    0% { transform: translate(0, 0) scale(1); opacity: 0.85; }
-    100% { transform: translate(-10px, -10px) scale(0.2); opacity: 0; }
+@keyframes dinoDust {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+    100% { transform: translate(-12px, -8px) scale(0.2); opacity: 0; }
 }
 
 @media (hover: none) and (pointer: coarse), (prefers-reduced-motion: reduce) {
-    .cat-body,
-    .progress-cat.walking .cat-body,
-    .progress-cat.eating .cat-body,
-    .progress-cat[data-level="10"] .cat-body,
-    .progress-cat.walking .trex-leg-back,
-    .progress-cat.walking .trex-foot-back,
-    .progress-cat.walking .trex-leg-front,
-    .progress-cat.walking .trex-foot-front {
+    .progress-cat.walking .runner-trex,
+    .progress-cat.eating .runner-trex,
+    .progress-cat[data-level="10"] .runner-trex {
         animation: none;
     }
 }
@@ -430,8 +378,12 @@
     }
 
     .cat-progress-track {
-        height: 58px;
-        border-radius: 12px;
+        height: 68px;
+    }
+
+    .dino-score {
+        font-size: 11px;
+        letter-spacing: 1px;
     }
 
     .progress-cat {
@@ -454,7 +406,7 @@
 
 @media (max-width: 480px) {
     .cat-progress-track {
-        height: 54px;
+        height: 62px;
     }
 
     .progress-cat {

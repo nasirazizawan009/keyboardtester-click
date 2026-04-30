@@ -4,23 +4,24 @@
     const CAT_TEXT = {
         en: {
             messages: [
-                'Press keys to start the T-Rex run!',
+                'Press keys to start the Dino run!',
                 'Cactus cleared!',
-                'Keep running!',
-                'Trail marker cleared!',
+                'Tall cactus cleared!',
+                'Bird passed!',
                 'Nice jump!',
-                'Halfway marker!',
-                'Clean run!',
-                'Still moving!',
+                'Cactus cluster cleared!',
+                'Low bird passed!',
+                'Wide cactus cleared!',
+                'Clean dodge!',
                 'Almost there!',
                 'Final stretch!',
-                'T-Rex run complete!'
+                'Dino run complete!'
             ],
             moods: [
                 'Ready',
                 'Running',
-                'Steady',
-                'Focused',
+                'Jumping',
+                'Dodging',
                 'Fast',
                 'Halfway',
                 'Clean',
@@ -29,8 +30,8 @@
                 'Final Stretch',
                 'Complete'
             ],
-            treatsLabel: 'Checkpoints',
-            completeMessage: 'T-Rex run complete!'
+            treatsLabel: 'Obstacles',
+            completeMessage: 'Dino run complete!'
         },
         es: {
             messages: [
@@ -312,6 +313,7 @@
             this.messageEl = this.root.querySelector('[data-cat-message]');
             this.moodEl = this.root.querySelector('[data-cat-mood]');
             this.treatsEl = this.root.querySelector('[data-cat-treats]');
+            this.scoreEl = this.root.querySelector('[data-dino-score]');
 
             this.desktopTotalKeys = Math.max(Number(options.desktopTotalKeys) || 103, 1);
             this.mobileTotalKeys = Math.max(Number(options.mobileTotalKeys) || 42, 1);
@@ -382,6 +384,7 @@
 
             if (this.countEl) this.countEl.textContent = String(keysPressed);
             if (this.percentageEl) this.percentageEl.textContent = `${percentage}%`;
+            if (this.scoreEl) this.scoreEl.textContent = String(Math.min(keysPressed * 10, 99999)).padStart(5, '0');
 
             const catPosition = Math.min(percentage * 0.88, 88);
             this.catEl.style.left = `${catPosition}%`;
@@ -442,6 +445,7 @@
             const totalKeys = Math.max(Number(options.totalKeys) || this.desktopTotalKeys, 1);
             if (this.countEl) this.countEl.textContent = '0';
             if (this.percentageEl) this.percentageEl.textContent = '0%';
+            if (this.scoreEl) this.scoreEl.textContent = '00000';
             if (this.totalEl) this.totalEl.textContent = String(totalKeys);
 
             if (this.catEl) {
