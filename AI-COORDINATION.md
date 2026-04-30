@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, local Pac-Man movement fix)
+**Last updated:** 2026-04-30 (Codex, local Pac-Man viewport/fullscreen fix)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,8 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-30 (Codex)
+- Done locally only: Improved the standalone Pac-Man game screen behavior. Added a `Fullscreen` control, fullscreen-specific board layout CSS, and automatic vertical viewport follow so the page scrolls down/up to keep Pac-Man visible while playing on shorter screens.
+- Verified locally only: `C:\xampp\php\php.exe -l pacman-game.php` and `node --check assets/js/pacman-game.js` passed. Chrome headless tests with short desktop/mobile viewports confirmed auto-scroll activates while playing, fullscreen enters with the game stage filling the viewport, fullscreen exit resets the button label, no horizontal overflow, no console errors, and no failed HTTP responses. No live deploy was run.
 - Done locally only: Fixed the standalone `pacman-game.php` movement bug where Pac-Man could feel stuck after the first dot. Root cause was tile-center movement logic: the first pass depended on a loose center threshold and rounded the next tile target too early, causing repeated snap-back near a tile center.
 - Done locally only: Reworked `assets/js/pacman-game.js` movement to use direction-aware tile-center crossing (`floor`/`ceil` by direction), exact center snapping, tunnel-safe X normalization, and leftover frame movement so turns and forward movement are smoother. Also set the game board to its native 672px canvas width in `assets/css/pacman-game.css` to avoid non-integer desktop scaling jitter.
 - Verified locally only: `node --check assets/js/pacman-game.js`, `C:\xampp\php\php.exe -l pacman-game.php`, and Chrome headless desktop/mobile tests passed. Movement test confirmed score/dot counts keep updating through Left -> Up -> Right -> Down -> Right turns (`00050` to `00190`, dots `220` to `206`), no overlay lock, no horizontal overflow, no console errors, and no failed HTTP responses. No live deploy was run.

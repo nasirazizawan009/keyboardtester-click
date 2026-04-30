@@ -60,6 +60,7 @@ $pacmanJsHref = url('assets/js/pacman-game.js') . '?v=' . (is_file($pacmanJsPath
                 <p id="pacman-status">Ready</p>
                 <div class="pacman-option-row" aria-label="Game options">
                     <button type="button" class="pacman-chip" id="pacman-sound" aria-pressed="true">Sound On</button>
+                    <button type="button" class="pacman-chip" id="pacman-fullscreen">Fullscreen</button>
                     <button type="button" class="pacman-chip" id="pacman-palette">Palette Classic</button>
                     <button type="button" class="pacman-chip" id="pacman-speed">Speed Normal</button>
                 </div>

@@ -18,8 +18,10 @@
     const pauseBtn = document.getElementById('pacman-pause');
     const resetBtn = document.getElementById('pacman-reset');
     const soundBtn = document.getElementById('pacman-sound');
+    const fullscreenBtn = document.getElementById('pacman-fullscreen');
     const paletteBtn = document.getElementById('pacman-palette');
     const speedBtn = document.getElementById('pacman-speed');
+    const stageEl = document.querySelector('.pacman-stage');
 
     const TILE = 32;
     const MAP = [
@@ -92,7 +94,8 @@
         audio: null,
         paletteIndex: 0,
         speedIndex: 0,
-        deathFreeze: 0
+        deathFreeze: 0,
+        lastViewScroll: 0
     };
 
     const ghostDefs = [
@@ -242,6 +245,7 @@
         ensureAudio();
         beep(660, 0.05, 'square', 0.025);
         setStatus('Playing');
+        keepPlayerInView(true);
     }
 
     function pauseGame() {
@@ -412,6 +416,66 @@
         if (game.player) game.player.nextDir = dirName;
         if (game.mode === 'ready' || game.mode === 'paused') {
             startGame();
+        }
+        keepPlayerInView(true);
+    }
+
+    function isFullscreen() {
+        return !!document.fullscreenElement;
+    }
+
+    function supportsFullscreen() {
+        return !!(stageEl && stageEl.requestFullscreen && document.exitFullscreen);
+    }
+
+    function updateFullscreenButton() {
+        if (!fullscreenBtn) return;
+        if (!supportsFullscreen()) {
+            fullscreenBtn.textContent = 'Fullscreen N/A';
+            fullscreenBtn.disabled = true;
+            return;
+        }
+        fullscreenBtn.textContent = isFullscreen() ? 'Exit Fullscreen' : 'Fullscreen';
+        fullscreenBtn.setAttribute('aria-pressed', isFullscreen() ? 'true' : 'false');
+    }
+
+    async function toggleFullscreen() {
+        if (!supportsFullscreen()) return;
+        try {
+            if (isFullscreen()) {
+                await document.exitFullscreen();
+            } else {
+                await stageEl.requestFullscreen();
+            }
+            window.setTimeout(() => keepPlayerInView(true), 80);
+        } catch (error) {
+            setStatus('Fullscreen blocked by browser');
+        }
+    }
+
+    function keepPlayerInView(force = false) {
+        if (!game.player || !canvas || isFullscreen()) return;
+
+        const now = performance.now();
+        if (!force && now - game.lastViewScroll < 110) return;
+
+        const rect = canvas.getBoundingClientRect();
+        if (rect.height <= 0) return;
+
+        const playerScreenY = rect.top + (game.player.y / ROWS) * rect.height;
+        const topSafe = Math.max(112, Math.min(180, window.innerHeight * 0.28));
+        const bottomSafe = window.innerHeight - Math.max(118, Math.min(190, window.innerHeight * 0.26));
+        let delta = 0;
+
+        if (playerScreenY > bottomSafe) {
+            delta = playerScreenY - bottomSafe;
+        } else if (playerScreenY < topSafe) {
+            delta = playerScreenY - topSafe;
+        }
+
+        if (Math.abs(delta) >= 10) {
+            window.scrollBy({ top: delta, left: 0, behavior: 'auto' });
+            game.lastViewScroll = now;
         }
     }
 
@@ -745,6 +809,7 @@
         game.lastTime = time;
         update(delta);
         draw();
+        if (game.mode === 'playing') keepPlayerInView();
         window.requestAnimationFrame(frame);
     }
 
@@ -840,10 +905,15 @@
                 setSpeedLabel();
             });
         }
+        if (fullscreenBtn) {
+            fullscreenBtn.addEventListener('click', toggleFullscreen);
+        }
+        document.addEventListener('fullscreenchange', updateFullscreenButton);
     }
 
     setPalette();
     setSpeedLabel();
+    updateFullscreenButton();
     bindControls();
     resetGame();
     window.requestAnimationFrame(frame);
