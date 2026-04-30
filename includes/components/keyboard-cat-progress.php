@@ -20,6 +20,7 @@ if ($catProgressTotalKeys < 1) {
 <div class="cat-progress-section" id="<?php echo htmlspecialchars($catProgressId, ENT_QUOTES, 'UTF-8'); ?>">
     <div class="cat-progress-container">
         <div class="cat-progress-track">
+            <a class="arcade-full-game-link" href="<?php echo htmlspecialchars(function_exists('url') ? url('pacman-game.php') : '/pacman-game.php', ENT_QUOTES, 'UTF-8'); ?>">Full game</a>
             <div class="arcade-score" data-arcade-score aria-hidden="true">SCORE 00000</div>
             <div class="maze-rail maze-rail-top" aria-hidden="true"></div>
             <div class="maze-rail maze-rail-bottom" aria-hidden="true"></div>

@@ -1,0 +1,278 @@
+.pacman-game-page {
+    background: #050510;
+    color: #f8fbff;
+}
+
+.pacman-page-shell {
+    width: min(1180px, calc(100% - 28px));
+    margin: 0 auto;
+    padding: 28px 0 52px;
+}
+
+.pacman-hero {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 0 20px;
+}
+
+.pacman-kicker {
+    margin: 0 0 8px;
+    color: #2de2e6;
+    font-family: "Courier New", monospace;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.pacman-hero h1 {
+    margin: 0;
+    color: #ffd21f;
+    font-family: "Courier New", monospace;
+    font-size: clamp(2rem, 5vw, 4.4rem);
+    line-height: 1;
+    text-shadow: 0 0 18px rgba(255, 210, 31, 0.5);
+}
+
+.pacman-lede {
+    max-width: 680px;
+    margin: 12px 0 0;
+    color: #c9d4ff;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.pacman-top-actions,
+.pacman-option-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pacman-btn,
+.pacman-chip {
+    border: 1px solid #2459ff;
+    background: #081a52;
+    color: #ffffff;
+    font-family: "Courier New", monospace;
+    font-weight: 800;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+
+.pacman-btn {
+    min-width: 92px;
+    padding: 12px 15px;
+}
+
+.pacman-btn:hover,
+.pacman-chip:hover {
+    border-color: #ffd21f;
+    background: #102b82;
+    transform: translateY(-1px);
+}
+
+.pacman-btn-secondary {
+    background: #0a1028;
+}
+
+.pacman-chip {
+    padding: 8px 10px;
+    font-size: 0.76rem;
+}
+
+.pacman-stage {
+    border: 2px solid #2459ff;
+    background:
+        radial-gradient(circle at 12% 8%, rgba(255, 210, 31, 0.09), transparent 22%),
+        linear-gradient(180deg, #080819 0%, #03030b 100%);
+    box-shadow:
+        0 0 0 1px rgba(45, 226, 230, 0.18),
+        0 22px 70px rgba(0, 0, 0, 0.42),
+        inset 0 0 28px rgba(36, 89, 255, 0.16);
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.pacman-hud {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(92px, 1fr));
+    gap: 10px;
+    margin-bottom: 14px;
+    font-family: "Courier New", monospace;
+}
+
+.pacman-hud span {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 9px 10px;
+    background: rgba(5, 5, 16, 0.88);
+    border: 1px solid rgba(36, 89, 255, 0.55);
+    border-radius: 6px;
+    color: #c9d4ff;
+    font-size: 0.82rem;
+    white-space: nowrap;
+}
+
+.pacman-hud strong {
+    color: #ffd21f;
+    font-weight: 900;
+}
+
+.pacman-board-wrap {
+    position: relative;
+    width: min(100%, 760px);
+    margin: 0 auto;
+    aspect-ratio: 21 / 23;
+    background: #000;
+    border: 1px solid rgba(45, 226, 230, 0.36);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 26px rgba(36, 89, 255, 0.32);
+}
+
+#pacman-board {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    background: #000;
+}
+
+.pacman-overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    gap: 9px;
+    background: rgba(0, 0, 0, 0.62);
+    color: #ffd21f;
+    font-family: "Courier New", monospace;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.16s ease, visibility 0.16s ease;
+    pointer-events: none;
+}
+
+.pacman-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pacman-overlay-title {
+    font-size: clamp(1.7rem, 5vw, 3.7rem);
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-shadow: 0 0 18px rgba(255, 210, 31, 0.8);
+}
+
+.pacman-overlay-text {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.pacman-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.pacman-status-row p {
+    margin: 0;
+    color: #2de2e6;
+    font-family: "Courier New", monospace;
+    font-weight: 800;
+}
+
+.pacman-touch-controls {
+    display: none;
+    grid-template-columns: repeat(3, 64px);
+    grid-template-areas:
+        ". up ."
+        "left down right";
+    justify-content: center;
+    gap: 9px;
+    margin-top: 16px;
+}
+
+.pacman-touch-controls button {
+    min-height: 46px;
+    border: 1px solid #2459ff;
+    border-radius: 6px;
+    background: #081a52;
+    color: #fff;
+    font-family: "Courier New", monospace;
+    font-weight: 800;
+}
+
+.pacman-touch-controls [data-dir="up"] { grid-area: up; }
+.pacman-touch-controls [data-dir="left"] { grid-area: left; }
+.pacman-touch-controls [data-dir="right"] { grid-area: right; }
+.pacman-touch-controls [data-dir="down"] { grid-area: down; }
+
+.pacman-game-page[data-palette="neon"] .pacman-stage {
+    border-color: #ff6bd6;
+    box-shadow: 0 0 0 1px rgba(255, 107, 214, 0.2), 0 22px 70px rgba(0, 0, 0, 0.42), inset 0 0 32px rgba(255, 107, 214, 0.16);
+}
+
+.pacman-game-page[data-palette="amber"] .pacman-stage {
+    border-color: #ff9f1c;
+    box-shadow: 0 0 0 1px rgba(255, 159, 28, 0.2), 0 22px 70px rgba(0, 0, 0, 0.42), inset 0 0 32px rgba(255, 159, 28, 0.16);
+}
+
+@media (max-width: 780px) {
+    .pacman-page-shell {
+        width: min(100% - 16px, 760px);
+        padding-top: 18px;
+    }
+
+    .pacman-hero {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .pacman-stage {
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .pacman-hud {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pacman-status-row {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .pacman-touch-controls {
+        display: grid;
+    }
+}
+
+@media (max-width: 420px) {
+    .pacman-hud span {
+        font-size: 0.72rem;
+        padding: 8px;
+    }
+
+    .pacman-top-actions,
+    .pacman-option-row {
+        width: 100%;
+    }
+
+    .pacman-btn,
+    .pacman-chip {
+        flex: 1 1 auto;
+    }
+}

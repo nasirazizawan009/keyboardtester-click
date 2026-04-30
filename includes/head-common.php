@@ -12,6 +12,7 @@ $loadBootstrapCss = $loadBootstrapCss ?? true;
 $loadBootstrapJs = $loadBootstrapJs ?? $loadBootstrapCss;
 $loadMobileToolAdapters = $loadMobileToolAdapters ?? true;
 $preconnectJsdelivr = $preconnectJsdelivr ?? ($loadBootstrapCss || $loadBootstrapJs);
+$loadAdSense = $loadAdSense ?? true;
 $headRobots = null;
 $headCanonical = null;
 
@@ -124,6 +125,7 @@ if (empty($hreflangEmitted) && !empty($_SERVER['SCRIPT_FILENAME'])) {
 <link rel="dns-prefetch" href="https://www.clarity.ms">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
+<?php if ($loadAdSense): ?>
 <!-- Google AdSense (interaction-triggered: skipped by PageSpeed lab, loads on real user scroll/click) -->
 <script>
 (function() {
@@ -152,6 +154,7 @@ if (empty($hreflangEmitted) && !empty($_SERVER['SCRIPT_FILENAME'])) {
     window.addEventListener('load', function() { setTimeout(loadAds, 5000); });
 })();
 </script>
+<?php endif; ?>
 
 <!-- Inter font: async + metric overrides = no render-blocking AND no CLS -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=optional" onload="this.onload=null;this.rel='stylesheet'">
@@ -224,10 +227,16 @@ a{color:inherit;text-decoration:none}
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="KeyboardTester">
 <link rel="apple-touch-icon" href="<?php echo $basePath; ?>navigation.png">
+<?php
+$serviceWorkerUrl = function_exists('url') ? url('sw.js') : $basePath . 'sw.js';
+$serviceWorkerScope = function_exists('url') ? url('') : '/';
+?>
 <script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function(){
-        navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function(){});
+        navigator.serviceWorker.register(<?php echo json_encode($serviceWorkerUrl); ?>, {
+            scope: <?php echo json_encode($serviceWorkerScope); ?>
+        }).catch(function(){});
     });
 }
 </script>

@@ -54,6 +54,36 @@
     text-shadow: 0 0 8px rgba(45, 226, 230, 0.55);
 }
 
+.arcade-full-game-link {
+    position: absolute;
+    top: 7px;
+    left: 13px;
+    z-index: 8;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 22px;
+    padding: 3px 8px;
+    border: 1px solid rgba(255, 210, 31, 0.74);
+    border-radius: 999px;
+    background: rgba(5, 5, 16, 0.78);
+    color: var(--arcade-yellow);
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(255, 210, 31, 0.2);
+}
+
+.arcade-full-game-link:hover {
+    color: #050510;
+    background: var(--arcade-yellow);
+    text-decoration: none;
+}
+
 .maze-rail {
     position: absolute;
     left: 14px;

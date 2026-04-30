@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, local localized history entry fix)
+**Last updated:** 2026-04-30 (Codex, local full arcade maze game)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,10 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-30 (Codex)
+- Done locally only: Added `pacman-game.php` plus `assets/css/pacman-game.css` and `assets/js/pacman-game.js` as a full playable retro maze chomp game with pellets, power pellets, chase/scatter ghost behavior, frightened/eaten ghost states, fruit bonus, scoring, high score, lives, levels, pause/reset, sound toggle, palette toggle, speed toggle, keyboard controls, swipe controls, and mobile touch buttons.
+- Done locally only: Added a `Full game` link to the existing keyboard Pac-Man progress strip so users can open the standalone game page from the keyboard tester.
+- Done locally only: Updated `includes/head-common.php` so local service-worker registration uses the configured base URL (`/kbt/sw.js` locally, `/sw.js` live) and added a page-level AdSense opt-out used by the local noindex game page for clean gameplay/browser validation. No live deploy was run.
+- Verified locally only: `pacman-game.php`, `includes/head-common.php`, and `includes/components/keyboard-cat-progress.php` passed PHP lint; `assets/js/pacman-game.js` and `assets/js/keyboard-cat-progress.js` passed `node --check`; Chrome headless tests on desktop and mobile confirmed the canvas renders, Start begins play, score/dot counts update after movement, palette/speed controls work, the mini-strip `Full game` link points to `/kbt/pacman-game.php`, there is no horizontal overflow, and there are no console errors or failed HTTP responses.
 - Done locally only: Added `assets/js/localized-keyboard-history.js` and wired it into all 8 localized keyboard pages so the history textarea records the character from the selected language layout instead of relying on the browser/OS `event.key` value. This covers physical key presses and on-screen key clicks.
 - Done locally only: Corrected German QWERTZ `Y`/`Z` `data-key` wiring so physical `KeyY` records/highlights `Z` and physical `KeyZ` records/highlights `Y`.
 - Verified locally only: Browser tests confirmed localized history output for Arabic (`ض`, `١`), French (`A`, `é`), German (`Z`, `Y`, `ß`), Japanese (`た`, `ぬ`), Korean (`ㅂ`, shifted `ㅃ`/`ㅒ`), Portuguese (`Ç`, `Espaço`), Russian (`Й`, `Б`), and Spanish (`Ñ`, `¡`, shifted `¿`). On-screen key click tests also passed for representative localized keys in all 8 languages. No live deploy was run.
