@@ -288,6 +288,25 @@
 .keyboard-tester .key-shift-right { width: 180px !important; min-width: 180px !important; }
 .keyboard-tester .key-space { width: 420px !important; min-width: 420px !important; }
 
+.keyboard-tester .jis-layout .key-enter-jis {
+    width: 128px !important;
+    min-width: 128px !important;
+    height: 128px !important;
+    min-height: 128px !important;
+    margin-bottom: -68px !important;
+    z-index: 3;
+}
+
+.keyboard-tester .jis-layout .key-shift-right-jis {
+    width: 166px !important;
+    min-width: 166px !important;
+}
+
+.keyboard-tester .jis-layout .key-space-jis {
+    width: 257px !important;
+    min-width: 257px !important;
+}
+
 .keyboard-tester[data-os="mac"] [data-key="ControlLeft"] { order: 1; }
 .keyboard-tester[data-os="mac"] [data-key="AltLeft"] { order: 2; }
 .keyboard-tester[data-os="mac"] [data-key="MetaLeft"] { order: 3; }
