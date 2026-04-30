@@ -291,10 +291,9 @@
 .keyboard-tester .jis-layout .key-enter-jis {
     width: 128px !important;
     min-width: 128px !important;
-    height: 128px !important;
-    min-height: 128px !important;
-    margin-bottom: -68px !important;
-    z-index: 3;
+    height: 60px !important;
+    min-height: 60px !important;
+    margin-bottom: 0 !important;
 }
 
 .keyboard-tester .jis-layout .key-shift-right-jis {

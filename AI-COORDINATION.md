@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, local Japanese JIS keyboard layout fix)
+**Last updated:** 2026-04-30 (Codex, local Japanese Enter overlap fix)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,9 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-30 (Codex)
+- Done locally only: Corrected the follow-up Japanese JIS Enter overlap by removing the tall negative-margin Enter override in `assets/css/localized-keyboard-visual.css`; Enter remains wide for the JIS row but no longer draws over the next row.
+- Verified locally only: Headless Chrome overlap check found zero Japanese Enter/key intersections after the fix. Reconfirmed all 8 localized keyboard pages return HTTP 200 and include the shared visual CSS. No live deploy was run.
+- Verified locally only: `C:\xampp\php\php.exe -l` passed for all 8 localized `languages/*/sections/tool.php` files, and `git diff --check` passed.
 - Done locally only: Fixed the Japanese JIS keyboard layout in `assets/css/localized-keyboard-visual.css` so the shared localized visual theme preserves JIS-specific Enter, right Shift, and Space widths instead of collapsing them to the standard key size.
 - Verified locally only: Headless Chrome layout metrics confirmed Japanese number, Q, Shift, and bottom rows now share the same right edge after scaling; a screenshot pass confirmed the tall JIS Enter key renders correctly. Reconfirmed all 8 localized keyboard pages return HTTP 200 and include the shared visual CSS. No live deploy was run.
 - Verified locally only: `C:\xampp\php\php.exe -l` passed for all 8 localized `languages/*/sections/tool.php` files, and `git diff --check` passed.
