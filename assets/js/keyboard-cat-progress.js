@@ -337,6 +337,7 @@
                 : (this.messages[10] || runnerText.completeMessage);
 
             this.lastLevels = { desktop: 0, mobile: 0 };
+            this.lastCycles = { desktop: 0, mobile: 0 };
             this.completed = false;
             this.setDisplayMode(false, this.desktopTotalKeys);
             this.reset({ totalKeys: this.desktopTotalKeys });
@@ -553,17 +554,53 @@
             }
         }
 
+        getCycleState(totalPresses, totalKeys) {
+            const rawPresses = Math.max(0, Number(totalPresses) || 0);
+            if (rawPresses === 0) {
+                return { rawPresses: 0, cycle: 0, cyclePresses: 0 };
+            }
+
+            return {
+                rawPresses,
+                cycle: Math.floor((rawPresses - 1) / totalKeys),
+                cyclePresses: ((rawPresses - 1) % totalKeys) + 1
+            };
+        }
+
+        resetCycleVisuals(mode) {
+            this.root.querySelectorAll('.treat').forEach((treat) => {
+                treat.classList.remove('eaten', 'eating');
+            });
+            this.root.querySelectorAll('.sparkle').forEach((sparkle) => sparkle.remove());
+
+            this.lastLevels[mode] = 0;
+            this.completed = false;
+            if (this.catEl) {
+                this.catEl.setAttribute('data-level', '0');
+                this.catEl.classList.remove('eating', 'show-message');
+            }
+            if (this.messageEl) this.messageEl.textContent = this.messages[0];
+            if (this.moodEl) this.moodEl.textContent = this.moods[0];
+            if (this.treatsEl) this.treatsEl.textContent = `${this.treatsLabel}: 0/10`;
+        }
+
         update(options) {
             if (!this.catEl) return;
 
             const mode = options && options.mode === 'mobile' ? 'mobile' : 'desktop';
             const totalKeys = Math.max(Number(options && options.totalKeys) || this.desktopTotalKeys, 1);
-            const keysPressed = Math.max(0, Number(options && options.keysPressed) || 0);
+            const cycleState = this.getCycleState(options && options.keysPressed, totalKeys);
+            const keysPressed = cycleState.cyclePresses;
             const percentage = Math.round((Math.min(keysPressed, totalKeys) / totalKeys) * 100);
 
-            if (this.countEl) this.countEl.textContent = String(keysPressed);
+            if (cycleState.cycle !== this.lastCycles[mode]) {
+                this.resetCycleVisuals(mode);
+                this.lastCycles[mode] = cycleState.cycle;
+            }
+
+            if (this.countEl) this.countEl.textContent = String(cycleState.rawPresses);
             if (this.percentageEl) this.percentageEl.textContent = `${percentage}%`;
-            if (this.scoreEl) this.scoreEl.textContent = `SCORE ${String(Math.min(keysPressed * 10, 99999)).padStart(5, '0')}`;
+            if (this.scoreEl) this.scoreEl.textContent = `SCORE ${String(Math.min(cycleState.rawPresses * 10, 99999)).padStart(5, '0')}`;
             this.root.style.setProperty('--maze-eaten', `${Math.min(percentage, 100)}%`);
 
             const catPosition = Math.min(this.getStartPosition() + percentage * (this.getTravelRange() / 100), 88);
@@ -645,6 +682,8 @@
 
             this.lastLevels.desktop = 0;
             this.lastLevels.mobile = 0;
+            this.lastCycles.desktop = 0;
+            this.lastCycles.mobile = 0;
             this.completed = false;
             this.setupEnemies();
         }

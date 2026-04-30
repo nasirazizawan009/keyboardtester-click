@@ -2132,8 +2132,9 @@ html:not(.dark-theme) .info-text,
     }
 
     function updateProgressBar() {
-        const keysPressed = Object.keys(keyPressCount).length;
-        const percentage = Math.round((keysPressed / TOTAL_KEYS) * 100);
+        const keysPressed = totalKeyPresses;
+        const cycleKeys = keysPressed === 0 ? 0 : ((keysPressed - 1) % TOTAL_KEYS) + 1;
+        const percentage = Math.round((cycleKeys / TOTAL_KEYS) * 100);
 
         if (catProgress) {
             catProgress.update({
@@ -2156,18 +2157,19 @@ html:not(.dark-theme) .info-text,
         setCatProgressFallback(0, 0, totalKeys);
     }
 
-    function updateMobileCatProgress(uniqueKeys) {
+    function updateMobileCatProgress(totalPresses) {
         if (catProgress) {
             catProgress.update({
                 mode: 'mobile',
-                keysPressed: uniqueKeys,
+                keysPressed: totalPresses,
                 totalKeys: MOBILE_TOTAL_KEYS
             });
             return;
         }
 
-        const percentage = Math.round((uniqueKeys / MOBILE_TOTAL_KEYS) * 100);
-        setCatProgressFallback(uniqueKeys, percentage, MOBILE_TOTAL_KEYS);
+        const cycleKeys = totalPresses === 0 ? 0 : ((totalPresses - 1) % MOBILE_TOTAL_KEYS) + 1;
+        const percentage = Math.round((cycleKeys / MOBILE_TOTAL_KEYS) * 100);
+        setCatProgressFallback(totalPresses, percentage, MOBILE_TOTAL_KEYS);
     }
     function updateStatistics() {
         const keysPressed = Object.keys(keyPressCount).length;
@@ -2686,7 +2688,7 @@ html:not(.dark-theme) .info-text,
                 }
 
                 // Update runner progress animation (based on mobile keys)
-                updateMobileCatProgress(uniqueCount);
+                updateMobileCatProgress(mobileTotalChars);
             }
         });
 
@@ -2705,7 +2707,7 @@ html:not(.dark-theme) .info-text,
                     const uniqueCount = Object.keys(mobileKeyPresses).length;
                     mobileUniqueKeys.textContent = `${uniqueCount}/${MOBILE_TOTAL_KEYS}`;
 
-                    updateMobileCatProgress(uniqueCount);
+                    updateMobileCatProgress(mobileTotalChars);
                 }
             }
         });
@@ -2735,12 +2737,11 @@ html:not(.dark-theme) .info-text,
         if (!force && lastMobileDisplayMode === isMobile) return;
         lastMobileDisplayMode = isMobile;
         const activeTotal = isMobile ? MOBILE_TOTAL_KEYS : TOTAL_KEYS;
-        const mobileUniqueCount = Object.keys(mobileKeyPresses).length;
 
         if (catProgress) {
             catProgress.setDisplayMode(isMobile, activeTotal);
             if (isMobile) {
-                updateMobileCatProgress(mobileUniqueCount);
+                updateMobileCatProgress(mobileTotalChars);
             } else {
                 updateProgressBar();
             }
@@ -2748,8 +2749,9 @@ html:not(.dark-theme) .info-text,
         }
 
         if (isMobile) {
-            const mobilePercentage = Math.round((mobileUniqueCount / MOBILE_TOTAL_KEYS) * 100);
-            setCatProgressFallback(mobileUniqueCount, mobilePercentage, activeTotal);
+            const cycleKeys = mobileTotalChars === 0 ? 0 : ((mobileTotalChars - 1) % MOBILE_TOTAL_KEYS) + 1;
+            const mobilePercentage = Math.round((cycleKeys / MOBILE_TOTAL_KEYS) * 100);
+            setCatProgressFallback(mobileTotalChars, mobilePercentage, activeTotal);
             return;
         }
 

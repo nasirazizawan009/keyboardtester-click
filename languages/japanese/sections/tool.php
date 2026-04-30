@@ -726,7 +726,7 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
     function startTimer() { if (state.sessionTimer) return; state.sessionStart = Date.now(); state.sessionTimer = setInterval(() => { const elapsed = Math.floor((Date.now() - state.sessionStart) / 1000); const m = Math.floor(elapsed / 60).toString().padStart(2, '0'); const s = (elapsed % 60).toString().padStart(2, '0'); if ($('session-time')) $('session-time').textContent = `${m}:${s}`; }, 1000); }
     function updateStats() { if ($('total-keys')) $('total-keys').textContent = state.totalPresses; if ($('keys-tested')) $('keys-tested').textContent = `${state.uniqueKeys.size}/${TOTAL_KEYS}`; let maxKey = null, maxCount = 0; for (const [key, count] of Object.entries(state.keyPressCount)) { if (count > maxCount) { maxCount = count; maxKey = key; } } if ($('most-pressed') && maxKey) $('most-pressed').textContent = `${maxKey} (${maxCount})`; if (state.latencyData.length > 0) { const avg = Math.round(state.latencyData.reduce((a, b) => a + b, 0) / state.latencyData.length); if ($('avg-latency')) $('avg-latency').textContent = avg + ' ms'; if ($('min-latency')) $('min-latency').textContent = Math.min(...state.latencyData) + ' ms'; if ($('max-latency')) $('max-latency').textContent = Math.max(...state.latencyData) + ' ms'; } }
 
-        function updateCatProgress() { if (!catProgress) return; catProgress.update({ keysPressed: state.uniqueKeys.size, totalKeys: TOTAL_KEYS }); }
+        function updateCatProgress() { if (!catProgress) return; catProgress.update({ keysPressed: state.totalPresses, totalKeys: TOTAL_KEYS }); }
 
     function resetCatProgress() { if (!catProgress) return; catProgress.reset({ totalKeys: TOTAL_KEYS }); }
 function handleKeyDown(e) {

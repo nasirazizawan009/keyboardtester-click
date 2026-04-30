@@ -1237,7 +1237,7 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
     function updateCatProgress() {
         if (!catProgress) return;
         catProgress.update({
-            keysPressed: state.uniqueKeys.size,
+            keysPressed: state.totalPresses,
             totalKeys: TOTAL_KEYS
         });
     }

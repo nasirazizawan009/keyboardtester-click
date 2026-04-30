@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, local localized keyboard visual sync)
+**Last updated:** 2026-04-30 (Codex, local Pac-Man repeat-press looping)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,8 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-30 (Codex)
+- Done locally only: Updated the shared Pac-Man keyboard progress game so repeated presses of the same key advance Pac-Man. The component now uses total press count for movement, loops back to the start after one full keyboard-length run, clears dots/pellets for the new cycle, and keeps the cumulative score increasing.
+- Verified locally only: `node --check` passed for `assets/js/keyboard-cat-progress.js` and `.min.js`; PHP lint passed for English plus all 8 localized keyboard sections; headless Chrome confirmed repeated `KeyA` presses move Pac-Man from 1% to 5%, reach 100% at 103 English presses, then restart at 1% on press 104, with Spanish repeated presses also advancing. No live deploy was run.
 - Done locally only: Synced the 8 localized desktop keyboard sections (`languages/*/sections/tool.php`) to the current English dark-key/light-deck visual format by adding shared `assets/css/localized-keyboard-visual.css` and loading it after each language section's inline keyboard CSS.
 - Verified locally only: XAMPP routes for all 8 language pages return HTTP 200 and include the new CSS; `C:\xampp\php\php.exe -l` passed for all 8 localized `sections/tool.php` files; headless Chrome checks confirmed all localized keyboards use the English dimensions (`60px` keys, `36px` layout gap, corrected function-row gap, light deck background) and active key colors still render. No live deploy was run.
 - Done: Refreshed the local-only English desktop keyboard tester visual in `tools/keyboard_tester_english.php` to match the dark-key/light-deck full keyboard reference more closely.
