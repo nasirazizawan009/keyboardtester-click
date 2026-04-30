@@ -289,11 +289,13 @@
 .keyboard-tester .key-space { width: 420px !important; min-width: 420px !important; }
 
 .keyboard-tester .jis-layout .key-enter-jis {
-    width: 128px !important;
-    min-width: 128px !important;
-    height: 60px !important;
-    min-height: 60px !important;
-    margin-bottom: 0 !important;
+    width: 114px !important;
+    min-width: 114px !important;
+    height: 128px !important;
+    min-height: 128px !important;
+    margin-left: 14px !important;
+    margin-bottom: -68px !important;
+    z-index: 3;
 }
 
 .keyboard-tester .jis-layout .key-shift-right-jis {
