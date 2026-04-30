@@ -1,5 +1,6 @@
 .cat-progress-section {
     --arcade-bg: #050510;
+    --maze-eaten: 0%;
     --arcade-wall: #2459ff;
     --arcade-wall-soft: rgba(36, 89, 255, 0.36);
     --arcade-dot: #ffe7a3;
@@ -89,6 +90,17 @@
     opacity: 0.9;
     z-index: 1;
     pointer-events: none;
+}
+
+.maze-dots::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    bottom: -2px;
+    width: var(--maze-eaten);
+    background: linear-gradient(180deg, #070716 0%, var(--arcade-bg) 100%);
+    box-shadow: 8px 0 12px rgba(5, 5, 16, 0.85);
 }
 
 .treat {
@@ -209,24 +221,36 @@
     position: absolute;
     inset: 3px;
     border-radius: 50%;
-    background: conic-gradient(from 36deg, transparent 0 70deg, var(--arcade-yellow) 70deg 360deg);
-    box-shadow: 0 0 16px rgba(255, 210, 31, 0.78);
+    background:
+        radial-gradient(circle at 34% 28%, rgba(255, 255, 185, 0.95) 0 8%, transparent 9%),
+        radial-gradient(circle at 35% 36%, #ffe66f 0 0, var(--arcade-yellow) 50%, #f2a900 100%);
+    box-shadow: 0 0 18px rgba(255, 210, 31, 0.82), inset -5px -5px 0 rgba(197, 125, 0, 0.45);
+}
+
+.arcade-chomper::before {
+    content: "";
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    width: 54%;
+    height: 62%;
+    background: var(--arcade-bg);
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    transform: translateY(-50%) scaleY(1);
+    transform-origin: right center;
+    animation: chomperMouth 0.24s steps(2, end) infinite;
 }
 
 .arcade-chomper::after {
     content: "";
     position: absolute;
-    right: 11px;
+    right: 13px;
     top: 8px;
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: #111827;
-}
-
-.progress-cat.walking .arcade-chomper,
-.progress-cat.eating .arcade-chomper {
-    animation: chomperMouth 0.22s steps(2, end) infinite;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
 
 .progress-cat.eating .cat-body {
@@ -238,12 +262,8 @@
 }
 
 @keyframes chomperMouth {
-    0%, 100% {
-        background: conic-gradient(from 36deg, transparent 0 70deg, var(--arcade-yellow) 70deg 360deg);
-    }
-    50% {
-        background: conic-gradient(from 12deg, transparent 0 24deg, var(--arcade-yellow) 24deg 360deg);
-    }
+    0%, 100% { transform: translateY(-50%) scaleY(1); }
+    50% { transform: translateY(-50%) scaleY(0.12); }
 }
 
 @keyframes chomperPulse {
@@ -320,9 +340,8 @@
     100% { transform: translate(-14px, -12px) scale(0.15); opacity: 0; }
 }
 
-@media (hover: none) and (pointer: coarse), (prefers-reduced-motion: reduce) {
-    .progress-cat.walking .arcade-chomper,
-    .progress-cat.eating .arcade-chomper,
+@media (prefers-reduced-motion: reduce) {
+    .arcade-chomper::before,
     .progress-cat.eating .cat-body,
     .progress-cat[data-level="10"] .arcade-chomper {
         animation: none;

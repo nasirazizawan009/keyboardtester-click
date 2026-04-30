@@ -385,6 +385,7 @@
             if (this.countEl) this.countEl.textContent = String(keysPressed);
             if (this.percentageEl) this.percentageEl.textContent = `${percentage}%`;
             if (this.scoreEl) this.scoreEl.textContent = `SCORE ${String(Math.min(keysPressed * 10, 99999)).padStart(5, '0')}`;
+            this.root.style.setProperty('--maze-eaten', `${Math.min(percentage, 100)}%`);
 
             const catPosition = Math.min(percentage * 0.88, 88);
             this.catEl.style.left = `${catPosition}%`;
@@ -447,6 +448,7 @@
             if (this.percentageEl) this.percentageEl.textContent = '0%';
             if (this.scoreEl) this.scoreEl.textContent = 'SCORE 00000';
             if (this.totalEl) this.totalEl.textContent = String(totalKeys);
+            this.root.style.setProperty('--maze-eaten', '0%');
 
             if (this.catEl) {
                 this.catEl.style.left = '0%';

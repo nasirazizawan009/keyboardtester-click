@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, local arcade maze progress visual)
+**Last updated:** 2026-04-30 (Codex, local arcade maze dot-eating refinement)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -91,6 +91,8 @@ This file is the **single source of truth** when handing off work between AI age
 - Verified locally only: PHP lint, JS syntax check, regenerated `keyboard-cat-progress.min.css`, desktop/mobile Playwright checks confirmed the sprite images load, old CSS shape selectors are gone, no failed image requests, and no horizontal overflow. No live deploy was run.
 - Done: Replaced the whole rejected Chrome Dino progress concept with a local-only Pac-Man-style arcade maze: yellow chomper, maze rails, score label, dots, power pellets, and colored ghosts. Removed the now-unused `images/keyboard/dino-game/` sprite assets.
 - Verified locally only: PHP lint, JS syntax check, regenerated `keyboard-cat-progress.min.css` and `keyboard-cat-progress.min.js`, and desktop/mobile Playwright checks confirmed the chomper, ghosts, pellets, score label, and no old Dino selectors render without horizontal overflow. No live deploy was run.
+- Done: Improved the local Pac-Man progress visual with a cleaner yellow chomper, continuous mouth animation, and a progress-driven `--maze-eaten` lane so dots disappear behind the chomper as keys are tested.
+- Verified locally only: PHP lint, JS syntax check, regenerated minified CSS/JS, no old Dino selectors in active progress assets, and desktop/mobile Playwright checks confirmed continuous mouth animation, dot clearing, score/dot count updates, and no horizontal overflow. No live deploy was run.
 
 - Done: Fixed failing GitHub Actions `awesome-lint.yml` check on `nasirazizawan009/awesome-device-testing-tools` after commit `02a607f` rewrote `README.md`.
 - Root cause: `README.md` removed the required Awesome badge and added a forbidden `## License` section; `awesome-lint` requires the badge and does not allow a README license section when a `LICENSE` file exists.
