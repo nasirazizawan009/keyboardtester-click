@@ -4,17 +4,17 @@
     const CAT_TEXT = {
         en: {
             messages: [
-                'Press keys to start the run!',
-                'Checkpoint cleared!',
+                'Press keys to start the T-Rex run!',
+                'Cactus cleared!',
                 'Keep running!',
-                'Grass patch cleared!',
-                'Nice pace!',
+                'Trail marker cleared!',
+                'Nice jump!',
                 'Halfway marker!',
-                'Clean stride!',
+                'Clean run!',
                 'Still moving!',
                 'Almost there!',
                 'Final stretch!',
-                'Run complete!'
+                'T-Rex run complete!'
             ],
             moods: [
                 'Ready',
@@ -30,7 +30,7 @@
                 'Complete'
             ],
             treatsLabel: 'Checkpoints',
-            completeMessage: 'Run complete!'
+            completeMessage: 'T-Rex run complete!'
         },
         es: {
             messages: [

@@ -1,9 +1,7 @@
 .cat-progress-section {
-    --runner-bg: #f8fafc;
-    --runner-ink: #25272b;
-    --runner-muted: #6b7280;
-    --runner-line: #2f3338;
-    --runner-soft: rgba(37, 39, 43, 0.12);
+    --runner-bg: #f7f7f7;
+    --runner-ink: #2f3135;
+    --runner-muted: #6f7378;
     --runner-badge-bg: #111827;
     --runner-badge-text: #f9fafb;
     background: transparent;
@@ -36,11 +34,11 @@
 
 .cat-progress-track {
     position: relative;
-    height: 76px;
+    height: 64px;
     background: var(--runner-bg);
-    border-radius: 18px;
-    border: 1px solid rgba(15, 23, 42, 0.12);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.82), 0 10px 24px rgba(15, 23, 42, 0.12);
+    border-radius: 14px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
     overflow: hidden;
 }
 
@@ -49,84 +47,55 @@
     position: absolute;
     left: 18px;
     right: 18px;
-    bottom: 20px;
+    bottom: 18px;
     height: 2px;
-    background: var(--runner-line);
+    background: var(--runner-ink);
     z-index: 2;
 }
 
 .cat-progress-track::after {
     content: "";
     position: absolute;
-    left: 18px;
-    right: 18px;
-    bottom: 14px;
-    height: 9px;
+    left: 24px;
+    right: 24px;
+    bottom: 11px;
+    height: 7px;
     background:
-        repeating-linear-gradient(90deg, transparent 0 18px, var(--runner-line) 18px 28px, transparent 28px 54px),
-        repeating-linear-gradient(90deg, transparent 0 74px, var(--runner-line) 74px 77px, transparent 77px 112px);
+        repeating-linear-gradient(90deg, var(--runner-ink) 0 9px, transparent 9px 58px),
+        repeating-linear-gradient(90deg, transparent 0 96px, var(--runner-ink) 96px 99px, transparent 99px 130px);
     opacity: 0.55;
     z-index: 1;
     pointer-events: none;
 }
-
-.runner-cloud {
-    position: absolute;
-    top: 15px;
-    width: 38px;
-    height: 13px;
-    border: 2px solid var(--runner-muted);
-    border-left-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-radius: 999px;
-    opacity: 0.55;
-    z-index: 1;
-}
-
-.runner-cloud::before,
-.runner-cloud::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 10px;
-    height: 8px;
-    border-top: 2px solid var(--runner-muted);
-    border-radius: 999px 999px 0 0;
-}
-
-.runner-cloud::before { left: 7px; }
-.runner-cloud::after { right: 7px; }
-.cloud-one { left: 13%; top: 13px; transform: scale(0.75); }
-.cloud-two { left: 48%; top: 10px; transform: scale(0.95); }
-.cloud-three { left: 78%; top: 17px; transform: scale(0.65); }
 
 .treat {
     position: absolute;
-    bottom: 20px;
-    width: 34px;
-    height: 28px;
+    bottom: 18px;
+    width: 32px;
+    height: 26px;
     z-index: 5;
-    transition: transform 0.28s ease, opacity 0.28s ease;
+    transition: opacity 0.22s ease, transform 0.22s ease;
     pointer-events: none;
 }
 
-.treat[data-treat="10"] { left: 8%; }
-.treat[data-treat="20"] { left: 17%; }
-.treat[data-treat="30"] { left: 26%; }
-.treat[data-treat="40"] { left: 35%; }
-.treat[data-treat="50"] { left: 44%; }
-.treat[data-treat="60"] { left: 53%; }
-.treat[data-treat="70"] { left: 62%; }
-.treat[data-treat="80"] { left: 71%; }
-.treat[data-treat="90"] { left: 80%; }
+.treat[data-treat="10"] { left: 10%; }
+.treat[data-treat="20"] { left: 19%; }
+.treat[data-treat="30"] { left: 28%; }
+.treat[data-treat="40"] { left: 37%; }
+.treat[data-treat="50"] { left: 46%; }
+.treat[data-treat="60"] { left: 55%; }
+.treat[data-treat="70"] { left: 64%; }
+.treat[data-treat="80"] { left: 73%; }
+.treat[data-treat="90"] { left: 82%; }
 .treat[data-treat="100"] { left: 89%; }
 
 .runner-step::before,
-.runner-step::after {
+.runner-step::after,
+.runner-grass i {
     content: "";
     position: absolute;
     bottom: 0;
+    display: block;
     background: var(--runner-ink);
 }
 
@@ -134,136 +103,91 @@
     position: absolute;
     left: 50%;
     bottom: -1px;
-    width: 28px;
-    height: 18px;
+    width: 22px;
+    height: 15px;
     transform: translateX(-50%);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition: opacity 0.22s ease, transform 0.22s ease;
 }
 
 .runner-grass i {
-    position: absolute;
-    bottom: 0;
-    display: block;
     width: 3px;
-    background: var(--runner-ink);
     border-radius: 3px 3px 0 0;
 }
 
-.runner-grass i:nth-child(1) { left: 6px; height: 11px; transform: rotate(-18deg); }
-.runner-grass i:nth-child(2) { left: 13px; height: 17px; }
-.runner-grass i:nth-child(3) { left: 20px; height: 12px; transform: rotate(18deg); }
+.runner-grass i:nth-child(1) { left: 6px; height: 10px; transform: rotate(-16deg); }
+.runner-grass i:nth-child(2) { left: 14px; height: 13px; transform: rotate(13deg); }
 
-.step-bush::before {
-    left: 6px;
-    width: 24px;
-    height: 10px;
-    border-radius: 10px 10px 0 0;
+.step-grass::before {
+    left: 10px;
+    width: 3px;
+    height: 12px;
+    transform: rotate(-14deg);
 }
 
-.step-twig::before {
-    left: 15px;
-    width: 4px;
-    height: 23px;
+.step-grass::after {
+    left: 17px;
+    width: 3px;
+    height: 15px;
+    transform: rotate(12deg);
 }
 
-.step-twig::after {
-    left: 18px;
-    width: 4px;
-    height: 13px;
-    transform: rotate(35deg);
-    transform-origin: bottom left;
-}
-
-.step-cactus::before {
-    left: 15px;
+.step-cactus-small::before,
+.step-cactus::before,
+.step-cactus-tall::before {
+    left: 14px;
     width: 6px;
-    height: 26px;
     border-radius: 4px 4px 0 0;
 }
 
-.step-cactus::after {
+.step-cactus-small::before { height: 15px; }
+.step-cactus::before { height: 22px; }
+.step-cactus-tall::before { height: 27px; }
+
+.step-cactus-small::after,
+.step-cactus::after,
+.step-cactus-tall::after {
     left: 7px;
-    width: 22px;
+    width: 21px;
     height: 5px;
-    bottom: 12px;
     border-radius: 5px;
 }
 
-.step-double::before {
-    left: 7px;
-    width: 7px;
-    height: 18px;
-    border-radius: 5px 5px 0 0;
-}
+.step-cactus-small::after { bottom: 7px; }
+.step-cactus::after { bottom: 11px; }
+.step-cactus-tall::after { bottom: 14px; }
 
-.step-double::after {
-    left: 21px;
-    width: 7px;
-    height: 24px;
-    border-radius: 5px 5px 0 0;
-}
-
-.step-stump::before {
+.step-cactus-double::before {
     left: 8px;
-    width: 20px;
-    height: 9px;
-    border-radius: 2px;
-}
-
-.step-bush-tall::before {
-    left: 8px;
-    width: 20px;
-    height: 22px;
-    border-radius: 12px 12px 0 0;
-}
-
-.step-cactus-small::before {
-    left: 14px;
     width: 6px;
-    height: 17px;
-    border-radius: 5px 5px 0 0;
+    height: 20px;
+    border-radius: 4px 4px 0 0;
 }
 
-.step-cactus-small::after {
-    left: 19px;
-    width: 10px;
-    height: 4px;
-    bottom: 8px;
-    border-radius: 4px;
-}
-
-.step-tree::before {
-    left: 15px;
-    width: 5px;
-    height: 24px;
-}
-
-.step-tree::after {
-    left: 7px;
-    width: 21px;
-    height: 17px;
-    bottom: 15px;
-    border-radius: 50% 50% 45% 45%;
+.step-cactus-double::after {
+    left: 20px;
+    width: 6px;
+    height: 25px;
+    border-radius: 4px 4px 0 0;
 }
 
 .step-rock::before {
-    left: 9px;
+    left: 8px;
     width: 20px;
-    height: 12px;
-    border-radius: 70% 50% 0 0;
+    height: 10px;
+    border-radius: 70% 55% 0 0;
 }
 
 .step-flag::before {
-    left: 13px;
+    left: 12px;
     width: 4px;
-    height: 30px;
+    height: 28px;
 }
 
 .step-flag::after {
-    left: 17px;
-    bottom: 17px;
-    width: 16px;
-    height: 10px;
+    left: 16px;
+    bottom: 16px;
+    width: 15px;
+    height: 9px;
     clip-path: polygon(0 0, 100% 30%, 0 100%);
 }
 
@@ -272,8 +196,8 @@
 }
 
 .treat.eaten {
-    opacity: 0.24;
-    transform: translateY(4px) scale(0.92);
+    opacity: 0.23;
+    transform: translateY(3px) scale(0.92);
 }
 
 .treat.eaten .runner-grass {
@@ -283,170 +207,151 @@
 .progress-cat {
     position: absolute;
     left: 0%;
-    bottom: 20px;
-    width: 54px;
-    height: 38px;
+    bottom: 17px;
+    width: 52px;
+    height: 42px;
     z-index: 10;
-    transition: left 0.48s steps(7, end);
+    transition: left 0.42s steps(6, end);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     transform: translateX(0);
 }
 
 .cat-body {
     position: relative;
-    width: 54px;
-    height: 38px;
+    width: 52px;
+    height: 42px;
     font-size: 0;
     line-height: 0;
-    transition: transform 0.18s ease;
 }
 
-.runner-horse,
-.runner-horse span {
+.runner-trex,
+.runner-trex span {
     position: absolute;
     display: block;
     background: var(--runner-ink);
 }
 
-.runner-horse {
+.runner-trex {
     inset: 0;
     background: transparent;
 }
 
-.horse-body {
-    left: 12px;
-    top: 15px;
-    width: 28px;
-    height: 13px;
-    border-radius: 4px 9px 7px 5px;
+.trex-body {
+    left: 15px;
+    top: 17px;
+    width: 24px;
+    height: 17px;
+    border-radius: 7px 8px 5px 5px;
 }
 
-.horse-neck {
-    left: 36px;
-    top: 9px;
-    width: 7px;
-    height: 15px;
-    border-radius: 5px 5px 2px 2px;
-    transform: rotate(-25deg);
-    transform-origin: bottom center;
+.trex-head {
+    left: 32px;
+    top: 5px;
+    width: 18px;
+    height: 14px;
+    border-radius: 4px 7px 4px 2px;
 }
 
-.horse-head {
-    left: 42px;
-    top: 6px;
+.trex-jaw {
+    left: 37px;
+    top: 16px;
     width: 13px;
-    height: 9px;
-    border-radius: 7px 8px 7px 3px;
+    height: 6px;
+    border-radius: 0 0 5px 2px;
 }
 
-.horse-head::after {
-    content: "";
-    position: absolute;
-    right: 2px;
-    top: 3px;
+.trex-eye {
+    left: 43px;
+    top: 8px;
     width: 2px;
     height: 2px;
     background: var(--runner-bg);
     border-radius: 50%;
 }
 
-.horse-ear {
-    left: 46px;
-    top: 1px;
-    width: 5px;
+.trex-tail {
+    left: 1px;
+    top: 21px;
+    width: 20px;
     height: 7px;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    transform: rotate(12deg);
-}
-
-.horse-mane {
-    left: 35px;
-    top: 8px;
-    width: 4px;
-    height: 14px;
-    border-radius: 4px;
-    transform: rotate(-25deg);
-}
-
-.horse-tail {
-    left: 4px;
-    top: 16px;
-    width: 13px;
-    height: 5px;
-    border-radius: 10px 1px 10px 10px;
-    transform: rotate(-25deg);
+    border-radius: 8px 0 0 8px;
+    transform: rotate(-24deg);
     transform-origin: right center;
 }
 
-.horse-leg {
-    top: 26px;
-    width: 4px;
-    height: 12px;
+.trex-arm {
+    left: 34px;
+    top: 23px;
+    width: 10px;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.trex-leg {
+    top: 31px;
+    width: 5px;
+    height: 11px;
     border-radius: 2px;
     transform-origin: top center;
 }
 
-.horse-leg::after {
-    content: "";
-    position: absolute;
-    left: -1px;
-    bottom: -1px;
-    width: 7px;
-    height: 3px;
-    background: var(--runner-ink);
-    border-radius: 5px;
+.trex-leg-back { left: 20px; transform: rotate(9deg); }
+.trex-leg-front { left: 31px; transform: rotate(-8deg); }
+
+.trex-foot {
+    top: 39px;
+    width: 12px;
+    height: 4px;
+    border-radius: 1px;
 }
 
-.horse-leg-back { left: 15px; transform: rotate(11deg); }
-.horse-leg-mid-back { left: 22px; transform: rotate(-8deg); opacity: 0.75; }
-.horse-leg-mid-front { left: 32px; transform: rotate(9deg); opacity: 0.75; }
-.horse-leg-front { left: 38px; transform: rotate(-10deg); }
+.trex-foot-back { left: 15px; }
+.trex-foot-front { left: 29px; }
 
 .progress-cat.walking .cat-body {
-    animation: runnerHorseBob 0.24s steps(2, end) infinite;
+    animation: trexBob 0.24s steps(2, end) infinite;
 }
 
-.progress-cat.walking .horse-leg-back,
-.progress-cat.walking .horse-leg-mid-front {
-    animation: runnerLegA 0.24s steps(2, end) infinite;
+.progress-cat.walking .trex-leg-back,
+.progress-cat.walking .trex-foot-back {
+    animation: trexLegA 0.24s steps(2, end) infinite;
 }
 
-.progress-cat.walking .horse-leg-front,
-.progress-cat.walking .horse-leg-mid-back {
-    animation: runnerLegB 0.24s steps(2, end) infinite;
+.progress-cat.walking .trex-leg-front,
+.progress-cat.walking .trex-foot-front {
+    animation: trexLegB 0.24s steps(2, end) infinite;
 }
 
 .progress-cat.eating .cat-body {
-    animation: runnerHop 0.32s steps(2, end);
+    animation: trexHop 0.28s steps(2, end);
 }
 
 .progress-cat[data-level="10"] .cat-body {
-    animation: runnerVictory 0.45s steps(2, end) infinite;
+    animation: trexVictory 0.42s steps(2, end) infinite;
 }
 
-@keyframes runnerHorseBob {
+@keyframes trexBob {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-3px); }
 }
 
-@keyframes runnerLegA {
-    0%, 100% { transform: rotate(14deg); }
-    50% { transform: rotate(-14deg); }
+@keyframes trexLegA {
+    0%, 100% { transform: rotate(13deg); }
+    50% { transform: rotate(-13deg); }
 }
 
-@keyframes runnerLegB {
-    0%, 100% { transform: rotate(-14deg); }
-    50% { transform: rotate(14deg); }
+@keyframes trexLegB {
+    0%, 100% { transform: rotate(-13deg); }
+    50% { transform: rotate(13deg); }
 }
 
-@keyframes runnerHop {
+@keyframes trexHop {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
 }
 
-@keyframes runnerVictory {
+@keyframes trexVictory {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-7px); }
 }
@@ -496,13 +401,13 @@
     background: var(--runner-ink);
     font-size: 0;
     pointer-events: none;
-    animation: runnerDust 0.45s ease-out forwards;
+    animation: trexDust 0.42s ease-out forwards;
     z-index: 8;
 }
 
-@keyframes runnerDust {
+@keyframes trexDust {
     0% { transform: translate(0, 0) scale(1); opacity: 0.85; }
-    100% { transform: translate(-10px, -12px) scale(0.2); opacity: 0; }
+    100% { transform: translate(-10px, -10px) scale(0.2); opacity: 0; }
 }
 
 @media (hover: none) and (pointer: coarse), (prefers-reduced-motion: reduce) {
@@ -510,10 +415,10 @@
     .progress-cat.walking .cat-body,
     .progress-cat.eating .cat-body,
     .progress-cat[data-level="10"] .cat-body,
-    .progress-cat.walking .horse-leg-back,
-    .progress-cat.walking .horse-leg-mid-front,
-    .progress-cat.walking .horse-leg-front,
-    .progress-cat.walking .horse-leg-mid-back {
+    .progress-cat.walking .trex-leg-back,
+    .progress-cat.walking .trex-foot-back,
+    .progress-cat.walking .trex-leg-front,
+    .progress-cat.walking .trex-foot-front {
         animation: none;
     }
 }
@@ -525,23 +430,18 @@
     }
 
     .cat-progress-track {
-        height: 64px;
-        border-radius: 15px;
+        height: 58px;
+        border-radius: 12px;
     }
 
     .progress-cat {
-        transform: translateX(0) scale(0.86);
-        transform-origin: bottom center;
+        transform: translateX(0) scale(0.82);
+        transform-origin: bottom left;
     }
 
     .treat {
-        transform: scale(0.85);
+        transform: scale(0.82);
         transform-origin: bottom center;
-    }
-
-    .cat-message {
-        font-size: 10px;
-        padding: 4px 8px;
     }
 
     .cat-status {
@@ -554,18 +454,14 @@
 
 @media (max-width: 480px) {
     .cat-progress-track {
-        height: 58px;
+        height: 54px;
     }
 
     .progress-cat {
-        transform: translateX(0) scale(0.74);
+        transform: translateX(0) scale(0.72);
     }
 
     .treat {
-        transform: scale(0.68);
-    }
-
-    .runner-cloud {
-        display: none;
+        transform: scale(0.64);
     }
 }
