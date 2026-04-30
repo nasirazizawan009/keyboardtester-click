@@ -4,34 +4,34 @@
     const CAT_TEXT = {
         en: {
             messages: [
-                'Press keys to start the Dino run!',
-                'Cactus cleared!',
-                'Tall cactus cleared!',
-                'Bird passed!',
-                'Nice jump!',
-                'Cactus cluster cleared!',
-                'Low bird passed!',
-                'Wide cactus cleared!',
-                'Clean dodge!',
-                'Almost there!',
-                'Final stretch!',
-                'Dino run complete!'
+                'Press keys to clear the maze!',
+                'Dot eaten!',
+                'Power pellet!',
+                'Pink ghost dodged!',
+                'Dot chain!',
+                'Cyan ghost dodged!',
+                'Power mode!',
+                'Orange ghost dodged!',
+                'Clean path!',
+                'Blue ghost dodged!',
+                'Final pellet!',
+                'Maze clear!'
             ],
             moods: [
                 'Ready',
-                'Running',
-                'Jumping',
+                'Chomping',
+                'Powered',
                 'Dodging',
-                'Fast',
-                'Halfway',
-                'Clean',
+                'Combo',
+                'Focused',
+                'Power Mode',
                 'Sharp',
-                'Almost Done',
-                'Final Stretch',
-                'Complete'
+                'Clean',
+                'Final Path',
+                'Maze Clear'
             ],
-            treatsLabel: 'Obstacles',
-            completeMessage: 'Dino run complete!'
+            treatsLabel: 'Dots',
+            completeMessage: 'Maze clear!'
         },
         es: {
             messages: [
@@ -313,7 +313,7 @@
             this.messageEl = this.root.querySelector('[data-cat-message]');
             this.moodEl = this.root.querySelector('[data-cat-mood]');
             this.treatsEl = this.root.querySelector('[data-cat-treats]');
-            this.scoreEl = this.root.querySelector('[data-dino-score]');
+            this.scoreEl = this.root.querySelector('[data-arcade-score]');
 
             this.desktopTotalKeys = Math.max(Number(options.desktopTotalKeys) || 103, 1);
             this.mobileTotalKeys = Math.max(Number(options.mobileTotalKeys) || 42, 1);
@@ -384,7 +384,7 @@
 
             if (this.countEl) this.countEl.textContent = String(keysPressed);
             if (this.percentageEl) this.percentageEl.textContent = `${percentage}%`;
-            if (this.scoreEl) this.scoreEl.textContent = String(Math.min(keysPressed * 10, 99999)).padStart(5, '0');
+            if (this.scoreEl) this.scoreEl.textContent = `SCORE ${String(Math.min(keysPressed * 10, 99999)).padStart(5, '0')}`;
 
             const catPosition = Math.min(percentage * 0.88, 88);
             this.catEl.style.left = `${catPosition}%`;
@@ -445,7 +445,7 @@
             const totalKeys = Math.max(Number(options.totalKeys) || this.desktopTotalKeys, 1);
             if (this.countEl) this.countEl.textContent = '0';
             if (this.percentageEl) this.percentageEl.textContent = '0%';
-            if (this.scoreEl) this.scoreEl.textContent = '00000';
+            if (this.scoreEl) this.scoreEl.textContent = 'SCORE 00000';
             if (this.totalEl) this.totalEl.textContent = String(totalKeys);
 
             if (this.catEl) {
