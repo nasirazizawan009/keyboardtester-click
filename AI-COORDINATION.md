@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, local Pac-Man viewport/fullscreen fix)
+**Last updated:** 2026-04-30 (Codex, live keyboard/game/GSC deploy)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,10 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-30 (Codex)
+- Deployed live via SFTP/paramiko, not FTPS: GSC indexing cleanup content, English keyboard tester, shared keyboard progress/Pac-Man strip assets, all 8 localized keyboard sections, localized keyboard visual/history assets, shared head component, `tools/keyboard-tester-advanced.php`, and the standalone `pacman-game.php` page/assets.
+- Verified live: `pacman-game.php`, `assets/js/pacman-game.js`, `assets/css/pacman-game.css`, `assets/js/keyboard-cat-progress.min.js`, `includes/components/keyboard-cat-progress.php`, `assets/js/localized-keyboard-history.js`, Japanese localized keyboard page, homepage keyboard page, and `keyboard-ghosting-test.php` all returned HTTP 200 and contained the expected deployed markers.
+- Submitted the updated URL set through the live IndexNow endpoint. Response was HTTP 200 with "URLs submitted successfully" for 863 URLs. Google/GSC does not accept IndexNow; this submission covers Bing, Yandex, Seznam, and Naver-compatible discovery.
+- Note: attempted browser smoke via local Playwright, but the workspace does not currently have the `playwright` Node module installed. Live HTTP/content verification passed.
 - Done locally only: Improved the standalone Pac-Man game screen behavior. Added a `Fullscreen` control, fullscreen-specific board layout CSS, and automatic vertical viewport follow so the page scrolls down/up to keep Pac-Man visible while playing on shorter screens.
 - Verified locally only: `C:\xampp\php\php.exe -l pacman-game.php` and `node --check assets/js/pacman-game.js` passed. Chrome headless tests with short desktop/mobile viewports confirmed auto-scroll activates while playing, fullscreen enters with the game stage filling the viewport, fullscreen exit resets the button label, no horizontal overflow, no console errors, and no failed HTTP responses. No live deploy was run.
 - Done locally only: Fixed the standalone `pacman-game.php` movement bug where Pac-Man could feel stuck after the first dot. Root cause was tile-center movement logic: the first pass depended on a loose center threshold and rounded the next tile target too early, causing repeated snap-back near a tile center.

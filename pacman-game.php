@@ -2,7 +2,7 @@
 include __DIR__ . '/config.php';
 
 $pageTitle = 'Retro Maze Chomp Game | KeyboardTester.click';
-$pageDescription = 'Play a local-only retro maze chomp game with pellets, power mode, ghost chase behavior, lives, scoring, levels, keyboard controls, touch controls, and sound.';
+$pageDescription = 'Play a retro maze chomp game with pellets, power mode, ghost chase behavior, lives, scoring, levels, keyboard controls, touch controls, and sound.';
 $pageKeywords = 'retro maze game, pacman style game, arcade maze game, keyboard game';
 $pageRobots = 'noindex, follow';
 $pageCanonical = absoluteUrl('pacman-game.php');
