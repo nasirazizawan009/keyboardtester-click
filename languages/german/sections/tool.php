@@ -154,9 +154,9 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
                     <button class="key" data-key="Digit8"><span class="dual">(<br>8</span></button>
                     <button class="key" data-key="Digit9"><span class="dual">)<br>9</span></button>
                     <button class="key" data-key="Digit0"><span class="dual">=<br>0</span></button>
-                    <button class="key" data-key="Minus"><span class="dual">?<br>ss</span></button>
+                    <button class="key" data-key="Minus"><span class="dual">?<br>ß</span></button>
                     <button class="key" data-key="Equal"><span class="dual">`<br>'</span></button>
-                    <button class="key key-2x" data-key="Backspace"><span>Loeschen</span></button>
+                    <button class="key key-2x" data-key="Backspace"><span>Löschen</span></button>
                 </div>
                 <!-- QWERTZ Row 1 - Note: Z and Y are swapped compared to QWERTY -->
                 <div class="key-row">
@@ -171,7 +171,7 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
                     <button class="key" data-key="KeyI"><span>I</span></button>
                     <button class="key" data-key="KeyO"><span>O</span></button>
                     <button class="key" data-key="KeyP"><span>P</span></button>
-                    <button class="key" data-key="BracketLeft"><span>Ue</span></button>
+                    <button class="key" data-key="BracketLeft"><span>Ü</span></button>
                     <button class="key" data-key="BracketRight"><span class="dual">*<br>+</span></button>
                     <button class="key key-1-5x" data-key="Backslash"><span class="dual">'<br>#</span></button>
                 </div>
@@ -187,8 +187,8 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
                     <button class="key" data-key="KeyJ"><span>J</span></button>
                     <button class="key" data-key="KeyK"><span>K</span></button>
                     <button class="key" data-key="KeyL"><span>L</span></button>
-                    <button class="key" data-key="Semicolon"><span>Oe</span></button>
-                    <button class="key" data-key="Quote"><span>Ae</span></button>
+                    <button class="key" data-key="Semicolon"><span>Ö</span></button>
+                    <button class="key" data-key="Quote"><span>Ä</span></button>
                     <button class="key key-enter" data-key="Enter"><span>Eingabe</span></button>
                 </div>
                 <!-- QWERTZ Row 3 - Bottom row with Y instead of Z -->

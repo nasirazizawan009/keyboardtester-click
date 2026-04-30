@@ -183,7 +183,7 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
                     <button class="key" data-key="KeyJ"><span>J</span></button>
                     <button class="key" data-key="KeyK"><span>K</span></button>
                     <button class="key" data-key="KeyL"><span>L</span></button>
-                    <button class="key" data-key="Semicolon"><span>C</span></button>
+                    <button class="key" data-key="Semicolon"><span>Ç</span></button>
                     <button class="key" data-key="Quote"><span class="dual">^<br>~</span></button>
                     <button class="key key-enter" data-key="Enter"><span>Enter</span></button>
                 </div>
@@ -206,7 +206,7 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
                     <button class="key key-1-25x" data-key="ControlLeft"><span>Ctrl</span></button>
                     <button class="key key-1-25x" data-key="MetaLeft"><span>Win</span></button>
                     <button class="key key-1-25x" data-key="AltLeft"><span>Alt</span></button>
-                    <button class="key key-space" data-key="Space"><span>Espaco</span></button>
+                    <button class="key key-space" data-key="Space"><span>Espaço</span></button>
                     <button class="key key-1-25x" data-key="AltRight"><span>Alt Gr</span></button>
                     <button class="key key-1-25x" data-key="MetaRight"><span>Win</span></button>
                     <button class="key key-1-25x" data-key="ContextMenu"><span>Menu</span></button>

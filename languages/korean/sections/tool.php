@@ -158,16 +158,16 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
                 <!-- Korean Dubeolsik Layout Row 1: ㅂㅈㄷㄱㅅㅛㅕㅑㅐㅔ -->
                 <div class="key-row">
                     <button class="key key-1-5x" data-key="Tab"><span>Tab</span></button>
-                    <button class="key korean-key" data-key="KeyQ"><span class="hangul-dual"><span class="hangul">ㅂ</span><span class="latin">Q</span></span></button>
-                    <button class="key korean-key" data-key="KeyW"><span class="hangul-dual"><span class="hangul">ㅈ</span><span class="latin">W</span></span></button>
-                    <button class="key korean-key" data-key="KeyE"><span class="hangul-dual"><span class="hangul">ㄷ</span><span class="latin">E</span></span></button>
-                    <button class="key korean-key" data-key="KeyR"><span class="hangul-dual"><span class="hangul">ㄱ</span><span class="latin">R</span></span></button>
-                    <button class="key korean-key" data-key="KeyT"><span class="hangul-dual"><span class="hangul">ㅅ</span><span class="latin">T</span></span></button>
+                    <button class="key korean-key" data-key="KeyQ"><span class="hangul-dual"><span class="hangul hangul-shifted"><span>ㅃ</span><span>ㅂ</span></span><span class="latin">Q</span></span></button>
+                    <button class="key korean-key" data-key="KeyW"><span class="hangul-dual"><span class="hangul hangul-shifted"><span>ㅉ</span><span>ㅈ</span></span><span class="latin">W</span></span></button>
+                    <button class="key korean-key" data-key="KeyE"><span class="hangul-dual"><span class="hangul hangul-shifted"><span>ㄸ</span><span>ㄷ</span></span><span class="latin">E</span></span></button>
+                    <button class="key korean-key" data-key="KeyR"><span class="hangul-dual"><span class="hangul hangul-shifted"><span>ㄲ</span><span>ㄱ</span></span><span class="latin">R</span></span></button>
+                    <button class="key korean-key" data-key="KeyT"><span class="hangul-dual"><span class="hangul hangul-shifted"><span>ㅆ</span><span>ㅅ</span></span><span class="latin">T</span></span></button>
                     <button class="key korean-key" data-key="KeyY"><span class="hangul-dual"><span class="hangul">ㅛ</span><span class="latin">Y</span></span></button>
                     <button class="key korean-key" data-key="KeyU"><span class="hangul-dual"><span class="hangul">ㅕ</span><span class="latin">U</span></span></button>
                     <button class="key korean-key" data-key="KeyI"><span class="hangul-dual"><span class="hangul">ㅑ</span><span class="latin">I</span></span></button>
-                    <button class="key korean-key" data-key="KeyO"><span class="hangul-dual"><span class="hangul">ㅐ</span><span class="latin">O</span></span></button>
-                    <button class="key korean-key" data-key="KeyP"><span class="hangul-dual"><span class="hangul">ㅔ</span><span class="latin">P</span></span></button>
+                    <button class="key korean-key" data-key="KeyO"><span class="hangul-dual"><span class="hangul hangul-shifted"><span>ㅒ</span><span>ㅐ</span></span><span class="latin">O</span></span></button>
+                    <button class="key korean-key" data-key="KeyP"><span class="hangul-dual"><span class="hangul hangul-shifted"><span>ㅖ</span><span>ㅔ</span></span><span class="latin">P</span></span></button>
                     <button class="key" data-key="BracketLeft"><span class="dual">{<br>[</span></button>
                     <button class="key" data-key="BracketRight"><span class="dual">}<br>]</span></button>
                     <button class="key key-1-5x" data-key="Backslash"><span class="dual">|<br>\</span></button>
@@ -405,10 +405,12 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
 .key .dual { font-size: 10px; line-height: 1.2; text-align: center; }
 
 /* Korean Hangul dual label styling */
-.korean-key { padding: 4px 2px; }
-.hangul-dual { display: flex; flex-direction: column; align-items: center; gap: 1px; width: 100%; }
-.hangul-dual .hangul { font-size: 14px; font-weight: 600; color: var(--accent-primary); font-family: 'Noto Sans KR', sans-serif; line-height: 1; }
-.hangul-dual .latin { font-size: 9px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; line-height: 1; }
+.korean-key { padding: 3px 2px; }
+.hangul-dual { display: flex !important; flex-direction: column; align-items: center; gap: 0; width: 100%; }
+.hangul-dual .hangul { font-size: 13px !important; font-weight: 600; color: var(--accent-primary); font-family: 'Noto Sans KR', sans-serif; line-height: 1 !important; }
+.hangul-dual .hangul-shifted { font-size: 9px !important; line-height: 0.9 !important; }
+.hangul-dual .hangul-shifted span { display: block; }
+.hangul-dual .latin { font-size: 8px !important; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; line-height: 1 !important; }
 
 .key.active-1 { background: linear-gradient(180deg, #00d4ff 0%, #00a8cc 100%) !important; color: #000 !important; border-color: #00d4ff !important; box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 3px 0 rgba(0, 168, 204, 0.5) !important; transform: translateY(-1px); }
 .key.active-1 .hangul-dual .hangul { color: #000 !important; }

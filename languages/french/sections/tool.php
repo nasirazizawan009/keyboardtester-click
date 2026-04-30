@@ -122,7 +122,7 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
         <div class="keyboard-layout">
             <div class="keyboard-section main-keyboard">
                 <div class="key-row">
-                    <button class="key" data-key="Escape"><span>Echap</span></button>
+                    <button class="key" data-key="Escape"><span>Échap</span></button>
                     <div class="gap"></div>
                     <button class="key" data-key="F1"><span>F1</span></button>
                     <button class="key" data-key="F2"><span>F2</span></button>
@@ -143,15 +143,15 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
                 <div class="key-row">
                     <button class="key" data-key="Backquote"><span class="dual">²<br></span></button>
                     <button class="key" data-key="Digit1"><span class="dual">1<br>&amp;</span></button>
-                    <button class="key" data-key="Digit2"><span class="dual">2<br>e</span></button>
+                    <button class="key" data-key="Digit2"><span class="dual">2<br>é</span></button>
                     <button class="key" data-key="Digit3"><span class="dual">3<br>"</span></button>
                     <button class="key" data-key="Digit4"><span class="dual">4<br>'</span></button>
                     <button class="key" data-key="Digit5"><span class="dual">5<br>(</span></button>
                     <button class="key" data-key="Digit6"><span class="dual">6<br>-</span></button>
-                    <button class="key" data-key="Digit7"><span class="dual">7<br>e</span></button>
+                    <button class="key" data-key="Digit7"><span class="dual">7<br>è</span></button>
                     <button class="key" data-key="Digit8"><span class="dual">8<br>_</span></button>
-                    <button class="key" data-key="Digit9"><span class="dual">9<br>c</span></button>
-                    <button class="key" data-key="Digit0"><span class="dual">0<br>a</span></button>
+                    <button class="key" data-key="Digit9"><span class="dual">9<br>ç</span></button>
+                    <button class="key" data-key="Digit0"><span class="dual">0<br>à</span></button>
                     <button class="key" data-key="Minus"><span class="dual">°<br>)</span></button>
                     <button class="key" data-key="Equal"><span class="dual">+<br>=</span></button>
                     <button class="key key-2x" data-key="Backspace"><span>Retour</span></button>
@@ -186,8 +186,8 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
                     <button class="key" data-key="KeyK"><span>K</span></button>
                     <button class="key" data-key="KeyL"><span>L</span></button>
                     <button class="key" data-key="Semicolon"><span>M</span></button>
-                    <button class="key" data-key="Quote"><span class="dual">%<br>u</span></button>
-                    <button class="key key-enter" data-key="Enter"><span>Entree</span></button>
+                    <button class="key" data-key="Quote"><span class="dual">%<br>ù</span></button>
+                    <button class="key key-enter" data-key="Enter"><span>Entrée</span></button>
                 </div>
                 <!-- AZERTY Bottom Letter Row -->
                 <div class="key-row">
@@ -201,7 +201,7 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
                     <button class="key" data-key="KeyM"><span>,</span></button>
                     <button class="key" data-key="Comma"><span class="dual">?<br>;</span></button>
                     <button class="key" data-key="Period"><span class="dual">.<br>:</span></button>
-                    <button class="key" data-key="Slash"><span class="dual">/<br>!</span></button>
+                    <button class="key" data-key="Slash"><span class="dual">§<br>!</span></button>
                     <button class="key key-shift-right" data-key="ShiftRight"><span>Maj</span></button>
                 </div>
                 <div class="key-row">
@@ -226,12 +226,12 @@ $localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . 
                     <div class="key-row">
                         <button class="key" data-key="Insert"><span>Inser</span></button>
                         <button class="key" data-key="Home"><span>Debut</span></button>
-                        <button class="key" data-key="PageUp"><span>Pg.Prec</span></button>
+                        <button class="key" data-key="PageUp"><span>Préc</span></button>
                     </div>
                     <div class="key-row">
                         <button class="key" data-key="Delete"><span>Suppr</span></button>
                         <button class="key" data-key="End"><span>Fin</span></button>
-                        <button class="key" data-key="PageDown"><span>Pg.Suiv</span></button>
+                        <button class="key" data-key="PageDown"><span>Suiv</span></button>
                     </div>
                 </div>
                 <div class="arrow-cluster">
