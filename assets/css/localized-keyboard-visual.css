@@ -1,0 +1,425 @@
+/*
+ * Localized keyboard visual sync.
+ * Keeps language keyboard layouts aligned with the current English keyboard deck.
+ */
+.keyboard-tester {
+    padding: 10px 12px 6px !important;
+    border-radius: 24px;
+}
+
+.keyboard-tester .keyboard-container {
+    max-width: 1640px !important;
+    margin: 0 auto !important;
+    background: #e6e6e4 !important;
+    border: 1px solid #d9d9d7 !important;
+    border-radius: 18px !important;
+    padding: 20px !important;
+    box-shadow:
+        0 24px 28px -22px rgba(28, 24, 63, 0.9),
+        0 12px 18px -16px rgba(18, 16, 42, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08) !important;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.keyboard-tester .keyboard-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 26%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.keyboard-tester .keyboard-container::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 8px;
+    height: 14px;
+    border-radius: 999px;
+    background: rgba(25, 21, 54, 0.28);
+    filter: blur(10px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.keyboard-tester .keyboard-scale-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    transform-origin: center top;
+    position: relative;
+    z-index: 1;
+    perspective: 1200px;
+}
+
+.keyboard-tester .keyboard-layout {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    gap: 36px !important;
+    transform: translateZ(0);
+}
+
+.keyboard-tester .keyboard-section {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+.keyboard-tester .main-keyboard {
+    flex: 0 0 auto;
+}
+
+.keyboard-tester .nav-section {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 400px !important;
+}
+
+.keyboard-tester .nav-top {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+.keyboard-tester .arrow-cluster {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: auto;
+}
+
+.keyboard-tester .arrow-top {
+    justify-content: center !important;
+    margin-bottom: 8px !important;
+}
+
+.keyboard-tester .arrow-bottom {
+    justify-content: center !important;
+}
+
+.keyboard-tester .key-row {
+    display: flex !important;
+    gap: 8px !important;
+    margin-bottom: 0 !important;
+}
+
+.keyboard-tester .gap {
+    width: 36px !important;
+    flex: 0 0 auto;
+}
+
+.keyboard-tester .function-row .gap,
+.keyboard-tester .main-keyboard > .key-row:first-child .gap {
+    width: 19.6667px !important;
+}
+
+.keyboard-tester .key {
+    position: relative;
+    width: 60px !important;
+    min-width: 60px !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    padding: 10px 8px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    flex-direction: column;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 34%),
+        linear-gradient(180deg, #343434 0%, #2e2e2e 100%) !important;
+    border: 1px solid #111 !important;
+    border-radius: 7px !important;
+    color: #f4f4f4 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif !important;
+    text-align: left !important;
+    box-shadow:
+        0 4px 0 #161616,
+        0 8px 10px -5px rgba(21, 18, 49, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.35) !important;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    backface-visibility: hidden;
+    contain: paint;
+    will-change: transform;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease, background 0.1s ease !important;
+}
+
+.keyboard-tester .key:focus,
+.keyboard-tester .key:focus-visible {
+    outline: none;
+}
+
+.keyboard-tester .key::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    right: 4px;
+    height: 34%;
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+}
+
+.keyboard-tester .key::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    right: 7px;
+    bottom: 4px;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.24);
+    pointer-events: none;
+    opacity: 0.75;
+}
+
+.keyboard-tester .key span {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    text-align: left !important;
+    line-height: 1.2;
+    font-size: inherit;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.keyboard-tester .key .dual {
+    font-size: 14px !important;
+}
+
+.keyboard-tester .key .ar {
+    font-size: 18px !important;
+    line-height: 1;
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+.keyboard-tester .key .en {
+    font-size: 10px !important;
+    color: rgba(244, 244, 244, 0.68) !important;
+    margin-top: 2px;
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+.keyboard-tester .key:hover {
+    transform: translateY(-2px) !important;
+    box-shadow:
+        0 6px 0 #161616,
+        0 14px 16px -8px rgba(21, 18, 49, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.35) !important;
+    filter: brightness(1.08);
+}
+
+.keyboard-tester .key:active,
+.keyboard-tester .key.pressed {
+    transform: translateY(3px) !important;
+    box-shadow:
+        0 1px 0 #161616,
+        0 4px 8px -6px rgba(21, 18, 49, 0.55),
+        inset 0 2px 5px rgba(0, 0, 0, 0.34) !important;
+}
+
+.keyboard-tester .key.active-1,
+.keyboard-tester .key.active-2,
+.keyboard-tester .key.active-3,
+.keyboard-tester .key.active-4,
+.keyboard-tester .key.active-5 {
+    transform: translateY(-1px) !important;
+}
+
+.keyboard-tester .key.active-1 {
+    background: linear-gradient(180deg, #00d4ff 0%, #00a8cc 100%) !important;
+    color: #000 !important;
+    border-color: #00d4ff !important;
+    box-shadow: 0 0 18px rgba(0, 212, 255, 0.45), 0 5px 0 rgba(0, 168, 204, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.keyboard-tester .key.active-2 {
+    background: linear-gradient(180deg, #ffd700 0%, #ccaa00 100%) !important;
+    color: #000 !important;
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.45), 0 5px 0 rgba(204, 170, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.keyboard-tester .key.active-3 {
+    background: linear-gradient(180deg, #00ff88 0%, #00cc6a 100%) !important;
+    color: #000 !important;
+    border-color: #00ff88 !important;
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.45), 0 5px 0 rgba(0, 204, 106, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.keyboard-tester .key.active-4 {
+    background: linear-gradient(180deg, #ff6b6b 0%, #cc5555 100%) !important;
+    color: #fff !important;
+    border-color: #ff6b6b !important;
+    box-shadow: 0 0 18px rgba(255, 107, 107, 0.45), 0 5px 0 rgba(204, 85, 85, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.keyboard-tester .key.active-5 {
+    background: linear-gradient(180deg, #c084fc 0%, #9966cc 100%) !important;
+    color: #fff !important;
+    border-color: #c084fc !important;
+    box-shadow: 0 0 18px rgba(192, 132, 252, 0.45), 0 5px 0 rgba(153, 102, 204, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.keyboard-tester .key.heat-1 { background: linear-gradient(180deg, #fef08a 0%, #facc15 100%) !important; color: #1a1a1a !important; border-color: #eab308 !important; }
+.keyboard-tester .key.heat-2 { background: linear-gradient(180deg, #fdba74 0%, #f97316 100%) !important; color: #1a1a1a !important; border-color: #ea580c !important; }
+.keyboard-tester .key.heat-3 { background: linear-gradient(180deg, #fca5a5 0%, #ef4444 100%) !important; color: #fff !important; border-color: #dc2626 !important; }
+.keyboard-tester .key.heat-4 { background: linear-gradient(180deg, #f87171 0%, #dc2626 100%) !important; color: #fff !important; border-color: #b91c1c !important; }
+.keyboard-tester .key.heat-5 { background: linear-gradient(180deg, #dc2626 0%, #991b1b 100%) !important; color: #fff !important; border-color: #7f1d1d !important; }
+
+.keyboard-tester .key-1-25x { width: 75px !important; min-width: 75px !important; }
+.keyboard-tester .key-1-5x { width: 90px !important; min-width: 90px !important; }
+.keyboard-tester .key-1-75x { width: 105px !important; min-width: 105px !important; }
+.keyboard-tester .key-2x { width: 120px !important; min-width: 120px !important; }
+.keyboard-tester .key-2-25x { width: 135px !important; min-width: 135px !important; }
+.keyboard-tester .key-enter { width: 143px !important; min-width: 143px !important; }
+.keyboard-tester .key-shift-right { width: 180px !important; min-width: 180px !important; }
+.keyboard-tester .key-space { width: 420px !important; min-width: 420px !important; }
+
+.keyboard-tester[data-os="mac"] [data-key="ControlLeft"] { order: 1; }
+.keyboard-tester[data-os="mac"] [data-key="AltLeft"] { order: 2; }
+.keyboard-tester[data-os="mac"] [data-key="MetaLeft"] { order: 3; }
+.keyboard-tester[data-os="mac"] [data-key="Space"] { order: 4; }
+.keyboard-tester[data-os="mac"] [data-key="MetaRight"] { order: 5; }
+.keyboard-tester[data-os="mac"] [data-key="AltRight"] { order: 6; }
+.keyboard-tester[data-os="mac"] [data-key="ContextMenu"] { order: 7; }
+.keyboard-tester[data-os="mac"] [data-key="ControlRight"] { order: 8; }
+
+.keyboard-tester .numpad-section {
+    position: relative;
+    align-self: flex-end;
+}
+
+.keyboard-tester .numpad-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 60px) !important;
+    grid-template-rows: repeat(5, 60px) !important;
+    gap: 8px !important;
+    position: relative;
+}
+
+.keyboard-tester .numpad-grid .key-row {
+    display: contents !important;
+}
+
+.keyboard-tester .numpad-grid .key-row:nth-child(1) .key { grid-row: 1; }
+.keyboard-tester .numpad-grid .key-row:nth-child(2) .key:nth-child(1) { grid-row: 2; grid-column: 1; }
+.keyboard-tester .numpad-grid .key-row:nth-child(2) .key:nth-child(2) { grid-row: 2; grid-column: 2; }
+.keyboard-tester .numpad-grid .key-row:nth-child(2) .key:nth-child(3) { grid-row: 2; grid-column: 3; }
+.keyboard-tester .numpad-grid .key-row:nth-child(2) .key-tall { grid-row: 2 / 4; grid-column: 4; height: 128px !important; min-height: 128px !important; }
+.keyboard-tester .numpad-grid .key-row:nth-child(3) .key { grid-row: 3; }
+.keyboard-tester .numpad-grid .key-row:nth-child(4) .key:nth-child(1) { grid-row: 4; grid-column: 1; }
+.keyboard-tester .numpad-grid .key-row:nth-child(4) .key:nth-child(2) { grid-row: 4; grid-column: 2; }
+.keyboard-tester .numpad-grid .key-row:nth-child(4) .key:nth-child(3) { grid-row: 4; grid-column: 3; }
+.keyboard-tester .numpad-grid .key-row:nth-child(4) .key-enter-tall { grid-row: 4 / 6; grid-column: 4; height: 128px !important; min-height: 128px !important; }
+.keyboard-tester .numpad-grid .key-row:nth-child(5) .key-2x { grid-row: 5; grid-column: 1 / 3; width: 128px !important; min-width: 128px !important; }
+.keyboard-tester .numpad-grid .key-row:nth-child(5) .key:nth-child(2) { grid-row: 5; grid-column: 3; }
+
+.keyboard-tester .numpad-grid .key {
+    width: 60px !important;
+    min-width: 60px !important;
+    height: 60px !important;
+    min-height: 60px !important;
+}
+
+.keyboard-tester .indicator-panel {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    position: absolute !important;
+    top: -68px !important;
+    left: 0 !important;
+    width: 264px !important;
+    height: 52px !important;
+    margin: 0 !important;
+    padding: 9px 12px !important;
+    background: rgba(248, 248, 246, 0.72) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 12px !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        0 8px 14px -12px rgba(21, 18, 49, 0.45) !important;
+    opacity: 1 !important;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.keyboard-tester .indicator {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    min-width: 0;
+    flex: 1 1 0;
+}
+
+.keyboard-tester .indicator .led,
+.keyboard-tester .led {
+    width: 11px !important;
+    height: 11px !important;
+    border-radius: 50%;
+    background: #2f2f2f !important;
+    border: 1px solid #151515 !important;
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease;
+    flex: 0 0 auto;
+}
+
+.keyboard-tester .indicator.active .led,
+.keyboard-tester .led.active {
+    background: #37ff77 !important;
+    border-color: #18b64f !important;
+    box-shadow: 0 0 8px rgba(55, 255, 119, 0.85), 0 0 18px rgba(55, 255, 119, 0.45) !important;
+}
+
+.keyboard-tester .indicator span {
+    font-size: 10px !important;
+    color: #2c2c2c !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+.keyboard-tester .key.key-disabled {
+    opacity: 1;
+    cursor: not-allowed;
+    background: linear-gradient(180deg, #333 0%, #2c2c2c 100%) !important;
+    border-color: #151515 !important;
+    color: #777 !important;
+}
+
+.keyboard-tester .key.key-disabled::before,
+.keyboard-tester .key.key-disabled::after {
+    display: none;
+}
+
+.keyboard-tester .key-disabled-badge {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .keyboard-tester {
+        padding: 8px 10px 6px !important;
+    }
+
+    .keyboard-tester .keyboard-container {
+        padding: 20px 16px !important;
+    }
+}

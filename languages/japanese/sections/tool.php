@@ -10,6 +10,10 @@ $catProgressCssBaseHref = function_exists('url') ? url('assets/css/keyboard-cat-
 $catProgressScriptBaseHref = function_exists('url') ? url('assets/js/keyboard-cat-progress.min.js') : '/assets/js/keyboard-cat-progress.min.js';
 $catProgressCssHref = $catProgressCssBaseHref . '?v=' . rawurlencode($catProgressCssVersion);
 $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catProgressJsVersion);
+$localizedKeyboardVisualCssPath = __DIR__ . '/../../../assets/css/localized-keyboard-visual.css';
+$localizedKeyboardVisualCssVersion = is_file($localizedKeyboardVisualCssPath) ? (string) filemtime($localizedKeyboardVisualCssPath) : '1';
+$localizedKeyboardVisualCssBaseHref = function_exists('url') ? url('assets/css/localized-keyboard-visual.css') : '/assets/css/localized-keyboard-visual.css';
+$localizedKeyboardVisualCssHref = $localizedKeyboardVisualCssBaseHref . '?v=' . rawurlencode($localizedKeyboardVisualCssVersion);
 ?>
 <link rel="preload" as="style" href="<?php echo htmlspecialchars($catProgressCssHref, ENT_QUOTES, 'UTF-8'); ?>" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?php echo htmlspecialchars($catProgressCssHref, ENT_QUOTES, 'UTF-8'); ?>"></noscript>
@@ -682,6 +686,7 @@ $catProgressScriptHref = $catProgressScriptBaseHref . '?v=' . rawurlencode($catP
 }
 /* End Synced English Keyboard Visual Overrides */
 </style>
+<link rel="stylesheet" href="<?php echo htmlspecialchars($localizedKeyboardVisualCssHref, ENT_QUOTES, 'UTF-8'); ?>">
 
 <script src="<?php echo htmlspecialchars($catProgressScriptHref, ENT_QUOTES, 'UTF-8'); ?>"></script>
 

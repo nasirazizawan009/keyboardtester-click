@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, local arcade dynamic ghost behavior)
+**Last updated:** 2026-04-30 (Codex, local localized keyboard visual sync)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,8 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-04-30 (Codex)
+- Done locally only: Synced the 8 localized desktop keyboard sections (`languages/*/sections/tool.php`) to the current English dark-key/light-deck visual format by adding shared `assets/css/localized-keyboard-visual.css` and loading it after each language section's inline keyboard CSS.
+- Verified locally only: XAMPP routes for all 8 language pages return HTTP 200 and include the new CSS; `C:\xampp\php\php.exe -l` passed for all 8 localized `sections/tool.php` files; headless Chrome checks confirmed all localized keyboards use the English dimensions (`60px` keys, `36px` layout gap, corrected function-row gap, light deck background) and active key colors still render. No live deploy was run.
 - Done: Refreshed the local-only English desktop keyboard tester visual in `tools/keyboard_tester_english.php` to match the dark-key/light-deck full keyboard reference more closely.
 - Done: Kept existing key `data-key` wiring and added visual-key click handling so mouse/touch clicks on desktop keys record history/counters/cat progress the same way as physical key presses. PrintScreen remains disabled because browsers cannot capture it.
 - Done: Follow-up alignment pass: F12 now ends on the same right edge as Backspace, and the desktop keyboard shows visible Caps/Num/Scroll indicator lights above the numpad.
