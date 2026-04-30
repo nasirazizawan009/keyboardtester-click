@@ -36,7 +36,7 @@
     <article class="seo-article">
       <h2>How to Read the Results</h2>
       <p>If every key you are holding lights up, the combination is fully supported by your keyboard hardware. If one key disappears or never registers, you have found a blocked combination. If the problem only appears in certain areas of the keyboard — for example, the WASD cluster but not the arrow keys — that usually points to the matrix layout rather than a firmware or browser issue.</p>
-      <p>For a broader check of all keys and layouts, go back to the main <a href="index.php">keyboard tester</a>. For a direct comparison of how many keys your keyboard can report at once, try the <a href="n-key-rollover-test.php">N-key rollover test</a>.</p>
+      <p>For a broader check of all keys and layouts, go back to the main <a href="<?php echo url(''); ?>">keyboard tester</a>. For a direct comparison of how many keys your keyboard can report at once, try the <a href="<?php echo url('n-key-rollover-test.php'); ?>">N-key rollover test</a>.</p>
     </article>
 
     <article class="seo-article">

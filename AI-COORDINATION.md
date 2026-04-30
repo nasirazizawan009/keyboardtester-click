@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-04-30 (Codex, local horse pasture visual refinement)
+**Last updated:** 2026-04-30 (Codex, local GSC validation follow-up)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -79,6 +79,8 @@ This file is the **single source of truth** when handing off work between AI age
 - Done: Replaced the visible cat progress game locally with a horse pasture progress scene: a small horse moves along the ground, eats grass at 10 milestones, and passes different tree shapes at each step.
 - Done: Refined the horse pasture visual after review: replaced the browser-dependent horse emoji with a right-facing CSS horse and added continuous grass across the full track, not only at tree milestones.
 - Verified locally only: PHP lint passed, homepage and `/tools/keyboard-tester/` render without horizontal overflow, desktop keypress/click interactions light keys and update history/horse pasture progress, and the mobile keyboard view remains active under mobile viewport. No live deploy was run.
+- Done: Re-checked GSC URL Inspection against the earlier indexing cleanup. Current sample shows `mouse-and-keyboard-test-tools.php` and `keyboard-ghosting-test.php` are now indexed; `index.php` is still a normal redirect to `/`; `privacy.php` is stale canonical data from Google's March crawl; `n-key-rollover-test.php`, `stuck-key-test.php`, and `ai-assistant.php` are still unknown to Google.
+- Done locally only: removed the remaining raw `index.php` contextual link in `help/seo-content/keyboard-ghosting-test.php` and strengthened homepage keyboard SEO copy with canonical contextual links to `stuck-key-test.php`, `keyboard-ghosting-test.php`, and `n-key-rollover-test.php`. No live deploy was run.
 
 - Done: Fixed failing GitHub Actions `awesome-lint.yml` check on `nasirazizawan009/awesome-device-testing-tools` after commit `02a607f` rewrote `README.md`.
 - Root cause: `README.md` removed the required Awesome badge and added a forbidden `## License` section; `awesome-lint` requires the badge and does not allow a README license section when a `LICENSE` file exists.
