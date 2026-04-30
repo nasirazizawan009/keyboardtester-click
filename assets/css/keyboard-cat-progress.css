@@ -153,38 +153,6 @@
     box-shadow: 0 0 14px rgba(255, 231, 163, 0.92);
 }
 
-.ghost {
-    width: 34px;
-    height: 36px;
-    top: 31px;
-}
-
-.ghost::before {
-    left: 3px;
-    top: 2px;
-    width: 28px;
-    height: 29px;
-    background: var(--ghost-color);
-    border-radius: 14px 14px 5px 5px;
-    clip-path: polygon(0 100%, 0 38%, 8% 16%, 25% 0, 75% 0, 92% 16%, 100% 38%, 100% 100%, 84% 82%, 68% 100%, 52% 82%, 36% 100%, 20% 82%);
-    box-shadow: 0 0 12px color-mix(in srgb, var(--ghost-color) 65%, transparent);
-}
-
-.ghost::after {
-    left: 10px;
-    top: 11px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 12px 0 0 #fff, 2px 1px 0 2px #111827, 14px 1px 0 2px #111827;
-}
-
-.ghost-pink { --ghost-color: var(--arcade-pink); }
-.ghost-cyan { --ghost-color: var(--arcade-cyan); }
-.ghost-orange { --ghost-color: var(--arcade-orange); }
-.ghost-blue { --ghost-color: var(--arcade-blue); }
-
 .treat.eating {
     transform: scale(1.15);
     filter: brightness(1.25);
@@ -207,12 +175,13 @@
     --enemy-eye-x: -3px;
     --enemy-eye-y: 0px;
     position: absolute;
-    left: 106%;
-    top: 34px;
+    left: 0;
+    top: 0;
     width: 30px;
     height: 32px;
-    animation: enemyDrift 8.8s linear infinite;
     filter: drop-shadow(0 0 9px color-mix(in srgb, var(--ghost-color) 58%, transparent));
+    opacity: 1;
+    will-change: left, top, transform, opacity;
 }
 
 .enemy-ghost::before {
@@ -258,22 +227,45 @@
     height: 4px;
     border-radius: 50%;
     background: #111827;
-    transform: translate(var(--enemy-eye-x), var(--enemy-eye-y));
-    animation: enemyLookAhead 0.9s ease-in-out infinite;
+    transform: translate(-3px, 0);
+    animation: enemyLookLeft 0.9s ease-in-out infinite;
 }
 
-.enemy-pink { --ghost-color: var(--arcade-pink); animation-delay: -0.8s; }
-.enemy-cyan { --ghost-color: var(--arcade-cyan); animation-duration: 10.4s; animation-delay: -4.2s; top: 38px; }
-.enemy-orange { --ghost-color: var(--arcade-orange); animation-duration: 12s; animation-delay: -7.1s; top: 33px; }
-
-@keyframes enemyDrift {
-    0% { left: 106%; }
-    100% { left: -9%; }
+.enemy-ghost[data-direction="right"] .enemy-pupil {
+    animation-name: enemyLookRight;
 }
 
-@keyframes enemyLookAhead {
+.enemy-pink { --ghost-color: var(--arcade-pink); }
+.enemy-cyan { --ghost-color: var(--arcade-cyan); }
+.enemy-orange { --ghost-color: var(--arcade-orange); }
+
+.enemy-ghost.is-eaten {
+    animation: ghostEaten 0.42s ease forwards;
+}
+
+.enemy-ghost.is-respawning {
+    animation: ghostDropWobble 0.36s ease-in-out infinite alternate;
+}
+
+@keyframes enemyLookLeft {
     0%, 100% { transform: translate(-3px, 0); }
     50% { transform: translate(-2px, 1px); }
+}
+
+@keyframes enemyLookRight {
+    0%, 100% { transform: translate(3px, 0); }
+    50% { transform: translate(2px, 1px); }
+}
+
+@keyframes ghostEaten {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; filter: brightness(1.25) drop-shadow(0 0 12px var(--arcade-yellow)); }
+    55% { transform: scale(1.28) rotate(-8deg); opacity: 0.92; filter: brightness(1.8) drop-shadow(0 0 16px var(--arcade-yellow)); }
+    100% { transform: scale(0.18) rotate(14deg); opacity: 0; filter: brightness(2) drop-shadow(0 0 18px var(--arcade-yellow)); }
+}
+
+@keyframes ghostDropWobble {
+    0% { transform: translateY(-2px) scale(0.88); opacity: 0.78; }
+    100% { transform: translateY(2px) scale(1); opacity: 1; }
 }
 
 .progress-cat {

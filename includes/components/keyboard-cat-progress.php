@@ -40,13 +40,13 @@ if ($catProgressTotalKeys < 1) {
             </div>
             <div class="treat runner-step pellet pellet-small" data-treat="10" data-keys="10" title="10 keys - Dot cleared"></div>
             <div class="treat runner-step pellet pellet-power" data-treat="20" data-keys="20" title="20 keys - Power pellet"></div>
-            <div class="treat runner-step pellet ghost ghost-pink" data-treat="30" data-keys="30" title="30 keys - Pink ghost"></div>
+            <div class="treat runner-step pellet pellet-small" data-treat="30" data-keys="30" title="30 keys - Dot cleared"></div>
             <div class="treat runner-step pellet pellet-small" data-treat="40" data-keys="40" title="40 keys - Dot cleared"></div>
-            <div class="treat runner-step pellet ghost ghost-cyan" data-treat="50" data-keys="50" title="50 keys - Cyan ghost"></div>
+            <div class="treat runner-step pellet pellet-small" data-treat="50" data-keys="50" title="50 keys - Dot cleared"></div>
             <div class="treat runner-step pellet pellet-power" data-treat="60" data-keys="60" title="60 keys - Power pellet"></div>
-            <div class="treat runner-step pellet ghost ghost-orange" data-treat="70" data-keys="70" title="70 keys - Orange ghost"></div>
+            <div class="treat runner-step pellet pellet-small" data-treat="70" data-keys="70" title="70 keys - Dot cleared"></div>
             <div class="treat runner-step pellet pellet-small" data-treat="80" data-keys="80" title="80 keys - Dot cleared"></div>
-            <div class="treat runner-step pellet ghost ghost-blue" data-treat="90" data-keys="90" title="90 keys - Blue ghost"></div>
+            <div class="treat runner-step pellet pellet-small" data-treat="90" data-keys="90" title="90 keys - Dot cleared"></div>
             <div class="treat runner-step pellet pellet-power final-pellet" data-treat="100" data-keys="<?php echo $catProgressTotalKeys; ?>" title="<?php echo $catProgressTotalKeys; ?> keys - Maze clear"></div>
 
             <div class="progress-cat" data-cat-avatar>

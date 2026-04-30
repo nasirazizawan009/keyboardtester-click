@@ -314,6 +314,11 @@
             this.moodEl = this.root.querySelector('[data-cat-mood]');
             this.treatsEl = this.root.querySelector('[data-cat-treats]');
             this.scoreEl = this.root.querySelector('[data-arcade-score]');
+            this.enemyEls = Array.from(this.root.querySelectorAll('[data-arcade-enemy]'));
+            this.enemyStates = [];
+            this.enemyFrame = 0;
+            this.enemyLastTime = 0;
+            this.enemyReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
             this.desktopTotalKeys = Math.max(Number(options.desktopTotalKeys) || 103, 1);
             this.mobileTotalKeys = Math.max(Number(options.mobileTotalKeys) || 42, 1);
@@ -335,6 +340,7 @@
             this.completed = false;
             this.setDisplayMode(false, this.desktopTotalKeys);
             this.reset({ totalKeys: this.desktopTotalKeys });
+            this.startEnemyMotion();
         }
 
         setDisplayMode(isMobile, totalKeys) {
@@ -363,6 +369,171 @@
 
         getTravelRange() {
             return window.innerWidth <= 768 ? 80 : 85;
+        }
+
+        randomBetween(min, max) {
+            return min + Math.random() * (max - min);
+        }
+
+        getEnemyLaneTop(index) {
+            if (!this.track) return 34;
+            const trackHeight = this.track.clientHeight || 86;
+            const baseTop = trackHeight <= 72 ? 31 : 34;
+            const offsets = [0, 3, -1, 2];
+            return baseTop + offsets[index % offsets.length];
+        }
+
+        setupEnemies() {
+            if (!this.track || !this.enemyEls.length) return;
+
+            const width = Math.max(this.track.clientWidth || 0, 320);
+            const startPositions = [0.18, 0.46, 0.73];
+            const now = (window.performance && window.performance.now) ? window.performance.now() : Date.now();
+
+            this.enemyStates.forEach((state) => {
+                state.eatToken += 1;
+            });
+            this.enemyLastTime = 0;
+
+            this.enemyStates = this.enemyEls.map((enemyEl, index) => {
+                const direction = Math.random() > 0.5 ? 1 : -1;
+                const state = {
+                    el: enemyEl,
+                    index,
+                    x: width * startPositions[index % startPositions.length],
+                    y: this.getEnemyLaneTop(index),
+                    laneY: this.getEnemyLaneTop(index),
+                    direction,
+                    speed: this.randomBetween(34, 78),
+                    dropSpeed: this.randomBetween(90, 130),
+                    status: 'active',
+                    nextTurn: now + this.randomBetween(800, 2400),
+                    eatToken: 0
+                };
+
+                enemyEl.classList.remove('is-eaten', 'is-respawning');
+                this.setEnemyDirection(state, direction);
+                this.applyEnemyState(state);
+                return state;
+            });
+        }
+
+        setEnemyDirection(state, direction) {
+            state.direction = direction >= 0 ? 1 : -1;
+            state.el.setAttribute('data-direction', state.direction > 0 ? 'right' : 'left');
+        }
+
+        applyEnemyState(state) {
+            state.el.style.left = `${state.x.toFixed(2)}px`;
+            state.el.style.top = `${state.y.toFixed(2)}px`;
+        }
+
+        startEnemyMotion() {
+            if (!this.track || !this.enemyEls.length || this.enemyReducedMotion || this.enemyFrame) return;
+
+            const tick = (time) => {
+                if (!document.body.contains(this.root)) {
+                    this.enemyFrame = 0;
+                    return;
+                }
+
+                if (!this.enemyLastTime) this.enemyLastTime = time;
+                const delta = Math.min((time - this.enemyLastTime) / 1000, 0.05);
+                this.enemyLastTime = time;
+                this.updateEnemies(time, delta);
+                this.enemyFrame = window.requestAnimationFrame(tick);
+            };
+
+            this.enemyFrame = window.requestAnimationFrame(tick);
+        }
+
+        updateEnemies(time, delta) {
+            if (!this.track || !this.enemyStates.length) return;
+
+            const width = Math.max(this.track.clientWidth || 0, 320);
+            const ghostWidth = 30;
+
+            this.enemyStates.forEach((state) => {
+                state.laneY = this.getEnemyLaneTop(state.index);
+
+                if (state.status === 'respawning') {
+                    state.y = Math.min(state.laneY, state.y + state.dropSpeed * delta);
+                    if (state.y >= state.laneY) {
+                        state.status = 'active';
+                        state.el.classList.remove('is-respawning');
+                        state.nextTurn = time + this.randomBetween(800, 2400);
+                    }
+                    this.applyEnemyState(state);
+                    return;
+                }
+
+                if (state.status !== 'active') {
+                    this.applyEnemyState(state);
+                    return;
+                }
+
+                if (time >= state.nextTurn) {
+                    if (Math.random() < 0.72) {
+                        this.setEnemyDirection(state, -state.direction);
+                    }
+                    state.speed = this.randomBetween(34, 84);
+                    state.nextTurn = time + this.randomBetween(700, 2600);
+                }
+
+                state.x += state.direction * state.speed * delta;
+
+                if (state.direction < 0 && state.x < -ghostWidth - 12) {
+                    state.x = width + this.randomBetween(10, 70);
+                } else if (state.direction > 0 && state.x > width + ghostWidth + 12) {
+                    state.x = -ghostWidth - this.randomBetween(10, 70);
+                }
+
+                this.applyEnemyState(state);
+                if (this.isTouchingPacman(state)) {
+                    this.eatEnemy(state);
+                }
+            });
+        }
+
+        isTouchingPacman(state) {
+            if (!this.catEl || state.status !== 'active') return false;
+
+            const pacmanRect = this.catEl.getBoundingClientRect();
+            const enemyRect = state.el.getBoundingClientRect();
+            const inset = 6;
+
+            return !(
+                enemyRect.right - inset < pacmanRect.left + inset ||
+                enemyRect.left + inset > pacmanRect.right - inset ||
+                enemyRect.bottom - inset < pacmanRect.top + inset ||
+                enemyRect.top + inset > pacmanRect.bottom - inset
+            );
+        }
+
+        eatEnemy(state) {
+            if (!state || state.status !== 'active') return;
+
+            state.status = 'eaten';
+            state.eatToken += 1;
+            const eatToken = state.eatToken;
+            state.el.classList.remove('is-respawning');
+            state.el.classList.add('is-eaten');
+
+            window.setTimeout(() => {
+                if (!document.body.contains(this.root) || state.eatToken !== eatToken) return;
+
+                const width = Math.max(this.track.clientWidth || 0, 320);
+                state.status = 'respawning';
+                state.x = this.randomBetween(24, Math.max(54, width - 54));
+                state.y = -this.randomBetween(74, 122);
+                state.laneY = this.getEnemyLaneTop(state.index);
+                state.dropSpeed = this.randomBetween(82, 126);
+                state.speed = this.randomBetween(34, 84);
+                this.setEnemyDirection(state, Math.random() > 0.5 ? 1 : -1);
+                state.el.classList.remove('is-eaten');
+                state.el.classList.add('is-respawning');
+                this.applyEnemyState(state);
+            }, 420);
         }
 
         createSparkles(element) {
@@ -475,6 +646,7 @@
             this.lastLevels.desktop = 0;
             this.lastLevels.mobile = 0;
             this.completed = false;
+            this.setupEnemies();
         }
     }
 
