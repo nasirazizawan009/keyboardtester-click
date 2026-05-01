@@ -12,10 +12,16 @@ if (!function_exists('kbtRenderSiteSidebar')) {
         include_once __DIR__ . '/../tool-icons.php';
         if (!function_exists('getSharedToolListData')) { return; }
         $data = getSharedToolListData();
+        if (!isset($data['locales'][$locale])) {
+            $locale = 'en';
+        }
 
         // Locale-aware URL resolver: prefers localized route when available, falls back to EN
         $localeConfig = $data['locales'][$locale] ?? $data['locales']['en'];
+        $localeToolOverrides = $localeConfig['tools'] ?? [];
+        $localeCatLabels = $localeConfig['category_labels'] ?? [];
         $localeDir = trim((string)($localeConfig['directory'] ?? ''), '/');
+        $direction = $localeConfig['dir'] ?? 'ltr';
         $rootPath = dirname(__DIR__, 2);
         $resolveToolUrl = function ($toolMeta) use ($locale, $localeDir, $rootPath) {
             $enPath = $toolMeta['routes']['en'] ?? '';
@@ -37,6 +43,154 @@ if (!function_exists('kbtRenderSiteSidebar')) {
         };
 
         // Inline SVG icons per category — take currentColor so we can tint via CSS
+        $SIDEBAR_COPY = [
+            'en' => [
+                'subtitle' => 'Hardware testing suite',
+                'search_placeholder' => 'Search tools...',
+                'search_aria' => 'Search tools',
+                'open_sidebar' => 'Open tool sidebar',
+                'close_sidebar' => 'Close tool sidebar',
+                'site_nav' => 'Site navigation',
+                'all_tools' => 'All Tools',
+                'tool_categories' => 'Tool Categories',
+                'blog' => 'Blog',
+                'about' => 'About',
+                'feedback' => 'Feedback',
+                'download_app' => 'Download App',
+                'new' => 'New',
+                'new_title' => 'Added in the last 7 days',
+            ],
+            'ar' => [
+                'subtitle' => 'مجموعة اختبار الأجهزة',
+                'search_placeholder' => 'ابحث في الأدوات...',
+                'search_aria' => 'البحث في الأدوات',
+                'open_sidebar' => 'فتح شريط الأدوات الجانبي',
+                'close_sidebar' => 'إغلاق شريط الأدوات الجانبي',
+                'site_nav' => 'تنقل الموقع',
+                'all_tools' => 'كل الأدوات',
+                'tool_categories' => 'فئات الأدوات',
+                'blog' => 'المدونة',
+                'about' => 'حول',
+                'feedback' => 'الملاحظات',
+                'download_app' => 'تنزيل التطبيق',
+                'new' => 'جديد',
+                'new_title' => 'أضيف خلال آخر 7 أيام',
+            ],
+            'fr' => [
+                'subtitle' => 'Suite de test matériel',
+                'search_placeholder' => 'Rechercher des outils...',
+                'search_aria' => 'Rechercher des outils',
+                'open_sidebar' => 'Ouvrir la barre latérale des outils',
+                'close_sidebar' => 'Fermer la barre latérale des outils',
+                'site_nav' => 'Navigation du site',
+                'all_tools' => 'Tous les outils',
+                'tool_categories' => 'Catégories d’outils',
+                'blog' => 'Blog',
+                'about' => 'À propos',
+                'feedback' => 'Retour',
+                'download_app' => 'Télécharger l’app',
+                'new' => 'Nouveau',
+                'new_title' => 'Ajouté au cours des 7 derniers jours',
+            ],
+            'de' => [
+                'subtitle' => 'Hardware-Test-Suite',
+                'search_placeholder' => 'Tools suchen...',
+                'search_aria' => 'Tools suchen',
+                'open_sidebar' => 'Tool-Seitenleiste öffnen',
+                'close_sidebar' => 'Tool-Seitenleiste schließen',
+                'site_nav' => 'Seitennavigation',
+                'all_tools' => 'Alle Tools',
+                'tool_categories' => 'Tool-Kategorien',
+                'blog' => 'Blog',
+                'about' => 'Über uns',
+                'feedback' => 'Feedback',
+                'download_app' => 'App herunterladen',
+                'new' => 'Neu',
+                'new_title' => 'In den letzten 7 Tagen hinzugefügt',
+            ],
+            'es' => [
+                'subtitle' => 'Suite de pruebas de hardware',
+                'search_placeholder' => 'Buscar herramientas...',
+                'search_aria' => 'Buscar herramientas',
+                'open_sidebar' => 'Abrir barra lateral de herramientas',
+                'close_sidebar' => 'Cerrar barra lateral de herramientas',
+                'site_nav' => 'Navegación del sitio',
+                'all_tools' => 'Todas las herramientas',
+                'tool_categories' => 'Categorías de herramientas',
+                'blog' => 'Blog',
+                'about' => 'Acerca de',
+                'feedback' => 'Comentarios',
+                'download_app' => 'Descargar app',
+                'new' => 'Nuevo',
+                'new_title' => 'Añadido en los últimos 7 días',
+            ],
+            'pt' => [
+                'subtitle' => 'Suite de testes de hardware',
+                'search_placeholder' => 'Pesquisar ferramentas...',
+                'search_aria' => 'Pesquisar ferramentas',
+                'open_sidebar' => 'Abrir barra lateral de ferramentas',
+                'close_sidebar' => 'Fechar barra lateral de ferramentas',
+                'site_nav' => 'Navegação do site',
+                'all_tools' => 'Todas as ferramentas',
+                'tool_categories' => 'Categorias de ferramentas',
+                'blog' => 'Blog',
+                'about' => 'Sobre',
+                'feedback' => 'Feedback',
+                'download_app' => 'Baixar app',
+                'new' => 'Novo',
+                'new_title' => 'Adicionado nos últimos 7 dias',
+            ],
+            'ru' => [
+                'subtitle' => 'Набор инструментов для проверки устройств',
+                'search_placeholder' => 'Искать инструменты...',
+                'search_aria' => 'Поиск инструментов',
+                'open_sidebar' => 'Открыть боковую панель инструментов',
+                'close_sidebar' => 'Закрыть боковую панель инструментов',
+                'site_nav' => 'Навигация по сайту',
+                'all_tools' => 'Все инструменты',
+                'tool_categories' => 'Категории инструментов',
+                'blog' => 'Блог',
+                'about' => 'О сайте',
+                'feedback' => 'Обратная связь',
+                'download_app' => 'Скачать приложение',
+                'new' => 'Новое',
+                'new_title' => 'Добавлено за последние 7 дней',
+            ],
+            'ja' => [
+                'subtitle' => 'ハードウェアテストスイート',
+                'search_placeholder' => 'ツールを検索...',
+                'search_aria' => 'ツールを検索',
+                'open_sidebar' => 'ツールサイドバーを開く',
+                'close_sidebar' => 'ツールサイドバーを閉じる',
+                'site_nav' => 'サイトナビゲーション',
+                'all_tools' => 'すべてのツール',
+                'tool_categories' => 'ツールカテゴリ',
+                'blog' => 'ブログ',
+                'about' => '概要',
+                'feedback' => 'フィードバック',
+                'download_app' => 'アプリをダウンロード',
+                'new' => '新着',
+                'new_title' => '過去7日間に追加',
+            ],
+            'ko' => [
+                'subtitle' => '하드웨어 테스트 도구 모음',
+                'search_placeholder' => '도구 검색...',
+                'search_aria' => '도구 검색',
+                'open_sidebar' => '도구 사이드바 열기',
+                'close_sidebar' => '도구 사이드바 닫기',
+                'site_nav' => '사이트 탐색',
+                'all_tools' => '모든 도구',
+                'tool_categories' => '도구 카테고리',
+                'blog' => '블로그',
+                'about' => '소개',
+                'feedback' => '피드백',
+                'download_app' => '앱 다운로드',
+                'new' => '신규',
+                'new_title' => '최근 7일 안에 추가됨',
+            ],
+        ];
+        $ui = array_merge($SIDEBAR_COPY['en'], $SIDEBAR_COPY[$locale] ?? []);
+
         $CATEGORY_LABELS = [
             'keyboard' => [
                 'label' => 'Keyboard',
@@ -75,7 +229,7 @@ if (!function_exists('kbtRenderSiteSidebar')) {
         foreach ($data['categories'] as $catId => $catMeta) {
             $buckets[$catId] = [
                 'id'     => $catId,
-                'label'  => $CATEGORY_LABELS[$catId]['label'] ?? ucfirst($catId),
+                'label'  => $localeCatLabels[$catId] ?? ($CATEGORY_LABELS[$catId]['label'] ?? ucfirst($catId)),
                 'svg'    => $CATEGORY_LABELS[$catId]['svg'] ?? $DEFAULT_SVG,
                 'accent' => $catMeta['accent'] ?? '#0ea5e9',
                 'order'  => $catMeta['order'] ?? 99,
@@ -102,8 +256,9 @@ if (!function_exists('kbtRenderSiteSidebar')) {
             }
             $buckets[$cat]['tools'][] = [
                 'id'    => $id,
-                'name'  => $tool['name'] ?? $id,
-                'desc'  => $tool['description'] ?? '',
+                'name'  => $localeToolOverrides[$id]['name'] ?? ($tool['name'] ?? $id),
+                'desc'  => $localeToolOverrides[$id]['description'] ?? ($tool['description'] ?? ''),
+                'search' => trim(($localeToolOverrides[$id]['name'] ?? '') . ' ' . ($tool['name'] ?? '') . ' ' . $id),
                 'url'   => $resolvedUrl,
                 'is_new' => $isNew,
                 'icon'  => $tool['icon'] ?? '',
@@ -176,6 +331,11 @@ if (!function_exists('kbtRenderSiteSidebar')) {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Roboto, sans-serif;
     }
     .kbt-sb-open .kbt-sb { transform: translateX(0); }
+    .kbt-sb[dir="rtl"] .kbt-sb-link,
+    .kbt-sb[dir="rtl"] .kbt-sb-cat-head,
+    .kbt-sb[dir="rtl"] .kbt-sb-tool {
+        text-align: right;
+    }
 
     .kbt-sb-brand {
         display: flex; align-items: center; gap: 12px;
@@ -394,36 +554,36 @@ if (!function_exists('kbtRenderSiteSidebar')) {
     }
 </style>
 
-<button class="kbt-sb-fab" id="kbt-sb-fab" type="button" aria-expanded="false" aria-controls="kbt-sb-panel" aria-label="Open tool sidebar" title="Open tool sidebar">
+<button class="kbt-sb-fab" id="kbt-sb-fab" type="button" aria-expanded="false" aria-controls="kbt-sb-panel" aria-label="<?php echo htmlspecialchars($ui['open_sidebar'], ENT_QUOTES, 'UTF-8'); ?>" title="<?php echo htmlspecialchars($ui['open_sidebar'], ENT_QUOTES, 'UTF-8'); ?>" data-open-label="<?php echo htmlspecialchars($ui['open_sidebar'], ENT_QUOTES, 'UTF-8'); ?>" data-close-label="<?php echo htmlspecialchars($ui['close_sidebar'], ENT_QUOTES, 'UTF-8'); ?>">
     <span class="kbt-sb-fab-icon" aria-hidden="true"></span>
 </button>
 
 <div class="kbt-sb-backdrop" id="kbt-sb-backdrop" aria-hidden="true"></div>
 
-<aside class="kbt-sb" id="kbt-sb-panel" inert aria-label="Site navigation">
+<aside class="kbt-sb" id="kbt-sb-panel" inert aria-label="<?php echo htmlspecialchars($ui['site_nav'], ENT_QUOTES, 'UTF-8'); ?>" dir="<?php echo htmlspecialchars($direction, ENT_QUOTES, 'UTF-8'); ?>">
     <a class="kbt-sb-brand" href="<?php echo htmlspecialchars($homeUrl, ENT_QUOTES, 'UTF-8'); ?>">
         <div class="kbt-sb-logo">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 10h1M8 10h1M11 10h1M14 10h1M17 10h1M5 13h1M8 13h1M11 13h1M14 13h1M17 13h1M7 16h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         </div>
         <div class="kbt-sb-brand-text">
             <div class="kbt-sb-name">KeyboardTester<span class="kbt-sb-dot">.click</span></div>
-            <div class="kbt-sb-sub">Hardware testing suite</div>
+            <div class="kbt-sb-sub"><?php echo htmlspecialchars($ui['subtitle'], ENT_QUOTES, 'UTF-8'); ?></div>
         </div>
     </a>
 
     <div class="kbt-sb-search">
-        <input type="search" id="kbt-sb-search-input" placeholder="Search tools..." aria-label="Search tools">
+        <input type="search" id="kbt-sb-search-input" placeholder="<?php echo htmlspecialchars($ui['search_placeholder'], ENT_QUOTES, 'UTF-8'); ?>" aria-label="<?php echo htmlspecialchars($ui['search_aria'], ENT_QUOTES, 'UTF-8'); ?>">
     </div>
 
     <div class="kbt-sb-scroll">
     <nav class="kbt-sb-nav kbt-sb-nav-primary">
         <a class="kbt-sb-link" href="<?php echo htmlspecialchars($allToolsUrl, ENT_QUOTES, 'UTF-8'); ?>">
             <span class="kbt-sb-link-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
-            All Tools
+            <?php echo htmlspecialchars($ui['all_tools'], ENT_QUOTES, 'UTF-8'); ?>
         </a>
     </nav>
 
-    <div class="kbt-sb-cats-title">Tool Categories</div>
+    <div class="kbt-sb-cats-title"><?php echo htmlspecialchars($ui['tool_categories'], ENT_QUOTES, 'UTF-8'); ?></div>
 
     <div class="kbt-sb-categories" id="kbt-sb-categories">
         <?php foreach ($buckets as $bucket): ?>
@@ -443,10 +603,10 @@ if (!function_exists('kbtRenderSiteSidebar')) {
                 </button>
                 <div class="kbt-sb-cat-list" id="<?php echo $catId; ?>">
                     <?php foreach ($bucket['tools'] as $tool): ?>
-                        <a class="kbt-sb-tool<?php echo !empty($tool['is_new']) ? ' is-new' : ''; ?>" href="<?php echo htmlspecialchars($tool['url'], ENT_QUOTES, 'UTF-8'); ?>" data-name="<?php echo htmlspecialchars(strtolower($tool['name']), ENT_QUOTES, 'UTF-8'); ?>" title="<?php echo htmlspecialchars($tool['desc'], ENT_QUOTES, 'UTF-8'); ?>" style="--kbt-accent-fg:<?php echo htmlspecialchars($bucket['accent'], ENT_QUOTES, 'UTF-8'); ?>">
+                        <a class="kbt-sb-tool<?php echo !empty($tool['is_new']) ? ' is-new' : ''; ?>" href="<?php echo htmlspecialchars($tool['url'], ENT_QUOTES, 'UTF-8'); ?>" data-name="<?php echo htmlspecialchars(strtolower($tool['search'] ?: $tool['name']), ENT_QUOTES, 'UTF-8'); ?>" title="<?php echo htmlspecialchars($tool['desc'], ENT_QUOTES, 'UTF-8'); ?>" style="--kbt-accent-fg:<?php echo htmlspecialchars($bucket['accent'], ENT_QUOTES, 'UTF-8'); ?>">
                             <span class="kbt-sb-tool-icon" aria-hidden="true"><?php echo function_exists('kbtRenderToolIcon') ? kbtRenderToolIcon($tool['icon'] ?? '', $bucket['id']) : ''; ?></span>
                             <span class="kbt-sb-tool-name"><?php echo htmlspecialchars($tool['name'], ENT_QUOTES, 'UTF-8'); ?></span>
-                            <?php if (!empty($tool['is_new'])): ?><span class="kbt-sb-tool-newdot" aria-label="New" title="Added in the last 7 days"></span><?php endif; ?>
+                            <?php if (!empty($tool['is_new'])): ?><span class="kbt-sb-tool-newdot" aria-label="<?php echo htmlspecialchars($ui['new'], ENT_QUOTES, 'UTF-8'); ?>" title="<?php echo htmlspecialchars($ui['new_title'], ENT_QUOTES, 'UTF-8'); ?>"></span><?php endif; ?>
                         </a>
                     <?php endforeach; ?>
                 </div>
@@ -457,15 +617,15 @@ if (!function_exists('kbtRenderSiteSidebar')) {
     <nav class="kbt-sb-nav kbt-sb-nav-secondary">
         <a class="kbt-sb-link" href="<?php echo htmlspecialchars($blogUrl, ENT_QUOTES, 'UTF-8'); ?>">
             <span class="kbt-sb-link-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5z"/><path d="M4 19.5V22h14"/></svg></span>
-            Blog
+            <?php echo htmlspecialchars($ui['blog'], ENT_QUOTES, 'UTF-8'); ?>
         </a>
         <a class="kbt-sb-link" href="<?php echo htmlspecialchars($aboutUrl, ENT_QUOTES, 'UTF-8'); ?>">
             <span class="kbt-sb-link-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg></span>
-            About
+            <?php echo htmlspecialchars($ui['about'], ENT_QUOTES, 'UTF-8'); ?>
         </a>
         <a class="kbt-sb-link" href="<?php echo htmlspecialchars(function_exists('url') ? url('feedback.php') : '/feedback.php', ENT_QUOTES, 'UTF-8'); ?>">
             <span class="kbt-sb-link-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-            Feedback
+            <?php echo htmlspecialchars($ui['feedback'], ENT_QUOTES, 'UTF-8'); ?>
         </a>
     </nav>
     </div><!-- /.kbt-sb-scroll -->
@@ -473,7 +633,7 @@ if (!function_exists('kbtRenderSiteSidebar')) {
     <div class="kbt-sb-footer">
         <a class="kbt-sb-download" href="<?php echo htmlspecialchars($downloadUrl, ENT_QUOTES, 'UTF-8'); ?>">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14"/></svg>
-            Download App
+            <?php echo htmlspecialchars($ui['download_app'], ENT_QUOTES, 'UTF-8'); ?>
         </a>
     </div>
 </aside>
@@ -491,6 +651,8 @@ if (!function_exists('kbtRenderSiteSidebar')) {
     function open() {
         root.classList.add('kbt-sb-open');
         fab.setAttribute('aria-expanded', 'true');
+        fab.setAttribute('aria-label', fab.getAttribute('data-close-label') || '');
+        fab.setAttribute('title', fab.getAttribute('data-close-label') || '');
         panel.removeAttribute('inert');
         backdrop.setAttribute('aria-hidden', 'false');
         try { localStorage.setItem('kbt-sb-state', 'open'); } catch (_) {}
@@ -499,6 +661,8 @@ if (!function_exists('kbtRenderSiteSidebar')) {
     function close() {
         root.classList.remove('kbt-sb-open');
         fab.setAttribute('aria-expanded', 'false');
+        fab.setAttribute('aria-label', fab.getAttribute('data-open-label') || '');
+        fab.setAttribute('title', fab.getAttribute('data-open-label') || '');
         panel.setAttribute('inert', '');
         backdrop.setAttribute('aria-hidden', 'true');
         try { localStorage.setItem('kbt-sb-state', 'closed'); } catch (_) {}
