@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-01 (Codex, broken-link report cleanup)
+**Last updated:** 2026-05-02 (Codex, practical backlink sprint)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -65,6 +65,9 @@ This file is the **single source of truth** when handing off work between AI age
 ---
 
 ## 📜 Completed today (rolling 24-48h log)
+
+### 2026-05-02 (Codex)
+- Ran a practical backlink sprint focused on GitHub awesome-list opportunities. Opened two new mergeable PRs: `Bakumon/awesome-online-tools#29` adding KeyboardTester.click to the Test section, and `nafasebra/awesome-webdesign-tools#32` adding the Online Ruler to the Utils section. Used the `devicetester/awesome-online-tools` fork for the Bakumon PR because the user account already had a same-name fork from another upstream; cleaned up the unused branch from the wrong fork. Current GitHub backlink PR snapshot: 20 open, 1 merged, 5 closed/not-merged. Saved the working note at `seo-audit-2026-05-02/backlink-sprint-2026-05-02.md`.
 
 ### 2026-05-01 (Codex)
 - Cleaned up the latest broken-link report: added a 301 redirect from `/keyboard-tester/` to `/tools/keyboard-tester/`, fixed the Minecraft circle related-tool link that emitted the old path, removed the missing `assets/css/tool-components.css` include from Russian DPI, added a compatibility `assets/css/tool-components.css` asset for older references, and removed crawler-hostile Tracker/MSI store source links from two live blog posts. Deployed via SFTP/paramiko and verified live: `/keyboard-tester/` now returns 301 to the canonical tool, `/assets/css/tool-components.css` returns HTTP 200, the updated source pages are HTTP 200, and the removed external URLs no longer appear in the live source pages. The DAA opt-out link returned HTTP 200 in verification and was kept because it is a compliance/helpful privacy reference.
