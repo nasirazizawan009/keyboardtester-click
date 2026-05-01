@@ -1,0 +1,88 @@
+# Microsoft Store PWA Submission Kit
+
+Generated: 2026-05-01
+
+## Decision
+
+Do not rebuild KeyboardTester.click as a native Windows app for the first Microsoft Store submission.
+
+Microsoft's current PWA path supports publishing an existing PWA by reserving an app in Partner Center, packaging the live site with PWABuilder, and uploading the generated Windows packages. The site already has the core PWA pieces needed for that route:
+
+- Live HTTPS site: `https://keyboardtester.click`
+- Web app manifest: `https://keyboardtester.click/manifest.webmanifest`
+- Service worker: `https://keyboardtester.click/sw.js`
+- Offline page: `https://keyboardtester.click/offline.html`
+- App icon: `https://keyboardtester.click/navigation.png`
+
+## Current Preflight
+
+| Check | Result | Evidence |
+|---|---:|---|
+| Manifest reachable | Pass | `manifest.webmanifest` returns HTTP 200 and parses as JSON |
+| Service worker reachable | Pass | `sw.js` returns HTTP 200 as JavaScript |
+| Offline fallback reachable | Pass | `offline.html` returns HTTP 200 |
+| 512 icon reachable | Pass | `navigation.png` returns HTTP 200 and is 512 x 512 |
+| Desktop screenshots prepared | Pass | See `microsoft-store/screenshots/` |
+| Final Store package generated | Blocked | Requires Partner Center Product Identity values |
+
+## Hard Blocker
+
+The final `.msixbundle` and `.classic.appxbundle` cannot be generated correctly until the app is reserved in Microsoft Partner Center and these exact values are copied from Product management > Product Identity:
+
+- Package ID
+- Publisher ID
+- Publisher display name
+
+These values are case-sensitive and must match the Store reservation. Using guessed values can create a package that fails upload with identity mismatch errors.
+
+## Recommended Store Name
+
+Primary reservation target:
+
+`KeyboardTester.click`
+
+Fallback reservation targets if unavailable:
+
+- `Keyboard Tester Online`
+- `KeyboardTester Tools`
+- `Keyboard Tester Hardware Tools`
+
+## Packaging Steps
+
+1. Open Partner Center: `https://partner.microsoft.com/dashboard`
+2. Go to Apps and games.
+3. Create New product > MSIX or PWA app.
+4. Reserve the app name.
+5. Open Product management > Product Identity.
+6. Copy Package ID, Publisher ID, and Publisher display name.
+7. Open PWABuilder: `https://www.pwabuilder.com/`
+8. Enter `https://keyboardtester.click`.
+9. Choose Package For Stores > Windows > Generate Package.
+10. Paste the Partner Center identity values.
+11. Download the package zip.
+12. In Partner Center, start submission and upload:
+    - `.msixbundle`
+    - `.classic.appxbundle`
+13. Complete pricing, age rating, store listing, screenshots, privacy policy, and final submission.
+
+## Store Screenshots
+
+Generated desktop screenshots are in:
+
+`microsoft-store/screenshots/`
+
+They are 1366 x 768 PNG files, which meets the Microsoft desktop screenshot minimum.
+
+Suggested upload order:
+
+1. `01-home-keyboard-tester.png`
+2. `02-all-tools.png`
+3. `03-language-tools.png`
+4. `04-pacman-game.png`
+
+## Official References
+
+- Publish a PWA to Microsoft Store: `https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/how-to/microsoft-store`
+- PWA package requirements: `https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/app-package-requirements`
+- Store listing text and screenshot requirements: `https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/add-and-edit-store-listing-info`
+- Screenshots and images: `https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/screenshots-and-images`

@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-01 (Codex, live language tools copy fix)
+**Last updated:** 2026-05-01 (Codex, Microsoft Store PWA submission prep)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,8 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-01 (Codex)
+- Prepared local Microsoft Store PWA submission kit under `microsoft-store/`: preflight report/README, Partner Center submission checklist, ready-to-paste Store listing draft, and four 1366x768 desktop screenshots.
+- Confirmed no native Windows rebuild is needed for the first Store submission: existing live PWA has reachable manifest, service worker, offline page, and 512x512 icon. Final `.msixbundle`/`.classic.appxbundle` generation is blocked only on Partner Center Product Identity values: Package ID, Publisher ID, and Publisher display name.
 - Follow-up for `keyboard_tester_different_languages.php`: live Japanese flag asset was present at `flags/japanese_flag.svg`, but the browser could still show the old broken `japan_flag.svg` DOM/cache. Added cache-busting `?v=20260501` to the Japanese flag URL and re-uploaded both the page and `flags/japanese_flag.svg`. Live verification: page HTTP 200, versioned Japanese flag URL HTTP 200, old `japan_flag.svg` path absent.
 - Fixed and deployed live `keyboard_tester_different_languages.php`: removed the outdated note saying only Keyboard Tester has language support, updated the page title/description/hero copy to reflect the localized tool suite, and corrected the Japanese flag path from `japan_flag.svg` to `japanese_flag.svg`.
 - Verified locally and live: page returns HTTP 200, old note is absent, new localized-tool-suite note is present, and the Japanese flag path is correct. Deployed via SFTP/paramiko only.
