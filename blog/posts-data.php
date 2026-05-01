@@ -20,6 +20,26 @@
  */
 return [
 
+    // ── 2026 — May ──────────────────────────────────────────────────────────
+    [
+        'path'    => 'blog/ai-gpu-test-webgpu-browser-ai-readiness.php',
+        'url'     => 'https://keyboardtester.click/blog/ai-gpu-test-webgpu-browser-ai-readiness.php',
+        'image'   => 'images/gpu-stress-test/hero.jpg',
+        'alt'     => 'Graphics card used for an AI GPU test, WebGPU test, and browser AI readiness check',
+        'date'    => 'May 1, 2026',
+        'title'   => 'AI GPU Test: Check WebGPU, WebNN and Browser AI Readiness (2026 Guide)',
+        'excerpt' => 'A practical guide to AI GPU testing in the browser: WebGPU, WebNN, WebGL2, software-rendering fallback, matrix benchmarks, and local AI readiness.',
+    ],
+    [
+        'path'    => 'blog/mouse-acceleration-windows-11-disable-raw-input-gaming-guide.php',
+        'url'     => 'https://keyboardtester.click/blog/mouse-acceleration-windows-11-disable-raw-input-gaming-guide.php',
+        'image'   => 'blog/images/mouse-acceleration-rgb-gaming-mouse-hero.webp',
+        'alt'     => 'RGB gaming mouse on a competitive setup — testing mouse acceleration in Windows 11',
+        'date'    => 'May 1, 2026',
+        'title'   => 'Mouse Acceleration on Windows 11: How to Disable It and Use Raw Input (2026 Gaming Guide)',
+        'excerpt' => 'Step-by-step guide to turning off mouse acceleration in Windows 11, why Enhance Pointer Precision hurts FPS aim, and how raw input works in Valorant, CS2, and Apex.',
+    ],
+
     // ── 2026 — April ────────────────────────────────────────────────────────
     [
         'path'    => 'blog/keyboard-polling-rate-test-check-keyboard-hz.php',

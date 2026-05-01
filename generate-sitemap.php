@@ -78,6 +78,7 @@ $excludePatterns = [
     '/^submit-indexnow\.example\.php$/',
     '/^testpage\.php$/',
     '/^mouse-trail-index\.php$/',
+    '/^pacman-game\.php$/',
     '/^tools\.php$/',
     '/\.py$/',
     '/_tool\.php$/',  // Tool implementation files

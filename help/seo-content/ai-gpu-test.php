@@ -3,6 +3,7 @@
     <article class="seo-article">
       <h2>What This AI GPU Test Checks</h2>
       <p>This online AI GPU test checks the browser path that matters for modern local AI: WebGPU for GPU compute, WebGL2 for graphics acceleration, WebNN for emerging neural-network acceleration, and software-rendering fallback detection. A strong result means your browser is more likely to run WebGPU-based AI demos, local image tools, small transformer models, and other on-device AI workloads smoothly. A weak result usually means WebGPU is missing, hardware acceleration is disabled, the browser is using a CPU renderer, or the device has an older integrated GPU.</p>
+      <p>For the full research-backed explanation, read the <a href="<?php echo url('blog/ai-gpu-test-webgpu-browser-ai-readiness.php'); ?>">AI GPU test and WebGPU readiness guide</a>.</p>
     </article>
     <article class="seo-article">
       <h2>Why WebGPU Matters For AI</h2>

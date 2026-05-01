@@ -193,6 +193,12 @@
     <priority>0.83</priority>
   </url>
   <url>
+    <loc>https://keyboardtester.click/ai-gpu-test.php</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
     <loc>https://keyboardtester.click/camera-resolution-test.php</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -392,7 +398,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/mouse-test.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.78</priority>
   </url>
@@ -542,7 +548,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/click-speed.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.74</priority>
   </url>
@@ -590,7 +596,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/click-speed.php</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.74</priority>
   </url>
@@ -638,7 +644,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/click-speed.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.74</priority>
   </url>
@@ -656,7 +662,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/latency-checker.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.74</priority>
   </url>
@@ -674,7 +680,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/typing-test.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.74</priority>
   </url>
@@ -686,7 +692,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/click-speed.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.74</priority>
   </url>
@@ -734,7 +740,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/click-speed.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.74</priority>
   </url>
@@ -782,7 +788,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/click-speed.php</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.74</priority>
   </url>
@@ -986,25 +992,25 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/headphone-test.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.73</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/headphone-test.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.73</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/headphone-test.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.73</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/headphone-test.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.73</priority>
   </url>
@@ -1016,7 +1022,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/headphone-test.php</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.73</priority>
   </url>
@@ -1886,7 +1892,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/keyboard_tester_different_languages.php</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1982,7 +1988,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/pages/category-utilities.php</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1994,7 +2000,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5053,6 +5059,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://keyboardtester.click/blog/ai-gpu-test-webgpu-browser-ai-readiness.php</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://keyboardtester.click/images/gpu-stress-test/hero.jpg</image:loc>
+      <image:title>Graphics card used for an AI GPU test, WebGPU test, and browser AI readiness check</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://keyboardtester.click/blog/best-mechanical-keyboards-for-gaming-2026.php</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -5220,7 +5236,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/double-click-test-check-mouse-switch-bounce.php</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5262,7 +5278,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/ghost-click-detector-fix-double-clicking.php</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5451,8 +5467,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://keyboardtester.click/blog/mouse-acceleration-windows-11-disable-raw-input-gaming-guide.php</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/mouse-acceleration-rgb-gaming-mouse-hero.webp</image:loc>
+      <image:title>RGB gaming mouse on a competitive setup — used to test mouse acceleration in Windows 11</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/mouse-acceleration-fps-gaming-setup.webp</image:loc>
+      <image:title>FPS gamer at a mechanical keyboard and gaming mouse — testing aim consistency after disabling Windows mouse acceleration</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/mouse-acceleration-precision-gaming-mouse-mousepad.webp</image:loc>
+      <image:title>Sleek metallic gaming mouse on an esports mousepad — used for testing 1-to-1 sensor tracking after disabling acceleration</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://keyboardtester.click/blog/mouse-dpi-tester-measure-sensitivity.php</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5548,7 +5582,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/what-is-keyboard-ghosting-anti-ghosting-fix-guide.php</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
