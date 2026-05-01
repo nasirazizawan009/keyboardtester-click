@@ -23,17 +23,26 @@ Microsoft's current PWA path supports publishing an existing PWA by reserving an
 | Offline fallback reachable | Pass | `offline.html` returns HTTP 200 |
 | 512 icon reachable | Pass | `navigation.png` returns HTTP 200 and is 512 x 512 |
 | Desktop screenshots prepared | Pass | See `microsoft-store/screenshots/` |
-| Final Store package generated | Blocked | Requires Partner Center Product Identity values |
+| Final Store package generated | Pass | Generated locally under `microsoft-store/package/` |
 
-## Hard Blocker
+## Store Package
 
-The final `.msixbundle` and `.classic.appxbundle` cannot be generated correctly until the app is reserved in Microsoft Partner Center and these exact values are copied from Product management > Product Identity:
+Generated package archive:
 
-- Package ID
-- Publisher ID
-- Publisher display name
+`microsoft-store/package/KeyboardTester-click-pwabuilder-package.zip`
 
-These values are case-sensitive and must match the Store reservation. Using guessed values can create a package that fails upload with identity mismatch errors.
+Extracted upload files:
+
+- `microsoft-store/package/extracted/KeyboardTester.click.msixbundle`
+- `microsoft-store/package/extracted/KeyboardTester.click.classic.appxbundle`
+
+Do not upload `KeyboardTester.click.sideload.msix` to Partner Center. That file is only for local sideload testing.
+
+Identity verified inside both generated package manifests:
+
+- Package ID: `KeyboardTester.Click.KeyboardTester.click`
+- Publisher ID: `CN=1DE207C4-E7E1-4A04-A664-AEAD22613CAE`
+- Publisher display name: `KeyboardTester.Click`
 
 ## Recommended Store Name
 
@@ -55,15 +64,11 @@ Fallback reservation targets if unavailable:
 4. Reserve the app name.
 5. Open Product management > Product Identity.
 6. Copy Package ID, Publisher ID, and Publisher display name.
-7. Open PWABuilder: `https://www.pwabuilder.com/`
-8. Enter `https://keyboardtester.click`.
-9. Choose Package For Stores > Windows > Generate Package.
-10. Paste the Partner Center identity values.
-11. Download the package zip.
-12. In Partner Center, start submission and upload:
+7. Package has already been generated through the PWABuilder Windows packaging service.
+8. In Partner Center, start submission and upload:
     - `.msixbundle`
     - `.classic.appxbundle`
-13. Complete pricing, age rating, store listing, screenshots, privacy policy, and final submission.
+9. Complete pricing, age rating, store listing, screenshots, privacy policy, and final submission.
 
 ## Store Screenshots
 

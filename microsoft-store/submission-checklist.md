@@ -9,26 +9,28 @@
 - [x] Live 512 x 512 icon checked.
 - [x] Store screenshots generated locally.
 - [x] Store listing draft prepared.
+- [x] Windows PWA package generated.
+- [x] Package identity checked inside generated manifests.
 
-## User Required
+## User Required In Partner Center
 
-- [ ] Sign in to Microsoft Partner Center.
-- [ ] Make sure the account is enrolled in the Windows Developer Program.
-- [ ] Reserve product name as `KeyboardTester.click` or a fallback.
-- [ ] Copy Product Identity values:
-  - [ ] Package ID
-  - [ ] Publisher ID
-  - [ ] Publisher display name
+- [x] Product name reserved.
+- [x] Product Identity values copied.
+- [ ] Start app submission.
+- [ ] Upload generated packages:
+  - [ ] `microsoft-store/package/extracted/KeyboardTester.click.msixbundle`
+  - [ ] `microsoft-store/package/extracted/KeyboardTester.click.classic.appxbundle`
+- [ ] Complete pricing.
+- [ ] Complete age rating.
+- [ ] Complete store listing.
+- [ ] Upload screenshots from `microsoft-store/screenshots/`.
+- [ ] Submit for certification.
 
-## Codex Can Do After Identity Values Are Available
+## Generated Package Files
 
-- [ ] Generate the Windows PWA package in PWABuilder.
-- [ ] Check package contents.
-- [ ] Confirm package files ready for upload:
-  - [ ] `.msixbundle`
-  - [ ] `.classic.appxbundle`
-- [ ] Walk through Partner Center upload fields.
-- [ ] Prepare final submission text.
+- Upload to Partner Center: `KeyboardTester.click.msixbundle`
+- Upload to Partner Center: `KeyboardTester.click.classic.appxbundle`
+- Do not upload: `KeyboardTester.click.sideload.msix`
 
 ## Partner Center Upload Fields
 

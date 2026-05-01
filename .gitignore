@@ -102,6 +102,7 @@ __*.txt
 __*.php
 *.zip
 kbt.zip
+microsoft-store/package/
 
 # ── AI helper / diagnostic scripts (one-off debugging from session work) ────
 diagnose-*.py
