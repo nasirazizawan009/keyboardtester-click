@@ -67,6 +67,7 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-01 (Codex)
+- Follow-up for `keyboard_tester_different_languages.php`: live Japanese flag asset was present at `flags/japanese_flag.svg`, but the browser could still show the old broken `japan_flag.svg` DOM/cache. Added cache-busting `?v=20260501` to the Japanese flag URL and re-uploaded both the page and `flags/japanese_flag.svg`. Live verification: page HTTP 200, versioned Japanese flag URL HTTP 200, old `japan_flag.svg` path absent.
 - Fixed and deployed live `keyboard_tester_different_languages.php`: removed the outdated note saying only Keyboard Tester has language support, updated the page title/description/hero copy to reflect the localized tool suite, and corrected the Japanese flag path from `japan_flag.svg` to `japanese_flag.svg`.
 - Verified locally and live: page returns HTTP 200, old note is absent, new localized-tool-suite note is present, and the Japanese flag path is correct. Deployed via SFTP/paramiko only.
 - Ran a fresh Search Console URL Inspection API audit against the current sitemap URL set: 877 URLs inspected, 167 submitted/indexed, 701 unknown to Google, and 9 confirmed `Crawled - currently not indexed`.

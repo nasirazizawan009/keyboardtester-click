@@ -62,7 +62,7 @@ $pageKeywords = 'language keyboard tester, multilingual testing tools, open sour
                         </a>
                         <a href="<?php echo $keyboardLanguages['ja']['url']; ?>">
                             <span>
-                                <img src="<?php echo url('flags/japanese_flag.svg'); ?>" alt="Japanese Flag" width="18" height="13" loading="lazy" decoding="async"> Japanese
+                                <img src="<?php echo url('flags/japanese_flag.svg?v=20260501'); ?>" alt="Japanese Flag" width="18" height="13" loading="lazy" decoding="async"> Japanese
                             </span>
                         </a>
                         <a href="<?php echo $keyboardLanguages['ko']['url']; ?>">
