@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-02 (Codex, USA outreach sent batch)
+**Last updated:** 2026-05-02 (Codex, awesome-webdesign backlink merged)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -68,6 +68,7 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-02 (Codex)
+- Verified `nafasebra/awesome-webdesign-tools#32` was merged into `main` on 2026-05-01T20:04:26Z. The merged backlink points to `https://keyboardtester.click/online-ruler.php` from `README.md` at merge commit `50f108f02b91ffdea6cec3449e333cd5126e9ec9`. Updated ignored backlink sprint note; practical status is now 2 merged GitHub backlink PRs and 19 open PRs to monitor.
 - Sent the approved USA outreach batch from `outreach@keyboardtester.click` after shortening the copy and personalizing each email by company/reference/target URL. Sent 29 validated contacts successfully with 0 SMTP failures; 21 unverified contacts remain on hold. Logs and final drafts are ignored under `seo-audit-2026-05-02/outreach/`: `drafts-short-ready-usa-keyboardtester-2026-05-02.csv`, `drafts-short-ready-usa-keyboardtester-2026-05-02.sent.csv`, `sent-log-usa-keyboardtester-2026-05-02.csv`, and updated `outreach-approval-summary-2026-05-02.md`. Do not resend these 29 unless a manual follow-up is approved later.
 - Prepared a 50-prospect USA backlink outreach batch for KeyboardTester.click under ignored `seo-audit-2026-05-02/outreach/`. Files: `prospects-usa-50-keyboardtester-2026-05-02.csv`, `validation-usa-50-keyboardtester-2026-05-02.csv`, `drafts-usa-50-keyboardtester-2026-05-02.csv`, and `outreach-approval-summary-2026-05-02.md`. Validation found 29 contacts ready for user-approved sending and 21 contacts on hold because the exact email was not confirmed on public pages or needs replacement. Drafts vary target URLs across homepage, keyboard tester, keyboard ghosting, N-key rollover, online ruler, and dead-pixel pages. No outreach emails were sent.
 - Created `outreach@keyboardtester.click` via cPanel UAPI over SSH for backlink/outreach work. Mailbox quota is 750 MB (host maximum). SMTP/IMAP credentials are stored only in gitignored `.env` under `OUTREACH_SMTP_*` / `OUTREACH_FROM` / `OUTREACH_REPLY_TO`; password value is not documented here. Verified SMTP 587 login and IMAP 993 login successfully. No outreach emails were sent; next step remains prospect list + manual approval before sending small batches.
