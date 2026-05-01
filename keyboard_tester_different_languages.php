@@ -1,9 +1,9 @@
 <?php
 include __DIR__ . '/config.php';
 
-$pageTitle = 'Free Open Source Language Keyboard Tester — Test All Layouts | KeyboardTester.click';
-$pageDescription = 'Free open source language keyboard testers for Arabic, Russian, Spanish, French, Portuguese, Japanese, German, and Korean layouts. Browser-based, no download needed.';
-$pageKeywords = 'language keyboard tester, open source keyboard tester, arabic keyboard, russian keyboard, spanish keyboard, french keyboard, portuguese keyboard, japanese keyboard, german keyboard, korean keyboard';
+$pageTitle = 'Free Open Source Language Tools & Keyboard Testers | KeyboardTester.click';
+$pageDescription = 'Open localized tool pages for Arabic, Russian, Spanish, French, Portuguese, Japanese, German, and Korean users. Test keyboards, mice, screens, audio, QR, OCR, passwords, and more.';
+$pageKeywords = 'language keyboard tester, multilingual testing tools, open source keyboard tester, arabic keyboard, russian keyboard, spanish keyboard, french keyboard, portuguese keyboard, japanese keyboard, german keyboard, korean keyboard';
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +20,8 @@ $pageKeywords = 'language keyboard tester, open source keyboard tester, arabic k
     <main class="language-keyboards-page">
         <section class="language-keyboards-hero">
             <div class="container">
-                <h1>Language Keyboard Testers</h1>
-                <p>Choose a language layout to open the keyboard tester in that language.</p>
+                <h1>Language Keyboard Testers & Localized Tools</h1>
+                <p>Choose a language to open the localized tool hub, including keyboard, mouse, screen, audio, QR, OCR, password, and utility tools.</p>
             </div>
         </section>
 
@@ -62,7 +62,7 @@ $pageKeywords = 'language keyboard tester, open source keyboard tester, arabic k
                         </a>
                         <a href="<?php echo $keyboardLanguages['ja']['url']; ?>">
                             <span>
-                                <img src="<?php echo url('flags/japan_flag.svg'); ?>" alt="Japanese Flag" width="18" height="13" loading="lazy" decoding="async"> Japanese
+                                <img src="<?php echo url('flags/japanese_flag.svg'); ?>" alt="Japanese Flag" width="18" height="13" loading="lazy" decoding="async"> Japanese
                             </span>
                         </a>
                         <a href="<?php echo $keyboardLanguages['ko']['url']; ?>">
@@ -72,7 +72,7 @@ $pageKeywords = 'language keyboard tester, open source keyboard tester, arabic k
                         </a>
                     </div>
                 </div>
-                <p class="language-note">Language support applies to the Keyboard Tester only. All other tools are currently English-only.</p>
+                <p class="language-note">Language support now covers the localized tool suite, not only the Keyboard Tester. Each language hub links to translated keyboard, mouse, screen, camera, audio, QR, OCR, password, and utility tools where available.</p>
             </div>
         </section>
     </main>

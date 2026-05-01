@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-01 (Codex, live GSC crawled-not-indexed cleanup)
+**Last updated:** 2026-05-01 (Codex, live language tools copy fix)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,8 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-01 (Codex)
+- Fixed and deployed live `keyboard_tester_different_languages.php`: removed the outdated note saying only Keyboard Tester has language support, updated the page title/description/hero copy to reflect the localized tool suite, and corrected the Japanese flag path from `japan_flag.svg` to `japanese_flag.svg`.
+- Verified locally and live: page returns HTTP 200, old note is absent, new localized-tool-suite note is present, and the Japanese flag path is correct. Deployed via SFTP/paramiko only.
 - Ran a fresh Search Console URL Inspection API audit against the current sitemap URL set: 877 URLs inspected, 167 submitted/indexed, 701 unknown to Google, and 9 confirmed `Crawled - currently not indexed`.
 - Evidence for the 9 affected URLs: all were `ALLOWED`, `INDEXING_ALLOWED`, fetch `SUCCESSFUL`, and canonicalized to themselves. Root cause was not robots/noindex/canonical/fetch; fixes targeted weak page value and inconsistent alternate signals.
 - Fixed all discovered redirecting/wrong localized `hreflang` English/x-default targets for click-speed and headphone pages. `click-speed-test.php`, `headphone-test.php`, and `tools/headphone_speaker_tester.php` no longer appear as localized alternate targets; Japanese click-speed no longer points alternates at `mouse-test.php`.
