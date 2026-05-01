@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-02 (Codex, USA outreach prospect/draft batch)
+**Last updated:** 2026-05-02 (Codex, USA outreach sent batch)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -61,13 +61,14 @@ This file is the **single source of truth** when handing off work between AI age
 | GitHub awesome-list PR #62 | User | `[awaiting-merge]` | Maintainer feedback addressed, waiting for re-review |
 | GSC validation clicks (5 buckets) | User | `[done]` | Clicked Apr 27 |
 | Localized SEO Phase 1C+ | Either | `[queued]` | Russian/Spanish optimization done; remaining: localized intro paragraphs for typing-rhythm/brightness pages |
-| USA backlink outreach batch | User/Codex | `[awaiting-user]` | 50 prospects and draft emails prepared under `seo-audit-2026-05-02/outreach/`; no emails sent. Send only rows marked `ready_to_send` after user approval. |
+| USA backlink outreach batch | User/Codex | `[awaiting-replies]` | 29 validated contacts sent from `outreach@keyboardtester.click`; 21 contacts remain on hold pending email/source validation. Watch mailbox for replies, bounces, and opt-outs. |
 
 ---
 
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-02 (Codex)
+- Sent the approved USA outreach batch from `outreach@keyboardtester.click` after shortening the copy and personalizing each email by company/reference/target URL. Sent 29 validated contacts successfully with 0 SMTP failures; 21 unverified contacts remain on hold. Logs and final drafts are ignored under `seo-audit-2026-05-02/outreach/`: `drafts-short-ready-usa-keyboardtester-2026-05-02.csv`, `drafts-short-ready-usa-keyboardtester-2026-05-02.sent.csv`, `sent-log-usa-keyboardtester-2026-05-02.csv`, and updated `outreach-approval-summary-2026-05-02.md`. Do not resend these 29 unless a manual follow-up is approved later.
 - Prepared a 50-prospect USA backlink outreach batch for KeyboardTester.click under ignored `seo-audit-2026-05-02/outreach/`. Files: `prospects-usa-50-keyboardtester-2026-05-02.csv`, `validation-usa-50-keyboardtester-2026-05-02.csv`, `drafts-usa-50-keyboardtester-2026-05-02.csv`, and `outreach-approval-summary-2026-05-02.md`. Validation found 29 contacts ready for user-approved sending and 21 contacts on hold because the exact email was not confirmed on public pages or needs replacement. Drafts vary target URLs across homepage, keyboard tester, keyboard ghosting, N-key rollover, online ruler, and dead-pixel pages. No outreach emails were sent.
 - Created `outreach@keyboardtester.click` via cPanel UAPI over SSH for backlink/outreach work. Mailbox quota is 750 MB (host maximum). SMTP/IMAP credentials are stored only in gitignored `.env` under `OUTREACH_SMTP_*` / `OUTREACH_FROM` / `OUTREACH_REPLY_TO`; password value is not documented here. Verified SMTP 587 login and IMAP 993 login successfully. No outreach emails were sent; next step remains prospect list + manual approval before sending small batches.
 - Prepared the next practical backlink execution plan at `seo-audit-2026-05-02/backlink-next-actions-2026-05-02.md`. Recommendation: pause new random GitHub PRs because 20 are already open; focus next on manual/directory submissions and editorial outreach. Priority order: AlternativeTo on 2026-05-04 after the account-age block clears, Slant retry, SaaSHub product verification/submission, and three targeted guest/resource pitches to WeTechTitans, Technical Master, and UltraBookGaming.
