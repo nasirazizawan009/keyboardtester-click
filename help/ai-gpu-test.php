@@ -1,0 +1,10 @@
+<?php // Help ?>
+<section class="guidelines landing-guide" id="guidelines">
+  <div class="help-header"><h2>AI GPU Test Guide</h2><p>How to test WebGPU, browser AI readiness, and hardware acceleration safely.</p></div>
+  <div class="help-grid">
+    <div class="help-card"><h3>How to run it</h3><ol><li>Open this page in a modern desktop browser such as Chrome or Edge.</li><li>Let the automatic capability checks finish.</li><li>Choose Standard first, then click <strong>Run AI GPU test</strong>.</li><li>Use Heavy only after Standard completes without tab freezes or driver warnings.</li><li>Compare results in the same browser and same power mode for fair repeat runs.</li></ol></div>
+    <div class="help-card"><h3>What WebGPU means</h3><ul><li><strong>Supported:</strong> the browser can request a GPU adapter and device for compute workloads.</li><li><strong>Blocked:</strong> the browser, GPU driver, operating system, or policy does not expose WebGPU.</li><li><strong>Adapter hidden:</strong> privacy settings may hide the exact GPU model.</li><li><strong>Low limits:</strong> integrated or older GPUs may expose smaller buffers and fewer compute features.</li></ul></div>
+    <div class="help-card"><h3>What WebNN means</h3><ul><li>WebNN is an emerging API for neural-network acceleration in the browser.</li><li>It can use CPU, GPU, or NPU backends depending on browser and operating system support.</li><li>Most sites still rely on WebGPU or WebAssembly fallbacks today.</li><li>If WebNN is missing but WebGPU is strong, browser AI can still work.</li></ul></div>
+    <div class="help-card"><h3>Limits of this test</h3><ul><li>Browser APIs cannot read GPU temperature, power draw, or VRAM usage reliably.</li><li>The GFLOPS estimate includes browser overhead and is not equal to native CUDA, Metal, DirectML, or MLPerf scores.</li><li>Battery saver, background tabs, and privacy settings can reduce results.</li><li>For heavy overclock validation, also use native tools and watch temperatures.</li></ul></div>
+  </div>
+</section>

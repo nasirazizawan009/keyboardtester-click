@@ -178,6 +178,41 @@ $allTools = [
         'anchor' => 'check monitor for backlight bleed',
         'description' => 'Inspect your LCD monitor for backlight bleeding, IPS glow, and clouding using a full-screen dark display.',
         'category' => ['display', 'troubleshooting']
+    ],
+    'ai-gpu' => [
+        'url' => 'ai-gpu-test.php',
+        'name' => 'AI GPU Test',
+        'anchor' => 'check WebGPU AI readiness',
+        'description' => 'Check WebGPU, WebGL2, WebNN, hardware acceleration, and browser AI compute readiness.',
+        'category' => ['utility', 'performance', 'ai']
+    ],
+    'gpu-stress' => [
+        'url' => 'gpu-stress-test.php',
+        'name' => 'GPU Stress Test',
+        'anchor' => 'stress test your GPU online',
+        'description' => 'Push WebGL2 graphics load, watch FPS stability, and detect software-rendering fallback.',
+        'category' => ['utility', 'performance', 'graphics']
+    ],
+    'cpu-stress' => [
+        'url' => 'cpu-stress-test.php',
+        'name' => 'CPU Stress Test',
+        'anchor' => 'stress test CPU in the browser',
+        'description' => 'Load browser workers across CPU cores and watch throughput for throttling or regressions.',
+        'category' => ['utility', 'performance']
+    ],
+    'memory-test' => [
+        'url' => 'memory-test.php',
+        'name' => 'Memory Test',
+        'anchor' => 'check browser memory usage',
+        'description' => 'Monitor browser heap behavior and run a safe allocation stress test.',
+        'category' => ['utility', 'performance']
+    ],
+    'fps-test' => [
+        'url' => 'fps-test.php',
+        'name' => 'FPS Test',
+        'anchor' => 'check browser FPS',
+        'description' => 'Measure browser frame rate, minimum FPS, and display refresh behavior.',
+        'category' => ['display', 'performance']
     ]
 ];
 
@@ -206,7 +241,11 @@ $relatedToolsMap = [
     'qr-generator' => ['qr-reader', 'ocr', 'password', 'keyboard'],
     'qr-reader' => ['qr-generator', 'ocr', 'password', 'keyboard'],
     'ocr' => ['qr-reader', 'qr-generator', 'password', 'keyboard'],
-    'password' => ['ocr', 'qr-generator', 'qr-reader', 'keyboard']
+    'password' => ['ocr', 'qr-generator', 'qr-reader', 'keyboard'],
+    'ai-gpu' => ['gpu-stress', 'fps-test', 'cpu-stress', 'memory-test', 'screen'],
+    'gpu-stress' => ['ai-gpu', 'fps-test', 'cpu-stress', 'memory-test', 'screen'],
+    'cpu-stress' => ['ai-gpu', 'gpu-stress', 'memory-test', 'fps-test'],
+    'memory-test' => ['cpu-stress', 'ai-gpu', 'gpu-stress', 'fps-test']
 ];
 
 // Detect current page
@@ -257,7 +296,12 @@ $scriptToKey = [
     'screenshot-to-text' => 'ocr',
     'photo-to-text' => 'ocr',
     'touch-screen-test' => 'touch-screen',
-    'backlight-bleed-test' => 'backlight-bleed'
+    'backlight-bleed-test' => 'backlight-bleed',
+    'ai-gpu-test' => 'ai-gpu',
+    'gpu-stress-test' => 'gpu-stress',
+    'cpu-stress-test' => 'cpu-stress',
+    'memory-test' => 'memory-test',
+    'fps-test' => 'fps-test'
 ];
 
 if (isset($scriptToKey[$currentScript])) {

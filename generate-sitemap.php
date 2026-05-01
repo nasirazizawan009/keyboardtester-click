@@ -145,6 +145,7 @@ $pageConfig = [
     'left-right-speaker-test.php' => ['priority' => '0.82', 'changefreq' => 'weekly'],
     'stereo-test.php' => ['priority' => '0.82', 'changefreq' => 'weekly'],
     'take-picture-with-webcam.php' => ['priority' => '0.81', 'changefreq' => 'weekly'],
+    'ai-gpu-test.php' => ['priority' => '0.82', 'changefreq' => 'weekly'],
 
     // Utility tools
     'QR_code_generator_scanner.php' => ['priority' => '0.75', 'changefreq' => 'monthly'],

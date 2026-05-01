@@ -888,6 +888,19 @@ function getToolSchemaData($toolKey) {
                 'GPU vendor / renderer detection'
             ]
         ],
+        'ai_gpu_test' => [
+            'name' => 'AI GPU Test',
+            'description' => 'Free AI GPU test for WebGPU, WebGL2, WebNN, browser hardware acceleration, software-rendering fallback detection, and safe matrix compute benchmarking.',
+            'url' => 'ai-gpu-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                'WebGPU adapter and compute check',
+                'WebGL2 graphics acceleration check',
+                'WebNN browser AI API detection',
+                'Matrix multiplication benchmark',
+                'AI readiness score'
+            ]
+        ],
         'memory_test' => [
             'name' => 'Memory Test',
             'description' => 'Free browser memory test. Live heap stats via performance.memory on Chrome/Edge, allocation stressor in configurable chunks, safe abort before OOM.',
@@ -1887,6 +1900,13 @@ function getToolFAQs($toolKey) {
             ['question' => 'What does "SwiftShader" or "llvmpipe" mean?', 'answer' => 'Those are software WebGL renderers that run on the CPU when hardware acceleration is unavailable. If you see them in the renderer string, your browser is not actually using your GPU. Re-enable hardware acceleration in browser settings and update your GPU driver to restore real performance.'],
             ['question' => 'Can I damage my GPU with this test?', 'answer' => 'On stock hardware, no. GPUs throttle their clock and voltage well before thermal damage, and modern drivers monitor junction temperature. On manually overclocked GPUs, sustained load (10+ minutes) can expose an unstable clock that was fine on short benchmarks. Stop if you see artifacts, crashes, or driver resets.'],
             ['question' => 'Why do my FPS drop 30-50% after 30 seconds?', 'answer' => 'Thermal throttling. The GPU is hitting its thermal envelope and dropping clock speed to stay cool. Laptops show this dramatically; desktops with good cooling usually hold steady. If you want steady numbers, improve airflow, re-paste the GPU if it is 3+ years old, or run shorter bursts.']
+        ],
+        'ai_gpu_test' => [
+            ['question' => 'What is an AI GPU test?', 'answer' => 'An AI GPU test checks whether your browser can use GPU acceleration for AI-style workloads. This page detects WebGPU, WebGL2, WebNN, software rendering fallback, and runs a safe matrix multiplication benchmark because matrix math is central to local AI inference.'],
+            ['question' => 'Is WebGPU required for browser AI?', 'answer' => 'Not always, but WebGPU is the most important browser API for modern GPU compute. Without WebGPU, many local AI demos fall back to WebAssembly or WebGL and can be much slower.'],
+            ['question' => 'What does WebNN support mean?', 'answer' => 'WebNN is an emerging browser API for neural network acceleration through CPU, GPU, or NPU backends. It is useful when available, but many production browser AI tools still use WebGPU or WebAssembly fallbacks.'],
+            ['question' => 'Is the GFLOPS number comparable to native CUDA or 3DMark?', 'answer' => 'No. The number includes browser, WebGPU, and JavaScript overhead, so it is best for comparing repeated browser runs on the same machine. Native benchmarks remain better for full hardware ranking.'],
+            ['question' => 'Why does the test say software rendering?', 'answer' => 'Software rendering means the browser is using a CPU renderer such as SwiftShader or llvmpipe instead of the actual GPU. Enable hardware acceleration and update GPU drivers before trusting performance results.']
         ],
         'memory_test' => [
             ['question' => 'Why is "heap limit" different from my system RAM?', 'answer' => 'The heap limit is per-browser-tab, not per-system. Chrome desktop typically caps tabs at 4 GB regardless of whether you have 16 GB or 128 GB of system RAM, to prevent one tab from consuming the entire machine. Mobile browsers cap much lower (256-512 MB).'],

@@ -802,6 +802,17 @@ if (!function_exists('getSharedToolListData')) {
                     'added' => '2026-04-24',
                 ],
                 [
+                    'id' => 'ai-gpu-test',
+                    'category' => 'utility',
+                    'icon' => 'gauge',
+                    'name' => 'AI GPU Test',
+                    'description' => 'Check WebGPU, WebGL2, WebNN and browser AI readiness with a safe matrix compute benchmark',
+                    'cta' => 'Test AI GPU readiness',
+                    'routes' => ['en' => 'ai-gpu-test.php'],
+                    'visible_locales' => ['en'],
+                    'added' => '2026-05-01',
+                ],
+                [
                     'id' => 'gpu-stress-test',
                     'category' => 'utility',
                     'icon' => 'flame',
