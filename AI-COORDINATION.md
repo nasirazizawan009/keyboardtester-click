@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-01 (Codex, Microsoft Store PWA submission prep)
+**Last updated:** 2026-05-01 (Codex, GitHub awesome PR status check)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,7 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-01 (Codex)
+- Checked GitHub awesome/backlink status: `nasirazizawan009/awesome-device-testing-tools` has no open/closed PRs or issues from outside contributors. Outgoing PR status found 1 merged backlink PR (`StanForever/awesome-websites#49`, merged 2026-04-26), 18 open PRs, and 5 closed-not-merged PRs. `mathewlewallen/awesome-free-tools#62` remains open/mergeable with reviewer requested and no new maintainer comment after the user addressed feedback on 2026-04-27.
 - Generated Microsoft Store PWA package using Partner Center identity values. Local archive: `microsoft-store/package/KeyboardTester-click-pwabuilder-package.zip`; upload files: `microsoft-store/package/extracted/KeyboardTester.click.msixbundle` and `microsoft-store/package/extracted/KeyboardTester.click.classic.appxbundle`. Verified package manifests contain Package ID `KeyboardTester.Click.KeyboardTester.click`, Publisher `CN=1DE207C4-E7E1-4A04-A664-AEAD22613CAE`, and PublisherDisplayName `KeyboardTester.Click`. `microsoft-store/package/` is ignored because it contains generated upload artifacts.
 - Prepared local Microsoft Store PWA submission kit under `microsoft-store/`: preflight report/README, Partner Center submission checklist, ready-to-paste Store listing draft, and four 1366x768 desktop screenshots.
 - Confirmed no native Windows rebuild is needed for the first Store submission: existing live PWA has reachable manifest, service worker, offline page, and 512x512 icon. Final `.msixbundle`/`.classic.appxbundle` generation is blocked only on Partner Center Product Identity values: Package ID, Publisher ID, and Publisher display name.
