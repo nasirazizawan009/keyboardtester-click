@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-02 (Codex, outreach Sent folder sync)
+**Last updated:** 2026-05-02 (Codex, outreach master tracker)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -61,13 +61,17 @@ This file is the **single source of truth** when handing off work between AI age
 | GitHub awesome-list PR #62 | User | `[awaiting-merge]` | Maintainer feedback addressed, waiting for re-review |
 | GSC validation clicks (5 buckets) | User | `[done]` | Clicked Apr 27 |
 | Localized SEO Phase 1C+ | Either | `[queued]` | Russian/Spanish optimization done; remaining: localized intro paragraphs for typing-rhythm/brightness pages |
-| USA backlink outreach batch | User/Codex | `[awaiting-replies]` | 29 validated contacts sent from `outreach@keyboardtester.click`; 21 contacts remain on hold pending email/source validation. Watch mailbox for replies, bounces, and opt-outs. |
+| USA backlink outreach batch | User/Codex | `[awaiting-replies]` | 29 validated contacts sent from `outreach@keyboardtester.click`; 21 contacts remain on hold pending email/source validation. Watch mailbox for replies, bounces, and opt-outs. Master tracker: `seo-audit-2026-05-02/outreach/outreach-master-tracker-2026-05-02.md`. |
+| Russian/localized outreach | Either | `[queued]` | Do not send yet. Wait 24-48h after USA batch, then build 15-20 verified Russian-language prospects. Use Russian only for Russian-language/relevant sites, unique subjects, sender as `KeyboardTester.click team`. |
+| Advertiser prospecting | Either | `[queued]` | Separate from backlink outreach. Build commercial leads for page-specific sponsorships/media kit; do not ask advertisers for backlinks in the first pitch. |
+| WhatsApp outreach | Either | `[paused]` | Use only for highly relevant public business WhatsApp numbers; no automation, no blasts, no repeat messages without reply. |
 
 ---
 
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-02 (Codex)
+- Registered the outreach operating rules in ignored master tracker `seo-audit-2026-05-02/outreach/outreach-master-tracker-2026-05-02.md`. It covers mailbox/Sent-folder handling, USA batch status, held contacts, email writing rules, sender reputation limits, Russian/localized outreach rules, advertiser prospecting, WhatsApp outreach rules, backlink PR status, and next actions. Future outreach should follow that tracker to avoid duplicate sends or reputation damage.
 - Fixed the outreach mailbox Sent-folder visibility issue. SMTP delivery did not automatically save messages to webmail Sent, so Codex appended 29 already-sent message copies to IMAP folder `INBOX.Sent` without resending anything. Sent folder count moved from 0 to 29. Copy log is ignored at `seo-audit-2026-05-02/outreach/imap-sent-copy-log-usa-keyboardtester-2026-05-02.csv`. Future outreach send scripts should append a Sent copy via IMAP, or otherwise BCC/archive explicitly, so webmail reflects sent messages.
 - Verified `nafasebra/awesome-webdesign-tools#32` was merged into `main` on 2026-05-01T20:04:26Z. The merged backlink points to `https://keyboardtester.click/online-ruler.php` from `README.md` at merge commit `50f108f02b91ffdea6cec3449e333cd5126e9ec9`. Updated ignored backlink sprint note; practical status is now 2 merged GitHub backlink PRs and 19 open PRs to monitor.
 - Sent the approved USA outreach batch from `outreach@keyboardtester.click` after shortening the copy and personalizing each email by company/reference/target URL. Sent 29 validated contacts successfully with 0 SMTP failures; 21 unverified contacts remain on hold. Logs and final drafts are ignored under `seo-audit-2026-05-02/outreach/`: `drafts-short-ready-usa-keyboardtester-2026-05-02.csv`, `drafts-short-ready-usa-keyboardtester-2026-05-02.sent.csv`, `sent-log-usa-keyboardtester-2026-05-02.csv`, and updated `outreach-approval-summary-2026-05-02.md`. Do not resend these 29 unless a manual follow-up is approved later.
