@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-02 (Codex, backlink next-action plan)
+**Last updated:** 2026-05-02 (Codex, outreach mailbox setup)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,7 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-02 (Codex)
+- Created `outreach@keyboardtester.click` via cPanel UAPI over SSH for backlink/outreach work. Mailbox quota is 750 MB (host maximum). SMTP/IMAP credentials are stored only in gitignored `.env` under `OUTREACH_SMTP_*` / `OUTREACH_FROM` / `OUTREACH_REPLY_TO`; password value is not documented here. Verified SMTP 587 login and IMAP 993 login successfully. No outreach emails were sent; next step remains prospect list + manual approval before sending small batches.
 - Prepared the next practical backlink execution plan at `seo-audit-2026-05-02/backlink-next-actions-2026-05-02.md`. Recommendation: pause new random GitHub PRs because 20 are already open; focus next on manual/directory submissions and editorial outreach. Priority order: AlternativeTo on 2026-05-04 after the account-age block clears, Slant retry, SaaSHub product verification/submission, and three targeted guest/resource pitches to WeTechTitans, Technical Master, and UltraBookGaming.
 - Ran a practical backlink sprint focused on GitHub awesome-list opportunities. Opened two new mergeable PRs: `Bakumon/awesome-online-tools#29` adding KeyboardTester.click to the Test section, and `nafasebra/awesome-webdesign-tools#32` adding the Online Ruler to the Utils section. Used the `devicetester/awesome-online-tools` fork for the Bakumon PR because the user account already had a same-name fork from another upstream; cleaned up the unused branch from the wrong fork. Current GitHub backlink PR snapshot: 20 open, 1 merged, 5 closed/not-merged. Saved the working note at `seo-audit-2026-05-02/backlink-sprint-2026-05-02.md`.
 
@@ -241,6 +242,7 @@ All credentials are in the workspace — both agents have access by default.
 | Bing Webmaster API | `.env` → `BING_API_KEY` | API key string | Read by `submit-bing-wmt.py` |
 | GCP service account | `google-credentials.json` | JSON | Used by `submit-google-indexing.py`, `gsc-*.py` |
 | DEV.to API key | `.env` → `DEVTO_API_KEY` | API key string | **Action: move from chat to .env** |
+| Outreach mailbox SMTP | `.env` → `OUTREACH_SMTP_*`, `OUTREACH_FROM`, `OUTREACH_REPLY_TO` | SMTP/IMAP mailbox credentials for `outreach@keyboardtester.click` | Created via cPanel UAPI; use only for approved low-volume outreach |
 | GitHub PAT | (none persisted) | User generates ad-hoc when needed | Per-task generation, revoke after |
 | HostArmada SSH | port 19199, user `keyboar1` | Uses `.ssh-deploy/kbt_deploy` | Documented in CLAUDE.md |
 
