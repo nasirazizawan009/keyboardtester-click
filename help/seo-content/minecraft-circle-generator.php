@@ -22,7 +22,7 @@
         <li><a href="<?php echo url('gamertag-generator.php'); ?>">Gamertag Generator</a></li>
         <li><a href="<?php echo url('guild-name-generator.php'); ?>">Guild Name Generator</a></li>
         <li><a href="<?php echo url('ttk-calculator.php'); ?>">TTK Calculator</a></li>
-        <li><a href="<?php echo url('keyboard-tester/index.php'); ?>">Keyboard Tester (for block breakers)</a></li>
+        <li><a href="<?php echo url('tools/keyboard-tester/'); ?>">Keyboard Tester (for block breakers)</a></li>
       </ul>
     </article>
   </div>

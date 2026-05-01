@@ -1,0 +1,5 @@
+/*
+ * Compatibility shim for older localized pages that referenced this asset.
+ * Current shared tool styling lives in index-modern.css and global.css.
+ */
+@import url('index-modern.css');

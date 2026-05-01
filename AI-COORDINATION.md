@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-01 (Codex, duplicate/similar page consolidation audit)
+**Last updated:** 2026-05-01 (Codex, broken-link report cleanup)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,7 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-01 (Codex)
+- Cleaned up the latest broken-link report: added a 301 redirect from `/keyboard-tester/` to `/tools/keyboard-tester/`, fixed the Minecraft circle related-tool link that emitted the old path, removed the missing `assets/css/tool-components.css` include from Russian DPI, added a compatibility `assets/css/tool-components.css` asset for older references, and removed crawler-hostile Tracker/MSI store source links from two live blog posts. Deployed via SFTP/paramiko and verified live: `/keyboard-tester/` now returns 301 to the canonical tool, `/assets/css/tool-components.css` returns HTTP 200, the updated source pages are HTTP 200, and the removed external URLs no longer appear in the live source pages. The DAA opt-out link returned HTTP 200 in verification and was kept because it is a compliance/helpful privacy reference.
 - Completed duplicate/similar page audit across the full sitemap-rendered page set. Initial render audit checked 880 indexable URLs and found no duplicate titles, descriptions, canonicals, or exact rendered-text duplicates. One repeatable high-confidence near-duplicate pattern existed: localized `dead-pixel-test.php` pages overlapped strongly with localized `screen-test.php` pages in all 8 locales.
 - Consolidated the 8 localized dead-pixel URLs into their matching localized screen-test URLs via `.htaccess` 301 redirects, PHP renderer fallback redirects, URL helper normalization, localized intent catalog removal, and sitemap generator exclusion. Regenerated and deployed `sitemap.xml`; live sitemap now has 872 URLs and no localized dead-pixel entries.
 - Verification passed locally and live: PHP lint passed for changed PHP files; local duplicate audit after the fix rendered 872 URLs with 0 fetch errors, 0 duplicate title groups, 0 duplicate description groups, 0 duplicate canonical groups, 0 exact rendered-text duplicate groups, and 0 high-confidence near-duplicate pairs. Live checks confirmed all 8 retired localized dead-pixel URLs return 301 to localized `screen-test.php`, all 8 targets return HTTP 200 with one H1, and live sitemap is HTTP 200 with 872 URLs.

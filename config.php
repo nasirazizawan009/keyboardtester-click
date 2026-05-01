@@ -168,6 +168,7 @@ function canonicalizeRequestPath($requestUri = '') {
         'ghost-click-detector.html' => 'ghost-click-detector.php',
         'headphone-test.php' => 'headphone_speaker_tester_index.php',
         'headphone-speaker-tester.php' => 'headphone_speaker_tester_index.php',
+        'keyboard-tester/' => 'tools/keyboard-tester/',
         'keyboard-tester.php' => 'tools/keyboard-tester/',
         'keyboard-typing-test.php' => 'keyboard_typing_test.php',
         'keyboard_tester_arabic.php' => 'languages/arabic/',

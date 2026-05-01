@@ -27,7 +27,6 @@ $pageKeywords = 'тестер DPI, DPI мыши, чувствительност�
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
   <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
-  <link rel="stylesheet" href="<?php echo url('assets/css/tool-components.css'); ?>">
 </head>
 <body class="landing-page">
   <?php include __DIR__ . '/header-ru.php'; ?>

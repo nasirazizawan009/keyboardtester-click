@@ -78,6 +78,7 @@ RewriteRule ^(.+)\.(png|jpe?g)$ $1.$2.webp [T=image/webp,E=WEBP:1,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^keyboard_tester_english\.(php|html)$ /tools/keyboard-tester/ [R=301,L]
+RewriteRule ^keyboard-tester/?$ /tools/keyboard-tester/ [R=301,L]
 RewriteRule ^keyboard-tester\.(php|html)$ /tools/keyboard-tester/ [R=301,L]
 RewriteRule ^keyboard_tester_arabic\.(php|html)$ /languages/arabic/ [R=301,L]
 RewriteRule ^keyboard_tester_russian\.(php|html)$ /languages/russian/ [R=301,L]
