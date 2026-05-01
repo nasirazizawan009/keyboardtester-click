@@ -270,6 +270,11 @@ function sitemap_shouldExclude($filename, $excludePatterns) {
 }
 
 function sitemap_shouldExcludeLocalizedFile($filename) {
+    $slug = preg_replace('/\.php$/i', '', $filename);
+    if (function_exists('isRetiredLocalizedIntentSlug') && isRetiredLocalizedIntentSlug($slug)) {
+        return true;
+    }
+
     return (bool) preg_match(
         '/^(config-[^.]+|header-[^.]+|footer-[^.]+)\.php$|^index\.php$|^index_old(?:_backup)?\.php$/i',
         $filename

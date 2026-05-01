@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-01 (Codex, AI GPU blog media update)
+**Last updated:** 2026-05-01 (Codex, duplicate/similar page consolidation audit)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -67,6 +67,10 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-01 (Codex)
+- Completed duplicate/similar page audit across the full sitemap-rendered page set. Initial render audit checked 880 indexable URLs and found no duplicate titles, descriptions, canonicals, or exact rendered-text duplicates. One repeatable high-confidence near-duplicate pattern existed: localized `dead-pixel-test.php` pages overlapped strongly with localized `screen-test.php` pages in all 8 locales.
+- Consolidated the 8 localized dead-pixel URLs into their matching localized screen-test URLs via `.htaccess` 301 redirects, PHP renderer fallback redirects, URL helper normalization, localized intent catalog removal, and sitemap generator exclusion. Regenerated and deployed `sitemap.xml`; live sitemap now has 872 URLs and no localized dead-pixel entries.
+- Verification passed locally and live: PHP lint passed for changed PHP files; local duplicate audit after the fix rendered 872 URLs with 0 fetch errors, 0 duplicate title groups, 0 duplicate description groups, 0 duplicate canonical groups, 0 exact rendered-text duplicate groups, and 0 high-confidence near-duplicate pairs. Live checks confirmed all 8 retired localized dead-pixel URLs return 301 to localized `screen-test.php`, all 8 targets return HTTP 200 with one H1, and live sitemap is HTTP 200 with 872 URLs.
+- Submitted the updated state to discovery systems: IndexNow live endpoint returned HTTP 200 with 858 URLs, Google Indexing API accepted the 8 retired URLs plus 8 target screen-test URLs (16 OK), and Bing WMT accepted the same 16 URL batch.
 - Updated the live AI GPU blog article `blog/ai-gpu-test-webgpu-browser-ai-readiness.php` with three additional local WebP stock images, section captions, and an official Chrome Developers YouTube embed about WebAssembly/WebGPU for faster Web AI. Verified locally and live: article HTTP 200, one H1, one iframe, new image assets served as `image/webp`. Submitted the updated article URL to Bing WMT, Google Indexing API, and IndexNow. Note: the blog article and new image assets live under ignored `blog/` paths and were deployed directly via SFTP/paramiko.
 - Published the English AI GPU cluster live: deployed `ai-gpu-test.php`, shared AI GPU assets/includes, regenerated `sitemap.xml`, added the new tool to IndexNow submission, and published `blog/ai-gpu-test-webgpu-browser-ai-readiness.php` with research-backed WebGPU/WebNN/browser AI readiness content and internal links to AI GPU, GPU stress, FPS, CPU stress, and memory tests. Submitted updated URLs to IndexNow and Google Indexing API. Note: `submit-indexnow.php` and the new blog article live under ignored paths; local copies were deployed directly via SFTP/paramiko.
 - Built local-only English `ai-gpu-test.php` with WebGPU/WebGL2/WebNN detection, AI readiness score, WebGPU matrix benchmark, WebGL graphics FPS sanity check, SEO copy/schema/help content, and tool-list/related-tool wiring. No live deploy, sitemap regeneration, or IndexNow submission was run; user will test locally first.

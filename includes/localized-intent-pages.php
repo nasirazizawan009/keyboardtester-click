@@ -5,6 +5,70 @@ if (!function_exists('absoluteUrl')) {
 
 require_once __DIR__ . '/localized-intent-pages-phase6.php';
 
+function getRetiredLocalizedIntentPages() {
+    return [
+        'dead-pixel-test' => [
+            'targetByLanguage' => [
+                'spanish' => 'languages/spanish/screen-test.php',
+                'german' => 'languages/german/screen-test.php',
+                'portuguese' => 'languages/portuguese/screen-test.php',
+                'arabic' => 'languages/arabic/screen-test.php',
+                'french' => 'languages/french/screen-test.php',
+                'russian' => 'languages/russian/screen-test.php',
+                'japanese' => 'languages/japanese/screen-test.php',
+                'korean' => 'languages/korean/screen-test.php',
+            ],
+        ],
+    ];
+}
+
+function isRetiredLocalizedIntentSlug($slug) {
+    $retiredPages = getRetiredLocalizedIntentPages();
+    return isset($retiredPages[$slug]);
+}
+
+function getRetiredLocalizedIntentRedirect($language, $slug) {
+    $retiredPages = getRetiredLocalizedIntentPages();
+    if (!isset($retiredPages[$slug]['targetByLanguage'][$language])) {
+        return null;
+    }
+
+    return $retiredPages[$slug]['targetByLanguage'][$language];
+}
+
+function removeRetiredLocalizedIntentPages($catalog) {
+    $retiredSlugs = array_keys(getRetiredLocalizedIntentPages());
+    if (empty($retiredSlugs)) {
+        return $catalog;
+    }
+
+    foreach ($catalog as &$languageConfig) {
+        foreach ($retiredSlugs as $slug) {
+            if (isset($languageConfig['pages'][$slug])) {
+                unset($languageConfig['pages'][$slug]);
+            }
+        }
+
+        if (empty($languageConfig['clusters']) || !is_array($languageConfig['clusters'])) {
+            continue;
+        }
+
+        foreach ($languageConfig['clusters'] as &$cluster) {
+            if (empty($cluster['pages']) || !is_array($cluster['pages'])) {
+                continue;
+            }
+
+            $cluster['pages'] = array_values(array_filter($cluster['pages'], static function ($page) use ($retiredSlugs) {
+                return !in_array($page['key'] ?? '', $retiredSlugs, true);
+            }));
+        }
+        unset($cluster);
+    }
+    unset($languageConfig);
+
+    return $catalog;
+}
+
 function getLocalizedIntentCatalog() {
     static $catalog = null;
 
@@ -1239,6 +1303,8 @@ function getLocalizedIntentCatalog() {
     if (function_exists('getLocalizedIntentPhase6Catalog')) {
         $catalog = array_merge($catalog, getLocalizedIntentPhase6Catalog());
     }
+
+    $catalog = removeRetiredLocalizedIntentPages($catalog);
 
     return $catalog;
 }

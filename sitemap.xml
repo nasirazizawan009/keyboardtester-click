@@ -451,54 +451,6 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://keyboardtester.click/languages/spanish/dead-pixel-test.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.74</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/languages/german/dead-pixel-test.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.74</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/languages/portuguese/dead-pixel-test.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.74</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/languages/arabic/dead-pixel-test.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.74</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/languages/french/dead-pixel-test.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.74</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/languages/russian/dead-pixel-test.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.74</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/languages/japanese/dead-pixel-test.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.74</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/languages/korean/dead-pixel-test.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.74</priority>
-  </url>
-  <url>
     <loc>https://keyboardtester.click/languages/arabic/click-speed.php</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -5066,6 +5018,18 @@
     <image:image>
       <image:loc>https://keyboardtester.click/images/gpu-stress-test/hero.jpg</image:loc>
       <image:title>Graphics card used for an AI GPU test, WebGPU test, and browser AI readiness check</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/ai-gpu-test-graphics-card-webgpu.webp</image:loc>
+      <image:title>Graphics card close-up for WebGPU and browser AI GPU testing</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/ai-gpu-test-code-screen-browser-ai.webp</image:loc>
+      <image:title>Code editor screen representing browser AI, WebGPU, and WebNN checks</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/ai-gpu-test-data-center-local-ai.webp</image:loc>
+      <image:title>Server racks representing cloud AI hardware compared with local browser AI testing</image:title>
     </image:image>
   </url>
   <url>

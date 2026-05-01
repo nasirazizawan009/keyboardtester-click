@@ -5,6 +5,12 @@ if (empty($localizedIntentLanguage) || empty($localizedIntentSlug)) {
 
 require_once __DIR__ . '/localized-intent-pages.php';
 
+$retiredRedirectTarget = getRetiredLocalizedIntentRedirect($localizedIntentLanguage, $localizedIntentSlug);
+if ($retiredRedirectTarget) {
+    header('Location: ' . absoluteUrl($retiredRedirectTarget), true, 301);
+    exit;
+}
+
 $languageConfig = getLocalizedIntentLanguageConfig($localizedIntentLanguage);
 $pageConfig = getLocalizedIntentPage($localizedIntentLanguage, $localizedIntentSlug);
 

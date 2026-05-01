@@ -36,6 +36,7 @@ RewriteRule ^ https://keyboardtester.click%{REQUEST_URI} [R=301,L]
 # Canonical entry points and legacy aliases
 RewriteRule ^index\.(php|html)$ / [R=301,L]
 RewriteRule ^(languages/(arabic|russian|spanish|french|german|portuguese|japanese|korean))/index\.(php|html)$ /$1/ [R=301,L]
+RewriteRule ^languages/(arabic|russian|spanish|french|german|portuguese|japanese|korean)/dead-pixel-test\.php$ /languages/$1/screen-test.php [R=301,L]
 RewriteRule ^about\.php$ /about-us.php [R=301,L]
 RewriteRule ^privacy\.php$ /privacy-policy.php [R=301,L]
 RewriteRule ^contact\.php$ /feedback.php [R=301,L]

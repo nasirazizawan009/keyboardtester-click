@@ -152,6 +152,10 @@ function canonicalizeRequestPath($requestUri = '') {
         return 'languages/' . strtolower($matches[1]) . '/';
     }
 
+    if (preg_match('~^languages/(arabic|russian|spanish|french|german|portuguese|japanese|korean)/dead-pixel-test\.php$~i', $requestPath, $matches)) {
+        return 'languages/' . strtolower($matches[1]) . '/screen-test.php';
+    }
+
     $requestPath = preg_replace('~/index\.(php|html)$~i', '/', $requestPath);
     $requestPathLower = strtolower($requestPath);
 
