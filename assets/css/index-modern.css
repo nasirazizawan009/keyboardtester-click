@@ -584,6 +584,19 @@ html.dark-theme .step-number,
     padding: 1.5rem;
 }
 
+#keyboard-stage .tool-shell {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+#keyboard-stage .keyboard-tester {
+    border: 0;
+    box-shadow: none;
+}
+
 .kbt-tool {
     display: flex;
     flex-direction: column;
