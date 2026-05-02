@@ -206,6 +206,7 @@
   <?php include 'help/keyboard-tester.php'; ?>
   <?php $currentTool = 'keyboard'; $relatedToolsSectionId = 'tools'; $relatedToolsTitle = 'Popular testing tools'; $relatedToolsIntro = 'Use these focused diagnostics when a keyboard issue may involve input delay, mouse behavior, typing speed, or audio/video checks.'; include 'includes/related-tools.php'; unset($currentTool, $relatedToolsSectionId, $relatedToolsTitle, $relatedToolsIntro); ?>
   <?php $toolBlogSlug = 'keyboard-not-typing-lagging-sticky-fix-clean-guide.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
+  <?php include __DIR__ . '/includes/components/homepage-latest-blog.php'; ?>
 </main>
 
 <?php include 'footer.php'; ?>
