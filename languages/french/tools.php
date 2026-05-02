@@ -1,5 +1,6 @@
 <?php
 include __DIR__ . '/../../config.php';
-include __DIR__ . '/config-fr.php';
-$lang = 'fr';
-include __DIR__ . '/../../includes/lang-tool-pages/tools-directory.php';
+
+header('Location: ' . url('pages/all-tools-fr.php'), true, 301);
+header('X-Robots-Tag: noindex, follow');
+exit;

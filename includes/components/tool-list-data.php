@@ -325,7 +325,7 @@ if (!function_exists('getSharedToolListData')) {
                     'name' => 'All Tools',
                     'description' => 'Browse all hardware testing tools in one place',
                     'cta' => 'View all tools',
-                    'routes' => ['en' => 'pages/tools.php', 'localized' => 'tools.php'],
+                    'routes' => ['en' => 'pages/all-tools.php', 'localized' => 'tools.php'],
                 ],
                 [
                     'id' => 'key-repeat-rate',

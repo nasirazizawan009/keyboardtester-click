@@ -151,7 +151,7 @@ function schemaSiteNavigation() {
                 'position' => 8,
                 'name' => 'All Tools',
                 'description' => 'Browse all free online testing tools — keyboards, mice, screens, audio, and utilities',
-                'url' => $base . 'pages/tools.php'
+                'url' => $base . 'pages/all-tools.php'
             ]
         ]
     ];

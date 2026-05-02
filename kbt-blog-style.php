@@ -411,7 +411,7 @@ add_action('wp_footer', function() {
         // Fix footer
         var els = document.querySelectorAll(".ast-small-footer-section, .site-info, .ast-footer-copyright, .ast-footer-html-inner");
         els.forEach(function(el){
-            el.innerHTML = "<p style=\"margin:0\">Part of <a href=\"https://keyboardtester.click/\">KeyboardTester.Click</a> \u2014 Free Online Testing Tools</p><p style=\"margin:.5rem 0 0;font-size:.8rem\"><a href=\"https://keyboardtester.click/privacy-policy.php\">Privacy</a> \u00b7 <a href=\"https://keyboardtester.click/about-us.php\">About</a> \u00b7 <a href=\"https://keyboardtester.click/pages/tools.php\">All Tools</a></p>";
+            el.innerHTML = "<p style=\"margin:0\">Part of <a href=\"https://keyboardtester.click/\">KeyboardTester.Click</a> \u2014 Free Online Testing Tools</p><p style=\"margin:.5rem 0 0;font-size:.8rem\"><a href=\"https://keyboardtester.click/privacy-policy.php\">Privacy</a> \u00b7 <a href=\"https://keyboardtester.click/about-us.php\">About</a> \u00b7 <a href=\"https://keyboardtester.click/pages/all-tools.php\">All Tools</a></p>";
         });
     })();
     </script>';

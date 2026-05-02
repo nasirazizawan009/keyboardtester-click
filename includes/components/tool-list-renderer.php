@@ -68,6 +68,18 @@ if (!function_exists('renderToolsList')) {
             // Resolve URL
             if ($locale === 'en') {
                 $href = url($tool['routes']['en']);
+            } elseif ($toolId === 'tools-page') {
+                $localizedAllToolsRoutes = [
+                    'es' => 'pages/all-tools-es.php',
+                    'fr' => 'pages/all-tools-fr.php',
+                    'de' => 'pages/all-tools-de.php',
+                    'pt' => 'pages/all-tools-pt.php',
+                    'ar' => 'pages/all-tools-ar.php',
+                    'ru' => 'pages/all-tools-ru.php',
+                    'ja' => 'pages/all-tools-ja.php',
+                    'ko' => 'pages/all-tools-ko.php',
+                ];
+                $href = url($localizedAllToolsRoutes[$locale] ?? 'pages/all-tools.php');
             } else {
                 if (!array_key_exists('localized', $tool['routes'])) {
                     continue; // no localized version exists

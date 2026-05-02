@@ -156,6 +156,20 @@ function canonicalizeRequestPath($requestUri = '') {
         return 'languages/' . strtolower($matches[1]) . '/screen-test.php';
     }
 
+    if (preg_match('~^languages/(arabic|russian|spanish|french|german|portuguese|japanese|korean)/tools\.php$~i', $requestPath, $matches)) {
+        $localizedToolsMap = [
+            'arabic' => 'pages/all-tools-ar.php',
+            'russian' => 'pages/all-tools-ru.php',
+            'spanish' => 'pages/all-tools-es.php',
+            'french' => 'pages/all-tools-fr.php',
+            'german' => 'pages/all-tools-de.php',
+            'portuguese' => 'pages/all-tools-pt.php',
+            'japanese' => 'pages/all-tools-ja.php',
+            'korean' => 'pages/all-tools-ko.php',
+        ];
+        return $localizedToolsMap[strtolower($matches[1])] ?? 'pages/all-tools.php';
+    }
+
     $requestPath = preg_replace('~/index\.(php|html)$~i', '/', $requestPath);
     $requestPathLower = strtolower($requestPath);
 
@@ -193,10 +207,11 @@ function canonicalizeRequestPath($requestUri = '') {
         'screen-test.php' => 'screentestindex.php',
         'screen-tester.php' => 'screentestindex.php',
         'sitemap-index.xml' => 'sitemap.xml',
+        'pages/tools.php' => 'pages/all-tools.php',
         'tools/headphone_speaker_tester.php' => 'headphone_speaker_tester_index.php',
         'tools/latency_checker.php' => 'latency-checker.php',
         'tools/password_generator.php' => 'auto-password-generator.php',
-        'tools.php' => 'pages/tools.php',
+        'tools.php' => 'pages/all-tools.php',
         'webcam-test.php' => 'webcamtesterindex.php',
         'webcam-tester.php' => 'webcamtesterindex.php',
         'whatsapp-brand-link-generator.php' => 'whatsapp-Brand-link-generator.php',

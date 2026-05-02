@@ -165,7 +165,6 @@ $pageConfig = [
     // Other tools
     'luckywheeltoolindex.php' => ['priority' => '0.7', 'changefreq' => 'monthly'],
     'keyboard_tester_different_languages.php' => ['priority' => '0.7', 'changefreq' => 'monthly'],
-    'tools.php' => ['priority' => '0.8', 'changefreq' => 'weekly'],
 
     // New tools — Wave 2 (April 2026)
     'key-repeat-rate-test.php' => ['priority' => '0.80', 'changefreq' => 'monthly'],
@@ -240,7 +239,6 @@ $localizedPageConfig = [
 
 // Category pages
 $categoryPages = [
-    'pages/tools.php' => ['priority' => '0.8', 'changefreq' => 'weekly'],
     'pages/all-tools.php' => ['priority' => '0.8', 'changefreq' => 'weekly'],
     'pages/all-tools-es.php' => ['priority' => '0.7', 'changefreq' => 'weekly'],
     'pages/all-tools-fr.php' => ['priority' => '0.7', 'changefreq' => 'weekly'],
@@ -272,6 +270,10 @@ function sitemap_shouldExclude($filename, $excludePatterns) {
 function sitemap_shouldExcludeLocalizedFile($filename) {
     $slug = preg_replace('/\.php$/i', '', $filename);
     if (function_exists('isRetiredLocalizedIntentSlug') && isRetiredLocalizedIntentSlug($slug)) {
+        return true;
+    }
+
+    if (strcasecmp($filename, 'tools.php') === 0) {
         return true;
     }
 

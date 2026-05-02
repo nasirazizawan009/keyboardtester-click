@@ -350,7 +350,7 @@ $relatedToolsIntroText = $relatedToolsIntro ?? 'Continue testing your hardware w
         </div>
 
         <div class="related-tools-cta">
-            <a href="<?php echo url('pages/tools.php'); ?>" class="view-all-tools">View all testing tools</a>
+            <a href="<?php echo url('pages/all-tools.php'); ?>" class="view-all-tools">View all testing tools</a>
         </div>
     </div>
 </section>

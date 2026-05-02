@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://keyboardtester.click/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/mouse-and-keyboard-test-tools.php</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/tools/keyboard-tester/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -86,31 +86,31 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -350,25 +350,19 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/pages/tools.php</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -506,7 +500,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/dpi-tester.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.74</priority>
   </url>
@@ -1922,31 +1916,31 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/pages/category-keyboard.php</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/pages/category-mouse.php</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/pages/category-audio-video.php</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/pages/category-utilities.php</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/pages/category-language-keyboards.php</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2299,12 +2293,6 @@
     <priority>0.68</priority>
   </url>
   <url>
-    <loc>https://keyboardtester.click/languages/arabic/tools.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.68</priority>
-  </url>
-  <url>
     <loc>https://keyboardtester.click/languages/arabic/ttk-calculator.php</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -2631,12 +2619,6 @@
   <url>
     <loc>https://keyboardtester.click/languages/russian/surround-sound-test.php</loc>
     <lastmod>2026-04-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.68</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/languages/russian/tools.php</loc>
-    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2971,12 +2953,6 @@
     <priority>0.68</priority>
   </url>
   <url>
-    <loc>https://keyboardtester.click/languages/spanish/tools.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.68</priority>
-  </url>
-  <url>
     <loc>https://keyboardtester.click/languages/spanish/ttk-calculator.php</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -3303,12 +3279,6 @@
   <url>
     <loc>https://keyboardtester.click/languages/french/surround-sound-test.php</loc>
     <lastmod>2026-04-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.68</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/languages/french/tools.php</loc>
-    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3643,12 +3613,6 @@
     <priority>0.68</priority>
   </url>
   <url>
-    <loc>https://keyboardtester.click/languages/german/tools.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.68</priority>
-  </url>
-  <url>
     <loc>https://keyboardtester.click/languages/german/ttk-calculator.php</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -3975,12 +3939,6 @@
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/surround-sound-test.php</loc>
     <lastmod>2026-04-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.68</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/languages/portuguese/tools.php</loc>
-    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4315,12 +4273,6 @@
     <priority>0.68</priority>
   </url>
   <url>
-    <loc>https://keyboardtester.click/languages/japanese/tools.php</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.68</priority>
-  </url>
-  <url>
     <loc>https://keyboardtester.click/languages/japanese/ttk-calculator.php</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -4647,12 +4599,6 @@
   <url>
     <loc>https://keyboardtester.click/languages/korean/surround-sound-test.php</loc>
     <lastmod>2026-04-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.68</priority>
-  </url>
-  <url>
-    <loc>https://keyboardtester.click/languages/korean/tools.php</loc>
-    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -5146,7 +5092,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/best-recent-wireless-keyboard-launches-2026.php</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5270,7 +5216,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/how-to-copy-pro-crosshair-cs2-valorant-generator-guide.php</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
