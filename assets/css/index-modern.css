@@ -562,16 +562,61 @@ html.dark-theme .step-number,
     contain: layout style;
 }
 
+.landing-main > .kbt-ad-slot {
+    width: min(100% - 2rem, 1120px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    clear: both;
+}
+
 .landing-main > .kbt-ad-slot--hero-banner {
     margin-top: 0;
     margin-bottom: 1rem;
-    max-width: 1120px;
     position: relative;
     z-index: 1;
 }
 
-.landing-main > .kbt-ad-slot--hero-banner .kbt-ad-slot-inner {
+.landing-main > .kbt-ad-slot .kbt-ad-slot-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     min-height: 106px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.landing-main > .kbt-ad-slot .kbt-ad-label {
+    position: absolute;
+    top: 0.45rem;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    color: var(--landing-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.landing-main > .kbt-ad-slot .adsbygoogle {
+    width: 100%;
+    max-width: 970px;
+    min-height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.landing-main > .kbt-ad-slot iframe {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.landing-main > .kbt-ad-slot--hero-banner .kbt-ad-slot-inner {
     background: rgba(255, 255, 255, 0.62);
     backdrop-filter: blur(4px);
 }

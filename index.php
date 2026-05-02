@@ -78,7 +78,7 @@
 <main id="main-content" class="landing-main">
   <?php include 'help/brief-keyboard-tester.php'; ?>
 
-  <?php kbtRenderAdSlot('home_hero_banner', ['class' => 'kbt-ad-slot--leaderboard kbt-ad-slot--hero-banner']); ?>
+  <?php kbtRenderAdSlot('home_hero_banner', ['class' => 'kbt-ad-slot--leaderboard kbt-ad-slot--hero-banner', 'format' => 'horizontal', 'full_width_responsive' => false]); ?>
 
   <section class="tool-stage" id="keyboard-stage" aria-label="Keyboard tester tool">
     <div class="tool-shell">
@@ -197,7 +197,7 @@
 
   <?php $intentClusterTool = 'keyboard'; $intentClusterKicker = 'Keyboard test variants'; include 'includes/components/intent-cluster-links.php'; unset($intentClusterTool, $intentClusterKicker); ?>
   <?php include 'help/keyboard-tester.php'; ?>
-  <?php kbtRenderAdSlot('home_after_guide', ['class' => 'kbt-ad-slot--content kbt-ad-slot--home-after-guide']); ?>
+  <?php kbtRenderAdSlot('home_after_guide', ['class' => 'kbt-ad-slot--leaderboard kbt-ad-slot--home-after-guide', 'format' => 'horizontal', 'full_width_responsive' => false]); ?>
   <?php $currentTool = 'keyboard'; $relatedToolsSectionId = 'tools'; $relatedToolsTitle = 'Popular testing tools'; $relatedToolsIntro = 'Use these focused diagnostics when a keyboard issue may involve input delay, mouse behavior, typing speed, or audio/video checks.'; include 'includes/related-tools.php'; unset($currentTool, $relatedToolsSectionId, $relatedToolsTitle, $relatedToolsIntro); ?>
   <?php $toolBlogSlug = 'keyboard-not-typing-lagging-sticky-fix-clean-guide.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
   <?php include __DIR__ . '/includes/components/homepage-latest-blog.php'; ?>

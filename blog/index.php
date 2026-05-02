@@ -820,7 +820,7 @@ $pageCanonical = $currentPage > 1
         </section>
 <?php endif; ?>
 
-        <?php kbtRenderAdSlot('blog_index_after_featured', ['class' => 'kbt-ad-slot--leaderboard kbt-ad-slot--blog-index-after-featured']); ?>
+        <?php kbtRenderAdSlot('blog_index_after_featured', ['class' => 'kbt-ad-slot--leaderboard kbt-ad-slot--blog-index-after-featured', 'format' => 'horizontal', 'full_width_responsive' => false]); ?>
 
         <section class="blog-section" aria-labelledby="latest-guides-title">
             <div class="blog-section-head">

@@ -188,8 +188,8 @@ a{color:inherit;text-decoration:none}
 
 <!-- Load core site styles early without blocking first paint -->
 <?php if ($loadGlobalCss): ?>
-<link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/global.min.css?v=2.7" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/global.min.css?v=2.7"></noscript>
+<link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/global.min.css?v=2.8" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/global.min.css?v=2.8"></noscript>
 <?php endif; ?>
 <link rel="preload" as="style" href="<?php echo $basePath; ?>assets/css/tools-list.min.css" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/tools-list.min.css"></noscript>
