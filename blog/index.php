@@ -9,9 +9,6 @@ $topPerformerPaths = [
     'blog/best-mechanical-keyboards-for-gaming-2026.php',
     'blog/keyboard-not-typing-lagging-sticky-fix-clean-guide.php',
     'blog/what-is-keyboard-ghosting-anti-ghosting-fix-guide.php',
-    'blog/keyboard-shortcuts-windows-mac-linux-complete-cheat-sheet.php',
-    'blog/what-is-webrtc-leak-how-to-fix-guide.php',
-    'blog/how-to-copy-pro-crosshair-cs2-valorant-generator-guide.php',
 ];
 
 $postsByPath = [];
@@ -411,7 +408,7 @@ $pageCanonical = $currentPage > 1
     }
     .top-story-grid {
         display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
     }
     .post-grid {
@@ -789,7 +786,7 @@ $pageCanonical = $currentPage > 1
                 </div>
                 <div class="blog-hero-metrics" aria-label="Blog highlights">
                     <div class="blog-metric"><strong><?php echo count($posts); ?></strong><span>published guides</span></div>
-                    <div class="blog-metric"><strong><?php echo count($topPerformers); ?></strong><span>top articles pinned</span></div>
+                    <div class="blog-metric"><strong><?php echo count($topRailPosts); ?></strong><span>pinned articles below</span></div>
                     <div class="blog-metric"><strong>2026</strong><span>fresh buying advice</span></div>
                 </div>
             </div>
