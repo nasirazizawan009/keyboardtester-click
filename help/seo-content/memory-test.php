@@ -7,6 +7,7 @@
     <article class="seo-article">
       <h2>What "Heap Limit" Actually Is</h2>
       <p>The heap limit is the browser's decision, not the operating system's. On 64-bit Chrome desktop the default is roughly 4&nbsp;GB for the main thread's isolate, though this varies by build and memory pressure. On Chrome for Android the limit is much lower &mdash; typically 256-512&nbsp;MB &mdash; because mobile devices prioritize killing tabs over letting one tab consume the entire system. The limit also differs between the main thread and Web Worker threads, and between regular tabs and Service Workers. This tool always reports the main thread's limit, which is the one that matters for the page you're looking at.</p>
+      <p>For laptop buyers, browser memory limits are only one part of the story. If your work also depends on GPU VRAM for games, AI tools, or creative apps, use our <a href="<?php echo url('blog/best-laptops-with-good-gpu-2026.php'); ?>">best laptops with good GPU guide</a> alongside this memory test.</p>
     </article>
     <article class="seo-article">
       <h2>Detecting Memory Leaks In Web Apps</h2>
@@ -23,6 +24,7 @@
         <li><a href="<?php echo url('gpu-stress-test.php'); ?>">GPU Stress Test</a></li>
         <li><a href="<?php echo url('ram-latency-calculator.php'); ?>">RAM Latency Calculator</a></li>
         <li><a href="<?php echo url('latency-checker.php'); ?>">Input Latency Checker</a></li>
+        <li><a href="<?php echo url('blog/best-laptops-with-good-gpu-2026.php'); ?>">Best Laptops With Good GPU Guide</a></li>
       </ul>
     </article>
   </div>

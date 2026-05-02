@@ -1946,7 +1946,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4976,6 +4976,36 @@
     <image:image>
       <image:loc>https://keyboardtester.click/blog/images/ai-gpu-test-data-center-local-ai.webp</image:loc>
       <image:title>Server racks representing cloud AI hardware compared with local browser AI testing</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://keyboardtester.click/blog/best-laptops-with-good-gpu-2026.php</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/good-gpu-laptop-2026-asus-scar-18.webp</image:loc>
+      <image:title>ASUS ROG Strix SCAR 18 gaming laptop with RTX 5090 graphics</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/good-gpu-laptop-2026-lenovo-legion-pro-7i.webp</image:loc>
+      <image:title>Lenovo Legion Pro 7i Gen 10 gaming laptop with RTX 5080 graphics</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/good-gpu-laptop-2026-razer-blade-16.webp</image:loc>
+      <image:title>Razer Blade 16 RTX 5090 gaming laptop official product image</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/good-gpu-laptop-2026-msi-raider-18.webp</image:loc>
+      <image:title>MSI Raider 18 HX AI RTX 5090 gaming laptop</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/good-gpu-laptop-2026-alienware-18-area51.webp</image:loc>
+      <image:title>Dell Alienware 18 Area-51 gaming laptop official product image</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/good-gpu-laptop-2026-acer-helios-18.webp</image:loc>
+      <image:title>Acer Predator Helios 18 AI RTX 5090 gaming laptop official product image</image:title>
     </image:image>
   </url>
   <url>

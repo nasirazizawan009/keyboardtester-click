@@ -5,6 +5,7 @@ include __DIR__ . '/../config.php';
 $posts = include __DIR__ . '/posts-data.php';
 
 $topPerformerPaths = [
+    'blog/best-laptops-with-good-gpu-2026.php',
     'blog/best-mechanical-keyboards-for-gaming-2026.php',
     'blog/keyboard-not-typing-lagging-sticky-fix-clean-guide.php',
     'blog/what-is-keyboard-ghosting-anti-ghosting-fix-guide.php',
@@ -780,6 +781,7 @@ $pageCanonical = $currentPage > 1
                     <h1 class="blog-page-title" id="blog-page-title">Better gear choices start with better tests.</h1>
                     <p class="blog-subtitle">Practical guides for keyboards, mice, monitors, audio, privacy, and gaming setup decisions. The articles getting real search traction stay pinned here for faster access.</p>
                     <div class="blog-hero-actions" aria-label="Blog topics">
+                        <a class="blog-chip" href="<?php echo url('blog/best-laptops-with-good-gpu-2026.php'); ?>">GPU laptops</a>
                         <a class="blog-chip" href="<?php echo url('blog/best-mechanical-keyboards-for-gaming-2026.php'); ?>">Gaming keyboards</a>
                         <a class="blog-chip" href="<?php echo url('blog/what-is-keyboard-ghosting-anti-ghosting-fix-guide.php'); ?>">Ghosting and NKRO</a>
                         <a class="blog-chip" href="<?php echo url('blog/mouse-dpi-tester-measure-sensitivity.php'); ?>">Mouse DPI</a>
