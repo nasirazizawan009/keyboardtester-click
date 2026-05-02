@@ -20,6 +20,16 @@
  */
 return [
 
+    [
+        'path'    => 'blog/best-laptops-with-good-gpu-2026.php',
+        'url'     => 'https://keyboardtester.click/blog/best-laptops-with-good-gpu-2026.php',
+        'image'   => 'blog/images/good-gpu-laptop-2026-asus-scar-18.webp',
+        'alt'     => 'ASUS ROG Strix SCAR 18 gaming laptop with RTX 5090 graphics',
+        'date'    => 'May 2, 2026',
+        'title'   => 'Best Laptops With Good GPU in 2026: RTX 5090 and RTX 5080 Picks',
+        'excerpt' => 'A researched buyer guide to laptops with good GPUs, including RTX 5090 and RTX 5080 models, current prices, review notes, specs, and practical buying advice.',
+    ],
+
     // ── 2026 — May ──────────────────────────────────────────────────────────
     [
         'path'    => 'blog/ai-gpu-test-webgpu-browser-ai-readiness.php',
