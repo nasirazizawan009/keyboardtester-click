@@ -2085,6 +2085,10 @@ function generateHomepageSchema() {
             'answer' => 'Focus the tester, press each physical key once, and confirm the matching key highlights on the visual keyboard. Use the key history to spot keys that repeat, miss, or send a different input than expected.'
         ],
         [
+            'question' => 'What do the Advanced Options do?',
+            'answer' => 'Advanced Options add session statistics, a press-frequency heatmap, sound feedback, guided Test All Keys mode, exportable reports, ghost-click monitoring, and latency checks. Use them when you need evidence, troubleshooting detail, or a deeper gaming-keyboard check.'
+        ],
+        [
             'question' => 'Why does a key not register in the keyboard tester?',
             'answer' => 'First click inside the tester, then press the key firmly again. If it still does not appear, check your OS keyboard layout, browser focus, and whether another app is intercepting the shortcut. If only one physical key fails, the switch, membrane, or laptop keyboard cable may need cleaning or repair.'
         ],

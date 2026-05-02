@@ -39,10 +39,50 @@
 		</div>
 	</div>
 
+	<div class="help-header">
+		<h2>Advanced Options Explained</h2>
+		<p>Open Advanced Options when a basic key check is not enough. These controls help you record a full session, find repeat patterns, and test gaming or repair problems more precisely.</p>
+	</div>
+
+	<div class="help-grid">
+		<div class="help-card">
+			<h3>Statistics</h3>
+			<p>Shows session time, total key events, keys tested, and the most or least pressed keys. Use it to confirm whether every key in a repair checklist was actually tested.</p>
+		</div>
+		<div class="help-card">
+			<h3>Heatmap</h3>
+			<p>Colors keys by press frequency so repeated or overactive keys stand out quickly. It is useful when a key chatters, repeats, or fires more often than nearby keys.</p>
+		</div>
+		<div class="help-card">
+			<h3>Sound</h3>
+			<p>Toggles keypress feedback sound on or off. Keep it on for quick confirmation, or turn it off when testing in a quiet room or recording a support video.</p>
+		</div>
+		<div class="help-card">
+			<h3>Test All Keys</h3>
+			<p>Starts a guided coverage check so you can work through every testable key instead of guessing what is left. Use it after cleaning, repair, or buying a used keyboard.</p>
+		</div>
+		<div class="help-card">
+			<h3>Export</h3>
+			<p>Downloads a session report with tested-key coverage and basic results. This is useful for warranty claims, repair notes, QA checks, or comparing before and after cleaning.</p>
+		</div>
+		<div class="help-card">
+			<h3>Ghost Click</h3>
+			<p>Monitors for unintended key events while your hands are off the keyboard. If keys appear during this test, check for stuck switches, debris, liquid damage, or electrical noise.</p>
+		</div>
+		<div class="help-card">
+			<h3>Latency</h3>
+			<p>Measures browser-level key event delay and summarizes recent latency results. Use it for relative comparisons on the same computer, not as a lab-grade hardware latency number.</p>
+		</div>
+	</div>
+
 	<div class="help-accordion">
 		<details>
 			<summary>How do I test every key on my keyboard?</summary>
 			<p>Focus the tester, press each physical key once, and confirm the matching key highlights on the visual keyboard. Use the key history to spot keys that repeat, miss, or send a different input than expected.</p>
+		</details>
+		<details>
+			<summary>What do the Advanced Options do?</summary>
+			<p>Advanced Options add session statistics, a press-frequency heatmap, sound feedback, guided Test All Keys mode, exportable reports, ghost-click monitoring, and latency checks. Use them when you need evidence, troubleshooting detail, or a deeper gaming-keyboard check.</p>
 		</details>
 		<details>
 			<summary>Why does a key not register in the keyboard tester?</summary>
