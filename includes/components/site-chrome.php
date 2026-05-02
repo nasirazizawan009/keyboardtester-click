@@ -549,15 +549,15 @@ if (!function_exists('kbtRenderSiteHeader')) {
                         $currentPath = strtok($_SERVER['REQUEST_URI'] ?? '', '?');
                         $isAllToolsPage = preg_match('~/pages/all-tools(?:-[a-z]{2})?\.php$~', $currentPath) === 1;
                         $ALL_TOOLS_LOCALE_PATHS = [
-                            'en' => '/pages/all-tools.php',
-                            'es' => '/pages/all-tools-es.php',
-                            'fr' => '/pages/all-tools-fr.php',
-                            'de' => '/pages/all-tools-de.php',
-                            'ja' => '/pages/all-tools-ja.php',
-                            'ko' => '/pages/all-tools-ko.php',
-                            'pt' => '/pages/all-tools-pt.php',
-                            'ar' => '/pages/all-tools-ar.php',
-                            'ru' => '/pages/all-tools-ru.php',
+                            'en' => 'pages/all-tools.php',
+                            'es' => 'pages/all-tools-es.php',
+                            'fr' => 'pages/all-tools-fr.php',
+                            'de' => 'pages/all-tools-de.php',
+                            'ja' => 'pages/all-tools-ja.php',
+                            'ko' => 'pages/all-tools-ko.php',
+                            'pt' => 'pages/all-tools-pt.php',
+                            'ar' => 'pages/all-tools-ar.php',
+                            'ru' => 'pages/all-tools-ru.php',
                         ];
                         ?>
                         <?php foreach (($keyboardLanguages ?? []) as $langKey => $langMeta): ?>
@@ -566,7 +566,7 @@ if (!function_exists('kbtRenderSiteHeader')) {
                             $switchUrl = $langMeta['url'];
                             if ($isAllToolsPage && isset($ALL_TOOLS_LOCALE_PATHS[$langKey])) {
                                 // Jump to the locale-specific all-tools file
-                                $switchUrl = $ALL_TOOLS_LOCALE_PATHS[$langKey];
+                                $switchUrl = url($ALL_TOOLS_LOCALE_PATHS[$langKey]);
                             } elseif ($currentToolId !== null) {
                                 $langToolIndex = kbtGetSiteChromeToolLabelIndex($langKey);
                                 if (isset($langToolIndex[$currentToolId])) {

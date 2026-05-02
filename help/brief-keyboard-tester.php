@@ -6,7 +6,7 @@
       <p class="hero-lede">Test every key on your keyboard and get real-time feedback in just seconds. Instant highlights, layout switching, ghosting checks, and exportable reports. No installs. No signups.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#keyboard-tester">Start keyboard test</a>
-        <a class="landing-btn landing-btn-ghost" href="#tools">Explore more testing tools</a>
+        <a class="landing-btn landing-btn-ghost" href="<?php echo url('pages/all-tools.php'); ?>">Explore all testing tools</a>
       </div>
       <div class="hero-badges">
         <span class="hero-badge">No installs</span>
