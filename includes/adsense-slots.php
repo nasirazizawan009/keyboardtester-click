@@ -9,7 +9,7 @@
 return [
     'client' => 'ca-pub-7056306765580248',
     'slots' => [
-        'home_after_tool' => '8866539179',
+        'home_hero_banner' => '8866539179',
         'home_after_guide' => '2022852669',
         'blog_index_after_featured' => '6240375832',
         'site_before_footer' => '3614212490',

@@ -78,13 +78,13 @@
 <main id="main-content" class="landing-main">
   <?php include 'help/brief-keyboard-tester.php'; ?>
 
+  <?php kbtRenderAdSlot('home_hero_banner', ['class' => 'kbt-ad-slot--leaderboard kbt-ad-slot--hero-banner']); ?>
+
   <section class="tool-stage" id="keyboard-stage" aria-label="Keyboard tester tool">
     <div class="tool-shell">
       <?php include 'tools/keyboard_tester_english.php'; ?>
     </div>
   </section>
-
-  <?php kbtRenderAdSlot('home_after_tool', ['class' => 'kbt-ad-slot--leaderboard kbt-ad-slot--home-after-tool']); ?>
 
   <section class="trust-strip" aria-label="Key benefits">
     <div class="container trust-grid">

@@ -562,6 +562,25 @@ html.dark-theme .step-number,
     contain: layout style;
 }
 
+.landing-main > .kbt-ad-slot--hero-banner {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    max-width: 1120px;
+    position: relative;
+    z-index: 1;
+}
+
+.landing-main > .kbt-ad-slot--hero-banner .kbt-ad-slot-inner {
+    min-height: 106px;
+    background: rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(4px);
+}
+
+html.dark-theme .landing-main > .kbt-ad-slot--hero-banner .kbt-ad-slot-inner,
+[data-theme="dark"] .landing-main > .kbt-ad-slot--hero-banner .kbt-ad-slot-inner {
+    background: rgba(15, 23, 42, 0.38);
+}
+
 .tool-stage-header {
     display: flex;
     align-items: center;
