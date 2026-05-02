@@ -1,60 +1,72 @@
 <section class="guidelines landing-guide" id="guidelines">
 	<div class="help-header">
-		<h2>Online Keyboard Tester Guide</h2>
-		<p>Use our free online keyboard tester to test every key with real-time feedback. Verify your layout and spot issues like ghosting or stuck keys in just seconds.</p>
+		<h2>How to Test Your Keyboard Online</h2>
+		<p>Use the keyboard tester to confirm that every physical key sends a browser event, highlights on the visual layout, and releases normally. It is useful for new keyboards, laptop repairs, stuck keys, key chatter, and gaming-keyboard rollover checks.</p>
 	</div>
 
 	<div class="help-grid">
 		<div class="help-card">
-			<h3>Start a keyboard test fast</h3>
+			<h3>Run a full key check</h3>
 			<ol>
-				<li>Click inside the tester and press any key on your keyboard.</li>
-				<li>Confirm the key highlights and appears in the key history.</li>
-				<li>Use Reset to clear results and run another test.</li>
+				<li>Click inside the tester so the page has keyboard focus.</li>
+				<li>Press each key once and confirm it lights up on the layout.</li>
+				<li>Watch the key history for missed, repeated, or unexpected inputs.</li>
 			</ol>
 		</div>
 		<div class="help-card">
-			<h3>Pick layout + OS labels</h3>
+			<h3>Read the result correctly</h3>
 			<ul>
-				<li>Select QWERTY, AZERTY, Dvorak, or Colemak layout.</li>
-				<li>Toggle Windows or Mac labels to match your keyboard.</li>
-				<li>Your layout choice is remembered automatically.</li>
+				<li>A working key should highlight immediately and then release.</li>
+				<li>A stuck key may stay active or repeat without another press.</li>
+				<li>A broken key may not appear even after several firm presses.</li>
 			</ul>
 		</div>
 		<div class="help-card">
-			<h3>Advanced checks + export</h3>
+			<h3>Match your keyboard layout</h3>
 			<ul>
-				<li>Open Advanced Options for stats, heatmap, and ghosting checks.</li>
-				<li>Run Test All Keys to confirm full key coverage.</li>
-				<li>Export results if you need a record for support.</li>
+				<li>Switch QWERTY, AZERTY, Dvorak, or Colemak before testing.</li>
+				<li>Use Windows or Mac labels so modifier keys are easier to read.</li>
+				<li>For 60 percent keyboards, test Fn-layer outputs such as arrows and function keys.</li>
+			</ul>
+		</div>
+		<div class="help-card">
+			<h3>Check deeper issues</h3>
+			<ul>
+				<li>Hold common shortcuts or WASD combinations to check rollover.</li>
+				<li>Use the latency and ghosting tools if games miss key combinations.</li>
+				<li>Export the session when you need proof for support or repair notes.</li>
 			</ul>
 		</div>
 	</div>
 
 	<div class="help-accordion">
 		<details>
+			<summary>How do I test every key on my keyboard?</summary>
+			<p>Focus the tester, press each physical key once, and confirm the matching key highlights on the visual keyboard. Use the key history to spot keys that repeat, miss, or send a different input than expected.</p>
+		</details>
+		<details>
 			<summary>Why does a key not register in the keyboard tester?</summary>
-			<p>Make sure the page is focused, press the key firmly, and confirm your OS language matches the selected layout.</p>
+			<p>First click inside the tester, then press the key firmly again. If it still does not appear, check your OS keyboard layout, browser focus, and whether another app is intercepting the shortcut. If only one physical key fails, the switch, membrane, or laptop keyboard cable may need cleaning or repair.</p>
 		</details>
 		<details>
-			<summary>Why are special keys not detected?</summary>
-			<p>Keys like Fn and some media controls are handled by hardware and may not send browser events.</p>
+			<summary>Can this detect stuck, repeating, or chattering keys?</summary>
+			<p>Yes. A stuck or chattering key often appears as repeated entries in the key history, a key that stays highlighted too long, or several rapid inputs from one press. Test the problem key slowly, then compare it with nearby keys.</p>
 		</details>
 		<details>
-			<summary>Does the keyboard tester work on mobile devices?</summary>
-			<p>The tool works best on desktop keyboards. Mobile and tablet virtual keyboards may not send full key events.</p>
+			<summary>Can I test keyboard ghosting and N-key rollover?</summary>
+			<p>Yes. Hold the combinations you actually use, such as WASD with Shift, Ctrl, Space, or number keys. If a held key does not light up, the keyboard may have a rollover limit or a blocked matrix combination.</p>
 		</details>
 		<details>
-			<summary>Can I test keyboard ghosting or multiple key presses?</summary>
-			<p>Yes. Press several keys together to see which keys register and identify ghosting issues.</p>
+			<summary>Why are Fn, media keys, or Print Screen different?</summary>
+			<p>Some keys are handled by the keyboard firmware or operating system before the browser receives them. Fn usually does not send a browser event, some media keys are intercepted by the OS, and Print Screen can be blocked for security reasons.</p>
 		</details>
 		<details>
-			<summary>How do I reset the keyboard test?</summary>
-			<p>Click Reset, then refresh the page to clear any saved preferences.</p>
+			<summary>Does the tester work with laptops, Mac keyboards, and compact keyboards?</summary>
+			<p>Yes. It works with built-in laptop keyboards, USB keyboards, Bluetooth keyboards, Mac keyboards, and compact layouts in modern browsers. For compact keyboards, test the normal keys first, then test Fn-layer outputs like arrows, Delete, Home, End, and function keys.</p>
 		</details>
 		<details>
-			<summary>Is the keyboard test private?</summary>
-			<p>Tests run in your browser and are not uploaded to a server.</p>
+			<summary>Is the keyboard test private and does it need a download?</summary>
+			<p>No download or sign-up is needed. The keyboard test runs in your browser and the key test data is not uploaded to our server.</p>
 		</details>
 	</div>
 

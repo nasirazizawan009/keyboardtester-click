@@ -2081,28 +2081,32 @@ function generateHomepageSchema() {
     // Homepage FAQs. Keep these aligned with help/keyboard-tester.php.
     $faqs = [
         [
+            'question' => 'How do I test every key on my keyboard?',
+            'answer' => 'Focus the tester, press each physical key once, and confirm the matching key highlights on the visual keyboard. Use the key history to spot keys that repeat, miss, or send a different input than expected.'
+        ],
+        [
             'question' => 'Why does a key not register in the keyboard tester?',
-            'answer' => 'Make sure the page is focused, press the key firmly, and confirm your OS language matches the selected layout.'
+            'answer' => 'First click inside the tester, then press the key firmly again. If it still does not appear, check your OS keyboard layout, browser focus, and whether another app is intercepting the shortcut. If only one physical key fails, the switch, membrane, or laptop keyboard cable may need cleaning or repair.'
         ],
         [
-            'question' => 'Why are special keys not detected?',
-            'answer' => 'Keys like Fn and some media controls are handled by hardware and may not send browser events.'
+            'question' => 'Can this detect stuck, repeating, or chattering keys?',
+            'answer' => 'Yes. A stuck or chattering key often appears as repeated entries in the key history, a key that stays highlighted too long, or several rapid inputs from one press. Test the problem key slowly, then compare it with nearby keys.'
         ],
         [
-            'question' => 'Does the keyboard tester work on mobile devices?',
-            'answer' => 'The tool works best on desktop keyboards. Mobile and tablet virtual keyboards may not send full key events.'
+            'question' => 'Can I test keyboard ghosting and N-key rollover?',
+            'answer' => 'Yes. Hold the combinations you actually use, such as WASD with Shift, Ctrl, Space, or number keys. If a held key does not light up, the keyboard may have a rollover limit or a blocked matrix combination.'
         ],
         [
-            'question' => 'Can I test keyboard ghosting or multiple key presses?',
-            'answer' => 'Yes. Press several keys together to see which keys register and identify ghosting issues.'
+            'question' => 'Why are Fn, media keys, or Print Screen different?',
+            'answer' => 'Some keys are handled by the keyboard firmware or operating system before the browser receives them. Fn usually does not send a browser event, some media keys are intercepted by the OS, and Print Screen can be blocked for security reasons.'
         ],
         [
-            'question' => 'How do I reset the keyboard test?',
-            'answer' => 'Click Reset, then refresh the page to clear any saved preferences.'
+            'question' => 'Does the tester work with laptops, Mac keyboards, and compact keyboards?',
+            'answer' => 'Yes. It works with built-in laptop keyboards, USB keyboards, Bluetooth keyboards, Mac keyboards, and compact layouts in modern browsers. For compact keyboards, test the normal keys first, then test Fn-layer outputs like arrows, Delete, Home, End, and function keys.'
         ],
         [
-            'question' => 'Is the keyboard test private?',
-            'answer' => 'Tests run in your browser and are not uploaded to a server.'
+            'question' => 'Is the keyboard test private and does it need a download?',
+            'answer' => 'No download or sign-up is needed. The keyboard test runs in your browser and the key test data is not uploaded to our server.'
         ]
     ];
     $output .= schemaFAQ($faqs);
