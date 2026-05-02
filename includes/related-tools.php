@@ -323,13 +323,20 @@ foreach (array_slice($relatedKeys, 0, 5) as $key) {
         $relatedTools[$key] = $allTools[$key];
     }
 }
+
+$relatedToolsIdAttribute = '';
+if (!empty($relatedToolsSectionId)) {
+    $relatedToolsIdAttribute = ' id="' . htmlspecialchars($relatedToolsSectionId, ENT_QUOTES, 'UTF-8') . '"';
+}
+$relatedToolsHeading = $relatedToolsTitle ?? 'Related Testing Tools';
+$relatedToolsIntroText = $relatedToolsIntro ?? 'Continue testing your hardware with these related diagnostic tools.';
 ?>
 
-<section class="related-tools" aria-labelledby="related-tools-title">
+<section class="related-tools"<?php echo $relatedToolsIdAttribute; ?> aria-labelledby="related-tools-title">
     <div class="container">
         <div class="related-tools-header">
-            <h2 id="related-tools-title">Related Testing Tools</h2>
-            <p class="related-tools-intro">Continue testing your hardware with these related diagnostic tools.</p>
+            <h2 id="related-tools-title"><?php echo htmlspecialchars($relatedToolsHeading, ENT_QUOTES, 'UTF-8'); ?></h2>
+            <p class="related-tools-intro"><?php echo htmlspecialchars($relatedToolsIntroText, ENT_QUOTES, 'UTF-8'); ?></p>
         </div>
 
         <div class="related-tools-grid">

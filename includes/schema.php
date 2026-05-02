@@ -2078,11 +2078,34 @@ function generateHomepageSchema() {
         ['name' => 'Home', 'url' => '/']
     ]);
 
-    // Homepage FAQs
-    $faqs = getToolFAQs('keyboard_tester');
-    if (!empty($faqs)) {
-        $output .= schemaFAQ($faqs);
-    }
+    // Homepage FAQs. Keep these aligned with help/keyboard-tester.php.
+    $faqs = [
+        [
+            'question' => 'Why does a key not register in the keyboard tester?',
+            'answer' => 'Make sure the page is focused, press the key firmly, and confirm your OS language matches the selected layout.'
+        ],
+        [
+            'question' => 'Why are special keys not detected?',
+            'answer' => 'Keys like Fn and some media controls are handled by hardware and may not send browser events.'
+        ],
+        [
+            'question' => 'Does the keyboard tester work on mobile devices?',
+            'answer' => 'The tool works best on desktop keyboards. Mobile and tablet virtual keyboards may not send full key events.'
+        ],
+        [
+            'question' => 'Can I test keyboard ghosting or multiple key presses?',
+            'answer' => 'Yes. Press several keys together to see which keys register and identify ghosting issues.'
+        ],
+        [
+            'question' => 'How do I reset the keyboard test?',
+            'answer' => 'Click Reset, then refresh the page to clear any saved preferences.'
+        ],
+        [
+            'question' => 'Is the keyboard test private?',
+            'answer' => 'Tests run in your browser and are not uploaded to a server.'
+        ]
+    ];
+    $output .= schemaFAQ($faqs);
 
     return $output;
 }

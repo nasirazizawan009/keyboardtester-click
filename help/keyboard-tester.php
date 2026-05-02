@@ -33,7 +33,7 @@
 
 	<div class="help-accordion">
 		<details>
-			<summary>Why doesn’t a key register in the keyboard tester?</summary>
+			<summary>Why does a key not register in the keyboard tester?</summary>
 			<p>Make sure the page is focused, press the key firmly, and confirm your OS language matches the selected layout.</p>
 		</details>
 		<details>
@@ -59,6 +59,6 @@
 	</div>
 
 	<div class="help-footer">
-		<p>Need more tools? Explore mouse, latency, audio, and utility testers in the tools list below.</p>
+		<p>Need more checks? Continue with the popular testing tools below or open the full tools directory.</p>
 	</div>
 </section>

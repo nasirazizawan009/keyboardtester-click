@@ -19,12 +19,14 @@ $clusterPages = array_values(array_filter($cluster['pages'], static function ($p
 if (empty($clusterPages)) {
     return;
 }
+
+$clusterKicker = $intentClusterKicker ?? 'Related tests';
 ?>
 
 <section class="intent-cluster-links" aria-labelledby="intent-cluster-title">
     <div class="container">
         <div class="intent-cluster-head">
-            <p class="intent-cluster-kicker">Search Intent Cluster</p>
+            <p class="intent-cluster-kicker"><?php echo htmlspecialchars($clusterKicker, ENT_QUOTES, 'UTF-8'); ?></p>
             <h2 id="intent-cluster-title"><?php echo htmlspecialchars($cluster['title'], ENT_QUOTES, 'UTF-8'); ?></h2>
             <p class="intent-cluster-intro"><?php echo htmlspecialchars($cluster['intro'], ENT_QUOTES, 'UTF-8'); ?></p>
         </div>
