@@ -95,6 +95,7 @@ seo-audit-*/
 
 # ── AI chat backend config (contains Groq API key) ──────────────────────────
 ai-config.php
+includes/adsense-slots.local.php
 
 # ── Ephemeral session scripts ───────────────────────────────────────────────
 __*.py

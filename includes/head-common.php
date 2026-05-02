@@ -13,8 +13,11 @@ $loadBootstrapJs = $loadBootstrapJs ?? $loadBootstrapCss;
 $loadMobileToolAdapters = $loadMobileToolAdapters ?? true;
 $preconnectJsdelivr = $preconnectJsdelivr ?? ($loadBootstrapCss || $loadBootstrapJs);
 $loadAdSense = $loadAdSense ?? true;
+$allowAutoAdSense = $allowAutoAdSense ?? false;
 $headRobots = null;
 $headCanonical = null;
+
+require_once __DIR__ . '/components/adsense-slot.php';
 
 if (
     strpos($phpSelf, '/tools/') !== false ||
@@ -125,8 +128,8 @@ if (empty($hreflangEmitted) && !empty($_SERVER['SCRIPT_FILENAME'])) {
 <link rel="dns-prefetch" href="https://www.clarity.ms">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-<?php if ($loadAdSense): ?>
-<!-- Google AdSense (interaction-triggered: skipped by PageSpeed lab, loads on real user scroll/click) -->
+<?php if ($loadAdSense && ($allowAutoAdSense || kbtHasConfiguredAdSenseSlots())): ?>
+<!-- Google AdSense loader for controlled manual slots (turn Auto ads off in AdSense UI to prevent extra placements) -->
 <script>
 (function() {
     var loaded = false;

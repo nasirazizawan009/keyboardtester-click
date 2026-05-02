@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-02 (Codex, Bing WMT submission and indexability fixes)
+**Last updated:** 2026-05-03 (Codex, local manual AdSense slots)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -69,6 +69,9 @@ This file is the **single source of truth** when handing off work between AI age
 ---
 
 ## 📜 Completed today (rolling 24-48h log)
+
+### 2026-05-03 (Codex)
+- Local-only controlled manual AdSense slot system added. Created `includes/adsense-slots.php` for manual Display ad unit IDs and `includes/components/adsense-slot.php` for rendering safe ad placements. Added local-only placeholders for missing slot IDs, while live/prod renders no ad container until slot IDs are configured. Updated `includes/head-common.php` so the AdSense loader no longer loads by default unless manual slots are configured or `$allowAutoAdSense` is explicitly enabled, preventing account-level Auto ads from continuing to inject uncontrolled placements from code alone. Added slot styling to `assets/css/global.css` and `assets/css/global.min.css`, ignored `includes/adsense-slots.local.php`, inserted homepage slots after the main keyboard tester and after the guide, inserted a blog-index slot after the pinned/top section, and added a sitewide before-footer slot through `footer.php` with homepage footer-slot suppression. No live deployment was performed because blank slot IDs would stop current live ads instead of earning; next step is to create/paste real AdSense Display ad unit IDs and then deploy. Local verification: PHP lint passed for touched PHP files, homepage returned HTTP 200 with exactly 2 local ad placeholders and no footer ad, blog index returned HTTP 200 with blog-index plus footer placeholders, `mouse-test.php` returned HTTP 200 with one footer placeholder, and no tested page loaded the AdSense script while slot IDs were blank.
 
 ### 2026-05-02 (Codex)
 - Bing Webmaster API submission and crawlability check completed. Verified local Bing WMT API access via `.env` key and confirmed quota endpoint returned HTTP 200. Submitted all 864 live sitemap URLs to Bing WMT API in two batches with 0 failed submissions, then submitted the sitemap feed (`https://keyboardtester.click/sitemap.xml`) via Bing `SubmitFeed` HTTP 200. Ran a Bing URL-info audit; Bing throttled part of the audit with `ThrottleHost`, but confirmed several pages have crawl/content data while many newer/low-authority URLs are not yet discovered/crawled by Bing. Ran a full live technical indexability crawl over all 864 sitemap URLs: no `noindex`, no broad canonical mismatch, 863/864 returned HTTP 200 on first pass, and the one timeout (`/languages/portuguese/reaction-time-test.php`) retried as HTTP 200. Fixed two real issues found by the crawl: `gamepad-test.php` now has a single H1, and `keyboard-shortcut-identifier.php` now outputs SEO meta/canonical inside `<head>` with one title. Deployed both files via SFTP/paramiko, verified live HTTP 200/one H1/correct canonical, and resubmitted the fixed URLs plus the transient-timeout URL to Bing WMT API (3/3 submitted, 0 failed). Ignored audit exports are saved under `seo-audit-2026-05-02/`.

@@ -1055,13 +1055,92 @@ html.dark-theme .theme-toggle,
 }
 
 /* ============================================
+   CONTROLLED ADSENSE SLOTS
+   ============================================ */
+.kbt-ad-slot {
+    width: 100%;
+    max-width: 1120px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    clear: both;
+}
+
+.kbt-ad-slot-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 112px;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 10px;
+    background: rgba(148, 163, 184, 0.08);
+}
+
+.kbt-ad-label {
+    position: absolute;
+    top: 0.45rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: var(--text-muted, #64748b);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.kbt-ad-slot .adsbygoogle {
+    width: 100%;
+    min-height: 90px;
+}
+
+.kbt-ad-slot--placeholder .kbt-ad-slot-inner {
+    color: var(--text-muted, #64748b);
+    font-size: 0.9rem;
+}
+
+.kbt-ad-slot--content .kbt-ad-slot-inner {
+    min-height: 170px;
+}
+
+.kbt-ad-slot--site-footer {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+html.dark-theme .kbt-ad-slot-inner,
+[data-theme="dark"] .kbt-ad-slot-inner {
+    border-color: rgba(148, 163, 184, 0.18);
+    background: rgba(15, 23, 42, 0.32);
+}
+
+@media (max-width: 768px) {
+    .kbt-ad-slot {
+        margin: 1.5rem auto;
+        padding: 0 0.75rem;
+    }
+
+    .kbt-ad-slot-inner {
+        min-height: 96px;
+    }
+
+    .kbt-ad-slot--content .kbt-ad-slot-inner {
+        min-height: 140px;
+    }
+}
+
+/* ============================================
    PRINT STYLES
    ============================================ */
 @media print {
     .site-header,
     .site-footer,
     .theme-toggle,
-    .nav-buttons {
+    .nav-buttons,
+    .kbt-ad-slot {
         display: none !important;
     }
     

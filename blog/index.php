@@ -1,5 +1,6 @@
 <?php
 include __DIR__ . '/../config.php';
+require_once __DIR__ . '/../includes/components/adsense-slot.php';
 
 // Single source of truth — add new posts to blog/posts-data.php only
 $posts = include __DIR__ . '/posts-data.php';
@@ -818,6 +819,8 @@ $pageCanonical = $currentPage > 1
             </div>
         </section>
 <?php endif; ?>
+
+        <?php kbtRenderAdSlot('blog_index_after_featured', ['class' => 'kbt-ad-slot--leaderboard kbt-ad-slot--blog-index-after-featured']); ?>
 
         <section class="blog-section" aria-labelledby="latest-guides-title">
             <div class="blog-section-head">

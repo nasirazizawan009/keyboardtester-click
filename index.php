@@ -1,4 +1,5 @@
 <?php include 'config.php'; ?>
+<?php require_once __DIR__ . '/includes/components/adsense-slot.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,6 +93,8 @@
       <?php include 'tools/keyboard_tester_english.php'; ?>
     </div>
   </section>
+
+  <?php kbtRenderAdSlot('home_after_tool', ['class' => 'kbt-ad-slot--leaderboard kbt-ad-slot--home-after-tool']); ?>
 
   <section class="trust-strip" aria-label="Key benefits">
     <div class="container trust-grid">
@@ -204,12 +207,13 @@
 
   <?php $intentClusterTool = 'keyboard'; $intentClusterKicker = 'Keyboard test variants'; include 'includes/components/intent-cluster-links.php'; unset($intentClusterTool, $intentClusterKicker); ?>
   <?php include 'help/keyboard-tester.php'; ?>
+  <?php kbtRenderAdSlot('home_after_guide', ['class' => 'kbt-ad-slot--content kbt-ad-slot--home-after-guide']); ?>
   <?php $currentTool = 'keyboard'; $relatedToolsSectionId = 'tools'; $relatedToolsTitle = 'Popular testing tools'; $relatedToolsIntro = 'Use these focused diagnostics when a keyboard issue may involve input delay, mouse behavior, typing speed, or audio/video checks.'; include 'includes/related-tools.php'; unset($currentTool, $relatedToolsSectionId, $relatedToolsTitle, $relatedToolsIntro); ?>
   <?php $toolBlogSlug = 'keyboard-not-typing-lagging-sticky-fix-clean-guide.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>
   <?php include __DIR__ . '/includes/components/homepage-latest-blog.php'; ?>
 </main>
 
-<?php include 'footer.php'; ?>
+<?php $kbtSuppressFooterAd = true; include 'footer.php'; ?>
 </body>
 </html>
 
