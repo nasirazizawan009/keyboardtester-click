@@ -28,7 +28,7 @@ $pageOgImage = 'images/mouse/hero.webp';
       padding: 2rem 1.5rem 2.5rem;
     }
 
-    .gamepad-tool h1 {
+    .gamepad-tool .tool-title {
       font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 700;
       margin-bottom: 0.4rem;
@@ -401,7 +401,7 @@ $pageOgImage = 'images/mouse/hero.webp';
 
       <section class="tool-shell" aria-label="Gamepad test tool">
         <div class="gamepad-tool">
-          <h1>Gamepad Tester</h1>
+          <h3 class="tool-title">Gamepad Tester</h3>
           <p class="tool-subtitle">Connect your controller and press any button to start. Works with PS5, Xbox, Switch, and PC gamepads.</p>
 
           <!-- Connection status -->

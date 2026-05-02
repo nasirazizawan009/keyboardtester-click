@@ -26,14 +26,13 @@ $pageTitle = $t['meta_t'];
 $pageDescription = $t['meta_d'];
 $pageCanonical = absoluteUrl('keyboard-shortcut-identifier.php' . ($lang !== 'en' ? '?lang=' . $lang : ''));
 $pageOgImage = 'blog/images/keyboard-shortcuts-v2-hero.webp';
-include __DIR__ . '/includes/seo-meta.php';
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo htmlspecialchars($lang, ENT_QUOTES, 'UTF-8'); ?>"<?php echo $lang === 'ar' ? ' dir="rtl"' : ''; ?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($pageTitle); ?></title>
+    <?php include __DIR__ . '/includes/seo-meta.php'; ?>
     <?php include __DIR__ . '/includes/head-common.php'; ?>
     <style>
     .ksi-wrap { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
