@@ -41,10 +41,18 @@
 
 	<div class="help-header">
 		<h2>Advanced Options Explained</h2>
-		<p>Open Advanced Options when a basic key check is not enough. These controls help you record a full session, find repeat patterns, and test gaming or repair problems more precisely.</p>
+		<p>Open Advanced Options when a basic key check is not enough. These controls power the Pro Test workflow, helping advanced users record a full session, find repeat patterns, and test gaming or repair problems more precisely.</p>
 	</div>
 
 	<div class="help-grid">
+		<div class="help-card">
+			<h3>Pro Test Workflow</h3>
+			<ol>
+				<li>Start Test All Keys and press every physical key once.</li>
+				<li>Hold your real shortcuts or gaming combos, then review Statistics and Heatmap for missed or repeated inputs.</li>
+				<li>Run Ghost Click with your hands off the keyboard, sample Latency on the same device, and Export the report when you need repair or support evidence.</li>
+			</ol>
+		</div>
 		<div class="help-card">
 			<h3>Statistics</h3>
 			<p>Shows session time, total key events, keys tested, and the most or least pressed keys. Use it to confirm whether every key in a repair checklist was actually tested.</p>
@@ -83,6 +91,10 @@
 		<details>
 			<summary>What do the Advanced Options do?</summary>
 			<p>Advanced Options add session statistics, a press-frequency heatmap, sound feedback, guided Test All Keys mode, exportable reports, ghost-click monitoring, and latency checks. Use them when you need evidence, troubleshooting detail, or a deeper gaming-keyboard check.</p>
+		</details>
+		<details>
+			<summary>How should advanced users run a Pro Test?</summary>
+			<p>Open Advanced Options, start Test All Keys, press each key and important shortcut, review Statistics and Heatmap for missed or repeated inputs, run Ghost Click with your hands off the keyboard, sample Latency on the same device, then Export the report. It is a browser-level diagnostic, so use it for troubleshooting evidence and comparisons rather than lab hardware certification.</p>
 		</details>
 		<details>
 			<summary>Why does a key not register in the keyboard tester?</summary>

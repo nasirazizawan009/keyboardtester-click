@@ -2089,6 +2089,10 @@ function generateHomepageSchema() {
             'answer' => 'Advanced Options add session statistics, a press-frequency heatmap, sound feedback, guided Test All Keys mode, exportable reports, ghost-click monitoring, and latency checks. Use them when you need evidence, troubleshooting detail, or a deeper gaming-keyboard check.'
         ],
         [
+            'question' => 'How should advanced users run a Pro Test?',
+            'answer' => 'Open Advanced Options, start Test All Keys, press each key and important shortcut, review Statistics and Heatmap for missed or repeated inputs, run Ghost Click with your hands off the keyboard, sample Latency on the same device, then Export the report. It is a browser-level diagnostic, so use it for troubleshooting evidence and comparisons rather than lab hardware certification.'
+        ],
+        [
             'question' => 'Why does a key not register in the keyboard tester?',
             'answer' => 'First click inside the tester, then press the key firmly again. If it still does not appear, check your OS keyboard layout, browser focus, and whether another app is intercepting the shortcut. If only one physical key fails, the switch, membrane, or laptop keyboard cable may need cleaning or repair.'
         ],
