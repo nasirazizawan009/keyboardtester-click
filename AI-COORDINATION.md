@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-02 (Codex, GitHub backlink reply)
+**Last updated:** 2026-05-02 (Codex, outreach bounce review)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -61,7 +61,7 @@ This file is the **single source of truth** when handing off work between AI age
 | GitHub awesome-list PR #62 | User | `[awaiting-merge]` | Maintainer feedback addressed, waiting for re-review |
 | GSC validation clicks (5 buckets) | User | `[done]` | Clicked Apr 27 |
 | Localized SEO Phase 1C+ | Either | `[queued]` | Russian/Spanish optimization done; remaining: localized intro paragraphs for typing-rhythm/brightness pages |
-| USA backlink outreach batch | User/Codex | `[awaiting-replies]` | 29 validated contacts sent from `outreach@keyboardtester.click`; 21 contacts remain on hold pending email/source validation. Watch mailbox for replies, bounces, and opt-outs. Master tracker: `seo-audit-2026-05-02/outreach/outreach-master-tracker-2026-05-02.md`. |
+| USA backlink outreach batch | User/Codex | `[paused]` | 29 validated contacts sent from `outreach@keyboardtester.click`; 15 delivery failures matched, 14 likely delivered/pending, 21 contacts remain on hold. Pause further cold email until deliverability/DKIM is reviewed. Master tracker: `seo-audit-2026-05-02/outreach/outreach-master-tracker-2026-05-02.md`. |
 | Russian/localized outreach | Either | `[queued]` | Do not send yet. Wait 24-48h after USA batch, then build 15-20 verified Russian-language prospects. Use Russian only for Russian-language/relevant sites, unique subjects, sender as `KeyboardTester.click team`. |
 | Advertiser prospecting | Either | `[queued]` | Separate from backlink outreach. Build commercial leads for page-specific sponsorships/media kit; do not ask advertisers for backlinks in the first pitch. |
 | WhatsApp outreach | Either | `[paused]` | Use only for highly relevant public business WhatsApp numbers; no automation, no blasts, no repeat messages without reply. |
@@ -71,6 +71,7 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-02 (Codex)
+- Reviewed delivery failures in `outreach@keyboardtester.click` via IMAP. SMTP accepted 29 outreach emails, but 15 delivery-failure notices were received and matched to sent contacts: 14 recipient spam-filter rejects (`550 High probability of spam`) and 1 invalid/nonexistent mailbox (`support@omegacomputerrepairs.com`). 14 emails remain likely delivered or pending. Created ignored reports under `seo-audit-2026-05-02/outreach/`: `bounce-report-usa-keyboardtester-2026-05-02.csv`, `bounce-summary-usa-keyboardtester-2026-05-02.md`, and `suppression-list-usa-keyboardtester-2026-05-02.csv`. DNS check found SPF and DMARC, but no DKIM TXT record on common selectors, so pause new cold outreach until cPanel Email Deliverability/DKIM is checked.
 - Replied on merged PR `nafasebra/awesome-webdesign-tools#32` with a short thank-you comment. Do not add more comments there unless the maintainer replies. Current verified awesome-list state: `StanForever/awesome-websites#49` merged, `nafasebra/awesome-webdesign-tools#32` merged, and `Bakumon/awesome-online-tools#29` submitted/open.
 - Registered the outreach operating rules in ignored master tracker `seo-audit-2026-05-02/outreach/outreach-master-tracker-2026-05-02.md`. It covers mailbox/Sent-folder handling, USA batch status, held contacts, email writing rules, sender reputation limits, Russian/localized outreach rules, advertiser prospecting, WhatsApp outreach rules, backlink PR status, and next actions. Future outreach should follow that tracker to avoid duplicate sends or reputation damage.
 - Fixed the outreach mailbox Sent-folder visibility issue. SMTP delivery did not automatically save messages to webmail Sent, so Codex appended 29 already-sent message copies to IMAP folder `INBOX.Sent` without resending anything. Sent folder count moved from 0 to 29. Copy log is ignored at `seo-audit-2026-05-02/outreach/imap-sent-copy-log-usa-keyboardtester-2026-05-02.csv`. Future outreach send scripts should append a Sent copy via IMAP, or otherwise BCC/archive explicitly, so webmail reflects sent messages.
