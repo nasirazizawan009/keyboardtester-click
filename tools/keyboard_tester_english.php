@@ -2069,6 +2069,7 @@ html:not(.dark-theme) .info-text,
     let ghostTestInterval = null;
     let ghostClicksDetected = 0;
     let totalGhostEvents = 0;
+    let ghostClickEvents = [];
     let latencyTestActive = false;
     let latencyTests = [];
     const TOTAL_KEYS = 103; // Excludes PrintScreen (system key, cannot be captured)
@@ -2252,19 +2253,144 @@ html:not(.dark-theme) .info-text,
         return true;
     }
 
-    function exportResults() {
+    function getSessionDuration() {
         const elapsed = Math.floor((Date.now() - sessionStartTime) / 1000);
-        const minutes = Math.floor(elapsed / 60);
-        const seconds = elapsed % 60;
+        return {
+            seconds: elapsed,
+            label: `${Math.floor(elapsed / 60)}:${(elapsed % 60).toString().padStart(2, '0')}`
+        };
+    }
+
+    function getSortedKeyCounts() {
+        return Object.entries(keyPressCount).sort((a, b) => {
+            if (b[1] !== a[1]) return b[1] - a[1];
+            return a[0].localeCompare(b[0]);
+        });
+    }
+
+    function getTestableKeyCodes() {
+        return Array.from(document.querySelectorAll('.key[data-key]'))
+            .filter(key => !key.classList.contains('key-disabled'))
+            .map(key => key.getAttribute('data-key'));
+    }
+
+    function getUntestedKeyCodes() {
+        return getTestableKeyCodes().filter(key => !keyPressCount[key]);
+    }
+
+    function getHeatmapLevel(count, maxCount) {
+        if (!count || !maxCount) return 0;
+        const intensity = count / maxCount;
+        if (intensity > 0.8) return 5;
+        if (intensity > 0.6) return 4;
+        if (intensity > 0.4) return 3;
+        if (intensity > 0.2) return 2;
+        return 1;
+    }
+
+    function getLatencySummary() {
+        if (!latencyTests.length) {
+            return null;
+        }
+
+        const values = latencyTests.map(test => test.latency);
+        const total = values.reduce((sum, value) => sum + value, 0);
+        return {
+            count: latencyTests.length,
+            average: total / values.length,
+            minimum: Math.min(...values),
+            maximum: Math.max(...values)
+        };
+    }
+
+    function exportResults() {
+        const duration = getSessionDuration();
         const keysPressed = Object.keys(keyPressCount).length;
         const percentage = Math.round((keysPressed / TOTAL_KEYS) * 100);
+        const sortedKeyCounts = getSortedKeyCounts();
+        const untestedKeys = getUntestedKeyCodes();
+        const maxKeyCount = sortedKeyCounts.length ? sortedKeyCounts[0][1] : 0;
+        const latencySummary = getLatencySummary();
+        const ghostDurationLabel = ghostTimer ? ghostTimer.textContent : '00:00';
+        const advancedVisible = featureControls.style.display !== 'none';
+
         let exportText = '=== KEYBOARD TEST RESULTS ===\n\n';
-        exportText += `Session Duration: ${minutes}:${seconds.toString().padStart(2, '0')}\n`;
+        exportText += `Exported At: ${new Date().toLocaleString()}\n`;
+        exportText += `Session Duration: ${duration.label}\n`;
         exportText += `Total Keys Pressed: ${totalKeyPresses}\n`;
         exportText += `Unique Keys Tested: ${keysPressed}/${TOTAL_KEYS} (${percentage}%)\n\n`;
+
+        exportText += '--- Advanced Options Snapshot ---\n';
+        exportText += `Advanced Options Visible: ${advancedVisible ? 'Yes' : 'No'}\n`;
+        exportText += `Theme: ${themeSelector.value}\n`;
+        exportText += `Layout: ${layoutSelector.value}\n`;
+        exportText += `OS Labels: ${osSelector.value}\n`;
+        exportText += `Sound Feedback: ${soundEnabled ? 'On' : 'Off'}\n`;
+        exportText += `Heatmap Mode: ${heatmapMode ? 'On' : 'Off'}\n`;
+        exportText += `Test All Keys Mode: ${testMode ? 'On' : 'Off'}\n`;
+        exportText += `Ghost Click Monitor: ${ghostTestActive ? 'Active' : 'Stopped'}\n`;
+        exportText += `Latency Monitor: ${latencyTestActive ? 'Active' : 'Stopped'}\n\n`;
+
+        exportText += '--- Statistics ---\n';
+        exportText += `Session Seconds: ${duration.seconds}\n`;
+        exportText += `Total Key Events: ${totalKeyPresses}\n`;
+        exportText += `Unique Keys Tested: ${keysPressed}\n`;
+        exportText += `Untested Keys Remaining: ${untestedKeys.length}\n`;
+        exportText += `Most Pressed Key: ${sortedKeyCounts[0] ? `${sortedKeyCounts[0][0]} (${sortedKeyCounts[0][1]}x)` : 'None'}\n`;
+        exportText += `Least Pressed Key: ${sortedKeyCounts.length ? `${sortedKeyCounts[sortedKeyCounts.length - 1][0]} (${sortedKeyCounts[sortedKeyCounts.length - 1][1]}x)` : 'None'}\n\n`;
+
+        exportText += '--- Test All Keys Coverage ---\n';
+        exportText += `Coverage: ${keysPressed}/${TOTAL_KEYS} (${percentage}%)\n`;
+        exportText += `Untested Keys: ${untestedKeys.length ? untestedKeys.join(', ') : 'None'}\n\n`;
+
+        exportText += '--- Heatmap Log ---\n';
+        exportText += `Heatmap Max Press Count: ${maxKeyCount}\n`;
+        if (sortedKeyCounts.length) {
+            sortedKeyCounts.forEach(([key, count]) => {
+                exportText += `${key}: ${count} press${count === 1 ? '' : 'es'} | heat level ${getHeatmapLevel(count, maxKeyCount)}/5\n`;
+            });
+        } else {
+            exportText += 'No key presses recorded.\n';
+        }
+        exportText += '\n';
+
+        exportText += '--- Ghost Click Log ---\n';
+        exportText += `Status: ${ghostTestActive ? 'Active' : 'Stopped'}\n`;
+        exportText += `Current/Last Test Duration: ${ghostDurationLabel}\n`;
+        exportText += `Ghost Clicks Detected: ${ghostClicksDetected}\n`;
+        exportText += `Total Ghost-Test Key Events: ${totalGhostEvents}\n`;
+        if (ghostClickEvents.length) {
+            ghostClickEvents.forEach((event, index) => {
+                exportText += `${index + 1}. ${event.timestamp} - ${event.keyCode}\n`;
+            });
+        } else {
+            exportText += 'No ghost-click events recorded.\n';
+        }
+        exportText += '\n';
+
+        exportText += '--- Latency Log ---\n';
+        exportText += `Status: ${latencyTestActive ? 'Active' : 'Stopped'}\n`;
+        if (latencySummary) {
+            exportText += `Samples: ${latencySummary.count}\n`;
+            exportText += `Average: ${latencySummary.average.toFixed(2)} ms\n`;
+            exportText += `Minimum: ${latencySummary.minimum.toFixed(2)} ms\n`;
+            exportText += `Maximum: ${latencySummary.maximum.toFixed(2)} ms\n`;
+            latencyTests.forEach((test, index) => {
+                exportText += `${index + 1}. ${test.timestamp} - ${test.key}: ${test.latency.toFixed(2)} ms\n`;
+            });
+        } else {
+            exportText += 'No latency samples recorded.\n';
+        }
+        exportText += '\n';
+
         exportText += '--- Key Press Counts ---\n';
-        Object.entries(keyPressCount).sort((a, b) => b[1] - a[1]).forEach(([key, count]) => { exportText += `${key}: ${count}\n`; });
-        exportText += `\n--- Key Press History ---\n${keyHistory.value}`;
+        if (sortedKeyCounts.length) {
+            sortedKeyCounts.forEach(([key, count]) => { exportText += `${key}: ${count}\n`; });
+        } else {
+            exportText += 'No key presses recorded.\n';
+        }
+
+        exportText += `\n--- Key Press History ---\n${keyHistory.value || 'No key history recorded.'}`;
         const blob = new Blob([exportText], { type: 'text/plain' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
@@ -2405,6 +2531,7 @@ html:not(.dark-theme) .info-text,
         ghostTestStartTime = Date.now();
         ghostClicksDetected = 0;
         totalGhostEvents = 0;
+        ghostClickEvents = [];
         ghostStatusDot.className = 'status-dot active';
         ghostStatusText.textContent = 'Test Active - Hands Off!';
         ghostCount.textContent = '0';
@@ -2437,6 +2564,8 @@ html:not(.dark-theme) .info-text,
         totalGhostEvents++;
         ghostClicksDetected++;
         const timestamp = new Date().toLocaleTimeString();
+        ghostClickEvents.unshift({ timestamp: timestamp, keyCode: keyCode });
+        if (ghostClickEvents.length > 50) ghostClickEvents.pop();
         ghostCount.textContent = ghostClicksDetected;
         ghostTotal.textContent = totalGhostEvents;
         const logEntry = document.createElement('div');
@@ -2451,6 +2580,7 @@ html:not(.dark-theme) .info-text,
     function clearGhostClickLogFunc() {
         ghostClicksDetected = 0;
         totalGhostEvents = 0;
+        ghostClickEvents = [];
         ghostCount.textContent = '0';
         ghostTotal.textContent = '0';
         ghostLogContent.innerHTML = '<p class="log-placeholder success">No ghost clicks detected. Your keyboard is working properly!</p>';
