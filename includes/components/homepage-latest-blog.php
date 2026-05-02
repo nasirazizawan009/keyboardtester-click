@@ -144,9 +144,13 @@ $__latestBlogTrim = static function ($text, $limit = 132) {
     }
     .homepage-latest-blog-cta {
         margin-top: 0.8rem;
-        color: var(--landing-accent);
+        color: #0369a1;
         font-size: 0.86rem;
         font-weight: 700;
+    }
+    html.dark-theme .homepage-latest-blog-cta,
+    [data-theme="dark"] .homepage-latest-blog-cta {
+        color: #7dd3fc;
     }
     @media (max-width: 900px) {
         .homepage-latest-blog-head {

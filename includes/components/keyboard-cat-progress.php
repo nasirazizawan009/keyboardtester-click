@@ -51,7 +51,7 @@ if ($catProgressTotalKeys < 1) {
             <div class="treat runner-step pellet pellet-power final-pellet" data-treat="100" data-keys="<?php echo $catProgressTotalKeys; ?>" title="<?php echo $catProgressTotalKeys; ?> keys - Maze clear"></div>
 
             <div class="progress-cat" data-cat-avatar>
-                <div class="cat-body" aria-label="Arcade chomper">
+                <div class="cat-body" aria-hidden="true">
                     <span class="arcade-chomper" aria-hidden="true"></span>
                 </div>
                 <div class="cat-message" data-cat-message>Press keys to clear the maze!</div>
