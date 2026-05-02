@@ -1471,6 +1471,25 @@ html:not(.dark-theme) .info-text,
     z-index: 1;
 }
 
+.key[data-key^="Digit"],
+.key[data-key="Backquote"],
+.key[data-key="Minus"],
+.key[data-key="Equal"],
+.key[data-key^="Numpad"]:not([data-key="NumpadEnter"]) {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    text-align: center;
+}
+
+.key[data-key^="Digit"] span,
+.key[data-key="Backquote"] span,
+.key[data-key="Minus"] span,
+.key[data-key="Equal"] span,
+.key[data-key^="Numpad"]:not([data-key="NumpadEnter"]) span {
+    text-align: center;
+}
+
 .keyboard-tester[data-theme="light"] .key span {
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
 }
