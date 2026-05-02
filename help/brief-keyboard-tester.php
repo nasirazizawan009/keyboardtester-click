@@ -14,6 +14,27 @@
         <span class="hero-badge">Privacy first</span>
         <a class="hero-badge hero-badge--oss" href="https://github.com/nasirazizawan009/keyboardtester-click" target="_blank" rel="noopener noreferrer">Open Source</a>
       </div>
+      <?php if (!empty($keyboardLanguages) && is_array($keyboardLanguages)): ?>
+      <nav class="hero-languages" aria-label="Keyboard tester language versions">
+        <span class="hero-language-label">Languages</span>
+        <div class="hero-language-list">
+          <?php foreach ($keyboardLanguages as $languageCode => $languageMeta): ?>
+            <?php
+            $languageName = $languageMeta['native'] ?? ($languageMeta['name'] ?? strtoupper((string) $languageCode));
+            $languageUrl = $languageMeta['url'] ?? url('');
+            $flagPath = $languageMeta['flag'] ?? '';
+            $isActiveLanguage = $languageCode === 'en';
+            ?>
+            <a class="hero-language-pill<?php echo $isActiveLanguage ? ' is-active' : ''; ?>" href="<?php echo htmlspecialchars($languageUrl, ENT_QUOTES, 'UTF-8'); ?>"<?php echo $isActiveLanguage ? ' aria-current="page"' : ''; ?> aria-label="<?php echo htmlspecialchars(($languageMeta['name'] ?? $languageName) . ' keyboard tester', ENT_QUOTES, 'UTF-8'); ?>">
+              <?php if ($flagPath !== ''): ?>
+              <img src="<?php echo htmlspecialchars(url($flagPath), ENT_QUOTES, 'UTF-8'); ?>" alt="" width="18" height="18" loading="lazy" decoding="async">
+              <?php endif; ?>
+              <span><?php echo htmlspecialchars($languageName, ENT_QUOTES, 'UTF-8'); ?></span>
+            </a>
+          <?php endforeach; ?>
+        </div>
+      </nav>
+      <?php endif; ?>
       <div class="hero-metrics">
         <div class="metric-card">
           <span class="metric-value">104+</span>
