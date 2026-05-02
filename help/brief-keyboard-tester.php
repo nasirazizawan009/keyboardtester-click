@@ -69,6 +69,10 @@
           <div class="mini-title">Layout switcher</div>
           <p>Swap layouts and OS labels without losing your session.</p>
         </div>
+        <div class="mini-card">
+          <div class="mini-title">Export reports</div>
+          <p>Save key history, coverage, ghosting, and latency results.</p>
+        </div>
       </div>
     </div>
   </div>

@@ -17,9 +17,9 @@
     .landing-main{min-height:100vh}
     .landing-hero-grid{min-height:320px}
     .hero-copy{min-height:200px}
-    .hero-visual{min-height:300px}
+    .hero-visual{align-self:start}
     .hero-yt-facade{aspect-ratio:16/9;position:relative;background:#0f172a;border-radius:16px;overflow:hidden}
-    .tool-stage{min-height:680px;background:radial-gradient(720px 380px at 10% 20%,rgba(14,165,233,.16),transparent 60%),radial-gradient(720px 380px at 90% 25%,rgba(22,163,74,.14),transparent 60%),var(--landing-bg)}
+    .tool-stage{min-height:580px;background:radial-gradient(720px 380px at 10% 20%,rgba(14,165,233,.16),transparent 60%),radial-gradient(720px 380px at 90% 25%,rgba(22,163,74,.14),transparent 60%),var(--landing-bg)}
     .tool-shell{min-height:580px}
     @media(max-width:980px){.landing-hero-grid{min-height:auto}.hero-visual{min-height:240px}}
     @media(max-width:768px){.tool-stage{min-height:500px}.tool-shell{min-height:420px}.keyboard-tester{min-height:380px}}
@@ -78,17 +78,7 @@
 <main id="main-content" class="landing-main">
   <?php include 'help/brief-keyboard-tester.php'; ?>
 
-  <section class="tool-stage" id="keyboard-stage" aria-labelledby="tool-stage-title">
-    <div class="container tool-stage-header">
-      <div>
-        <p class="section-kicker">Primary tester</p>
-        <h2 id="tool-stage-title">Keyboard tester</h2>
-        <p class="section-lede">Use the live tool below to test every key, check layouts, and measure latency.</p>
-      </div>
-      <div class="tool-stage-actions">
-        <a class="landing-btn landing-btn-ghost" href="#guidelines">Read keyboard testing guide</a>
-      </div>
-    </div>
+  <section class="tool-stage" id="keyboard-stage" aria-label="Keyboard tester tool">
     <div class="tool-shell">
       <?php include 'tools/keyboard_tester_english.php'; ?>
     </div>

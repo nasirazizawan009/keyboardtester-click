@@ -87,7 +87,7 @@ html.dark-theme .landing-page,
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
-    align-items: center;
+    align-items: start;
     min-height: 320px;
     contain: layout style;
 }
@@ -325,6 +325,7 @@ html.dark-theme .hero-language-pill.is-active,
 .hero-visual {
     display: grid;
     gap: 1.25rem;
+    align-self: start;
 }
 
 .hero-shot {
@@ -556,7 +557,7 @@ html.dark-theme .step-number,
 }
 
 .tool-stage {
-    padding: 1.5rem 0 3rem;
+    padding: 0.9rem 0 3rem;
     background: var(--bg-color, #ffffff);
     contain: layout style;
 }
