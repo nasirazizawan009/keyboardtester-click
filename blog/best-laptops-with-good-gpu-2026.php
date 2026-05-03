@@ -1,5 +1,6 @@
 <?php
 include __DIR__ . '/../config.php';
+require_once __DIR__ . '/../includes/components/blog-article-ads.php';
 $pageTitle = 'Best Laptops With Good GPU in 2026: RTX 5090 and RTX 5080 Picks - KeyboardTester.click';
 $pageDescription = 'A researched 2026 guide to laptops with good GPUs, including RTX 5090 and RTX 5080 models, current prices, review notes, specs, images, and buying advice.';
 $pageOgImage = 'blog/images/good-gpu-laptop-2026-asus-scar-18.webp';
@@ -14,6 +15,7 @@ $pageCanonical = absoluteUrl('blog/best-laptops-with-good-gpu-2026.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include __DIR__ . '/../includes/seo-meta.php'; ?>
     <?php include __DIR__ . '/../includes/head-common.php'; ?>
+    <?php kbtRenderBlogArticleRailStyles(); ?>
     <style>
     .post-wrap { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
     .post-back { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.9rem; color: var(--primary-color, #0ea5e9); text-decoration: none; margin-bottom: 1.5rem; }
@@ -93,6 +95,8 @@ $pageCanonical = absoluteUrl('blog/best-laptops-with-good-gpu-2026.php');
 <body>
 <?php include __DIR__ . '/../header.php'; ?>
 <main>
+    <?php kbtRenderBlogArticleLayoutOpen(); ?>
+    <?php kbtRenderBlogArticleRail('left'); ?>
     <article class="post-wrap">
         <a class="post-back" href="<?php echo url('blog/'); ?>">&larr; All Posts</a>
         <img class="post-featured-img" src="<?php echo url('blog/images/good-gpu-laptop-2026-asus-scar-18.webp'); ?>" alt="ASUS ROG Strix SCAR 18 gaming laptop with RTX 5090 graphics" loading="eager" width="732" height="732" decoding="async" fetchpriority="high">
@@ -317,7 +321,10 @@ $pageCanonical = absoluteUrl('blog/best-laptops-with-good-gpu-2026.php');
 
         </div>
     </article>
+    <?php kbtRenderBlogArticleRail('right'); ?>
+    <?php kbtRenderBlogArticleLayoutClose(); ?>
 </main>
+<?php kbtRenderBlogArticleRailScript(); ?>
 <?php include __DIR__ . '/../footer.php'; ?>
 </body>
 </html>

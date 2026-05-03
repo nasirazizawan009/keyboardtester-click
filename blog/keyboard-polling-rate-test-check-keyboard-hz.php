@@ -1,5 +1,6 @@
 <?php
 include __DIR__ . '/../config.php';
+require_once __DIR__ . '/../includes/components/blog-article-ads.php';
 $pageTitle = 'Keyboard Polling Rate Test: Check Keyboard Hz Online (2026 Guide) - KeyboardTester.click';
 $pageDescription = 'Keyboard polling rate test guide: check keyboard Hz online, understand 125Hz, 500Hz, 1000Hz and 8000Hz, and learn why browser results can look lower.';
 $pageOgImage = 'blog/images/keyboard-polling-rate-test-hero.webp';
@@ -13,6 +14,7 @@ $pageCanonical = absoluteUrl('blog/keyboard-polling-rate-test-check-keyboard-hz.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include __DIR__ . '/../includes/seo-meta.php'; ?>
     <?php include __DIR__ . '/../includes/head-common.php'; ?>
+    <?php kbtRenderBlogArticleRailStyles(); ?>
     <style>
     .blog-wrap {
         max-width: 1100px;
@@ -241,6 +243,8 @@ $pageCanonical = absoluteUrl('blog/keyboard-polling-rate-test-check-keyboard-hz.
 <body>
 <?php include __DIR__ . '/../header.php'; ?>
 <main>
+    <?php kbtRenderBlogArticleLayoutOpen(); ?>
+    <?php kbtRenderBlogArticleRail('left'); ?>
     <article class="post-wrap">
         <a class="post-back" href="<?php echo url('blog/'); ?>">&larr; All Posts</a>
         <img class="post-featured-img" src="<?php echo url('blog/images/keyboard-polling-rate-test-hero.webp'); ?>" alt="Mechanical keyboards used for an online keyboard polling rate test" loading="eager" width="1280" height="720" decoding="async" fetchpriority="high">
@@ -497,8 +501,11 @@ $pageCanonical = absoluteUrl('blog/keyboard-polling-rate-test-check-keyboard-hz.
 <p>Use it if it is stable and does not reduce battery life or game performance in a way you notice. If you see stutter, poor battery life, or inconsistent readings, 1000Hz is the safer everyday setting.</p>
         </div>
     </article>
+    <?php kbtRenderBlogArticleRail('right'); ?>
+    <?php kbtRenderBlogArticleLayoutClose(); ?>
     <?php $currentBlogSlug = 'keyboard-polling-rate-test-check-keyboard-hz.php'; include __DIR__ . '/../includes/components/related-blog-posts.php'; ?>
 </main>
+<?php kbtRenderBlogArticleRailScript(); ?>
 <?php include __DIR__ . '/../footer.php'; ?>
 </body>
 </html>

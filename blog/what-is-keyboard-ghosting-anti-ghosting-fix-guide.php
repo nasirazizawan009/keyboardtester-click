@@ -1,5 +1,6 @@
 <?php
 include __DIR__ . '/../config.php';
+require_once __DIR__ . '/../includes/components/blog-article-ads.php';
 $pageTitle       = 'Anti-Ghosting Keyboard Test: Ghosting, NKRO & Fixes (2026)';
 $pageDescription = 'Anti-ghosting keyboard guide: learn what ghosting means, how NKRO works, how to test key rollover, and how to fix dropped keys on laptop or gaming keyboards.';
 $pageOgImage     = 'blog/images/keyboard-ghosting-mechanical-rgb-hero.jpg';
@@ -13,6 +14,7 @@ $pageCanonical   = absoluteUrl('blog/what-is-keyboard-ghosting-anti-ghosting-fix
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include __DIR__ . '/../includes/seo-meta.php'; ?>
     <?php include __DIR__ . '/../includes/head-common.php'; ?>
+    <?php kbtRenderBlogArticleRailStyles(); ?>
     <style>
     .blog-wrap { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
     .blog-page-title { font-size: 2rem; font-weight: 700; margin: 0 0 0.25rem; color: var(--text-color); }
@@ -175,6 +177,8 @@ $pageCanonical   = absoluteUrl('blog/what-is-keyboard-ghosting-anti-ghosting-fix
 <body>
 <?php include __DIR__ . '/../header.php'; ?>
 <main>
+    <?php kbtRenderBlogArticleLayoutOpen(); ?>
+    <?php kbtRenderBlogArticleRail('left'); ?>
     <article class="post-wrap">
         <a class="post-back" href="<?php echo url('blog/'); ?>">&larr; All Posts</a>
 
@@ -461,7 +465,10 @@ $pageCanonical   = absoluteUrl('blog/what-is-keyboard-ghosting-anti-ghosting-fix
 
         </div>
     </article>
+    <?php kbtRenderBlogArticleRail('right'); ?>
+    <?php kbtRenderBlogArticleLayoutClose(); ?>
 </main>
+<?php kbtRenderBlogArticleRailScript(); ?>
 <?php include __DIR__ . '/../footer.php'; ?>
 
 <script>

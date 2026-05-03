@@ -39,6 +39,9 @@ $visiblePosts = array_slice($archivePosts, $offset, $postsPerPage);
 $isBlogHome = $currentPage === 1;
 $featuredPost = $topPerformers[0] ?? ($posts[0] ?? null);
 $topRailPosts = array_slice($topPerformers, 1);
+$topPinnedLeft = $topRailPosts[0] ?? null;
+$topPinnedRight = $topRailPosts[2] ?? ($topRailPosts[1] ?? null);
+$pinnedArticleCount = ($topPinnedLeft !== null ? 1 : 0) + ($topPinnedRight !== null ? 1 : 0);
 
 function blogArchivePageUrl($pageNumber) {
     return $pageNumber <= 1 ? url('blog/') : url('blog/?page=' . (int) $pageNumber);
@@ -412,6 +415,42 @@ $pageCanonical = $currentPage > 1
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
     }
+    .blog-pinned-ad-box {
+        height: 100%;
+        min-height: 312px;
+        margin: 0;
+        clear: none;
+    }
+    .blog-pinned-ad-box .kbt-ad-slot-inner {
+        min-height: 100%;
+        height: 100%;
+        border-radius: 8px;
+        border: 1px solid #dbe3eb;
+        background:
+            linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(22, 163, 74, 0.07)),
+            #ffffff;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.65rem;
+        padding: 1rem;
+    }
+    .blog-pinned-ad-box .kbt-ad-label {
+        color: #64748b;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+    .blog-pinned-ad-box .adsbygoogle {
+        width: 100%;
+        max-width: 336px;
+        min-height: 250px;
+        margin-inline: auto;
+    }
     .post-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
@@ -523,6 +562,18 @@ $pageCanonical = $currentPage > 1
         background: #111827 !important;
         border-color: #334155 !important;
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+    }
+    html.dark-theme body.blog-page .blog-pinned-ad-box .kbt-ad-slot-inner,
+    [data-theme="dark"] body.blog-page .blog-pinned-ad-box .kbt-ad-slot-inner {
+        background:
+            linear-gradient(135deg, rgba(14, 165, 233, 0.16), rgba(22, 163, 74, 0.12)),
+            #111827 !important;
+        border-color: #334155 !important;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+    }
+    html.dark-theme body.blog-page .blog-pinned-ad-box .kbt-ad-label,
+    [data-theme="dark"] body.blog-page .blog-pinned-ad-box .kbt-ad-label {
+        color: #cbd5e1 !important;
     }
     html.dark-theme body.blog-page .post-card:hover,
     html.dark-theme body.blog-page .post-card:focus-visible,
@@ -787,7 +838,7 @@ $pageCanonical = $currentPage > 1
                 </div>
                 <div class="blog-hero-metrics" aria-label="Blog highlights">
                     <div class="blog-metric"><strong><?php echo count($posts); ?></strong><span>published guides</span></div>
-                    <div class="blog-metric"><strong><?php echo count($topRailPosts); ?></strong><span>pinned articles below</span></div>
+                    <div class="blog-metric"><strong><?php echo (int) $pinnedArticleCount; ?></strong><span>pinned guides below</span></div>
                     <div class="blog-metric"><strong>2026</strong><span>fresh buying advice</span></div>
                 </div>
             </div>
@@ -803,9 +854,13 @@ $pageCanonical = $currentPage > 1
                 <p class="blog-section-note">These stay on the blog homepage even when newer posts are published, because they are already earning impressions or clicks.</p>
             </div>
             <div class="top-story-grid">
-<?php foreach ($topRailPosts as $index => $post): ?>
-<?php blogRenderPostCard($post, 'post-card--compact', $index === 0 ? 'Rising clicks' : 'Pinned', 'lazy', 'h3'); ?>
-<?php endforeach; ?>
+<?php if ($topPinnedLeft !== null): ?>
+<?php blogRenderPostCard($topPinnedLeft, 'post-card--compact', 'Rising clicks', 'lazy', 'h3'); ?>
+<?php endif; ?>
+                <?php kbtRenderAdSlot('blog_index_after_featured', ['class' => 'blog-pinned-ad-box', 'format' => 'rectangle', 'full_width_responsive' => false]); ?>
+<?php if ($topPinnedRight !== null): ?>
+<?php blogRenderPostCard($topPinnedRight, 'post-card--compact', 'Pinned', 'lazy', 'h3'); ?>
+<?php endif; ?>
             </div>
         </section>
 <?php else: ?>
@@ -820,7 +875,9 @@ $pageCanonical = $currentPage > 1
         </section>
 <?php endif; ?>
 
+<?php if (!$isBlogHome): ?>
         <?php kbtRenderAdSlot('blog_index_after_featured', ['class' => 'kbt-ad-slot--leaderboard kbt-ad-slot--blog-index-after-featured', 'format' => 'horizontal', 'full_width_responsive' => false]); ?>
+<?php endif; ?>
 
         <section class="blog-section" aria-labelledby="latest-guides-title">
             <div class="blog-section-head">
