@@ -9,7 +9,7 @@ include __DIR__ . '/config-ja.php';
 
 // Breadcrumbs
 $breadcrumbs = [
-    ['label' => 'ツール', 'url' => url('pages/tools.php')],
+    ['label' => 'ツール', 'url' => url('pages/all-tools-ja.php')],
     ['label' => '日本語キーボードテスター', 'url' => '']
 ];
 

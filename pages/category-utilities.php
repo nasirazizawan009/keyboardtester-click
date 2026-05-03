@@ -2,7 +2,7 @@
 include __DIR__ . '/../config.php';
 
 $breadcrumbs = [
-    ['label' => 'Tools', 'url' => url('pages/tools.php')],
+    ['label' => 'Tools', 'url' => url('pages/all-tools.php')],
     ['label' => 'Utility Tools', 'url' => '']
 ];
 
@@ -138,7 +138,7 @@ function categoryToolAbsoluteUrl($href) {
                 <h1>Utility Tools</h1>
                 <p>Quick tools for QR codes, OCR, passwords, WhatsApp, and more.</p>
                 <div class="category-actions">
-                    <a class="btn btn-primary" href="<?php echo url('pages/tools.php'); ?>">All tools</a>
+                    <a class="btn btn-primary" href="<?php echo url('pages/all-tools.php'); ?>">All tools</a>
                     <a class="btn btn-secondary" href="<?php echo url('tools/keyboard-tester/'); ?>">Keyboard tester</a>
                 </div>
             </div>

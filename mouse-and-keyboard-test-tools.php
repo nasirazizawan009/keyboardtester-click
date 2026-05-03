@@ -660,7 +660,7 @@ $canonicalUrl = absoluteUrl('mouse-and-keyboard-test-tools.php');
             </div>
         </div>
 
-        <p>Explore our complete collection of <a href="<?php echo url('pages/tools.php'); ?>">free online tools</a> to test and optimize all your devices.</p>
+        <p>Explore our complete collection of <a href="<?php echo url('pages/all-tools.php'); ?>">free online tools</a> to test and optimize all your devices.</p>
     </section>
 
     <!-- Final CTA -->

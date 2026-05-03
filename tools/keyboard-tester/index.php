@@ -8,7 +8,7 @@ include __DIR__ . '/../../config.php';
 
 // Set breadcrumbs for this page
 $breadcrumbs = [
-    ['label' => 'Tools', 'url' => url('pages/tools.php')],
+    ['label' => 'Tools', 'url' => url('pages/all-tools.php')],
     ['label' => 'Keyboard Tester', 'url' => '']
 ];
 
@@ -67,5 +67,4 @@ $pageKeywords = 'keyboard tester, keyboard test, online keyboard test, keyboard 
     </style>
 </body>
 </html>
-
 

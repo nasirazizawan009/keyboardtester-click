@@ -9,7 +9,7 @@ include __DIR__ . '/config-ar.php';
 
 // Breadcrumbs
 $breadcrumbs = [
-    ['label' => 'الأدوات', 'url' => url('pages/tools.php')],
+    ['label' => 'الأدوات', 'url' => url('pages/all-tools-ar.php')],
     ['label' => 'اختبار لوحة المفاتيح العربية', 'url' => '']
 ];
 

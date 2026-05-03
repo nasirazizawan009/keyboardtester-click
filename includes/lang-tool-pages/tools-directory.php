@@ -96,22 +96,26 @@ $langDirs = [
     'ru' => 'russian',
 ];
 
-if ($lang === 'en') {
-    $canonicalUrl = absoluteUrl('pages/tools.php');
-} else {
-    $canonicalUrl = absoluteUrl('languages/' . $d['dir'] . '/tools.php');
-}
+$allToolsRoutes = [
+    'en' => 'pages/all-tools.php',
+    'es' => 'pages/all-tools-es.php',
+    'ar' => 'pages/all-tools-ar.php',
+    'fr' => 'pages/all-tools-fr.php',
+    'de' => 'pages/all-tools-de.php',
+    'ja' => 'pages/all-tools-ja.php',
+    'ko' => 'pages/all-tools-ko.php',
+    'pt' => 'pages/all-tools-pt.php',
+    'ru' => 'pages/all-tools-ru.php',
+];
+
+$canonicalUrl = absoluteUrl($allToolsRoutes[$lang] ?? $allToolsRoutes['en']);
 
 // Build hreflang list
 $hreflangs = [];
-foreach ($langDirs as $code => $dir) {
-    if ($code === 'en') {
-        $hreflangs[$code] = absoluteUrl('pages/tools.php');
-    } else {
-        $hreflangs[$code] = absoluteUrl('languages/' . $dir . '/tools.php');
-    }
+foreach ($langDirs as $code => $_dir) {
+    $hreflangs[$code] = absoluteUrl($allToolsRoutes[$code] ?? $allToolsRoutes['en']);
 }
-$hreflangs['x-default'] = absoluteUrl('pages/tools.php');
+$hreflangs['x-default'] = absoluteUrl($allToolsRoutes['en']);
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $d['html_lang']; ?>" dir="<?php echo $d['dir_attr']; ?>">

@@ -53,9 +53,12 @@ node_modules/
 *.tmp
 *.temp
 *.log
+error_log
 tmp_*.txt
 cache-test.php
 clear-cache.php
+testpage.php
+test-upload-success.php
 debug-*.php
 fix-*.php
 

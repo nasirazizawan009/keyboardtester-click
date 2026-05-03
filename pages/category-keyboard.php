@@ -2,7 +2,7 @@
 include __DIR__ . '/../config.php';
 
 $breadcrumbs = [
-    ['label' => 'Tools', 'url' => url('pages/tools.php')],
+    ['label' => 'Tools', 'url' => url('pages/all-tools.php')],
     ['label' => 'Keyboard Tools', 'url' => '']
 ];
 
@@ -49,7 +49,7 @@ $tools = [
                 <h1>Keyboard Tools</h1>
                 <p>Find the right keyboard testing tool for responsiveness, accuracy, and typing speed.</p>
                 <div class="category-actions">
-                    <a class="btn btn-primary" href="<?php echo url('pages/tools.php'); ?>">All tools</a>
+                    <a class="btn btn-primary" href="<?php echo url('pages/all-tools.php'); ?>">All tools</a>
                     <a class="btn btn-secondary" href="<?php echo url('keyboard_tester_different_languages.php'); ?>">Language keyboards</a>
                 </div>
             </div>

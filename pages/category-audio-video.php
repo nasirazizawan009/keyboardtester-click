@@ -2,7 +2,7 @@
 include __DIR__ . '/../config.php';
 
 $breadcrumbs = [
-    ['label' => 'Tools', 'url' => url('pages/tools.php')],
+    ['label' => 'Tools', 'url' => url('pages/all-tools.php')],
     ['label' => 'Audio & Video Tools', 'url' => '']
 ];
 
@@ -54,7 +54,7 @@ $tools = [
                 <h1>Audio & Video Tools</h1>
                 <p>Test your screen, webcam, microphone, and speakers in minutes.</p>
                 <div class="category-actions">
-                    <a class="btn btn-primary" href="<?php echo url('pages/tools.php'); ?>">All tools</a>
+                    <a class="btn btn-primary" href="<?php echo url('pages/all-tools.php'); ?>">All tools</a>
                     <a class="btn btn-secondary" href="<?php echo url('mouse-test.php'); ?>">Mouse tester</a>
                 </div>
             </div>

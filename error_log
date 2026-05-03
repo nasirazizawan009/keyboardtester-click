@@ -1,3 +1,0 @@
-[12-Apr-2026 14:20:51 America/Chicago] PHP Fatal error:  Cannot redeclare url() (previously declared in /home2/keyboar1/public_html/config.php:70) in /home2/keyboar1/public_html/config.php on line 70
-[13-Apr-2026 15:53:51 America/Chicago] PHP Fatal error:  Cannot redeclare url() (previously declared in /home2/keyboar1/public_html/config.php:70) in /home2/keyboar1/public_html/config.php on line 70
-[16-Apr-2026 17:53:33 America/Chicago] PHP Fatal error:  Cannot redeclare url() (previously declared in /home2/keyboar1/public_html/config.php:70) in /home2/keyboar1/public_html/config.php on line 70
