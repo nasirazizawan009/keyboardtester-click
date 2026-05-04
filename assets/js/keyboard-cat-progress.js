@@ -319,8 +319,8 @@
             this.enemyFrame = 0;
             this.enemyLastTime = 0;
             this.enemyReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            this.trackWidth = 320;
-            this.trackHeight = 86;
+            this.trackWidth = this.estimateTrackWidth();
+            this.trackHeight = this.estimateTrackHeight();
             this.catPositionPercent = this.getStartPosition();
             this.trackResizeObserver = null;
             this.trackResizeHandler = null;
@@ -344,7 +344,6 @@
             this.lastLevels = { desktop: 0, mobile: 0 };
             this.lastCycles = { desktop: 0, mobile: 0 };
             this.completed = false;
-            this.measureTrack();
             this.startTrackSizeObserver();
             this.setDisplayMode(false, this.desktopTotalKeys);
             this.reset({ totalKeys: this.desktopTotalKeys });
@@ -383,12 +382,47 @@
             return min + Math.random() * (max - min);
         }
 
-        measureTrack() {
-            if (!this.track) return;
+        estimateTrackWidth() {
+            const viewportWidth = Math.max(window.innerWidth || 0, 320);
+            const pageGutter = viewportWidth <= 768 ? 32 : 80;
+            const estimated = viewportWidth - pageGutter;
 
-            const rect = this.track.getBoundingClientRect();
-            this.trackWidth = Math.max(rect.width || this.trackWidth || 0, 320);
-            this.trackHeight = rect.height || this.trackHeight || 86;
+            return Math.max(Math.min(estimated, 1400), 320);
+        }
+
+        estimateTrackHeight() {
+            if ((window.innerWidth || 0) <= 480) return 68;
+            if ((window.innerWidth || 0) <= 768) return 76;
+            return 86;
+        }
+
+        updateTrackSize(width, height) {
+            const previousWidth = this.getTrackWidth();
+            const nextWidth = Math.max(Number(width) || this.estimateTrackWidth(), 320);
+            const nextHeight = Math.max(Number(height) || this.estimateTrackHeight(), 48);
+
+            if (Math.abs(nextWidth - this.trackWidth) < 0.5 && Math.abs(nextHeight - this.trackHeight) < 0.5) {
+                return;
+            }
+
+            this.trackWidth = nextWidth;
+            this.trackHeight = nextHeight;
+
+            if (!this.enemyStates.length || previousWidth <= 0 || Math.abs(nextWidth - previousWidth) < 0.5) {
+                return;
+            }
+
+            const ratio = nextWidth / previousWidth;
+            this.enemyStates.forEach((state) => {
+                state.x *= ratio;
+                state.y = this.getEnemyLaneTop(state.index);
+                state.laneY = state.y;
+                this.applyEnemyState(state);
+            });
+        }
+
+        measureTrack() {
+            this.updateTrackSize(this.estimateTrackWidth(), this.estimateTrackHeight());
         }
 
         startTrackSizeObserver() {
@@ -401,11 +435,9 @@
 
                     const size = Array.isArray(entry.borderBoxSize) ? entry.borderBoxSize[0] : entry.borderBoxSize;
                     if (size) {
-                        this.trackWidth = Math.max(size.inlineSize || this.trackWidth || 0, 320);
-                        this.trackHeight = size.blockSize || this.trackHeight || 86;
+                        this.updateTrackSize(size.inlineSize, size.blockSize);
                     } else if (entry.contentRect) {
-                        this.trackWidth = Math.max(entry.contentRect.width || this.trackWidth || 0, 320);
-                        this.trackHeight = entry.contentRect.height || this.trackHeight || 86;
+                        this.updateTrackSize(entry.contentRect.width, entry.contentRect.height);
                     }
                 });
                 this.trackResizeObserver.observe(this.track);
@@ -448,7 +480,6 @@
         setupEnemies() {
             if (!this.track || !this.enemyEls.length) return;
 
-            this.measureTrack();
             const width = this.getTrackWidth();
             const startPositions = [0.18, 0.46, 0.73];
             const now = (window.performance && window.performance.now) ? window.performance.now() : Date.now();
