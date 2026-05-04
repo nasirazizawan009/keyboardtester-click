@@ -109,8 +109,8 @@ return [
     [
         'path'    => 'blog/keyboard-shortcuts-windows-mac-linux-complete-cheat-sheet.php',
         'url'     => 'https://keyboardtester.click/blog/keyboard-shortcuts-windows-mac-linux-complete-cheat-sheet.php',
-        'image'   => 'blog/images/keyboard-shortcuts-v2-hero.webp',
-        'alt'     => 'Keyboard shortcuts cheat sheet — Windows, macOS and Linux',
+        'image'   => 'blog/images/keyboard-shortcuts-modifier-keys-hero.webp',
+        'alt'     => 'Close-up stock photo of Control, Option and Command modifier keys used for keyboard shortcuts',
         'date'    => 'April 19, 2026',
         'title'   => 'The Complete Keyboard Shortcuts Cheat Sheet: Windows, macOS & Linux (2026)',
         'excerpt' => 'Every keyboard shortcut worth knowing for Windows 11, macOS Sequoia, and Linux (GNOME/Ubuntu) — cross-referenced side by side. Text editing, browsers, screenshots, system, terminal, YouTube.',
