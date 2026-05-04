@@ -67,6 +67,7 @@
         { label: 'Fast', factor: 1.16 },
         { label: 'Calm', factor: 0.88 }
     ];
+    const COLLISION_RADIUS_TILES = 0.84;
 
     canvas.width = WIDTH;
     canvas.height = HEIGHT;
@@ -131,6 +132,7 @@
         if (!entity) return;
         entity.prevX = entity.x;
         entity.prevY = entity.y;
+        entity.path = [{ x: entity.x, y: entity.y }];
     }
 
     function previousPoint(entity) {
@@ -185,24 +187,57 @@
         );
     }
 
+    function centerDistanceWithWrap(aEntity, bEntity) {
+        const dx = Math.abs(aEntity.x - bEntity.x);
+        const wrappedDx = Math.min(dx, COLS - dx);
+        return Math.hypot(wrappedDx, aEntity.y - bEntity.y);
+    }
+
+    function recordMovementPoint(entity) {
+        if (!Array.isArray(entity.path)) {
+            entity.path = [previousPoint(entity)];
+        }
+        const last = entity.path[entity.path.length - 1];
+        if (!last || Math.hypot(entity.x - last.x, entity.y - last.y) > 0.0001) {
+            entity.path.push({ x: entity.x, y: entity.y });
+        }
+    }
+
+    function movementSegments(entity) {
+        const points = Array.isArray(entity.path) && entity.path.length > 1
+            ? entity.path
+            : [previousPoint(entity), { x: entity.x, y: entity.y }];
+        const segments = [];
+
+        for (let index = 1; index < points.length; index += 1) {
+            const start = points[index - 1];
+            const end = unwrapSegmentEnd(start, points[index]);
+            segments.push({ start, end });
+        }
+
+        return segments.length ? segments : [{ start: points[0], end: points[0] }];
+    }
+
     function movementPathDistance(aEntity, bEntity) {
-        const a0 = previousPoint(aEntity);
-        const a1 = unwrapSegmentEnd(a0, { x: aEntity.x, y: aEntity.y });
-        const b0Base = previousPoint(bEntity);
-        const b1Base = unwrapSegmentEnd(b0Base, { x: bEntity.x, y: bEntity.y });
+        const aSegments = movementSegments(aEntity);
+        const bSegments = movementSegments(bEntity);
         let closest = Infinity;
 
-        [-COLS, 0, COLS].forEach((shift) => {
-            const b0 = { x: b0Base.x + shift, y: b0Base.y };
-            const b1 = { x: b1Base.x + shift, y: b1Base.y };
-            closest = Math.min(closest, segmentDistance(a0, a1, b0, b1));
+        aSegments.forEach((aSegment) => {
+            bSegments.forEach((bSegment) => {
+                [-COLS, 0, COLS].forEach((shift) => {
+                    const b0 = { x: bSegment.start.x + shift, y: bSegment.start.y };
+                    const b1 = { x: bSegment.end.x + shift, y: bSegment.end.y };
+                    closest = Math.min(closest, segmentDistance(aSegment.start, aSegment.end, b0, b1));
+                });
+            });
         });
 
         return closest;
     }
 
     function entitiesTouch(aEntity, bEntity) {
-        return movementPathDistance(aEntity, bEntity) < 0.64;
+        return Math.min(centerDistanceWithWrap(aEntity, bEntity), movementPathDistance(aEntity, bEntity)) <= COLLISION_RADIUS_TILES;
     }
 
     function isWall(x, y) {
@@ -644,6 +679,7 @@
             const dist = distanceToCenter(entity, target);
             if (dist <= 0.0001) {
                 setCenter(entity, target);
+                recordMovementPoint(entity);
                 if (onCenter) onCenter();
                 continue;
             }
@@ -652,9 +688,11 @@
             entity.x += dir.x * step;
             entity.y += dir.y * step;
             remaining -= step;
+            recordMovementPoint(entity);
 
             if (step >= dist - 0.0001) {
                 setCenter(entity, target);
+                recordMovementPoint(entity);
                 if (onCenter) onCenter();
                 continue;
             }

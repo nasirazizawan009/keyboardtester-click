@@ -1,5 +1,8 @@
 .pacman-game-page {
-    background: #050510;
+    background:
+        radial-gradient(circle at 16% 0%, rgba(36, 89, 255, 0.22), transparent 32%),
+        radial-gradient(circle at 86% 12%, rgba(45, 226, 230, 0.13), transparent 28%),
+        #03030b;
     color: #f8fbff;
 }
 
@@ -19,29 +22,34 @@
 
 .pacman-kicker {
     margin: 0 0 8px;
-    color: #2de2e6;
+    color: #7df9ff;
     font-family: "Courier New", monospace;
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.14em;
     text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(45, 226, 230, 0.55);
 }
 
 .pacman-hero h1 {
     margin: 0;
-    color: #ffd21f;
+    color: #ffe45c;
     font-family: "Courier New", monospace;
     font-size: clamp(2rem, 5vw, 4.4rem);
     line-height: 1;
-    text-shadow: 0 0 18px rgba(255, 210, 31, 0.5);
+    text-shadow:
+        0 2px 0 #4a3300,
+        0 0 14px rgba(255, 210, 31, 0.72),
+        0 0 34px rgba(255, 210, 31, 0.36);
 }
 
 .pacman-lede {
     max-width: 680px;
     margin: 12px 0 0;
-    color: #c9d4ff;
+    color: #eef4ff;
     font-size: 1rem;
     line-height: 1.65;
+    font-weight: 650;
 }
 
 .pacman-top-actions,
@@ -54,8 +62,8 @@
 
 .pacman-btn,
 .pacman-chip {
-    border: 1px solid #2459ff;
-    background: #081a52;
+    border: 1px solid #5b82ff;
+    background: #09246d;
     color: #ffffff;
     font-family: "Courier New", monospace;
     font-weight: 800;
@@ -72,12 +80,19 @@
 .pacman-btn:hover,
 .pacman-chip:hover {
     border-color: #ffd21f;
-    background: #102b82;
+    background: #12379d;
     transform: translateY(-1px);
 }
 
+.pacman-btn:focus-visible,
+.pacman-chip:focus-visible,
+.pacman-touch-controls button:focus-visible {
+    outline: 3px solid #ffe45c;
+    outline-offset: 3px;
+}
+
 .pacman-btn-secondary {
-    background: #0a1028;
+    background: #0b1236;
 }
 
 .pacman-chip {
@@ -91,10 +106,10 @@
 }
 
 .pacman-stage {
-    border: 2px solid #2459ff;
+    border: 2px solid #5b82ff;
     background:
-        radial-gradient(circle at 12% 8%, rgba(255, 210, 31, 0.09), transparent 22%),
-        linear-gradient(180deg, #080819 0%, #03030b 100%);
+        radial-gradient(circle at 12% 8%, rgba(255, 210, 31, 0.13), transparent 24%),
+        linear-gradient(180deg, #080a21 0%, #020207 100%);
     box-shadow:
         0 0 0 1px rgba(45, 226, 230, 0.18),
         0 22px 70px rgba(0, 0, 0, 0.42),
@@ -140,17 +155,19 @@
     justify-content: space-between;
     gap: 8px;
     padding: 9px 10px;
-    background: rgba(5, 5, 16, 0.88);
-    border: 1px solid rgba(36, 89, 255, 0.55);
+    background: rgba(2, 5, 18, 0.94);
+    border: 1px solid rgba(91, 130, 255, 0.78);
     border-radius: 6px;
-    color: #c9d4ff;
+    color: #f2f6ff;
     font-size: 0.82rem;
+    font-weight: 800;
     white-space: nowrap;
 }
 
 .pacman-hud strong {
-    color: #ffd21f;
+    color: #ffe45c;
     font-weight: 900;
+    text-shadow: 0 0 10px rgba(255, 210, 31, 0.45);
 }
 
 .pacman-board-wrap {
@@ -179,8 +196,8 @@
     display: grid;
     place-content: center;
     gap: 9px;
-    background: rgba(0, 0, 0, 0.62);
-    color: #ffd21f;
+    background: rgba(0, 0, 0, 0.76);
+    color: #ffe45c;
     font-family: "Courier New", monospace;
     text-align: center;
     opacity: 0;
@@ -206,6 +223,7 @@
     color: #ffffff;
     font-size: 0.9rem;
     font-weight: 800;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
 }
 
 .pacman-status-row {
@@ -218,9 +236,10 @@
 
 .pacman-status-row p {
     margin: 0;
-    color: #2de2e6;
+    color: #7df9ff;
     font-family: "Courier New", monospace;
     font-weight: 800;
+    text-shadow: 0 0 10px rgba(45, 226, 230, 0.4);
 }
 
 .pacman-touch-controls {
@@ -236,9 +255,9 @@
 
 .pacman-touch-controls button {
     min-height: 46px;
-    border: 1px solid #2459ff;
+    border: 1px solid #5b82ff;
     border-radius: 6px;
-    background: #081a52;
+    background: #09246d;
     color: #fff;
     font-family: "Courier New", monospace;
     font-weight: 800;
