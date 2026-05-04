@@ -18,14 +18,29 @@
   .or-status b{color:#0f172a}
 
   .or-stage{position:relative;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:18px;overflow:auto;min-height:180px}
-  .or-ruler-frame{position:relative;display:inline-block;transform-origin:top left;transition:transform .25s ease}
-  .or-ruler-frame.is-vertical{transform:rotate(90deg) translateY(-100%)}
+  .or-stage.is-vertical{align-items:flex-start;max-height:none}
+  .or-ruler-frame{position:relative;display:inline-block;transition:none}
   .or-ruler-svg{display:block;background:linear-gradient(180deg,#fffbeb,#fef3c7);border:1px solid #fcd34d;border-radius:6px;box-shadow:inset 0 0 0 1px #fff,0 1px 2px rgba(0,0,0,.05)}
 
-  .or-cal-card{position:relative;display:inline-block;height:120px;margin-top:8px}
-  .or-cal-bg{position:absolute;inset:0;border:2px dashed #94a3b8;border-radius:10px;background:repeating-linear-gradient(45deg,#f1f5f9 0 8px,#e2e8f0 8px 16px)}
-  .or-cal-card-overlay{position:absolute;top:0;left:0;height:100%;background:linear-gradient(135deg,#0f172a,#334155);border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:13px;font-weight:600;letter-spacing:.5px;cursor:grab;user-select:none;box-shadow:0 4px 12px rgba(15,23,42,.3)}
-  .or-cal-card-overlay::before{content:'';position:absolute;left:14px;top:14px;width:32px;height:22px;background:linear-gradient(135deg,#fbbf24,#f59e0b);border-radius:4px}
+  .or-cal-card{position:relative;display:inline-block;margin-top:8px;max-width:100%}
+  .or-cal-bg{position:absolute;inset:0;border:2px dashed #94a3b8;border-radius:16px;background:repeating-linear-gradient(45deg,#f1f5f9 0 8px,#e2e8f0 8px 16px)}
+  .or-cal-card-overlay{position:absolute;top:0;left:0;height:100%;overflow:hidden;background:radial-gradient(circle at 78% 20%,rgba(255,255,255,.28),transparent 28%),linear-gradient(135deg,#172554 0%,#2563eb 48%,#0f172a 100%);border-radius:16px;color:#fff;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto 1fr auto auto;gap:6px 12px;padding:18px 20px;font-size:13px;font-weight:600;letter-spacing:.5px;cursor:grab;user-select:none;box-shadow:0 16px 32px rgba(15,23,42,.24),inset 0 1px 0 rgba(255,255,255,.28),inset 0 -1px 0 rgba(15,23,42,.28)}
+  .or-card-shine{position:absolute;inset:-35% 35% 15% -20%;background:linear-gradient(120deg,rgba(255,255,255,.3),rgba(255,255,255,0));transform:rotate(12deg);pointer-events:none}
+  .or-card-brand{position:relative;z-index:1;font-size:clamp(10px,2.8vw,13px);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  .or-card-network{position:relative;z-index:1;width:46px;height:24px;justify-self:end}
+  .or-card-network::before,.or-card-network::after{content:'';position:absolute;top:1px;width:24px;height:24px;border-radius:50%;opacity:.88}
+  .or-card-network::before{left:0;background:#f97316}
+  .or-card-network::after{right:0;background:#facc15;mix-blend-mode:screen}
+  .or-card-chip{position:relative;z-index:1;align-self:end;width:46px;height:34px;border-radius:8px;background:linear-gradient(135deg,#fef3c7,#d97706);box-shadow:inset 0 0 0 2px rgba(120,53,15,.24)}
+  .or-card-chip::before,.or-card-chip::after{content:'';position:absolute;left:6px;right:6px;border-top:1px solid rgba(120,53,15,.42)}
+  .or-card-chip::before{top:11px}
+  .or-card-chip::after{bottom:11px}
+  .or-card-contactless{position:relative;z-index:1;align-self:end;justify-self:end;width:34px;height:34px;border-right:3px solid rgba(255,255,255,.75);border-radius:50%;opacity:.8}
+  .or-card-contactless::before,.or-card-contactless::after{content:'';position:absolute;top:6px;right:5px;width:18px;height:18px;border-right:2px solid rgba(255,255,255,.72);border-radius:50%}
+  .or-card-contactless::after{top:11px;right:10px;width:8px;height:8px}
+  .or-card-number{position:relative;z-index:1;grid-column:1 / -1;align-self:end;font-family:"SFMono-Regular",Consolas,monospace;font-size:clamp(12px,3.9vw,18px);font-weight:800;letter-spacing:.18em;text-shadow:0 1px 2px rgba(15,23,42,.45);white-space:nowrap}
+  .or-card-holder{position:relative;z-index:1;font-size:clamp(9px,2.8vw,12px);letter-spacing:.1em;text-transform:uppercase;color:#dbeafe}
+  .or-card-size{position:relative;z-index:1;justify-self:end;font-family:"SFMono-Regular",Consolas,monospace;font-size:clamp(9px,2.8vw,12px);color:#dbeafe;text-align:right}
   .or-cal-handle{position:absolute;top:0;right:-10px;height:100%;width:20px;display:flex;align-items:center;justify-content:center;cursor:ew-resize;color:#fff;font-weight:900;font-size:16px}
   .or-cal-handle::after{content:'';position:absolute;right:6px;top:50%;transform:translateY(-50%);width:4px;height:40px;background:#fff;border-radius:2px;opacity:.6}
 
@@ -37,6 +52,8 @@
   @media (max-width:520px){
     .or-controls{gap:8px}
     .or-field input[type=number]{width:72px}
+    .or-cal-card-overlay{padding:14px 16px;border-radius:14px}
+    .or-card-number{letter-spacing:.08em}
   }
 </style>
 
@@ -44,12 +61,18 @@
 
   <div class="or-card">
     <h3>Calibrate</h3>
-    <p style="margin:0 0 12px;font-size:13px;color:#475569">Place a real credit, debit, or ID card flat on the screen on the dotted strip below, then drag the right-edge handle until the dark card overlay matches the real card width exactly.</p>
+    <p style="margin:0 0 12px;font-size:13px;color:#475569">Place a real credit, debit, or ID card flat on the screen on the dotted strip below, then drag the right-edge handle until the card overlay matches the real card width exactly.</p>
     <div class="or-cal-card" id="or-cal-card" style="width:324px">
       <div class="or-cal-bg"></div>
       <div class="or-cal-card-overlay" id="or-cal-overlay" style="width:324px">
-        <span style="margin-left:60px">CARD</span>
-        <span style="font-family:monospace;font-size:11px">85.6 x 54 mm</span>
+        <span class="or-card-shine" aria-hidden="true"></span>
+        <span class="or-card-brand">KBT Measure</span>
+        <span class="or-card-network" aria-hidden="true"></span>
+        <span class="or-card-chip" aria-hidden="true"></span>
+        <span class="or-card-contactless" aria-hidden="true"></span>
+        <span class="or-card-number">CARD 85.6 MM</span>
+        <span class="or-card-holder">Calibration card</span>
+        <span class="or-card-size">54 mm tall</span>
         <div class="or-cal-handle" id="or-cal-handle" aria-label="Drag to resize"></div>
       </div>
     </div>
@@ -109,6 +132,7 @@
   const STORAGE_KEY = 'kbt_online_ruler_ppm_v1';
   const DEFAULT_PPM = 96 / 25.4; // ~3.7795
   const CARD_MM = 85.6;
+  const CARD_HEIGHT_MM = 54;
 
   // State
   let pixelsPerMm = parseFloat(localStorage.getItem(STORAGE_KEY)) || DEFAULT_PPM;
@@ -120,11 +144,15 @@
   const cardEl = $('or-cal-card');
   const overlay = $('or-cal-overlay');
   const handle = $('or-cal-handle');
+  const stage = $('or-stage');
 
   function setCardWidth(px){
     px = Math.max(120, Math.min(900, px|0));
+    const cardHeight = Math.round(px * CARD_HEIGHT_MM / CARD_MM);
     cardEl.style.width = px + 'px';
+    cardEl.style.height = cardHeight + 'px';
     overlay.style.width = px + 'px';
+    overlay.style.height = cardHeight + 'px';
     const ppm = px / CARD_MM;
     $('or-cal-width').textContent = px;
     $('or-cal-mm').textContent = CARD_MM.toFixed(1);
@@ -210,8 +238,6 @@
       document.querySelectorAll('[data-orient]').forEach(b=>b.classList.remove('is-active'));
       btn.classList.add('is-active');
       orient = btn.dataset.orient;
-      const frame = $('or-ruler-frame');
-      frame.classList.toggle('is-vertical', orient === 'v');
       drawRuler();
     });
   });
@@ -235,6 +261,19 @@
 
     // Two scales stacked when both are shown
     const heightPx = showBoth ? 110 : 70;
+    const isVertical = orient === 'v';
+    stage.classList.toggle('is-vertical', isVertical);
+
+    if(isVertical){
+      svg.setAttribute('width', heightPx);
+      svg.setAttribute('height', widthPx);
+      svg.setAttribute('viewBox', '0 0 ' + heightPx + ' ' + widthPx);
+      stage.style.minHeight = Math.ceil(widthPx + 40) + 'px';
+      drawVerticalRuler(svg, totalMm, widthPx, heightPx, showCm, showIn);
+      return;
+    }
+
+    stage.style.minHeight = '';
     svg.setAttribute('width', widthPx);
     svg.setAttribute('height', heightPx);
     svg.setAttribute('viewBox', '0 0 ' + widthPx + ' ' + heightPx);
@@ -286,6 +325,54 @@
         svg.appendChild(t);
       }
       const unit = svgEl('text',{x: 4, y: baselineY-46, 'font-family':'system-ui,sans-serif', 'font-size':10, fill:'#475569'});
+      unit.textContent = 'in';
+      svg.appendChild(unit);
+    }
+  }
+
+  function drawVerticalRuler(svg, totalMm, lengthPx, widthPx, showCm, showIn){
+    if(showCm){
+      const baselineX = 0;
+      for(let mm=0; mm<=totalMm; mm++){
+        const y = mm * pixelsPerMm;
+        let h;
+        if(mm % 10 === 0) h = 24;
+        else if(mm % 5 === 0) h = 14;
+        else h = 8;
+        svg.appendChild(svgEl('line',{x1:baselineX, y1:y, x2:baselineX+h, y2:y, stroke:'#0f172a', 'stroke-width': mm % 10 === 0 ? 1.4 : .8}));
+      }
+      for(let cm=0; cm<=lengthCm; cm++){
+        const y = cm * 10 * pixelsPerMm;
+        const t = svgEl('text',{x:32, y:y+4, 'font-family':'system-ui,sans-serif', 'font-size':12, fill:'#0f172a', 'font-weight':600});
+        t.textContent = cm;
+        svg.appendChild(t);
+      }
+      const unit = svgEl('text',{x: 4, y: 52, 'font-family':'system-ui,sans-serif', 'font-size':10, fill:'#475569'});
+      unit.textContent = 'cm';
+      svg.appendChild(unit);
+    }
+
+    if(showIn){
+      const baselineX = widthPx;
+      const totalInches = totalMm / 25.4;
+      const eighths = Math.floor(totalInches * 8);
+      for(let i=0; i<=eighths; i++){
+        const inches = i/8;
+        const y = inches * 25.4 * pixelsPerMm;
+        let h;
+        if(i % 8 === 0) h = 24;
+        else if(i % 4 === 0) h = 18;
+        else if(i % 2 === 0) h = 12;
+        else h = 8;
+        svg.appendChild(svgEl('line',{x1:baselineX-h, y1:y, x2:baselineX, y2:y, stroke:'#0f172a', 'stroke-width': i % 8 === 0 ? 1.4 : .8}));
+      }
+      for(let inches=0; inches<=Math.floor(totalInches); inches++){
+        const y = inches * 25.4 * pixelsPerMm;
+        const t = svgEl('text',{x: widthPx-46, y:y+4, 'font-family':'system-ui,sans-serif', 'font-size':12, fill:'#0f172a', 'font-weight':600});
+        t.textContent = inches;
+        svg.appendChild(t);
+      }
+      const unit = svgEl('text',{x: widthPx-18, y: 52, 'font-family':'system-ui,sans-serif', 'font-size':10, fill:'#475569'});
       unit.textContent = 'in';
       svg.appendChild(unit);
     }
