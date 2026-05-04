@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-03 (Codex, all-tools link cleanup and local junk cleanup)
+**Last updated:** 2026-05-04 (Codex, gaming keyboard blog CTR refresh)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -69,6 +69,9 @@ This file is the **single source of truth** when handing off work between AI age
 ---
 
 ## 📜 Completed today (rolling 24-48h log)
+
+### 2026-05-04 (Codex)
+- Live CTR refresh deployed for `blog/best-mechanical-keyboards-for-gaming-2026.php`. Updated the ignored article and tracked `blog/posts-data.php` so the SERP-facing title/H1/card now target the stronger GSC query cluster (`best gaming keyboard 2026`, budget, Hall Effect, full-size, Reddit). Added an answer-first quick-picks block, a dedicated full-size section, and FAQ entries for budget mechanical, Hall Effect, Reddit recommendation checks, and full-size intent. Regenerated/deployed `sitemap.xml` so the article has `lastmod=2026-05-04`, submitted the live IndexNow endpoint, and verified production article HTTP 200, one H1, new title/meta description, new FAQ coverage, blog card update, and sitemap lastmod.
 
 ### 2026-05-03 (Codex)
 - All-tools link cleanup deployed. Updated category page breadcrumbs/buttons, the organized keyboard tester page breadcrumb, language index breadcrumbs, the mouse/keyboard hub link, legacy language tools-directory metadata, shared tool-list data, and three ignored blog articles so active links point to `/pages/all-tools.php` or the correct localized `/pages/all-tools-*.php` pages instead of `/pages/tools.php`. Kept `pages/tools.php` as a 301/noindex legacy redirect and synced `.htaccess` so root `/tools.php` also resolves to `/pages/all-tools.php`. Local verification passed on category pages, language indexes, `/tools/keyboard-tester/`, and `mouse-and-keyboard-test-tools.php`; live verification passed with zero `pages/tools.php` links on sampled active pages and HTTP 301 redirects from both `/pages/tools.php` and `/tools.php` to `/pages/all-tools.php`.

@@ -145,10 +145,10 @@ return [
         'path'    => 'blog/best-mechanical-keyboards-for-gaming-2026.php',
         'url'     => 'https://keyboardtester.click/blog/best-mechanical-keyboards-for-gaming-2026.php',
         'image'   => 'blog/images/wooting-80he-gaming-keyboard.webp',
-        'alt'     => 'Best Mechanical Keyboard 2026 gaming picks',
+        'alt'     => 'Best gaming keyboard 2026 mechanical picks',
         'date'    => 'April 11, 2026',
-        'title'   => 'Best Mechanical Keyboard 2026: 6 Gaming Picks Tested',
-        'excerpt' => 'Updated April 2026 comparison of the best mechanical gaming keyboards by budget, Hall Effect switches, Rapid Trigger, layout, wireless support, and use case.',
+        'title'   => 'Best Gaming Keyboard 2026: 6 Mechanical Picks Tested',
+        'excerpt' => 'Best gaming keyboard 2026 guide covering budget, Hall Effect, wireless, full-size, Reddit-popular, and mechanical gaming picks with prices.',
     ],
     [
         'path'    => 'blog/best-recent-wireless-keyboard-launches-2026.php',
