@@ -55,12 +55,21 @@ $__latestBlogTrim = static function ($text, $limit = 132) {
                 $__postUrl = function_exists('url') ? url($__postPath) : '/' . ltrim($__postPath, '/');
                 $__postImageUrl = $__postImage !== '' && function_exists('url') ? url($__postImage) : $__postImage;
                 $__postAlt = $__latestBlogPost['alt'] ?? ($__latestBlogPost['title'] ?? '');
+                $__postPublished = trim((string) ($__latestBlogPost['date'] ?? ''));
+                $__postUpdated = trim((string) ($__latestBlogPost['updated'] ?? $__postPublished));
+                $__postPublishedTime = $__postPublished !== '' ? strtotime($__postPublished) : false;
+                $__postUpdatedTime = $__postUpdated !== '' ? strtotime($__postUpdated) : false;
+                $__postPublishedIso = $__postPublishedTime ? date('Y-m-d', $__postPublishedTime) : '';
+                $__postUpdatedIso = $__postUpdatedTime ? date('Y-m-d', $__postUpdatedTime) : '';
             ?>
                 <a class="homepage-latest-blog-card" href="<?php echo htmlspecialchars($__postUrl, ENT_QUOTES, 'UTF-8'); ?>">
                     <?php if ($__postImage !== ''): ?>
                         <img class="homepage-latest-blog-img" src="<?php echo htmlspecialchars($__postImageUrl, ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($__postAlt, ENT_QUOTES, 'UTF-8'); ?>" width="<?php echo (int) ($__postImageMeta['width'] ?? 640); ?>" height="<?php echo (int) ($__postImageMeta['height'] ?? 360); ?>" loading="lazy" decoding="async">
                     <?php endif; ?>
-                    <span class="homepage-latest-blog-date"><?php echo htmlspecialchars($__latestBlogPost['date'] ?? '', ENT_QUOTES, 'UTF-8'); ?></span>
+                    <span class="homepage-latest-blog-date">
+                        <?php if ($__postPublished !== ''): ?><span>Published <time<?php if ($__postPublishedIso !== ''): ?> datetime="<?php echo htmlspecialchars($__postPublishedIso, ENT_QUOTES, 'UTF-8'); ?>"<?php endif; ?>><?php echo htmlspecialchars($__postPublished, ENT_QUOTES, 'UTF-8'); ?></time></span><?php endif; ?>
+                        <?php if ($__postUpdated !== ''): ?><span>Updated <time<?php if ($__postUpdatedIso !== ''): ?> datetime="<?php echo htmlspecialchars($__postUpdatedIso, ENT_QUOTES, 'UTF-8'); ?>"<?php endif; ?>><?php echo htmlspecialchars($__postUpdated, ENT_QUOTES, 'UTF-8'); ?></time></span><?php endif; ?>
+                    </span>
                     <h3><?php echo htmlspecialchars($__latestBlogPost['title'] ?? '', ENT_QUOTES, 'UTF-8'); ?></h3>
                     <?php if (!empty($__latestBlogPost['excerpt'])): ?>
                         <p><?php echo htmlspecialchars($__latestBlogTrim($__latestBlogPost['excerpt']), ENT_QUOTES, 'UTF-8'); ?></p>
@@ -120,7 +129,9 @@ $__latestBlogTrim = static function ($text, $limit = 132) {
         background: rgba(15, 23, 42, 0.06);
     }
     .homepage-latest-blog-date {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.12rem 0.65rem;
         margin-bottom: 0.35rem;
         color: var(--landing-muted);
         font-size: 0.72rem;
@@ -186,6 +197,12 @@ unset(
     $__postImageMeta,
     $__postUrl,
     $__postImageUrl,
-    $__postAlt
+    $__postAlt,
+    $__postPublished,
+    $__postUpdated,
+    $__postPublishedTime,
+    $__postUpdatedTime,
+    $__postPublishedIso,
+    $__postUpdatedIso
 );
 ?>

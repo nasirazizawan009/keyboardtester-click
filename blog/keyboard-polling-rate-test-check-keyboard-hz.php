@@ -249,7 +249,7 @@ $pageCanonical = absoluteUrl('blog/keyboard-polling-rate-test-check-keyboard-hz.
         <a class="post-back" href="<?php echo url('blog/'); ?>">&larr; All Posts</a>
         <img class="post-featured-img" src="<?php echo url('blog/images/keyboard-polling-rate-test-hero.webp'); ?>" alt="Mechanical keyboards used for an online keyboard polling rate test" loading="eager" width="1280" height="720" decoding="async" fetchpriority="high">
         <h1 class="post-title">Keyboard Polling Rate Test: Check Keyboard Hz Online (2026 Guide)</h1>
-        <p class="post-meta">Published April 28, 2026</p>
+        <p class="post-meta"><span>Published <time datetime="2026-04-28">April 28, 2026</time></span> &nbsp;&middot;&nbsp; <span>Last updated <time datetime="2026-04-28">April 28, 2026</time></span></p>
         <div class="blog-content">
 <p>If you searched for a <strong>keyboard polling rate test</strong>, <strong>keyboard Hz checker</strong>, or <strong>keyboard polling rate checker</strong>, you probably want one of two answers: is my keyboard really running at 1000Hz or 8000Hz, and does that number actually matter?</p>
 

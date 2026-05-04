@@ -101,7 +101,7 @@ $pageCanonical = absoluteUrl('blog/best-laptops-with-good-gpu-2026.php');
         <a class="post-back" href="<?php echo url('blog/'); ?>">&larr; All Posts</a>
         <img class="post-featured-img" src="<?php echo url('blog/images/good-gpu-laptop-2026-asus-scar-18.webp'); ?>" alt="ASUS ROG Strix SCAR 18 gaming laptop with RTX 5090 graphics" loading="eager" width="732" height="732" decoding="async" fetchpriority="high">
         <h1 class="post-title">Best Laptops With Good GPU in 2026: RTX 5090 and RTX 5080 Picks</h1>
-        <p class="post-meta">Published May 2, 2026 &nbsp;|&nbsp; 12 min read</p>
+        <p class="post-meta"><span>Published <time datetime="2026-05-02">May 2, 2026</time></span> &nbsp;&middot;&nbsp; <span>Last updated <time datetime="2026-05-02">May 2, 2026</time></span> &nbsp;&middot;&nbsp; 12 min read</p>
         <div class="blog-content">
 
 <p>If you want a laptop with a good GPU in 2026, the hard part is not finding a big graphics name. It is choosing the machine where the GPU is actually allowed to run properly. RTX 5090, RTX 5080, and RTX 5070 Ti laptop names only tell part of the story. The real buyer questions are GPU wattage, cooling, VRAM, display resolution, and price.</p>

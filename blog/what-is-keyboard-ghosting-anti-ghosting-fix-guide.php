@@ -188,7 +188,7 @@ $pageCanonical   = absoluteUrl('blog/what-is-keyboard-ghosting-anti-ghosting-fix
              loading="eager" width="1280" height="720" decoding="async" fetchpriority="high">
 
         <h1 class="post-title">What Is Keyboard Ghosting? Anti-Ghosting, NKRO & Every Fix Explained (2026)</h1>
-        <p class="post-meta">Published April 20, 2026 &nbsp;·&nbsp; Updated May 1, 2026 &nbsp;·&nbsp; 11 min read</p>
+        <p class="post-meta"><span>Published <time datetime="2026-04-20">April 20, 2026</time></span> &nbsp;&middot;&nbsp; <span>Last updated <time datetime="2026-05-01">May 1, 2026</time></span> &nbsp;&middot;&nbsp; 11 min read</p>
 
         <div class="blog-content">
 

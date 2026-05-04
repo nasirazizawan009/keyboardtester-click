@@ -47,6 +47,27 @@ function blogArchivePageUrl($pageNumber) {
     return $pageNumber <= 1 ? url('blog/') : url('blog/?page=' . (int) $pageNumber);
 }
 
+function blogDateIso($dateText) {
+    $timestamp = strtotime((string) $dateText);
+    return $timestamp ? date('Y-m-d', $timestamp) : '';
+}
+
+function blogRenderPostDates($post, $className) {
+    $published = trim((string) ($post['date'] ?? ''));
+    $updated = trim((string) ($post['updated'] ?? $published));
+    if ($published === '' && $updated === '') {
+        return;
+    }
+    $publishedIso = blogDateIso($published);
+    $updatedIso = blogDateIso($updated);
+?>
+                <span class="<?php echo htmlspecialchars($className, ENT_QUOTES, 'UTF-8'); ?>">
+                    <?php if ($published !== ''): ?><span>Published <time<?php if ($publishedIso !== ''): ?> datetime="<?php echo htmlspecialchars($publishedIso, ENT_QUOTES, 'UTF-8'); ?>"<?php endif; ?>><?php echo htmlspecialchars($published, ENT_QUOTES, 'UTF-8'); ?></time></span><?php endif; ?>
+                    <?php if ($updated !== ''): ?><span>Updated <time<?php if ($updatedIso !== ''): ?> datetime="<?php echo htmlspecialchars($updatedIso, ENT_QUOTES, 'UTF-8'); ?>"<?php endif; ?>><?php echo htmlspecialchars($updated, ENT_QUOTES, 'UTF-8'); ?></time></span><?php endif; ?>
+                </span>
+<?php
+}
+
 function blogRenderPostCard($post, $extraClass = '', $badge = '', $loading = 'lazy', $headingTag = 'h2') {
     $postImageMeta = $post['image'] !== '' ? getLocalImageMeta($post['image']) : null;
     $headingTag = in_array($headingTag, ['h2', 'h3'], true) ? $headingTag : 'h2';
@@ -63,7 +84,7 @@ function blogRenderPostCard($post, $extraClass = '', $badge = '', $loading = 'la
             <div class="post-card-img-placeholder" aria-hidden="true"><?php if ($badge !== ''): ?><span class="post-card-badge"><?php echo htmlspecialchars($badge, ENT_QUOTES, 'UTF-8'); ?></span><?php endif; ?>Read</div>
 <?php endif; ?>
             <div class="post-card-body">
-                <span class="post-card-date"><?php echo htmlspecialchars($post['date'], ENT_QUOTES, 'UTF-8'); ?></span>
+<?php blogRenderPostDates($post, 'post-card-date'); ?>
                 <<?php echo $headingTag; ?> class="post-card-title"><?php echo htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8'); ?></<?php echo $headingTag; ?>>
                 <p class="post-card-excerpt"><?php echo htmlspecialchars($post['excerpt'], ENT_QUOTES, 'UTF-8'); ?></p>
                 <span class="post-card-cta">Read article</span>
@@ -198,10 +219,14 @@ $pageCanonical = $currentPage > 1
         gap: 0.4rem;
     }
     .post-card-date {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.15rem 0.7rem;
         font-size: 0.78rem;
         color: var(--text-muted, #64748b);
         text-transform: uppercase;
         letter-spacing: 0.04em;
+        line-height: 1.35;
     }
     .post-card-title {
         font-size: 1rem;
