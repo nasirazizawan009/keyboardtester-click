@@ -45,7 +45,7 @@ English, Spanish, French, German, Portuguese, Russian, Arabic, Japanese, Korean.
 ## Contact
 
 - Website: https://keyboardtester.click
-- Email: support@keyboardtester.click
+- Contact: https://keyboardtester.click/feedback.php. The support email is protected behind a human check on the site.
 - GitHub: https://github.com/nasirazizawan009/keyboardtester-click
 - YouTube: https://www.youtube.com/@KeyboardTester-dot-click
 - Facebook: https://www.facebook.com/keyboardtester.click

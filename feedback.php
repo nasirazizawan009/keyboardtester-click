@@ -143,7 +143,7 @@ require_once 'config.php';
                 <strong>Thank you!</strong> Your feedback has been sent successfully. We'll review it shortly.
             </div>
             <div class="alert alert-error" id="errorAlert">
-                <strong>Oops!</strong> Something went wrong. Please try again or contact us directly at support@keyboardtester.click.
+                <strong>Oops!</strong> Something went wrong. Please try again or <?php echo kbtRenderProtectedEmail(['label' => 'show the support email']); ?>.
             </div>
 
             <form class="feedback-form" id="feedbackForm" action="<?php echo url('api/send-feedback.php'); ?>" method="post" novalidate>

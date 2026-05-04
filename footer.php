@@ -13,6 +13,10 @@ if (empty($kbtSuppressFooterAd)) {
 
 kbtRenderSiteFooter($siteChromeLocale);
 
+if (function_exists('kbtRenderProtectedEmailAssets')) {
+    kbtRenderProtectedEmailAssets();
+}
+
 // AI Chat Widget
 $aiEndpoint = htmlspecialchars(url('ai-chat.php'), ENT_QUOTES, 'UTF-8');
 $aiScript   = htmlspecialchars(url('assets/js/ai-chat.min.js'), ENT_QUOTES, 'UTF-8') . '?v=2.4';

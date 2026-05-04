@@ -48,10 +48,10 @@ $pageOgImage = 'images/shared/keyboard-and-mouse.png';
             <p>Our tools, including the <a href="<?php echo $pages['whatsapp_brand']; ?>">WhatsApp Chat Link & QR Creator</a> and <a href="<?php echo $pages['ocr_tool']; ?>">OCR Tool</a>, are designed to assist with device diagnostics and digital tasks. However, they are not intended to replace professional diagnostic services or hardware repairs. Results from tools like the <a href="<?php echo url('mouse-trail.php'); ?>">Mouse Trail</a> or <a href="<?php echo url('languages/korean/'); ?>">Korean Keyboard Tester</a> are indicative and may vary based on your device, browser, or settings. We do not guarantee that our tools will resolve all issues or be compatible with every device or operating system.</p>
 
             <h2>Changes to This Disclaimer</h2>
-            <p>We reserve the right to update or modify this Disclaimer at any time to reflect changes in our services, legal requirements, or operational practices. Any updates will be posted on this page with an updated effective date. We encourage you to review this page periodically to stay informed. For questions or clarifications, please <a href="<?php echo $pages['feedback']; ?>">contact us</a> or email us at <a href="mailto:<?php echo $siteEmail; ?>"><?php echo $siteEmail; ?></a>.</p>
+            <p>We reserve the right to update or modify this Disclaimer at any time to reflect changes in our services, legal requirements, or operational practices. Any updates will be posted on this page with an updated effective date. We encourage you to review this page periodically to stay informed. For questions or clarifications, please <a href="<?php echo $pages['feedback']; ?>">contact us</a> or <?php echo kbtRenderProtectedEmail(['label' => 'reveal our support email']); ?>.</p>
 
             <h2>Contact Us</h2>
-            <p>If you have any questions, concerns, or feedback regarding this Disclaimer or our services, please reach out via our <a href="<?php echo $pages['feedback']; ?>">Feedback</a> page or email us at <a href="mailto:<?php echo $siteEmail; ?>"><?php echo $siteEmail; ?></a>.</p>
+            <p>If you have any questions, concerns, or feedback regarding this Disclaimer or our services, please reach out via our <a href="<?php echo $pages['feedback']; ?>">Feedback</a> page or <?php echo kbtRenderProtectedEmail(['label' => 'reveal our support email']); ?>.</p>
             <p>Effective Date: January 31, 2026</p>
         </section>
     </main>

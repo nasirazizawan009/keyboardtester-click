@@ -877,4 +877,4 @@ python scripts/audit-bing-indexing.py
 - Facebook: https://www.facebook.com/keyboardtester.click
 - GitHub: https://github.com/nasirazizawan009/keyboardtester-click
 - GitLab: https://gitlab.com/nasirazizawan/keyboardtester.click
-- Email: support@keyboardtester.click
+- Contact: https://keyboardtester.click/feedback.php. The support email is protected behind a human check on the site.

@@ -45,7 +45,7 @@ $pageOgImage = 'images/shared/keyboard-and-mouse.png';
             <p>We aim to keep our tools and content accurate and up to date, but results are provided as-is and may vary by device or browser. Our tools are informational and are not a substitute for professional diagnostics or repairs.</p>
 
             <h2>Contact Us</h2>
-            <p>Questions or feedback? Email us at <a href="mailto:<?php echo $siteEmail; ?>"><?php echo $siteEmail; ?></a> or use the form below.</p>
+            <p>Questions or feedback? Use the form below, or <?php echo kbtRenderProtectedEmail(['label' => 'reveal our support email']); ?>.</p>
 
             <div class="feedback-form">
                 <form id="feedback-form">

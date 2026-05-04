@@ -18,6 +18,17 @@
   .links{margin-top:28px;padding-top:24px;border-top:1px solid #e2e8f0}
   .links a{color:#667eea;text-decoration:none;font-size:14px;margin:0 12px;font-weight:500}
   .links a:hover{text-decoration:underline}
+  .email-reveal{border:0;background:transparent;color:#667eea;font:inherit;font-size:14px;font-weight:500;cursor:pointer;padding:0;margin:0 12px}
+  .email-reveal:hover,.email-reveal:focus-visible{text-decoration:underline;outline:0}
+  .email-check{display:grid;gap:10px;max-width:300px;margin:18px auto 0;text-align:left}
+  .email-check[hidden]{display:none}
+  .email-check label{font-size:13px;font-weight:700;color:#2d3748}
+  .email-check-row{display:flex;gap:8px}
+  .email-check input{min-width:0;flex:1;border:1px solid #cbd5e1;border-radius:8px;padding:8px 10px;font:inherit}
+  .email-check button{border:1px solid #667eea;border-radius:8px;background:#667eea;color:#fff;font:inherit;font-weight:700;padding:8px 12px;cursor:pointer}
+  .email-result{display:block;margin-top:12px;font-weight:700}
+  .email-result a{overflow-wrap:anywhere}
+  .email-error{min-height:18px;color:#b91c1c;font-size:13px;font-weight:700}
   .status{display:inline-block;padding:6px 14px;background:#fef3c7;color:#92400e;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.3px;margin-bottom:20px;text-transform:uppercase}
   .timer{font-variant-numeric:tabular-nums;color:#667eea;font-weight:600}
 </style>
@@ -32,13 +43,63 @@
     <div class="links">
       <a href="https://www.youtube.com/@KeyboardTester-dot-click">YouTube</a>
       <a href="https://www.facebook.com/keyboardtester.click">Facebook</a>
-      <a href="mailto:support@keyboardtester.click">Email us</a>
+      <button type="button" class="email-reveal" id="showEmail">Show email</button>
+      <div class="email-check" id="emailCheck" hidden>
+        <label for="emailAnswer">Human check: what is <span id="emailQuestion"></span>?</label>
+        <div class="email-check-row">
+          <input id="emailAnswer" type="number" inputmode="numeric" autocomplete="off">
+          <button type="button" id="emailSubmit">Reveal</button>
+        </div>
+        <span class="email-error" id="emailError" aria-live="polite"></span>
+      </div>
+      <span class="email-result" id="emailResult"></span>
     </div>
   </div>
 <script>
   let s=60;
   const el=document.getElementById('timer');
   setInterval(()=>{s--;if(s<0)s=60;el.textContent=s;},1000);
+  (()=> {
+    const token='c3VwcG9ydEBrZXlib2FyZHRlc3Rlci5jbGljaw==';
+    const show=document.getElementById('showEmail');
+    const check=document.getElementById('emailCheck');
+    const question=document.getElementById('emailQuestion');
+    const answer=document.getElementById('emailAnswer');
+    const submit=document.getElementById('emailSubmit');
+    const error=document.getElementById('emailError');
+    const result=document.getElementById('emailResult');
+    let expected=0;
+    function startCheck(){
+      const a=Math.floor(Math.random()*8)+2;
+      const b=Math.floor(Math.random()*8)+2;
+      expected=a+b;
+      question.textContent=a+' + '+b;
+      answer.value='';
+      error.textContent='';
+      check.hidden=false;
+      answer.focus();
+    }
+    function reveal(){
+      if(Number(answer.value)!==expected){
+        error.textContent='Incorrect answer. Try again.';
+        answer.select();
+        return;
+      }
+      const email=atob(token);
+      const link=document.createElement('a');
+      link.href='mailto:'+email;
+      link.textContent=email;
+      link.rel='nofollow';
+      result.textContent='';
+      result.appendChild(link);
+      check.hidden=true;
+      show.hidden=true;
+      link.focus();
+    }
+    show.addEventListener('click',startCheck);
+    submit.addEventListener('click',reveal);
+    answer.addEventListener('keydown',event=>{if(event.key==='Enter')reveal();});
+  })();
 </script>
 </body>
 </html>

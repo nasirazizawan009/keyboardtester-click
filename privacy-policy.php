@@ -100,7 +100,7 @@ $pageOgImage = 'images/shared/keyboard-and-mouse.png';
             <p><strong>Effective Date:</strong> March 28, 2026</p>
 
             <h2>Contact Us</h2>
-            <p>If you have questions about this policy, contact us at <a href="mailto:<?php echo $siteEmail; ?>"><?php echo $siteEmail; ?></a> or via the contact form on the <a href="<?php echo $pages['about']; ?>">About page</a>.</p>
+            <p>If you have questions about this policy, use the contact form on the <a href="<?php echo $pages['about']; ?>">About page</a> or <?php echo kbtRenderProtectedEmail(['label' => 'reveal our support email']); ?>.</p>
         </section>
     </main>
 

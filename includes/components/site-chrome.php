@@ -790,6 +790,10 @@ if (!function_exists('kbtRenderSiteFooter')) {
     .footer-links a:hover { transform: translateX(4px); }
     .contact-info { margin-bottom: 18px; }
     .contact-item { display: inline-flex; align-items: center; gap: 10px; }
+    .site-footer .footer-protected-email .kbt-protected-email-button { min-height: auto; padding: 0; border: 0; background: transparent; color: var(--footer-muted); box-shadow: none; }
+    .site-footer .footer-protected-email .kbt-protected-email-button:hover,
+    .site-footer .footer-protected-email .kbt-protected-email-button:focus-visible { color: #e0f2fe; box-shadow: none; }
+    .site-footer .footer-protected-email .kbt-protected-email-output a { color: #e0f2fe; }
     .footer-link-icon, .social-link-icon { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; flex-shrink: 0; color: #67d4ff; opacity: 0.96; }
     .footer-link-icon { margin-top: 0.14rem; }
     .footer-link-icon svg, .social-link-icon svg { width: 100%; height: 100%; display: block; }
@@ -981,7 +985,7 @@ if (!function_exists('kbtRenderSiteFooter')) {
         <section class="footer-section contact-section">
             <h4 class="footer-heading"><?php echo htmlspecialchars($copy['footer']['stay_connected'], ENT_QUOTES, 'UTF-8'); ?></h4>
             <div class="contact-info">
-                <a href="mailto:<?php echo htmlspecialchars($siteEmail, ENT_QUOTES, 'UTF-8'); ?>" class="contact-item"><?php echo kbtRenderSiteChromeMiniIcon('mail'); ?><span><?php echo htmlspecialchars($siteEmail, ENT_QUOTES, 'UTF-8'); ?></span></a>
+                <div class="contact-item contact-item--protected-email"><?php echo kbtRenderSiteChromeMiniIcon('mail'); ?><span><?php echo kbtRenderProtectedEmail(['label' => 'Show support email', 'class' => 'footer-protected-email']); ?></span></div>
             </div>
             <div class="newsletter">
                 <p><?php echo htmlspecialchars($copy['footer']['newsletter'], ENT_QUOTES, 'UTF-8'); ?></p>

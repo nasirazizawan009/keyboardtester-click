@@ -53,7 +53,7 @@ function schemaOrganization() {
         'contactPoint' => [
             '@type' => 'ContactPoint',
             'contactType' => 'customer support',
-            'email' => 'support@keyboardtester.click',
+            'url' => absoluteUrl('feedback.php'),
             'availableLanguage' => ['English', 'Arabic', 'Spanish', 'French', 'German', 'Portuguese', 'Russian', 'Japanese', 'Korean']
         ]
     ];

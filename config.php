@@ -32,8 +32,10 @@ if ($isLocalhost) {
 // Site information
 $siteName = 'KeyboardTester.Click';
 $siteDescription = 'Free online keyboard and mouse testing tools';
-$siteEmail = 'support@keyboardtester.click';
+$siteEmail = 'support' . '@' . 'keyboardtester.click';
 $siteYear = date('Y');
+
+require_once __DIR__ . '/includes/components/protected-email.php';
 
 // Social links
 $socialLinks = [

@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars(trim($_POST['message']));
 
     // Recipient email (hidden from user)
-    $to = "support@keyboardtester.click";
+    $to = 'support' . '@' . 'keyboardtester.click';
     $subject = "New Feedback from KeyboardTester.click";
     $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
     $headers = "From: no-reply@keyboardtester.click\r\nReply-To: $email";
