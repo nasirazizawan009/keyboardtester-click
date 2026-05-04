@@ -59,20 +59,6 @@ if (!function_exists('kbtRenderBlogArticleRailStyles')) {
         align-items: center;
         justify-content: center;
     }
-    .blog-rail-ad .kbt-ad-label {
-        position: absolute;
-        top: 0.45rem;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-        color: var(--text-muted, #64748b);
-        font-size: 0.65rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        line-height: 1;
-        text-transform: uppercase;
-        pointer-events: none;
-    }
     .blog-rail-ad .adsbygoogle {
         width: 160px;
         height: 600px;
@@ -135,10 +121,9 @@ if (!function_exists('kbtRenderBlogArticleRail')) {
             return;
         }
         ?>
-        <aside class="blog-rail-ad blog-rail-ad--<?php echo htmlspecialchars($side, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Advertisement">
+        <aside class="blog-rail-ad blog-rail-ad--<?php echo htmlspecialchars($side, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Sponsored slot">
             <div class="blog-rail-ad-inner">
                 <div class="blog-rail-ad-shell" data-blog-rail-ad data-ad-client="<?php echo htmlspecialchars($railConfig['client'], ENT_QUOTES, 'UTF-8'); ?>" data-ad-slot="<?php echo htmlspecialchars($slotId, ENT_QUOTES, 'UTF-8'); ?>">
-                    <span class="kbt-ad-label">Advertisement</span>
                 </div>
             </div>
         </aside>

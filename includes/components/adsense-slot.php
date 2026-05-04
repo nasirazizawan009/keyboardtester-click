@@ -101,11 +101,10 @@ if (!function_exists('kbtRenderAdSlot')) {
         $format = $options['format'] ?? 'auto';
         $layout = $options['layout'] ?? null;
         $fullWidthResponsive = array_key_exists('full_width_responsive', $options) ? (bool) $options['full_width_responsive'] : true;
-        $label = $options['label'] ?? 'Advertisement';
+        $ariaLabel = $options['aria_label'] ?? 'Sponsored slot';
         ?>
-<aside class="<?php echo htmlspecialchars($classes, ENT_QUOTES, 'UTF-8'); ?>" aria-label="<?php echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); ?>" data-ad-placement="<?php echo htmlspecialchars($placement, ENT_QUOTES, 'UTF-8'); ?>">
+<aside class="<?php echo htmlspecialchars($classes, ENT_QUOTES, 'UTF-8'); ?>" aria-label="<?php echo htmlspecialchars($ariaLabel, ENT_QUOTES, 'UTF-8'); ?>" data-ad-placement="<?php echo htmlspecialchars($placement, ENT_QUOTES, 'UTF-8'); ?>">
     <div class="kbt-ad-slot-inner">
-        <span class="kbt-ad-label"><?php echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); ?></span>
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="<?php echo htmlspecialchars($client, ENT_QUOTES, 'UTF-8'); ?>"
