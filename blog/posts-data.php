@@ -21,6 +21,16 @@
 return [
 
     [
+        'path'    => 'blog/keyboard-switch-types-gaming-guide.php',
+        'url'     => 'https://keyboardtester.click/blog/keyboard-switch-types-gaming-guide.php',
+        'image'   => 'blog/images/keyboard-switch-types-gaming-hero.webp',
+        'alt'     => 'Keyboard switch types guide for gaming with linear tactile clicky and Hall Effect switches',
+        'date'    => 'May 4, 2026',
+        'title'   => 'Keyboard Switch Types Guide: Best Switches for Gaming in 2026',
+        'excerpt' => 'In-depth gamer guide to linear, tactile, clicky, optical, Hall Effect, silent, speed, membrane and scissor keyboard switches, with game-by-game recommendations.',
+    ],
+
+    [
         'path'    => 'blog/best-laptops-with-good-gpu-2026.php',
         'url'     => 'https://keyboardtester.click/blog/best-laptops-with-good-gpu-2026.php',
         'image'   => 'blog/images/good-gpu-laptop-2026-asus-scar-18.webp',
