@@ -147,8 +147,8 @@ return [
         'image'   => 'blog/images/wooting-80he-gaming-keyboard.webp',
         'alt'     => 'Best gaming keyboard 2026 mechanical picks',
         'date'    => 'April 11, 2026',
-        'title'   => 'Best Gaming Keyboard 2026: 6 Mechanical Picks Tested',
-        'excerpt' => 'Best gaming keyboard 2026 guide covering budget, Hall Effect, wireless, full-size, Reddit-popular, and mechanical gaming picks with prices.',
+        'title'   => 'Best Gaming Keyboard 2026: 7 Mechanical Picks Tested',
+        'excerpt' => 'Best gaming keyboard 2026 guide covering budget, Hall Effect, 60%, wireless, full-size, Reddit-popular, and mechanical gaming picks with prices.',
     ],
     [
         'path'    => 'blog/best-recent-wireless-keyboard-launches-2026.php',

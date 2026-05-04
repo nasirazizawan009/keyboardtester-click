@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-04 (Codex, gaming keyboard blog CTR refresh)
+**Last updated:** 2026-05-04 (Codex, gaming keyboard blog Wooting 60HE v2 update)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -71,6 +71,7 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-04 (Codex)
+- Follow-up CTR/content pass deployed for `blog/best-mechanical-keyboards-for-gaming-2026.php`. Added Wooting 60HE v2 as the seventh contender with a dedicated 60% section, official Wooting product image, comparison-table row, FAQ coverage, and source links to Wooting, PC Gamer, and RTINGS. Reconfirmed the full article image set as product-specific images (Gamakay NS68, Keychron Q1 HE 8K, Wooting 80HE, Wooting 60HE v2, NuPhy Field75 HE V2, Razer Huntsman V3 Pro TKL, ASUS ROG Azoth 96 HE), not generic keyboard filler. Added the new image to BlogPosting structured data and kept BreadcrumbList markup for Search Console enhancement eligibility.
 - Live CTR refresh deployed for `blog/best-mechanical-keyboards-for-gaming-2026.php`. Updated the ignored article and tracked `blog/posts-data.php` so the SERP-facing title/H1/card now target the stronger GSC query cluster (`best gaming keyboard 2026`, budget, Hall Effect, full-size, Reddit). Added an answer-first quick-picks block, a dedicated full-size section, and FAQ entries for budget mechanical, Hall Effect, Reddit recommendation checks, and full-size intent. Regenerated/deployed `sitemap.xml` so the article has `lastmod=2026-05-04`, submitted the live IndexNow endpoint, and verified production article HTTP 200, one H1, new title/meta description, new FAQ coverage, blog card update, and sitemap lastmod.
 
 ### 2026-05-03 (Codex)
