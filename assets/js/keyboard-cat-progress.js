@@ -319,6 +319,11 @@
             this.enemyFrame = 0;
             this.enemyLastTime = 0;
             this.enemyReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            this.trackWidth = 320;
+            this.trackHeight = 86;
+            this.catPositionPercent = this.getStartPosition();
+            this.trackResizeObserver = null;
+            this.trackResizeHandler = null;
 
             this.desktopTotalKeys = Math.max(Number(options.desktopTotalKeys) || 103, 1);
             this.mobileTotalKeys = Math.max(Number(options.mobileTotalKeys) || 42, 1);
@@ -339,6 +344,8 @@
             this.lastLevels = { desktop: 0, mobile: 0 };
             this.lastCycles = { desktop: 0, mobile: 0 };
             this.completed = false;
+            this.measureTrack();
+            this.startTrackSizeObserver();
             this.setDisplayMode(false, this.desktopTotalKeys);
             this.reset({ totalKeys: this.desktopTotalKeys });
             this.startEnemyMotion();
@@ -376,9 +383,63 @@
             return min + Math.random() * (max - min);
         }
 
+        measureTrack() {
+            if (!this.track) return;
+
+            const rect = this.track.getBoundingClientRect();
+            this.trackWidth = Math.max(rect.width || this.trackWidth || 0, 320);
+            this.trackHeight = rect.height || this.trackHeight || 86;
+        }
+
+        startTrackSizeObserver() {
+            if (!this.track) return;
+
+            if ('ResizeObserver' in window) {
+                this.trackResizeObserver = new ResizeObserver((entries) => {
+                    const entry = entries && entries[0];
+                    if (!entry) return;
+
+                    const size = Array.isArray(entry.borderBoxSize) ? entry.borderBoxSize[0] : entry.borderBoxSize;
+                    if (size) {
+                        this.trackWidth = Math.max(size.inlineSize || this.trackWidth || 0, 320);
+                        this.trackHeight = size.blockSize || this.trackHeight || 86;
+                    } else if (entry.contentRect) {
+                        this.trackWidth = Math.max(entry.contentRect.width || this.trackWidth || 0, 320);
+                        this.trackHeight = entry.contentRect.height || this.trackHeight || 86;
+                    }
+                });
+                this.trackResizeObserver.observe(this.track);
+                return;
+            }
+
+            this.trackResizeHandler = () => {
+                window.requestAnimationFrame(() => this.measureTrack());
+            };
+            window.addEventListener('resize', this.trackResizeHandler, { passive: true });
+        }
+
+        stopTrackSizeObserver() {
+            if (this.trackResizeObserver) {
+                this.trackResizeObserver.disconnect();
+                this.trackResizeObserver = null;
+            }
+
+            if (this.trackResizeHandler) {
+                window.removeEventListener('resize', this.trackResizeHandler);
+                this.trackResizeHandler = null;
+            }
+        }
+
+        getTrackWidth() {
+            return Math.max(this.trackWidth || 0, 320);
+        }
+
+        getTrackHeight() {
+            return this.trackHeight || 86;
+        }
+
         getEnemyLaneTop(index) {
-            if (!this.track) return 34;
-            const trackHeight = this.track.clientHeight || 86;
+            const trackHeight = this.getTrackHeight();
             const baseTop = trackHeight <= 72 ? 31 : 34;
             const offsets = [0, 3, -1, 2];
             return baseTop + offsets[index % offsets.length];
@@ -387,7 +448,8 @@
         setupEnemies() {
             if (!this.track || !this.enemyEls.length) return;
 
-            const width = Math.max(this.track.clientWidth || 0, 320);
+            this.measureTrack();
+            const width = this.getTrackWidth();
             const startPositions = [0.18, 0.46, 0.73];
             const now = (window.performance && window.performance.now) ? window.performance.now() : Date.now();
 
@@ -429,18 +491,79 @@
             state.el.style.top = `${state.y.toFixed(2)}px`;
         }
 
-        getRelativeRect(element) {
-            if (!this.track || !element) return null;
+        getCatScale() {
+            if (window.innerWidth <= 480) return 0.72;
+            if (window.innerWidth <= 768) return 0.82;
+            return 1;
+        }
 
-            const trackRect = this.track.getBoundingClientRect();
-            const rect = element.getBoundingClientRect();
+        getPacmanRect(positionPercent = this.catPositionPercent) {
+            const scale = this.getCatScale();
+            const layoutWidth = 42;
+            const layoutHeight = 42;
+            const width = layoutWidth * scale;
+            const height = layoutHeight * scale;
+            const left = (this.getTrackWidth() * positionPercent / 100) + ((layoutWidth - width) / 2);
+            const top = 29 + ((layoutHeight - height) / 2);
+
             return {
-                left: rect.left - trackRect.left,
-                right: rect.right - trackRect.left,
-                top: rect.top - trackRect.top,
-                bottom: rect.bottom - trackRect.top,
-                width: rect.width,
-                height: rect.height
+                left,
+                right: left + width,
+                top,
+                bottom: top + height,
+                width,
+                height
+            };
+        }
+
+        getTreatRect(element) {
+            const treatValue = Number(element && element.getAttribute('data-treat')) || 10;
+            const positionPercent = treatValue >= 100 ? 90 : (treatValue * 0.9) + 2;
+            const scale = window.innerWidth <= 480 ? 0.64 : (window.innerWidth <= 768 ? 0.82 : 1);
+            const layoutSize = 30;
+            const size = layoutSize * scale;
+            const left = (this.getTrackWidth() * positionPercent / 100) + ((layoutSize - size) / 2);
+            const top = 34 + ((layoutSize - size) / 2);
+
+            return {
+                left,
+                right: left + size,
+                top,
+                bottom: top + size,
+                width: size,
+                height: size
+            };
+        }
+
+        getSparkleRect(element) {
+            if (element === this.catEl) {
+                return this.getPacmanRect();
+            }
+
+            if (element && element.classList && element.classList.contains('treat')) {
+                return this.getTreatRect(element);
+            }
+
+            return {
+                left: this.getTrackWidth() / 2,
+                right: this.getTrackWidth() / 2,
+                top: this.getTrackHeight() / 2,
+                bottom: this.getTrackHeight() / 2,
+                width: 0,
+                height: 0
+            };
+        }
+
+        getEnemyRect(state, x = state.x) {
+            const width = 30;
+            const height = 32;
+            return {
+                left: x,
+                right: x + width,
+                top: state.y,
+                bottom: state.y + height,
+                width,
+                height
             };
         }
 
@@ -473,6 +596,7 @@
             const tick = (time) => {
                 if (!document.body.contains(this.root)) {
                     this.enemyFrame = 0;
+                    this.stopTrackSizeObserver();
                     return;
                 }
 
@@ -489,7 +613,7 @@
         updateEnemies(time, delta) {
             if (!this.track || !this.enemyStates.length) return;
 
-            const width = Math.max(this.track.clientWidth || 0, 320);
+            const width = this.getTrackWidth();
             const ghostWidth = 30;
 
             this.enemyStates.forEach((state) => {
@@ -541,15 +665,11 @@
         isTouchingPacman(state, previousEnemyX = state.x, previousPacmanRect = null) {
             if (!this.catEl || state.status !== 'active') return false;
 
-            const pacmanRect = this.getRelativeRect(this.catEl);
-            const enemyRect = this.getRelativeRect(state.el);
+            const pacmanRect = this.getPacmanRect();
+            const enemyRect = this.getEnemyRect(state);
             if (!pacmanRect || !enemyRect) return false;
 
-            const previousEnemyRect = {
-                ...enemyRect,
-                left: previousEnemyX,
-                right: previousEnemyX + enemyRect.width
-            };
+            const previousEnemyRect = this.getEnemyRect(state, previousEnemyX);
             const sweptEnemyRect = this.mergeRects(enemyRect, previousEnemyRect);
             const sweptPacmanRect = previousPacmanRect ? this.mergeRects(pacmanRect, previousPacmanRect) : pacmanRect;
 
@@ -576,7 +696,7 @@
             window.setTimeout(() => {
                 if (!document.body.contains(this.root) || state.eatToken !== eatToken) return;
 
-                const width = Math.max(this.track.clientWidth || 0, 320);
+                const width = this.getTrackWidth();
                 state.status = 'respawning';
                 state.x = this.randomBetween(24, Math.max(54, width - 54));
                 state.y = -this.randomBetween(74, 122);
@@ -593,15 +713,16 @@
         createSparkles(element) {
             if (!this.track || !element) return;
 
-            const rect = element.getBoundingClientRect();
-            const trackRect = this.track.getBoundingClientRect();
+            const rect = this.getSparkleRect(element);
+            const originX = rect.left + (rect.width / 2);
+            const originY = rect.top + (rect.height / 2);
 
             for (let i = 0; i < 5; i++) {
                 const sparkle = document.createElement('span');
                 sparkle.className = 'sparkle';
                 sparkle.textContent = this.sparkles[Math.floor(Math.random() * this.sparkles.length)];
-                sparkle.style.left = (rect.left - trackRect.left + Math.random() * 40 - 20) + 'px';
-                sparkle.style.top = (rect.top - trackRect.top + Math.random() * 40 - 20) + 'px';
+                sparkle.style.left = (originX + Math.random() * 40 - 20) + 'px';
+                sparkle.style.top = (originY + Math.random() * 40 - 20) + 'px';
                 this.track.appendChild(sparkle);
                 window.setTimeout(() => sparkle.remove(), 600);
             }
@@ -645,7 +766,7 @@
             const cycleState = this.getCycleState(options && options.keysPressed, totalKeys);
             const keysPressed = cycleState.cyclePresses;
             const percentage = Math.round((Math.min(keysPressed, totalKeys) / totalKeys) * 100);
-            const previousPacmanRect = this.getRelativeRect(this.catEl);
+            const previousPacmanRect = this.getPacmanRect();
 
             if (cycleState.cycle !== this.lastCycles[mode]) {
                 this.resetCycleVisuals(mode);
@@ -658,6 +779,7 @@
             this.root.style.setProperty('--maze-eaten', `${Math.min(percentage, 100)}%`);
 
             const catPosition = Math.min(this.getStartPosition() + percentage * (this.getTravelRange() / 100), 88);
+            this.catPositionPercent = catPosition;
             this.catEl.style.left = `${catPosition}%`;
             this.checkEnemyContacts(previousPacmanRect);
             this.catEl.classList.add('walking');
@@ -722,7 +844,8 @@
             this.root.style.setProperty('--maze-eaten', '0%');
 
             if (this.catEl) {
-                this.catEl.style.left = `${this.getStartPosition()}%`;
+                this.catPositionPercent = this.getStartPosition();
+                this.catEl.style.left = `${this.catPositionPercent}%`;
                 this.catEl.setAttribute('data-level', '0');
                 this.catEl.classList.remove('walking', 'eating', 'show-message');
             }
