@@ -398,16 +398,18 @@ html.dark-theme .hero-language-pill.is-active,
     contain: layout style;
 }
 
-.trust-grid {
+.trust-layout {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 336px);
+    gap: 1.25rem;
+    align-items: stretch;
 }
 
-@media (max-width: 768px) {
-    .trust-grid {
-        grid-template-columns: 1fr;
-    }
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    align-content: start;
 }
 
 .trust-item {
@@ -427,6 +429,34 @@ html.dark-theme .hero-language-pill.is-active,
 .trust-desc {
     font-size: 0.9rem;
     color: var(--landing-muted);
+}
+
+.trust-layout > .kbt-ad-slot--trust-side {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    clear: none;
+    align-self: stretch;
+}
+
+.trust-layout > .kbt-ad-slot--trust-side .kbt-ad-slot-inner {
+    min-height: 100%;
+    height: 100%;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+}
+
+.trust-layout > .kbt-ad-slot--trust-side .adsbygoogle {
+    width: 100%;
+    max-width: 336px;
+    min-height: 280px;
+}
+
+html.dark-theme .trust-layout > .kbt-ad-slot--trust-side .kbt-ad-slot-inner,
+[data-theme="dark"] .trust-layout > .kbt-ad-slot--trust-side .kbt-ad-slot-inner {
+    background: rgba(15, 23, 42, 0.46);
 }
 
 
@@ -1319,8 +1349,16 @@ html.dark-theme .guidelines.landing-guide .help-accordion details,
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .trust-layout {
+        grid-template-columns: 1fr;
+    }
+
     .trust-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .trust-layout > .kbt-ad-slot--trust-side .kbt-ad-slot-inner {
+        min-height: 180px;
     }
 }
 

@@ -87,27 +87,30 @@
   </section>
 
   <section class="trust-strip" aria-label="Key benefits">
-    <div class="container trust-grid">
-      <div class="trust-item">
-        <div class="trust-title">No installs</div>
-        <div class="trust-desc">Runs fully in your browser</div>
+    <div class="container trust-layout">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-title">No installs</div>
+          <div class="trust-desc">Runs fully in your browser</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-title">Layout aware</div>
+          <div class="trust-desc">QWERTY, AZERTY, Colemak, Dvorak</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-title">Live diagnostics</div>
+          <div class="trust-desc">Instant key, heatmap, and latency data</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-title">Privacy first</div>
+          <div class="trust-desc">No data leaves your device</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-title">Free &amp; Open Source</div>
+          <div class="trust-desc"><a href="https://github.com/nasirazizawan009/keyboardtester-click" target="_blank" rel="noopener noreferrer" style="color:var(--primary-color,#4b5eaa);text-decoration:none;font-weight:600;">View on GitHub</a></div>
+        </div>
       </div>
-      <div class="trust-item">
-        <div class="trust-title">Layout aware</div>
-        <div class="trust-desc">QWERTY, AZERTY, Colemak, Dvorak</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-title">Live diagnostics</div>
-        <div class="trust-desc">Instant key, heatmap, and latency data</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-title">Privacy first</div>
-        <div class="trust-desc">No data leaves your device</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-title">Free &amp; Open Source</div>
-        <div class="trust-desc"><a href="https://github.com/nasirazizawan009/keyboardtester-click" target="_blank" rel="noopener noreferrer" style="color:var(--primary-color,#4b5eaa);text-decoration:none;font-weight:600;">View on GitHub</a></div>
-      </div>
+      <?php kbtRenderAdSlot('home_trust_side', ['class' => 'kbt-ad-slot--trust-side', 'format' => 'rectangle', 'full_width_responsive' => false]); ?>
     </div>
   </section>
 
