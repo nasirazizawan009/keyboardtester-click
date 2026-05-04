@@ -432,9 +432,7 @@ $pageDescription = '{desc}';
       <section class="tool-shell"><?php include __DIR__ . '/../../{tool}'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/{slug}.php'; ?>
-    <?php $currentTool = '{related}'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/{slug}.php'; ?>
+    <?php $localizedToolSlug = '{slug}'; $localizedRelatedCategory = '{related}'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-{code}.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

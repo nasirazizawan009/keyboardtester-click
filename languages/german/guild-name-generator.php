@@ -53,9 +53,7 @@ $pageDescription = 'Generator für MMO-Gilden- und Clan-Namen in 6 Themen und 5 
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/guild_name_generator_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/guild-name-generator.php'; ?>
-    <?php $currentTool = 'mouse'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/guild-name-generator.php'; ?>
+    <?php $localizedToolSlug = 'guild-name-generator'; $localizedRelatedCategory = 'mouse'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-de.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

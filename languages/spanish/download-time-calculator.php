@@ -53,9 +53,7 @@ $pageDescription = 'Estima el tiempo de descarga de juegos, películas y backups
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/download_time_calc_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/download-time-calculator.php'; ?>
-    <?php $currentTool = 'mouse'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/download-time-calculator.php'; ?>
+    <?php $localizedToolSlug = 'download-time-calculator'; $localizedRelatedCategory = 'mouse'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-es.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

@@ -53,9 +53,7 @@ $pageDescription = '無料のウェブカメラミラー。水平反転、明る
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/webcam_mirror_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/webcam-mirror.php'; ?>
-    <?php $currentTool = 'webcam'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/webcam-mirror.php'; ?>
+    <?php $localizedToolSlug = 'webcam-mirror'; $localizedRelatedCategory = 'webcam'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-ja.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

@@ -53,9 +53,7 @@ $pageDescription = 'Wandelt CAS-Latenz (CL) und Geschwindigkeit (MT/s) in echte 
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/ram_latency_calc_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/ram-latency-calculator.php'; ?>
-    <?php $currentTool = 'mouse'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/ram-latency-calculator.php'; ?>
+    <?php $localizedToolSlug = 'ram-latency-calculator'; $localizedRelatedCategory = 'mouse'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-de.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

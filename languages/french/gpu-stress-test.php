@@ -53,9 +53,7 @@ $pageDescription = 'Shader fragment Mandelbrot en WebGL2 pour stresser toute GPU
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/gpu_stress_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/gpu-stress-test.php'; ?>
-    <?php $currentTool = 'screen'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/gpu-stress-test.php'; ?>
+    <?php $localizedToolSlug = 'gpu-stress-test'; $localizedRelatedCategory = 'screen'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-fr.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

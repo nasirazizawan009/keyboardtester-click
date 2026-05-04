@@ -53,9 +53,7 @@ $pageDescription = '휴대폰의 Vibration API를 프리셋 패턴으로, 게임
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/vibration_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/vibration-test.php'; ?>
-    <?php $currentTool = 'mouse'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/vibration-test.php'; ?>
+    <?php $localizedToolSlug = 'vibration-test'; $localizedRelatedCategory = 'mouse'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-ko.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

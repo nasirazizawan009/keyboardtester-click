@@ -53,9 +53,7 @@ $pageDescription = '자이로스코프의 알파, 베타, 감마를 3D 큐브와
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/gyroscope_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/gyroscope-test.php'; ?>
-    <?php $currentTool = 'mouse'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/gyroscope-test.php'; ?>
+    <?php $localizedToolSlug = 'gyroscope-test'; $localizedRelatedCategory = 'mouse'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-ko.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

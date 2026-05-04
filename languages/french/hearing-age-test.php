@@ -53,9 +53,7 @@ $pageDescription = 'Test d age auditif gratuit. Balayage de 12 frequences de 8 k
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/hearing_age_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/hearing-age-test.php'; ?>
-    <?php $currentTool = 'audio'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/hearing-age-test.php'; ?>
+    <?php $localizedToolSlug = 'hearing-age-test'; $localizedRelatedCategory = 'audio'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-fr.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

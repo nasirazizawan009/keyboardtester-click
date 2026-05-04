@@ -53,9 +53,7 @@ $pageDescription = '화면에 실제 크기로 표시되는 무료 온라인 자
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/online_ruler_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/online-ruler.php'; ?>
-    <?php $currentTool = 'mouse'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/online-ruler.php'; ?>
+    <?php $localizedToolSlug = 'online-ruler'; $localizedRelatedCategory = 'mouse'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-ko.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

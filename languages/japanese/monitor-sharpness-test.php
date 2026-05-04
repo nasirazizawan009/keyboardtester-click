@@ -53,9 +53,7 @@ $pageDescription = 'モニターの鮮明度を無料でテスト。Lagom風の1
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/monitor_sharpness_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/monitor-sharpness-test.php'; ?>
-    <?php $currentTool = 'screen'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/monitor-sharpness-test.php'; ?>
+    <?php $localizedToolSlug = 'monitor-sharpness-test'; $localizedRelatedCategory = 'screen'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-ja.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

@@ -53,9 +53,7 @@ $pageDescription = 'Prueba tu tiempo de reacción a un tono con la Web Audio API
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/auditory_reaction_time_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/auditory-reaction-time-test.php'; ?>
-    <?php $currentTool = 'audio'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/auditory-reaction-time-test.php'; ?>
+    <?php $localizedToolSlug = 'auditory-reaction-time-test'; $localizedRelatedCategory = 'audio'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-es.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

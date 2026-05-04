@@ -53,9 +53,7 @@ $pageDescription = 'Gere 10 gamertags aleatórios em 6 estilos (edgy, funny, cut
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/gamertag_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/gamertag-generator.php'; ?>
-    <?php $currentTool = 'mouse'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/gamertag-generator.php'; ?>
+    <?php $localizedToolSlug = 'gamertag-generator'; $localizedRelatedCategory = 'mouse'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-pt.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

@@ -53,9 +53,7 @@ $pageDescription = 'Kanalrundgang für 5.1 und 7.1 zur Prüfung der Verkabelung 
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/surround_sound_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/surround-sound-test.php'; ?>
-    <?php $currentTool = 'audio'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/surround-sound-test.php'; ?>
+    <?php $localizedToolSlug = 'surround-sound-test'; $localizedRelatedCategory = 'audio'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-de.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>

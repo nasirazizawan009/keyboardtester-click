@@ -53,9 +53,7 @@ $pageDescription = 'Minecraft용 픽셀 원 생성기: 윤곽, 채움, 두꺼운
       <section class="tool-shell"><?php include __DIR__ . '/../../tools/minecraft_circle_tool.php'; ?></section>
     </section>
     <?php include __DIR__ . '/../../includes/components/tools-list.php'; ?>
-    <?php include __DIR__ . '/../../help/seo-content/minecraft-circle-generator.php'; ?>
-    <?php $currentTool = 'mouse'; include __DIR__ . '/../../includes/related-tools.php'; ?>
-    <?php include __DIR__ . '/../../help/minecraft-circle-generator.php'; ?>
+    <?php $localizedToolSlug = 'minecraft-circle-generator'; $localizedRelatedCategory = 'mouse'; include __DIR__ . '/../../includes/components/localized-tool-support.php'; ?>
   </main>
   <?php $__f = __DIR__ . '/footer-ko.php'; if (file_exists($__f)) include $__f; else include __DIR__ . '/../../footer.php'; ?>
 </body>
