@@ -2,7 +2,7 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Mouse Diagnostics</p>
-      <h1 class="hero-title">Ghost Click Detector</h1>
+      <h1 class="hero-title">Free Mouse Ghost Click Detector</h1>
       <p class="hero-lede">Check whether one physical mouse press is being received as extra rapid clicks, often called ghost clicks or switch bounce. Test left, right, and middle buttons with live timing evidence.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#ghost-click-detector">Start double-click test</a>

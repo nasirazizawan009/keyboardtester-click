@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Ghost Click Detector - Mouse Double Click Test Online | KeyboardTester.click';
-$pageDescription = 'Test if your mouse double-clicks from one press. Free ghost click detector logs left, right, and middle clicks, switch-bounce timing, and suspicious intervals.';
+$pageTitle = 'Free Mouse Ghost Click Detector - Double Click Test Online | KeyboardTester.click';
+$pageDescription = 'Use a free mouse ghost click detector to check if one press creates extra rapid clicks. Test left, right, and middle buttons with switch-bounce timing.';
 $pageKeywords = 'ghost click detector, mouse double click test, double click test, mouse switch bounce test, mouse chatter test, right click double click test';
 $pageOgImage = 'images/ghost-click/hero.png';
 ?>
@@ -25,7 +25,7 @@ $pageOgImage = 'images/ghost-click/hero.png';
   include_once __DIR__ . '/includes/schema.php';
   echo generateToolPageSchema('ghost_click', [
       ['name' => 'Home', 'url' => '/'],
-      ['name' => 'Ghost Click Detector', 'url' => '']
+      ['name' => 'Free Mouse Ghost Click Detector', 'url' => '']
   ]);
   ?>
 </head>
@@ -39,7 +39,7 @@ $pageOgImage = 'images/ghost-click/hero.png';
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tester</p>
-          <h2 id="tool-stage-title">Ghost Click Detector</h2>
+          <h2 id="tool-stage-title">Free Mouse Ghost Click Detector</h2>
           <p class="section-lede">Click normally to see whether your mouse sends suspicious rapid duplicate events from the left, right, or middle button.</p>
         </div>
         <div class="tool-stage-actions">

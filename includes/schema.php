@@ -1111,7 +1111,7 @@ function getToolSchemaData($toolKey) {
             ]
         ],
         'ghost_click' => [
-            'name' => 'Ghost Click Detector',
+            'name' => 'Free Mouse Ghost Click Detector',
             'description' => 'Free ghost click detector and mouse double click test with left, right, and middle button timing logs, suspicious interval flags, and exportable switch-bounce evidence.',
             'url' => 'ghost-click-detector.php',
             'category' => 'UtilityApplication',

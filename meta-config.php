@@ -160,9 +160,9 @@ return [
         'og_image' => 'images/mouse/mouse-trail-og.png'
     ],
     'ghost-click-detector.php' => [
-        'title' => 'Ghost Click Detector - Mouse Double Click Test Online',
+        'title' => 'Free Mouse Ghost Click Detector - Double Click Test Online',
         // 56 chars
-        'description' => 'Test if your mouse double-clicks from one press. Free ghost click detector logs left, right, and middle clicks, switch-bounce timing, and suspicious intervals.',
+        'description' => 'Use a free mouse ghost click detector to check if one press creates extra rapid clicks. Test left, right, and middle buttons with switch-bounce timing.',
         'keywords' => 'ghost click detector, mouse double click test, double click test, mouse switch bounce test, mouse chatter test, right click double click test',
         'og_image' => 'images/mouse/ghost-click-og.png'
     ],
