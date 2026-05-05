@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-05 (Codex, CTR/internal-link update)
+**Last updated:** 2026-05-05 (Codex, ghost click CTR/tool update)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -71,6 +71,7 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-05 (Codex)
+- Upgraded and deployed `ghost-click-detector.php` for CTR and search-intent alignment. Rebuilt `tools/ghost_click_detector_tool.php` from a basic hardcoded click counter into a diagnostic mouse double-click/ghost-click tester with left/right/middle filters, adjustable 80/150/250/300 ms thresholds, target sample size, pause/reset, suspicious rate, fastest/average interval stats, per-event log, and TXT report export. Rewrote hero/stage copy, benefit cards, quick guide, and `help/seo-content/ghost-click.php` around "mouse double click test", switch bounce, and mouse chatter; reduced the visible FAQ to one focused section. Updated `meta-config.php`, `seo-config.php`, `includes/schema.php`, and `sitemap.xml`. Verification passed: PHP lint clean for changed PHP files, inline JS `node --check` clean, `git diff --check` clean, local and live `ghost-click-detector.php` HTTP 200 with one H1, one FAQPage schema, new title/tool markers present, old generic copy absent, and live sitemap lastmod `2026-05-05`. Submitted `https://keyboardtester.click/ghost-click-detector.php` via Bing Webmaster API (1/1 accepted) and ran live IndexNow (HTTP 200, 859 URLs).
 - Deployed scoped CTR and discovery updates for `latency-checker.php` and `mouse_sensitivity_DPI_tester.php`. Updated the latency page title/meta/hero/stage/help copy around "keyboard MS", "input delay", and "response time"; updated the DPI page title/meta/hero/stage/help copy around "DPI analyzer", "mouse DPI checker", and eDPI. Added a contextual homepage SEO-content link to `blog/keyboard-switch-types-gaming-guide.php` and a contextual DPI-page link to `scroll-wheel-test.php`. Regenerated/deployed `sitemap.xml`; live verification passed for latency, DPI, homepage, and sitemap lastmod markers. Submitted the four affected discovery URLs (`latency-checker.php`, `mouse_sensitivity_DPI_tester.php`, `scroll-wheel-test.php`, and `blog/keyboard-switch-types-gaming-guide.php`) through Bing Webmaster API (4/4 accepted) and IndexNow (HTTP 200). Note: Google URL Inspection API remains read-only and the Google Indexing API is officially limited to JobPosting/livestream video URLs, so normal tool/blog pages still need manual GSC URL Inspection "Request indexing" if the user wants to force a request.
 
 ### 2026-05-04 (Codex)

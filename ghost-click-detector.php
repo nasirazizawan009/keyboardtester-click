@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Double Click Test — Mouse Ghost Click Detector Online | KeyboardTester.click';
-$pageDescription = 'Free open source double click test — check if your mouse is ghost clicking or double-clicking on a single press. Test left, right and middle buttons. No install needed. Instant results.';
-$pageKeywords = 'ghost click detector, open source mouse test, double click test, mouse switch test, ghost click test';
+$pageTitle = 'Ghost Click Detector - Mouse Double Click Test Online | KeyboardTester.click';
+$pageDescription = 'Test if your mouse double-clicks from one press. Free ghost click detector logs left, right, and middle clicks, switch-bounce timing, and suspicious intervals.';
+$pageKeywords = 'ghost click detector, mouse double click test, double click test, mouse switch bounce test, mouse chatter test, right click double click test';
 $pageOgImage = 'images/ghost-click/hero.png';
 ?>
 <!DOCTYPE html>
@@ -38,9 +38,9 @@ $pageOgImage = 'images/ghost-click/hero.png';
     <section class="tool-stage" id="ghost-click-stage" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">
         <div>
-          <p class="section-kicker">Primary tool</p>
-          <h2 id="tool-stage-title">Double Click Test — Mouse Ghost Click Detector</h2>
-          <p class="section-lede">Use the live tool below to complete your test.</p>
+          <p class="section-kicker">Primary tester</p>
+          <h2 id="tool-stage-title">Mouse Double Click Test and Ghost Click Detector</h2>
+          <p class="section-lede">Click normally to see whether your mouse sends suspicious rapid duplicate events from the left, right, or middle button.</p>
         </div>
         <div class="tool-stage-actions">
           <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
@@ -54,20 +54,20 @@ $pageOgImage = 'images/ghost-click/hero.png';
     <section class="trust-strip" aria-label="Key benefits">
       <div class="container trust-grid">
         <div class="trust-item">
-          <div class="trust-title">Live feedback</div>
-          <div class="trust-desc">See results instantly</div>
+          <div class="trust-title">Single-click check</div>
+          <div class="trust-desc">Built for unwanted repeats</div>
         </div>
         <div class="trust-item">
-          <div class="trust-title">Quick reset</div>
-          <div class="trust-desc">Run another test fast</div>
+          <div class="trust-title">Advanced timing</div>
+          <div class="trust-desc">80 to 300 ms thresholds</div>
         </div>
         <div class="trust-item">
-          <div class="trust-title">Browser based</div>
-          <div class="trust-desc">No installs or signups</div>
+          <div class="trust-title">Button filters</div>
+          <div class="trust-desc">Left, right, and middle</div>
         </div>
         <div class="trust-item">
-          <div class="trust-title">Focused checks</div>
-          <div class="trust-desc">Built for ghost clicks</div>
+          <div class="trust-title">Private test</div>
+          <div class="trust-desc">Runs in your browser</div>
         </div>
       </div>
     </section>
@@ -75,26 +75,26 @@ $pageOgImage = 'images/ghost-click/hero.png';
     <section class="feature-band" aria-labelledby="feature-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">Double-Click Issues</p>
-          <h2 id="feature-title">Detect Ghost Clicks and Switch Bounce</h2>
-          <p class="section-lede">Run repeated clicks, inspect interval timing, and spot unwanted double-click behavior quickly.</p>
+          <p class="section-kicker">Double-click issues</p>
+          <h2 id="feature-title">Find Mouse Chatter, Switch Bounce, and Ghost Clicks</h2>
+          <p class="section-lede">A useful test should show timing evidence, not only a click count. This detector logs suspicious intervals and separates normal clicking from possible hardware bounce.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
-            <h3>Focused insights</h3>
-            <p>Track ghost clicks with live updates.</p>
+            <h3>Suspicious interval log</h3>
+            <p>See the exact timing between clicks and which ones were flagged.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Instant results</h3>
-            <p>See changes as you test in real time.</p>
+            <h3>Button-specific testing</h3>
+            <p>Check left, right, middle, or all buttons in one session.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Simple controls</h3>
-            <p>Start, stop, and reset in seconds.</p>
+            <h3>Adjustable thresholds</h3>
+            <p>Use strict 80 ms bounce detection or looser timing for noisy mice.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Repeatable tests</h3>
-            <p>Compare multiple runs quickly.</p>
+            <h3>Exportable evidence</h3>
+            <p>Download a short report before contacting support or testing another PC.</p>
           </article>
         </div>
       </div>
@@ -107,32 +107,32 @@ $pageOgImage = 'images/ghost-click/hero.png';
             <p class="section-kicker">Simple workflow</p>
             <h2 id="process-title">How to Check for Ghost Clicks</h2>
           </div>
-          <p class="section-lede">Start the test, click naturally, and review whether extra rapid clicks were detected.</p>
+          <p class="section-lede">Use deliberate single-clicks. If rapid duplicate intervals appear repeatedly, the mouse switch may be bouncing.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-1.png'); ?>" alt="Ghost click detector step 1 - start the mouse double click test" loading="lazy" width="600" height="400" decoding="async">
+              <img src="<?php echo url('images/ghost-click/step-1.png'); ?>" alt="Ghost click detector step 1 - choose a mouse button and start the double click test" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">01</div>
-            <h3>Start the test</h3>
-            <p>Open the tool and prepare to begin.</p>
+            <h3>Choose a button</h3>
+            <p>Select all buttons or isolate the left, middle, or right mouse button.</p>
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-2.png'); ?>" alt="Ghost click test step 2 - click normally to detect phantom double clicks" loading="lazy" width="600" height="407" decoding="async">
+              <img src="<?php echo url('images/ghost-click/step-2.png'); ?>" alt="Ghost click test step 2 - single click normally to detect duplicate mouse events" loading="lazy" width="600" height="407" decoding="async">
             </div>
             <div class="step-number">02</div>
-            <h3>Click normally</h3>
-            <p>to detect unexpected double clicks.</p>
+            <h3>Single-click normally</h3>
+            <p>Avoid intentional double-clicking so suspicious intervals are meaningful.</p>
           </article>
           <article class="process-card">
             <div class="process-media">
-              <img src="<?php echo url('images/ghost-click/step-3.png'); ?>" alt="Ghost click test results - view detected double click issues" loading="lazy" width="600" height="399" decoding="async">
+              <img src="<?php echo url('images/ghost-click/step-3.png'); ?>" alt="Ghost click test results - review suspicious interval timing and export a report" loading="lazy" width="600" height="399" decoding="async">
             </div>
             <div class="step-number">03</div>
-            <h3>Review results</h3>
-            <p>Check your ghost clicks stats and retest if needed.</p>
+            <h3>Review the timing</h3>
+            <p>Look at suspicious rate, fastest interval, and the event log before deciding.</p>
           </article>
         </div>
       </div>

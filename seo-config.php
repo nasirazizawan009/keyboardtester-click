@@ -85,17 +85,17 @@ $toolsConfig = [
         'path' => 'ghost-click-detector.php',
         'category' => 'mouse',
         'icon' => '👻',
-        'title' => 'Ghost Click Detector - Find Phantom Clicks | KBT',
-        'description' => 'Free ghost click detector to find phantom and double clicks. Diagnose mouse hardware issues online with no download. Essential for gaming mice testing.',
-        'keywords' => 'ghost click detector, phantom click test, double click test, mouse hardware test, gaming mouse check',
+        'title' => 'Ghost Click Detector - Mouse Double Click Test | KBT',
+        'description' => 'Free ghost click detector to test mouse double-clicking, switch bounce, and suspicious rapid intervals for left, right, and middle buttons.',
+        'keywords' => 'ghost click detector, mouse double click test, double click test, mouse switch bounce test, mouse chatter test',
         'og_image' => 'images/mouse/ghost-click-og.png',
-        'og_description' => 'Detect phantom clicks and double-clicks in your mouse. Identify hardware issues before they impact gaming.',
+        'og_description' => 'Detect mouse double-clicking, switch bounce, and suspicious rapid intervals with button filters and exportable timing logs.',
         'features' => [
-            'Double-click detection',
-            'Phantom click identification',
-            'Click timing analysis',
-            'Detailed click logs',
-            'Hardware issue diagnosis'
+            'Mouse double-click detection',
+            'Left, right, and middle button filters',
+            'Adjustable switch-bounce thresholds',
+            'Detailed click timing logs',
+            'Exportable report'
         ]
     ],
     'dpi_tester' => [

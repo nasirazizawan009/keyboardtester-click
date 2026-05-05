@@ -1112,26 +1112,26 @@ function getToolSchemaData($toolKey) {
         ],
         'ghost_click' => [
             'name' => 'Ghost Click Detector',
-            'description' => 'Free ghost click detector to find phantom clicks and double-click issues. Diagnose mouse hardware problems.',
+            'description' => 'Free ghost click detector and mouse double click test with left, right, and middle button timing logs, suspicious interval flags, and exportable switch-bounce evidence.',
             'url' => 'ghost-click-detector.php',
             'category' => 'UtilityApplication',
             'features' => [
-                'Phantom click detection',
-                'Double-click issue finder',
-                'Click timing analysis',
-                'Hardware issue diagnosis'
+                'Mouse double-click detection',
+                'Left, right, and middle button filters',
+                'Adjustable switch-bounce thresholds',
+                'Exportable click timing report'
             ]
         ],
         'double_click_test' => [
             'name' => 'Double Click Test',
-            'description' => 'Free online double click test to inspect suspicious rapid click intervals and possible mouse switch bounce.',
+            'description' => 'Free online double click test to inspect suspicious rapid click intervals, possible mouse switch bounce, and left, right, or middle button chatter.',
             'url' => 'double-click-test.php',
             'category' => 'UtilityApplication',
             'features' => [
                 'Rapid click interval logging',
-                'Fast click flagging',
-                'Resettable click history',
-                'Browser-based mouse check'
+                'Adjustable fast-click flagging',
+                'Button-specific click history',
+                'Browser-based mouse switch check'
             ]
         ],
         'dpi_tester' => [
@@ -1693,6 +1693,11 @@ function getToolFAQs($toolKey) {
             ['question' => 'How do I run a double click test online?', 'answer' => 'Start the detector, click naturally in the test area, and review whether suspiciously fast click intervals appear in the log.'],
             ['question' => 'What does a fast double click mean?', 'answer' => 'A fast interval can point to deliberate user double clicking or possible mouse switch bounce, so you should repeat the test several times for confirmation.'],
             ['question' => 'Does this prove my mouse is broken?', 'answer' => 'Not by itself. It helps surface suspicious click timing, but you should retest on another system and compare with normal use before deciding the switch is faulty.']
+        ],
+        'ghost_click' => [
+            ['question' => 'How do I test for mouse ghost clicks online?', 'answer' => 'Start the detector, choose the mouse button you suspect, and single-click normally. Repeated suspicious intervals on the same button can indicate mouse chatter or switch bounce.'],
+            ['question' => 'Which ghost click threshold should I use?', 'answer' => 'Use 150 ms first for a balanced test. Use 80 ms for stricter switch-bounce evidence and 250 ms or 300 ms only for broader troubleshooting.'],
+            ['question' => 'Can this test check right-click and middle-click issues?', 'answer' => 'Yes. The detector can isolate left, right, or middle mouse buttons and export a timing report for the session.']
         ],
         'webcam_not_working' => [
             ['question' => 'How do I check if my webcam is working?', 'answer' => 'Allow camera access, confirm the preview appears, and review the device and resolution information shown by the browser.'],

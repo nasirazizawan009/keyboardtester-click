@@ -160,10 +160,10 @@ return [
         'og_image' => 'images/mouse/mouse-trail-og.png'
     ],
     'ghost-click-detector.php' => [
-        'title' => 'Free Open Source Ghost Click Detector — Double Click Test',
-        // 57 chars
-        'description' => 'Free open source ghost click detector to find phantom and double clicks. Diagnose mouse hardware issues online with no download. Essential for gaming mice testing.',
-        'keywords' => 'ghost click detector, open source mouse tester, phantom click test, double click test, mouse hardware test',
+        'title' => 'Ghost Click Detector - Mouse Double Click Test Online',
+        // 56 chars
+        'description' => 'Test if your mouse double-clicks from one press. Free ghost click detector logs left, right, and middle clicks, switch-bounce timing, and suspicious intervals.',
+        'keywords' => 'ghost click detector, mouse double click test, double click test, mouse switch bounce test, mouse chatter test, right click double click test',
         'og_image' => 'images/mouse/ghost-click-og.png'
     ],
 
@@ -362,10 +362,10 @@ return [
         'og_image' => 'images/mouse/mouse-test-guide-1200.png'
     ],
     'double-click-test.php' => [
-        'title' => 'Free Open Source Double Click Test — Mouse Ghost Click Detector',
-        // 63 chars
-        'description' => 'Free open source double click test online. Detect unwanted double-clicks and ghost clicks from your mouse. Essential for diagnosing aging or faulty mouse switches. No download required.',
-        'keywords' => 'double click test, open source mouse test, mouse double click detector, ghost click test, mouse switch test',
+        'title' => 'Double Click Test - Mouse Switch Bounce Checker Online',
+        // 58 chars
+        'description' => 'Free double click test for mouse switch bounce. Log suspicious rapid intervals, check left/right/middle buttons, and export timing evidence in your browser.',
+        'keywords' => 'double click test, mouse double click detector, ghost click test, mouse switch bounce test, mouse chatter test',
         'og_image' => 'images/mouse/ghost-click-og.png'
     ],
     'black-screen-test.php' => [
