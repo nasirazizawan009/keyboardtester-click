@@ -39,7 +39,7 @@ $pageOgImage = 'images/ghost-click/hero.png';
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tester</p>
-          <h2 id="tool-stage-title">Mouse Double Click Test and Ghost Click Detector</h2>
+          <h2 id="tool-stage-title">Ghost Click Detector</h2>
           <p class="section-lede">Click normally to see whether your mouse sends suspicious rapid duplicate events from the left, right, or middle button.</p>
         </div>
         <div class="tool-stage-actions">
@@ -76,7 +76,7 @@ $pageOgImage = 'images/ghost-click/hero.png';
       <div class="container">
         <div class="section-head">
           <p class="section-kicker">Double-click issues</p>
-          <h2 id="feature-title">Find Mouse Chatter, Switch Bounce, and Ghost Clicks</h2>
+          <h2 id="feature-title">Find Mouse Chatter and Switch Bounce</h2>
           <p class="section-lede">A useful test should show timing evidence, not only a click count. This detector logs suspicious intervals and separates normal clicking from possible hardware bounce.</p>
         </div>
         <div class="landing-feature-grid">

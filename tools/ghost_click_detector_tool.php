@@ -336,7 +336,7 @@
 
   <div class="ghost-intro">
     <div>
-      <h3>Mouse double-click and ghost click diagnostics</h3>
+      <h3>Ghost click diagnostics</h3>
       <p>Click normally, one deliberate press at a time. The tool logs the intervals your browser receives and flags suspicious rapid repeats that can point to switch bounce or mouse chatter.</p>
     </div>
     <div class="ghost-status-pill" id="ghost-session-status">Ready to test</div>

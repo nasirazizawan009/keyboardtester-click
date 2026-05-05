@@ -2,8 +2,8 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Mouse Diagnostics</p>
-      <h1 class="hero-title">Ghost Click Detector - Test Mouse Double Clicking Online</h1>
-      <p class="hero-lede">Check whether one physical mouse press is being received as extra rapid clicks. Test left, right, and middle buttons with live timing evidence.</p>
+      <h1 class="hero-title">Ghost Click Detector</h1>
+      <p class="hero-lede">Check whether one physical mouse press is being received as extra rapid clicks, often called ghost clicks or switch bounce. Test left, right, and middle buttons with live timing evidence.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#ghost-click-detector">Start double-click test</a>
         <a class="landing-btn landing-btn-ghost" href="<?php echo url('pages/all-tools.php'); ?>">Browse all tools</a>
