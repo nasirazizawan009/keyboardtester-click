@@ -2,14 +2,14 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Mouse DPI and Sensitivity</p>
-      <h1 class="hero-title">Mouse DPI Tester & Checker Online</h1>
+      <h1 class="hero-title">Mouse DPI Tester & Analyzer Online</h1>
       <p class="hero-lede">Measure your actual mouse DPI with a ruler-distance test, compare repeated runs, and calculate eDPI for gaming or work.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#mouse-sensitivity-dpi-tester">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>
       </div>
       <div class="hero-badges">
-        <span class="hero-badge">DPI checker</span>
+        <span class="hero-badge">DPI analyzer</span>
         <span class="hero-badge">eDPI calculator</span>
         <span class="hero-badge">No install</span>
       </div>

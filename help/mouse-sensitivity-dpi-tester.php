@@ -1,12 +1,12 @@
 <section class="guidelines landing-guide" id="guidelines">
   <div class="help-header">
     <h2>Mouse DPI Tester Guide</h2>
-    <p>Quick steps to run the mouse dpi tester and review your DPI and sensitivity results.</p>
+    <p>Quick steps to run the mouse DPI tester, analyze your real DPI, and review sensitivity results.</p>
   </div>
 
   <div class="help-grid">
     <div class="help-card">
-      <h3>Start the test</h3>
+      <h3>Start the DPI analyzer</h3>
       <ol>
         <li>Open the tool and prepare to begin.</li>
         <li>Move the mouse along the guide to calibrate.</li>
@@ -22,11 +22,11 @@
       </ul>
     </div>
     <div class="help-card">
-      <h3>Review results</h3>
+      <h3>Review DPI results</h3>
       <ul>
-        <li>Look for missed inputs or delays.</li>
-        <li>Compare multiple runs for consistency.</li>
-        <li>Export or note results if required.</li>
+        <li>Compare measured DPI against your mouse software setting.</li>
+        <li>Run multiple passes and average the results for consistency.</li>
+        <li>Use the measured DPI with in-game sensitivity to calculate eDPI.</li>
       </ul>
     </div>
   </div>

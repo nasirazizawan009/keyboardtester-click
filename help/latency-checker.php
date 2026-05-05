@@ -1,7 +1,7 @@
 <section class="guidelines landing-guide" id="guidelines">
   <div class="help-header">
     <h2>Keyboard Latency Test Guide</h2>
-    <p>Use the latency checker to sample keyboard input delay in milliseconds and compare repeated runs on the same computer.</p>
+    <p>Use the latency checker to sample keyboard input delay, keyboard MS, and response-time consistency on the same computer.</p>
   </div>
 
   <div class="help-grid">
@@ -34,7 +34,7 @@
   <div class="help-grid">
     <div class="help-card">
       <h3>What this test measures</h3>
-      <p>This browser tool measures the delay from the keyboard event timestamp to JavaScript processing. It is best for comparing keyboards or connection modes on the same machine.</p>
+      <p>This browser tool measures the delay from the keyboard event timestamp to JavaScript processing. It is best for comparing keyboard MS, response time, or connection modes on the same machine.</p>
     </div>
     <div class="help-card">
       <h3>What it cannot measure</h3>

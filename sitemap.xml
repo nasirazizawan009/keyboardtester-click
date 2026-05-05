@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://keyboardtester.click/</loc>
-    <lastmod>2026-05-02</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/latency-checker.php</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/mouse_sensitivity_DPI_tester.php</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2000,7 +2000,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/accelerometer-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2024,13 +2024,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/auditory-reaction-time-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/bandwidth-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2066,7 +2066,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/cpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2084,7 +2084,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/download-time-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2108,43 +2108,43 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/frame-skipping-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/frequency-response-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/gamertag-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/gpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/guild-name-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/gyroscope-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/hearing-age-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2162,13 +2162,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/memory-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/minecraft-circle-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2186,7 +2186,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/monitor-sharpness-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2228,13 +2228,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/online-ruler.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/pitch-detector.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2246,13 +2246,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/raid-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/ram-latency-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2288,19 +2288,19 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/surround-sound-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/ttk-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/vibration-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2312,7 +2312,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/arabic/webcam-mirror.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2330,7 +2330,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/accelerometer-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2354,13 +2354,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/auditory-reaction-time-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/bandwidth-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2396,7 +2396,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/cpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2414,7 +2414,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/download-time-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2438,43 +2438,43 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/frame-skipping-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/frequency-response-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/gamertag-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/gpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/guild-name-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/gyroscope-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/hearing-age-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2492,13 +2492,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/memory-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/minecraft-circle-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2516,7 +2516,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/monitor-sharpness-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2558,13 +2558,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/online-ruler.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/pitch-detector.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2576,13 +2576,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/raid-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/ram-latency-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2618,19 +2618,19 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/surround-sound-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/ttk-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/vibration-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2642,7 +2642,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/russian/webcam-mirror.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2660,7 +2660,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/accelerometer-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2684,13 +2684,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/auditory-reaction-time-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/bandwidth-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2726,7 +2726,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/cpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2744,7 +2744,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/download-time-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2768,43 +2768,43 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/frame-skipping-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/frequency-response-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/gamertag-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/gpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/guild-name-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/gyroscope-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/hearing-age-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2822,13 +2822,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/memory-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/minecraft-circle-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2846,7 +2846,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/monitor-sharpness-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2888,13 +2888,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/online-ruler.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/pitch-detector.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2906,13 +2906,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/raid-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/ram-latency-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2948,19 +2948,19 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/surround-sound-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/ttk-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/vibration-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2972,7 +2972,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/spanish/webcam-mirror.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -2990,7 +2990,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/accelerometer-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3014,13 +3014,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/auditory-reaction-time-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/bandwidth-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3056,7 +3056,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/cpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3074,7 +3074,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/download-time-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3098,43 +3098,43 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/frame-skipping-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/frequency-response-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/gamertag-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/gpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/guild-name-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/gyroscope-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/hearing-age-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3152,13 +3152,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/memory-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/minecraft-circle-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3176,7 +3176,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/monitor-sharpness-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3218,13 +3218,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/online-ruler.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/pitch-detector.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3236,13 +3236,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/raid-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/ram-latency-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3278,19 +3278,19 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/surround-sound-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/ttk-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/vibration-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3302,7 +3302,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/french/webcam-mirror.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3320,7 +3320,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/accelerometer-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3344,13 +3344,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/auditory-reaction-time-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/bandwidth-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3386,7 +3386,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/cpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3404,7 +3404,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/download-time-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3428,43 +3428,43 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/frame-skipping-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/frequency-response-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/gamertag-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/gpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/guild-name-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/gyroscope-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/hearing-age-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3482,13 +3482,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/memory-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/minecraft-circle-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3506,7 +3506,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/monitor-sharpness-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3548,13 +3548,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/online-ruler.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/pitch-detector.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3566,13 +3566,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/raid-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/ram-latency-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3608,19 +3608,19 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/surround-sound-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/ttk-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/vibration-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3632,7 +3632,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/german/webcam-mirror.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3650,7 +3650,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/accelerometer-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3674,13 +3674,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/auditory-reaction-time-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/bandwidth-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3716,7 +3716,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/cpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3734,7 +3734,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/download-time-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3758,43 +3758,43 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/frame-skipping-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/frequency-response-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/gamertag-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/gpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/guild-name-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/gyroscope-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/hearing-age-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3812,13 +3812,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/memory-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/minecraft-circle-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3836,7 +3836,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/monitor-sharpness-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3878,13 +3878,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/online-ruler.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/pitch-detector.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3896,13 +3896,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/raid-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/ram-latency-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3938,19 +3938,19 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/surround-sound-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/ttk-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/vibration-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3962,7 +3962,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/portuguese/webcam-mirror.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -3980,7 +3980,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/accelerometer-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4004,13 +4004,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/auditory-reaction-time-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/bandwidth-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4046,7 +4046,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/cpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4064,7 +4064,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/download-time-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4088,43 +4088,43 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/frame-skipping-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/frequency-response-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/gamertag-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/gpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/guild-name-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/gyroscope-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/hearing-age-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4142,13 +4142,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/memory-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/minecraft-circle-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4166,7 +4166,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/monitor-sharpness-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4208,13 +4208,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/online-ruler.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/pitch-detector.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4226,13 +4226,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/raid-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/ram-latency-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4268,19 +4268,19 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/surround-sound-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/ttk-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/vibration-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4292,7 +4292,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/japanese/webcam-mirror.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4310,7 +4310,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/accelerometer-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4334,13 +4334,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/auditory-reaction-time-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/bandwidth-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4376,7 +4376,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/cpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4394,7 +4394,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/download-time-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4418,43 +4418,43 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/frame-skipping-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/frequency-response-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/gamertag-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/gpu-stress-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/guild-name-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/gyroscope-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/hearing-age-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4472,13 +4472,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/memory-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/minecraft-circle-generator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4496,7 +4496,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/monitor-sharpness-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4538,13 +4538,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/online-ruler.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/pitch-detector.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4556,13 +4556,13 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/raid-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/ram-latency-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4598,19 +4598,19 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/surround-sound-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/ttk-calculator.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/vibration-test.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4622,7 +4622,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/languages/korean/webcam-mirror.php</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -4640,7 +4640,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/about-us.php</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -4958,7 +4958,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/ai-gpu-test-webgpu-browser-ai-readiness.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -4980,7 +4980,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/best-laptops-with-good-gpu-2026.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5044,7 +5044,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/best-recent-gaming-headphone-launches-2026.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5074,7 +5074,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/best-recent-gaming-keyboard-launches-2026.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5100,7 +5100,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/best-recent-gaming-mouse-launches-2026.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5126,7 +5126,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/best-recent-wireless-keyboard-launches-2026.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5152,7 +5152,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/click-speed-test-measure-cps.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5166,7 +5166,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/dead-pixel-test-check-monitor.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5180,7 +5180,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/double-click-test-check-mouse-switch-bounce.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5194,7 +5194,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/free-ocr-tool-extract-text-from-images.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5208,7 +5208,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/free-qr-code-generator-create-online.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5222,7 +5222,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/ghost-click-detector-fix-double-clicking.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5236,7 +5236,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/headphone-speaker-test-left-right-channels.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5250,7 +5250,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/how-to-copy-pro-crosshair-cs2-valorant-generator-guide.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5268,7 +5268,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/how-to-measure-typing-speed-wpm.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5282,7 +5282,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/how-to-test-keyboard-online.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5296,7 +5296,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/how-to-test-microphone-online.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5310,7 +5310,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/how-to-test-mouse-buttons-scroll-wheel.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5324,7 +5324,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/input-latency-checker-keyboard-mouse-delay.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5338,7 +5338,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/keyboard-not-typing-lagging-sticky-fix-clean-guide.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5352,7 +5352,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/keyboard-polling-rate-test-check-keyboard-hz.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5366,12 +5366,12 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/keyboard-shortcuts-windows-mac-linux-complete-cheat-sheet.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://keyboardtester.click/blog/images/keyboard-shortcuts-v2-hero.webp</image:loc>
-      <image:title>Keyboard shortcuts cheat sheet — Windows, macOS and Linux</image:title>
+      <image:loc>https://keyboardtester.click/blog/images/keyboard-shortcuts-modifier-keys-hero.webp</image:loc>
+      <image:title>Close-up stock photo of Control, Option and Command modifier keys used for keyboard shortcuts</image:title>
     </image:image>
   </url>
   <url>
@@ -5398,7 +5398,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/keyboard-typing-double-letters-fix-key-chatter.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5420,7 +5420,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/lucky-wheel-spinner-random-selection.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5434,7 +5434,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/mouse-acceleration-windows-11-disable-raw-input-gaming-guide.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5452,7 +5452,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/mouse-dpi-tester-measure-sensitivity.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5466,7 +5466,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/mouse-trail-visualizer-movement-patterns.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5480,7 +5480,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/qr-code-reader-scan-decode-images.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5494,7 +5494,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/secure-password-generator-strong-random.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5508,7 +5508,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/v4n4g0n-keyboard-45-percent-custom-mechanical-guide.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5534,7 +5534,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/webcam-test-check-camera-video-calls.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5548,7 +5548,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/what-is-keyboard-ghosting-anti-ghosting-fix-guide.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5578,7 +5578,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/what-is-webrtc-leak-how-to-fix-guide.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5604,7 +5604,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/whatsapp-link-generator-direct-chat.php</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -5618,19 +5618,19 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/disclaimer.php</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/feedback.php</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://keyboardtester.click/privacy-policy.php</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Mouse DPI Tester & Checker - Measure DPI Online | KeyboardTester.click';
-$pageDescription = 'Use this free mouse DPI tester to check actual DPI with a ruler-distance test. Compare runs, calculate eDPI, and tune mouse sensitivity for gaming.';
+$pageTitle = 'DPI Tester - Mouse DPI Analyzer & Checker Online | KeyboardTester.click';
+$pageDescription = 'Use this free DPI tester and mouse DPI analyzer to check real mouse DPI with a measured-distance test, compare runs, and tune gaming sensitivity/eDPI.';
 $pageKeywords = 'mouse dpi test, dpi test, dpi checker, mouse dpi checker, dpi analyzer, check my mouse dpi, mouse sensitivity test, dpi finder, dpi tester online, mouse dpi calculator, test mouse dpi online';
 $pageOgImage = 'images/mouse-dpi/hero.png';
 ?>
@@ -39,7 +39,7 @@ $pageOgImage = 'images/mouse-dpi/hero.png';
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tool</p>
-          <h2 id="tool-stage-title">Mouse DPI Tester & eDPI Calculator</h2>
+          <h2 id="tool-stage-title">Mouse DPI Tester, Analyzer & eDPI Calculator</h2>
           <p class="section-lede">Enter a known distance, move the mouse through the track area, and compare measured DPI across repeated runs.</p>
         </div>
         <div class="tool-stage-actions">
@@ -54,7 +54,7 @@ $pageOgImage = 'images/mouse-dpi/hero.png';
     <section class="trust-strip" aria-label="Key benefits">
       <div class="container trust-grid">
         <div class="trust-item">
-          <div class="trust-title">DPI checker</div>
+          <div class="trust-title">DPI analyzer</div>
           <div class="trust-desc">Measure actual DPI online</div>
         </div>
         <div class="trust-item">
@@ -76,7 +76,7 @@ $pageOgImage = 'images/mouse-dpi/hero.png';
       <div class="container">
         <div class="section-head">
           <p class="section-kicker">DPI and Sensitivity</p>
-          <h2 id="feature-title">Measure Actual Mouse DPI From Real Movement</h2>
+          <h2 id="feature-title">Analyze Actual Mouse DPI From Real Movement</h2>
           <p class="section-lede">Check whether your configured DPI matches real cursor movement, then use the result for gaming sensitivity and eDPI tuning.</p>
         </div>
         <div class="landing-feature-grid">

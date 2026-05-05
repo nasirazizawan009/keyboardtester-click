@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Keyboard Latency Test - Check Input Delay Online | KeyboardTester.click';
-$pageDescription = 'Use this free keyboard latency test to check input delay, key response time, and browser event lag in milliseconds. Compare wired, wireless, and gaming keyboards.';
+$pageTitle = 'Keyboard Latency Test - Check Keyboard MS Online | KeyboardTester.click';
+$pageDescription = 'Run a free keyboard latency test to check keyboard MS, input delay, response time, best/worst samples, and browser event lag. No download.';
 $pageKeywords = 'keyboard latency test, keyboard latency checker, input lag test, input latency test, key press delay test, keyboard response time test, keyboard delay test, keyboard test latency, mouse latency test, online latency test';
 $pageOgImage = 'images/latency-checker/hero.png';
 ?>
@@ -39,8 +39,8 @@ $pageOgImage = 'images/latency-checker/hero.png';
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tool</p>
-          <h2 id="tool-stage-title">Keyboard Latency Test</h2>
-          <p class="section-lede">Start the test, press keys, and compare current, average, best, and worst event-delay samples.</p>
+          <h2 id="tool-stage-title">Keyboard Latency Test and MS Checker</h2>
+          <p class="section-lede">Start the test, press keys, and compare current, average, best, and worst keyboard MS samples.</p>
         </div>
         <div class="tool-stage-actions">
           <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
@@ -54,8 +54,8 @@ $pageOgImage = 'images/latency-checker/hero.png';
     <section class="trust-strip" aria-label="Key benefits">
       <div class="container trust-grid">
         <div class="trust-item">
-          <div class="trust-title">Input delay test</div>
-          <div class="trust-desc">Measure millisecond samples</div>
+          <div class="trust-title">Keyboard MS test</div>
+          <div class="trust-desc">Measure input delay samples</div>
         </div>
         <div class="trust-item">
           <div class="trust-title">Response time</div>
@@ -76,13 +76,13 @@ $pageOgImage = 'images/latency-checker/hero.png';
       <div class="container">
         <div class="section-head">
           <p class="section-kicker">Input Response Time</p>
-          <h2 id="feature-title">Check Keyboard Input Delay in Milliseconds</h2>
-          <p class="section-lede">Capture browser key-event samples, compare average delay, and spot inconsistent response times on the same machine.</p>
+          <h2 id="feature-title">Check Keyboard Input Delay and Response Time</h2>
+          <p class="section-lede">Capture browser key-event samples, compare average keyboard MS, and spot inconsistent response times on the same machine.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
             <h3>Key delay samples</h3>
-            <p>Press keys repeatedly to collect current, average, best, and worst delay values.</p>
+            <p>Press keys repeatedly to collect current, average, best, and worst keyboard delay values.</p>
           </article>
           <article class="landing-feature-card">
             <h3>Comparison ready</h3>

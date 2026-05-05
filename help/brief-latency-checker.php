@@ -3,14 +3,14 @@
     <div class="hero-copy">
       <p class="hero-kicker">Keyboard Input Delay</p>
       <h1 class="hero-title">Keyboard Latency Test Online</h1>
-      <p class="hero-lede">Press keys to sample browser key-event delay in milliseconds, then compare average, best, and worst response times.</p>
+      <p class="hero-lede">Press keys to check keyboard MS, input delay, and browser key-event response time, then compare average, best, and worst samples.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#latency-checker">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>
       </div>
       <div class="hero-badges">
-        <span class="hero-badge">Keyboard delay test</span>
-        <span class="hero-badge">Milliseconds</span>
+        <span class="hero-badge">Keyboard MS checker</span>
+        <span class="hero-badge">Input delay test</span>
         <span class="hero-badge">No install</span>
       </div>
       <div class="hero-metrics">

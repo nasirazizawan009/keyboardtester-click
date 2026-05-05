@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-04 (Codex, localized tool guide cleanup)
+**Last updated:** 2026-05-05 (Codex, CTR/internal-link update)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -69,6 +69,9 @@ This file is the **single source of truth** when handing off work between AI age
 ---
 
 ## 📜 Completed today (rolling 24-48h log)
+
+### 2026-05-05 (Codex)
+- Deployed scoped CTR and discovery updates for `latency-checker.php` and `mouse_sensitivity_DPI_tester.php`. Updated the latency page title/meta/hero/stage/help copy around "keyboard MS", "input delay", and "response time"; updated the DPI page title/meta/hero/stage/help copy around "DPI analyzer", "mouse DPI checker", and eDPI. Added a contextual homepage SEO-content link to `blog/keyboard-switch-types-gaming-guide.php` and a contextual DPI-page link to `scroll-wheel-test.php`. Regenerated/deployed `sitemap.xml`; live verification passed for latency, DPI, homepage, and sitemap lastmod markers. Submitted the four affected discovery URLs (`latency-checker.php`, `mouse_sensitivity_DPI_tester.php`, `scroll-wheel-test.php`, and `blog/keyboard-switch-types-gaming-guide.php`) through Bing Webmaster API (4/4 accepted) and IndexNow (HTTP 200). Note: Google URL Inspection API remains read-only and the Google Indexing API is officially limited to JobPosting/livestream video URLs, so normal tool/blog pages still need manual GSC URL Inspection "Request indexing" if the user wants to force a request.
 
 ### 2026-05-04 (Codex)
 - Fixed the English guide/help anomaly across localized tool pages. Added `includes/components/localized-tool-support.php` to render language-matched usage guidance, privacy notes, tips, and translated related-tool cards from the shared tool registry. Replaced the old English `help/seo-content`, `related-tools.php`, and `help` includes across 184 localized wrappers (23 tools x 8 locales) and updated `scripts/gen-localized-wrappers.py` so future wrappers use the localized support component. Deployed 185 live PHP files via SFTP/paramiko. Verification passed: PHP lint clean for 185 files, `git diff --check` clean, source scan found zero remaining localized wrapper references to the old English help/related includes, local render check passed for all 184 affected URLs, and live sweep passed for all 184 affected URLs with HTTP 200, localized support present, and no old English guide/related strings.
