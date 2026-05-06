@@ -157,6 +157,18 @@ Google Search Console shows "Couldn't fetch" for `sitemap.xml` despite the file 
 
 ## Common Tasks
 
+### Blog Post Consistency Agent
+
+When the user asks to create, rewrite, update, refresh, expand, or deploy any blog article, use the blog-post consistency workflow before editing content:
+
+1. Read `BLOG-POST-AGENT.md`.
+2. If the runtime supports subagents, invoke the `kbt-blog-post-consistency` / `kbt-blog-writer` specialist as a planning agent before writing. If subagents are unavailable, simulate the same checklist directly.
+3. Fill the blueprint parameters first: `mode`, `target_url_or_slug`, `primary_keyword`, `secondary_keywords`, `audience`, `intent`, `image_count`, `media_plan`, `fast_answer`, `jump_links`, `quick_tips`, `info_cards_or_tables`, `faq_pattern`, `related_tools`, `related_posts`, `sources_to_verify`, `files_expected`, `deploy_plan`, and `verification_plan`.
+4. Keep the standard article pattern consistent: fast answer box, jump links for long posts, practical tips/cards/tables, relevant images, visible FAQ matching FAQPage schema, BlogPosting/Article schema, BreadcrumbList schema, source links, related tools, related posts, and visible Published/Last updated dates.
+5. For live work, deploy blog article files and image assets with SFTP/paramiko, regenerate `sitemap.xml`, submit IndexNow, verify live HTTP/images/schema/blog-card/sitemap, and update `AI-COORDINATION.md`.
+
+Current reference template: `blog/input-latency-checker-keyboard-mouse-delay.php`. Local Claude agent prompt: `.claude/agents/kbt-blog-writer.md` mirrors the tracked `BLOG-POST-AGENT.md` contract.
+
 ### Add a New Tool Page
 1. Create PHP file in root directory
 2. Include `config.php` at top
@@ -190,7 +202,7 @@ Use the `url()` function for all internal links:
 
 ## Important Notes
 - Always use `config.php` helper functions for URLs
-- Blog directory (`/blog/`) is WordPress - manage separately
+- Blog directory (`/blog/`) is static PHP. Use `BLOG-POST-AGENT.md` for article structure and deploy ignored article/media files directly with SFTP/paramiko when needed.
 - Don't commit FTP credentials to public repos
 - Test locally before deploying to production
 - Run IndexNow submission after adding new pages
