@@ -1946,7 +1946,7 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5324,16 +5324,24 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/input-latency-checker-keyboard-mouse-delay.php</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://keyboardtester.click/blog/images/latency-jpg.jpg</image:loc>
-      <image:title>Input Latency Checker: Measure Keyboard and Mouse Delay</image:title>
+      <image:loc>https://keyboardtester.click/blog/images/input-latency-gaming-setup-hero.webp</image:loc>
+      <image:title>Competitive gaming setup used to test keyboard and mouse input latency</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/input-latency-keyboard-polling-workbench.webp</image:loc>
+      <image:title>Mechanical keyboards on a desk for keyboard polling rate and input latency testing</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/input-latency-mouse-response-pad.webp</image:loc>
+      <image:title>Gaming mouse on a mousepad for mouse click latency and response testing</image:title>
     </image:image>
     <image:image>
       <image:loc>https://keyboardtester.click/blog/images/input-latency-measure-guide.webp</image:loc>
-      <image:title>Technology concept showing network and input latency</image:title>
+      <image:title>Input latency measurement concept for keyboard and mouse delay diagnostics</image:title>
     </image:image>
   </url>
   <url>

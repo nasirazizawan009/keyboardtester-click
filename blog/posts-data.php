@@ -311,12 +311,12 @@ return [
     [
         'path'    => 'blog/input-latency-checker-keyboard-mouse-delay.php',
         'url'     => 'https://keyboardtester.click/blog/input-latency-checker-keyboard-mouse-delay.php',
-        'image'   => 'blog/images/input-latency-measure-guide.webp',
-        'alt'     => 'Input Latency Checker: Measure Keyboard and Mouse Delay',
+        'image'   => 'blog/images/input-latency-gaming-setup-hero.webp',
+        'alt'     => 'Competitive gaming setup used to test keyboard and mouse input latency',
         'date'    => 'March 28, 2026',
-        'updated' => 'March 28, 2026',
-        'title'   => 'Input Latency Checker: Measure Keyboard and Mouse Delay',
-        'excerpt' => 'Measure your keyboard and mouse input latency in milliseconds. Test reaction time and identify input lag from peripherals, USB ports, or wireless connections.',
+        'updated' => 'May 6, 2026',
+        'title'   => 'Input Latency Checker: Keyboard and Mouse Delay Guide for Gamers',
+        'excerpt' => 'Advanced gamer and power-user guide to keyboard and mouse input latency, polling rate, jitter, USB, wireless, OS queues, render delay, and practical fixes.',
     ],
     [
         'path'    => 'blog/mouse-trail-visualizer-movement-patterns.php',
