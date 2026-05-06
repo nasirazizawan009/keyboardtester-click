@@ -1487,13 +1487,14 @@ function getToolSchemaData($toolKey) {
             ]
         ],
         'latency_checker' => [
-            'name' => 'Keyboard Latency Test',
-            'description' => 'Free keyboard latency test to check input delay, key response time, and browser event lag in milliseconds.',
+            'name' => 'Keyboard and Mouse Latency Test',
+            'description' => 'Free keyboard latency test with mouse click mode, last-key display, jitter, consistency, and browser input delay samples in milliseconds.',
             'url' => 'latency-checker.php',
             'category' => 'UtilityApplication',
             'features' => [
-                'Latency measurement',
-                'Response time tracking',
+                'Keyboard latency measurement',
+                'Mouse click latency mode',
+                'Jitter and consistency tracking',
                 'Gaming optimization',
                 'Real-time feedback'
             ]
@@ -1569,9 +1570,9 @@ function getToolFAQs($toolKey) {
             ['question' => 'Is the keyboard test private?', 'answer' => 'Yes. Testing runs entirely in your browser and does not upload any data to our servers.']
         ],
         'latency_checker' => [
-            ['question' => 'What is input latency?', 'answer' => 'Input latency is the delay between pressing a key or moving a mouse and seeing the result on screen. It is the sum of USB polling delay, OS processing, application handling, GPU render, and monitor refresh. Competitive gaming targets under 20 ms end-to-end.'],
+            ['question' => 'What is input latency?', 'answer' => 'Input latency is the delay between pressing a key or clicking a mouse and seeing the result on screen. It is the sum of device polling delay, OS processing, application handling, GPU render, and monitor refresh. Competitive gaming targets under 20 ms end-to-end.'],
             ['question' => 'How accurate is this browser-based latency checker?', 'answer' => 'The tool measures the time between the keydown event and the JavaScript event loop processing it, which captures OS and browser latency but not monitor or USB polling latency. Use it for relative comparisons (keyboard A vs keyboard B on the same machine), not absolute hardware specs.'],
-            ['question' => 'What is a good keyboard latency?', 'answer' => 'Wired gaming keyboards typically measure 1-8 ms. Wireless 2.4 GHz is usually 3-10 ms. Bluetooth can spike to 30+ ms. Office-grade keyboards often report 10-20 ms under browser timing.'],
+            ['question' => 'What is a good keyboard latency?', 'answer' => 'Wired gaming keyboards typically measure 1-8 ms. Wireless 2.4 GHz is usually 3-10 ms. Bluetooth can spike to 30+ ms. Office-grade keyboards often report 10-20 ms under browser timing. Use the mouse click mode separately for mouse-button consistency.'],
             ['question' => 'Why does my wireless keyboard show higher latency?', 'answer' => 'Wireless protocols add radio-link overhead. Most 2.4 GHz gaming dongles keep the extra latency under 5 ms. Bluetooth HID runs on slotted polling and can add 10-30 ms, which is why competitive players still prefer wired.'],
             ['question' => 'Can this replace a dedicated latency tester?', 'answer' => 'No. Hardware testers like the Nvidia LDAT or the Logitech Latency Tool measure photon-to-event timing with microsecond accuracy. This browser tool measures a subset of the chain - useful for directional comparison rather than forensic measurement.']
         ],

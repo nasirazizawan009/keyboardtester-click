@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Keyboard Latency Test - Check Keyboard MS Online | KeyboardTester.click';
-$pageDescription = 'Run a free keyboard latency test to check keyboard MS, input delay, response time, best/worst samples, and browser event lag. No download.';
-$pageKeywords = 'keyboard latency test, keyboard latency checker, input lag test, input latency test, key press delay test, keyboard response time test, keyboard delay test, keyboard test latency, mouse latency test, online latency test';
+$pageTitle = 'Keyboard Latency Test - Key & Mouse Input Delay Checker | KeyboardTester.click';
+$pageDescription = 'Run a free keyboard latency test with mouse click latency mode, last-key display, jitter, consistency, best/worst samples, and browser input delay.';
+$pageKeywords = 'keyboard latency test, keyboard latency checker, input lag test, input latency test, key press delay test, keyboard response time test, keyboard delay test, keyboard test latency, mouse latency test, mouse click latency test, online latency test';
 $pageOgImage = 'images/latency-checker/hero.png';
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ $pageOgImage = 'images/latency-checker/hero.png';
   include_once __DIR__ . '/includes/schema.php';
   echo generateToolPageSchema('latency_checker', [
       ['name' => 'Home', 'url' => '/'],
-      ['name' => 'Keyboard Latency Test', 'url' => '']
+      ['name' => 'Keyboard and Mouse Latency Test', 'url' => '']
   ]);
   ?>
 </head>
@@ -39,8 +39,8 @@ $pageOgImage = 'images/latency-checker/hero.png';
       <div class="container tool-stage-header">
         <div>
           <p class="section-kicker">Primary tool</p>
-          <h2 id="tool-stage-title">Keyboard Latency Test and MS Checker</h2>
-          <p class="section-lede">Start the test, press keys, and compare current, average, best, and worst keyboard MS samples.</p>
+          <h2 id="tool-stage-title">Keyboard and Mouse Latency Checker</h2>
+          <p class="section-lede">Start the test, capture key presses or mouse clicks, and compare current, average, jitter, best, and worst input-delay samples.</p>
         </div>
         <div class="tool-stage-actions">
           <a class="landing-btn landing-btn-ghost" href="#guidelines">View quick tips</a>
@@ -55,15 +55,15 @@ $pageOgImage = 'images/latency-checker/hero.png';
       <div class="container trust-grid">
         <div class="trust-item">
           <div class="trust-title">Keyboard MS test</div>
-          <div class="trust-desc">Measure input delay samples</div>
+          <div class="trust-desc">See the exact key pressed</div>
         </div>
         <div class="trust-item">
-          <div class="trust-title">Response time</div>
-          <div class="trust-desc">Compare best and average delay</div>
+          <div class="trust-title">Mouse latency mode</div>
+          <div class="trust-desc">Capture click response samples</div>
         </div>
         <div class="trust-item">
-          <div class="trust-title">Browser based</div>
-          <div class="trust-desc">No installs or signups</div>
+          <div class="trust-title">Jitter and consistency</div>
+          <div class="trust-desc">Spot noisy input spikes</div>
         </div>
         <div class="trust-item">
           <div class="trust-title">Honest limits</div>
@@ -76,21 +76,21 @@ $pageOgImage = 'images/latency-checker/hero.png';
       <div class="container">
         <div class="section-head">
           <p class="section-kicker">Input Response Time</p>
-          <h2 id="feature-title">Check Keyboard Input Delay and Response Time</h2>
-          <p class="section-lede">Capture browser key-event samples, compare average keyboard MS, and spot inconsistent response times on the same machine.</p>
+          <h2 id="feature-title">Check Keyboard Input Delay, Mouse Click Latency, and Jitter</h2>
+          <p class="section-lede">Capture browser input-event samples, compare average keyboard MS or mouse click delay, and spot inconsistent response times on the same machine.</p>
         </div>
         <div class="landing-feature-grid">
           <article class="landing-feature-card">
-            <h3>Key delay samples</h3>
-            <p>Press keys repeatedly to collect current, average, best, and worst keyboard delay values.</p>
+            <h3>Last key display</h3>
+            <p>See the pressed key or mouse button in a large live input panel while samples are recorded.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Comparison ready</h3>
-            <p>Use the same browser and device to compare wired, 2.4 GHz, or Bluetooth keyboards.</p>
+            <h3>Keyboard and mouse modes</h3>
+            <p>Switch between keydown samples and mouse-click samples without leaving the latency checker.</p>
           </article>
           <article class="landing-feature-card">
-            <h3>Input lag context</h3>
-            <p>Learn which parts of the full keyboard-to-screen chain are included.</p>
+            <h3>Jitter and sample graph</h3>
+            <p>Use standard deviation, consistency labels, and recent-sample bars to find spikes.</p>
           </article>
           <article class="landing-feature-card">
             <h3>Private browser test</h3>
@@ -107,7 +107,7 @@ $pageOgImage = 'images/latency-checker/hero.png';
             <p class="section-kicker">Simple workflow</p>
             <h2 id="process-title">How to Test Keyboard Latency Online</h2>
           </div>
-          <p class="section-lede">Start the test, press the same key several times, and compare millisecond samples for consistency.</p>
+          <p class="section-lede">Start the test, repeat the same key or mouse click, and compare millisecond samples for consistency.</p>
         </div>
         <div class="process-grid">
           <article class="process-card">
@@ -123,16 +123,16 @@ $pageOgImage = 'images/latency-checker/hero.png';
               <img src="<?php echo url('images/latency-checker/step-2.png'); ?>" alt="Latency test step 2 - press keys to measure response time" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">02</div>
-            <h3>Press keys repeatedly</h3>
-            <p>Use consistent key presses to collect enough samples.</p>
+            <h3>Press keys or click the pad</h3>
+            <p>Use consistent key presses or mouse clicks to collect enough samples.</p>
           </article>
           <article class="process-card">
             <div class="process-media">
               <img src="<?php echo url('images/latency-checker/step-3.png'); ?>" alt="Input latency results - millisecond response time display" loading="lazy" width="600" height="400" decoding="async">
             </div>
             <div class="step-number">03</div>
-            <h3>Compare the numbers</h3>
-            <p>Watch the average, best, worst, and sample count before retesting.</p>
+            <h3>Compare delay and jitter</h3>
+            <p>Watch the average, best, worst, jitter, graph, and sample count before retesting.</p>
           </article>
         </div>
       </div>
@@ -164,11 +164,17 @@ $pageOgImage = 'images/latency-checker/hero.png';
           </table>
         </div>
         <div style="margin-top:32px;padding:16px 20px;background:var(--surface);border-left:4px solid var(--accent-primary);border-radius:6px;">
-          <strong>Note on browser-based latency measurement:</strong> this tool measures the time from JavaScript <code>keydown</code> event to processing — a subset of the full input chain. It does NOT include USB polling delay (typically 1ms at 1000Hz, 8ms at 125Hz), monitor refresh delay, or switch debounce. For absolute hardware specs, dedicated tools like NVIDIA LDAT measure photon-to-event timing. For comparing keyboards on the same machine, browser timing is reliable and repeatable.
+          <strong>Note on browser-based latency measurement:</strong> this tool measures the time from JavaScript input events to page processing - a subset of the full input chain. It does NOT include exact switch actuation, USB polling packet timing, monitor refresh delay, or switch debounce. For absolute hardware specs, dedicated tools like NVIDIA LDAT measure photon-to-event timing. For comparing keyboards or mouse clicks on the same machine, browser timing is useful and repeatable.
         </div>
       </div>
     </section>
 
+    <?php
+      $currentTool = 'latency';
+      $relatedToolsTitle = 'Related Mouse and Input Latency Tools';
+      $relatedToolsIntro = 'Continue with mouse click checks, polling-rate tests, reaction timing, and keyboard diagnostics.';
+      include 'includes/related-tools.php';
+    ?>
     <?php include 'includes/components/tools-list.php'; ?>
     <?php include 'help/latency-checker.php'; ?>
   <?php $toolBlogSlug = 'input-latency-checker-keyboard-mouse-delay.php'; include __DIR__ . '/includes/components/tool-blog-cta.php'; ?>

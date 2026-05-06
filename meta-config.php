@@ -65,10 +65,10 @@ return [
         'og_image' => 'images/keyboard/typing-test-og.png'
     ],
     'latency-checker.php' => [
-        'title' => 'Keyboard Latency Test - Check Input Delay Online',
+        'title' => 'Keyboard Latency Test - Key & Mouse Input Delay',
         // 51 chars
-        'description' => 'Use this free keyboard latency test to check input delay, key response time, and browser event lag in milliseconds. Compare wired, wireless, and gaming keyboards.',
-        'keywords' => 'keyboard latency test, keyboard delay test, input delay test, keyboard response time test, keyboard input lag test',
+        'description' => 'Use this free keyboard latency test with mouse click mode, last-key display, jitter, consistency, and browser input delay samples in milliseconds.',
+        'keywords' => 'keyboard latency test, keyboard delay test, input delay test, keyboard response time test, keyboard input lag test, mouse click latency test',
         'og_image' => 'images/keyboard/latency-checker-og.png'
     ],
 

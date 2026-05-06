@@ -1,7 +1,7 @@
 <section class="guidelines landing-guide" id="guidelines">
   <div class="help-header">
-    <h2>Keyboard Latency Test Guide</h2>
-    <p>Use the latency checker to sample keyboard input delay, keyboard MS, and response-time consistency on the same computer.</p>
+    <h2>Keyboard and Mouse Latency Test Guide</h2>
+    <p>Use the latency checker to sample keyboard input delay, mouse click latency, jitter, and response-time consistency on the same computer.</p>
   </div>
 
   <div class="help-grid">
@@ -9,24 +9,24 @@
       <h3>Start the latency test</h3>
       <ol>
         <li>Focus the page and start the live tester.</li>
-        <li>Press the same key several times to collect enough samples.</li>
-        <li>Reset and repeat after changing keyboard, browser, or connection type.</li>
+        <li>Use Keyboard mode for key presses or Mouse click mode for the click pad.</li>
+        <li>Reset and repeat after changing keyboard, mouse, browser, or connection type.</li>
       </ol>
     </div>
     <div class="help-card">
       <h3>Reduce noisy results</h3>
       <ul>
         <li>Close heavy tabs, games, and background apps before testing.</li>
-        <li>Use the same browser when comparing two keyboards.</li>
-        <li>Test wired, 2.4 GHz, and Bluetooth modes separately if your keyboard supports them.</li>
+        <li>Use the same browser when comparing two keyboards or two mice.</li>
+        <li>Test wired, 2.4 GHz, and Bluetooth modes separately if your device supports them.</li>
       </ul>
     </div>
     <div class="help-card">
       <h3>Review results</h3>
       <ul>
         <li>Use the average to judge normal delay.</li>
-        <li>Use the best and worst values to spot jitter or spikes.</li>
-        <li>Compare multiple runs before blaming the keyboard.</li>
+        <li>Use jitter, best, and worst values to spot inconsistent spikes.</li>
+        <li>Compare multiple runs before blaming the keyboard or mouse.</li>
       </ul>
     </div>
   </div>
@@ -34,11 +34,11 @@
   <div class="help-grid">
     <div class="help-card">
       <h3>What this test measures</h3>
-      <p>This browser tool measures the delay from the keyboard event timestamp to JavaScript processing. It is best for comparing keyboard MS, response time, or connection modes on the same machine.</p>
+      <p>This browser tool measures the delay from keyboard or pointer event timestamps to JavaScript processing. It is best for comparing keyboard MS, mouse click delay, response time, or connection modes on the same machine.</p>
     </div>
     <div class="help-card">
       <h3>What it cannot measure</h3>
-      <p>It cannot directly measure the exact physical switch actuation point, USB polling packet, monitor refresh, or full end-to-end photon response.</p>
+      <p>It cannot directly measure exact physical switch actuation, mouse switch travel, USB polling packets, monitor refresh, or full end-to-end photon response.</p>
     </div>
     <div class="help-card">
       <h3>How to lower input delay</h3>
@@ -48,8 +48,8 @@
 
   <div class="help-accordion">
     <details>
-      <summary>Why is the keyboard latency test not responding?</summary>
-      <p>Make sure the page is focused, click inside the tester, and confirm another app is not capturing the key press first.</p>
+      <summary>Why is the latency test not responding?</summary>
+      <p>Make sure the page is focused, the test is started, and the correct Keyboard or Mouse click mode is selected.</p>
     </details>
     <details>
       <summary>How do I reset the test?</summary>
@@ -69,11 +69,11 @@
     </details>
     <details>
       <summary>What should I do if latency results look wrong?</summary>
-      <p>Run another sample set, close heavy background apps, try a different browser, and compare against another keyboard on the same machine.</p>
+      <p>Run another sample set, close heavy background apps, try a different browser, and compare against another keyboard or mouse on the same machine.</p>
     </details>
   </div>
 
   <div class="help-footer">
-    <p>Need more tools? Explore keyboard, mouse, audio, and utility testers in the tools list below.</p>
+    <p>Need more tools? Use the mouse latency mode, mouse tester, polling-rate test, and reaction-time test links near the live tool.</p>
   </div>
 </section>

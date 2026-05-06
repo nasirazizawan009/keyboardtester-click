@@ -2,15 +2,15 @@
   <div class="container landing-hero-grid">
     <div class="hero-copy">
       <p class="hero-kicker">Keyboard Input Delay</p>
-      <h1 class="hero-title">Keyboard Latency Test Online</h1>
-      <p class="hero-lede">Press keys to check keyboard MS, input delay, and browser key-event response time, then compare average, best, and worst samples.</p>
+      <h1 class="hero-title">Keyboard Latency Test and Mouse Input Delay Checker</h1>
+      <p class="hero-lede">Press keys or switch to mouse-click mode to check input delay, browser response time, jitter, and best/worst samples.</p>
       <div class="hero-actions">
         <a class="landing-btn landing-btn-primary" href="#latency-checker">Start test</a>
         <a class="landing-btn landing-btn-ghost" href="#tools">Browse all tools</a>
       </div>
       <div class="hero-badges">
         <span class="hero-badge">Keyboard MS checker</span>
-        <span class="hero-badge">Input delay test</span>
+        <span class="hero-badge">Mouse latency mode</span>
         <span class="hero-badge">No install</span>
       </div>
       <div class="hero-metrics">
@@ -35,11 +35,11 @@
       <div class="hero-stack">
         <div class="mini-card">
           <div class="mini-title">Input delay samples</div>
-          <p>Compare current, average, best, and worst timings.</p>
+          <p>Compare current, average, jitter, best, and worst timings.</p>
         </div>
         <div class="mini-card">
           <div class="mini-title">Browser timing</div>
-          <p>Useful for comparing keyboards on the same machine.</p>
+          <p>Useful for comparing keyboards or mouse clicks on the same machine.</p>
         </div>
       </div>
     </div>

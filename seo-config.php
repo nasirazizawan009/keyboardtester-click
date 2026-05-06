@@ -297,19 +297,20 @@ $toolsConfig = [
         ]
     ],
     'latency_check' => [
-        'name' => 'Keyboard Latency Test',
+        'name' => 'Keyboard and Mouse Latency Test',
         'path' => 'latency-checker.php',
         'category' => 'keyboard',
         'icon' => '⏱️',
-        'title' => 'Keyboard Latency Test - Check Input Delay Online | KBT',
-        'description' => 'Use this free keyboard latency test to check input delay, key response time, and browser event lag in milliseconds. Compare wired, wireless, and gaming keyboards.',
-        'keywords' => 'keyboard latency test, keyboard delay test, input delay test, keyboard response time test, keyboard input lag test',
+        'title' => 'Keyboard Latency Test - Key & Mouse Input Delay | KBT',
+        'description' => 'Use this free keyboard latency test with mouse click mode, last-key display, jitter, consistency, and browser input delay samples in milliseconds.',
+        'keywords' => 'keyboard latency test, keyboard delay test, input delay test, keyboard response time test, keyboard input lag test, mouse click latency test',
         'og_image' => 'images/keyboard/latency-checker-og.png',
-        'og_description' => 'Check keyboard input delay and browser event response time in milliseconds for wired, wireless, and gaming keyboards.',
+        'og_description' => 'Check keyboard input delay, mouse click latency, jitter, and browser event response time in milliseconds.',
         'features' => [
             'Real-time latency measurement',
-            'Key press timing analysis',
+            'Key press and mouse click timing analysis',
             'Average latency calculation',
+            'Jitter and consistency scoring',
             'Gaming optimization',
             'Performance tracking'
         ]
