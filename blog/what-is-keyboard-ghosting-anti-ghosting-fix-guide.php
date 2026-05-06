@@ -1,6 +1,7 @@
 <?php
 include __DIR__ . '/../config.php';
 require_once __DIR__ . '/../includes/components/blog-article-ads.php';
+require_once __DIR__ . '/../includes/components/blog-template-enhancements.php';
 $pageTitle       = 'Anti-Ghosting Keyboard Test: Ghosting, NKRO & Fixes (2026)';
 $pageDescription = 'Anti-ghosting keyboard guide: learn what ghosting means, how NKRO works, how to test key rollover, and how to fix dropped keys on laptop or gaming keyboards.';
 $pageOgImage     = 'blog/images/keyboard-ghosting-mechanical-rgb-hero.jpg';
@@ -70,7 +71,7 @@ $pageCanonical   = absoluteUrl('blog/what-is-keyboard-ghosting-anti-ghosting-fix
         "headline": "Anti-Ghosting Keyboard Test: Ghosting, NKRO & Fixes (2026)",
         "description": "Anti-ghosting keyboard guide: learn what ghosting means, how NKRO works, how to test key rollover, and how to fix dropped keys on laptop or gaming keyboards.",
         "datePublished": "2026-04-20",
-        "dateModified": "2026-05-01",
+        "dateModified": "2026-05-06",
         "image": "<?php echo absoluteUrl('blog/images/keyboard-ghosting-mechanical-rgb-hero.jpg'); ?>",
         "author": {
             "@type": "Organization",
@@ -173,6 +174,7 @@ $pageCanonical   = absoluteUrl('blog/what-is-keyboard-ghosting-anti-ghosting-fix
         ]
     }
     </script>
+    <?php kbtRenderBlogTemplateSchema('what-is-keyboard-ghosting-anti-ghosting-fix-guide.php', ['video_schema' => false, 'faq_schema' => false, 'breadcrumb' => true, 'video_id' => 'osKLmfwBxoU']); ?>
 </head>
 <body>
 <?php include __DIR__ . '/../header.php'; ?>
@@ -188,9 +190,10 @@ $pageCanonical   = absoluteUrl('blog/what-is-keyboard-ghosting-anti-ghosting-fix
              loading="eager" width="1280" height="720" decoding="async" fetchpriority="high">
 
         <h1 class="post-title">What Is Keyboard Ghosting? Anti-Ghosting, NKRO & Every Fix Explained (2026)</h1>
-        <p class="post-meta"><span>Published <time datetime="2026-04-20">April 20, 2026</time></span> &nbsp;&middot;&nbsp; <span>Last updated <time datetime="2026-05-01">May 1, 2026</time></span> &nbsp;&middot;&nbsp; 11 min read</p>
+        <p class="post-meta"><span>Published <time datetime="2026-04-20">April 20, 2026</time></span> &nbsp;&middot;&nbsp; <span>Last updated <time datetime="2026-05-06">May 6, 2026</time></span> &nbsp;&middot;&nbsp; 11 min read</p>
 
         <div class="blog-content">
+<?php kbtRenderBlogTemplateIntro('what-is-keyboard-ghosting-anti-ghosting-fix-guide.php', ['answer' => false, 'jump' => false, 'quick_tips' => true, 'video' => false, 'related' => true, 'faq' => false, 'video_id' => 'osKLmfwBxoU']); ?>
 
 <p>You're playing a fast-paced game. You hold <strong>W</strong> to run, tap <strong>Shift</strong> to sprint, hit <strong>Space</strong> to jump — and your character keeps running off ledges because the jump never fires. Or you're typing quickly and one letter in a three-key combo just… vanishes. That silent, intermittent key drop is <strong>keyboard ghosting</strong>, and it isn't a driver bug or a Windows problem — it's a hardware limitation baked into how your keyboard is wired.</p>
 
@@ -462,6 +465,8 @@ $pageCanonical   = absoluteUrl('blog/what-is-keyboard-ghosting-anti-ghosting-fix
     <li><a href="<?php echo url('blog/keyboard-not-typing-lagging-sticky-fix-clean-guide.php'); ?>">Keyboard Not Typing, Lagging, or Sticky?</a> — for broader keyboard-input issues.</li>
     <li><a href="<?php echo url(''); ?>">Main Keyboard Tester</a> — test every key on your board.</li>
 </ul>
+
+<?php kbtRenderBlogTemplateFooter('what-is-keyboard-ghosting-anti-ghosting-fix-guide.php', ['quick_tips' => true, 'video' => false, 'related' => true, 'faq' => false]); ?>
 
         </div>
     </article>

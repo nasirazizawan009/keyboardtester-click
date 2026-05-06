@@ -1,6 +1,7 @@
 <?php
 include __DIR__ . '/../config.php';
 require_once __DIR__ . '/../includes/components/blog-article-ads.php';
+require_once __DIR__ . '/../includes/components/blog-template-enhancements.php';
 $pageTitle = 'Best Laptops With Good GPU in 2026: RTX 5090 and RTX 5080 Picks - KeyboardTester.click';
 $pageDescription = 'A researched 2026 guide to laptops with good GPUs, including RTX 5090 and RTX 5080 models, current prices, review notes, specs, images, and buying advice.';
 $pageOgImage = 'blog/images/good-gpu-laptop-2026-asus-scar-18.webp';
@@ -57,7 +58,7 @@ $pageCanonical = absoluteUrl('blog/best-laptops-with-good-gpu-2026.php');
         "headline": "Best Laptops With Good GPU in 2026: RTX 5090 and RTX 5080 Picks",
         "description": "A researched 2026 guide to laptops with good GPUs, including RTX 5090 and RTX 5080 models, current prices, review notes, specs, images, and buying advice.",
         "datePublished": "2026-05-02",
-        "dateModified": "2026-05-02",
+        "dateModified": "2026-05-06",
         "image": [
             "<?php echo absoluteUrl('blog/images/good-gpu-laptop-2026-asus-scar-18.webp'); ?>",
             "<?php echo absoluteUrl('blog/images/good-gpu-laptop-2026-razer-blade-16.webp'); ?>",
@@ -91,6 +92,7 @@ $pageCanonical = absoluteUrl('blog/best-laptops-with-good-gpu-2026.php');
         ]
     }
     </script>
+    <?php kbtRenderBlogTemplateSchema('best-laptops-with-good-gpu-2026.php', ['video_schema' => true, 'faq_schema' => false, 'breadcrumb' => true, 'video_id' => 'RvCwMskRZHc']); ?>
 </head>
 <body>
 <?php include __DIR__ . '/../header.php'; ?>
@@ -101,8 +103,9 @@ $pageCanonical = absoluteUrl('blog/best-laptops-with-good-gpu-2026.php');
         <a class="post-back" href="<?php echo url('blog/'); ?>">&larr; All Posts</a>
         <img class="post-featured-img" src="<?php echo url('blog/images/good-gpu-laptop-2026-asus-scar-18.webp'); ?>" alt="ASUS ROG Strix SCAR 18 gaming laptop with RTX 5090 graphics" loading="eager" width="732" height="732" decoding="async" fetchpriority="high">
         <h1 class="post-title">Best Laptops With Good GPU in 2026: RTX 5090 and RTX 5080 Picks</h1>
-        <p class="post-meta"><span>Published <time datetime="2026-05-02">May 2, 2026</time></span> &nbsp;&middot;&nbsp; <span>Last updated <time datetime="2026-05-02">May 2, 2026</time></span> &nbsp;&middot;&nbsp; 12 min read</p>
+        <p class="post-meta"><span>Published <time datetime="2026-05-02">May 2, 2026</time></span> &nbsp;&middot;&nbsp; <span>Last updated <time datetime="2026-05-06">May 6, 2026</time></span> &nbsp;&middot;&nbsp; 12 min read</p>
         <div class="blog-content">
+<?php kbtRenderBlogTemplateIntro('best-laptops-with-good-gpu-2026.php', ['answer' => false, 'jump' => false, 'quick_tips' => true, 'video' => false, 'related' => true, 'faq' => true, 'video_id' => 'RvCwMskRZHc']); ?>
 
 <p>If you want a laptop with a good GPU in 2026, the hard part is not finding a big graphics name. It is choosing the machine where the GPU is actually allowed to run properly. RTX 5090, RTX 5080, and RTX 5070 Ti laptop names only tell part of the story. The real buyer questions are GPU wattage, cooling, VRAM, display resolution, and price.</p>
 
@@ -318,6 +321,8 @@ $pageCanonical = absoluteUrl('blog/best-laptops-with-good-gpu-2026.php');
 <h2>Bottom Line</h2>
 
 <p>The best laptop with a good GPU is not automatically the most expensive RTX 5090 machine. The best choice is the one where GPU power, cooling, VRAM, display, and price make sense together. For most buyers, that points to a strong RTX 5080 laptop like the Legion Pro 7i. For AI, creator workloads, 3D, and no-compromise desktop replacement setups, the RTX 5090 models from ASUS, MSI, Alienware, Acer, and Razer are worth comparing carefully.</p>
+
+<?php kbtRenderBlogTemplateFooter('best-laptops-with-good-gpu-2026.php', ['quick_tips' => true, 'video' => false, 'related' => true, 'faq' => true]); ?>
 
         </div>
     </article>
