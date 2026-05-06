@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-06 (Codex, blog post consistency agent setup)
+**Last updated:** 2026-05-06 (Codex, blog video requirement added)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -71,6 +71,7 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-06 (Codex)
+- Tightened the blog-post consistency workflow so every future blog blueprint includes `video_embed` as a required parameter. Updated `BLOG-POST-AGENT.md`, `AGENTS.md`, and the local `.claude/agents/kbt-blog-writer.md` prompt so each blog post should include one verified relevant YouTube embed with `VideoObject` schema; weak filler videos should be rejected and rare exceptions documented in the blueprint.
 - Added a reusable blog-post consistency workflow for future article creation/updates. New tracked guide: `BLOG-POST-AGENT.md`, which defines the `kbt-blog-post-consistency` blueprint parameters (`image_count`, fast answer, jump links, quick tips, FAQ pattern, info cards/tables, related tools/posts, source checks, deploy and verification plan). Updated `AGENTS.md` so future blog requests must read this spec and invoke/simulate the specialist before editing. Also refreshed the local ignored Claude agent prompt at `.claude/agents/kbt-blog-writer.md` to mirror the current static-PHP/SFTP workflow and replaced the stale FTP/WordPress-era guidance.
 - Rebuilt and deployed `blog/input-latency-checker-keyboard-mouse-delay.php` into a deeper gamer/power-user guide. Updated title/meta/H1/schema to `Input Latency Checker: Keyboard and Mouse Delay Guide for Gamers`, added BlogPosting + FAQPage + BreadcrumbList schema, rewrote the article around the full input pipeline, browser measurement limits, polling-rate math, jitter interpretation, gamer testing workflow, power-user dock/KVM/remote-session issues, practical fixes, source links (NVIDIA, RTINGS, Microsoft Raw Input, MDN Event.timeStamp, Blur Busters), and related-tool cards for latency, polling, mouse, reaction time, frame skipping, and CPU stress tests.
 - Added/deployed relevant stock-style WebP assets for the article: `blog/images/input-latency-gaming-setup-hero.webp`, `blog/images/input-latency-keyboard-polling-workbench.webp`, and `blog/images/input-latency-mouse-response-pad.webp`. Updated `blog/posts-data.php`, regenerated/deployed `sitemap.xml` with the article lastmod `2026-05-06`, and submitted IndexNow. Verification passed: PHP lint clean for article and posts registry, local HTTP 200 with one H1/BlogPosting/FAQPage/source links/new images, local and live headless browser checks with hero image loaded and six tool cards, live image assets HTTP 200 as `image/webp`, live `/blog/?page=3` card updated, live sitemap contains 865 URLs and article lastmod `2026-05-06`, and live IndexNow returned HTTP 200 with the article URL included.

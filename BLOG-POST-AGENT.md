@@ -27,7 +27,7 @@ Every blog request must resolve these parameters before content is finalized:
 | `intent` | `how-to + diagnostic` | Match search intent before writing |
 | `image_count` | `4` | Minimum 3 for serious posts; 5-6 for pillar posts |
 | `image_style` | `relevant stock-style photos` | Product-specific images when reviewing products; diagrams only when they clarify |
-| `video_embed` | `optional` | Use only if the video is genuinely relevant and verified live |
+| `video_embed` | `required` | Every blog post should include one relevant YouTube embed unless no credible available video exists; verify it before publishing |
 | `fast_answer` | `true` | Answer box near the top |
 | `jump_links` | `true` | Use when article has 5+ substantial sections |
 | `quick_tips` | `true` | Practical tips/checklist callout |
@@ -55,11 +55,12 @@ Use this content order unless the topic clearly needs a different structure:
 10. Main sections: 6-9 H2s for pillar posts, each with practical evidence, tables, cards, or examples.
 11. Quick tips or workflow box: short checklist users can act on immediately.
 12. Inline figures: each relevant to the nearby section, with caption, width/height, lazy loading, and descriptive alt.
-13. Comparison tables/cards: symptoms, specs, causes, fixes, or buying/testing criteria.
-14. Source section: authoritative references for technical claims.
-15. Related tools/cards: internal links to tools that continue the workflow.
-16. Visible FAQ section: match the FAQPage schema questions.
-17. Final CTA: one useful action, usually the relevant KeyboardTester.click tool.
+13. YouTube embed: one relevant video that supports the topic, with `VideoObject` schema.
+14. Comparison tables/cards: symptoms, specs, causes, fixes, or buying/testing criteria.
+15. Source section: authoritative references for technical claims.
+16. Related tools/cards: internal links to tools that continue the workflow.
+17. Visible FAQ section: match the FAQPage schema questions.
+18. Final CTA: one useful action, usually the relevant KeyboardTester.click tool.
 
 ## Visual and Media Rules
 
@@ -71,6 +72,10 @@ Use this content order unless the topic clearly needs a different structure:
 - Hero image uses `loading="eager"` and `fetchpriority="high"`.
 - Inline images use `<figure>` and `<figcaption>`.
 - Product review posts need product-specific images, not generic stock photos.
+- Each blog post should include one relevant YouTube embed. Choose a video that directly supports the reader's task, not a generic filler video.
+- Verify the YouTube URL before embedding; do not embed unavailable, region-blocked, unrelated, Shorts-only, or low-quality videos.
+- Add `VideoObject` JSON-LD for the embedded video, including `name`, `description`, `thumbnailUrl`, `uploadDate` when available, `contentUrl`, and `embedUrl`.
+- If no credible relevant YouTube video exists after a reasonable search, document the exception in the blueprint and do not force a weak embed.
 
 ## Research Rules
 
@@ -140,6 +145,7 @@ title:
 h1:
 meta_description:
 image_count:
+video_embed:
 media_plan:
 fast_answer:
 jump_links:

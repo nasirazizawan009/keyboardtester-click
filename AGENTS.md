@@ -163,8 +163,8 @@ When the user asks to create, rewrite, update, refresh, expand, or deploy any bl
 
 1. Read `BLOG-POST-AGENT.md`.
 2. If the runtime supports subagents, invoke the `kbt-blog-post-consistency` / `kbt-blog-writer` specialist as a planning agent before writing. If subagents are unavailable, simulate the same checklist directly.
-3. Fill the blueprint parameters first: `mode`, `target_url_or_slug`, `primary_keyword`, `secondary_keywords`, `audience`, `intent`, `image_count`, `media_plan`, `fast_answer`, `jump_links`, `quick_tips`, `info_cards_or_tables`, `faq_pattern`, `related_tools`, `related_posts`, `sources_to_verify`, `files_expected`, `deploy_plan`, and `verification_plan`.
-4. Keep the standard article pattern consistent: fast answer box, jump links for long posts, practical tips/cards/tables, relevant images, visible FAQ matching FAQPage schema, BlogPosting/Article schema, BreadcrumbList schema, source links, related tools, related posts, and visible Published/Last updated dates.
+3. Fill the blueprint parameters first: `mode`, `target_url_or_slug`, `primary_keyword`, `secondary_keywords`, `audience`, `intent`, `image_count`, `video_embed`, `media_plan`, `fast_answer`, `jump_links`, `quick_tips`, `info_cards_or_tables`, `faq_pattern`, `related_tools`, `related_posts`, `sources_to_verify`, `files_expected`, `deploy_plan`, and `verification_plan`.
+4. Keep the standard article pattern consistent: fast answer box, jump links for long posts, practical tips/cards/tables, relevant images, one verified relevant YouTube embed with VideoObject schema, visible FAQ matching FAQPage schema, BlogPosting/Article schema, BreadcrumbList schema, source links, related tools, related posts, and visible Published/Last updated dates.
 5. For live work, deploy blog article files and image assets with SFTP/paramiko, regenerate `sitemap.xml`, submit IndexNow, verify live HTTP/images/schema/blog-card/sitemap, and update `AI-COORDINATION.md`.
 
 Current reference template: `blog/input-latency-checker-keyboard-mouse-delay.php`. Local Claude agent prompt: `.claude/agents/kbt-blog-writer.md` mirrors the tracked `BLOG-POST-AGENT.md` contract.
