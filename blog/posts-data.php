@@ -382,11 +382,11 @@ return [
         'path'    => 'blog/how-to-test-keyboard-online.php',
         'url'     => 'https://keyboardtester.click/blog/how-to-test-keyboard-online.php',
         'image'   => 'blog/images/keyboard-online-test-complete-guide.webp',
-        'alt'     => 'How to Test Your Keyboard Online: A Complete Guide',
+        'alt'     => 'Keyboard on a desk ready for an online keyboard test',
         'date'    => 'March 28, 2026',
-        'updated' => 'March 28, 2026',
-        'title'   => 'How to Test Your Keyboard Online: A Complete Guide (2026)',
-        'excerpt' => 'Learn how to test your keyboard online for free. Check for stuck keys, ghosting, N-key rollover, and more using browser-based tools — no download needed.',
+        'updated' => 'May 6, 2026',
+        'title'   => 'How to Test a Keyboard Online: Keys, Ghosting, NKRO and Latency',
+        'excerpt' => 'Test your keyboard online for stuck keys, ghosting, NKRO, latency, Bluetooth issues, and mobile input with a quick browser-based checklist.',
     ],
 
 ];

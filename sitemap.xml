@@ -5282,16 +5282,24 @@
   </url>
   <url>
     <loc>https://keyboardtester.click/blog/how-to-test-keyboard-online.php</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://keyboardtester.click/blog/images/keyboard-online-test-complete-guide.webp</image:loc>
-      <image:title>Keyboard testing guide showing a full keyboard workstation</image:title>
+      <image:title>Keyboard on a desk ready for an online keyboard test</image:title>
     </image:image>
     <image:image>
       <image:loc>https://keyboardtester.click/blog/images/keyboard-online-test-layout-guide.webp</image:loc>
       <image:title>Keyboard layout reference for checking every key online</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/keyboard-ghosting-gaming-keyboard-wasd.jpg</image:loc>
+      <image:title>Gaming keyboard WASD keys used to test ghosting and N-key rollover</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://keyboardtester.click/blog/images/keyboard-polling-rate-test-hero.webp</image:loc>
+      <image:title>Mechanical keyboards used to compare keyboard polling rate and latency</image:title>
     </image:image>
   </url>
   <url>
