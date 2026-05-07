@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-08 (Codex, YouTube Shorts upload)
+**Last updated:** 2026-05-08 (Codex, corrected YouTube Shorts upload)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -71,7 +71,7 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-08 (Codex)
-- Uploaded 9 public YouTube Shorts to the user's KeyboardTester channel via the YouTube Data API using the local OAuth client/token files. Each upload received a unique SEO-focused title, description, site URL, related guide URL, and tags around keyboard testing, latency, ghosting, typing speed, mouse double-clicking, webcam testing, and stuck-key troubleshooting. Public oEmbed verification passed for all 9 video IDs. Upload and metadata logs are in `seo-audit-2026-05-08/youtube-upload-previews/`; OAuth readback of video status is not available with the current upload-only scope, but public visibility was confirmed.
+- Corrected the YouTube Shorts upload after the first OAuth flow selected the personal `@nasirazizawan` channel. Re-authorized the intended KeyboardTester channel (`UCwZ16zCK4uA_y4G71GROCuw`, `@KeyboardTester-dot-click`) and uploaded 9 public Shorts there. Correct-channel video IDs: `Wc8zr1yzfqU`, `CJvZPthJhqE`, `vC20A2kO690`, `-iEy1Frvq34`, `R-F_c9ANcv4`, `IzZdKqYr5IU`, `LXGwMyMfCT0`, `1HzxYeo7Wqc`, `fXk2evuR5iQ`. Each video has a unique SEO-focused title, tags, and updated description with 8 contextual KeyboardTester.click links. Public oEmbed verification and authenticated API verification passed for all 9 correct-channel videos. Upload, preview, and description-update logs are in `seo-audit-2026-05-08/youtube-upload-previews/`. The original wrong-channel token was renamed to `youtube-oauth-token-wrong-channel-legacy.json` so it is not reused accidentally; those first wrong-channel uploads still need separate cleanup from the personal channel if desired.
 
 ### 2026-05-06 (Codex)
 - Standardized all 36 blog article pages on the new blog-post template without removing existing article information. Added the shared component `includes/components/blog-template-enhancements.php` and applied additive BlogPosting support sections across the blog: fast-answer/jump-link support where needed, quick action checklists, related tool cards, FAQ blocks where missing, BreadcrumbList/VideoObject/FAQPage schema support, and May 6, 2026 updated-date markers. Replaced the invalid dead-pixel YouTube ID with the relevant color-test video ID (`Q6zYolmmhwI`) while preserving existing valid embeds/facades. Updated all 36 entries in `blog/posts-data.php`, regenerated `sitemap.xml`, deployed all 36 ignored article files plus the shared component, `blog/posts-data.php`, and `sitemap.xml` via SFTP/paramiko. Verification passed: PHP lint clean for 36 articles, component, and posts registry; local HTTP render audit passed for 36 articles with one H1, YouTube/video presence, VideoObject, FAQPage, BreadcrumbList, updated date, and template markers; local Playwright smoke passed on desktop/mobile for representative articles; live render audit passed for all 36 article URLs; live sitemap contains 36 unique blog URLs; live blog listing pages show the May 6 update metadata; IndexNow returned HTTP 200 with "URLs submitted successfully".
@@ -328,7 +328,9 @@ All credentials are in the workspace — both agents have access by default.
 | DEV.to API key | `.env` → `DEVTO_API_KEY` | API key string | **Action: move from chat to .env** |
 | Outreach mailbox SMTP | `.env` → `OUTREACH_SMTP_*`, `OUTREACH_FROM`, `OUTREACH_REPLY_TO` | SMTP/IMAP mailbox credentials for `outreach@keyboardtester.click` | Created via cPanel UAPI; use only for approved low-volume outreach |
 | YouTube OAuth client | `youtube-oauth-client.json` + `.env` -> `YOUTUBE_OAUTH_CLIENT_FILE` | OAuth client JSON, gitignored | Used for YouTube Data API uploads |
-| YouTube OAuth token | `youtube-oauth-token.json` | OAuth refresh/access token JSON, gitignored | Upload-only scope for channel video uploads |
+| YouTube OAuth upload/read token | `youtube-oauth-token-correct-channel.json` | OAuth refresh/access token JSON, gitignored | Correct KeyboardTester channel (`UCwZ16zCK4uA_y4G71GROCuw`) for upload + channel verification |
+| YouTube OAuth manage token | `youtube-oauth-token-manage-correct-channel.json` | OAuth refresh/access token JSON, gitignored | Correct KeyboardTester channel metadata updates (`youtube.force-ssl`) |
+| YouTube legacy wrong-channel token | `youtube-oauth-token-wrong-channel-legacy.json` | OAuth refresh/access token JSON, gitignored | Personal `@nasirazizawan` upload-only token; do not use for KeyboardTester uploads |
 | GitHub PAT | (none persisted) | User generates ad-hoc when needed | Per-task generation, revoke after |
 | HostArmada SSH | port 19199, user `keyboar1` | Uses `.ssh-deploy/kbt_deploy` | Documented in CLAUDE.md |
 
