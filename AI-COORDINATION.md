@@ -1,6 +1,6 @@
 # AI Coordination — Shared State Between Claude Code and Codex
 
-**Last updated:** 2026-05-08 (Codex, corrected YouTube Shorts upload)
+**Last updated:** 2026-05-08 (Codex, footer ad replacement)
 
 This file is the **single source of truth** when handing off work between AI agents working on KeyboardTester.click. Both Claude Code and Codex read this at the start of every session and update it before ending.
 
@@ -71,6 +71,7 @@ This file is the **single source of truth** when handing off work between AI age
 ## 📜 Completed today (rolling 24-48h log)
 
 ### 2026-05-08 (Codex)
+- Replaced the shared footer YouTube Shorts promo panel with an in-footer Google AdSense panel. Removed the old `site_before_footer` placement from `footer.php` and `includes/adsense-slots.php`, added `site_footer_panel`, removed the footer YouTube facade markup/CSS/JS from `includes/components/site-chrome.php`, and let the homepage render the new footer ad by removing its suppress flag. Because all localized footer files include the shared footer, the change applies to English plus all 8 localized footers. Deployed `index.php`, `footer.php`, `includes/adsense-slots.php`, and `includes/components/site-chrome.php` via SFTP/paramiko. Verification passed locally and live on homepage, Spanish, Arabic, Japanese, and `latency-checker.php`: HTTP 200, `footer-ad-section` and `site_footer_panel` present, old YouTube footer strings absent, and `site_before_footer` absent.
 - Corrected the YouTube Shorts upload after the first OAuth flow selected the personal `@nasirazizawan` channel. Re-authorized the intended KeyboardTester channel (`UCwZ16zCK4uA_y4G71GROCuw`, `@KeyboardTester-dot-click`) and uploaded 9 public Shorts there. Correct-channel video IDs: `Wc8zr1yzfqU`, `CJvZPthJhqE`, `vC20A2kO690`, `-iEy1Frvq34`, `R-F_c9ANcv4`, `IzZdKqYr5IU`, `LXGwMyMfCT0`, `1HzxYeo7Wqc`, `fXk2evuR5iQ`. Each video has a unique SEO-focused title, tags, and updated description with 8 contextual KeyboardTester.click links. Public oEmbed verification and authenticated API verification passed for all 9 correct-channel videos. Upload, preview, and description-update logs are in `seo-audit-2026-05-08/youtube-upload-previews/`. The original wrong-channel token was renamed to `youtube-oauth-token-wrong-channel-legacy.json` so it is not reused accidentally; those first wrong-channel uploads still need separate cleanup from the personal channel if desired.
 
 ### 2026-05-06 (Codex)

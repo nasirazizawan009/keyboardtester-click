@@ -206,7 +206,7 @@
   <?php include __DIR__ . '/includes/components/homepage-latest-blog.php'; ?>
 </main>
 
-<?php $kbtSuppressFooterAd = true; include 'footer.php'; ?>
+<?php include 'footer.php'; ?>
 </body>
 </html>
 

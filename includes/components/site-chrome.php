@@ -835,32 +835,21 @@ if (!function_exists('kbtRenderSiteFooter')) {
     .site-footer[dir="rtl"] .footer-links a:hover { transform: translateX(-4px); }
     .footer-help-section { grid-column: span 2; }
     .contact-section { grid-column: span 2; }
-    .footer-yt-section { grid-column: 1 / -1; }
-    .footer-yt-inner { display: flex; align-items: center; gap: 48px; }
-    .footer-yt-info { flex: 1; min-width: 0; }
-    .footer-yt-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 999px; background: rgba(255,77,79,0.12); border: 1px solid rgba(255,77,79,0.25); color: #ff6b6b; font-size: 0.8rem; font-weight: 700; margin-bottom: 14px; letter-spacing: 0.02em; }
-    .footer-yt-desc { color: var(--footer-muted); line-height: 1.75; margin: 0 0 22px; font-size: 0.95rem; max-width: 480px; }
-    .footer-yt-cta { display: inline-flex; align-items: center; gap: 8px; padding: 11px 24px; border-radius: 12px; background: linear-gradient(135deg, #ff4d4f, #c53030); color: #fff; font-weight: 700; text-decoration: none; font-size: 0.9rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .footer-yt-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(255,77,79,0.35); color: #fff; }
-    .footer-yt-video { flex-shrink: 0; display: flex; gap: 14px; }
-    .footer-yt-wrap { width: 185px; height: 329px; border-radius: 18px; overflow: hidden; background: #0f172a; position: relative; border: 1px solid rgba(148,163,184,0.12); box-shadow: 0 20px 44px rgba(2,6,23,0.5); cursor: pointer; }
-    .footer-yt-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .footer-yt-thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-    .footer-yt-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #fff; font-size: 0.82rem; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%); pointer-events: none; }
-    .footer-yt-play-btn { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,77,79,0.95); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0,0,0,0.45); transition: transform 0.18s ease, background 0.18s ease; }
-    .footer-yt-wrap:hover .footer-yt-play-btn { transform: scale(1.08); background: #ff4d4f; }
-    .footer-yt-wrap:focus-visible { outline: 3px solid #38bdf8; outline-offset: 3px; }
+    .footer-ad-section { grid-column: 1 / -1; min-height: 210px; justify-content: center; }
+    .footer-ad-section .kbt-ad-slot { max-width: 100%; margin: 0; padding: 0; }
+    .footer-ad-section .kbt-ad-slot-inner { min-height: 180px; border-color: rgba(148, 163, 184, 0.2); background: rgba(2, 6, 23, 0.18); }
+    .footer-ad-section .adsbygoogle { max-width: 970px; min-height: 120px; }
     @media (max-width: 1100px) {
         .footer-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .about-section { grid-column: 1 / -1; }
         .footer-help-section { grid-column: auto; }
         .contact-section { grid-column: auto; }
-        .footer-yt-section { grid-column: 1 / -1; }
+        .footer-ad-section { grid-column: 1 / -1; }
     }
     @media (max-width: 768px) {
         .site-footer { margin-top: 64px; padding: 52px 16px 22px; }
         .footer-container { grid-template-columns: 1fr; }
-        .about-section, .footer-help-section, .contact-section, .footer-yt-section { grid-column: auto; }
+        .about-section, .footer-help-section, .contact-section, .footer-ad-section { grid-column: auto; }
         .footer-section { padding: 20px; }
         .social-links { justify-content: center; }
         .footer-heading::after { left: 50%; transform: translateX(-50%); }
@@ -872,19 +861,8 @@ if (!function_exists('kbtRenderSiteFooter')) {
         .newsletter { margin-top: 16px; }
         .newsletter-form { grid-template-columns: 1fr; }
         .newsletter-form button { width: 100%; }
-        .footer-yt-inner { flex-direction: column; gap: 24px; align-items: stretch; }
-        .footer-yt-info { text-align: center; }
-        .footer-yt-desc { margin-left: auto; margin-right: auto; max-width: 100%; }
-        .footer-yt-video { width: 100%; gap: 12px; justify-content: center; flex-wrap: nowrap; }
-        .footer-yt-wrap { flex: 1 1 0; min-width: 0; max-width: 160px; width: auto; height: auto; aspect-ratio: 9 / 16; }
-    }
-    @media (max-width: 520px) {
-        .footer-yt-video { gap: 10px; }
-        .footer-yt-wrap:nth-child(3) { display: none; }
-        .footer-yt-wrap { max-width: 150px; }
-    }
-    @media (max-width: 380px) {
-        .footer-yt-wrap { max-width: 140px; }
+        .footer-ad-section { min-height: 150px; }
+        .footer-ad-section .kbt-ad-slot-inner { min-height: 120px; }
     }
 </style>
 <footer class="site-footer" dir="<?php echo htmlspecialchars($direction, ENT_QUOTES, 'UTF-8'); ?>">
@@ -940,41 +918,16 @@ if (!function_exists('kbtRenderSiteFooter')) {
             </ul>
         </section>
 
-        <section class="footer-section footer-yt-section">
-            <div class="footer-yt-inner">
-                <div class="footer-yt-info">
-                    <div class="footer-yt-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.6 12 3.6 12 3.6s-7.54 0-9.38.48A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.4 12 20.4 12 20.4s7.54 0 9.38-.48a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>
-                        YouTube Shorts
-                    </div>
-                    <h4 class="footer-heading" style="margin-top:4px;">Watch KeyboardTester in Action</h4>
-                    <p class="footer-yt-desc">See our tools in action — keyboard tests, mouse clicks, screen checks, and more. Subscribe for new testing guides and tool tips.</p>
-                    <a href="https://www.youtube.com/@KeyboardTester-dot-click" class="footer-yt-cta" target="_blank" rel="noopener noreferrer">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.6 12 3.6 12 3.6s-7.54 0-9.38.48A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.4 12 20.4 12 20.4s7.54 0 9.38-.48a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>
-                        Subscribe to our Channel
-                    </a>
-                </div>
-                <div class="footer-yt-video">
-                    <?php
-                    $footerYtVideos = [
-                        ['id' => 'WuC30coavMw', 'title' => 'KeyboardTester YouTube Short'],
-                        ['id' => 'Vkv1aw4ukaA', 'title' => 'KeyboardTester YouTube Short 2'],
-                        ['id' => 'seta_6hkvYk', 'title' => 'KeyboardTester YouTube Short 3'],
-                    ];
-                    foreach ($footerYtVideos as $ytI => $yt):
-                        $ytId = $yt['id']; $ytTitle = $yt['title'];
-                    ?>
-                    <div class="footer-yt-wrap" data-yt-id="<?php echo htmlspecialchars($ytId, ENT_QUOTES, 'UTF-8'); ?>" data-yt-title="<?php echo htmlspecialchars($ytTitle, ENT_QUOTES, 'UTF-8'); ?>" role="button" tabindex="0" aria-label="Play <?php echo htmlspecialchars($ytTitle, ENT_QUOTES, 'UTF-8'); ?>">
-                        <img class="footer-yt-thumb" src="<?php echo htmlspecialchars(url('images/yt-thumbs/' . $ytId . '.jpg'), ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($ytTitle, ENT_QUOTES, 'UTF-8'); ?> thumbnail" loading="lazy" width="185" height="329" decoding="async">
-                        <div class="footer-yt-placeholder">
-                            <div class="footer-yt-play-btn" aria-hidden="true">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
+        <section class="footer-section footer-ad-section">
+            <?php
+            if (function_exists('kbtRenderAdSlot')) {
+                kbtRenderAdSlot('site_footer_panel', [
+                    'class' => 'kbt-ad-slot--footer-panel',
+                    'format' => 'auto',
+                    'full_width_responsive' => false,
+                ]);
+            }
+            ?>
         </section>
 
         <section class="footer-section footer-help-section">
@@ -1019,33 +972,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('.newsletter-form[data-noop="true"]').forEach(function (form) {
         form.addEventListener('submit', function (event) { event.preventDefault(); });
-    });
-
-    // Footer YouTube shorts — click-to-play facade (saves ~700KB JS from autoload)
-    document.querySelectorAll('.footer-yt-wrap[data-yt-id]').forEach(function (wrap) {
-        function loadYt() {
-            if (wrap.dataset.loaded === '1') return;
-            wrap.dataset.loaded = '1';
-            var id = wrap.dataset.ytId;
-            var title = wrap.dataset.ytTitle || 'YouTube video';
-            var iframe = document.createElement('iframe');
-            iframe.src = 'https://www.youtube-nocookie.com/embed/' + id
-                + '?autoplay=1&mute=1&loop=1&playlist=' + id + '&rel=0&playsinline=1&controls=1';
-            iframe.title = title;
-            iframe.setAttribute('allow', 'autoplay; encrypted-media');
-            iframe.setAttribute('allowfullscreen', '');
-            iframe.loading = 'lazy';
-            wrap.appendChild(iframe);
-            var thumb = wrap.querySelector('.footer-yt-thumb');
-            var ph = wrap.querySelector('.footer-yt-placeholder');
-            if (thumb) thumb.style.display = 'none';
-            if (ph) ph.style.display = 'none';
-            wrap.style.cursor = 'default';
-        }
-        wrap.addEventListener('click', loadYt);
-        wrap.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadYt(); }
-        });
     });
 });
 </script>

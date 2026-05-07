@@ -15,6 +15,6 @@ return [
         'blog_index_after_featured' => '6240375832',
         'blog_article_left_rail' => '6240375832',
         'blog_article_right_rail' => '3614212490',
-        'site_before_footer' => '3614212490',
+        'site_footer_panel' => '3614212490',
     ],
 ];

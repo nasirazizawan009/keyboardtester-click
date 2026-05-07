@@ -7,9 +7,6 @@ require_once __DIR__ . '/includes/components/site-chrome.php';
 require_once __DIR__ . '/includes/components/adsense-slot.php';
 
 $siteChromeLocale = $siteChromeLocale ?? 'en';
-if (empty($kbtSuppressFooterAd)) {
-    kbtRenderAdSlot('site_before_footer', ['class' => 'kbt-ad-slot--leaderboard kbt-ad-slot--site-footer', 'format' => 'horizontal', 'full_width_responsive' => false]);
-}
 
 kbtRenderSiteFooter($siteChromeLocale);
 
