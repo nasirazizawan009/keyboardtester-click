@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Camera Resolution Test Online | Check Webcam Size and Quality',
+        'title' => 'Camera Resolution Test - Free Webcam Quality Check',
         'description' => 'Run a camera resolution test online to check your webcam at 480p, 720p, 1080p and higher. Verify the actual video resolution your camera delivers — instant, in-browser.',
         'keywords' => 'camera resolution test, webcam resolution test, test webcam quality online, test camera 1080p',
         'ogImage' => 'images/webcam-test/hero.png',

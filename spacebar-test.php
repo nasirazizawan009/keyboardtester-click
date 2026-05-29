@@ -1,9 +1,16 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Spacebar Test — How Fast Can You Press the Spacebar? | KeyboardTester.click';
+$pageTitle = 'Spacebar Test - Free Spacebar Counter & Speed Test';
 $pageDescription = 'Free open source spacebar test online. Count how many times you can press the spacebar in 5, 10 or 30 seconds. Spacebar counter with instant results. No download needed.';
 $pageKeywords = 'spacebar test, open source spacebar counter, spacebar counter, spacebar speed test, how fast can you press spacebar';
-$pageOgImage = 'images/mouse/hero.png';
+$pageOgImage = 'images/keyboard/Press-any-key-768.webp';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'spacebar-test';
+  require __DIR__ . '/includes/render-english-inline-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +20,12 @@ $pageOgImage = 'images/mouse/hero.png';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <style>
     /* Spacebar Test Tool — embedded styles */
@@ -266,6 +273,7 @@ $pageOgImage = 'images/mouse/hero.png';
   <main id="main-content" class="landing-main">
 
     <!-- ── Tool stage ─────────────────────────────────────────────────── -->
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
     <section class="tool-stage" id="spacebar-test-tool" aria-labelledby="spacebar-tool-title">
       <div class="container tool-stage-header">
         <div>
@@ -403,7 +411,7 @@ $pageOgImage = 'images/mouse/hero.png';
         <div class="section-head">
           <h2 id="ratings-title">Spacebar Speed Ratings</h2>
           <p class="section-lede">
-            How does your presses-per-second score compare? Use this table as a general
+            How does your presses-per-second score compare Use this table as a general
             benchmark — scores vary by keyboard type and test duration.
           </p>
         </div>

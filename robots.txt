@@ -1,103 +1,75 @@
-# Robots.txt - Search Engine Crawling Instructions
-# Site: keyboardtester.click
-# Last Updated: 2026-04-05
+# robots.txt for keyboardtester.click
+# Last updated: 2026-05-29
+#
+# AI / LLM catalog (machine-readable):
+#   https://keyboardtester.click/llms.txt
+#   https://keyboardtester.click/llms-full.txt
 
-# Default rules for all robots
 User-agent: *
-Allow: /
-Allow: /tools/
-Allow: /help/
-Allow: /languages/
-Allow: /pages/
-Allow: /assets/css/
-Allow: /assets/js/
-Allow: /assets/images/
-Allow: /images/
-Disallow: /includes/
 Disallow: /admin/
-Disallow: /docs/
 Disallow: /api/
-Disallow: /generate-sitemap.php
+Disallow: /cache/
+Disallow: /docs/
+Disallow: /includes/
+Disallow: /temp/
+Disallow: /_backup
+Disallow: /_old
 Disallow: /activate-theme.php
-Disallow: /kbt-blog-style.php
+Disallow: /clear-
 Disallow: /config.php
+Disallow: /debug-
+Disallow: /deploy-
+Disallow: /fix-
+Disallow: /ftp-
+Disallow: /generate-sitemap.php
+Disallow: /kbt-blog-style.php
 Disallow: /meta-config.php
-Disallow: /seo-config.php
 Disallow: /modular-utils.php
+Disallow: /robots.php
+Disallow: /seo-config.php
 Disallow: /sitemap.php
 Disallow: /submit-indexnow.php
 Disallow: /test-ftp
 Disallow: /test-upload
 Disallow: /test_db
 Disallow: /testpage
-Disallow: /debug-
-Disallow: /fix-
-Disallow: /clear-
-Disallow: /ftp-
 Disallow: /tmp_
-Disallow: /temp/
-Disallow: /cache/
-Disallow: /deploy-
-Disallow: /_old
-Disallow: /_backup
-# Stale WordPress feed/tag/category URLs from old /blogs/ setup (return 410 now)
-Disallow: /blogs/tag/
-Disallow: /blogs/category/
-Disallow: /blogs/feed/
-Disallow: /blogs/wp-
-Disallow: /blog/tag/
 Disallow: /blog/category/
 Disallow: /blog/feed/
+Disallow: /blog/tag/
 Disallow: /blog/wp-
-Disallow: /*/feed/
-Crawl-delay: 1
+Disallow: /blogs/category/
+Disallow: /blogs/feed/
+Disallow: /blogs/tag/
+Disallow: /blogs/wp-
 
-# Specific rules for Googlebot
-User-agent: Googlebot
+# AI answer-engine and training crawlers are explicitly welcome to read public
+# content (with attribution). Infra paths stay disallowed, mirroring the * group.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: Applebot-Extended
+User-agent: Amazonbot
+User-agent: meta-externalagent
 Allow: /
-Allow: /assets/
-Allow: /tools/
-Allow: /help/
-Allow: /languages/
-Allow: /pages/
-Allow: /images/
-Disallow: /includes/
 Disallow: /admin/
 Disallow: /api/
-Disallow: /generate-sitemap.php
-
-# Specific rules for Bingbot
-User-agent: Bingbot
-Allow: /
-Allow: /assets/
-Allow: /tools/
-Allow: /help/
-Allow: /languages/
-Allow: /pages/
-Allow: /images/
+Disallow: /cache/
+Disallow: /docs/
 Disallow: /includes/
-Disallow: /admin/
-Disallow: /api/
-Disallow: /generate-sitemap.php
+Disallow: /temp/
+Disallow: /config.php
+Disallow: /meta-config.php
+Disallow: /seo-config.php
+Disallow: /blog/wp-
+Disallow: /blogs/wp-
 
-# Block aggressive/unwanted bots
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
-
-User-agent: BLEXBot
-Disallow: /
-
-User-agent: DataForSeoBot
-Disallow: /
-
-# Sitemap location
 Sitemap: https://keyboardtester.click/sitemap.xml
+Sitemap: https://keyboardtester.click/sitemap.txt

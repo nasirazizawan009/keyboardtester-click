@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Screenshot to Text Online | Extract Text From Screenshots',
+        'title' => 'Screenshot to Text - Free OCR Text Extractor Online',
         'description' => 'Convert a screenshot to text online with a browser-based OCR tool. Upload screen captures or chat screenshots and extract readable text locally — no upload needed.',
         'keywords' => 'screenshot to text, extract text from screenshot, screenshot ocr online, copy text from screenshot',
         'ogImage' => 'images/ocr-tool/hero.png',

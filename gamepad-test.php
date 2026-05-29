@@ -1,9 +1,16 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Gamepad Tester — Controller Buttons, Stick Drift & Triggers Online | KeyboardTester.click';
+$pageTitle = 'Gamepad Tester - Controller Buttons & Stick Drift Test';
 $pageDescription = 'Free open source gamepad tester online. Test PS5, Xbox, Switch and PC controller buttons, analog stick drift, triggers and vibration. Works in browser. No download needed.';
 $pageKeywords = 'gamepad tester online, open source controller test, stick drift test online, ps5 controller test, xbox controller test online';
-$pageOgImage = 'images/mouse/hero.webp';
+$pageOgImage = 'microsoft-store/screenshots/04-pacman-game.png';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'gamepad-test';
+  require __DIR__ . '/includes/render-english-inline-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +20,12 @@ $pageOgImage = 'images/mouse/hero.webp';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <style>
     /* Gamepad Tester — scoped styles */
@@ -390,6 +397,7 @@ $pageOgImage = 'images/mouse/hero.webp';
     </section>
 
     <!-- Tool Stage -->
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
     <section class="tool-stage" id="gamepad-tool" aria-labelledby="gamepad-tool-title">
       <div class="container tool-stage-header">
         <div>
@@ -659,7 +667,7 @@ $pageOgImage = 'images/mouse/hero.webp';
     }
 
     function pollGamepads() {
-      var gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
+      var gamepads = navigator.getGamepads  navigator.getGamepads() : [];
       for (var i = 0; i < gamepads.length; i++) {
         var gp = gamepads[i];
         if (!gp) continue;
@@ -737,20 +745,20 @@ $pageOgImage = 'images/mouse/hero.webp';
         var mag = Math.sqrt(axes[0] * axes[0] + axes[1] * axes[1]);
         document.getElementById('left-drift-val').textContent = mag.toFixed(3);
         var isDrift = mag > DRIFT_THRESHOLD;
-        document.getElementById('left-drift-status').textContent = isDrift ? 'DRIFT!' : 'OK';
-        document.getElementById('left-drift-status').style.color = isDrift ? '#E74C3C' : '#2ECC71';
+        document.getElementById('left-drift-status').textContent = isDrift  'DRIFT!' : 'OK';
+        document.getElementById('left-drift-status').style.color = isDrift  '#E74C3C' : '#2ECC71';
       }
       if (axes.length >= 4) {
         var mag2 = Math.sqrt(axes[2] * axes[2] + axes[3] * axes[3]);
         document.getElementById('right-drift-val').textContent = mag2.toFixed(3);
         var isDrift2 = mag2 > DRIFT_THRESHOLD;
-        document.getElementById('right-drift-status').textContent = isDrift2 ? 'DRIFT!' : 'OK';
-        document.getElementById('right-drift-status').style.color = isDrift2 ? '#E74C3C' : '#2ECC71';
+        document.getElementById('right-drift-status').textContent = isDrift2  'DRIFT!' : 'OK';
+        document.getElementById('right-drift-status').style.color = isDrift2  '#E74C3C' : '#2ECC71';
       }
     }
 
     window.testVibration = function (intensity) {
-      var gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
+      var gamepads = navigator.getGamepads  navigator.getGamepads() : [];
       for (var i = 0; i < gamepads.length; i++) {
         var gp = gamepads[i];
         if (!gp || !gp.vibrationActuator) continue;

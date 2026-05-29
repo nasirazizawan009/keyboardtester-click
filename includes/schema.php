@@ -34,6 +34,7 @@ function schemaOrganization() {
     $data = [
         '@context' => 'https://schema.org',
         '@type' => 'Organization',
+        '@id' => 'https://keyboardtester.click/#organization',
         'name' => 'KeyboardTester.Click',
         'url' => 'https://keyboardtester.click/',
         'logo' => [
@@ -48,7 +49,9 @@ function schemaOrganization() {
             'https://gitlab.com/nasirazizawan/keyboardtester.click',
             'https://github.com/nasirazizawan009/keyboardtester-click',
             'https://www.youtube.com/@KeyboardTester-dot-click',
-            'https://www.facebook.com/keyboardtester.click'
+            'https://www.facebook.com/keyboardtester.click',
+            'https://www.instagram.com/keyboardtester.click',
+            'https://bsky.app/profile/keyboard-tester.bsky.social'
         ],
         'contactPoint' => [
             '@type' => 'ContactPoint',
@@ -192,13 +195,6 @@ function schemaWebApplication($tool) {
         'operatingSystem' => 'Any',
         'browserRequirements' => 'Requires JavaScript',
         'isAccessibleForFree' => true,
-        'offers' => [
-            '@type' => 'Offer',
-            'price' => '0',
-            'priceCurrency' => 'USD',
-            'availability' => 'https://schema.org/InStock',
-            'description' => 'Free to use — no account or download required'
-        ],
         'provider' => [
             '@type' => 'Organization',
             '@id' => 'https://keyboardtester.click/#organization',
@@ -365,11 +361,12 @@ function getToolSchemaData($toolKey) {
     $tools = [
         'keyboard_tester' => [
             'name' => 'Online Keyboard Tester',
-            'description' => 'Free online keyboard tester to check every key, detect stuck keys, test ghosting, and verify keyboard functionality. Works with all keyboard types and layouts.',
+            'description' => 'Free online keyboard tester and key test to check every key, detect stuck keys, test ghosting, and verify keyboard input. Works with all keyboard types and layouts.',
             'url' => '/',
             'category' => 'UtilityApplication',
             'screenshot' => 'images/keyboard/hero-keyboard-test-1400.png',
             'features' => [
+                'Online key test and keyboard checker',
                 'Test every keyboard key',
                 'Detect stuck or broken keys',
                 'Test keyboard ghosting',
@@ -673,15 +670,15 @@ function getToolSchemaData($toolKey) {
         ],
         'apm_test' => [
             'name' => 'APM Test',
-            'description' => 'Free actions-per-minute test. Counts every keystroke and mouse click over a rolling 60-second window for RTS, MOBA, and esports training.',
+            'description' => 'Free actions-per-minute benchmark with 3x3, 4x4, 5x5, and keyboard modes for RTS, MOBA, and esports training.',
             'url' => 'apm-test.php',
             'category' => 'UtilityApplication',
             'features' => [
-                'Live APM on a 60-second rolling window',
-                'Peak APM tracking',
-                'Session average',
-                'Clicks vs key-press split',
-                'StarCraft/DotA/LoL tier reference'
+                '3x3, 4x4, and 5x5 target-grid modes',
+                'Keyboard hotkey mode with custom key set',
+                'Live, average, and peak APM',
+                'Accuracy, misses, total inputs, clicks, and keys',
+                'Recent tests, personal bests, and skill badges stored locally'
             ]
         ],
         'mouse_spin' => [
@@ -718,6 +715,18 @@ function getToolSchemaData($toolKey) {
                 '32 near-white patches (RGB 224-255)',
                 'Continuous 0-255 ramp',
                 'Fullscreen toggle'
+            ]
+        ],
+        'monitor_color_test' => [
+            'name' => 'Monitor Color Test',
+            'description' => 'Free monitor color test. Cycle fullscreen solid colors, gradients, checkerboards, and calibration patterns to check banding, tint, contrast, and panel uniformity.',
+            'url' => 'color-test.php',
+            'category' => 'UtilityApplication',
+            'features' => [
+                '14 fullscreen color and gradient panels',
+                'RGB, grayscale, and checkerboard checks',
+                'Banding and tint inspection',
+                'Keyboard and fullscreen controls'
             ]
         ],
         'screen_uniformity' => [
@@ -1025,14 +1034,15 @@ function getToolSchemaData($toolKey) {
         ],
         'hearing_age_test' => [
             'name' => 'Hearing Age Test (Mosquito Tone)',
-            'description' => 'Free hearing age test. 12-step high-frequency hearing screening from 8 kHz to 22 kHz including the 17.4 kHz mosquito tone, with a manual fine-tune slider and safety-capped volume.',
+            'description' => 'Free hearing age test. Estimate your ear age with a quick 8-22 kHz high-frequency screening, 17.4 kHz mosquito tone, left/right ear options, pulsed and sweep tones, manual threshold finder, and safety-capped volume.',
             'url' => 'hearing-age-test.php',
             'category' => 'UtilityApplication',
             'features' => [
-                '12 frequencies from 8 kHz to 22 kHz',
-                'Includes 17.4 kHz mosquito tone',
-                'Manual fine-tune slider',
-                'Volume safety cap (-20 dBFS)'
+                'Quick 8-22 kHz hearing-age estimate',
+                '17.4 kHz mosquito tone checkpoint',
+                'Left, right, and both-ear channel options',
+                'Pulsed, steady, and short-sweep tone modes',
+                'Manual threshold finder with safety-capped volume'
             ]
         ],
         'online_ruler' => [
@@ -1051,12 +1061,12 @@ function getToolSchemaData($toolKey) {
         ],
         'ai_assistant' => [
             'name' => 'KBT AI Assistant',
-            'description' => 'Free AI chat assistant that helps you pick the right hardware diagnostic tool, explains test results, and walks through keyboard, mouse, screen, and audio diagnostics in 8 languages.',
+            'description' => 'Free AI chat assistant that helps you pick the right hardware diagnostic tool, explains test results, and walks through keyboard, mouse, screen, and audio diagnostics in 9 languages.',
             'url' => 'ai-assistant.php',
             'category' => 'UtilityApplication',
             'features' => [
                 'Plain-language hardware troubleshooting',
-                '8 languages (EN, ES, FR, DE, JA, KO, PT, AR)',
+                '9 languages (EN, ES, FR, DE, JA, KO, PT, AR, RU)',
                 'Links directly to the right test tool',
                 'Explains test results in context',
                 'No account, rate-limited to prevent abuse'
@@ -1524,15 +1534,16 @@ function getToolSchemaData($toolKey) {
             ]
         ],
         'whatsapp_sentiment' => [
-            'name' => 'WhatsApp Sentiment Analyzer',
-            'description' => 'Free WhatsApp sentiment analyzer to understand message tone and emotion.',
+            'name' => 'WhatsApp Chat & Text Sentiment Analyzer',
+            'description' => 'Analyze WhatsApp chats or any text with deeper sentiment, speaker pattern, red flag, green flag, and reply suggestion reports.',
             'url' => 'whatsapp-sentiment-analyzer.php',
             'category' => 'UtilityApplication',
             'features' => [
-                'Sentiment analysis',
-                'Emotion detection',
-                'Privacy-first',
-                'Local processing'
+                'Deep sentiment analysis',
+                'Speaker pattern review',
+                'Red and green flag detection',
+                'Suggested reply options',
+                'Backend model fallback'
             ]
         ],
         'lucky_wheel' => [
@@ -1558,6 +1569,8 @@ function getToolSchemaData($toolKey) {
 function getToolFAQs($toolKey) {
     $faqs = [
         'keyboard_tester' => [
+            ['question' => 'What is a key test?', 'answer' => 'A key test checks whether each physical keyboard key sends the expected input to your browser. Press one key at a time, watch the visual keyboard highlight, and use the key history to catch missed, repeated, or wrong inputs.'],
+            ['question' => 'Is this an online keyboard checker?', 'answer' => 'Yes. This page works as an online keyboard checker for desktop, laptop, USB, Bluetooth, Windows, Mac, and compact keyboards. It runs in the browser, so you can test keyboard keys without installing software.'],
             ['question' => 'How do I test my keyboard online?', 'answer' => 'Click inside the tester and press any key. The key highlights on the visual keyboard and appears in key history.'],
             ['question' => 'Why does a key not register in the keyboard tester?', 'answer' => 'Make sure the page is focused, press the key firmly, and confirm your OS language matches the selected layout.'],
             ['question' => 'Can I test keyboard ghosting or multiple key presses?', 'answer' => 'Yes. Press several keys together to see which keys register and identify ghosting issues.'],
@@ -1568,6 +1581,11 @@ function getToolFAQs($toolKey) {
             ['question' => 'Can I use this keyboard tester for 60 percent keyboards?', 'answer' => 'Yes. Press the normal keys first, then test your 60 percent keyboard Fn-layer combinations for arrows, function keys, Delete, Home, End, Page Up, and Page Down. The Fn key itself may not appear because most compact keyboards process it internally.'],
             ['question' => 'Can I test a gaming keyboard online?', 'answer' => 'Yes. Use it as a gaming keyboard tester by checking WASD, Shift, Ctrl, Space, number keys, and the key combinations you use in-game. For deeper checks, use the ghosting and latency tools linked from the tester.'],
             ['question' => 'Is the keyboard test private?', 'answer' => 'Yes. Testing runs entirely in your browser and does not upload any data to our servers.']
+        ],
+        'keyboard_double_click' => [
+            ['question' => 'What is keyboard chatter?', 'answer' => 'Keyboard chatter is when a single physical key press registers as two or more presses. It is often caused by worn or contaminated switch contacts bouncing faster than the keyboard firmware can filter.'],
+            ['question' => 'How do I fix chattering keys?', 'answer' => 'Try cleaning the switch, increasing firmware debounce on supported keyboards, or replacing the switch on a hot-swap board. Software debounce can help temporarily, but repeated chatter usually points to a hardware issue.'],
+            ['question' => 'Is chatter the same as ghosting?', 'answer' => 'No. Chatter means extra presses from one keystroke, while ghosting means missing or blocked presses during multi-key combinations. They need different tests and fixes.']
         ],
         'latency_checker' => [
             ['question' => 'What is input latency?', 'answer' => 'Input latency is the delay between pressing a key or clicking a mouse and seeing the result on screen. It is the sum of device polling delay, OS processing, application handling, GPU render, and monitor refresh. Competitive gaming targets under 20 ms end-to-end.'],
@@ -1582,6 +1600,24 @@ function getToolFAQs($toolKey) {
             ['question' => 'Can I test double click issues?', 'answer' => 'For double click problems, use the dedicated double click test page that logs suspiciously fast click intervals.'],
             ['question' => 'Does the mouse tester work on laptops and touchpads?', 'answer' => 'Yes, it works with trackpads, but external mice give the most accurate results.'],
             ['question' => 'Is the mouse test private?', 'answer' => 'Yes. All testing runs in your browser and does not upload data.']
+        ],
+        'mouse_accuracy' => [
+            ['question' => 'What is a mouse accuracy test?', 'answer' => 'A mouse accuracy test is an aim-training benchmark that measures how precisely you can click targets. This page reports hit percentage, average pixel error, and reaction time.'],
+            ['question' => 'What is a good mouse accuracy score?', 'answer' => 'On medium targets, above 90 percent accuracy is good and above 95 percent is excellent. Lower average pixel error means your clicks are landing closer to the target center.'],
+            ['question' => 'How can I use this to calibrate DPI or sensitivity?', 'answer' => 'Run one session at your current setting, change only DPI or sensitivity, then repeat the same target size and duration. Prefer the setting with higher accuracy and lower pixel error.'],
+            ['question' => 'Is this aim trainer free?', 'answer' => 'Yes. The mouse accuracy test runs in your browser with no signup or download, and results are stored locally on your device.']
+        ],
+        'mouse_drag' => [
+            ['question' => 'What is drag clicking?', 'answer' => 'Drag clicking is a technique where you slide a finger across the mouse button so friction makes the button trigger multiple click events from one motion.'],
+            ['question' => 'What is a good drag click CPS?', 'answer' => 'A competitive drag-click peak is often 30 CPS or higher in a short burst. Sustained scores depend heavily on the mouse switch, debounce behavior, and surface technique.'],
+            ['question' => 'Is drag clicking bad for your mouse?', 'answer' => 'Drag clicking can accelerate switch wear because it creates many rapid actuations. Check for ghost clicks or chatter periodically if you use it often.'],
+            ['question' => 'Is this drag click test free?', 'answer' => 'Yes. It runs locally in your browser, requires no signup, and saves best scores on your device only.']
+        ],
+        'right_click_cps' => [
+            ['question' => 'What is a right click CPS test?', 'answer' => 'A right click CPS test measures how many times you can press the right mouse button per second while suppressing the browser context menu for clean counts.'],
+            ['question' => 'What is a good right click CPS?', 'answer' => 'Normal right-click CPS is often around 8 to 12 sustained. Scores above that depend on technique, mouse switch feel, and session length.'],
+            ['question' => 'Why is my right click slower than left click?', 'answer' => 'Many users have less fine motor control with the middle finger, and some mice use different switch feel or debounce behavior on the right button.'],
+            ['question' => 'Is this right click CPS test free?', 'answer' => 'Yes. It runs in your browser with no signup or download, and best scores are saved locally on your device.']
         ],
         'click_speed' => [
             ['question' => 'What is CPS in click speed testing?', 'answer' => 'CPS stands for Clicks Per Second. It measures how many times you can click the mouse button in one second.'],
@@ -1791,10 +1827,10 @@ function getToolFAQs($toolKey) {
             ['question' => 'What is the color gamut of my display?', 'answer' => 'The tool queries CSS media queries for color-gamut support and reports sRGB, DCI-P3, or Rec. 2020. Most laptops and phones since 2020 support DCI-P3.']
         ],
         'apm_test' => [
-            ['question' => 'What is a good APM for StarCraft II?', 'answer' => 'Gold players average 100-140 APM, Platinum 150-200, Diamond 200-250, Masters 250-350, and pros 300-450 sustained with peaks over 600.'],
-            ['question' => 'What counts as an action?', 'answer' => 'Every mouse click (left, middle, right) and every non-modifier keystroke. Shift, Control, Alt, Meta on their own do not count — matching how in-game APM counters work.'],
-            ['question' => 'How is APM different from CPS?', 'answer' => 'CPS (clicks per second) measures raw mouse speed. APM measures every input per minute including keyboard. APM is the RTS and MOBA benchmark; CPS is the Minecraft PvP benchmark.'],
-            ['question' => 'Does high APM equal skill?', 'answer' => 'Raw speed helps but effective APM (meaningful inputs) matters more. Pros often have high raw APM from hotkey drills but only 40-60% of actions are strictly useful.']
+            ['question' => 'What is a good APM score?', 'answer' => 'For clean target drills, 60-110 APM is improving, 110-160 is solid, 160-220 is advanced, and 220+ is serious RTS-style mechanics. Accuracy matters as much as the number.'],
+            ['question' => 'What counts as an action in this test?', 'answer' => 'The score counts useful hits: the highlighted grid tile or the highlighted keyboard key. Wrong clicks and wrong keys are still recorded as inputs and misses so spam lowers accuracy.'],
+            ['question' => 'How is APM different from CPS?', 'answer' => 'CPS measures raw mouse clicks per second. APM measures actions per minute across mouse or keyboard drills and is more relevant for RTS, MOBA, and esports hotkey practice.'],
+            ['question' => 'Where are personal bests saved?', 'answer' => 'Recent tests and personal bests are stored locally in your browser with localStorage. They are not uploaded to KeyboardTester.click.']
         ],
         'mouse_spin' => [
             ['question' => 'How does the mouse spin test count rotations?', 'answer' => 'It treats the pad center as an origin, computes the angle from center to your cursor on every pointer event, and sums the angular deltas (wrapped into ±180 degrees). Every 360 degrees of accumulated rotation equals one full spin.'],
@@ -1813,6 +1849,12 @@ function getToolFAQs($toolKey) {
             ['question' => 'How do I set Full RGB range?', 'answer' => 'NVIDIA: Control Panel > Change Resolution > Output dynamic range = Full. AMD: Radeon Software > Display > Color Range = Full. Match the TV setting (HDMI Black Level, RGB Range).'],
             ['question' => 'Should I use Full or Limited RGB?', 'answer' => 'Full on PC monitors (they expect every pixel value). Limited only if you connect a PC to a TV specifically designed for video content. Always match both ends.'],
             ['question' => 'Does color range affect gaming?', 'answer' => 'Yes. Wrong range causes crushed shadows (hiding enemies in dark corners) or washed-out highlights (losing detail in sky / explosions).']
+        ],
+        'monitor_color_test' => [
+            ['question' => 'What does the monitor color test check?', 'answer' => 'It shows fullscreen solid colors, gradients, grayscale ramps, and checkerboards so you can inspect banding, tint, backlight uniformity, dead pixels, and color clipping.'],
+            ['question' => 'How do I use the color panels?', 'answer' => 'Open fullscreen mode, cycle each panel, and inspect the display from your normal viewing angle. Use solid red, green, blue, white, and black for defects, then use gradients for banding.'],
+            ['question' => 'What is color banding?', 'answer' => 'Banding is visible stepping in a gradient that should look smooth. It can come from a low-bit-depth panel, wrong color settings, compression, or an over-aggressive monitor mode.'],
+            ['question' => 'Should I calibrate my monitor after this test?', 'answer' => 'If you see tint, clipped shadows, crushed highlights, or uneven gradients, check your OS display calibration, GPU color range, monitor picture mode, and cable settings.']
         ],
         'screen_uniformity' => [
             ['question' => 'What is IPS glow and is it a defect?', 'answer' => 'IPS glow is a cool blue / purple glow visible at oblique viewing angles in dark content. It shifts as you move. All IPS panels have some — it is not a defect.'],
@@ -1860,7 +1902,7 @@ function getToolFAQs($toolKey) {
         'ai_assistant' => [
             ['question' => 'Is the KBT AI assistant free?', 'answer' => 'Yes. The assistant is free, requires no account, and has no paywall. A rate limit of 12 messages per minute per visitor exists only to keep the service fast and prevent abuse — it resets every minute.'],
             ['question' => 'Which AI model powers the assistant?', 'answer' => 'The assistant runs on a Groq-hosted large language model. Groq provides sub-second inference speeds on open LLMs, which is why answers arrive in about a second. The model is not GPT-4 or Claude Opus — it is a mid-sized LLM tuned for fast, focused responses within our hardware-testing domain.'],
-            ['question' => 'What languages does the AI assistant support?', 'answer' => 'Eight languages: English, Spanish, French, German, Japanese, Korean, Portuguese, and Arabic. Tap the 🌐 button in the chat header to switch. Tool links in the AI responses automatically route to the localized version of the site where available.'],
+            ['question' => 'What languages does the AI assistant support?', 'answer' => 'Nine languages: English, Spanish, French, German, Japanese, Korean, Portuguese, Arabic, and Russian. Tap the 🌐 button in the chat header to switch. Tool links in the AI responses automatically route to the localized version of the site where available.'],
             ['question' => 'Is the conversation private?', 'answer' => 'Yes. Chat history is stored only in your browser localStorage — reloading the page clears it. Messages are sent to the Groq API for generation but are not used for training, and we do not log chat content server-side. The only server data kept is a per-session rate-limit counter that resets every minute.'],
             ['question' => 'What can the AI assistant help me with?', 'answer' => 'It is scoped to hardware testing on KeyboardTester.click: picking the right diagnostic tool based on your symptom, explaining technical terms like ghosting or N-key rollover, interpreting test results, and routing you to the correct test page. It will decline off-topic questions (politics, coding, homework, general trivia) — for those, a general AI chatbot like ChatGPT or Claude is a better fit.'],
             ['question' => 'Does the AI replace the test tools themselves?', 'answer' => 'No. The tools are the actual diagnostic. The AI assistant is a guide layer on top — it tells you which test to run and what the numbers mean, but the testing itself happens in the browser-based tools (keyboard tester, mouse tester, screen tester, etc.).']
@@ -1978,7 +2020,8 @@ function getToolFAQs($toolKey) {
             ['question' => 'Is this hearing age test medically accurate?', 'answer' => 'No. This is a screening tool, not a clinical audiogram. A real audiogram is conducted in a sound-treated booth with calibrated equipment at speech frequencies (250 Hz to 8 kHz). This online test focuses on extended-high frequencies (8 kHz to 22 kHz) on uncalibrated consumer hardware, so the result is approximate. Use it as a fun curiosity check; if you suspect real hearing loss, see an audiologist.'],
             ['question' => 'Why do headphones matter so much for this test?', 'answer' => 'Most laptop speakers, phone speakers, and cheap earbuds roll off sharply above 14-16 kHz - the driver simply cannot reproduce frequencies that high. If you fail to hear 17 kHz on a laptop speaker, that is the speaker, not your ears. Wired over-ear or in-ear headphones with a known frequency response give the most honest result.'],
             ['question' => 'What is the mosquito tone?', 'answer' => 'The mosquito tone is a 17,400 Hz sine wave. It got its name from the Mosquito anti-loitering device, deployed in UK shops from 2005 onward because the tone was painful to teenagers but inaudible to most adults over 25. It is the classic informal age test: if you can clearly hear 17.4 kHz through quality headphones at moderate volume, your high-frequency hearing is younger than the average 25-year-old\'s.'],
-            ['question' => 'Will Bluetooth or wireless headphones affect my result?', 'answer' => 'Yes, often dramatically. SBC and AAC Bluetooth codecs apply a low-pass filter above 16-20 kHz to save bandwidth, so your wireless headphones may be silently cutting the very frequencies the test depends on. For accurate hearing-age results use wired 3.5mm or wired USB-C headphones. If you only have Bluetooth, expect your result to skew older than reality.']
+            ['question' => 'Will Bluetooth or wireless headphones affect my result?', 'answer' => 'Yes, often dramatically. SBC and AAC Bluetooth codecs apply a low-pass filter above 16-20 kHz to save bandwidth, so your wireless headphones may be silently cutting the very frequencies the test depends on. For accurate hearing-age results use wired 3.5mm or wired USB-C headphones. If you only have Bluetooth, expect your result to skew older than reality.'],
+            ['question' => 'Should I test left and right ears separately?', 'answer' => 'Yes, if you want a cleaner result. Use Advanced options to switch from both ears to left ear or right ear, keep the same low volume, and compare the highest clearly heard frequency for each side. A large one-sided difference should be re-tested with different headphones and discussed with an audiologist if it matches real-world symptoms.']
         ],
         'online_ruler' => [
             ['question' => 'Why does the online ruler look smaller or bigger than my real ruler?', 'answer' => 'Pixel size varies by display. A 96 DPI office monitor has pixels roughly three times wider than an iPad Retina display, so a fixed-pixel ruler will look correct on one screen and wrong on another. Calibrate using the credit-card overlay: drag the right-hand handle until the dark card matches a real ISO ID-1 card (85.6 x 54 mm) sitting on your screen, then click Save. The ruler will be accurate for that browser and zoom level until you change them.'],
@@ -2084,43 +2127,35 @@ function generateHomepageSchema() {
         ['name' => 'Home', 'url' => '/']
     ]);
 
-    // Homepage FAQs. Keep these aligned with help/keyboard-tester.php.
+    // Homepage FAQs. Keep these aligned with the visible homepage FAQ in index.php.
     $faqs = [
         [
-            'question' => 'How do I test every key on my keyboard?',
-            'answer' => 'Focus the tester, press each physical key once, and confirm the matching key highlights on the visual keyboard. Use the key history to spot keys that repeat, miss, or send a different input than expected.'
+            'question' => 'How do I test every key on my keyboard online?',
+            'answer' => 'Click inside the keyboard tester, then press each physical key once. The matching key should light up and appear in the key history. Test letters, numbers, modifiers, arrows, numpad, and shortcuts separately so you can see missed keys, wrong symbols, or repeated input clearly.'
         ],
         [
-            'question' => 'What do the Advanced Options do?',
-            'answer' => 'Advanced Options add session statistics, a press-frequency heatmap, sound feedback, guided Test All Keys mode, exportable reports, ghost-click monitoring, and latency checks. Use them when you need evidence, troubleshooting detail, or a deeper gaming-keyboard check.'
+            'question' => 'Do I need to download a keyboard tester app?',
+            'answer' => 'No. This is a browser keyboard tester, so it runs on the page without an app, extension, or account. Use it on Windows, Mac, Chromebook, Linux, laptop, USB, Bluetooth, and compact keyboards as long as the browser can receive normal keyboard events.'
         ],
         [
-            'question' => 'How should advanced users run a Pro Test?',
-            'answer' => 'Open Advanced Options, start Test All Keys, press each key and important shortcut, review Statistics and Heatmap for missed or repeated inputs, run Ghost Click with your hands off the keyboard, sample Latency on the same device, then Export the report. It is a browser-level diagnostic, so use it for troubleshooting evidence and comparisons rather than lab hardware certification.'
+            'question' => 'Why is my keyboard not typing or not registering keys?',
+            'answer' => 'If keys fail here and in other apps, check the cable, Bluetooth battery, USB port, OS keyboard layout, and physical switch or membrane. If keys work here but not in one app or game, the problem is usually app focus, shortcut capture, permissions, or an in-game binding.'
         ],
         [
-            'question' => 'Why does a key not register in the keyboard tester?',
-            'answer' => 'First click inside the tester, then press the key firmly again. If it still does not appear, check your OS keyboard layout, browser focus, and whether another app is intercepting the shortcut. If only one physical key fails, the switch, membrane, or laptop keyboard cable may need cleaning or repair.'
+            'question' => 'How can I check for stuck keys, repeated keys, or keyboard chatter?',
+            'answer' => 'Press the problem key slowly and watch whether it records once, repeats rapidly, or stays highlighted after release. A chatter pattern usually means one press creates multiple history entries. Use the stuck key test when you need a focused repeat-input check.'
         ],
         [
-            'question' => 'Can this detect stuck, repeating, or chattering keys?',
-            'answer' => 'Yes. A stuck or chattering key often appears as repeated entries in the key history, a key that stays highlighted too long, or several rapid inputs from one press. Test the problem key slowly, then compare it with nearby keys.'
+            'question' => 'Can this keyboard tester detect ghosting and N-key rollover?',
+            'answer' => 'Yes. It can reveal common ghosting and rollover limits by showing which held keys register together. Hold gaming combos like WASD with Shift and Space, then compare the highlights. For deeper combination checks, use the keyboard ghosting test.'
         ],
         [
-            'question' => 'Can I test keyboard ghosting and N-key rollover?',
-            'answer' => 'Yes. Hold the combinations you actually use, such as WASD with Shift, Ctrl, Space, or number keys. If a held key does not light up, the keyboard may have a rollover limit or a blocked matrix combination.'
+            'question' => 'Does it work with laptop, Windows, Mac, Chromebook, Bluetooth, and compact keyboards?',
+            'answer' => 'Yes. The test works with most desktop, laptop, wired, wireless, Bluetooth, Windows, Mac, Chromebook, and compact keyboards. Browser and OS shortcuts may still intercept some keys, and Fn-layer or media keys may not expose standard key events to any website.'
         ],
         [
-            'question' => 'Why are Fn, media keys, or Print Screen different?',
-            'answer' => 'Some keys are handled by the keyboard firmware or operating system before the browser receives them. Fn usually does not send a browser event, some media keys are intercepted by the OS, and Print Screen can be blocked for security reasons.'
-        ],
-        [
-            'question' => 'Does the tester work with laptops, Mac keyboards, and compact keyboards?',
-            'answer' => 'Yes. It works with built-in laptop keyboards, USB keyboards, Bluetooth keyboards, Mac keyboards, and compact layouts in modern browsers. For compact keyboards, test the normal keys first, then test Fn-layer outputs like arrows, Delete, Home, End, and function keys.'
-        ],
-        [
-            'question' => 'Is the keyboard test private and does it need a download?',
-            'answer' => 'No download or sign-up is needed. The keyboard test runs in your browser and the key test data is not uploaded to our server.'
+            'question' => 'Are my keystrokes recorded or uploaded?',
+            'answer' => 'No. The key test runs in your browser and displays the result on the page. The tool does not need a login, download, or server upload for normal key testing. Avoid typing passwords or private text into any keyboard tester, including this one.'
         ]
     ];
     $output .= schemaFAQ($faqs);

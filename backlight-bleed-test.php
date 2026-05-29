@@ -1,9 +1,16 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Backlight Bleed Test — Monitor Light Leak Check Online | KeyboardTester.click';
+$pageTitle = 'Backlight Bleed Test - Free Monitor Light Leak Check';
 $pageDescription = 'Free open source backlight bleed test online. Check your LCD monitor for backlight bleeding, IPS glow, and clouding with a full-screen black display. Adjustable brightness and multiple dark shades — no download required.';
 $pageKeywords = 'backlight bleed test, open source monitor test, backlight bleed test online, IPS glow test, monitor bleed check, LCD backlight bleeding test';
-$pageOgImage = 'images/screen-test/hero.webp';
+$pageOgImage = 'images/screen-test/screen-tester-review-pixel-results-960.webp';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'backlight-bleed-test';
+  require __DIR__ . '/includes/render-english-inline-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +20,12 @@ $pageOgImage = 'images/screen-test/hero.webp';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <?php
@@ -440,6 +447,7 @@ html.dark-theme .bleed-compare-table tr:nth-child(even) td {
   <main id="main-content" class="landing-main">
 
     <!-- ── Tool Stage ────────────────────────────────────────────────── -->
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
     <section class="tool-stage" id="backlight-bleed-tool" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">
         <div>
@@ -592,7 +600,7 @@ html.dark-theme .bleed-compare-table tr:nth-child(even) td {
       </div>
     </section>
 
-    <!-- ── What Is Backlight Bleed? ───────────────────────────────────── -->
+    <!-- ── What Is Backlight Bleed ───────────────────────────────────── -->
     <section class="feature-band" aria-labelledby="what-is-bleed">
       <div class="container">
         <div class="section-head">
@@ -705,7 +713,7 @@ html.dark-theme .bleed-compare-table tr:nth-child(even) td {
       </div>
     </section>
 
-    <!-- ── Is my bleed normal? ────────────────────────────────────────── -->
+    <!-- ── Is my bleed normal ────────────────────────────────────────── -->
     <section class="feature-band" aria-labelledby="bleed-normal">
       <div class="container">
         <div class="section-head">
@@ -807,7 +815,7 @@ html.dark-theme .bleed-compare-table tr:nth-child(even) td {
         group.forEach(function (btn) {
           var active = btn.dataset.color === color;
           btn.classList.toggle('active', active);
-          btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+          btn.setAttribute('aria-pressed', active  'true' : 'false');
         });
       });
     }

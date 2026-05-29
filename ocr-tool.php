@@ -1,9 +1,16 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Image to Text OCR Tool Online | KeyboardTester.click';
+$pageTitle = 'OCR Tool - Free Image to Text Converter Online';
 $pageDescription = 'Free open source OCR tool online. Extract text from images in your browser. Upload a screenshot or photo and copy the detected text instantly. No install needed.';
 $pageKeywords = 'image to text, open source OCR tool, ocr online, extract text from image, free ocr tool';
 $pageOgImage = 'images/ocr-tool/hero.png';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'ocr-tool';
+  require __DIR__ . '/includes/render-english-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +20,12 @@ $pageOgImage = 'images/ocr-tool/hero.png';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <?php
@@ -34,6 +41,7 @@ $pageOgImage = 'images/ocr-tool/hero.png';
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-ocr-tool.php'; ?>
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
 
     <section class="tool-stage" id="ocr-main-tool" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">

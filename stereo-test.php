@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Stereo Test Online | Check Headphones and Speakers',
+        'title' => 'Stereo Test - Free Headphone & Speaker Channel Check',
         'description' => 'Run a stereo test online to verify both audio channels, left-right balance and speaker or headphone output. Works on any browser — no install, no tracking, instant.',
         'keywords' => 'stereo test online, stereo sound test, speaker stereo test, headphone stereo test',
         'ogImage' => 'images/headphone-test/hero.png',

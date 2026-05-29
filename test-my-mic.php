@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Test My Mic Online | Quick Microphone Check',
+        'title' => 'Test My Mic - Free Quick Online Microphone Check',
         'description' => 'Test my mic online with a quick browser-based microphone check. Verify mic access, live voice input and peak level before Zoom, Teams, Discord or Meet calls.',
         'keywords' => 'test my mic, test my microphone, quick mic test, microphone check online',
         'ogImage' => 'images/mic-test/hero.png',

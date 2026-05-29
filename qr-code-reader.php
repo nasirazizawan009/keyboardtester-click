@@ -1,9 +1,16 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source QR Code Reader Online | KeyboardTester.click';
+$pageTitle = 'QR Code Reader - Scan & Decode QR From Image Online';
 $pageDescription = 'Free open source QR code reader online. Upload a QR code image and decode it instantly in your browser. Read URLs, text, contacts, Wi-Fi passwords — no app or install needed.';
 $pageKeywords = 'qr code reader online, open source QR scanner, qr scanner from image, decode qr code, read qr code online';
 $pageOgImage = 'images/qr-reader/hero.png';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'qr-reader';
+  require __DIR__ . '/includes/render-english-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +20,12 @@ $pageOgImage = 'images/qr-reader/hero.png';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <?php
@@ -34,6 +41,7 @@ $pageOgImage = 'images/qr-reader/hero.png';
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-qr-code-reader.php'; ?>
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
 
     <section class="tool-stage" id="qr-reader-stage" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">

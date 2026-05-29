@@ -1,11 +1,18 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Monitor Color Test — Screen Color & Display Check Online | KeyboardTester.click';
+$pageTitle = 'Monitor Color Test - Free Screen Color Check Online';
 $pageDescription = 'Free open source monitor color test online. Check color accuracy, gradient banding, contrast and backlight uniformity on any screen. Fullscreen color panels. No download needed.';
 $pageKeywords = 'monitor color test online, open source screen test, screen color test, display color calibration test, color banding test monitor';
-$pageOgImage = 'images/screen-test/hero.webp';
+$pageOgImage = 'images/screen-test/screen-tester-cycle-colors-960.webp';
 $pageOgImageAlt = 'Monitor color test tool showing fullscreen color panels for display calibration';
 $currentTool = 'color-test';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'color-test';
+  require __DIR__ . '/includes/render-english-inline-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,16 +22,16 @@ $currentTool = 'color-test';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <?php
   include_once __DIR__ . '/includes/schema.php';
-  echo generateToolPageSchema('screen_tester', [
+  echo generateToolPageSchema('monitor_color_test', [
       ['name' => 'Home', 'url' => '/'],
       ['name' => 'Monitor Color Test', 'url' => '']
   ]);
@@ -191,6 +198,7 @@ $currentTool = 'color-test';
 
   <main id="main-content" class="landing-main">
 
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
     <section class="tool-stage" id="color-tool" aria-labelledby="color-tool-title">
       <div class="container tool-stage-header">
         <div>
@@ -476,7 +484,7 @@ $currentTool = 'color-test';
       var size = 20;
       for (var x = 0; x < rampCanvas.width; x += size) {
         for (var y = 0; y < rampCanvas.height; y += size) {
-          ctx.fillStyle = ((x / size + y / size) % 2 === 0) ? '#000' : '#FFF';
+          ctx.fillStyle = ((x / size + y / size) % 2 === 0)  '#000' : '#FFF';
           ctx.fillRect(x, y, size, size);
         }
       }
@@ -503,7 +511,7 @@ $currentTool = 'color-test';
 
     document.addEventListener('fullscreenchange', function() {
       var isFS = !!document.fullscreenElement;
-      document.getElementById('controls-overlay').style.display = isFS ? 'flex' : 'none';
+      document.getElementById('controls-overlay').style.display = isFS  'flex' : 'none';
       // Redraw canvas-based tests after resize
       if (isFS) {
         setTimeout(function() {

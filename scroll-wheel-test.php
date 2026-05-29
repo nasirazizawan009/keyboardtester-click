@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Scroll Wheel Test Online | Check Mouse Wheel Direction',
+        'title' => 'Scroll Wheel Test - Free Mouse Wheel Direction Check',
         'description' => 'Test your mouse scroll wheel online. Verify up and down wheel input, middle click, and spot inconsistent scrolling or reverse-direction faults in seconds.',
         'keywords' => 'scroll wheel test, mouse wheel test, test mouse scroll wheel, middle click test',
         'ogImage' => 'images/mouse/hero.png',

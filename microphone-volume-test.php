@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Microphone Volume Test Online | Check Mic Input Level',
+        'title' => 'Microphone Volume Test - Free Mic Input Level Check',
         'description' => 'Test microphone volume online with a live browser meter. See current level and peak mic volume in real time without recording audio or uploading to any server.',
         'keywords' => 'microphone volume test, mic volume test online, test mic input level, microphone level checker',
         'ogImage' => 'images/mic-test/hero.png',

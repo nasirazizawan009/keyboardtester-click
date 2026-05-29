@@ -9,9 +9,14 @@ AddType image/avif .avif
 RewriteEngine On
 RewriteBase /
 
-# Serve robots.txt and ads.txt directly (bypass all rewrites)
-RewriteRule ^robots\.txt$ - [L]
+# Serve robots.txt through PHP so headers are audit-tool friendly.
+RewriteRule ^robots\.txt$ robots.php [L]
+# Serve ads.txt directly (bypass all rewrites)
 RewriteRule ^ads\.txt$ - [L]
+
+<IfModule mod_setenvif.c>
+    SetEnvIf Request_URI "^/robots\.txt" KBT_ROBOTS_TXT=1
+</IfModule>
 
 # Local-only/API endpoints that should never be indexed directly
 RewriteRule ^ai-config\.php$ - [F,L]
@@ -89,7 +94,7 @@ RewriteRule ^keyboard_tester_japanese\.(php|html)$ /languages/japanese/ [R=301,L
 RewriteRule ^keyboard_tester_german\.(php|html)$ /languages/german/ [R=301,L]
 RewriteRule ^keyboard_tester_korean_index\.(php|html)$ /languages/korean/ [R=301,L]
 
-# Redirect old tool URLs to current versions  
+# Redirect old tool URLs to current versions
 RewriteRule ^keyboard-typing-test\.php$ /keyboard_typing_test.php [R=301,L]
 RewriteRule ^mouse-speed-tester\.php$ /mouse_speed_tester.php [R=301,L]
 RewriteRule ^mouse-sensitivity-dpi-tester\.php$ /mouse_sensitivity_DPI_tester.php [R=301,L]
@@ -160,7 +165,8 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
     BrowserMatch ^Mozilla/4 gzip-only-text/html
     BrowserMatch ^Mozilla/4\.0[678] no-gzip
     BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-    Header append Vary User-Agent
+    # Vary: User-Agent removed 2026-05-29 — cache-busting anti-pattern; responsive
+    # behaviour lives in CSS, not server-side UA branching, so it blocked edge caching.
 </IfModule>
 
 # Fallback for servers without mod_deflate
@@ -178,6 +184,8 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
 # ============================================
 # BROWSER CACHING - Expires Headers
 # ============================================
+SetEnvIf Host "^(localhost|127\.0\.0\.1)(:[0-9]+)?$" KBT_LOCAL_DEV=1
+
 <IfModule mod_expires.c>
     ExpiresActive On
 
@@ -186,6 +194,16 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
 
     # HTML - short browser cache only (private, never proxy/nginx cached)
     ExpiresByType text/html "access plus 1 hour"
+
+    # Service worker script should not be cached for long; it controls page caching.
+    <FilesMatch "^sw\.js$">
+        ExpiresActive Off
+    </FilesMatch>
+
+    # robots.txt should revalidate so audit tools do not keep stale failed fetches.
+    <FilesMatch "^robots\.txt$">
+        ExpiresActive Off
+    </FilesMatch>
 
     # CSS and JavaScript - 1 year (use versioning for updates)
     ExpiresByType text/css "access plus 1 year"
@@ -249,10 +267,41 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
     Header always set Cache-Control "private, max-age=3600, must-revalidate"
     Header always set X-Accel-Expires "0"
 
+    # URI-level override for /robots.txt when it is served through robots.php.
+    Header unset Cache-Control env=KBT_ROBOTS_TXT
+    Header always unset Cache-Control env=KBT_ROBOTS_TXT
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0" env=KBT_ROBOTS_TXT
+    Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0" env=KBT_ROBOTS_TXT
+    Header set Pragma "no-cache" env=KBT_ROBOTS_TXT
+    Header always set Pragma "no-cache" env=KBT_ROBOTS_TXT
+    Header set Expires "0" env=KBT_ROBOTS_TXT
+    Header always set Expires "0" env=KBT_ROBOTS_TXT
+    Header unset Content-Security-Policy env=KBT_ROBOTS_TXT
+    Header always unset Content-Security-Policy env=KBT_ROBOTS_TXT
+    Header unset X-Frame-Options env=KBT_ROBOTS_TXT
+    Header always unset X-Frame-Options env=KBT_ROBOTS_TXT
+    Header unset X-Content-Type-Options env=KBT_ROBOTS_TXT
+    Header always unset X-Content-Type-Options env=KBT_ROBOTS_TXT
+    Header set Content-Type "text/plain; charset=utf-8" env=KBT_ROBOTS_TXT
+    Header always set Content-Type "text/plain; charset=utf-8" env=KBT_ROBOTS_TXT
+
     # Static assets — override the default above with long public cache
     <FilesMatch "\.(css|js|mjs)$">
         Header always set Cache-Control "public, max-age=31536000, immutable"
         Header always unset X-Accel-Expires
+    </FilesMatch>
+
+    # Service worker must revalidate quickly so cached HTML updates reach returning visitors.
+    <FilesMatch "^sw\.js$">
+        Header unset Cache-Control
+        Header always unset Cache-Control
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header always set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header always set Pragma "no-cache"
+        Header set Expires "0"
+        Header always set Expires "0"
+        Header always set X-Accel-Expires "0"
     </FilesMatch>
 
     # Images - immutable, 1 year cache
@@ -284,6 +333,15 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
         Header unset X-Content-Type-Options
     </FilesMatch>
 
+    # Plain-text sitemap - one URL per line, no markup
+    <FilesMatch "^sitemap.*\.txt$">
+        Header set Cache-Control "public, max-age=86400"
+        Header set Content-Type "text/plain; charset=utf-8"
+        Header unset Content-Security-Policy
+        Header unset X-Frame-Options
+        Header unset X-Content-Type-Options
+    </FilesMatch>
+
     # ads.txt - plain text (Google AdSense)
     <FilesMatch "ads\.txt$">
         Header set Cache-Control "public, max-age=86400"
@@ -293,12 +351,29 @@ RewriteRule ^(.*)\.html$ /$1.php [QSA,R=301,L]
 
     # Robots.txt - plain text
     <FilesMatch "robots\.txt$">
-        Header set Cache-Control "public, max-age=86400"
+        Header unset Cache-Control
+        Header always unset Cache-Control
+        Header set Cache-Control "no-cache, max-age=0, must-revalidate"
+        Header always set Cache-Control "no-cache, max-age=0, must-revalidate"
+        Header set Pragma "no-cache"
+        Header always set Pragma "no-cache"
+        Header set Expires "0"
+        Header always set Expires "0"
         Header set Content-Type "text/plain; charset=utf-8"
         Header unset Content-Security-Policy
         Header unset X-Frame-Options
         Header unset X-Content-Type-Options
     </FilesMatch>
+
+    # Local XAMPP previews must not serve stale HTML/assets while design work is in progress.
+    Header unset Cache-Control env=KBT_LOCAL_DEV
+    Header always unset Cache-Control env=KBT_LOCAL_DEV
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0" env=KBT_LOCAL_DEV
+    Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0" env=KBT_LOCAL_DEV
+    Header set Pragma "no-cache" env=KBT_LOCAL_DEV
+    Header always set Pragma "no-cache" env=KBT_LOCAL_DEV
+    Header set Expires "0" env=KBT_LOCAL_DEV
+    Header always set Expires "0" env=KBT_LOCAL_DEV
 </IfModule>
 
 # Return 410 Gone for stale WordPress feed/tag/category URLs from when blog

@@ -1,9 +1,16 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source WhatsApp Brand QR Generator — Business Chat Links | KeyboardTester.click';
+$pageTitle = 'WhatsApp QR Generator - Free Business Chat QR Code';
 $pageDescription = 'Free open source WhatsApp brand link and QR code generator. Create branded WhatsApp chat links with live feedback and quick resets. No download needed.';
 $pageKeywords = 'whatsapp brand links, open source WhatsApp tool, branded links, whatsapp qr generator, online test, free tool';
 $pageOgImage = 'images/whatsapp-brand/hero.png';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'whatsapp-brand-links';
+  require __DIR__ . '/includes/render-english-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +20,12 @@ $pageOgImage = 'images/whatsapp-brand/hero.png';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <?php
@@ -34,6 +41,7 @@ $pageOgImage = 'images/whatsapp-brand/hero.png';
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-whatsapp-brand-link-generator.php'; ?>
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
 
     <section class="tool-stage" id="wa-brand-tool" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">

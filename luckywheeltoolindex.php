@@ -1,9 +1,17 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Lucky Wheel Spinner — Random Picker | KeyboardTester.click';
+$pageTitle = 'Lucky Wheel Spinner - Free Random Picker Wheel';
 $pageDescription = 'Free open source lucky wheel spinner. Randomly pick a winner by spinning the wheel. Add entries, customize colors, and share results instantly. No download needed.';
 $pageKeywords = 'lucky wheel, open source wheel spinner, random picker, spin wheel, name picker, online wheel';
 $pageOgImage = 'images/lucky-wheel/hero.png';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'lucky-wheel';
+  $kbtTemplateSchemaKey = 'lucky_wheel';
+  require __DIR__ . '/includes/render-english-inline-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +21,12 @@ $pageOgImage = 'images/lucky-wheel/hero.png';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <?php

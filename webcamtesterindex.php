@@ -1,10 +1,17 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Webcam Test Online | KeyboardTester.click';
+$pageTitle = 'Webcam Test - Free Online Camera Test (No Download)';
 $pageDescription = 'Free open source webcam test online. Preview the camera feed and verify video quality without installing any software. Works in all browsers instantly.';
 $pageKeywords = 'webcam test, open source webcam tester, webcam tester online, camera test, webcam quality check';
 $pageOgImage = 'images/webcam-test/webcam-test-camera-preview-1400.png';
 $pageOgImageAlt = 'Person previewing webcam quality online with a live camera framing and resolution card';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'webcam-test';
+  require __DIR__ . '/includes/render-english-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +21,12 @@ $pageOgImageAlt = 'Person previewing webcam quality online with a live camera fr
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <?php
@@ -35,6 +42,7 @@ $pageOgImageAlt = 'Person previewing webcam quality online with a live camera fr
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-webcam-tester.php'; ?>
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
 
     <section class="tool-stage" id="webcam-tool" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">

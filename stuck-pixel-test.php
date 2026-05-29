@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Stuck Pixel Test Online | Check Red, Green, and Blue Pixels',
+        'title' => 'Stuck Pixel Test - Free RGB Pixel Checker & Fixer',
         'description' => 'Use a free stuck pixel test online to find red, green, blue or white pixels that stay lit. Runs fullscreen colour cycles on any monitor, laptop or phone screen.',
         'keywords' => 'stuck pixel test, stuck pixel checker, red pixel test, blue pixel stuck monitor',
         'ogImage' => 'images/screen-test/hero.png',

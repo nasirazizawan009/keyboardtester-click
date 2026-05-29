@@ -1,10 +1,17 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Dead Pixel Test & Screen Tester Online | KeyboardTester.click';
+$pageTitle = 'Screen Test - Monitor Test for Color, Pixels & Backlight';
 $pageDescription = 'Free open source dead pixel test online. Check monitor, laptop, or phone for dead and stuck pixels using fullscreen color cycling. No install or download needed.';
 $pageKeywords = 'screen tester, open source dead pixel test, dead pixel test, stuck pixel test, monitor test';
 $pageOgImage = 'images/screen-test/screen-tester-monitor-inspection-1400.png';
 $pageOgImageAlt = 'Person using an online screen tester to inspect a display for dead pixels and panel defects';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'screen-test';
+  require __DIR__ . '/includes/render-english-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +21,12 @@ $pageOgImageAlt = 'Person using an online screen tester to inspect a display for
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <?php
@@ -35,6 +42,7 @@ $pageOgImageAlt = 'Person using an online screen tester to inspect a display for
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-screen-tester.php'; ?>
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
 
     <section class="tool-stage" id="screen-tool" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">

@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Dead Pixel Test Online | Monitor Checker',
+        'title' => 'Dead Pixel Test - Free Online Monitor Pixel Checker',
         'description' => 'Run a free dead pixel test online with full-screen solid colours. Check monitor, laptop or phone screens for dead, stuck or hot pixels in red, green, blue and more.',
         'keywords' => 'dead pixel test, dead pixel checker, monitor dead pixel test, screen dead pixel test',
         'ogImage' => 'images/screen-test/hero.png',

@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Keyboard Ghosting Test — Anti-Ghosting & N-Key Rollover Check Online | KeyboardTester.click',
+        'title' => 'Keyboard Ghosting Test - Free Anti-Ghosting & NKRO Check',
         'description' => 'Free keyboard ghosting test online. Press multiple keys together to detect ghosting and check N-key rollover (NKRO). No download. Works in any browser. Instant results.',
         'keywords' => 'keyboard ghosting test, anti ghosting keyboard test, test keyboard ghosting, multiple key press test',
         'ogImage' => 'images/keyboard/hero-keyboard-test-1400.png',

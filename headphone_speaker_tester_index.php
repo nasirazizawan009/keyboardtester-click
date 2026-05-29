@@ -1,10 +1,17 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Headphone and Speaker Test Online | KeyboardTester.click';
+$pageTitle = 'Headphone & Speaker Test - Free Stereo Channel Check';
 $pageDescription = 'Free open source headphone and speaker test online. Test stereo audio playback, left-right channel checks, and sound output quickly in your browser. No install needed.';
 $pageKeywords = 'headphone test, open source speaker test, audio test online, stereo sound test';
 $pageOgImage = 'images/headphone-test/speaker-headphone-test-stereo-preview-1400.png';
 $pageOgImageAlt = 'Person verifying stereo speaker and headphone output online with left and right channel controls';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'headphone-test';
+  require __DIR__ . '/includes/render-english-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +21,12 @@ $pageOgImageAlt = 'Person verifying stereo speaker and headphone output online w
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <?php
@@ -35,6 +42,7 @@ $pageOgImageAlt = 'Person verifying stereo speaker and headphone output online w
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-headphone-speaker-tester.php'; ?>
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
 
     <section class="tool-stage" id="headphone-tool" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">

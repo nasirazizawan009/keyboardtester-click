@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source White Screen Test Online | Full White Screen Checker',
+        'title' => 'White Screen Test - Free Full White Screen Checker',
         'description' => 'Use a white screen test online to inspect stuck pixels, dust, panel tint and uniformity on monitors, laptops and phones. Fullscreen pure-white with one click.',
         'keywords' => 'white screen test, full white screen, monitor white screen test, stuck pixel white screen',
         'ogImage' => 'images/screen-test/hero.png',

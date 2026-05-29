@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Webcam Not Working? Run This Online Camera Test',
+        'title' => 'Webcam Not Working? Free Online Camera Test',
         'description' => 'If your webcam is not working, run this browser-based camera test to check permission, device detection, live preview and resolution. Diagnose issues in seconds.',
         'keywords' => 'webcam not working test, camera not working online test, webcam troubleshooting, test webcam not working',
         'ogImage' => 'images/webcam-test/hero.png',

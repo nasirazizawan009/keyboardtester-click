@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Take Picture With Webcam Online | Camera Snapshots',
+        'title' => 'Take a Picture With Webcam - Free Online Snapshot Tool',
         'description' => 'Take pictures with your webcam online, preview the live feed, capture snapshots and download images instantly. Works in any modern browser with no install required.',
         'keywords' => 'take picture with webcam online, webcam snapshot, webcam photo online, camera snapshot test',
         'ogImage' => 'images/webcam-test/hero.png',

@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Stuck Key Test — Check Jammed or Repeating Keyboard Keys | KeyboardTester.click',
+        'title' => 'Stuck Key Test - Free Jammed & Repeating Key Checker',
         'description' => 'Use a free stuck key test online to check repeating, jammed, or unresponsive keyboard keys. Press the problem key and verify how it behaves in real time.',
         'keywords' => 'stuck key test, repeating key test, stuck keyboard key, jammed keyboard key test',
         'ogImage' => 'images/keyboard/hero-keyboard-test-1400.png',

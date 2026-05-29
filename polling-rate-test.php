@@ -1,9 +1,16 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Mouse Polling Rate Test — Check Mouse Hz Online | KeyboardTester.click';
+$pageTitle = 'Mouse Polling Rate Test - Check Mouse Hz Online Free';
 $pageDescription = 'Free open source mouse polling rate test online. Check if your gaming mouse runs at 125Hz, 500Hz, 1000Hz or higher. Move your mouse to see live Hz readings. No download needed.';
 $pageKeywords = 'mouse polling rate test, open source mouse tester, mouse hz test, polling rate checker, check mouse hz online';
-$pageOgImage = 'images/mouse/hero.webp';
+$pageOgImage = 'images/mouse/mouse-testing-960.webp';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'polling-rate-test';
+  require __DIR__ . '/includes/render-english-inline-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +20,12 @@ $pageOgImage = 'images/mouse/hero.webp';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <style>
     /* Polling Rate Test Tool — embedded styles */
@@ -280,6 +287,7 @@ $pageOgImage = 'images/mouse/hero.webp';
   <main id="main-content" class="landing-main">
 
     <!-- ── Tool stage ─────────────────────────────────────────────────── -->
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
     <section class="tool-stage" id="polling-rate-test-tool" aria-labelledby="polling-tool-title">
       <div class="container tool-stage-header">
         <div>
@@ -349,7 +357,7 @@ $pageOgImage = 'images/mouse/hero.webp';
           <p class="privacy-notice">This test runs entirely in your browser. No data is collected.</p>
 
           <!-- Related tool link -->
-          <p class="related-link">Also check your <a href="<?php echo url('mouse_sensitivity_DPI_tester.php'); ?>">Mouse DPI Test</a> for full mouse hardware analysis.</p>
+          <p class="related-link">Also check your <a href="<?php echo url('mouse_sensitivity_DPI_tester.php'); ?>">Mouse DPI Test</a> for full mouse hardware analysis, or compare upgrade options in the <a href="<?php echo url('blog/best-gaming-mouse-2026.php'); ?>">best gaming mouse 2026 guide</a>.</p>
         </div>
       </section>
     </section>
@@ -387,6 +395,7 @@ $pageOgImage = 'images/mouse/hero.webp';
             Higher polling rate means smoother cursor movement and faster response — critical for competitive gaming.
             A higher Hz value reduces the gap between physical mouse movement and what appears on screen, giving you
             more accurate aim and less perceivable input lag in fast-paced games.
+            If you are buying a new mouse, the <a href="<?php echo url('blog/best-gaming-mouse-2026.php'); ?>">best gaming mouse 2026 guide</a> explains when 4000Hz or 8000Hz polling is actually worth prioritizing.
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Photo to Text Online | Extract Text From Photos',
+        'title' => 'Photo to Text - Free OCR Image Text Extractor',
         'description' => 'Convert a photo to text online with browser-based OCR. Upload phone photos, receipts, labels and printed documents — text extraction happens locally, no uploads.',
         'keywords' => 'photo to text, text from photo, OCR photo to text, extract text from photo',
         'ogImage' => 'images/ocr-tool/hero.png',

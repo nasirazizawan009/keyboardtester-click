@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Black Screen Test Online | Full Screen Monitor Check',
+        'title' => 'Black Screen Test - Free Full-Screen Monitor Check',
         'description' => 'Use a black screen test online to inspect backlight bleed, IPS glow, bright defects and display uniformity on monitors, laptops, tablets and phones. Fullscreen.',
         'keywords' => 'black screen test, full black screen, monitor black screen test, backlight bleed test',
         'ogImage' => 'images/screen-test/hero.png',

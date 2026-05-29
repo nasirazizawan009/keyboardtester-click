@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Left Right Speaker Test Online | Check Stereo Channels',
+        'title' => 'Left Right Speaker Test - Free Stereo Channel Check',
         'description' => 'Test left and right speakers or headphones online. Play isolated channel audio to confirm stereo output is mapped correctly and both drivers are working.',
         'keywords' => 'left right speaker test, left right audio test, test left and right speakers, headphone left right test',
         'ogImage' => 'images/headphone-test/hero.png',

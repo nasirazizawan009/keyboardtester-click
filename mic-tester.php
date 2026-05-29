@@ -1,10 +1,17 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Microphone Test Online — Test Your Mic Before Calls | KeyboardTester.click';
+$pageTitle = 'Mic Test - Free Online Microphone Tester for Calls';
 $pageDescription = 'Free open source microphone test online. Check mic input, levels and peak volume before Zoom, Teams or Discord calls. Browser-based, no install, no recording.';
 $pageKeywords = 'microphone test online, open source mic test, mic test, test microphone, microphone checker';
 $pageOgImage = 'images/mic-test/microphone-test-live-input-check-1400.png';
 $pageOgImageAlt = 'Person checking microphone input online with a live waveform and audio level meter';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'mic-test';
+  require __DIR__ . '/includes/render-english-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +21,12 @@ $pageOgImageAlt = 'Person checking microphone input online with a live waveform 
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <?php
@@ -35,6 +42,7 @@ $pageOgImageAlt = 'Person checking microphone input online with a live waveform 
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-mic-tester.php'; ?>
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
 
     <section class="tool-stage" id="mic-tester-tool" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">

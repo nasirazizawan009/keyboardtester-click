@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Scan QR From Image Online | Decode QR From Screenshot or Photo',
+        'title' => 'Scan QR From Image - Free QR Decoder From Photo',
         'description' => 'Scan a QR code from an image online. Upload a screenshot, saved picture or camera photo and decode it locally in your browser — no upload to any external server.',
         'keywords' => 'scan qr from image, qr from screenshot, decode qr from photo, read qr code from image',
         'ogImage' => 'images/qr-reader/hero.png',

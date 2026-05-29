@@ -1,9 +1,16 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Reaction Time Test — Check Your Reflexes Online | KeyboardTester.click';
+$pageTitle = 'Reaction Time Test - Free Click Reflex Test Online';
 $pageDescription = 'Free open source reaction time test online. Click when the color changes and measure your reflex speed in milliseconds. Useful for gaming performance. No download needed.';
 $pageKeywords = 'reaction time test, open source reaction test, reflex test online, reaction speed test, gaming reaction time';
 $pageOgImage = 'images/mouse/hero.png';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'reaction-time-test';
+  require __DIR__ . '/includes/render-english-inline-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +20,12 @@ $pageOgImage = 'images/mouse/hero.png';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <style>
     /* Reaction Time Tool — scoped styles */
@@ -247,6 +254,7 @@ $pageOgImage = 'images/mouse/hero.png';
     </section>
 
     <!-- Tool Stage -->
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
     <section class="tool-stage" id="reaction-tool" aria-labelledby="reaction-tool-title">
       <div class="container tool-stage-header">
         <div>
@@ -490,7 +498,7 @@ $pageOgImage = 'images/mouse/hero.png';
 
     function setBoxContent(main, sub) {
       boxText.textContent = main;
-      boxSub.textContent  = sub !== undefined ? sub : '';
+      boxSub.textContent  = sub !== undefined  sub : '';
     }
 
     function updateStats() {

@@ -1,9 +1,16 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Free Open Source Monitor Refresh Rate Test — Check Hz Online | KeyboardTester.click';
+$pageTitle = 'Monitor Refresh Rate Test - Check Hz Online Free';
 $pageDescription = 'Free open source monitor refresh rate test. Check if your display runs at 60Hz, 144Hz, 240Hz or higher. Detects your real Hz automatically in seconds. No download needed.';
 $pageKeywords = 'monitor refresh rate test online, open source monitor test, check monitor hz online, refresh rate test, 144hz monitor test';
-$pageOgImage = 'images/screen-test/hero.webp';
+$pageOgImage = 'blog/images/monitor-jpg.jpg';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'refresh-rate-test';
+  require __DIR__ . '/includes/render-english-inline-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +20,7 @@ $pageOgImage = 'images/screen-test/hero.webp';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -26,12 +33,7 @@ $pageOgImage = 'images/screen-test/hero.webp';
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Any",
     "isAccessibleForFree": true,
-    "browserRequirements": "Requires JavaScript",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "browserRequirements": "Requires JavaScript"
   }
   </script>
 
@@ -178,6 +180,7 @@ $pageOgImage = 'images/screen-test/hero.webp';
 
   <main id="main-content" class="landing-main">
 
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
     <section class="tool-stage" id="refresh-rate-stage" aria-labelledby="refresh-rate-h1">
       <div class="container tool-stage-header">
         <div>

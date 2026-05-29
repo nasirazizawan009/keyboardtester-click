@@ -7,29 +7,51 @@
 $breadcrumbs = $breadcrumbs ?? [];
 
 if (!empty($breadcrumbs)):
+$breadcrumbItems = [
+    [
+        '@type' => 'ListItem',
+        'position' => 1,
+        'name' => 'Home',
+        'item' => function_exists('absoluteUrl') ? absoluteUrl('') : ($baseUrl ?? '/'),
+    ],
+];
+
+foreach ($breadcrumbs as $index => $crumb) {
+    $item = [
+        '@type' => 'ListItem',
+        'position' => $index + 2,
+        'name' => (string) ($crumb['label'] ?? ''),
+    ];
+
+    if (!empty($crumb['url'])) {
+        $url = (string) $crumb['url'];
+        $item['item'] = preg_match('~^https?://~i', $url)
+            ? $url
+            : (function_exists('absoluteUrl') ? absoluteUrl(ltrim($url, '/')) : $url);
+    }
+
+    $breadcrumbItems[] = $item;
+}
 ?>
 
-<nav class="breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<script type="application/ld+json"><?php echo json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'BreadcrumbList',
+    'itemListElement' => $breadcrumbItems,
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?></script>
+
+<!-- Visible breadcrumb trail. Structured data is emitted as JSON-LD above (single source of truth — no microdata, to avoid duplicate BreadcrumbList). -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
     <div class="container">
-        <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="<?php echo $baseUrl; ?>" itemprop="item">
-                <span itemprop="name">Home</span>
-            </a>
-            <meta itemprop="position" content="1">
-        </span>
+        <a href="<?php echo $baseUrl; ?>">Home</a>
 
         <?php foreach ($breadcrumbs as $index => $crumb): ?>
             <span class="separator">›</span>
-            <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <?php if (!empty($crumb['url'])): ?>
-                    <a href="<?php echo $crumb['url']; ?>" itemprop="item">
-                        <span itemprop="name"><?php echo $crumb['label']; ?></span>
-                    </a>
-                <?php else: ?>
-                    <span itemprop="name"><?php echo $crumb['label']; ?></span>
-                <?php endif; ?>
-                <meta itemprop="position" content="<?php echo $index + 2; ?>">
-            </span>
+            <?php if (!empty($crumb['url'])): ?>
+                <a href="<?php echo $crumb['url']; ?>"><?php echo $crumb['label']; ?></a>
+            <?php else: ?>
+                <span><?php echo $crumb['label']; ?></span>
+            <?php endif; ?>
         <?php endforeach; ?>
     </div>
 </nav>

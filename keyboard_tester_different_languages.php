@@ -1,9 +1,14 @@
 <?php
 include __DIR__ . '/config.php';
+require_once __DIR__ . '/includes/schema.php';
 
-$pageTitle = 'Free Open Source Language Tools & Keyboard Testers | KeyboardTester.click';
+$pageTitle = 'Multi-Language Keyboard Tester - All Layouts Online';
 $pageDescription = 'Open localized tool pages for Arabic, Russian, Spanish, French, Portuguese, Japanese, German, and Korean users. Test keyboards, mice, screens, audio, QR, OCR, passwords, and more.';
 $pageKeywords = 'language keyboard tester, multilingual testing tools, open source keyboard tester, arabic keyboard, russian keyboard, spanish keyboard, french keyboard, portuguese keyboard, japanese keyboard, german keyboard, korean keyboard';
+$breadcrumbSchema = schemaBreadcrumbs([
+    ['name' => 'Home', 'url' => absoluteUrl('')],
+    ['name' => 'Language Tools', 'url' => ''],
+]);
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +18,7 @@ $pageKeywords = 'language keyboard tester, multilingual testing tools, open sour
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include __DIR__ . '/includes/seo-meta.php'; ?>
     <?php include __DIR__ . '/includes/head-common.php'; ?>
+    <?php echo $breadcrumbSchema; ?>
 </head>
 <body>
     <?php include __DIR__ . '/header.php'; ?>

@@ -7,10 +7,11 @@
 include 'config.php';
 
 // Page-specific SEO
-$pageTitle = "Free Open Source Mouse and Keyboard Tester Tools Online 2026";
+$pageTitle = "Mouse & Keyboard Test Tools - Free Online Suite 2026";
 $pageDescription = "Complete collection of free open source mouse and keyboard testing tools. Test clicks, keys, DPI, latency, typing speed, and more. Works on all devices with instant results.";
 $pageKeywords = "mouse tester, open source keyboard tester, keyboard test online, mouse test online, click speed test, DPI tester, typing speed test, latency checker, ghost click detector";
 $canonicalUrl = absoluteUrl('mouse-and-keyboard-test-tools.php');
+$seoMetaHandled = true;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +35,7 @@ $canonicalUrl = absoluteUrl('mouse-and-keyboard-test-tools.php');
     <meta property="og:url" content="<?php echo $canonicalUrl; ?>">
     <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
-    <meta property="og:image" content="<?php echo absoluteUrl('images/og-keyboard-mouse-tools.png'); ?>">
+    <meta property="og:image" content="<?php echo absoluteUrl('images/shared/keyboard-and-mouse.png'); ?>">
     <meta property="og:site_name" content="KeyboardTester.click">
     <meta property="og:locale" content="en_US">
 
@@ -43,10 +44,10 @@ $canonicalUrl = absoluteUrl('mouse-and-keyboard-test-tools.php');
     <meta name="twitter:url" content="<?php echo $canonicalUrl; ?>">
     <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
     <meta name="twitter:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
-    <meta name="twitter:image" content="<?php echo absoluteUrl('images/og-keyboard-mouse-tools.png'); ?>">
+    <meta name="twitter:image" content="<?php echo absoluteUrl('images/shared/keyboard-and-mouse.png'); ?>">
 
     <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
 

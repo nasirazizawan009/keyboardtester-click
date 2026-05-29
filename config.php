@@ -33,17 +33,25 @@ if ($isLocalhost) {
 $siteName = 'KeyboardTester.Click';
 $siteDescription = 'Free online keyboard and mouse testing tools';
 $siteEmail = 'support' . '@' . 'keyboardtester.click';
+
+// cPanel currently exposes an invalid PHP timezone (Europe/Frankfurt).
+// Override it early so date()/strtotime() do not generate public_html error_log files.
+date_default_timezone_set('UTC');
+
 $siteYear = date('Y');
 
 require_once __DIR__ . '/includes/components/protected-email.php';
 
 // Social links
+$microsoftStoreUrl = 'https://apps.microsoft.com/detail/9nxdnslwdq2s?hl=en-us&gl=US';
 $socialLinks = [
     'github' => 'https://github.com/nasirazizawan009/keyboardtester-click',
     'gitlab' => 'https://gitlab.com/nasirazizawan/keyboardtester.click',
     'youtube' => 'https://www.youtube.com/@KeyboardTester-dot-click',
     'facebook' => 'https://www.facebook.com/keyboardtester.click',
-    'instagram' => 'https://www.instagram.com/keyboardtester.click'
+    'instagram' => 'https://www.instagram.com/keyboardtester.click',
+    'bluesky' => 'https://bsky.app/profile/keyboard-tester.bsky.social',
+    'microsoft_store' => $microsoftStoreUrl
 ];
 
 // Amazon affiliate links (by region)
@@ -360,6 +368,7 @@ $pages = [
     'disclaimer' => url('disclaimer.php'),
     'feedback' => url('feedback.php'),
     'resources' => url('resources.php'),
+    'advertise' => url('advertise.php'),
     'blog' => blogUrl(),
 ];
 

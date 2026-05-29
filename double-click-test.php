@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source Double Click Test Online | Check Mouse Switch Bounce',
+        'title' => 'Double Click Test - Free Mouse Switch Bounce Checker',
         'description' => 'Run a double click test online to inspect suspicious rapid clicks, switch bounce and possible ghost-click behaviour. Great for diagnosing worn gaming mouse switches.',
         'keywords' => 'double click test, mouse double click test, switch bounce test, ghost click test',
         'ogImage' => 'images/ghost-click/hero.png',

@@ -1,7 +1,7 @@
 <?php
 $intentPage = [
     'meta' => [
-        'title' => 'Free Open Source N-Key Rollover Test Online | Check NKRO and 6KRO',
+        'title' => 'N-Key Rollover Test - Free NKRO & 6KRO Checker Online',
         'description' => 'N-key rollover test online. Check your keyboard NKRO and 6KRO limits by holding multiple keys simultaneously. Detect ghosting in combos. Free, browser-based, no download needed.',
         'keywords' => 'n key rollover test, nkro test, 6 key rollover test, simultaneous key press test',
         'ogImage' => 'images/keyboard/hero-keyboard-test-1400.png',
