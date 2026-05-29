@@ -127,7 +127,12 @@ if (!function_exists('kbtTemplateSeoBlocks')) {
         }
 
         $html = (string) file_get_contents($file);
-        if (strpos($html, 'home-guideline-brief') !== false) {
+        // Render the full hand-written article when the file is either the new-style guide
+        // (home-guideline-brief) OR a legacy full-article block (class="seo-content").
+        // Previously only the marker matched, so 85 legacy files were scraped down to a thin
+        // intro + generic template, discarding ~38k words of unique, indexable content.
+        if (strpos($html, 'home-guideline-brief') !== false
+            || strpos($html, 'class="seo-content"') !== false) {
             return ['newStyle' => true, 'include' => $includePath];
         }
 
@@ -188,6 +193,38 @@ if (!function_exists('kbtTemplateSeoBlocks')) {
             'faqs' => array_slice($faqs, 0, 6),
             'extra' => $paragraphs ? $paragraphs[min(1, count($paragraphs) - 1)] : '',
         ];
+    }
+}
+
+if (!function_exists('kbtSeoContentFaqs')) {
+    /**
+     * Parse FAQ pairs from a legacy full-article seo-content file so the FAQPage schema
+     * can match the FAQ that is now rendered visibly. Returns:
+     *   null  -> not a legacy full-render seo-content file (caller should keep getToolFAQs)
+     *   array -> the file's FAQ pairs (may be empty, meaning: emit no FAQPage)
+     */
+    function kbtSeoContentFaqs($includePath)
+    {
+        $file = __DIR__ . '/../' . ltrim((string) $includePath, '/');
+        if (!$includePath || !is_file($file)) {
+            return null;
+        }
+        $html = (string) file_get_contents($file);
+        // New-style guide files manage their own FAQ; only handle legacy seo-content blocks.
+        if (strpos($html, 'home-guideline-brief') !== false || strpos($html, 'class="seo-content"') === false) {
+            return null;
+        }
+        $faqs = [];
+        if (preg_match_all('#<details[^>]*>[\\s\\S]*?<summary[^>]*>([\\s\\S]*?)</summary>[\\s\\S]*?<p[^>]*>([\\s\\S]*?)</p>[\\s\\S]*?</details>#i', $html, $m, PREG_SET_ORDER)) {
+            foreach ($m as $one) {
+                $q = kbtTemplatePlainText($one[1]);
+                $a = kbtTemplatePlainText($one[2]);
+                if ($q !== '' && $a !== '') {
+                    $faqs[] = ['question' => $q, 'answer' => $a];
+                }
+            }
+        }
+        return $faqs;
     }
 }
 
@@ -359,6 +396,12 @@ $__kbtHeroImage = $pageOgImage ?? '';
 $__kbtHeroAlt = $pageOgImageAlt ?? (($__kbtTitle ?: 'KeyboardTester.click tool') . ' hero image');
 $__kbtHeroLede = $pageDescription ?? $__kbtLede;
 $__kbtCategoryHref = kbtTemplateCategoryHref($__kbtCategory);
+
+// Keep the FAQPage schema in sync with the now fully-rendered legacy article's own FAQ.
+$__kbtSeoFaqs = kbtSeoContentFaqs($__kbtSeoInclude);
+if ($__kbtSeoFaqs !== null) {
+    $GLOBALS['kbtFaqSchemaOverride'] = $__kbtSeoFaqs;
+}
 
 ?><!DOCTYPE html>
 <html lang="en">

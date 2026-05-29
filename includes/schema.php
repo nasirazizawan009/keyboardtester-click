@@ -2091,8 +2091,10 @@ function generateToolPageSchema($toolKey, $breadcrumbs = null) {
         $output .= schemaBreadcrumbs($breadcrumbs);
     }
 
-    // Add FAQs if available
-    $faqs = getToolFAQs($toolKey);
+    // Add FAQs if available. A page may override the source (e.g. a fully-rendered legacy
+    // seo-content article supplies its own FAQ) so the schema always matches the visible FAQ.
+    // An override set to an empty array means "this page has no FAQ" -> emit no FAQPage.
+    $faqs = array_key_exists('kbtFaqSchemaOverride', $GLOBALS) ? $GLOBALS['kbtFaqSchemaOverride'] : getToolFAQs($toolKey);
     if (!empty($faqs)) {
         $output .= schemaFAQ($faqs);
     }

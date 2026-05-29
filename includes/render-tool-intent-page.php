@@ -108,6 +108,12 @@ if (!$intentContext) {
 $GLOBALS['kbtSuppressFooterAd'] = true;
 $GLOBALS['__kbtToolPopularToolsRendered'] = false;
 $GLOBALS['__kbtToolBlogPostsRendered'] = false;
+
+// Match FAQPage schema to the fully-rendered legacy article's own FAQ (see render-english-tool-page.php).
+$__kbtIntentSeoFaqs = function_exists('kbtSeoContentFaqs') ? kbtSeoContentFaqs($seoContentInclude) : null;
+if ($__kbtIntentSeoFaqs !== null) {
+    $GLOBALS['kbtFaqSchemaOverride'] = $__kbtIntentSeoFaqs;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
