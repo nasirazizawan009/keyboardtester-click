@@ -717,11 +717,9 @@ $pageOgImageAlt = $__lmHeroAlt;
     <meta property="og:image" content="<?php echo kbtLmEsc(kbtLmAbsoluteUrl($__lmHeroImage)); ?>">
     <meta property="og:image:alt" content="<?php echo kbtLmEsc($__lmHeroAlt); ?>">
   <?php endif; ?>
-  <?php if (!empty($localizedModernToolPage['hreflangs']) && is_array($localizedModernToolPage['hreflangs'])): ?>
-    <?php foreach ($localizedModernToolPage['hreflangs'] as $hreflang => $href): ?>
-      <link rel="alternate" hreflang="<?php echo kbtLmEsc($hreflang); ?>" href="<?php echo kbtLmEsc($href); ?>">
-    <?php endforeach; ?>
-  <?php endif; ?>
+  <?php /* hreflang cluster is emitted once by includes/head-common.php below. It was also
+           emitted here, producing 18-20 duplicate alternate tags per localized page; head-common's
+           auto-generator (with the EN<->localized slug aliases) is now the single source. */ ?>
   <link rel="icon" type="image/x-icon" href="<?php echo kbtLmUrl('navigation.png'); ?>">
   <?php
   $loadBootstrapCss = false;

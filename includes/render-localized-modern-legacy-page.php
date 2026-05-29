@@ -449,11 +449,29 @@ if (!function_exists('kbtLmlExtractFaqs')) {
     function kbtLmlExtractFaqs(DOMXPath $xpath)
     {
         $faqs = [];
-        foreach ($xpath->query('//details') as $detail) {
-            $summary = kbtLmlFirstText($xpath, './/summary', $detail);
-            $answer = kbtLmlFirstText($xpath, './/p', $detail);
-            if ($summary !== '' && $answer !== '') {
-                $faqs[] = ['question' => $summary, 'answer' => $answer];
+        // Only harvest genuine FAQ disclosures. Previously this grabbed EVERY <details>,
+        // including the keyboard tester's UI control (<details class="adv-details">
+        // <summary>Detailed measurements</summary>), which leaked that English string in as
+        // the #1 FAQ on all 8 localized homepages.
+        $faqQuery = "//details["
+            . "contains(concat(' ', normalize-space(@class), ' '), ' faq-item ')"
+            . " or ancestor::*[contains(concat(' ', normalize-space(@class), ' '), ' faq-list ')]"
+            . " or ancestor::*[contains(concat(' ', normalize-space(@class), ' '), ' home-faq-list ')]"
+            . " or ancestor::*[contains(concat(' ', normalize-space(@class), ' '), ' seo-faq ')]"
+            . " or ancestor::*[contains(concat(' ', normalize-space(@class), ' '), ' faq ')]"
+            . "]";
+        $nodes = $xpath->query($faqQuery);
+        if (!$nodes || $nodes->length === 0) {
+            // Fallback for pages without an FAQ container class: any disclosure that is not a tool-UI control.
+            $nodes = $xpath->query("//details[not(contains(concat(' ', normalize-space(@class), ' '), ' adv-details '))]");
+        }
+        if ($nodes) {
+            foreach ($nodes as $detail) {
+                $summary = kbtLmlFirstText($xpath, './/summary', $detail);
+                $answer = kbtLmlFirstText($xpath, './/p', $detail);
+                if ($summary !== '' && $answer !== '') {
+                    $faqs[] = ['question' => $summary, 'answer' => $answer];
+                }
             }
         }
         return array_slice($faqs, 0, 6);
