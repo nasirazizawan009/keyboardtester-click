@@ -3,7 +3,7 @@ include __DIR__ . '/../config.php';
 require_once __DIR__ . '/../includes/components/blog-article-ads.php';
 require_once __DIR__ . '/../includes/components/blog-template-enhancements.php';
 $pageTitle = 'Keyboard Polling Rate Test: Check Keyboard Hz Online (2026 Guide) - KeyboardTester.click';
-$pageDescription = 'Keyboard polling rate test guide: check keyboard Hz online, understand 125Hz, 500Hz, 1000Hz and 8000Hz, and learn why browser results can look lower.';
+$pageDescription = 'Keyboard polling rate test guide: check keyboard Hz online, understand 125Hz, 500Hz, 1000Hz and 8000Hz, and learn why browser results can look lower than specs.';
 $pageOgImage = 'blog/images/keyboard-polling-rate-test-hero.webp';
 $pageOgType = 'article';
 $pageCanonical = absoluteUrl('blog/keyboard-polling-rate-test-check-keyboard-hz.php');
@@ -32,7 +32,7 @@ $pageCanonical = absoluteUrl('blog/keyboard-polling-rate-test-check-keyboard-hz.
         align-items: center;
         gap: 0.35rem;
         font-size: 0.9rem;
-        color: var(--primary-color, #0ea5e9);
+        color: var(--primary-color, #1e40af);
         text-decoration: none;
         margin-bottom: 1.5rem;
     }
@@ -480,7 +480,7 @@ $pageCanonical = absoluteUrl('blog/keyboard-polling-rate-test-check-keyboard-hz.
     <li>Run the <a href="<?php echo url('keyboard-polling-rate-test.php'); ?>">keyboard polling rate test</a> to check timing behavior.</li>
     <li>Run the <a href="<?php echo url('latency-checker.php'); ?>">input latency checker</a> to see the broader response chain.</li>
     <li>Run the <a href="<?php echo url('keyboard-ghosting-test.php'); ?>">keyboard ghosting test</a> and <a href="<?php echo url('n-key-rollover-test.php'); ?>">N-key rollover test</a> for multi-key reliability.</li>
-    <li>If keys repeat or double-trigger, use the <a href="<?php echo url('keyboard-double-click-test.php'); ?>">keyboard chatter detector</a> and read the <a href="<?php echo url('blog/keyboard-typing-double-letters-fix-key-chatter.php'); ?>">key chatter fix guide</a>.</li>
+    <li>If keys repeat or double-trigger, use the <a href="<?php echo url('keyboard-double-click-test.php'); ?>">keyboard chatter detector</a> and read the <a href="<?php echo url('blog/keyboard-typing-double-letters-fix-key-chatter.php'); ?>">key chatter fix guide</a>. If typing feels slow or unresponsive instead, see how to <a href="https://keyboardtester.click/blog/keyboard-not-typing-lagging-sticky-fix-clean-guide.php">fix keyboard delay</a> and sticky keys.</li>
     <li>If you are confused by ghosting claims, read <a href="<?php echo url('blog/what-is-keyboard-ghosting-anti-ghosting-fix-guide.php'); ?>">what keyboard ghosting actually means</a>.</li>
 </ol>
 

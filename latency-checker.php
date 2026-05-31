@@ -1,9 +1,16 @@
 <?php include 'config.php'; ?>
 <?php
 $pageTitle = 'Keyboard Latency Test - Key & Mouse Input Delay Checker | KeyboardTester.click';
-$pageDescription = 'Run a free keyboard latency test with mouse click latency mode, last-key display, jitter, consistency, best/worst samples, and browser input delay.';
+$pageDescription = 'Run a free keyboard latency test with mouse click latency mode, last-key display, jitter, consistency, best/worst samples, and browser input delay timing.';
 $pageKeywords = 'keyboard latency test, keyboard latency checker, input lag test, input latency test, key press delay test, keyboard response time test, keyboard delay test, keyboard test latency, mouse latency test, mouse click latency test, online latency test';
 $pageOgImage = 'images/latency-checker/hero.png';
+?>
+<?php
+if (empty($_GET['lang']) || $_GET['lang'] === 'en') {
+  $kbtTemplateToolId = 'latency-checker';
+  require __DIR__ . '/includes/render-english-tool-page.php';
+  return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +20,12 @@ $pageOgImage = 'images/latency-checker/hero.png';
   <?php include __DIR__ . '/includes/seo-meta.php'; ?>
   <?php include 'includes/head-common.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width: 769px)">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 769px)">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=optional" media="(min-width: 769px)"></noscript>
 
-  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo url('assets/css/index-modern.min.css'); ?>">
 
   <!-- Structured Data (JSON-LD) -->
   <?php
@@ -34,6 +41,7 @@ $pageOgImage = 'images/latency-checker/hero.png';
 
   <main id="main-content" class="landing-main">
     <?php include 'help/brief-latency-checker.php'; ?>
+    <?php include __DIR__ . '/includes/components/tool-category-strip.php'; ?>
 
     <section class="tool-stage" id="latency-stage" aria-labelledby="tool-stage-title">
       <div class="container tool-stage-header">
@@ -159,7 +167,7 @@ $pageOgImage = 'images/latency-checker/hero.png';
               <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Casual gaming</strong></td><td style="padding:12px 16px;">5–10 ms</td><td style="padding:12px 16px;">Most wired mechanical or quality membrane keyboards</td></tr>
               <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Office typing &amp; productivity</strong></td><td style="padding:12px 16px;">10–20 ms</td><td style="padding:12px 16px;">Wired or 2.4 GHz wireless keyboards</td></tr>
               <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;"><strong>Bluetooth / casual wireless</strong></td><td style="padding:12px 16px;">15–30 ms</td><td style="padding:12px 16px;">Bluetooth keyboards (slotted polling adds delay)</td></tr>
-              <tr><td style="padding:12px 16px;"><strong>Concerning / failing hardware</strong></td><td style="padding:12px 16px;">&gt; 40 ms consistent</td><td style="padding:12px 16px;">Worn switches, USB hub bottleneck, or driver issue</td></tr>
+              <tr><td style="padding:12px 16px;"><strong>Concerning / failing hardware</strong></td><td style="padding:12px 16px;">&gt; 40 ms consistent</td><td style="padding:12px 16px;">Worn switches, USB hub bottleneck, or driver issue (see how to <a href="https://keyboardtester.click/blog/keyboard-not-typing-lagging-sticky-fix-clean-guide.php">fix keyboard delay</a>)</td></tr>
             </tbody>
           </table>
         </div>
