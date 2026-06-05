@@ -1,7 +1,7 @@
 <?php include 'config.php'; ?>
 <?php
-$pageTitle = 'Keyboard Latency Test - Key & Mouse Input Delay Checker | KeyboardTester.click';
-$pageDescription = 'Run a free keyboard latency test with mouse click latency mode, last-key display, jitter, consistency, best/worst samples, and browser input delay timing.';
+$pageTitle = 'Keyboard Latency Test - Free Input Lag & Delay Checker';
+$pageDescription = 'Free keyboard latency test - measure real input lag in milliseconds with jitter, consistency, best/worst samples and mouse-click latency mode. No install.';
 $pageKeywords = 'keyboard latency test, keyboard latency checker, input lag test, input latency test, key press delay test, keyboard response time test, keyboard delay test, keyboard test latency, mouse latency test, mouse click latency test, online latency test';
 $pageOgImage = 'images/latency-checker/hero.png';
 ?>

@@ -10,8 +10,8 @@ return [
     // CORE PAGES
     // ============================================
     'index.php' => [
-        'title' => 'Keyboard Tester - Test Every Key Free in Your Browser',
-        'description' => 'Free online keyboard tester - press any key to see it light up instantly. Detect stuck keys, ghosting, key repeats and dead keys on any keyboard. No download needed.',
+        'title' => 'Keyboard Tester Online - Test Every Key Free, No Download',
+        'description' => 'Free online keyboard tester - press any key and watch it light up instantly. Spot stuck keys, ghosting, key chatter and dead keys. No download, no signup.',
         'keywords' => 'keyboard tester, keyboard test, key test, keyboard checker, test keyboard online, online keyboard tester, free key tester, stuck key detector',
         'og_image' => 'images/keyboard/hero-keyboard-test-1400.png'
     ],
@@ -61,8 +61,8 @@ return [
         'og_image' => 'images/keyboard/typing-test-og.png'
     ],
     'latency-checker.php' => [
-        'title' => 'Keyboard Latency Test - Key & Mouse Input Delay Checker',
-        'description' => 'Use this free keyboard latency test with mouse click mode, last-key display, jitter, consistency, best and worst samples, and browser input delay timing.',
+        'title' => 'Keyboard Latency Test - Free Input Lag & Delay Checker',
+        'description' => 'Free keyboard latency test - measure real input lag in milliseconds with jitter, consistency, best/worst samples and mouse-click latency mode. No install.',
         'keywords' => 'keyboard latency test, keyboard delay test, input delay test, keyboard response time test, keyboard input lag test, mouse click latency test',
         'og_image' => 'images/keyboard/latency-checker-og.png'
     ],
@@ -130,8 +130,8 @@ return [
         'og_image' => 'images/mouse/click-speed-test-og.png'
     ],
     'mouse_sensitivity_DPI_tester.php' => [
-        'title' => 'Mouse DPI Analyzer - Free DPI Tester & Checker Online',
-        'description' => 'Free mouse DPI analyzer - measure your real DPI in seconds with a ruler-distance test. Check, compare and calculate eDPI for gaming. No download, runs in your browser.',
+        'title' => 'DPI Analyzer - Test Your Real Mouse DPI Free Online',
+        'description' => 'Free mouse DPI analyzer - measure your true DPI in seconds with a ruler test. Check, compare and calculate eDPI for gaming. In-browser, no download.',
         'keywords' => 'dpi analyzer, mouse dpi tester, mouse dpi checker, dpi test, dpi checker, dpi analyzer online, edpi calculator',
         'og_image' => 'images/mouse/dpi-tester-og.png'
     ],

@@ -3,8 +3,8 @@
 <?php require_once __DIR__ . '/includes/components/microsoft-store-badge.php'; ?>
 <?php
 $GLOBALS['kbtSuppressFooterAd'] = true;
-$pageTitle = 'Mouse DPI Analyzer - Free DPI Tester & Checker (Accurate)';
-$pageDescription = 'Free mouse DPI analyzer - measure your real mouse DPI in seconds with a ruler-distance test. Check, compare and calculate eDPI for gaming. No download, runs in your browser.';
+$pageTitle = 'DPI Analyzer - Test Your Real Mouse DPI Free Online';
+$pageDescription = 'Free mouse DPI analyzer - measure your true DPI in seconds with a ruler test. Check, compare and calculate eDPI for gaming. In-browser, no download.';
 $pageKeywords = 'dpi analyzer, mouse dpi test, dpi test, dpi checker, mouse dpi checker, dpi analyzer online, check my mouse dpi, mouse sensitivity test, dpi finder, dpi tester online';
 $pageOgImage = 'images/mouse-dpi/hero.png';
 $pageOgImageAlt = 'Mouse DPI tester measuring gaming mouse sensitivity and eDPI online';
@@ -42,6 +42,7 @@ $pageOgImageAlt = 'Mouse DPI tester measuring gaming mouse sensitivity and eDPI 
   <!-- Structured Data (JSON-LD) -->
   <?php
   include_once __DIR__ . '/includes/schema.php';
+  $GLOBALS['kbtRatingKey'] = 'mouse_sensitivity_DPI_tester.php';
   echo generateToolPageSchema('dpi_tester', [
       ['name' => 'Home', 'url' => '/'],
       ['name' => 'Mouse DPI Tester & Checker', 'url' => '']
@@ -61,6 +62,10 @@ $pageOgImageAlt = 'Mouse DPI tester measuring gaming mouse sensitivity and eDPI 
       </section>
     </section>
 
+    <div class="kbt-rating-row" style="text-align:center;padding:0 16px">
+      <?php $kbtRatingKey = 'mouse_sensitivity_DPI_tester.php'; $kbtRatingLabel = 'Mouse DPI Analyzer'; include __DIR__ . '/includes/components/tool-rating.php'; ?>
+    </div>
+
     <section class="home-after-tool-banner" aria-label="Sponsored placement">
       <?php
         kbtRenderAdSlot('dpi_after_tool_banner', [
@@ -73,6 +78,14 @@ $pageOgImageAlt = 'Mouse DPI tester measuring gaming mouse sensitivity and eDPI 
     </section>
 
     <?php include 'includes/components/tools-list.php'; ?>
+
+    <?php
+      $kbtEmbedSlug = 'dpi-tester';
+      $kbtEmbedCanonical = 'mouse_sensitivity_DPI_tester.php';
+      $kbtEmbedAnchor = 'Mouse DPI Analyzer';
+      $kbtEmbedHeight = 700;
+      include __DIR__ . '/includes/components/embed-panel.php';
+    ?>
 
     <div class="home-rails-region">
       <aside class="home-rails-side home-rails-side--left" aria-hidden="true">
